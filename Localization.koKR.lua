@@ -318,7 +318,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+([%d%.,]+).$",
 		["DisenchantingRequires"] = "^마력 추출 요구 사항",
-		["Dodge"] = "^회피 %+?([%d%.,]+)$",
+		["Dodge"] = "^회피 %+?([%d%.,]+)%%?$",
 		["Dodge2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by ([%d%.,]+)%%%.$",

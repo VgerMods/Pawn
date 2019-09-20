@@ -320,7 +320,7 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+([%d%.,]+).$",
 		["DisenchantingRequires"] = "^L'enchantement requiert",
-		["Dodge"] = "^%+?([%d%. NBSP,]+) Esquive$",
+		["Dodge"] = "^%+?([%d%. NBSP,]+)%%? Esquive$",
 		["Dodge2"] = "^%+?([%d%. NBSP,]+) à l'esquive$",
 		--[[Translation missing --]]
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by ([%d%.,]+)%%%.$",

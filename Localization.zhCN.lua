@@ -317,7 +317,7 @@ PawnLocal =
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+([%d%.,]+).$",
 		["DisenchantingRequires"] = "^分解需要",
-		["Dodge"] = "^%+?([%d%.,]+) 躲闪$",
+		["Dodge"] = "^%+?([%d%.,]+)%%? 躲闪$",
 		["Dodge2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by ([%d%.,]+)%%%.$",

@@ -317,7 +317,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+([%d%.,]+).$",
 		["DisenchantingRequires"] = "^Entzaubern benötigt",
-		["Dodge"] = "^%+?([%d%.,]+) Ausweichen$",
+		["Dodge"] = "^%+?([%d%.,]+)%%? Ausweichen$",
 		["Dodge2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by ([%d%.,]+)%%%.$",

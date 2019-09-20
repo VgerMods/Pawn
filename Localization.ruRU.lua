@@ -318,8 +318,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+([%d%.,]+).$",
 		["DisenchantingRequires"] = "^Требуется",
-		["Dodge"] = "^%+?([%d%., ]+) к уклонению$",
-		["Dodge2"] = "^%+?([%d%., ]+) к показателю уклонения$",
+		["Dodge"] = "^%+?([%d%., ]+)%%? к уклонению$",
+		["Dodge2"] = "^%+?([%d%., ]+)%%? к показателю уклонения$",
 		--[[Translation missing --]]
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by ([%d%.,]+)%%%.$",
 		["Dps"] = "^%(([%d%., ]+) ед%. урона в секунду%)$",
