@@ -1,0 +1,35 @@
+﻿## Interface: 80200
+## Title: Pawn
+## Version: 2.3.0
+## Notes: Pawn helps you compare items and find upgrades.
+## OptionalDependencies: AtlasLoot, EQCompare, EquipCompare, LinkWrangler, MobInfo2, MultiTips, Outfitter
+## SavedVariables: PawnCommon
+## SavedVariablesPerCharacter: PawnOptions, PawnMrRobotScaleProviderOptions
+
+## Title-zhTW: [裝備比較]Pawn
+## Notes-zhTW: 計算屬性ep值並給予較好的建議，其他還有珠寶的建議以及重鑄的建議..等，也有裝備屬性比較介面。
+
+## Title-ruRU: |cff00ff00Pawn|r Русская Версия
+
+VgerCore\VgerCore.lua
+
+Core.lua
+ItemIDs.lua
+Localization.lua
+Localization.deDE.lua
+Localization.es.lua
+Localization.frFR.lua
+Localization.itIT.lua
+Localization.koKR.lua
+Localization.ptBR.lua
+Localization.ruRU.lua
+Localization.zhCN.lua
+Localization.zhTW.lua
+UIStrings.lua
+TooltipParsing.lua
+Gems.lua
+ScaleTemplates.lua
+Pawn.lua
+PawnUI.lua
+PawnUI.xml
+AskMrRobot.lua

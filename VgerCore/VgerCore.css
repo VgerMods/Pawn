@@ -1,0 +1,90 @@
+﻿.codeblock  {
+background-color:	#eaecef;
+padding:	.5em;
+}
+
+.loot  {
+background-color:	#202020;
+border-style:	outset;
+border-width:	2px;
+color:	white;
+margin-right:	auto;
+padding:	.5em;
+width:	25em;
+}
+
+.loot .blue  {
+color:	#1068ff;
+}
+
+.loot .green  {
+color:	lime;
+}
+
+.loot .grey  {
+color:	silver;
+}
+
+.loot .itemname  {
+font-size:	125%;
+margin-top:	0;
+}
+
+.loot .pawnblue  {
+color:	#8ec3e6;
+}
+
+.loot .purple  {
+color:	#6800ff;
+}
+
+.loot .white  {
+color:	white;
+}
+
+.loot div  {
+margin-top:	.1em;
+}
+
+body  {
+font-family:	Segoe UI, Verdana, sans-serif;
+font-size:	small;
+}
+
+code  {
+font-family:	Consolas, Courier New, monospace;
+}
+
+h1  {
+color:	#42669e;
+}
+
+h2  {
+color:	#7ba9d3;
+}
+
+h3  {
+color:	#5e88b8;
+}
+
+h4  {
+color:	#42669e;
+font-weight:	normal;
+margin-bottom:	-1em;
+}
+
+html  {
+cursor:	default;
+}
+
+.warning  {
+color:	red;	
+}
+
+a  {
+color:	#6800ff;
+}
+
+a:hover  {
+color:	#8ec3e6;
+}

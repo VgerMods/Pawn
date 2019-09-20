@@ -1,0 +1,384 @@
+﻿-- Pawn by Vger-Azjol-Nerub
+-- www.vgermods.com
+-- © 2006-2019 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- See Readme.htm for more information.
+--
+-- Scale templates
+------------------------------------------------------------
+
+
+-- Test code for getting spec IDs matched up:
+--/script local Index; for Index = 1, GetNumSpecializations() do local ID, Name = GetSpecializationInfo(Index) VgerCore.Message("(" .. Index .. ") Spec ID " .. ID .. " is " .. Name) end
+
+-- Returns the template from PawnScaleTemplates for a given class ID and spec ID.
+function PawnFindScaleTemplate(ClassID, SpecID)
+	local _, Template
+	
+	for _, Template in pairs(PawnScaleTemplates) do
+		if Template.ClassID == ClassID and Template.SpecID == SpecID then return Template end
+	end
+
+	VgerCore.Fail("Failed to find a scale template for class " .. tostring(ClassID) .. " and spec " .. tostring(SpecID))
+end
+
+-- Returns a starter set of stat values for a given template row returned by PawnFindScaleTemplate.
+function PawnGetStatValuesForTemplate(Template, NoStats)
+	local _, _, _, _, Role = GetSpecializationInfoForClassID(Template.ClassID, Template.SpecID)
+	
+	local ScaleValues
+	if NoStats then
+		ScaleValues = {}
+	else
+		ScaleValues = 
+		{
+			["Stamina"] = 0.01,
+
+			["CritRating"] = 0.5,
+			["HasteRating"] = 0.5,
+			["MasteryRating"] = 0.5,
+			["Versatility"] = 0.5,
+
+			["MovementSpeed"] = 0.01,
+			["Avoidance"] = 0.01,
+			["Leech"] = 0.01,
+			["Indestructible"] = 0.01,
+		}
+
+		ScaleValues[Template.PrimaryStat] = 1
+
+		if Role == "TANK" then
+			ScaleValues.Stamina = 1
+			ScaleValues.Armor = 1
+		end
+	end
+
+	local StatName
+	for _, StatName in pairs(PawnNeverUsableStats[Template.ClassID]) do
+		ScaleValues[StatName] = PawnIgnoreStatValue
+	end
+	for _, StatName in pairs(Template.UnusableStats) do
+		ScaleValues[StatName] = PawnIgnoreStatValue
+	end
+
+	return ScaleValues
+end
+
+
+-- PawnScaleTemplates: Master list of scale templates for each class and spec. 
+PawnScaleTemplates =
+{
+
+{
+	["ClassID"] = 6, -- Death Knight
+	["SpecID"] = 1, -- Blood
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 6, -- Death Knight
+	["SpecID"] = 2, -- Frost
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 6, -- Death Knight
+	["SpecID"] = 3, -- Unholy
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 12, -- Demon Hunter
+	["SpecID"] = 1, -- Havoc
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 12, -- Demon Hunter
+	["SpecID"] = 2, -- Vengeance
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 11, -- Druid
+	["SpecID"] = 1, -- Balance
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 11, -- Druid
+	["SpecID"] = 2, -- Feral
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 11, -- Druid
+	["SpecID"] = 3, -- Guardian
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 11, -- Druid
+	["SpecID"] = 4, -- Restoration
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 3, -- Hunter
+	["SpecID"] = 1, -- Beast Mastery
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsDagger", "IsPolearm", "IsStaff", "IsFist", "IsSword", "Is2HSword", "IsAxe", "Is2HAxe", "IsOffHand", "IsFrill" }
+},
+
+{
+	["ClassID"] = 3, -- Hunter
+	["SpecID"] = 2, -- Marksmanship
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsDagger", "IsPolearm", "IsStaff", "IsFist", "IsSword", "Is2HSword", "IsAxe", "Is2HAxe", "IsOffHand", "IsFrill" }
+},
+
+{
+	["ClassID"] = 3, -- Hunter
+	["SpecID"] = 3, -- Survival
+	["PrimaryStat"] = "Agility",
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 8, -- Mage
+	["SpecID"] = 1, -- Arcane
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 8, -- Mage
+	["SpecID"] = 2, -- Fire
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 8, -- Mage
+	["SpecID"] = 3, -- Frost
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 10, -- Monk
+	["SpecID"] = 1, -- Brewmaster
+	["PrimaryStat"] = "Agility",
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 10, -- Monk
+	["SpecID"] = 2, -- Mistweaver
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = { "IsOffHand" }
+},
+
+{
+	["ClassID"] = 10, -- Monk
+	["SpecID"] = 3, -- Windwalker
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
+	["ClassID"] = 2, -- Paladin
+	["SpecID"] = 1, -- Holy
+	["PrimaryStat"] = "Intellect",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 2, -- Paladin
+	["SpecID"] = 2, -- Protection
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 2, -- Paladin
+	["SpecID"] = 3, -- Retribution
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 5, -- Priest
+	["SpecID"] = 1, -- Discipline
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 5, -- Priest
+	["SpecID"] = 2, -- Holy
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 5, -- Priest
+	["SpecID"] = 3, -- Shadow
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 4, -- Rogue
+	["SpecID"] = 1, -- Assassination
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFist", "IsAxe", "IsMace", "IsSword", "IsBow", "IsCrossbow", "IsGun", "IsFrill" }
+},
+
+{
+	["ClassID"] = 4, -- Rogue
+	["SpecID"] = 2, -- Outlaw
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsBow", "IsCrossbow", "IsGun", "IsFrill" }
+},
+
+{
+	["ClassID"] = 4, -- Rogue
+	["SpecID"] = 3, -- Subtlety
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFist", "IsAxe", "IsMace", "IsSword", "IsBow", "IsCrossbow", "IsGun", "IsFrill" }
+},
+
+{
+	["ClassID"] = 7, -- Shaman
+	["SpecID"] = 1, -- Elemental
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = { "IsOffHand" }
+},
+
+{
+	["ClassID"] = 7, -- Shaman
+	["SpecID"] = 2, -- Enhancement
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsShield", "IsFrill" }
+},
+
+{
+	["ClassID"] = 7, -- Shaman
+	["SpecID"] = 3, -- Restoration
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = { "IsOffHand" }
+},
+
+{
+	["ClassID"] = 9, -- Warlock
+	["SpecID"] = 1, -- Affliction
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 9, -- Warlock
+	["SpecID"] = 2, -- Demonology
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 9, -- Warlock
+	["SpecID"] = 3, -- Destruction
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 1, -- Warrior
+	["SpecID"] = 1, -- Arms
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 1, -- Hide 1H upgrades
+	["UnusableStats"] = { "IsFrill", "IsBow", "IsCrossbow", "IsGun" }
+},
+
+{
+	["ClassID"] = 1, -- Warrior
+	["SpecID"] = 2, -- Fury
+	["PrimaryStat"] = "Strength",
+	["UnusableStats"] = { "IsFrill", "IsBow", "IsCrossbow", "IsGun" }
+},
+
+{
+	["ClassID"] = 1, -- Warrior
+	["SpecID"] = 3, -- Protection
+	["PrimaryStat"] = "Strength",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFrill", "IsBow", "IsCrossbow", "IsGun", "IsOffHand" }
+},
+
+}
+
+
+-- PawnNeverUsableStats: Master list of stats that are NEVER usable for each class, regardless of spec. 
+PawnNeverUsableStats =
+{
+	[1] = -- Warrior
+	{ "IsWand", "IsWarglaive" },
+
+	[2] = -- Paladin
+	{ "IsDagger", "IsFist", "IsStaff", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsOffHand" },
+
+	[3] = -- Hunter
+	{ "IsWand", "IsMace", "Is2HMace", "IsWarglaive", "IsPlate", "IsShield" },
+
+	[4] = -- Rogue
+	{ "IsPolearm", "IsStaff", "Is2HAxe", "Is2HMace", "Is2HSword", "IsWand", "IsWarglaive", "IsMail", "IsPlate", "IsShield" },
+
+	[5] = --Priest
+	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "IsSword", "Is2HSword", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield" },
+
+	[6] = -- Death Knight
+	{ "IsDagger", "IsFist", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsStaff", "IsWarglaive", "IsShield" },
+
+	[7] = -- Shaman
+	{ "IsPolearm", "IsSword", "Is2HSword", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsPlate" },
+
+	[8] = --Mage
+	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "Is2HSword", "IsMace", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield" },
+
+	[9] = -- Warlock
+	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "Is2HSword", "IsMace", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield" },
+
+	[10] = -- Monk
+	{ "IsDagger", "Is2HAxe", "Is2HMace", "Is2HSword", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsMail", "IsPlate", "IsShield", "IsOffHand" },
+
+	[11] = -- Druid
+	{ "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsAxe", "Is2HAxe", "IsSword", "Is2HSword", "IsWarglaive", "IsOffHand", "IsMail", "IsPlate", "IsShield" },
+	-- Note: feral and guardian artifacts are actually off-hand items, even though druids can't normally equip them.
+
+	[12] = -- Demon Hunter
+	{ "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield" },
+}
