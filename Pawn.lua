@@ -1025,6 +1025,7 @@ function PawnGetItemData(ItemLink)
 
 		if InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT" then
 			-- We convert ranged weapons into the correct "handedness" of weapons since there's no ranged slot anymore.
+			-- REVIEW: *** This will cause problems on WoW Classic
 			if Item.Stats and Item.Stats.IsWand then
 				InvType = "INVTYPE_WEAPONMAINHAND"
 			else

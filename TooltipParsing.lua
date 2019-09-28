@@ -138,9 +138,6 @@ PawnRegexes =
 	{PawnGameConstant(INVTYPE_LEGS)}, -- Legs
 	{PawnGameConstant(INVTYPE_FINGER)}, -- Finger
 	{PawnGameConstant(INVTYPE_TRINKET)}, -- Trinket
-	{PawnGameConstant(MAJOR_GLYPH)}, -- Major Glyph
-	{PawnGameConstant(MINOR_GLYPH)}, -- Minor Glyph
-	{PawnGameConstant(PRIME_GLYPH)}, -- Prime Glyph
 	{PawnGameConstant(MOUNT)}, -- Cenarion War Hippogryph
 	{PawnGameConstantIgnoredPlaceholder(ITEM_CLASSES_ALLOWED)}, -- Classes:
 	{PawnGameConstantIgnoredPlaceholder(ITEM_RACES_ALLOWED)}, -- Races:
@@ -265,6 +262,12 @@ PawnRegexes =
 	{L.Healing2, "Healing"},
 	{L.SpellPower, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- enchantments
 	{PawnGameConstant(EMPTY_SOCKET_PRISMATIC), "PrismaticSocket", 1, PawnMultipleStatsFixed},
+
+	-- In WoW Classic, crossbows, guns, and wands don't show "Ranged" and instead show the weapon type on the left.
+	{L.Bow, "IsBow", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
+	{L.Crossbow, "IsCrossbow", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
+	{L.Gun, "IsGun", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
+	{L.Wand, "IsWand", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
 
 	-- ========================================
 	-- Rare strings that are ignored (common ones are at the top of the file)
