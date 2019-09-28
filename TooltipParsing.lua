@@ -196,6 +196,7 @@ PawnRegexes =
 	{L.Parry, "ParryRating"},
 	{L.Parry2, "ParryRating"}, -- unused in English
 	{L.DefenseSkill, "DefenseRating"}, 
+	{L.DefenseSkillSimple, "DefenseRating"}, 
 	{L.BlockPercent, "BlockRating"}, 
 	{L.Block, "BlockValue"}, 
 	{L.BlockValue, "BlockValue"}, 

@@ -271,6 +271,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Crossbow"] = "^Crossbow$",
 		["Dagger"] = "^Dagger$",
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Disenchanting requires",
 		["Dodge"] = "^%+?#%%? Dodge$",
 		["Dodge2"] = "^UNUSED$",
