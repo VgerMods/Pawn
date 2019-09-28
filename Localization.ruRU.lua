@@ -317,6 +317,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Dagger"] = "^Кинжал$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Требуется",
 		["Dodge"] = "^%+?#%%? к уклонению$",
 		["Dodge2"] = "^%+?#%%? к показателю уклонения$",

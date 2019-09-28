@@ -320,6 +320,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Dagger"] = "^Daga$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Desencantar requiere",
 		["Dodge"] = "^%+?#%%? esquivar$",
 		["Dodge2"] = "^UNUSED$",

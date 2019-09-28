@@ -317,6 +317,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Dagger"] = "^Adaga$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Desencantamento necessita",
 		["Dodge"] = "^%+?#%%? Esquiva$",
 		["Dodge2"] = "^%+?# de Esquiva$",

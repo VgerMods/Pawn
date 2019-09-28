@@ -319,6 +319,7 @@ PawnLocal =
 		["Dagger"] = "^匕首$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^分解需要",
 		["Dodge"] = "^%+?#%%?閃躲$",
 		["Dodge2"] = "^裝備: 提高#%%?點閃躲等級。$",

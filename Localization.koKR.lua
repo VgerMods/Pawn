@@ -317,6 +317,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Dagger"] = "^단검$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^마력 추출 요구 사항",
 		["Dodge"] = "^회피 %+?#%%?$",
 		["Dodge2"] = "^UNUSED$",

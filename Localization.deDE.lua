@@ -316,6 +316,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Dagger"] = "^Dolch$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Entzaubern benötigt",
 		["Dodge"] = "^%+?#%%? Ausweichen$",
 		["Dodge2"] = "^UNUSED$",
