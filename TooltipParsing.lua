@@ -2,7 +2,6 @@
 -- www.vgermods.com
 -- © 2006-2019 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
-
 -- 
 -- Tooltip parsing strings
 ------------------------------------------------------------
@@ -10,6 +9,11 @@
 -- For conciseness
 local L = PawnLocal.TooltipParsing
 
+if PawnLocal.ThousandsSeparator == "NBSP" then PawnLocal.ThousandsSeparator = "\194\160" end
+local Key, Value
+for Key, Value in pairs(L) do
+	L[Key] = gsub(Value, "#", "(-?[%%d%%.,\194\160]+)")
+end
 
 ------------------------------------------------------------
 -- Tooltip parsing expressions
