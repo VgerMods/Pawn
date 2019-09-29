@@ -190,28 +190,28 @@ PawnRegexes =
 	{L.EnchantmentTitaniumWeaponChain, "HasteRating", 28, PawnMultipleStatsFixed}, -- Weapon enchantment; also reduces disarm duration (may be obsolete?)
 	{L.EnchantmentPyriumWeaponChain, "HasteRating", 8, PawnMultipleStatsFixed}, -- Weapon enchantment; also reduces disarm duration
 	{L.EnchantmentLivingSteelWeaponChain, "CritRating", 13, PawnMultipleStatsFixed}, -- Weapon enchantment; also reduces disarm duration
-	{L.Dodge, "DodgeRating"}, -- Uppercase: Subtle Alicite, Arctic Ring of Eluding, Cata head enchantment for tanks
+	{L.Dodge, "DodgeRating"}, -- /pawn compare item:789::::::1754
 	{L.Dodge2, "DodgeRating"}, -- unused in English
-	{L.DodgePercent, "DodgeRating"},
+	{L.DodgePercent, "DodgeRating"}, -- /pawn compare 11755
 	{L.Parry, "ParryRating"},
 	{L.Parry2, "ParryRating"}, -- unused in English
-	{L.DefenseSkill, "DefenseRating"}, 
-	{L.DefenseSkillSimple, "DefenseRating"}, 
-	{L.BlockPercent, "BlockRating"}, 
-	{L.Block, "BlockValue"}, 
-	{L.BlockValue, "BlockValue"}, 
+	{L.DefenseSkill, "DefenseRating"}, -- /pawn compare 19867
+	{L.DefenseSkillSimple, "DefenseRating"}, -- /pawn compare item:789::::::89
+	{L.BlockPercent, "BlockRating"}, -- /pawn compare 18499
+	{L.Block, "BlockValue"}, -- /pawn compare 18499
+	{L.BlockValue, "BlockValue"}, -- /pawn compare 18499
 	{L.Dps}, -- Ignore this; DPS is calculated manually
 	{L.DpsAdd, "Dps"},
 	{L.EnchantmentFieryWeapon, "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment
 	{L.Crit, "CritRating"},
 	{L.Crit2, "CritRating"},
-	{L.CritPercent, "CritRating"},
+	{L.CritPercent, "CritRating"}, -- /pawn compare 15062
 	{L.ScopeCrit, "CritRating"},
 	{L.ScopeRangedCrit, "CritRating"}, -- Heartseeker Scope
-	{L.SpellCrit, "SpellCritRating"},
-	{L.Hit, "HitRating"},
+	{L.SpellCrit, "SpellCritRating"}, -- /pawn compare 16947
+	{L.Hit, "HitRating"}, -- /pawn compare 16947
 	{L.Hit2, "HitRating"}, -- unused in English
-	{L.SpellHit, "SpellHitRating"},
+	{L.SpellHit, "SpellHitRating"}, -- /pawn compare 16795
 	{L.Resilience, "Stamina"}, -- Mystic Dawnstone
 	{L.Resilience2, "Stamina"}, -- unused in English
 	{L.PvPPower, "Stamina"}, -- Stormy Chalcedony
@@ -225,12 +225,12 @@ PawnRegexes =
 	{L.Avoidance, "Avoidance"}, -- http://wod.wowhead.com/item=100945
 	{PawnGameConstant(STAT_STURDINESS), "Indestructible", 1, PawnMultipleStatsFixed}, -- http://wod.wowhead.com/item=100945
 	{L.MovementSpeed, "MovementSpeed"}, -- http://wod.wowhead.com/item=100945
-	{L.Ap, "Ap"}, -- http://legion.wowhead.com/item=50035/black-bruise
-	{L.Ap2, "Ap"}, -- https://classic.wowhead.com/item=15062/devilsaur-leggings
-	{L.Rap, "Rap"},
-	{L.FeralAp, "FeralAp"},
-	{L.Mp5, "Mp5"},
-	{L.Mp52, "Mp5"},
+	{L.Ap, "Ap"}, -- /pawn compare item:789::::::1547
+	{L.Ap2, "Ap"}, -- /pawn compare 15062
+	{L.Rap, "Rap"}, -- /pawn compare 18473
+	{L.FeralAp, "FeralAp"}, -- /pawn compare 22988
+	{L.Mp5, "Mp5"}, -- /pawn compare 22988
+	{L.Mp52, "Mp5"}, -- /pawn compare item:789::::::2074
 	{L.Hp5, "Hp5"}, -- (on live, we used to count 1 HP5 = 3 Stamina)
 	{L.Hp52, "Hp5"}, -- Demon's Blood
 	{L.Hp53, "Hp5"}, -- Aquamarine Signet of Regeneration
@@ -240,27 +240,27 @@ PawnRegexes =
 	{L.Armor, "Armor"}, -- normal armor and cloak armor enchantments
 	{L.Armor2, "Armor"}, -- unused in English
 	{L.EnchantmentArmorKit, "Armor"}, -- armor kits
-	{L.FireResist, "FireResist"},
-	{L.NatureResist, "NatureResist"},
-	{L.FrostResist, "FrostResist"},
-	{L.ShadowResist, "ShadowResist"},
-	{L.ArcaneResist, "ArcaneResist"},
+	{L.FireResist, "FireResist"}, -- /pawn compare 12609
+	{L.NatureResist, "NatureResist"}, -- /pawn compare 12609
+	{L.FrostResist, "FrostResist"}, -- /pawn compare 12609
+	{L.ShadowResist, "ShadowResist"}, -- /pawn compare 12609
+	{L.ArcaneResist, "ArcaneResist"}, -- /pawn compare 12609
 	{L.SpellDamage, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract},
-	{L.SpellDamage2, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract},
-	{L.FireSpellDamage, "FireSpellDamage"},
-	{L.FireSpellDamage2, "FireSpellDamage"},
-	{L.ShadowSpellDamage, "ShadowSpellDamage"},
-	{L.ShadowSpellDamage2, "ShadowSpellDamage"},
-	{L.NatureSpellDamage, "NatureSpellDamage"},
-	{L.NatureSpellDamage2, "NatureSpellDamage"},
-	{L.ArcaneSpellDamage, "ArcaneSpellDamage"},
-	{L.ArcaneSpellDamage2, "ArcaneSpellDamage"},
-	{L.FrostSpellDamage, "FrostSpellDamage"},
-	{L.FrostSpellDamage2, "FrostSpellDamage"},
+	{L.SpellDamage2, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- /pawn compare 16947
+	{L.FireSpellDamage, "FireSpellDamage"}, -- /pawn compare item:789::::::1878
+	{L.FireSpellDamage2, "FireSpellDamage"}, -- /pawn compare 944
+	{L.ShadowSpellDamage, "ShadowSpellDamage"}, -- /pawn compare item:789::::::1841
+	{L.ShadowSpellDamage2, "ShadowSpellDamage"}, -- /pawn compare 1980
+	{L.NatureSpellDamage, "NatureSpellDamage"}, -- /pawn compare item:789::::::1997
+	{L.NatureSpellDamage2, "NatureSpellDamage"}, -- /pawn compare 18829
+	{L.ArcaneSpellDamage, "ArcaneSpellDamage"}, -- /pawn compare item:789::::::1801
+	{L.ArcaneSpellDamage2, "ArcaneSpellDamage"}, -- /pawn compare 19308
+	{L.FrostSpellDamage, "FrostSpellDamage"}, -- /pawn compare item:789::::::1954
+	{L.FrostSpellDamage2, "FrostSpellDamage"}, -- /pawn compare 944
 	{L.HolySpellDamage, "HolySpellDamage"},
-	{L.HolySpellDamage2, "HolySpellDamage"},
-	{L.Healing, "Healing"},
-	{L.Healing2, "Healing"},
+	{L.HolySpellDamage2, "HolySpellDamage"}, -- /pawn compare 20504
+	{L.Healing, "Healing"}, -- /pawn compare item:789::::::2028
+	{L.Healing2, "Healing"}, -- /pawn compare 16947
 	{L.SpellPower, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- enchantments
 	{PawnGameConstant(EMPTY_SOCKET_PRISMATIC), "PrismaticSocket", 1, PawnMultipleStatsFixed},
 
