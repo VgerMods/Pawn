@@ -802,24 +802,36 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 	if (not PawnItemCache) or (#PawnItemCache == 0) then return end
 	-- If debug mode is on, the cache is disabled.
 	if PawnCommon.Debug then return end
+	-- If this is WoW Classic, the cache is also disabled.
+	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
+	-- *** Maybe clear an item from the cache whenever GET_ITEM_INFO_RECEIVED(ID, true) occurs?
+	if GetExpansionLevel() == 0 then return end
+
+	--VgerCore.Message("Searching cache for: " .. tostring(ItemLink) .. " aka " .. tostring(ItemName) .. " with " .. tostring(NumLines) .. " lines...") -- ***
 
 	-- Otherwise, search the item cache for this item.
 	local _
 	for _, CachedItem in pairs(PawnItemCache) do
 		if (not NumLines) or (NumLines == CachedItem.NumLines) then
 			if ItemLink and CachedItem.Link then
-				if ItemLink == CachedItem.Link then return CachedItem end
-			else
-				if ItemName == CachedItem.Name then return CachedItem end
+				if ItemLink == CachedItem.Link then
+					--VgerCore.Message("  Found it!  " .. CachedItem.NumLines .. " lines.") -- ***
+					return CachedItem
+				end
 			end
 		end
 	end
+
+	--VgerCore.Message("  No luck.") -- ***
 end
 
 -- Adds an item to the item cache, removing existing items if necessary.
 function PawnCacheItem(CachedItem)
 	-- If debug mode is on, the cache is disabled.
 	if PawnCommon.Debug then return end
+	-- If this is WoW Classic, the cache is also disabled.
+	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
+	if GetExpansionLevel() == 0 then return end
 	
 	-- Cache it.
 	if PawnItemCacheMaxSize <= 0 then return end
@@ -1010,7 +1022,7 @@ function PawnGetItemData(ItemLink)
 	end
 	
 	-- Now, with that information, we can look up the item in the Pawn item cache.
-	local Item = PawnGetCachedItem(ItemLink, ItemName, ItemNumLines)
+	local Item = PawnGetCachedItem(ItemLink, ItemName)
 	if not Item and not NewItemLink then
 		-- The item isn't in the user's WoW cache or Pawn cache.  Bail out now.
 		if PawnCommon.DebugCache then VgerCore.Message("Pawn debug cache: PawnGetItemData is bailing out because it didn't get item data in time for " .. ItemLink) end
@@ -1023,7 +1035,7 @@ function PawnGetItemData(ItemLink)
 
 	-- If we don't have a cached item at all, that means we have to load a tooltip and parse it.
 	if not Item then
-		Item = PawnGetEmptyCachedItem(ItemLink, ItemName, ItemNumLines)
+		Item = PawnGetEmptyCachedItem(ItemLink, ItemName)
 		Item.Rarity = ItemRarity
 		Item.Level = GetDetailedItemLevelInfo(ItemLink) or ItemLevel -- The level from GetItemInfo doesn't take into effect upgrades or heirloom scaling
 		Item.ID = ItemID
@@ -1042,6 +1054,7 @@ function PawnGetItemData(ItemLink)
 
 		-- First the enchanted stats.
 		Item.Stats, Item.SocketBonusStats, Item.UnknownLines, Item.PrettyLink = PawnGetStatsFromTooltipWithMethod(PawnPrivateTooltipName, true, "SetHyperlink", Item.Link)
+		Item.NumLines = (_G[PawnPrivateTooltipName]):NumLines()
 
 		if InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT" then
 			-- We convert ranged weapons into the correct "handedness" of weapons since there's no ranged slot anymore.
@@ -1195,7 +1208,8 @@ function PawnGetItemDataFromTooltip(TooltipName, MethodName, Param1, ...)
 	if (not ItemName) or (not ItemNameLineNumber) then return end
 	local Tooltip = _G[TooltipName]
 	local ItemNumLines = Tooltip:NumLines()
-	local Item = PawnGetCachedItem(nil, ItemName, ItemNumLines)
+	local ItemLink = PawnGetItemLinkFromTooltip(TooltipName, MethodName, Param1, ...)
+	local Item = PawnGetCachedItem(ItemLink, ItemName, ItemNumLines)
 	if Item and Item.Values then
 		return Item
 	end
@@ -1203,7 +1217,7 @@ function PawnGetItemDataFromTooltip(TooltipName, MethodName, Param1, ...)
 	
 	-- Ugh, the tooltip doesn't have item information and this item isn't in the Pawn item cache, so we'll have to try to parse this tooltip.	
 	if not Item then
-		Item = PawnGetEmptyCachedItem(nil, ItemName, ItemNumLines)
+		Item = PawnGetEmptyCachedItem(ItemLink, ItemName, ItemNumLines)
 		PawnDebugMessage(" ")
 		PawnDebugMessage("====================")
 		PawnDebugMessage(VgerCore.Color.Green .. ItemName)

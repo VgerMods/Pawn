@@ -547,11 +547,25 @@ and Pawn.</p>
 	Pawn's Compare tab.<ul>
 		<li>The compare command accepts item IDs, "item:12345:0:0" strings, or 
 		full shift+clicked item links ("/pawn compare [Arcanist's Crown]").</li>
+		<li>If your PC hasn't downloaded the stats for an item yet, the command 
+		might not do anything the first time.&nbsp; Try it again (Enter, 
+		Shift+Up, Enter) after a second and it should work the second time.</li>
 		<li>Addon authors can use "PawnUI_SetCompareItemAndShow(1, 16795)" to 
 		accomplish the same thing.&nbsp; (1 for left, 2 for right.)</li>
 	</ul>
 	</li>
 	<li>Fixed a problem where armor was being ignored in French WoW.</li>
+	<li>WoW Classic: Worked around a problem where Pawn would sometimes not see 
+	all of the stats on an item (typically, the "green stats").<ul>
+		<li>This workaround will result in slightly lower performance on WoW 
+		Classic.&nbsp; I'm still investigating a better long-term solution.</li>
+		<li>For the curious, it's because the game client would get a partial 
+		list of stats for the item, then Pawn would do its calculations on that, 
+		and then shortly afterward the game would get the rest of the stats for 
+		the item, but at that point Pawn didn't know that it needed to re-scan 
+		the item.</li>
+	</ul>
+	</li>
 	<li>WoW Classic: Removed "All Resistances", which does not appear to exist 
 	on any items in Classic.</li>
 	<li>WoW Classic: Added support for "of Concentration" items.</li>
