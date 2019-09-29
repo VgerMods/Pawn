@@ -28,9 +28,10 @@ local IsClassic = GetExpansionLevel() == 0
 ------------------------------------------------------------
 
 -- Check for using Classic on a non-English system. ***
-if IsClassic and GetLocale() ~= "enUS" then
-	message("Sorry, Pawn currently supports English on WoW Classic.  I'm working to support all languages soon.")
-	VgerCore.Fail("Sorry, Pawn currently supports English on WoW Classic.  I'm working to support all languages soon.")
+if IsClassic and GetLocale() ~= "enUS" and GetLocale() ~= "frFR" then
+	local WrongClassicLocaleMessage = "Sorry, Pawn currently supports English and French on WoW Classic.  I'm working to support all languages soon."
+	message(WrongClassicLocaleMessage)
+	VgerCore.Fail(WrongClassicLocaleMessage)
 end
 
 -- The languages that Pawn is currently translated into (http://www.wowpedia.org/API_GetLocale)

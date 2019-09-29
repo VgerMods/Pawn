@@ -283,29 +283,20 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?# Agilité$",
-		--[[Translation missing --]]
-		["AllResist"] = "^%+?# All Resistances$",
 		["AllStats"] = "^%+?# à toutes les caractéristiques$",
 		["Ap"] = "^%+?# à la puissance d'attaque$",
-		--[[Translation missing --]]
-		["Ap2"] = "^Equip: %+# Attack Power%.$",
-		--[[Translation missing --]]
-		["ArcaneResist"] = "^%+?# Arcane Resistance$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "^%+# Arcane Spell Damage$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",
-		["Armor"] = "^ArmureNBSP: #$",
+		["Ap2"] = "^Equipé : %+# à la puissance d'attaque%.$",
+		["ArcaneResist"] = "^%+?# à la résistance Arcanes$",
+		["ArcaneSpellDamage"] = "^%+# aux dégâts des sorts des Arcanes$",
+		["ArcaneSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets des Arcanes de # au maximum%.$",
+		["Armor"] = "^Armure..?: #$",
 		["Armor2"] = "^UNUSED$",
 		["Avoidance"] = "^%+# Évitement$",
 		["Axe"] = "^Hache$",
 		["BagSlots"] = "^Sac %d+ .+$",
-		--[[Translation missing --]]
-		["Block"] = "^%+?([-%d%.,]+) Block$",
-		--[[Translation missing --]]
-		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		--[[Translation missing --]]
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%%%.$",
+		["Block"] = "^Bloquer : #$",
+		["BlockPercent"] = "^Equipé : Augmente vos chances de bloquer les attaques avec un bouclier de #%%%.$",
+		["BlockValue"] = "^Equipé : Augmente le score de blocage de votre bouclier de #%.$",
 		["Bow"] = "^Arc$",
 		["ChanceOnHit"] = "Chances de toucher :",
 		["Charges"] = "^.+ Charges?$",
@@ -313,18 +304,15 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["CooldownRemaining"] = "^Temps de recharge restant:",
 		["Crit"] = "^%+?# Score de crit%.?$",
 		["Crit2"] = "^%+?# au score de critique$",
-		--[[Translation missing --]]
-		["CritPercent"] = "^Equip: Improves your chance to get a critical strike by #%%%.$",
+		["CritPercent"] = "^Equipé : Augmente vos chances d'infliger un coup critique de #%%%.$",
 		["Crossbow"] = "^Arbalète$",
 		["Dagger"] = "^Dague$",
-		--[[Translation missing --]]
-		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
-		["DefenseSkillSimple"] = "^%+?# Defense$",
+		["DefenseSkill"] = "^Equipé : Défense augmentée de #%.$",
+		["DefenseSkillSimple"] = "^%+?# Défense$",
 		["DisenchantingRequires"] = "^L'enchantement requiert",
 		["Dodge"] = "^%+?#%%? Esquive$",
 		["Dodge2"] = "^%+?# à l'esquive$",
-		--[[Translation missing --]]
-		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
+		["DodgePercent"] = "^Equipé : Augmente vos chances d'esquiver une attaque de #%%%.$",
 		["Dps"] = "^%(# dégâts par seconde%)$",
 		["DpsAdd"] = "^Ajoute # dégâts par seconde$",
 		["Duration"] = "^Durée :",
@@ -338,47 +326,34 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["EnchantmentPyriumWeaponChain"] = "^Dragonne en pyrium$",
 		["EnchantmentTitaniumWeaponChain"] = "^Dragonne en titane$",
 		["Equip"] = "Équipé :",
-		--[[Translation missing --]]
-		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
-		--[[Translation missing --]]
-		["FireResist"] = "^%+?# Fire Resistance$",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "^%+# Fire Spell Damage$",
-		--[[Translation missing --]]
-		["FireSpellDamage2"] = "^Equip: Increases damage done by Fire spells and effects by up to #%.$",
+		["FeralAp"] = "^Equipé : %+# à la puissance d'attaque pour les formes de félin, d'ours et d'ours redoutable uniquement%.$",
+		["FireResist"] = "^%+?# à la résistance Feu$",
+		["FireSpellDamage"] = "^%+# aux dégâts des sorts de Feu$",
+		["FireSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets de Feu de # au maximum%.$",
 		["FistWeapon"] = "^Arme de pugilat$",
 		["Flexible"] = "^Flexible$",
-		--[[Translation missing --]]
-		["FrostResist"] = "^%+?# Frost Resistance$",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "^%+# Frost Spell Damage$",
-		--[[Translation missing --]]
-		["FrostSpellDamage2"] = "^Equip: Increases damage done by Frost spells and effects by up to #%.$",
+		["FrostResist"] = "^%+?# à la résistance Givre$",
+		["FrostSpellDamage"] = "^%+# aux dégâts des sorts de Givre$",
+		["FrostSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets de Givre de # au maximum%.$",
 		["Gun"] = "^Arme à feu$",
 		["Haste"] = "^%+?# Hâte$",
 		["Haste2"] = "^%+?# à la Hâte",
 		["HaventCollectedAppearance"] = "^Vous n'avez pas récupéré cette apparence$",
-		--[[Translation missing --]]
-		["Healing"] = "^%+# Healing Spells$",
-		--[[Translation missing --]]
-		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing"] = "^%+# aux sorts de soins$",
+		["Healing2"] = "^Equipé : Augmente les soins prodigués par les sorts et effets de # au maximum%.$",
 		["HeirloomLevelRange"] = "^Requier un niveau de %d+ à (%d+)",
-		["HeirloomXpBoost"] = "^ÉquipéNBSP: L?'?[Ee]xpérience gagnée",
+		["HeirloomXpBoost"] = "^Equipé : L?'?[Ee]xpérience gagnée",
 		["HeirloomXpBoost2"] = "^UNUSED$",
 		["Heroic"] = "^Héroïque$",
 		["HeroicElite"] = "^Héroïque élite$",
 		["HeroicThunderforged"] = "^Foudroyant héroïque$",
 		["HeroicWarforged"] = "^De guerre héroïque$",
-		--[[Translation missing --]]
-		["Hit"] = "^Equip: Improves your chance to hit by #%%%.$",
-		--[[Translation missing --]]
+		["Hit"] = "^Equipé : Augmente vos chances de toucher de #%%%.$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
-		--[[Translation missing --]]
-		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
+		["HolySpellDamage"] = "^%+# aux dégâts des sorts du Sacré$",
+		["HolySpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets du Sacré de # au maximum%.$",
 		["Hp5"] = " ^%+?# Points de [vV]ie [tT]outes les 5 [sS]%.?$",
-		["Hp52"] = "^Equipé: Reconstitue# de vie par 5 sec%.$",
+		["Hp52"] = "^Equipé : Reconstitue# de vie par 5 sec%.$",
 		["Hp53"] = " ^%+?# Points de [vV]ie [tT]outes les 5 [sS]%.?$",
 		["Hp54"] = " ^%+?# [vV]ie [pP]ar 5 [sS]ec%.?$",
 		["Intellect"] = "^%+?# Intelligence$",
@@ -390,51 +365,39 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["Mastery2"] = "^%+?# à la maîtrise$",
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%xNécessite",
 		["MovementSpeed"] = "^%+# Vitesse$",
-		--[[Translation missing --]]
-		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
-		["Mp52"] = "^%+?# mana every 5 sec%.$",
+		["Mp5"] = "^Equipé : Rend # points de mana toutes les 5 secondes%.$",
+		["Mp52"] = "^%+?# points de mana toutes les 5 sec%.$",
 		["MultiStatHeading"] = "^Stats Multiple$",
 		["MultiStatSeparator1"] = "et",
 		["Multistrike"] = "^%+# Frappe multiple$",
-		--[[Translation missing --]]
-		["NatureResist"] = "^%+?# Nature Resistance$",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "^%+# Nature Spell Damage$",
-		--[[Translation missing --]]
-		["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
-		["NormalizationEnchant"] = "^EnchantéNBSP: (.*)$",
+		["NatureResist"] = "^%+?# à la résistance Nature$",
+		["NatureSpellDamage"] = "^%+# aux dégâts des sorts de Nature$",
+		["NatureSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets de Nature de # au maximum%.$",
+		["NormalizationEnchant"] = "^Enchanté : (.*)$",
 		["Parry"] = "^%+?# Parade$",
 		["Parry2"] = "^%+?# à la parade$",
 		["Plate"] = "^Plaques$",
 		["Polearm"] = "^Arme d'hast$",
 		["PvPPower"] = "^%+?# [Pp]uissance %(JcJ%)$",
 		["RaidFinder"] = "^Outil Raids$",
-		--[[Translation missing --]]
-		["Rap"] = "^Equip: %+# ranged Attack Power%.$",
+		["Rap"] = "^Equipé : %+# à la puissance des attaques à distance%.$",
 		["Requires2"] = "^Niveau [%d%.,]+ requis$",
 		["Resilience"] = "^%+?# Résilience %(JcJ%)$",
 		["Resilience2"] = "^%+?# à la résilience %(JcJ%)$",
 		["Scope"] = "^Lunette %(%+# points de dégâts%)$",
 		["ScopeCrit"] = "^Lunette %(%+# au score de critique%)$",
 		["ScopeRangedCrit"] = "^%+?# au score de critique à distance$",
-		--[[Translation missing --]]
-		["ShadowResist"] = "^%+?# Shadow Resistance$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowResist"] = "^%+?# à la résistance Ombre$",
+		["ShadowSpellDamage"] = "^%+# aux dégâts des sorts d'Ombre$",
+		["ShadowSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets d'Ombre de # au maximum%.$",
 		["Shield"] = "^Bouclier$",
 		["SocketBonusPrefix"] = "Bonus de sertissage :",
 		["Speed"] = "^Vitesse #$",
 		["Speed2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by ([-%d%.,]+)%%%.$",
-		--[[Translation missing --]]
-		["SpellDamage"] = "^%+# Spell Damage$",
-		--[[Translation missing --]]
-		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to ([-%d%.,]+)%.$",
-		--[[Translation missing --]]
-		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
+		["SpellCrit"] = "^Equipé : Augmente vos chances d'infliger un coup critique avec vos sorts de #%%%.$",
+		["SpellDamage"] = "^%+# aux dégâts des sorts$",
+		["SpellDamage2"] = "^Equipé : Augmente les dégâts et les soins produits par les sorts et effets magiques de # au maximum%.$",
+		["SpellHit"] = "^Equipé : Augmente vos chances de toucher avec des sorts de #%%%.$",
 		["SpellPower"] = "^%+?# Puissance des sorts$",
 		["Spirit"] = "^%+?# Esprit$",
 		["Staff"] = "^Bâton$",
@@ -456,7 +419,7 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["WeaponDamageArcane"] = "^%+?# %- # points de dégâts %(Arcanes%)$",
 		["WeaponDamageArcaneExact"] = "^%+?# points de dégâts %(Arcanes%)$",
 		["WeaponDamageEnchantment"] = "^%+?# aux dégâts de l'arme$",
-		["WeaponDamageEquip"] = "^ÉquipéNBSP: %+?# aux dégâts de l'arme%.$",
+		["WeaponDamageEquip"] = "^Equipé : %+?# aux dégâts de l'arme%.$",
 		["WeaponDamageExact"] = "^# Dégâts$",
 		["WeaponDamageFire"] = "^%+?# %- # points de Dégâts %(Feu%)$",
 		["WeaponDamageFireExact"] = "^%+?# points de dégâts %(Feu%)$",

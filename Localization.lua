@@ -254,7 +254,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["BagSlots"] = "^%d+ Slot .+$",
 		["Block"] = "^%+?# Block$",
 		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%%%.$",
+		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
 		["Bow"] = "^Bow$",
 		["ChanceOnHit"] = "Chance on hit:",
 		["Charges"] = "^.+ Charges?$",
