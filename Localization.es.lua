@@ -393,6 +393,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["MovementSpeed"] = "^%+# velocidad$",
 		--[[Translation missing --]]
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^Estadisticas multiples$",
 		["MultiStatSeparator1"] = "y",
 		["Multistrike"] = "^%+# multigolpe$",

@@ -389,6 +389,7 @@ PawnLocal =
 		["MovementSpeed"] = "^%+# 加速$",
 		--[[Translation missing --]]
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^多项统计$",
 		["MultiStatSeparator1"] = "和",
 		["Multistrike"] = "^%+# 溅射$",

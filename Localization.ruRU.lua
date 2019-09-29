@@ -390,6 +390,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["MovementSpeed"] = "^%+# к скорости передвижения$",
 		--[[Translation missing --]]
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^Различные характеристики$",
 		["MultiStatSeparator1"] = "и",
 		["Multistrike"] = "^%+# к многократной атаке$",

@@ -390,6 +390,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["MovementSpeed"] = "^이동 속도 %+#$",
 		--[[Translation missing --]]
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^다수의 능력치$",
 		["MultiStatSeparator1"] = "/",
 		["Multistrike"] = "^연속타격 %+#$",

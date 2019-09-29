@@ -389,6 +389,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["MovementSpeed"] = "^%+# Bewegungsgeschwindigkeit$",
 		--[[Translation missing --]]
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^Mehrere Werte$",
 		["MultiStatSeparator1"] = "und",
 		["Multistrike"] = "^%+# Mehrfachschlag$",

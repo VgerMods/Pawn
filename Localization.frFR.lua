@@ -392,6 +392,7 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["MovementSpeed"] = "^%+# Vitesse$",
 		--[[Translation missing --]]
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^Stats Multiple$",
 		["MultiStatSeparator1"] = "et",
 		["Multistrike"] = "^%+# Frappe multiple$",
