@@ -748,16 +748,36 @@ end
 function PawnCommand(Command)
 	if Command == "" then
 		PawnUIShow()
-	elseif Command == PawnLocal.DebugOnCommand then
+	elseif Command == "debug on" then
 		PawnCommon.Debug = true
 		PawnResetTooltips()
 		if PawnUIFrame_DebugCheck then PawnUIFrame_DebugCheck:SetChecked(PawnCommon.Debug) end
-	elseif Command == PawnLocal.DebugOffCommand then
+	elseif Command == "debug off" then
 		PawnCommon.Debug = false
 		PawnResetTooltips()
 		if PawnUIFrame_DebugCheck then PawnUIFrame_DebugCheck:SetChecked(PawnCommon.Debug) end
-	elseif Command == PawnLocal.BackupCommand then
+	elseif Command == "backup" then
 		PawnUIExportAllScales()
+	elseif strsub(Command, 1, 7) == "compare" then
+		local CompareIndex, ItemLink
+		if strsub(Command, 9, 13) == "left " then
+			CompareIndex = 1
+			ItemLink = strsub(Command, 14)
+		elseif strsub(Command, 9, 14) == "right " then
+			CompareIndex = 2
+			ItemLink = strsub(Command, 15)
+		else
+			CompareIndex = 2
+			ItemLink = strsub(Command, 9)
+		end
+		if strlen(ItemLink) > 0 then
+			PawnUI_SetCompareItemAndShow(CompareIndex, ItemLink)
+		else
+			VgerCore.Message("Usage: /pawn compare [ left | right ] ItemID | ItemLink")
+			VgerCore.Message("  /pawn compare left 16795")
+			VgerCore.Message("  /pawn compare item:16795:0:0")
+			VgerCore.Message("  /pawn compare right |cffa335ee|Hitem:16795|h[Arcanist Crown]|h|r")
+		end
 	else
 		PawnUsage()
 	end

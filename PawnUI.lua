@@ -996,7 +996,7 @@ function PawnUI_SetCompareItem(Index, ItemLink)
 		VgerCore.Fail("Index must be 1 or 2.")
 		return
 	end
-	
+
 	-- Get the item data for this item link; we can't do a comparison without it.
 	local Item
 	if ItemLink then
@@ -1008,7 +1008,14 @@ function PawnUI_SetCompareItem(Index, ItemLink)
 				VgerCore.Fail("Second parameter must be an item link or item data from PawnGetItemData.")
 				return
 			end
+		elseif type(ItemLink) == "number" or tonumber(ItemLink) ~= nil then
+			ItemLink = "item:" .. ItemLink
+			Item = PawnGetItemData(ItemLink)
+			-- If Item is nil, then that item isn't actually a valid item with stats, so we shouldn't allow it in the compare UI.
+			if not Item then return end
 		else
+			-- Check to make sure it's an item link and not, say, a battle pet.
+			if PawnGetHyperlinkType(ItemLink) ~= "item" then return end
 			-- Unenchant the item link.
 			ItemLink = PawnUnenchantItemLink(ItemLink, true)
 			Item = PawnGetItemData(ItemLink)
@@ -1075,12 +1082,6 @@ end
 
 -- Same as PawnUI_SetCompareItem, but shows the Pawn Compare UI if not already visible.
 function PawnUI_SetCompareItemAndShow(Index, ItemLink)
-	if Index ~= 1 and Index ~= 2 then
-		VgerCore.Fail("Index must be 1 or 2.")
-		return
-	end
-	if not ItemLink or PawnGetHyperlinkType(ItemLink) ~= "item" then return end
-	
 	-- Set this as a compare item.
 	local Success = PawnUI_SetCompareItem(Index, ItemLink)
 	if Success then

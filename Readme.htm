@@ -541,10 +541,22 @@ and Pawn.</p>
 <h2>Updates</h2>
 <h3>Version 2.3.3</h3>
 <ul>
+	<li>Added a new Pawn slash command: /pawn compare.&nbsp; You can use this as 
+	an alternate way to put items into Pawn's Compare UI.&nbsp; For example, 
+	"/pawn compare left 16795" puts Arcanist's Crown into the left slot of 
+	Pawn's Compare tab.<ul>
+		<li>The compare command accepts item IDs, "item:12345:0:0" strings, or 
+		full shift+clicked item links ("/pawn compare [Arcanist's Crown]").</li>
+		<li>Addon authors can use "PawnUI_SetCompareItemAndShow(1, 16795)" to 
+		accomplish the same thing.&nbsp; (1 for left, 2 for right.)</li>
+	</ul>
+	</li>
 	<li>Fixed a problem where armor was being ignored in French WoW.</li>
 	<li>WoW Classic: Removed "All Resistances", which does not appear to exist 
 	on any items in Classic.</li>
 	<li>WoW Classic: Added support for "of Concentration" items.</li>
+	<li>Russian and Chinese: For consistency, Pawn's "debug" and "backup" slash 
+	commands are now always in English like they are for all other languages.</li>
 </ul>
 <h3>Version 2.3.2</h3>
 <ul>
