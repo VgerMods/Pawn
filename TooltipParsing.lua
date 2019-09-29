@@ -240,7 +240,6 @@ PawnRegexes =
 	{L.Armor, "Armor"}, -- normal armor and cloak armor enchantments
 	{L.Armor2, "Armor"}, -- unused in English
 	{L.EnchantmentArmorKit, "Armor"}, -- armor kits
-	{L.AllResist, "AllResist"},
 	{L.FireResist, "FireResist"},
 	{L.NatureResist, "NatureResist"},
 	{L.FrostResist, "FrostResist"},

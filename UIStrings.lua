@@ -64,7 +64,6 @@ local PawnStatsUnfiltered =
 	{STAT_STURDINESS, "Indestructible", L.IndestructibleInfo, false, L.IndestructibleIs, PawnStatLiveOnly},
 	{ITEM_MOD_POWER_REGEN0_SHORT, "Mp5", L.Mp5Info, nil, nil, PawnStatClassicOnly},
 	{ITEM_MOD_HEALTH_REGEN_SHORT, "Hp5", L.Hp5Info, nil, nil, PawnStatClassicOnly},
-	{L.AllResist, "AllResist", L.AllResistInfo, nil, nil, PawnStatClassicOnly},
 	{RESISTANCE2_NAME, "FireResist", L.FireResistInfo, nil, nil, PawnStatClassicOnly},
 	{RESISTANCE3_NAME, "NatureResist", L.NatureResistInfo, nil, nil, PawnStatClassicOnly},
 	{RESISTANCE4_NAME, "FrostResist", L.FrostResistInfo, nil, nil, PawnStatClassicOnly},
