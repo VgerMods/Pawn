@@ -329,6 +329,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%xRequires",
 		["MovementSpeed"] = "^%+# Speed$",
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^Multiple Stats$",
 		["MultiStatSeparator1"] = "and",
 		["Multistrike"] = "^%+# Multistrike$",

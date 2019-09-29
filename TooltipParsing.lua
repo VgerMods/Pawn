@@ -230,6 +230,7 @@ PawnRegexes =
 	{L.Rap, "Rap"},
 	{L.FeralAp, "FeralAp"},
 	{L.Mp5, "Mp5"},
+	{L.Mp52, "Mp5"},
 	{L.Hp5, "Hp5"}, -- (on live, we used to count 1 HP5 = 3 Stamina)
 	{L.Hp52, "Hp5"}, -- Demon's Blood
 	{L.Hp53, "Hp5"}, -- Aquamarine Signet of Regeneration
