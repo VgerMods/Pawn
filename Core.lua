@@ -21,7 +21,7 @@ PawnSingleStatMultiplier = "_SingleMultiplier"
 PawnMultipleStatsFixed = "_MultipleFixed"
 PawnMultipleStatsExtract = "_MultipleExtract"
 
-local IsClassic = GetExpansionLevel() == 0
+local IsClassic = VgerCore.IsClassic
 
 ------------------------------------------------------------
 -- Localization

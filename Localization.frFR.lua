@@ -665,7 +665,7 @@ Cette commande ne peut etre défaite!]=],
 
 -- Special case: wands actually use different text on live versus classic.
 -- So, patch things up here.
-if GetExpansionLevel() == 0 then
+if VgerCore.IsClassic then
 
 	local TooltipParsing_Classic =
 	{

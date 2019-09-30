@@ -10,7 +10,7 @@
 PawnVersion = 2.0307
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.10
+local PawnVgerCoreVersionRequired = 1.11
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
@@ -594,7 +594,7 @@ function PawnInitializeOptions()
 	end
 	if PawnCommon.LastVersion < 2.0101 then
 		-- The new Bag Upgrade Advisor is on by default, but it's not supported in Classic.
-		if GetExpansionLevel() == 0 then
+		if VgerCore.IsClassic then
 			PawnCommon.ShowBagUpgradeAdvisor = false
 		else
 			PawnCommon.ShowBagUpgradeAdvisor = true
@@ -614,7 +614,7 @@ function PawnInitializeOptions()
 	end
 	if PawnCommon.LastVersion < 2.0244 then
 		-- The "show item level upgrades" option is new for 2.2.44 and on by default, but NOT in Classic.
-		if GetExpansionLevel() == 0 then
+		if VgerCore.IsClassic then
 			PawnCommon.ShowItemLevelUpgrades = false
 		else
 			PawnCommon.ShowItemLevelUpgrades = true
@@ -628,7 +628,7 @@ function PawnInitializeOptions()
 	PawnOptions.LastVersion = PawnVersion
 
 	-- Pawn on WoW Classic doesn't have Automatic mode.
-	if GetExpansionLevel() == 0 then
+	if VgerCore.IsClassic then
 		PawnOptions.AutoSelectScales = false
 	end
 
@@ -655,7 +655,7 @@ end
 -- Once per new version of Pawn that adds keybindings, bind the new actions to default keys.
 function PawnSetDefaultKeybindings()
 	-- SaveBindings doesn't work on WoW Classic.
-	if GetExpansionLevel() == 0 then return end
+	if VgerCore.IsClassic then return end
 
 	-- It's possible that this will happen before the main initialization code, so we need to ensure that the
 	-- default Pawn options have been set already.  Doing this multiple times is harmless.
@@ -814,7 +814,7 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 	if PawnCommon.Debug then return end
 	-- If this is WoW Classic, the cache is also disabled.
 	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	if GetExpansionLevel() == 0 then return end
+	if VgerCore.IsClassic then return end
 
 	-- Otherwise, search the item cache for this item.
 	local _
@@ -835,7 +835,7 @@ function PawnCacheItem(CachedItem)
 	if PawnCommon.Debug then return end
 	-- If this is WoW Classic, the cache is also disabled.
 	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	if GetExpansionLevel() == 0 then return end
+	if VgerCore.IsClassic then return end
 	
 	-- Cache it.
 	if PawnItemCacheMaxSize <= 0 then return end
@@ -2269,7 +2269,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 	local ThisValue, Stat, Quantity
 	for Stat, Quantity in pairs(Item) do
 		ThisValue = ScaleValues[Stat]
-		if GetExpansionLevel() > 0 then
+		if not VgerCore.IsClassic then
 			-- When not in Classic:
 			-- Attack Power gets converted into Strength or Agility, whichever is most valuable.
 			-- BUG: Since Attack Power doesn't appear in the Values tab, it also won't show on the Compare tab.  The Compare tab

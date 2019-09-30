@@ -138,7 +138,7 @@ local PawnStatsUnfiltered =
 
 -- Filter this list based on expansion level.
 local i, Stat
-local IsClassic = GetExpansionLevel() == 0
+local IsClassic = VgerCore.IsClassic
 PawnStats = {}
 
 for i, Stat in pairs(PawnStatsUnfiltered) do

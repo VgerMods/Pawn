@@ -291,7 +291,7 @@ end -- PawnMrRobotScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if GetExpansionLevel() > 0 then
+if not VgerCore.IsClassic then
 	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.AskMrRobotProvider, PawnMrRobotScaleProvider_AddScales)
 else
 	-- These scales aren't useful on WoW Classic, so skip them.

@@ -1672,7 +1672,7 @@
 				self:RegisterEvent("PLAYER_LOGOUT")
 				self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 				self:RegisterEvent("ITEM_LOCKED")
-				if GetExpansionLevel() > 0 then
+				if not VgerCore.IsClassic then
 					-- These events don't exist on Classic.
 					self:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 					self:RegisterEvent("ARTIFACT_UPDATE")

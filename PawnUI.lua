@@ -566,7 +566,7 @@ function PawnUIFrame_DeleteScaleButton_OnOK(ConfirmationText)
 end
 
 function PawnUI_ScalesTab_SelectFrame()
-	if GetExpansionLevel() == 0 then
+	if VgerCore.IsClassic then
 		PawnUIFrame_AutoManualDivider:Hide()
 		PawnUIFrame_AutoSelectScalesOnButton:Hide()
 		PawnUIFrame_AutoSelectScalesOffButton:Hide()
@@ -1395,7 +1395,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 
 	-- Hack for WoW Classic: after a moment, refresh the whole thing, because we might have gotten
 	-- incomplete data from the tooltip the first time.
-	if not IsAutomatedRefresh and GetExpansionLevel() == 0 then
+	if not IsAutomatedRefresh and VgerCore.IsClassic then
 		local AutomatedRefresh = function()
 			if PawnUIComparisonItems[1] then PawnUIComparisonItems[1] = PawnGetItemData(PawnUIComparisonItems[1].Link) end
 			if PawnUIComparisonItems[2] then PawnUIComparisonItems[2] = PawnGetItemData(PawnUIComparisonItems[2].Link) end
@@ -1779,7 +1779,7 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_UpgradeTrackingList_UpdateSelection()
 
 	-- Advisor options
-	if GetExpansionLevel() == 0 then
+	if VgerCore.IsClassic then
 		-- The bag upgrade advisor isn't supported on Classic.
 		PawnUIFrame_ShowBagUpgradeAdvisorCheck:Hide()
 	else
@@ -1922,7 +1922,7 @@ function PawnUIAboutTabPage_OnShow()
 	if Version then 
 		PawnUIFrame_AboutVersionLabel:SetText(format(PawnUIFrame_AboutVersionLabel_Text, Version))
 	end
-	if GetExpansionLevel() == 0 then
+	if VgerCore.IsClassic then
 		-- WoW Classic doesn't use the Mr. Robot scales, so hide that logo and information.
 		PawnUIFrame_MrRobotLogo:Hide()
 		PawnUIFrame_MrRobotLabel:Hide()
@@ -2371,7 +2371,7 @@ function PawnUI_EnsureLoaded()
 		PawnUIOpenedYet = true
 		PawnUIFrame_ScaleSelector_Refresh()
 		PawnUIFrame_ShowScaleCheck_Label:SetText(format(PawnUIFrame_ShowScaleCheck_Label_Text, UnitName("player")))
-		if GetExpansionLevel() == 0 then
+		if VgerCore.IsClassic then
 			-- WoW Classic doesn't have gems or specs.
 			PawnUIFrameTab4:Hide()
 			PawnUIFrame_IgnoreGemsWhileLevelingCheck:Hide()
