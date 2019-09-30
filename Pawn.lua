@@ -814,10 +814,7 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 	if PawnCommon.Debug then return end
 	-- If this is WoW Classic, the cache is also disabled.
 	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	-- *** Maybe clear an item from the cache whenever GET_ITEM_INFO_RECEIVED(ID, true) occurs?
 	if GetExpansionLevel() == 0 then return end
-
-	--VgerCore.Message("Searching cache for: " .. tostring(ItemLink) .. " aka " .. tostring(ItemName) .. " with " .. tostring(NumLines) .. " lines...") -- ***
 
 	-- Otherwise, search the item cache for this item.
 	local _
@@ -825,14 +822,11 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 		if (not NumLines) or (NumLines == CachedItem.NumLines) then
 			if ItemLink and CachedItem.Link then
 				if ItemLink == CachedItem.Link then
-					--VgerCore.Message("  Found it!  " .. CachedItem.NumLines .. " lines.") -- ***
 					return CachedItem
 				end
 			end
 		end
 	end
-
-	--VgerCore.Message("  No luck.") -- ***
 end
 
 -- Adds an item to the item cache, removing existing items if necessary.
