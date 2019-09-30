@@ -1215,7 +1215,7 @@ end
 
 -- Performs an item comparison.  If the item in either index 1 or index 2 is currently empty, no
 -- item comparison is made and the function silently exits.
-function PawnUI_CompareItems()
+function PawnUI_CompareItems(IsAutomatedRefresh)
 	-- Before doing anything else, clear out the existing comparison data.
 	PawnUICompareItemScore1:SetText("")
 	PawnUICompareItemScore2:SetText("")
@@ -1391,6 +1391,18 @@ function PawnUI_CompareItems()
 			PawnUICompareItemScoreHighlight2:Show()
 			PawnUICompareItemScoreArrow2:Show()
 		end
+	end
+
+	-- Hack for WoW Classic: after a moment, refresh the whole thing, because we might have gotten
+	-- incomplete data from the tooltip the first time.
+	if not IsAutomatedRefresh and GetExpansionLevel() == 0 then
+		local AutomatedRefresh = function()
+			if PawnUIComparisonItems[1] then PawnUIComparisonItems[1] = PawnGetItemData(PawnUIComparisonItems[1].Link) end
+			if PawnUIComparisonItems[2] then PawnUIComparisonItems[2] = PawnGetItemData(PawnUIComparisonItems[2].Link) end
+			PawnUI_CompareItems(true)
+		end
+		C_Timer.After(0.5, AutomatedRefresh)
+		C_Timer.After(1.0, AutomatedRefresh)
 	end
 end
 
