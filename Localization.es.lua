@@ -90,7 +90,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
-		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.  Does not include resistances from items that give All Resistances.",
+		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
 		--[[Translation missing --]]
 		["ArcaneSpellDamage"] = "Arcane Damage",
 		--[[Translation missing --]]
@@ -114,13 +114,13 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
-		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.  Does not include resistances from items that give All Resistances.",
+		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
 		--[[Translation missing --]]
 		["FireSpellDamage"] = "Fire Damage",
 		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
 		--[[Translation missing --]]
-		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.  Does not include resistances from items that give All Resistances.",
+		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
 		--[[Translation missing --]]
 		["FrostSpellDamage"] = "Frost Damage",
 		--[[Translation missing --]]
@@ -154,7 +154,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
 		--[[Translation missing --]]
-		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.  Does not include resistances from items that give All Resistances.",
+		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
 		--[[Translation missing --]]
 		["NatureSpellDamage"] = "Nature Damage",
 		--[[Translation missing --]]
@@ -166,7 +166,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
 		--[[Translation missing --]]
-		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.  Does not include resistances from items that give All Resistances.",
+		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
 		--[[Translation missing --]]
 		["ShadowSpellDamage"] = "Shadow Damage",
 		--[[Translation missing --]]
@@ -306,7 +306,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
 		--[[Translation missing --]]
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%%%.$",
+		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
 		["Bow"] = "^Arco$",
 		["ChanceOnHit"] = "Probabilidad al acertar:",
 		["Charges"] = "^.+ cargas?$",
@@ -319,7 +319,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Crossbow"] = "^Ballesta$",
 		["Dagger"] = "^Daga$",
 		--[[Translation missing --]]
-		["DefenseSkill"] = "^Equip: Increased Defense %+#.$",
+		["DefenseSkill"] = "^Equip: Increased Defense %+#%.$",
 		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Desencantar requiere",
 		["Dodge"] = "^%+?#%%? esquivar$",
