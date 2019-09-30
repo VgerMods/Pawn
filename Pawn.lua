@@ -780,8 +780,8 @@ function PawnCommand(Command)
 		if ItemLink1 and strlen(ItemLink1) == 0 then ItemLink1 = nil end
 		if ItemLink2 and strlen(ItemLink2) == 0 then ItemLink2 = nil end
 		if ItemLink1 or ItemLink2 then
-			if ItemLink1 then PawnUI_SetCompareItemAndShow(1, ItemLink1) end
 			if ItemLink2 then PawnUI_SetCompareItemAndShow(2, ItemLink2) end
+			if ItemLink1 then PawnUI_SetCompareItemAndShow(1, ItemLink1) end
 		else
 			VgerCore.Message("Usage: /pawn compare [ left ItemID | ItemLink [ right ]] ItemID | ItemLink")
 			VgerCore.Message("  /pawn compare 16795")
