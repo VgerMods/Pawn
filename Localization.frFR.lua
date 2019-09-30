@@ -416,21 +416,21 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["Warforged"] = "^De guerre$",
 		["Warglaives"] = "^Glaives de guerre$",
 		["WeaponDamage"] = "^Dégâts.?.?: # %- #$",
-		["WeaponDamageArcane"] = "^Dégâts %(Arcanes%) : # %- #$",
-		["WeaponDamageArcaneExact"] = "^Dégâts %(Arcanes%) : #$",
+		["WeaponDamageArcane"] = "^%+?# %- # points de dégâts %(Arcanes%)$",
+		["WeaponDamageArcaneExact"] = "^%+?# points de dégâts %(Arcanes%)$",
 		["WeaponDamageEnchantment"] = "^%+?# aux dégâts de l'arme$",
 		["WeaponDamageEquip"] = "^Equipé : %+?# aux dégâts de l'arme%.$",
-		["WeaponDamageExact"] = "^Dégâts : #$",
-		["WeaponDamageFire"] = "^Dégâts %(Feu%) : # %- #$",
-		["WeaponDamageFireExact"] = "^Dégâts %(Feu%) : #$",
-		["WeaponDamageFrost"] = "^Dégâts %(Givre%) : # %- #$",
-		["WeaponDamageFrostExact"] = "^Dégâts %(Givre%) : #$",
-		["WeaponDamageHoly"] = "^Dégâts %(Sacré%) : # %- #$",
-		["WeaponDamageHolyExact"] = "^Dégâts %(Sacré%) : #$",
-		["WeaponDamageNature"] = "^Dégâts %(Nature%) : # %- #$",
-		["WeaponDamageNatureExact"] = "^Dégâts %(Nature%) : #$",
-		["WeaponDamageShadow"] = "^Dégâts %(Ombre%) : # %- #$",
-		["WeaponDamageShadowExact"] = "^Dégâts %(Ombre%) : #$",
+		["WeaponDamageExact"] = "^# Dégâts$",
+		["WeaponDamageFire"] = "^%+?# %- # points de dégâts %(Feu%)$",
+		["WeaponDamageFireExact"] = "^%+?# points de dégâts %(Feu%)$",
+		["WeaponDamageFrost"] = "^%+?# %- # points de dégâts %(Givre%)$",
+		["WeaponDamageFrostExact"] = "^%+?# points de dégâts %(Givre%)$",
+		["WeaponDamageHoly"] = "^%+?# %- # points de dégâts %(Sacré%)$",
+		["WeaponDamageHolyExact"] = "^%+?# points de dégâts %(Sacré%)$",
+		["WeaponDamageNature"] = "^%+?# %- # points de dégâts %(Nature%)$",
+		["WeaponDamageNatureExact"] = "^%+?# points de dégâts %(Nature%)$",
+		["WeaponDamageShadow"] = "^%+?# %- # points de dégâts %(Ombre%)$",
+		["WeaponDamageShadowExact"] = "^%+?# points de dégâts %(Ombre%)$",
 	},
 	["UI"] = {
 		["AboutHeader"] = "À propos de Pawn",
@@ -662,6 +662,34 @@ Cette commande ne peut etre défaite!]=],
 		["ValuesWelcomeReadOnly"] = "L'echelle que vous avez sélectionné ne peut etre modifiée. Si vous voulez changer ces valeurs, allez dans l'onglet Echelle et faites une copie de cette échelle ou commencez une nouvelle.",
 	}
 }
+
+-- Special case: wands actually use different text on live versus classic.
+-- So, patch things up here.
+if GetExpansionLevel() == 0 then
+
+	local TooltipParsing_Classic =
+	{
+		["WeaponDamageArcane"] = "^Dégâts %(Arcanes%) : # %- #$",
+		["WeaponDamageArcaneExact"] = "^Dégâts %(Arcanes%) : #$",
+		["WeaponDamageExact"] = "^Dégâts : #$",
+		["WeaponDamageFire"] = "^Dégâts %(Feu%) : # %- #$",
+		["WeaponDamageFireExact"] = "^Dégâts %(Feu%) : #$",
+		["WeaponDamageFrost"] = "^Dégâts %(Givre%) : # %- #$",
+		["WeaponDamageFrostExact"] = "^Dégâts %(Givre%) : #$",
+		["WeaponDamageHoly"] = "^Dégâts %(Sacré%) : # %- #$",
+		["WeaponDamageHolyExact"] = "^Dégâts %(Sacré%) : #$",
+		["WeaponDamageNature"] = "^Dégâts %(Nature%) : # %- #$",
+		["WeaponDamageNatureExact"] = "^Dégâts %(Nature%) : #$",
+		["WeaponDamageShadow"] = "^Dégâts %(Ombre%) : # %- #$",
+		["WeaponDamageShadowExact"] = "^Dégâts %(Ombre%) : #$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
 end
 
 if GetLocale() == "frFR" then
