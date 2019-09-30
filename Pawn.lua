@@ -4532,15 +4532,16 @@ function PawnImportScale(ScaleTag, Overwrite)
 		-- This tag couldn't be parsed.
 		return PawnImportScaleResultTagError
 	end
+
 	-- The "Class" and "Spec" parameters aren't actually stat values, so take them out of the list now.
 	local ClassID, SpecID
+	local UnlocalizedClassName, IconTexturePath, Role
 	if GetClassInfo then
 		-- Specializations don't exist in Classic as they do on live, so skip that.
 		ClassID = Values.Class
 		Values.Class = nil
 		SpecID = Values.Spec
 		Values.Spec = nil
-		local UnlocalizedClassName, IconTexturePath, Role
 		if ClassID and not SpecID then
 			ClassID = nil
 		elseif SpecID and not ClassID then
