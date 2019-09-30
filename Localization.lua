@@ -72,7 +72,7 @@ www.vgermods.com
 /pawn -- show or hide the Pawn UI
 /pawn debug [ on | off ] -- spam debug messages to the console
 /pawn backup -- backup all of your scales to scale tags
-/pawn compare [ left | right ] ItemID | ItemLink -- compare items
+/pawn compare [ left item [ right ]] item -- compare items
  
 For more information on customizing Pawn, please see the help file (Readme.htm) that comes with the mod.
 ]=],

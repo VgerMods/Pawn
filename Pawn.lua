@@ -759,24 +759,34 @@ function PawnCommand(Command)
 	elseif Command == "backup" then
 		PawnUIExportAllScales()
 	elseif strsub(Command, 1, 7) == "compare" then
-		local CompareIndex, ItemLink
+		local CompareIndex, ItemLink1, ItemLink2
 		if strsub(Command, 9, 13) == "left " then
-			CompareIndex = 1
-			ItemLink = strsub(Command, 14)
+			local SplitIndex = strfind(Command, " right ", 13, true)
+			if SplitIndex and SplitIndex + 7 < strlen(Command) then
+				-- Left Item1 Right Item2
+				ItemLink1 = strsub(Command, 14, SplitIndex - 1)
+				ItemLink2 = strsub(Command, SplitIndex + 7)
+			else
+				-- Left Item1
+				ItemLink1 = strsub(Command, 14)
+			end
 		elseif strsub(Command, 9, 14) == "right " then
-			CompareIndex = 2
-			ItemLink = strsub(Command, 15)
+			-- Right Item2
+			ItemLink2 = strsub(Command, 15)
 		else
-			CompareIndex = 2
-			ItemLink = strsub(Command, 9)
+			-- Item2
+			ItemLink2 = strsub(Command, 9)
 		end
-		if strlen(ItemLink) > 0 then
-			PawnUI_SetCompareItemAndShow(CompareIndex, ItemLink)
+		if ItemLink1 and strlen(ItemLink1) == 0 then ItemLink1 = nil end
+		if ItemLink2 and strlen(ItemLink2) == 0 then ItemLink2 = nil end
+		if ItemLink1 or ItemLink2 then
+			if ItemLink1 then PawnUI_SetCompareItemAndShow(1, ItemLink1) end
+			if ItemLink2 then PawnUI_SetCompareItemAndShow(2, ItemLink2) end
 		else
-			VgerCore.Message("Usage: /pawn compare [ left | right ] ItemID | ItemLink")
-			VgerCore.Message("  /pawn compare left 16795")
-			VgerCore.Message("  /pawn compare item:16795:0:0")
-			VgerCore.Message("  /pawn compare right |cffa335ee|Hitem:16795|h[Arcanist Crown]|h|r")
+			VgerCore.Message("Usage: /pawn compare [ left ItemID | ItemLink [ right ]] ItemID | ItemLink")
+			VgerCore.Message("  /pawn compare 16795")
+			VgerCore.Message("  /pawn compare left item:16795:0:0")
+			VgerCore.Message("  /pawn compare left |cffa335ee|Hitem:16795|h[Arcanist Crown]|h|r right 16914")
 		end
 	else
 		PawnUsage()
