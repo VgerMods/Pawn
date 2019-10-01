@@ -2102,6 +2102,10 @@ function PawnLookForSingleStat(RegexTable, Stats, ThisString, DebugMessages)
 					MatchIndex = 1
 				end
 				local ExtractedValue = Matches[MatchIndex]
+				if not ExtractedValue then
+					VgerCore.Fail("Didn't extract a value for " .. Stat .. ".  Is the translation missing a capture (#)?")
+					ExtractedValue = 0
+				end
 				if Stat ~= "Speed" and (PawnLocal.ThousandsSeparator ~= "" or (PawnLocal.ThousandsSeparator == PawnLocal.DecimalSeparator)) then
 					-- Skip this for Speed because Spanish uses the wrong character for speed, and speed would never be >=1,000
 					-- In 7.0, Russian also used the comma for both thousands and decimal separators, so use the same logic then.
