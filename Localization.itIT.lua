@@ -81,10 +81,6 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 	["Stats"] = {
 		["AgilityInfo"] = "Agilità. Aumenta la potenza d'attacco per alcune classi.",
 		--[[Translation missing --]]
-		["AllResist"] = "All Resistances",
-		--[[Translation missing --]]
-		["AllResistInfo"] = "All Resistances.  Reduces the damage taken from any elemental attack.",
-		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
@@ -281,8 +277,6 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?# [Aa]gilità$",
-		--[[Translation missing --]]
-		["AllResist"] = "^%+?# All Resistances$",
 		["AllStats"] = "^%+?# a tutti gli attributi$",
 		["Ap"] = "^%+?# [Pp]otenza d'attacco$",
 		--[[Translation missing --]]

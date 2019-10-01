@@ -81,10 +81,6 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 	["Stats"] = {
 		["AgilityInfo"] = "민첩성. 몇몇 직업의 전투력을 증가시킵니다.",
 		--[[Translation missing --]]
-		["AllResist"] = "All Resistances",
-		--[[Translation missing --]]
-		["AllResistInfo"] = "All Resistances.  Reduces the damage taken from any elemental attack.",
-		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
@@ -281,8 +277,6 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^민첩성 %+?#$",
-		--[[Translation missing --]]
-		["AllResist"] = "^%+?# All Resistances$",
 		["AllStats"] = "^모든 능력치 %+?#$",
 		["Ap"] = "^전투력 %+?#$",
 		--[[Translation missing --]]

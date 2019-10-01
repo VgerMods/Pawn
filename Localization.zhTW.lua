@@ -81,10 +81,6 @@ PawnLocal =
 	["Stats"] = {
 		["AgilityInfo"] = "主要屬性, 敏捷.",
 		--[[Translation missing --]]
-		["AllResist"] = "All Resistances",
-		--[[Translation missing --]]
-		["AllResistInfo"] = "All Resistances.  Reduces the damage taken from any elemental attack.",
-		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
@@ -283,8 +279,6 @@ PawnLocal =
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?#敏捷$",
-		--[[Translation missing --]]
-		["AllResist"] = "^%+?# All Resistances$",
 		["AllStats"] = "^%+?#所有屬性$",
 		["Ap"] = "^%+?#攻擊強度$",
 		--[[Translation missing --]]

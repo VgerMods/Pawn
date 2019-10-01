@@ -81,10 +81,6 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 	["Stats"] = {
 		["AgilityInfo"] = "Ловкость. Увеличивает силу атаки для некоторых классов.",
 		--[[Translation missing --]]
-		["AllResist"] = "All Resistances",
-		--[[Translation missing --]]
-		["AllResistInfo"] = "All Resistances.  Reduces the damage taken from any elemental attack.",
-		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
@@ -281,8 +277,6 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?# к ловкости$",
-		--[[Translation missing --]]
-		["AllResist"] = "^%+?# All Resistances$",
 		["AllStats"] = "^%+?# ко всем характеристикам$",
 		["Ap"] = "^%+?# к силе атаки$",
 		--[[Translation missing --]]

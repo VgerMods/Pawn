@@ -79,11 +79,6 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 	["VisibleScalesHeader"] = "%s's Wertungen",
 	["Stats"] = {
 		["AgilityInfo"] = "Beweglichkeit. Verstärkt Eure Angriffe und Fähigkeiten.",
-		--[[Translation missing --]]
-		["AllResist"] = "All Resistances",
-		--[[Translation missing --]]
-		["AllResistInfo"] = "All Resistances.  Reduces the damage taken from any elemental attack.",
-		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
@@ -280,8 +275,6 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?# Beweglichkeit$",
-		--[[Translation missing --]]
-		["AllResist"] = "^%+?# All Resistances$",
 		["AllStats"] = "^%+?# [Aa]lle [Ww]erte$",
 		["Ap"] = "^%+?# Angriffskraft$",
 		--[[Translation missing --]]
