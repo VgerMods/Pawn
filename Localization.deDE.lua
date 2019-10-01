@@ -82,8 +82,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "Arcane Damage",
+		["ArcaneSpellDamage"] = "Arkanzauberschaden",
 		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
 		["ArmorInfo"] = "Rüstung.  Körperliche Schadensreduktion.",
@@ -106,25 +105,21 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "Fire Damage",
+		["FireSpellDamage"] = "Feuerzauberschaden",
 		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
 		--[[Translation missing --]]
 		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "Frost Damage",
+		["FrostSpellDamage"] = "Frostzauberschaden",
 		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "Tempo.  Erhöht Angriffs- und Zaubertempo.",
-		--[[Translation missing --]]
-		["Healing"] = "Spell Healing",
+		["Healing"] = "Zauberheilung",
 		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
 		--[[Translation missing --]]
 		["HitInfo"] = "Hit.  Increases the chance that your physical attacks hit the target, especially bosses.",
-		--[[Translation missing --]]
-		["HolySpellDamage"] = "Holy Damage",
+		["HolySpellDamage"] = "Heiligzauberschaden",
 		--[[Translation missing --]]
 		["HolySpellDamageInfo"] = "Holy damage.  Increases the damage dealt by your holy spells.",
 		--[[Translation missing --]]
@@ -140,14 +135,12 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["MasteryInfo"] = "Meisterschaft. Verbessert den einzigartigen Bonus Eurer Klassenspezialisierung.",
 		["MinorStats"] = "Kleinere Werte",
 		["MovementSpeedInfo"] = "Bewegungsgeschwindigkeit. Bewirkt, dass euer Charakter schneller läuft.",
-		--[[Translation missing --]]
-		["Mp5"] = "Mana per 5",
+		["Mp5"] = "Mana alle 5",
 		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
 		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "Nature Damage",
+		["NatureSpellDamage"] = "Naturzauberschaden",
 		--[[Translation missing --]]
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
 		--[[Translation missing --]]
@@ -158,8 +151,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
 		--[[Translation missing --]]
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "Shadow Damage",
+		["ShadowSpellDamage"] = "Schattenzauberschaden",
 		--[[Translation missing --]]
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
 		["Shield"] = "Schild",
@@ -173,8 +165,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpeedIs"] = "1 Sekunde |cffffffffWaffentempo|r entspricht:",
 		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
-		--[[Translation missing --]]
-		["SpellDamage"] = "Spell Damage",
+		["SpellDamage"] = "Zauberschaden",
 		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
 		--[[Translation missing --]]
@@ -277,25 +268,18 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Agility"] = "^%+?# Beweglichkeit$",
 		["AllStats"] = "^%+?# [Aa]lle [Ww]erte$",
 		["Ap"] = "^%+?# Angriffskraft$",
-		--[[Translation missing --]]
-		["Ap2"] = "^Equip: %+# Attack Power%.$",
-		--[[Translation missing --]]
-		["ArcaneResist"] = "^%+?# Arcane Resistance$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "^%+# Arcane Spell Damage$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",
+		["Ap2"] = "^Anlegen: %+# Angriffskraft%.$",
+		["ArcaneResist"] = "^%+?# Arkanwiderstand$",
+		["ArcaneSpellDamage"] = "^%+# Arkanzauberschaden$",
+		["ArcaneSpellDamage2"] = "^Anlegen: Erhöht durch Arkanzauber und Arkaneffekte zugefügten Schaden um bis zu #%.$",
 		["Armor"] = "^%+?# Rüstung$",
 		["Armor2"] = "^UNUSED$",
 		["Avoidance"] = "^%+# Vermeidung$",
 		["Axe"] = "^Axt$",
 		["BagSlots"] = "^%d+ Platz .+$",
-		--[[Translation missing --]]
-		["Block"] = "^%+?# Block$",
-		--[[Translation missing --]]
-		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		--[[Translation missing --]]
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
+		["Block"] = "^%+?# Blocken$",
+		["BlockPercent"] = "^Anlegen: Erhöht Eure Chance, Angriffe mit einem Schild zu blocken, um #%%%.$",
+		["BlockValue"] = "^Anlegen: Erhöht den Blockwert Eures Schildes um #%.$",
 		["Bow"] = "^Bogen$",
 		["ChanceOnHit"] = "Trefferchance:",
 		["Charges"] = "^.+ Ladungen?$",
@@ -303,18 +287,15 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["CooldownRemaining"] = "^Verbleibende Abklingzeit:",
 		["Crit"] = "^%+?# [Kk]ritischer Trefferwert%.?$",
 		["Crit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["CritPercent"] = "^Equip: Improves your chance to get a critical strike by #%%%.$",
+		["CritPercent"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer zu erzielen, um #%%%.$",
 		["Crossbow"] = "^Armbrust$",
 		["Dagger"] = "^Dolch$",
-		--[[Translation missing --]]
-		["DefenseSkill"] = "^Equip: Increased Defense %+#%.$",
-		["DefenseSkillSimple"] = "^%+?# Defense$",
+		["DefenseSkill"] = "^Anlegen: Verteidigung %+#%.$",
+		["DefenseSkillSimple"] = "^%+?# Verteidigung$",
 		["DisenchantingRequires"] = "^Entzaubern benötigt",
 		["Dodge"] = "^%+?#%%? Ausweichen$",
 		["Dodge2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
+		["DodgePercent"] = "^Anlegen: Erhöht Eure Chance, einem Angriff auszuweichen, um #%%%.$",
 		["Dps"] = "^%(# Schaden pro Sekunde%)$",
 		["DpsAdd"] = "^Erhöht # Schaden pro Sekunde$",
 		["Duration"] = "^Dauer:",
@@ -328,30 +309,21 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["EnchantmentPyriumWeaponChain"] = "^Pyriumwaffenkette$",
 		["EnchantmentTitaniumWeaponChain"] = "^Titanwaffenkette$",
 		["Equip"] = "Anlegen:",
-		--[[Translation missing --]]
-		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
-		--[[Translation missing --]]
-		["FireResist"] = "^%+?# Fire Resistance$",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "^%+# Fire Spell Damage$",
-		--[[Translation missing --]]
-		["FireSpellDamage2"] = "^Equip: Increases damage done by Fire spells and effects by up to #%.$",
+		["FeralAp"] = "^Anlegen: %+# Angriffskraft in Katzengestalt, Bärengestalt oder Terrorbärengestalt%.$",
+		["FireResist"] = "^%+?# Feuerwiderstand$",
+		["FireSpellDamage"] = "^%+# Feuerzauberschaden$",
+		["FireSpellDamage2"] = "^Anlegen: Erhöht durch Feuerzauber und Feuereffekte zugefügten Schaden um bis zu #%.$",
 		["FistWeapon"] = "^Faustwaffe$",
 		["Flexible"] = "^Flexibel$",
-		--[[Translation missing --]]
-		["FrostResist"] = "^%+?# Frost Resistance$",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "^%+# Frost Spell Damage$",
-		--[[Translation missing --]]
-		["FrostSpellDamage2"] = "^Equip: Increases damage done by Frost spells and effects by up to #%.$",
+		["FrostResist"] = "^%+?# Frostwiderstand$",
+		["FrostSpellDamage"] = "^%+# Frostzauberschaden$",
+		["FrostSpellDamage2"] = "^Anlegen: Erhöht durch Frostzauber und Frosteffekte zugefügten Schaden um bis zu #%.$",
 		["Gun"] = "^Schusswaffe$",
 		["Haste"] = "^%+?# Tempo$",
 		["Haste2"] = "^UNUSED$",
 		["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt$",
-		--[[Translation missing --]]
-		["Healing"] = "^%+# Healing Spells$",
-		--[[Translation missing --]]
-		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing"] = "^%+# Heilzauber$",
+		["Healing2"] = "^Anlegen: Erhöht durch Zauber und Effekte verursachte Heilung um bis zu #%.$",
 		["HeirloomLevelRange"] = "^Benötigt Stufe %d bis #",
 		["HeirloomXpBoost"] = "^Anlegen: Erhaltene Erfahrung",
 		["HeirloomXpBoost2"] = "^UNUSED$",
@@ -359,14 +331,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["HeroicElite"] = "^Heroisch, Elite$",
 		["HeroicThunderforged"] = "^Heroisch, Donnergeschmiedet$",
 		["HeroicWarforged"] = "^Heroisch, Kriegsgeschmiedet$",
-		--[[Translation missing --]]
-		["Hit"] = "^Equip: Improves your chance to hit by #%%%.$",
-		--[[Translation missing --]]
+		["Hit"] = "^Anlegen: Verbessert Eure Trefferchance um #%%%.$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
-		--[[Translation missing --]]
-		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
+		["HolySpellDamage"] = "^%+# Heiligzauberschaden$",
+		["HolySpellDamage2"] = "^Anlegen: Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu #%.$",
 		["Hp5"] = "^Anlegen: Stellt # Gesundheit alle 5 Sek%. wieder her%.?$",
 		["Hp52"] = "^Anlegen: Stellt alle 5 Sek%. # Gesundheit wieder her%.?$",
 		["Hp53"] = "^%+?# Gesundheit alle 5 [sS]ek%.?$",
@@ -380,18 +348,14 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Mastery2"] = "^UNUSED$",
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%xBenötigt",
 		["MovementSpeed"] = "^%+# Bewegungsgeschwindigkeit$",
-		--[[Translation missing --]]
-		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
-		["Mp52"] = "^%+?# mana every 5 sec%.$",
+		["Mp5"] = "^Anlegen: Stellt alle 5 Sek%. # Punkt%(e%) Mana wieder her%.$",
+		["Mp52"] = "^%+?# Mana alle 5 Sek%.$",
 		["MultiStatHeading"] = "^Mehrere Werte$",
 		["MultiStatSeparator1"] = "und",
 		["Multistrike"] = "^%+# Mehrfachschlag$",
-		--[[Translation missing --]]
-		["NatureResist"] = "^%+?# Nature Resistance$",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "^%+# Nature Spell Damage$",
-		--[[Translation missing --]]
-		["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
+		["NatureResist"] = "^%+?# Naturwiderstand$",
+		["NatureSpellDamage"] = "^%+# Naturzauberschaden$",
+		["NatureSpellDamage2"] = "^Anlegen: Erhöht durch Naturzauber und Natureffekte zugefügten Schaden um bis zu #%.$",
 		["NormalizationEnchant"] = "^Verzaubert: (.*)$",
 		["Parry"] = "^%+?# Parieren$",
 		["Parry2"] = "^UNUSED$",
@@ -399,32 +363,24 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Polearm"] = "^Stangenwaffe$",
 		["PvPPower"] = "^%+?# P[vV]P[- ]Macht$",
 		["RaidFinder"] = "^Schlachtzugsbrowser$",
-		--[[Translation missing --]]
-		["Rap"] = "^Equip: %+# ranged Attack Power%.$",
+		["Rap"] = "^Anlegen: %+# Distanzangriffskraft%.$",
 		["Requires2"] = "^Benötigt",
 		["Resilience"] = "^%+?# P[vV]P[- ]Abhärtung$",
 		["Resilience2"] = "^UNUSED$",
 		["Scope"] = "^Zielfernrohr %(%+# Schaden%)$",
 		["ScopeCrit"] = "^Zielfernrohr %(%+# kritischer Trefferwert%)$",
 		["ScopeRangedCrit"] = "^%+?# kritische Ferntrefferwertung$",
-		--[[Translation missing --]]
-		["ShadowResist"] = "^%+?# Shadow Resistance$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowResist"] = "^%+?# Schattenwiderstand$",
+		["ShadowSpellDamage"] = "^%+# Schattenzauberschaden$",
+		["ShadowSpellDamage2"] = "^Anlegen: Erhöht durch Schattenzauber und Schatteneffekte zugefügten Schaden um bis zu #%.$",
 		["Shield"] = "^Schild$",
 		["SocketBonusPrefix"] = "Sockelbonus:",
-		["Speed"] = "^Geschwindigkeit #$",
+		["Speed"] = "^Tempo #$",
 		["Speed2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by #%%%.$",
-		--[[Translation missing --]]
-		["SpellDamage"] = "^%+# Spell Damage$",
-		--[[Translation missing --]]
-		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
-		--[[Translation missing --]]
-		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
+		["SpellCrit"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer durch Zauber zu erzielen, um #%%%.$",
+		["SpellDamage"] = "^%+# Zauberschaden$",
+		["SpellDamage2"] = "^Anlegen: Erhöht durch Zauber und magische Effekte zugefügten Schaden und Heilung um bis zu #%.$",
+		["SpellHit"] = "^Anlegen: Erhöht Eure Chance mit Zaubern zu treffen um #%%%.$",
 		["SpellPower"] = "^%+?# Zaubermacht$",
 		["Spirit"] = "^%+?# Willenskraft$",
 		["Staff"] = "^Stab$",
