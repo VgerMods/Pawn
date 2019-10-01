@@ -27,15 +27,9 @@ local IsClassic = VgerCore.IsClassic
 -- Localization
 ------------------------------------------------------------
 
--- Check for using Classic on a non-English system. ***
-if IsClassic and GetLocale() ~= "enUS" and GetLocale() ~= "frFR" then
-	local WrongClassicLocaleMessage = "Sorry, Pawn currently supports English and French on WoW Classic.  I'm working to support all languages soon."
-	message(WrongClassicLocaleMessage)
-	VgerCore.Fail(WrongClassicLocaleMessage)
-end
-
 -- The languages that Pawn is currently translated into (http://www.wowpedia.org/API_GetLocale)
 PawnLocalizedLanguages = { "deDE", "enUS", "enGB", "esES", "esMX", "frFR", "itIT", "koKR", "ptBR", "ruRU", "zhCN", "zhTW" }
+PawnLocalizedLanguagesClassic = { "enUS", "esES", "esMX", "frFR" }
 
 -- NOTE: These functions are not super-flexible for general purpose; they don't properly handle all sorts of Lua pattern matching syntax
 -- that could be in strings, like "." and so on.  But they've been sufficient so far.

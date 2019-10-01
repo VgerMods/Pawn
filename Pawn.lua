@@ -149,7 +149,9 @@ function PawnInitialize()
 	local CurrentLocale = GetLocale()
 	local CurrentLocaleIsSupported
 	local SupportedLocale
-	for _, SupportedLocale in pairs(PawnLocalizedLanguages) do
+	local LanguageList = PawnLocalizedLanguages
+	if VgerCore.IsClassic then LanguageList = PawnLocalizedLanguagesClassic end
+	for _, SupportedLocale in pairs(LanguageList) do
 		if CurrentLocale == SupportedLocale then
 			CurrentLocaleIsSupported = true
 			break
@@ -158,6 +160,9 @@ function PawnInitialize()
 	if not CurrentLocaleIsSupported then
 		-- No need to translate this string...
 		local WrongLocaleMessage = "Sorry, this version of Pawn is for English, French, German, Italian, Korean, Portuguese, Russian, Spanish, Simplified Chinese, and Traditional Chinese only."
+		if VgerCore.IsClassic then
+			WrongLocaleMessage = "Sorry, this version of Pawn on WoW Classic is for English, French, and Spanish only.  I'm working to support all languages soon."
+		end
 		VgerCore.Message(VgerCore.Color.Salmon .. WrongLocaleMessage)
 		message(WrongLocaleMessage)
 	end
@@ -780,8 +785,22 @@ function PawnCommand(Command)
 		if ItemLink1 and strlen(ItemLink1) == 0 then ItemLink1 = nil end
 		if ItemLink2 and strlen(ItemLink2) == 0 then ItemLink2 = nil end
 		if ItemLink1 or ItemLink2 then
-			if ItemLink2 then PawnUI_SetCompareItemAndShow(2, ItemLink2) end
-			if ItemLink1 then PawnUI_SetCompareItemAndShow(1, ItemLink1) end
+			if ItemLink2 then
+				local IsReady2 = (GetItemInfo(ItemLink2) ~= nil)
+				if IsReady2 then
+					PawnUI_SetCompareItemAndShow(2, ItemLink2)
+				else
+					C_Timer.After(1, function() PawnUI_SetCompareItemAndShow(2, ItemLink2) end)
+				end
+			end
+			if ItemLink1 then
+				local IsReady1 = (GetItemInfo(ItemLink1) ~= nil)
+				if IsReady1 then
+					PawnUI_SetCompareItemAndShow(1, ItemLink1)
+				else
+					C_Timer.After(1, function() PawnUI_SetCompareItemAndShow(1, ItemLink1) end)
+				end
+			end
 		else
 			VgerCore.Message("Usage: /pawn compare [ left ItemID | ItemLink [ right ]] ItemID | ItemLink")
 			VgerCore.Message("  /pawn compare 16795")
