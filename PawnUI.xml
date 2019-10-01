@@ -1550,7 +1550,7 @@
 						</FontString>
 						<FontString name="PawnUIFrame_AboutTranslationLabel" inherits="PawnFontSilver" justifyH="LEFT" text="PawnUIFrame_AboutTranslationLabel_Text">
 							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="175" y="-75" /></Offset></Anchor></Anchors>
-							<Size><AbsDimension x="300" y="20" /></Size>
+							<Size><AbsDimension x="300" y="30" /></Size>
 						</FontString>
 
 						<FontString name="PawnUIFrame_ReadmeLabel" inherits="GameFontHighlight" justifyH="LEFT" justifyV="TOP" text="PawnUIFrame_ReadmeLabel_Text">
