@@ -375,7 +375,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["ShadowSpellDamage2"] = "^Anlegen: Erhöht durch Schattenzauber und Schatteneffekte zugefügten Schaden um bis zu #%.$",
 		["Shield"] = "^Schild$",
 		["SocketBonusPrefix"] = "Sockelbonus:",
-		["Speed"] = "^Tempo #$",
+		["Speed"] = "^Geschwindigkeit #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer durch Zauber zu erzielen, um #%%%.$",
 		["SpellDamage"] = "^%+# Zauberschaden$",
@@ -645,6 +645,13 @@ Für weitere Informationen hierzu siehe readme.htm.]=],
 		["ValuesWelcomeReadOnly"] = "Das ausgewählte Bewertungsprofil kann nicht geändert werden. Erstelle im Reiter \"Bewertungsprofile\" ein neues Profil oder erstelle eine Kopie des gewählten Profils.",
 	}
 }
+
+-- Special case: weapon speed uses a different word on Classic.
+-- So, patch things up here.
+if VgerCore.IsClassic then
+	PawnLocal.TooltipParsing.Speed = "^Tempo #$"
+end
+
 end
 
 if GetLocale() == "deDE" then
