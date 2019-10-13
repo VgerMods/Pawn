@@ -279,25 +279,18 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Agility"] = "^%+?# к ловкости$",
 		["AllStats"] = "^%+?# ко всем характеристикам$",
 		["Ap"] = "^%+?# к силе атаки$",
-		--[[Translation missing --]]
-		["Ap2"] = "^Equip: %+# Attack Power%.$",
-		--[[Translation missing --]]
-		["ArcaneResist"] = "^%+?# Arcane Resistance$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "^%+# Arcane Spell Damage$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",
+		["Ap2"] = "^Если на персонаже: Увеличивает силу атаки на #%.$",
+		["ArcaneResist"] = "^Устойчивость: %+# Тайная магия$",
+		["ArcaneSpellDamage"] = "^%+# к урону от заклинаний тайной магии$",
+		["ArcaneSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами тайной магии, на # ед%.$",
 		["Armor"] = "^Броня: %+?#$",
 		["Armor2"] = "^%+?# к броне$",
 		["Avoidance"] = "^%+# к избеганию$",
 		["Axe"] = "^Топор$",
 		["BagSlots"] = "^%d+ [Яя]чеек .+$",
-		--[[Translation missing --]]
-		["Block"] = "^%+?([-%d%.,]+) Block$",
-		--[[Translation missing --]]
-		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		--[[Translation missing --]]
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
+		["Block"] = "^Блокирование: #$",
+		["BlockPercent"] = "^Если на персонаже: Увеличение рейтинга блока щитом на #%%%,$",
+		["BlockValue"] = "^Если на персонаже: Увеличение показателя блока щитом на # ед%.$",
 		["Bow"] = "^Лук$",
 		["ChanceOnHit"] = "Возможно при попадании:",
 		["Charges"] = "^.+ зарядов?$",
@@ -305,8 +298,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["CooldownRemaining"] = "^Времени до восстановления:",
 		["Crit"] = "^%+?# к критическому удару$",
 		["Crit2"] = "^%+?# к показателю критического удара$",
-		--[[Translation missing --]]
-		["CritPercent"] = "^Equip: Improves your chance to get a critical strike by #%%%.$",
+		["CritPercent"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на #%%%.$",
 		["Crossbow"] = "^Арбалет$",
 		["Dagger"] = "^Кинжал$",
 		--[[Translation missing --]]
@@ -332,20 +324,15 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Equip"] = "Если на персонаже:",
 		--[[Translation missing --]]
 		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
-		--[[Translation missing --]]
-		["FireResist"] = "^%+?# Fire Resistance$",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "^%+# Fire Spell Damage$",
-		--[[Translation missing --]]
-		["FireSpellDamage2"] = "^Equip: Increases damage done by Fire spells and effects by up to #%.$",
+		["FireResist"] = "^Устойчивость: %+# огонь$",
+		["FireSpellDamage"] = "^%+# к урону от заклинаний огня$",
+		["FireSpellDamage2"] = "^Если на персонаже: Увеличение наносимого урона от заклинаний и эффектов огня не более чем на # ед%.$",
 		["FistWeapon"] = "^Кистевое$",
 		["Flexible"] = "^Гибкий$",
+		["FrostResist"] = "^Устойчивость: %+# лед$",
+		["FrostSpellDamage"] = "^%+# к урону от заклинаний магии льда$",
 		--[[Translation missing --]]
-		["FrostResist"] = "^%+?# Frost Resistance$",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "^%+# Frost Spell Damage$",
-		--[[Translation missing --]]
-		["FrostSpellDamage2"] = "^Equip: Increases damage done by Frost spells and effects by up to #%.$",
+		["FrostSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами льда, на # ед%.$",
 		["Gun"] = "^Огнестрельное$",
 		["Haste"] = "^%+?# к скорости$",
 		["Haste2"] = "^%+?# к показателю скорости$",
@@ -367,8 +354,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Hit2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
-		--[[Translation missing --]]
-		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
+		["HolySpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами светлой магии, на # ед%.$",
 		["Hp5"] = "^Восстанавливает # здоровья каждые 5 сек%.$",
 		["Hp52"] = "^Восстанавливает # здоровья за 5 сек%.$",
 		["Hp53"] = "^%+?# [зЗ]доровья [кК]аждые 5 [сС]ек%.?$",
@@ -388,12 +374,9 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["MultiStatHeading"] = "^Различные характеристики$",
 		["MultiStatSeparator1"] = "и",
 		["Multistrike"] = "^%+# к многократной атаке$",
-		--[[Translation missing --]]
-		["NatureResist"] = "^%+?# Nature Resistance$",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "^%+# Nature Spell Damage$",
-		--[[Translation missing --]]
-		["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
+		["NatureResist"] = "^Устойчивость: %+# природа$",
+		["NatureSpellDamage"] = "^%+# к урону от сил природы$",
+		["NatureSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами сил природы, на # ед%.$",
 		["NormalizationEnchant"] = "^Чары: (.*)$",
 		["Parry"] = "^%+?# к парированию$",
 		["Parry2"] = "^%+?# к показателю парирования$",
@@ -409,12 +392,9 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Scope"] = "^Scope %(%+# Damage%)$",
 		["ScopeCrit"] = "^Scope %(%+# Critical Strike%)$",
 		["ScopeRangedCrit"] = "^%+?# Ranged Critical Strike$",
-		--[[Translation missing --]]
-		["ShadowResist"] = "^%+?# Shadow Resistance$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowResist"] = "^Устойчивость: %+# тьма$",
+		["ShadowSpellDamage"] = "^%+# к урону от заклинаний темной магии$",
+		["ShadowSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами темной магии, на # ед%.$",
 		["Shield"] = "^Щит$",
 		["SocketBonusPrefix"] = "При соответствии цвета:",
 		["Speed"] = "^Скорость #$",
@@ -444,7 +424,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Wand"] = "^Жезл$",
 		["Warforged"] = "^Предмет закален в бою$",
 		["Warglaives"] = "^Боевые клинки$",
-		["WeaponDamage"] = "^Урон: # %- #$",
+		["WeaponDamage"] = "^Урон: #%-#$",
 		["WeaponDamageArcane"] = "^%+?# %- # ед%. урона от тайной магии$",
 		["WeaponDamageArcaneExact"] = "^%+?# ед%. урона от тайной магии$",
 		["WeaponDamageEnchantment"] = "^%+?# к урону оружием$",
