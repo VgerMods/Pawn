@@ -161,7 +161,7 @@ function PawnInitialize()
 		-- No need to translate this string...
 		local WrongLocaleMessage = "Sorry, this version of Pawn is for English, French, German, Italian, Korean, Portuguese, Russian, Spanish, Simplified Chinese, and Traditional Chinese only."
 		if VgerCore.IsClassic then
-			WrongLocaleMessage = "Sorry, this version of Pawn on WoW Classic is for English, French, German, and Spanish only.  I'm working to support all languages soon."
+			WrongLocaleMessage = "Sorry, this version of Pawn on WoW Classic is for English, French, German, Spanish, and Simplified Chinese only.  I'm working to support all languages soon."
 		end
 		VgerCore.Message(VgerCore.Color.Salmon .. WrongLocaleMessage)
 		message(WrongLocaleMessage)
