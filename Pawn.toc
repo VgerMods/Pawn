@@ -1,6 +1,6 @@
 ﻿## Interface: 80205
 ## Title: Pawn
-## Version: 2.3.10
+## Version: 2.3.11
 ## Notes: Pawn helps you compare items and find upgrades.
 ## OptionalDependencies: AtlasLoot, EQCompare, EquipCompare, LinkWrangler, MobInfo2, MultiTips, Outfitter
 ## SavedVariables: PawnCommon
