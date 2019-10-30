@@ -80,57 +80,36 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 	["VisibleScalesHeader"] = "Шкалы %s",
 	["Stats"] = {
 		["AgilityInfo"] = "Ловкость. Увеличивает силу атаки для некоторых классов.",
-		--[[Translation missing --]]
-		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
-		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "Arcane Damage",
-		--[[Translation missing --]]
-		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
+		["ApInfo"] = "Сила атаки.  Увеличивает урон физических атак.  Не включает в себя силу атаки полученную от Силы и Ловкости.",
+		["ArcaneResistInfo"] = "Повышает устойчивость персонажа к заклинаниям, навыкам и атакам, в ходе которых используется тайнкая магия.",
+		["ArcaneSpellDamage"] = "Урон тайной магии",
+		["ArcaneSpellDamageInfo"] = "Урон тайной магии.  Увеличивает урон наносимый заклинаниями тайной магии.",
 		["ArmorInfo"] = "Броня. Не включает в себя бонусную броню на танковских вещах.",
 		["ArmorTypes"] = "Типы брони",
 		["AvoidanceInfo"] = "Избегание. Уменьшение получаемого урона от заклинаний действующих по области (AOE)",
-		--[[Translation missing --]]
-		["BlockRatingInfo"] = "Block chance.  Increases the chances of a successful shield block.",
-		--[[Translation missing --]]
-		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
+		["BlockRatingInfo"] = "Блокирование.  Увеличивает вероятность блока щитом.",
+		["BlockValueInfo"] = "Показатель блокирования.  Увеличивает поглащаемый урон щитом при успешной блокировке.",
 		["Cloth"] = "Ткань",
 		["ClothInfo"] = "Значения для вещей из ткани",
 		["Crit"] = "Критический удар",
 		["CritInfo"] = "Критический удар. Увеличивает шанс что ваши атакующие и исцеляющие заклинания ударят с увеличенной силой.",
-		--[[Translation missing --]]
-		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
-		--[[Translation missing --]]
-		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
+		["DefenseInfo"] = "Навык защиты.  Уменьшение вероятности того, что по вам попадёт атака боссов.",
+		["DodgeInfo"] = "Уклонение.  Увеличивает шанс что вы полностью уклонитесь от атаки.",
 		["DpsInfo"] = "Урон от оружия в секунду",
-		--[[Translation missing --]]
-		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
-		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "Fire Damage",
-		--[[Translation missing --]]
-		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
-		--[[Translation missing --]]
-		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "Frost Damage",
-		--[[Translation missing --]]
-		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
+		["FeralApInfo"] = "Сила атаки зверя.  Увеличивает урон атакам друида находящегося в формах силы зверя.  Не включает в себя силу атаки полученную от Силы и Ловкости.",
+		["FireResistInfo"] = "Сопротивление огню.  Понижает урон от атак и заклинаний в которых используется огонь.",
+		["FireSpellDamage"] = "Урон огнем",
+		["FireSpellDamageInfo"] = "Урон огнем.  Увеличивает урон наносимый заклинаниями огня.",
+		["FrostResistInfo"] = "Сопротивлении льду.  Понижает урон от атак и заклинаний в которых используется лед.",
+		["FrostSpellDamage"] = "Урон льдом",
+		["FrostSpellDamageInfo"] = "Урон льдом.  Увеличивает урон наносимый заклинаниями льда.",
 		["HasteInfo"] = "Скорость. Увеличивает скорость произнесения заклинаний и регенерации ресурсов.",
-		--[[Translation missing --]]
-		["Healing"] = "Spell Healing",
-		--[[Translation missing --]]
-		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
-		--[[Translation missing --]]
-		["HitInfo"] = "Hit.  Increases the chance that your physical attacks hit the target, especially bosses.",
-		--[[Translation missing --]]
-		["HolySpellDamage"] = "Holy Damage",
-		--[[Translation missing --]]
-		["HolySpellDamageInfo"] = "Holy damage.  Increases the damage dealt by your holy spells.",
-		--[[Translation missing --]]
-		["Hp5Info"] = "Health regeneration per 5 seconds.  Increases the rate at which you regenerate health.",
+		["Healing"] = "Исцеление заклиний",
+		["HealingInfo"] = "Исцеление заклиний.  Увеличивает силу ваших исцеляющих заклинаний.",
+		["HitInfo"] = "Меткость.  Увеличивает вероятность нанесения удура физическими атаками (особенно против боссов).",
+		["HolySpellDamage"] = "Урон магией света",
+		["HolySpellDamageInfo"] = "Урон магией света.  Увеличивает урон наносимый заклинаниями магии света.",
+		["Hp5Info"] = "Восполнение здоровья за 5 секунд.  Увеличивает скорость с которой восстанавливается здоровье.",
 		["IndestructibleInfo"] = "Неразрушимость. Защищает ваши предметы от потери прочности.",
 		["IndestructibleIs"] = "Будучи |cffffffffнеразрушимым|r стоит:",
 		["IntellectInfo"] = "Интеллект. Увеличивает силу заклинаний для некоторых классов.",
@@ -142,28 +121,18 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["MasteryInfo"] = "Искусность.  Улучшает уникальный бонус дерева талантов.",
 		["MinorStats"] = "Незначительные характеристики",
 		["MovementSpeedInfo"] = "Скорость передвижения. Увеличивает скорость передвижения вашего персонажа.",
-		--[[Translation missing --]]
-		["Mp5"] = "Mana per 5",
-		--[[Translation missing --]]
-		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
-		--[[Translation missing --]]
-		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "Nature Damage",
-		--[[Translation missing --]]
+		["Mp5"] = "Маны в 5 сек",
+		["Mp5Info"] = "Восполнение маны за 5 секунд.  Влияет на восстановление маны даже в бою.",
+		["NatureResistInfo"] = "Сопротивление силам природы.  Понижает урон от атак и заклинаний в которых используются силы природы.",
+		["NatureSpellDamage"] = "Урон силами природы",
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
-		--[[Translation missing --]]
-		["ParryInfo"] = "Parry.  Increases the chance that you'll parry enemy attacks.",
+		["ParryInfo"] = "Парирование.  Увеличивает шанс парирования атак противников.",
 		["Plate"] = "Латы",
 		["PlateInfo"] = "Очки присваиваются только если вещь - латные доспехи.",
-		--[[Translation missing --]]
-		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
-		--[[Translation missing --]]
-		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "Shadow Damage",
-		--[[Translation missing --]]
-		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
+		["RapInfo"] = "Сила атаки дальнего боя.  Увеличивает урон физических атак дальнего боя.  Не включает в себя силу атаки полученную от Ловкости.",
+		["ShadowResistInfo"] = "Сопротивление темной магии.   Понижает урон от атак и заклинаний в которых используется темная магия.",
+		["ShadowSpellDamage"] = "Урон темной магии",
+		["ShadowSpellDamageInfo"] = "Урон темной магии.  Увеличивает урон наносимый заклинаниями темной магии.",
 		["Shield"] = "Щит",
 		["ShieldInfo"] = "Очки присваиваются только если вещь - щит.",
 		["Sockets"] = "Гнезда",
@@ -301,14 +270,12 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["CritPercent"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на #%%%.$",
 		["Crossbow"] = "^Арбалет$",
 		["Dagger"] = "^Кинжал$",
-		--[[Translation missing --]]
-		["DefenseSkill"] = "^Equip: Increased Defense %+#%.$",
+		["DefenseSkill"] = "^Если на персонаже: Увеличение рейтинга защиты на # ед%.$",
 		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Требуется",
 		["Dodge"] = "^%+?#%%? к уклонению$",
 		["Dodge2"] = "^%+?#%%? к показателю уклонения$",
-		--[[Translation missing --]]
-		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
+		["DodgePercent"] = "^Если на персонаже: Увеличение рейтинга уклонения на #%%%.$",
 		["Dps"] = "^%(# ед%. урона в секунду%)$",
 		["DpsAdd"] = "^Добавляет # ед%. урона в секунду$",
 		["Duration"] = "^Срок действия:",
@@ -322,8 +289,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["EnchantmentPyriumWeaponChain"] = "^Колчедановая цепь для оружия$",
 		["EnchantmentTitaniumWeaponChain"] = "^Титановая цепь для оружия$",
 		["Equip"] = "Если на персонаже:",
-		--[[Translation missing --]]
-		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
+		["FeralAp"] = "^Если на персонаже: Увеличивает силу атаки на # ед%. в облике кошки, медведя и лютого медведя%.$",
 		["FireResist"] = "^Устойчивость: %+# огонь$",
 		["FireSpellDamage"] = "^%+# к урону от заклинаний огня$",
 		["FireSpellDamage2"] = "^Если на персонаже: Увеличение наносимого урона от заклинаний и эффектов огня не более чем на # ед%.$",
@@ -331,16 +297,13 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Flexible"] = "^Гибкий$",
 		["FrostResist"] = "^Устойчивость: %+# лед$",
 		["FrostSpellDamage"] = "^%+# к урону от заклинаний магии льда$",
-		--[[Translation missing --]]
 		["FrostSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами льда, на # ед%.$",
 		["Gun"] = "^Огнестрельное$",
 		["Haste"] = "^%+?# к скорости$",
 		["Haste2"] = "^%+?# к показателю скорости$",
 		["HaventCollectedAppearance"] = "^У вас еще нет такой модели.$",
-		--[[Translation missing --]]
-		["Healing"] = "^%+# Healing Spells$",
-		--[[Translation missing --]]
-		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing"] = "^%+# к исцеляющим заклинаниям$",
+		["Healing2"] = "^Если на персонаже: Усиливает исцеление от заклинаний и эффектов максимум на # ед%.$",
 		["HeirloomLevelRange"] = "^Требуется уровень %d+ - (%d+)",
 		["HeirloomXpBoost"] = "^Если на персонаже: Увеличивает количество получаемого опыта на",
 		["HeirloomXpBoost2"] = "^Если на персонаже: Количество опыта, получаемого за убийства монстров и выполнение заданий, увеличено на",
@@ -348,12 +311,10 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["HeroicElite"] = "^Героический %(элитный%)$",
 		["HeroicThunderforged"] = "^Создано в Кузне Грома %(героич%.%)$",
 		["HeroicWarforged"] = "^Предмет закален в бою %(героич%.%)$",
-		--[[Translation missing --]]
-		["Hit"] = "^Equip: Improves your chance to hit by #%%%.$",
+		["Hit"] = "^Если на персонаже: Вероятность нанесения удара увеличена на #%%%.$",
 		--[[Translation missing --]]
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
+		["HolySpellDamage"] = "^%+# к урону от заклинаний светлой магии$",
 		["HolySpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами светлой магии, на # ед%.$",
 		["Hp5"] = "^Восстанавливает # здоровья каждые 5 сек%.$",
 		["Hp52"] = "^Восстанавливает # здоровья за 5 сек%.$",
@@ -368,8 +329,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Mastery2"] = "^%+?# к показателю искусности$",
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%xТребуется",
 		["MovementSpeed"] = "^%+# к скорости передвижения$",
-		--[[Translation missing --]]
-		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
+		["Mp5"] = "^Если на персонаже: Восполнение # ед%. маны раз в 5 сек%.$",
 		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["MultiStatHeading"] = "^Различные характеристики$",
 		["MultiStatSeparator1"] = "и",
@@ -384,8 +344,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Polearm"] = "^Древковое$",
 		["PvPPower"] = "^%+?# к PvP%-силе$",
 		["RaidFinder"] = "^Поиск рейда$",
-		--[[Translation missing --]]
-		["Rap"] = "^Equip: %+# ranged Attack Power%.$",
+		["Rap"] = "^Если на персонаже: Увеличение силы атаки в дальнем бою на # ед%.$",
 		["Requires2"] = "^Требуемый уровень",
 		["Resilience"] = "^%+?# к PvP%-устойчивости$",
 		["Resilience2"] = "^UNUSED$",
@@ -399,14 +358,11 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SocketBonusPrefix"] = "При соответствии цвета:",
 		["Speed"] = "^Скорость #$",
 		["Speed2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by ([-%d%.,]+)%%%.$",
+		["SpellCrit"] = "^Если на персонаже: Увеличение рейтинга критического эффекта заклинаний на #%%%.$",
 		--[[Translation missing --]]
 		["SpellDamage"] = "^%+# Spell Damage$",
-		--[[Translation missing --]]
-		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to ([-%d%.,]+)%.$",
-		--[[Translation missing --]]
-		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
+		["SpellDamage2"] = "^Если на персонаже: Увеличение урона и целительного действия магических заклинаний и эффектов не более чем на # ед%.$",
+		["SpellHit"] = "^Если на персонаже: Повышение на #%% рейтинга меткости заклинаний%.$",
 		["SpellPower"] = "^%+?# к силе заклинаний$",
 		["Spirit"] = "^%+?# к духу$",
 		["Staff"] = "^Посох$",

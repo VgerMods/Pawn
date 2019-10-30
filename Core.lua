@@ -29,7 +29,7 @@ local IsClassic = VgerCore.IsClassic
 
 -- The languages that Pawn is currently translated into (http://www.wowpedia.org/API_GetLocale)
 PawnLocalizedLanguages = { "deDE", "enUS", "enGB", "esES", "esMX", "frFR", "itIT", "koKR", "ptBR", "ruRU", "zhCN", "zhTW" }
-PawnLocalizedLanguagesClassic = { "deDE", "enUS", "enGB", "esES", "esMX", "frFR", "ptBR", "zhCN" }
+PawnLocalizedLanguagesClassic = { "deDE", "enUS", "enGB", "esES", "esMX", "frFR", "ptBR", "ruRU", "zhCN" }
 
 -- NOTE: These functions are not super-flexible for general purpose; they don't properly handle all sorts of Lua pattern matching syntax
 -- that could be in strings, like "." and so on.  But they've been sufficient so far.
