@@ -2449,8 +2449,6 @@ function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunctio
 	PawnUIStringDialog_PromptText:SetText(Prompt)
 	PawnUIStringDialog_TextBox:SetText("") -- Causes the insertion point to move to the end on the next SetText
 	PawnUIStringDialog_TextBox:SetText(DefaultValue)
-	PawnUIStringDialog_TextBox:SetPoint("TOPLEFT", 25, -75)
-	PawnUIStringDialog_TextBox:SetPoint("BOTTOMRIGHT", -25, 65)
 
 	if Cancelable then
 		PawnUIStringDialog_OKButton:Show()

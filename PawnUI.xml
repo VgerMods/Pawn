@@ -1778,17 +1778,30 @@
 
 			<!-- Main frame buttons and such -->
 
-			<EditBox name="$parent_TextBox" multiLine="true" hidden="false">
-				<Scripts>
-					<OnTextChanged function="PawnUIStringDialog_TextBox_OnTextChanged" />
-				</Scripts>
-				<FontString inherits="GameFontHighlightSmall" />
-			</EditBox>
-			
+			<ScrollFrame name="$parent_Scroller" inherits="UIPanelScrollFrameTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-75" /></Offset></Anchor>
+					<Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-43" y="65" /></Offset></Anchor>
+				</Anchors>
+				<ScrollChild>
+					<EditBox name="PawnUIStringDialog_TextBox" multiLine="true" hidden="false">
+						<Anchors>
+							<Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="0" /></Offset></Anchor>
+							<Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="0" y="0" /></Offset></Anchor>
+						</Anchors>
+						<Size><AbsDimension x="282" y="25" /></Size>
+						<Scripts>
+							<OnTextChanged function="PawnUIStringDialog_TextBox_OnTextChanged" />
+						</Scripts>
+						<FontString inherits="GameFontHighlightSmall" />
+					</EditBox>
+				</ScrollChild>
+			</ScrollFrame>
+
 			<Frame>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parent_TextBox"><Offset><AbsDimension x="-7" y="7" /></Offset></Anchor>
-					<Anchor point="BOTTOMRIGHT" relativeTo="$parent_TextBox"><Offset><AbsDimension x="7" y="-7" /></Offset></Anchor>
+					<Anchor point="TOPLEFT" relativeTo="$parent_Scroller"><Offset><AbsDimension x="-7" y="7" /></Offset></Anchor>
+					<Anchor point="BOTTOMRIGHT" relativeTo="$parent_Scroller"><Offset><AbsDimension x="26" y="-7" /></Offset></Anchor>
 				</Anchors>
 				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 					<EdgeSize><AbsValue val="16" /></EdgeSize>
