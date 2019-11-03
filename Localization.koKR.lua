@@ -84,8 +84,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "Arcane Damage",
+		["ArcaneSpellDamage"] = "비전 주문 공격력",
 		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
 		["ArmorInfo"] = "방어도. 받는 물리 피해를 감소시킵니다.",
@@ -108,19 +107,16 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "Fire Damage",
+		["FireSpellDamage"] = "화염 주문 공격력",
 		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
 		--[[Translation missing --]]
 		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "Frost Damage",
+		["FrostSpellDamage"] = "냉기 주문 공격력",
 		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "가속. 주문 시전이나 자원 회복 속도를 증가시킵니다.",
-		--[[Translation missing --]]
-		["Healing"] = "Spell Healing",
+		["Healing"] = "치유 효과 증가",
 		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
 		--[[Translation missing --]]
@@ -142,14 +138,12 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["MasteryInfo"] = "특화. 직업 전문화의 특별한 보너스를 향상시킵니다.",
 		["MinorStats"] = "보조 능력치",
 		["MovementSpeedInfo"] = "이동 속도. 자신의 캐릭터의 달리기 속도가 빨라집니다.",
-		--[[Translation missing --]]
-		["Mp5"] = "Mana per 5",
+		["Mp5"] = "5초당 마나 회복",
 		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
 		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "Nature Damage",
+		["NatureSpellDamage"] = "자연 주문 공격력",
 		--[[Translation missing --]]
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
 		--[[Translation missing --]]
@@ -160,8 +154,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
 		--[[Translation missing --]]
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "Shadow Damage",
+		["ShadowSpellDamage"] = "암흑 주문 공격력",
 		--[[Translation missing --]]
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
 		["Shield"] = "방패",
@@ -279,25 +272,18 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Agility"] = "^민첩성 %+?#$",
 		["AllStats"] = "^모든 능력치 %+?#$",
 		["Ap"] = "^전투력 %+?#$",
-		--[[Translation missing --]]
-		["Ap2"] = "^Equip: %+# Attack Power%.$",
-		--[[Translation missing --]]
-		["ArcaneResist"] = "^%+?# Arcane Resistance$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "^%+# Arcane Spell Damage$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",
+		["Ap2"] = "^착용 효과: 전투력 %+#$",
+		["ArcaneResist"] = "^비전 저항력 %+#$",
+		["ArcaneSpellDamage"] = "^비전 주문 공격력 %+#$",
+		["ArcaneSpellDamage2"] = "^착용 효과: 비전 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["Armor"] = "^방어도 %+?#$",
 		["Armor2"] = "^UNUSED$",
 		["Avoidance"] = "^광역회피 %+#$",
 		["Axe"] = "^도끼$",
 		["BagSlots"] = "^%d+칸.+$",
-		--[[Translation missing --]]
-		["Block"] = "^%+?# Block$",
-		--[[Translation missing --]]
-		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		--[[Translation missing --]]
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
+		["Block"] = "^#의 피해 방어$",
+		["BlockPercent"] = "^착용 효과: 방패로 적의 공격을 방어할 확률이 #%%만큼 증가합니다%.$",
+		["BlockValue"] = "^착용 효과: 방패의 피해 방어량이 #만큼 증가합니다%.$",
 		["Bow"] = "^활$",
 		["ChanceOnHit"] = "발동 효과:",
 		["Charges"] = "^.+회 사용 가능$",
@@ -305,18 +291,15 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["CooldownRemaining"] = "^재사용 대기시간:",
 		["Crit"] = "^치명타 및 극대화 %+?#$",
 		["Crit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["CritPercent"] = "^Equip: Improves your chance to get a critical strike by #%%%.$",
+		["CritPercent"] = "^착용 효과: 치명타를 적중시킬 확률이 #%%만큼 증가합니다%.$",
 		["Crossbow"] = "^석궁$",
 		["Dagger"] = "^단검$",
-		--[[Translation missing --]]
-		["DefenseSkill"] = "^Equip: Increased Defense %+#%.$",
-		["DefenseSkillSimple"] = "^%+?# Defense$",
+		["DefenseSkill"] = "^착용 효과: 방어 숙련도 %+#$",
+		["DefenseSkillSimple"] = "^방어 숙련도 %+#$",
 		["DisenchantingRequires"] = "^마력 추출 요구 사항",
 		["Dodge"] = "^회피 %+?#%%?$",
 		["Dodge2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
+		["DodgePercent"] = "^착용 효과: 공격을 회피할 확률이 #%%만큼 증가합니다%.$",
 		["Dps"] = "^%(초당 공격력 #%)$",
 		["DpsAdd"] = "^초당 공격력 # 추가$",
 		["Duration"] = "^지속시간:",
@@ -330,30 +313,21 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["EnchantmentPyriumWeaponChain"] = "^황철 무기 사슬$",
 		["EnchantmentTitaniumWeaponChain"] = "^티타늄 무기 사슬$",
 		["Equip"] = "착용 효과:",
-		--[[Translation missing --]]
-		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
-		--[[Translation missing --]]
-		["FireResist"] = "^%+?# Fire Resistance$",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "^%+# Fire Spell Damage$",
-		--[[Translation missing --]]
-		["FireSpellDamage2"] = "^Equip: Increases damage done by Fire spells and effects by up to #%.$",
+		["FeralAp"] = "^착용 효과: 표범, 광포한 곰, 곰 변신 상태일 때 전투력이 #만큼 증가합니다%.$",
+		["FireResist"] = "^화염 저항력 %+#$",
+		["FireSpellDamage"] = "^화염 주문 공격력 %+#$",
+		["FireSpellDamage2"] = "^착용 효과: 화염 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["FistWeapon"] = "^장착 무기$",
 		["Flexible"] = "^탄력적 공격대$",
-		--[[Translation missing --]]
-		["FrostResist"] = "^%+?# Frost Resistance$",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "^%+# Frost Spell Damage$",
-		--[[Translation missing --]]
-		["FrostSpellDamage2"] = "^Equip: Increases damage done by Frost spells and effects by up to #%.$",
+		["FrostResist"] = "^냉기 저항력 %+#$",
+		["FrostSpellDamage"] = "^냉기 주문 공격력 %+#$",
+		["FrostSpellDamage2"] = "^착용 효과: 냉기 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["Gun"] = "^총$",
 		["Haste"] = "^가속 %+?#$",
 		["Haste2"] = "^UNUSED$",
 		["HaventCollectedAppearance"] = "^아직 수집하지 않은 형상입니다%.$",
-		--[[Translation missing --]]
-		["Healing"] = "^%+# Healing Spells$",
-		--[[Translation missing --]]
-		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing"] = "^치유 효과 증가 %+#$",
+		["Healing2"] = "^착용 효과: 모든 주문 및 효과에 의한 치유량이 최대 #만큼 증가합니다%.$",
 		["HeirloomLevelRange"] = "^요구 레벨: %d+ %~ (%d+)",
 		["HeirloomXpBoost"] = "^착용 효과: 경험치 획득량이",
 		["HeirloomXpBoost2"] = "^착용 효과: 몬스터 처치와 퀘스트 완료로 얻는 경험치가",
@@ -361,14 +335,11 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["HeroicElite"] = "^정예 상급$",
 		["HeroicThunderforged"] = "^천둥벼림 상급$",
 		["HeroicWarforged"] = "^상급 전쟁벼림$",
-		--[[Translation missing --]]
-		["Hit"] = "^Equip: Improves your chance to hit by #%%%.$",
-		--[[Translation missing --]]
+		["Hit"] = "^착용 효과: 무기의 적중률이 #%%만큼 증가합니다%.$",
 		["Hit2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
-		--[[Translation missing --]]
-		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
+		["HolySpellDamage2"] = "^착용 효과: 신성 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["Hp5"] = "^착용 효과: 5초마다 # 생명력이 회복됩니다%.$",
 		["Hp52"] = "^착용 효과: 5초 마다 # 생명력을 회복합니다%.$",
 		["Hp53"] = "^5초당 생명력 %+?#$",
@@ -382,18 +353,14 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Mastery2"] = "^UNUSED$",
 		["MetaGemRequirements"] = "필요한 아이템 레벨:",
 		["MovementSpeed"] = "^이동 속도 %+#$",
-		--[[Translation missing --]]
-		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
-		["Mp52"] = "^%+?# mana every 5 sec%.$",
+		["Mp5"] = "^착용 효과: 매 5초마다 #의 마나가 회복됩니다%.$",
+		["Mp52"] = "^5초당 마나 회복 %+#$",
 		["MultiStatHeading"] = "^다수의 능력치$",
 		["MultiStatSeparator1"] = "/",
 		["Multistrike"] = "^연속타격 %+#$",
-		--[[Translation missing --]]
-		["NatureResist"] = "^%+?# Nature Resistance$",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "^%+# Nature Spell Damage$",
-		--[[Translation missing --]]
-		["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
+		["NatureResist"] = "^자연 저항력 %+#$",
+		["NatureSpellDamage"] = "^자연 주문 공격력 %+#$",
+		["NatureSpellDamage2"] = "^착용 효과: 자연 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["NormalizationEnchant"] = "^마법부여: (.*)$",
 		["Parry"] = "^무기 막기 %+?#$",
 		["Parry2"] = "^UNUSED$",
@@ -401,32 +368,25 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Polearm"] = "^장창$",
 		["PvPPower"] = "^PvP 위력 %+?#$",
 		["RaidFinder"] = "^공격대 찾기$",
-		--[[Translation missing --]]
-		["Rap"] = "^Equip: %+# ranged Attack Power%.$",
+		["Rap"] = "^착용 효과: 원거리 전투력 %+#$",
 		["Requires2"] = "^최소 요구 레벨",
 		["Resilience"] = "^PvP 탄력 %+?#$",
 		["Resilience2"] = "^UNUSED$",
 		["Scope"] = "^조준경 %(공격력 %+#%)$",
 		["ScopeCrit"] = "^조준경 %(치명타 %+#%)$",
 		["ScopeRangedCrit"] = "^원거리 치명타 %+?#$",
-		--[[Translation missing --]]
-		["ShadowResist"] = "^%+?# Shadow Resistance$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowResist"] = "^암흑 저항력 %+#$",
+		["ShadowSpellDamage"] = "^암흑 주문 공격력 %+#$",
+		["ShadowSpellDamage2"] = "^착용 효과: 암흑 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["Shield"] = "^방패$",
 		["SocketBonusPrefix"] = "보석 장착 보너스:",
 		["Speed"] = "^속도 #$",
 		["Speed2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by #%%%.$",
+		["SpellCrit"] = "^착용 효과: 주문이 극대화 효과를 낼 확률이 #%%만큼 증가합니다%.$",
 		--[[Translation missing --]]
 		["SpellDamage"] = "^%+# Spell Damage$",
-		--[[Translation missing --]]
-		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
-		--[[Translation missing --]]
-		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
+		["SpellDamage2"] = "^착용 효과: 모든 주문 및 효과에 의한 피해와 치유량이 최대 #만큼 증가합니다%.$",
+		["SpellHit"] = "^착용 효과: 주문의 적중률이 #%%만큼 증가합니다%.$",
 		["SpellPower"] = "^주문력 %+?#$",
 		["Spirit"] = "^정신력 %+?#$",
 		["Staff"] = "^지팡이$",
@@ -444,21 +404,21 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Wand"] = "^마법봉$",
 		["Warforged"] = "^전쟁벼림$",
 		["Warglaives"] = "^전투검$",
-		["WeaponDamage"] = "^공격력 # %~ #$",
-		["WeaponDamageArcane"] = "^비전 피해 #%~#$",
+		["WeaponDamage"] = "^공격력 # [-~] #$",
+		["WeaponDamageArcane"] = "^비전 피해 #[-~]#$",
 		["WeaponDamageArcaneExact"] = "^비전 피해 %+?#$",
 		["WeaponDamageEnchantment"] = "^무기 공격력 %+?#$",
 		["WeaponDamageEquip"] = "^착용 효과: 무기 공격력 %+?#%.$",
 		["WeaponDamageExact"] = "^공격력 %+?#$",
-		["WeaponDamageFire"] = "^화염 피해 #%~#$",
+		["WeaponDamageFire"] = "^화염 피해 #[-~]#$",
 		["WeaponDamageFireExact"] = "^화염 피해 %+?#$",
-		["WeaponDamageFrost"] = "^냉기 피해 #%~#$",
+		["WeaponDamageFrost"] = "^냉기 피해 #[-~]#$",
 		["WeaponDamageFrostExact"] = "^냉기 피해 %+?#$",
-		["WeaponDamageHoly"] = "^신성 피해 #%~#$",
+		["WeaponDamageHoly"] = "^신성 피해 #[-~]#$",
 		["WeaponDamageHolyExact"] = "^신성 피해 %+?#$",
-		["WeaponDamageNature"] = "^자연 피해 #%~#$",
+		["WeaponDamageNature"] = "^자연 피해 #[-~]#$",
 		["WeaponDamageNatureExact"] = "^자연 피해 %+?#$",
-		["WeaponDamageShadow"] = "^암흑 피해 #%~#$",
+		["WeaponDamageShadow"] = "^암흑 피해 #[-~]#$",
 		["WeaponDamageShadowExact"] = "^암흑 피해 %+?#$",
 	},
 	["UI"] = {
