@@ -1759,7 +1759,7 @@
 	
 	<!-- A generic dialog for asking for a string -->
 	<Frame name="PawnUIStringDialog" inherits="PawnUIDialogTemplate">
-	 	<Size><AbsDimension x="350" y="155" /></Size>
+	 	<Size><AbsDimension x="350" y="230" /></Size>
 
 		<!-- The art layer -->
 		<Layers>
@@ -1777,14 +1777,24 @@
 		<Frames>
 
 			<!-- Main frame buttons and such -->
-			<EditBox name="$parent_TextBox" inherits="InputBoxTemplate" hidden="false">
-				<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="50" y="-75" /></Offset></Anchor></Anchors>
-				<Size><AbsDimension x="250" y="25" /></Size>
+
+			<EditBox name="$parent_TextBox" multiLine="true" hidden="false">
 				<Scripts>
 					<OnTextChanged function="PawnUIStringDialog_TextBox_OnTextChanged" />
 				</Scripts>
+				<FontString inherits="GameFontHighlightSmall" />
 			</EditBox>
 			
+			<Frame>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent_TextBox"><Offset><AbsDimension x="-7" y="7" /></Offset></Anchor>
+					<Anchor point="BOTTOMRIGHT" relativeTo="$parent_TextBox"><Offset><AbsDimension x="7" y="-7" /></Offset></Anchor>
+				</Anchors>
+				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+					<EdgeSize><AbsValue val="16" /></EdgeSize>
+				</Backdrop>
+			</Frame>
+
 			<Button name="$parent_OKButton" hidden="false" inherits="UIPanelButtonTemplate">
 				<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-125" y="20" /></Offset></Anchor></Anchors>
 				<Size><AbsDimension x="95" y="25" /></Size>

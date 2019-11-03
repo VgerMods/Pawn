@@ -2441,6 +2441,7 @@ end
 -- Note: Successfully tested with strings of about 900 characters.
 function PawnUIShowCopyableString(Prompt, Value, CallbackFunction)
 	PawnUIGetStringCore(Prompt, Value, false, CallbackFunction, nil)
+	PawnUIStringDialog_TextBox:HighlightText()
 end
 
 -- Core function called by PawnUIGetString.
@@ -2448,6 +2449,9 @@ function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunctio
 	PawnUIStringDialog_PromptText:SetText(Prompt)
 	PawnUIStringDialog_TextBox:SetText("") -- Causes the insertion point to move to the end on the next SetText
 	PawnUIStringDialog_TextBox:SetText(DefaultValue)
+	PawnUIStringDialog_TextBox:SetPoint("TOPLEFT", 25, -75)
+	PawnUIStringDialog_TextBox:SetPoint("BOTTOMRIGHT", -25, 65)
+
 	if Cancelable then
 		PawnUIStringDialog_OKButton:Show()
 		PawnUIStringDialog_OKButton:SetText(OKAY)
@@ -2458,6 +2462,7 @@ function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunctio
 	end
 	PawnUIStringDialog.OKCallbackFunction = OKCallbackFunction
 	PawnUIStringDialog.CancelCallbackFunction = CancelCallbackFunction
+
 	PawnUIStringDialog:Show()
 	PawnUIStringDialog_TextBox:SetFocus()
 end
