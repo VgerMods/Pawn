@@ -84,8 +84,7 @@ PawnLocal =
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "Arcane Damage",
+		["ArcaneSpellDamage"] = "祕法法術傷害",
 		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
 		["ArmorInfo"] = "基本護甲值，不包含坦克裝備的 \"額外護甲值\" 屬性",
@@ -109,19 +108,16 @@ PawnLocal =
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
 		--[[Translation missing --]]
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "Fire Damage",
+		["FireSpellDamage"] = "火焰法術傷",
 		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
 		--[[Translation missing --]]
 		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "Frost Damage",
+		["FrostSpellDamage"] = "冰霜法術傷害",
 		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "加速: 影響近戰攻擊，遠程攻擊，法術。",
-		--[[Translation missing --]]
-		["Healing"] = "Spell Healing",
+		["Healing"] = "治療法術",
 		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
 		--[[Translation missing --]]
@@ -143,14 +139,12 @@ PawnLocal =
 		["MasteryInfo"] = "精通: 提高你主天賦的特有加成。",
 		["MinorStats"] = "其他",
 		["MovementSpeedInfo"] = "移動速度: 提高你角色的移動速度",
-		--[[Translation missing --]]
-		["Mp5"] = "Mana per 5",
+		["Mp5"] = "法力每5秒",
 		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
 		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "Nature Damage",
+		["NatureSpellDamage"] = "自然法術傷害",
 		--[[Translation missing --]]
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
 		--[[Translation missing --]]
@@ -161,8 +155,7 @@ PawnLocal =
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
 		--[[Translation missing --]]
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "Shadow Damage",
+		["ShadowSpellDamage"] = "暗影法術傷害",
 		--[[Translation missing --]]
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
 		["Shield"] = "盾牌",
@@ -177,8 +170,7 @@ PawnLocal =
 		["SpeedIs"] = "1 |cffffffff武器速度|r 價值:",
 		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
-		--[[Translation missing --]]
-		["SpellDamage"] = "Spell Damage",
+		["SpellDamage"] = "法術傷害",
 		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
 		--[[Translation missing --]]
@@ -281,25 +273,18 @@ PawnLocal =
 		["Agility"] = "^%+?#敏捷$",
 		["AllStats"] = "^%+?#所有屬性$",
 		["Ap"] = "^%+?#攻擊強度$",
-		--[[Translation missing --]]
-		["Ap2"] = "^Equip: %+# Attack Power%.$",
-		--[[Translation missing --]]
-		["ArcaneResist"] = "^%+?# Arcane Resistance$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "^%+# Arcane Spell Damage$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",
+		["Ap2"] = "^裝備： %+#攻擊強度。$",
+		["ArcaneResist"] = "^%+?# 祕法抗性$",
+		["ArcaneSpellDamage"] = "^%+# 祕法法術傷害$",
+		["ArcaneSpellDamage2"] = "^裝備： 祕法法術和效果造成的傷害提高最多#點。$",
 		["Armor"] = "^#點護甲$",
 		["Armor2"] = "^裝備: %+#點護甲值。$",
 		["Avoidance"] = "^%+#迴避$",
 		["Axe"] = "^斧$",
 		["BagSlots"] = "^%d+格容器$",
-		--[[Translation missing --]]
-		["Block"] = "^%+?# Block$",
-		--[[Translation missing --]]
-		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		--[[Translation missing --]]
-		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
+		["Block"] = "^%+?#格擋$",
+		["BlockPercent"] = "^裝備： 使你用盾牌格擋攻擊的機率提高#%%。$",
+		["BlockValue"] = "^裝備： 使你的盾牌格擋值提高#點。$",
 		["Bow"] = "^弓$",
 		["ChanceOnHit"] = "擊中時可能: ",
 		["Charges"] = "^.+次?$",
@@ -307,18 +292,16 @@ PawnLocal =
 		["CooldownRemaining"] = "^冷卻時間:",
 		["Crit"] = "^%+?#致命一擊$",
 		["Crit2"] = "^裝備: 提高#點致命一擊。$",
-		--[[Translation missing --]]
-		["CritPercent"] = "^Equip: Improves your chance to get a critical strike by #%%%.$",
+		["CritPercent"] = "^裝備： 使你造成致命一擊的機率提高#%%。$",
 		["Crossbow"] = "^弩$",
 		["Dagger"] = "^匕首$",
 		--[[Translation missing --]]
 		["DefenseSkill"] = "^Equip: Increased Defense %+#%.$",
-		["DefenseSkillSimple"] = "^%+?# Defense$",
+		["DefenseSkillSimple"] = "^%+?耐力$",
 		["DisenchantingRequires"] = "^分解需要",
-		["Dodge"] = "^%+?#%%?閃躲$",
+		["Dodge"] = "^%+?#%%? 躲避$",
 		["Dodge2"] = "^裝備: 提高#%%?點閃躲等級。$",
-		--[[Translation missing --]]
-		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
+		["DodgePercent"] = "^裝備： 使你躲閃攻擊的機率提高#%%。$",
 		["Dps"] = "^%(每秒#點傷害%)$",
 		["DpsAdd"] = "^增加 #每秒傷害$",
 		["Duration"] = "^持續:",
@@ -332,30 +315,21 @@ PawnLocal =
 		["EnchantmentPyriumWeaponChain"] = "^黃鐵武器鍊$",
 		["EnchantmentTitaniumWeaponChain"] = "^泰坦鋼武器鍊$",
 		["Equip"] = "裝備: ",
-		--[[Translation missing --]]
-		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
-		--[[Translation missing --]]
-		["FireResist"] = "^%+?# Fire Resistance$",
-		--[[Translation missing --]]
-		["FireSpellDamage"] = "^%+# Fire Spell Damage$",
-		--[[Translation missing --]]
-		["FireSpellDamage2"] = "^Equip: Increases damage done by Fire spells and effects by up to #%.$",
+		["FeralAp"] = "^裝備： 在獵豹、熊或巨熊形態下的攻擊強度提高#點。$",
+		["FireResist"] = "^%+?# 火焰抗性$",
+		["FireSpellDamage"] = "^%+# 火焰法術傷$",
+		["FireSpellDamage2"] = "^裝備： 提高火焰法術和效果所造成的傷害，最多#點。$",
 		["FistWeapon"] = "^拳套$",
 		["Flexible"] = "^Flexible$",
-		--[[Translation missing --]]
-		["FrostResist"] = "^%+?# Frost Resistance$",
-		--[[Translation missing --]]
-		["FrostSpellDamage"] = "^%+# Frost Spell Damage$",
-		--[[Translation missing --]]
-		["FrostSpellDamage2"] = "^Equip: Increases damage done by Frost spells and effects by up to #%.$",
+		["FrostResist"] = "^%+?# 冰霜抗性$",
+		["FrostSpellDamage"] = "^%+# 冰霜法術傷害$",
+		["FrostSpellDamage2"] = "^裝備： 提高冰霜法術和效果所造成的傷害，最多#點。$",
 		["Gun"] = "^槍械$",
 		["Haste"] = "^%+?#加速$",
 		["Haste2"] = "^裝備: 提高#點加速。$",
 		["HaventCollectedAppearance"] = "^你尚未收藏過此外觀$",
-		--[[Translation missing --]]
-		["Healing"] = "^%+# Healing Spells$",
-		--[[Translation missing --]]
-		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing"] = "^%+# 治療法術$",
+		["Healing2"] = "^裝備： 提高法術和魔法效果所造成的治療效果，最多#點。$",
 		["HeirloomLevelRange"] = "^需要等級(%d+)至(%d+)%((%d+)%)",
 		["HeirloomXpBoost"] = "^裝備: .*獲得的經驗值提高%d+%%。",
 		["HeirloomXpBoost2"] = "^UNUSED$",
@@ -363,14 +337,11 @@ PawnLocal =
 		["HeroicElite"] = "^傳奇難度$",
 		["HeroicThunderforged"] = "^英雄難度雷霆鎔鑄$",
 		["HeroicWarforged"] = "^英雄難度戰鑄$",
-		--[[Translation missing --]]
-		["Hit"] = "^Equip: Improves your chance to hit by #%%%.$",
-		--[[Translation missing --]]
+		["Hit"] = "^裝備： 使你擊中目標的機率提高#%%。$",
 		["Hit2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
-		--[[Translation missing --]]
-		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
+		["HolySpellDamage2"] = "^裝備： 提高神聖法術和效果所造成的傷害，最多#點。$",
 		["Hp5"] = "^裝備: 每5秒恢復#生命力。$",
 		["Hp52"] = "^每5秒恢復#生命力。?$",
 		["Hp53"] = "^UNUSED$",
@@ -384,18 +355,14 @@ PawnLocal =
 		["Mastery2"] = "^裝備: 提高#點精通。$",
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%x需求",
 		["MovementSpeed"] = "^%+#速度$",
-		--[[Translation missing --]]
-		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
-		["Mp52"] = "^%+?# mana every 5 sec%.$",
+		["Mp5"] = "^裝備： 每5秒恢復#點法力。$",
+		["Mp52"] = "^每5秒恢復#點法力%。$",
 		["MultiStatHeading"] = "^多項統計$",
 		["MultiStatSeparator1"] = "和",
 		["Multistrike"] = "^%+#雙擊$",
-		--[[Translation missing --]]
-		["NatureResist"] = "^%+?# Nature Resistance$",
-		--[[Translation missing --]]
-		["NatureSpellDamage"] = "^%+# Nature Spell Damage$",
-		--[[Translation missing --]]
-		["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
+		["NatureResist"] = "^%+?# 自然抗性$",
+		["NatureSpellDamage"] = "^%+# 自然法術傷害$",
+		["NatureSpellDamage2"] = "^裝備： 提高自然法術和效果所造成的傷害，最多#點。$",
 		["NormalizationEnchant"] = "^附魔:(.*)$",
 		["Parry"] = "^%+?#招架$",
 		["Parry2"] = "^裝備: 提高#點招架等級。$",
@@ -403,32 +370,24 @@ PawnLocal =
 		["Polearm"] = "^長柄武器$",
 		["PvPPower"] = "^%+?#PvP強度$",
 		["RaidFinder"] = "^團隊搜尋器$",
-		--[[Translation missing --]]
-		["Rap"] = "^Equip: %+# ranged Attack Power%.$",
+		["Rap"] = "^裝備： %+#遠程攻擊強度。$",
 		["Requires2"] = "^UNUSED$",
 		["Resilience"] = "^%+?#PvP韌性$",
 		["Resilience2"] = "^裝備: 提高#點韌性。$",
 		["Scope"] = "^瞄準鏡%(%+#傷害%)$",
 		["ScopeCrit"] = "^瞄準鏡%(%+#致命一擊%)$",
 		["ScopeRangedCrit"] = "^%+?#遠程致命一擊$",
-		--[[Translation missing --]]
-		["ShadowResist"] = "^%+?# Shadow Resistance$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
-		--[[Translation missing --]]
-		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowResist"] = "^%+?# 陰影抗性$",
+		["ShadowSpellDamage"] = "^%+# 暗影法術傷害$",
+		["ShadowSpellDamage2"] = "^裝備： 提高暗影法術和效果所造成的傷害，最多#點。$",
 		["Shield"] = "^盾牌$",
 		["SocketBonusPrefix"] = "插槽加成:",
 		["Speed"] = "^速度 #$",
 		["Speed2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by #%%%.$",
-		--[[Translation missing --]]
-		["SpellDamage"] = "^%+# Spell Damage$",
-		--[[Translation missing --]]
-		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
-		--[[Translation missing --]]
-		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
+		["SpellCrit"] = "^裝備： 使你的法術造成致命一擊的機率提高#%%。$",
+		["SpellDamage"] = "^%+# 法術傷害$",
+		["SpellDamage2"] = "^裝備： 提高法術和魔法效果所造成的傷害和治療效果，最多#點。$",
+		["SpellHit"] = "^裝備： 使你的法術擊中敵人的機率提高#%%。$",
 		["SpellPower"] = "^%+?#法術能量$",
 		["Spirit"] = "^%+?#精神$",
 		["Staff"] = "^法杖$",
@@ -710,6 +669,37 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 若你想改變這些分數，請至權重頁面複製或創建一個新權重。]=],
 	}
 }
+
+-- Special case: weapons actually use different text on live versus classic.
+-- So, patch things up here.
+if VgerCore.IsClassic then
+
+	local TooltipParsing_Classic =
+	{
+		["Dps"] = "^%（每秒傷害#%）$",
+		["WeaponDamage"] = "^# %- #傷害$",
+		["WeaponDamageArcane"] = "^%+?# %- #祕法傷害$",
+		["WeaponDamageArcaneExact"] = "^%+?#祕法傷害$",
+		["WeaponDamageEquip"] = "^裝備: %+?#武器傷害。$",
+		["WeaponDamageExact"] = "^%+?#傷害$",
+		["WeaponDamageFire"] = "^%+?# %- #火焰傷害$",
+		["WeaponDamageFireExact"] = "^%+?#火焰傷害$",
+		["WeaponDamageFrost"] = "^%+?# %- #冰霜傷害$",
+		["WeaponDamageFrostExact"] = "^%+?#冰霜傷害$",
+		["WeaponDamageHoly"] = "^%+?# %- #神聖傷害$",
+		["WeaponDamageHolyExact"] = "^%+?#神聖傷害$",
+		["WeaponDamageNature"] = "^%+?# %- #自然傷害$",
+		["WeaponDamageNatureExact"] = "^%+?#自然傷害$",
+		["WeaponDamageShadow"] = "^%+?# %- #陰影傷害$",
+		["WeaponDamageShadowExact"] = "^%+?#陰影傷害$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
 end
 
 if GetLocale() == "zhTW" then
