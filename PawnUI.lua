@@ -1505,6 +1505,32 @@ function PawnUILinkItemInChat(Item)
 	end
 end
 
+-- Gets all of the text from an item tooltip and then puts it into a box where it can be copied.
+function PawnUIGetAllTextForItem(Item)
+	if not Item or not Item.Link then return end
+	local Tooltip = _G[PawnPrivateTooltipName]
+	VgerCore.Assert(Tooltip, "Failed to find the private tooltip.")
+
+	Tooltip:SetHyperlink(Item.Link)
+
+	local NumLines = Tooltip:NumLines()
+	local i
+	local AllText = ""
+	for i = 1, NumLines do
+		local LeftLine = _G[PawnPrivateTooltipName .. "TextLeft" .. i]
+		AllText = AllText .. LeftLine:GetText() .. "\n"
+		local RightLine = _G[PawnPrivateTooltipName .. "TextRight" .. i]
+		if RightLine then
+			local RightText = RightLine:GetText()
+			if RightText and RightText ~= "" then
+				AllText = AllText .. "    " .. RightText .. "\n"
+			end
+		end
+	end
+
+	PawnUIShowCopyableString(Item.Name, AllText)
+end
+
 -- Called when one of the two upper item slots are clicked.
 function PawnUICompareItemIcon_OnClick(Index)
 	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
@@ -1533,6 +1559,13 @@ function PawnUICompareItemIcon_OnClick(Index)
 		if Index == 2 then PawnUI_AutoCompare() end
 		return
 	end
+
+	-- Are they holding down Alt to copy and paste text from the item?
+	if PawnUIComparisonItems[Index] and IsAltKeyDown() then
+		PawnUIGetAllTextForItem(PawnUIComparisonItems[Index])
+		return
+	end
+
 end
 
 -- Shows the tooltip for an item comparison slot.
