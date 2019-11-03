@@ -2546,14 +2546,23 @@ function PawnUnenchantItemLink(ItemLink, EvenIfNotEnchanted)
 end
 
 -- Returns a nice-looking string that shows the item IDs for an item, its enchantments, and its gems.
-function PawnGetItemIDsForDisplay(ItemLink)
+function PawnGetItemIDsForDisplay(ItemLink, Formatted)
 	local Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|%x+|Hitem:(%-?%d+)([^|]+)|")
 	if not Pos then return end
+	if Formatted == nil then Formatted = true end
 
 	if MoreInfo and MoreInfo ~= "" then
-		return ItemID .. VgerCore.Color.Silver .. MoreInfo .. "|r"
+		if Formatted then
+			return ItemID .. VgerCore.Color.Silver .. MoreInfo .. "|r"
+		else
+			return "item:" .. ItemID .. MoreInfo
+		end
 	else
-		return ItemID
+		if Formatted then
+			return ItemID
+		else
+			return "item:" .. ItemID
+		end
 	end
 end
 

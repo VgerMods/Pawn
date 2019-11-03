@@ -1527,6 +1527,7 @@ function PawnUIGetAllTextForItem(Item)
 			end
 		end
 	end
+	AllText = AllText .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(Item.Link, false)
 
 	PawnUIShowCopyableString(Item.Name, AllText)
 end
