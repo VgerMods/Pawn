@@ -1792,6 +1792,7 @@
 						<Size><AbsDimension x="282" y="25" /></Size>
 						<Scripts>
 							<OnTextChanged function="PawnUIStringDialog_TextBox_OnTextChanged" />
+							<OnEscapePressed function="PawnUIStringDialog_CancelButton_OnClick" />
 						</Scripts>
 						<FontString inherits="GameFontHighlightSmall" />
 					</EditBox>
