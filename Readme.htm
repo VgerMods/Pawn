@@ -3,11 +3,6 @@
 <head>
 <title>Pawn</title>
 <link rel="stylesheet" type="text/css" href="VgerCore/VgerCore.css" />
-<style type="text/css">
-.auto-style1 {
-	color: #6800FF;
-}
-</style>
 </head>
 <body>
 
@@ -454,88 +449,6 @@ and Pawn.</p>
 		any way or plan to support them.</li>
 	</ul>
 	</li>
-</ul>
-
-<h2>Known issues</h2>
-<ul>
-	<li><b>WoW Classic support is nearing completion, but it's still a work in 
-	progress, and there are some missing and incomplete features.</b></li>
-	<li>Item levels when inspecting another player are sometimes wrong.&nbsp; 
-	(To investigate further, I should just make it so that Pawn can spit out to 
-	the chat window the item levels the game is telling it for each slot, and 
-	then compare that to reality.)</li>
-	<li>When you have only one heirloom ring, Pawn doesn't show ring upgrades at 
-	all.&nbsp; (<a href="https://wow.curseforge.com/addons/pawn/tickets/117-mage-not-working/">Ticket</a>)</li>
-	<li>Pawn is currently saving an unnecessary amount of information about the 
-	built-in scales in your SavedVariables, like names, spec IDs, and so on.&nbsp; 
-	That stuff should be dynamically created each time you log in, not saved, 
-	both to keep your SavedVariables tidy, and to allow easier updates to those 
-	values in the future.</li>
-</ul>
-
-<h3>Features I might add soon</h3>
-<ul>
-	<li><b>I'll add a way to use a more compact tooltip display that doesn't 
-	include the word "upgrade."</b></li>
-	<li><b>I plan on removing Pawn's relic-related features.&nbsp; </b>(They're 
-	still there, technically, but the option to show them has been removed.)</li>
-	<li>Better handling for Azerite armor:<ul>
-		<li><b>I'll try to make it so that comparisons involving Azerite armor use 
-	the stats of the +5 ilvl version, if possible.</b></li>
-		<li><b>An option to hide all upgrades for Azerite armor</b> could be 
-		handy for some players who are very attached to specific traits.</li>
-	</ul>
-	</li>
-	<li><b>Add an option to only show bag upgrade arrows on items for your 
-	current spec, even when you're in Manual mode and have multiple scales 
-	active.</b>
-	(And then, someday in the future, maybe add grey arrows to items that are an 
-	upgrade to a scale for a spec that you're not currently in.)
-	</li>
-	<li><b>A way to set class, spec, and icon manually for custom scales.</b>&nbsp; 
-	(Right now, they can be set for imported scales, but there's no way to 
-	change them through the UI.)&nbsp; And then, a way to use those for 
-	automatic switching based on spec: allow spec switching in manual mode, and 
-	if there's one or more custom scales for the spec, use all of those instead 
-	of the AMR one.</li>
-	<li>I've gotten a bunch of feedback on the way that Pawn makes assumptions 
-	about gems today.&nbsp; I may <b>replace the existing low-level gems option</b> with two 
-	new ones: "assume I won't use gems on anything below this level" (currently 
-	PawnMinimumItemLevelToConsiderGems) and "assume 
-	I'll use the very best gems on anything at least this level" (currently the 
-	gem table's final threshold), and then make it 
-	fully customizable.</li>
-	<li>Integrate with Angry World Quests to add green arrows to item rewards in 
-	that addon's UI.</li>
-	<li>Integration with 
-	<a href="https://www.curseforge.com/wow/addons/pawn#c4425">Storyline and Immersi<span class="auto-style1">on</span></a>.<ul>
-		<li>From the author of Immersion: "Reward buttons are called: 
-		ImmersionQuestInfoItem1, ImmersionQuestInfoItem2, ... etc. They behave 
-		just as the regular reward buttons. They're also contained in the table: 
-		ImmersionFrame.TalkBox.Elements.Content.RewardsFrame.Buttons"</li>
-	</ul>
-	</li>
-	<li>In addition to upgrades, show "minor upgrade" (&lt;1%), "identical" (0%), 
-	"X% downgrade" (&lt;0%).&nbsp; Probably don't ever show anything on grey or 
-	white items, unless your current item is grey or white (or, just don't show 
-	anything worse than -20%). 
-	<ul>
-		<li>This would help people decide on secondary items due to the lack of 
-		stat cap features.</li>
-	</ul>
-	</li>
-	<li>I should come up with a way to suggest to high-end raiders (based on 
-	average ilvl) who don't 
-	have any custom scales that they should 
-	consider simulating their character for better results.</li>
-	<li>A small default value for armor so that the first few items you get when 
-	leveling a new character (with no stats) get upgrade arrows.</li>
-	<li>A summary (just in chat) that shows you what changed when you import a 
-	scale that overwrote an existing one.</li>
-	<li>The Gems tab is pretty empty these days now that gem colors aren't a 
-	thing anymore.&nbsp; I could maybe turn it into a Buffs tab that suggests 
-	gems, enchantments, food, and so on, sort of like a quick and dirty version 
-	of a class guide.&nbsp; And then it'd be useful for Classic too.</li>
 </ul>
 
 <h2>Updates</h2>
