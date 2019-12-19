@@ -2588,6 +2588,8 @@ function PawnParseScaleTag(ScaleTag)
 			Value = PawnGetClassIDFromName(Value)
 		elseif Stat == "Spec" then
 			SpecID = Value -- processed later, in case they list Spec before Class
+		elseif Value == "X" or Value == "x" then
+			Value = PawnIgnoreStatValue
 		else
 			Value = tonumber(Value)
 		end
@@ -4544,7 +4546,13 @@ function PawnGetScaleTag(ScaleName)
 		end
 		if IncludeThis then
 			if AddComma then ScaleTag = ScaleTag .. ", " end
-			ScaleTag = ScaleTag .. StatName .. "=" .. tostring(Value)
+			local ValueAsString
+			if Value == PawnIgnoreStatValue then
+				ValueAsString = "X"
+			else
+				ValueAsString = tostring(Value)
+			end
+			ScaleTag = ScaleTag .. StatName .. "=" .. ValueAsString
 			AddComma = true
 		end
 	end
