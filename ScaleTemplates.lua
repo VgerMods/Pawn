@@ -132,6 +132,11 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				ScaleValues.FrostSpellDamage = nil
 				ScaleValues.HolySpellDamage = nil
 			end
+
+			-- Only druids can make use of feral AP.
+			if Template.ClassID ~= 11 then
+				ScaleValues.FeralAp = nil
+			end
 		else
 			ScaleValues = 
 			{
@@ -504,7 +509,7 @@ PawnScaleTemplatesClassic =
 
 {
 	["ClassID"] = 11, -- Druid
-	["PrimaryStats"] = { "Strength", "Agility", "Intellect", "Spirit" }
+	["PrimaryStats"] = { "Strength", "Agility", "Stamina", "Intellect", "Spirit" }
 },
 
 {
@@ -519,7 +524,7 @@ PawnScaleTemplatesClassic =
 
 {
 	["ClassID"] = 2, -- Paladin
-	["PrimaryStats"] = { "Strength", "Agility", "Intellect" }
+	["PrimaryStats"] = { "Strength", "Agility", "Stamina", "Intellect" }
 },
 
 {
@@ -539,12 +544,12 @@ PawnScaleTemplatesClassic =
 
 {
 	["ClassID"] = 9, -- Warlock
-	["PrimaryStats"] = { "Intellect", "Spirit" }
+	["PrimaryStats"] = { "Stamina", "Intellect", "Spirit" }
 },
 
 {
 	["ClassID"] = 1, -- Warrior
-	["PrimaryStats"] = { "Strength", "Agility" }
+	["PrimaryStats"] = { "Strength", "Agility", "Stamina" }
 },
 
 }
