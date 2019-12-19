@@ -4512,7 +4512,7 @@ end
 --	Parameters: ScaleName
 --		ScaleName: The name of a Pawn scale.
 --	Return value: ScaleTag, or nil if unsuccessful.
---		ScaleTag: A Pawn scale tag.  Example:  '( Pawn: v1: "Healbot": Stamina=1, Intellect=1.24 )'
+--		ScaleTag: A Pawn scale tag.  Example:  '( Pawn: v1: "Healbot": Stamina=1, Intellect=1.24, IsSword=X )'
 function PawnGetScaleTag(ScaleName)
 	if not PawnIsInitialized then VgerCore.Fail("Can't export scales until Pawn is initialized") return end
 
