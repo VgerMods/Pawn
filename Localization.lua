@@ -571,7 +571,7 @@ If you'd rather manage things on your own, just click Manual below.]=],
 		["ScaleCopy"] = "Copy",
 		["ScaleCopyTooltip"] = "Create a new scale by making a copy of this one.",
 		["ScaleDefaults"] = "Template",
-		["ScaleDefaultsTooltip"] = "Create a new scale from a template for your spec.",
+		["ScaleDefaultsTooltip"] = "Create a new scale from a template for your class or spec.",
 		["ScaleDeleteTooltip"] = [=[Delete this scale.
 
 This command cannot be undone!]=],

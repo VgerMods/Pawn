@@ -714,8 +714,12 @@ end
 -- Returns the default Pawn scale table, either for the current player's spec, or for the supplied class and spec if non-nil.
 function PawnGetDefaultScale(ClassID, SpecID, NoStats)
 	local _
-	if ClassID == nil or SpecID == nil then
+	if ClassID == nil then
 		_, _, ClassID = UnitClass("player")
+	end
+	if VgerCore.IsClassic then
+		SpecID = nil
+	elseif SpecID == nil then
 		SpecID = GetSpecialization()
 	end
 	local Template = PawnFindScaleTemplate(ClassID, SpecID)

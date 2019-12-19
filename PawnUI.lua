@@ -2411,8 +2411,6 @@ function PawnUI_EnsureLoaded()
 			PawnUIFrame_IgnoreGemsWhileLevelingCheck:Hide()
 			PawnUIFrame_ShowSocketingAdvisorCheck:Hide()
 
-			PawnUIFrame_NewScaleFromDefaultsButton:Hide()
-			PawnUIFrame_NewScaleFromDefaultsButton_Label:Hide()
 			PawnUIFrame_ShowSpecIconsCheck:Hide()
 		end
 		if not PawnCommon then
