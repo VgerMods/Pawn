@@ -567,9 +567,8 @@ end
 
 function PawnUI_ScalesTab_SelectFrame()
 	if VgerCore.IsClassic then
-		PawnUIFrame_AutoManualDivider:Hide()
 		PawnUIFrame_AutoSelectScalesOnButton:Hide()
-		PawnUIFrame_AutoSelectScalesOffButton:Hide()
+		PawnUIFrame_AutoSelectScalesOffButton.SelectedTexture:Show()
 		PawnUIScalesTab_AutoFrame:Hide()
 		PawnUIScalesTab_ManualFrame:Show()
 	elseif PawnOptions.AutoSelectScales then

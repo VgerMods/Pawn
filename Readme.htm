@@ -456,15 +456,33 @@ and Pawn.</p>
 <ul>
 	<li>When exporting Pawn scale tags, unusable stats will now appear simply as 
 	"Stat=X" instead of "Stat=-1000000".</li>
+	<li>WoW Classic: A basic starter scale for each class is now available.<ul>
+		<li>The starter scales include default values for all stats relevant to 
+		the class, loosely based on the game's item level formula.&nbsp; 
+		(They're very similar to the default stat weights that came with Pawn a 
+		decade ago.)</li>
+		<li>There is just one starter scale per class, so for example, the druid 
+		template has values for Strength, Agility, Intellect, <i>and</i> Spirit.</li>
+		<li>The appropriate starter scale will be automatically enabled when 
+		starting Pawn for the first time (if you don't already have any scales) 
+		so it does <i>something</i>.</li>
+		<li>I still <i>highly</i> recommend customizing the default values.</li>
+		<li>The "Template" button on the Scales tab is now available, and 
+		creates a new scale based on your class's starter scale.</li>
+	</ul>
+	</li>
 	<li>WoW Classic: Pawn will now allow items that aren't your class's 
 	preferred armor type to be considered as upgrades after level 50, since 
 	non-cloth healers using cloth armor was commonplace and optimal in early 
-	WoW.&nbsp; <i>[Vger wistfully remembers her Crimson Felt Hat from Strat...]</i></li>
-	<li>WoW Classic: The "Template" button on the Scales tab is now available, 
-	which will create a new scale with default values for all stats relevant to 
-	your class.&nbsp; Unlike on retail WoW, the template does not take your spec 
-	into account, so for example, the druid template has values for Strength, 
-	Agility, Intellect, <i>and</i> Spirit.</li>
+	WoW.&nbsp; <i>[Vger wistfully remembers her Crimson Felt Hat from Strat...]</i><ul>
+		<li>The option that appears to enable this feature whenever you select 
+		an armor type on the Weights tab has been removed.</li>
+	</ul>
+	</li>
+	<li>WoW Classic: The Manual button on the Scales tab is now visible, even 
+	though you can't switch to Automatic on Classic so the button is always 
+	selected.&nbsp; (Other parts of the Pawn UI refer to "switching to Manual 
+	mode" and I didn't want to have to change them all.)</li>
 </ul>
 <h3>Version 2.3.11</h3>
 <ul>
