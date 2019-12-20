@@ -124,6 +124,8 @@ function PawnOnEvent(Event, arg1, arg2, ...)
 		PawnOnSpecChanged()
 	elseif Event == "ARTIFACT_UPDATE" then
 		PawnOnArtifactUpdated(arg1)
+	elseif Event == "GROUP_ROSTER_UPDATE" then
+		PawnShowPlayingWithVgerEasterEgg()
 	elseif Event == "PLAYER_LOGIN" then
 		PawnInitialize()
 	elseif Event == "PLAYER_LOGOUT" then
@@ -4159,6 +4161,69 @@ function PawnIsItemAnItemLevelUpgrade(Item)
 	end
 	return Difference
 end
+
+-- Returns: IsPlayingWith, UnitID
+--   IsPlayingWith: True if the the user is playing with the target player.
+--   UnitID: The unit ID of the target player ("party3" etc.).
+function PawnIsPlayingWith(TargetName, TargetRealm)
+	-- If this player IS the target, then obviously not.
+	if UnitName("player") == TargetName then return false end
+	
+	-- Is this player on the target's realm?
+	local IsOnTargetRealm = GetRealmName() == TargetRealm
+	
+	-- Look through the current group roster for the target.
+	local _, i
+	if IsInRaid() then
+	   local TargetNameAndRealm = IsOnTargetRealm and TargetName or (TargetName .. "-" .. TargetRealm)
+	   for i = 1, GetNumGroupMembers() do
+		  local Name = GetRaidRosterInfo(i)
+		  if Name == TargetNameAndRealm then return true, ("raid" .. i) end
+	   end
+	else
+	   for i = 1, GetNumSubgroupMembers() do
+		  local Name, Realm = UnitName("party" .. i)
+		  if Name == TargetName and ((Realm == TargetRealm) or (Realm == nil and IsOnTargetRealm)) then return true, ("party" .. i) end
+	   end
+	end
+	
+	-- Guess the target isn't in the group!
+	return false
+	
+ end
+ 
+ -- Shows the "you're playing with Vger" Easter Egg if appropriate.
+ -- Pass true to always show the Easter Egg regardless of current group configuration.
+ function PawnShowPlayingWithVgerEasterEgg(Test)
+	-- Should we show it?
+	local UnitID
+	if Test then
+	   UnitID = "player"
+	else
+	   if PawnCommon.HasPlayedWithVger then return end
+	   local Show
+	   Show, UnitID = PawnIsPlayingWith("Vger", "Azjol-Nerub")
+	   if not Show then return end 
+	end
+	
+	-- Okay, we're gonna do it!
+	
+	LoadAddOn("Blizzard_TalkingHeadUI")
+	
+	TalkingHeadFrame_Reset(TalkingHeadFrame, "Hello!  I created your favorite addon Pawn.  Looks like we're playing together, so feel free to say hi, and have a great day!", "Vger")
+	TalkingHeadFrame.MainFrame.Model:SetUnit("player")
+	TalkingHeadFrame_FadeinFrames()
+	TalkingHeadFrame:Show()
+	TalkingHeadFrame.MainFrame.Model:RefreshCamera()
+	Model_ApplyUICamera(TalkingHeadFrame.MainFrame.Model, 105) -- Head and torso
+	TalkingHeadFrame.MainFrame.Model:SetAnimation(60) -- Talking animation
+	PlaySound(101228, "DIALOG") -- "Do you know who I am?"
+	
+	C_Timer.After(15, function() TalkingHeadFrame_FadeoutFrames() end)
+	
+	-- Once this has happened, don't ever do it again.
+	PawnCommon.HasPlayedWithVger = true
+ end
 
 ------------------------------------------------------------
 -- Pawn API

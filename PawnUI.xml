@@ -1672,6 +1672,7 @@
 				self:RegisterEvent("PLAYER_LOGOUT")
 				self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 				self:RegisterEvent("ITEM_LOCKED")
+				self:RegisterEvent("GROUP_ROSTER_UPDATE")
 				if not VgerCore.IsClassic then
 					-- These events don't exist on Classic.
 					self:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
