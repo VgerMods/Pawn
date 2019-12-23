@@ -1633,15 +1633,6 @@
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="PawnUIFrame_OptionsTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parentTab4" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIOptionsTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
 			<Button name="$parentTab6" inherits="CharacterFrameTabButtonTemplate" id="6" text="PawnUIFrame_AboutTab_Text">
 				<Anchors><Anchor point="RIGHT" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="-6" y="-8" /></Offset></Anchor></Anchors>
 				<Scripts>
@@ -1657,6 +1648,15 @@
 					<OnClick>
 						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
 						PawnUISwitchToTab(PawnUIHelpTabPage)
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="PawnUIFrame_OptionsTab_Text">
+				<Anchors><Anchor point="RIGHT" relativeTo="$parentTab7" relativePoint="LEFT"><Offset><AbsDimension x="16" y="0" /></Offset></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+						PawnUISwitchToTab(PawnUIOptionsTabPage)
 					</OnClick>
 				</Scripts>
 			</Button>
