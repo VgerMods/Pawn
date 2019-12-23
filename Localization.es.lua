@@ -403,6 +403,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Sword"] = "^Espada$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ seg%)$",
+		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Forjas del Trueno$",
 		["Timeless"] = "^Sin tiempo$",
 		["Titanforged"] = "^Forjadoporlostitanes$",

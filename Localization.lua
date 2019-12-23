@@ -364,6 +364,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Sword"] = "^Sword$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ sec%)$",
+		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Thunderforged$",
 		["Timeless"] = "^Timeless$",
 		["Titanforged"] = "^Titanforged$",

@@ -395,6 +395,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Sword"] = "^도검$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+분%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+초%)$",
+		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^천둥벼림$",
 		["Timeless"] = "^영원의 장비$",
 		["Titanforged"] = "^티탄벼림$",

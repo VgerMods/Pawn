@@ -97,6 +97,13 @@ local PawnItemEquipLocToSlot1 =
 	INVTYPE_HOLDABLE = 17,
 	INVTYPE_TABARD = 19,
 }
+-- In Classic, ranged weapons get their own slot.
+if VgerCore.IsClassic then
+	PawnItemEquipLocToSlot1.INVTYPE_RANGED = 18
+	PawnItemEquipLocToSlot1.INVTYPE_RANGEDRIGHT = 18
+	PawnItemEquipLocToSlot1.INVTYPE_RELIC = 18
+	PawnItemEquipLocToSlot1.INVTYPE_THROWN = 18
+end
 local PawnItemEquipLocToSlot2 = 
 {
 	INVTYPE_FINGER = 12,
@@ -1000,7 +1007,7 @@ local function PawnCheckItemTypeCore(ItemLink, AllowEquippable, AllowStatGems, A
 		return
 			(AllowStatGems and ItemClassID == LE_ITEM_CLASS_GEM and ItemSubClassID ~= LE_ITEM_GEM_ARTIFACTRELIC) or
 			(AllowRelics and ItemClassID == LE_ITEM_CLASS_GEM and ItemSubClassID == LE_ITEM_GEM_ARTIFACTRELIC)
-	elseif InvType == "INVTYPE_RELIC" or InvType == "INVTYPE_THROWN" or InvType == "INVTYPE_TABARD" or InvType == "INVTYPE_BAG" or InvType == "INVTYPE_BODY" then
+	elseif ((not VgerCore.IsClassic) and (InvType == "INVTYPE_RELIC" or InvType == "INVTYPE_THROWN")) or InvType == "INVTYPE_TABARD" or InvType == "INVTYPE_BAG" or InvType == "INVTYPE_BODY" then
 		-- Old (grey, pre-artifact) relics might have sockets and therefore "stats" but they aren't equippable anymore so they shouldn't get values, so just bail out now.
 		-- Thrown items, tabards, bags, and shirts (invtype_body) can also never have stats.
 		return false
@@ -1081,9 +1088,8 @@ function PawnGetItemData(ItemLink)
 		Item.Stats, Item.SocketBonusStats, Item.UnknownLines, Item.PrettyLink = PawnGetStatsFromTooltipWithMethod(PawnPrivateTooltipName, true, "SetHyperlink", Item.Link)
 		Item.NumLines = (_G[PawnPrivateTooltipName]):NumLines()
 
-		if InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT" then
+		if (not VgerCore.IsClassic) and (InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT") then
 			-- We convert ranged weapons into the correct "handedness" of weapons since there's no ranged slot anymore.
-			-- REVIEW: *** This will cause problems on WoW Classic
 			if Item.Stats and Item.Stats.IsWand then
 				InvType = "INVTYPE_WEAPONMAINHAND"
 			else
@@ -1630,8 +1636,8 @@ function PawnGetInventoryItemValues(UnitName)
 	local Slot
 	local _
 	local MainHandArtifactLevel
-	for Slot = 1, 17 do
-		if Slot ~= 4 then -- Skip slots 0, 4, 18, and 19 (they're not gear).
+	for Slot = 1, 18 do
+		if Slot ~= 4 then -- Skip slots 0, 4, and 19 (they're not gear).
 			local ItemID = GetInventoryItemID(UnitName, Slot)
 			local Item = PawnGetItemDataForInventorySlot(Slot, false, UnitName)
 			if Item then
@@ -1666,7 +1672,7 @@ function PawnGetInventoryItemValues(UnitName)
 				-- If we have an item link but no item data, then the player HAS an item in that slot but we don't have data.
 				-- So we should just bail out now to avoid reporting inaccurate totals.  BUT, we should go ahead and query for
 				-- information on the other items before we do so that we have everything by the next time this is called.
-				while Slot <= 17 do
+				while Slot <= 18 do
 					Item = PawnGetItemDataForInventorySlot(Slot, false, UnitName)
 					Slot = Slot + 1
 				end
@@ -1683,7 +1689,7 @@ function PawnGetInventoryItemValues(UnitName)
 	end
 	sort(TotalValues, PawnItemValueCompare)
 	-- Return our totals.
-	TotalItemLevel = math.floor(TotalItemLevel / 16 + .05)
+	TotalItemLevel = math.floor(TotalItemLevel / (VgerCore.IsClassic and 17 or 16) + .05)
 	return TotalValues, Count, TotalItemLevel
 end
 
@@ -2723,8 +2729,6 @@ function PawnCorrectScaleErrors(ScaleName)
 	PawnReplaceStat(ThisScale, "OneHandDPS", "OneHandDps")
 	PawnReplaceStat(ThisScale, "TwoHandDPS", "TwoHandDps")
 	
-	-- Pawn 1.6.1 removed IsRelic and IsThrown
-
 	-- Pawn 1.7 makes smart gem socketing mandatory.
 	ThisScaleOptions.SmartGemSocketing = nil
 	ThisScaleOptions.SmartMetaGemSocketing = nil
@@ -2747,7 +2751,6 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.Health = nil
 	ThisScale.BaseArmor = nil
 	ThisScale.IsRelic = nil
-	ThisScale.IsThrown = nil
 	ThisScale.BonusArmor = nil
 	ThisScale.Multistrike = nil
 	ThisScale.SpellPower = nil
@@ -3020,7 +3023,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 	-- If an artifact is involved, we only compare using item level, since artifacts are complicated and one item can fill multiple slots.
 	local CompareUsingItemLevelOnly = (Item.Rarity == 6)
 	local InvType = Item.InvType
-	if not InvType or InvType == "" or InvType == "INVTYPE_BAG" or InvType == "INVTYPE_QUIVER" or InvType == "INVTYPE_TABARD" or InvType == "INVTYPE_BODY" or InvType == "INVTYPE_THROWN" or InvType == "INVTYPE_AMMO" or InvType == "INVTYPE_RELIC" then return nil end
+	if not InvType or InvType == "" or InvType == "INVTYPE_BAG" or InvType == "INVTYPE_QUIVER" or InvType == "INVTYPE_TABARD" or InvType == "INVTYPE_BODY" or ((not VgerCore.IsClassic) and (InvType == "INVTYPE_THROWN" or InvType == "INVTYPE_AMMO" or InvType == "INVTYPE_RELIC")) then return nil end
 	local SkipScoreBasedUpgrades = InvType == "INVTYPE_TRINKET"
 	local UnenchantedItemLink, NeedsEnhancements = PawnUnenchantItemLink(Item.Link, true)
 	VgerCore.Assert(UnenchantedItemLink ~= nil, "PawnIsItemAnUpgrade failed to get an item link for item " .. tostring(Item.ID))
@@ -3358,7 +3361,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 			InvType = "INVTYPE_WEAPONOFFHAND"
 		elseif InvType == "INVTYPE_ROBE" then
 			InvType = "INVTYPE_CHEST"
-		elseif InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT" then
+		elseif ((not VgerCore.IsClassic) and (InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT")) then
 			-- A ranged weapon could be one-handed (wands) or two-handed (everything else) but it always goes in the main hand.
 			InvType = "INVTYPE_WEAPONMAINHAND"
 		end
@@ -3404,7 +3407,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 	
 	-- Obviously, check the player's currently equipped gear.
 	local Slot, PreviousItemLink
-	for Slot = 1, 17 do if Slot ~= 4 and Slot ~= 13 and Slot ~= 14 then -- Skip slots 0 (ammo), 4 (shirt), 13-14 (trinkets), 18 (ranged/relic), and 19 (tabard)
+	for Slot = 1, 18 do if Slot ~= 4 and Slot ~= 13 and Slot ~= 14 then -- Skip slots 0 (ammo), 4 (shirt), 13-14 (trinkets), and 19 (tabard)
 		local Item = PawnGetItemDataForInventorySlot(Slot, true, "player")
 		if Item then
 			CheckItem(ScaleName, BestItems, Item, PreviousItemLink)
@@ -3419,7 +3422,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 			local _, _, EquipmentSetID = C_EquipmentSet.GetEquipmentSetInfo(i)
 			local ItemLocations = C_EquipmentSet.GetItemLocations(EquipmentSetID)
 			PreviousItemLink = nil
-			for Slot = 1, 17 do if Slot ~= 4 and Slot ~= 13 and Slot ~= 14 then
+			for Slot = 1, 18 do if Slot ~= 4 and Slot ~= 13 and Slot ~= 14 then
 				local Location = ItemLocations[Slot]
 				if Location and Location > 1 then
 					-- Getting the item link for an equipment set item is a pain in the ass...
@@ -3593,7 +3596,7 @@ function PawnOnItemLost(ItemLink)
 		InvType = "INVTYPE_WEAPONOFFHAND"
 	elseif InvType == "INVTYPE_ROBE" then
 		InvType = "INVTYPE_CHEST"
-	elseif InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT" then
+	elseif ((not VgerCore.IsClassic) and (InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT")) then
 		-- A ranged weapon could be one-handed (wands) or two-handed (everything else) but it always goes in the main hand.
 		InvType = "INVTYPE_WEAPONMAINHAND"
 	end
@@ -5219,7 +5222,7 @@ function PawnGetBestItemLink(ScaleName, InvType, Index, DoNotRescan)
 		InvType = "INVTYPE_WEAPONOFFHAND"
 	elseif InvType == "INVTYPE_ROBE" then
 		InvType = "INVTYPE_CHEST"
-	elseif InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT" then
+	elseif ((not VgerCore.IsClassic) and (InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT")) then
 		-- All ranged weapons go in the main hand now.
 		InvType = "INVTYPE_WEAPONMAINHAND"
 	end

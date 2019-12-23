@@ -402,6 +402,7 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["Sword"] = "^Epée$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ sec%)$",
+		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Foudroyant$",
 		["Timeless"] = "^du Temps figé$",
 		["Titanforged"] = "^forgées par les titans$",

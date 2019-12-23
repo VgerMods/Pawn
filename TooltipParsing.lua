@@ -269,6 +269,7 @@ PawnRegexes =
 	{L.Crossbow, "IsCrossbow", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
 	{L.Gun, "IsGun", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
 	{L.Wand, "IsWand", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
+	{L.Thrown, "IsThrown", 1, PawnMultipleStatsFixed, "IsRanged", 1, PawnMultipleStatsFixed},
 
 	-- ========================================
 	-- Rare strings that are ignored (common ones are at the top of the file)

@@ -396,6 +396,7 @@ PawnLocal =
 		["Sword"] = "^劍$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ 分%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ 秒%)$",
+		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^雷霆鎔鑄$",
 		["Timeless"] = "^永恆之島$",
 		["Titanforged"] = "^泰坦鎔鑄$",

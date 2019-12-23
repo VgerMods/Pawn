@@ -389,6 +389,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Sword"] = "^Schwert$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ Min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ Sek%)$",
+		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Donnergeschmiedet$",
 		["Timeless"] = "^Zeitlos$",
 		["Titanforged"] = "^Titanengeschmiedet$",
