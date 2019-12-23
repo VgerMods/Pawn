@@ -205,19 +205,22 @@ function PawnInitialize()
 		end)
 	
 	-- Main game tooltip
-	hooksecurefunc(GameTooltip, "SetAuctionItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetAuctionSellItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionSellItem", ...) end)
+	if GameTooltip.SetAuctionItem then
+		-- SetAuctionItem was removed in 8.3.0.
+		hooksecurefunc(GameTooltip, "SetAuctionItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetAuctionSellItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionSellItem", ...) end)
+	end
 	hooksecurefunc(GameTooltip, "SetBagItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetBagItem", ...) end)
 	hooksecurefunc(GameTooltip, "SetBuybackItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetBuybackItem", ...) end)
-	if SetExistingSocketGem then
+	if GameTooltip.SetExistingSocketGem then
 		-- Gems don't exist in WoW Classic.
 		hooksecurefunc(GameTooltip, "SetExistingSocketGem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetExistingSocketGem", ...) end)
 	end
-	if SetGuildBankItem then
+	if GameTooltip.SetGuildBankItem then
 		-- Guild banks don't exist in WoW Classic.
 		hooksecurefunc(GameTooltip, "SetGuildBankItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetGuildBankItem", ...) end)
 	end
-	if SetHeirloomByItemID then
+	if GameTooltip.SetHeirloomByItemID then
 		-- ...and neither do heirlooms.
 		hooksecurefunc(GameTooltip, "SetHeirloomByItemID", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetHeirloomByItemID", ...) end)
 	end
