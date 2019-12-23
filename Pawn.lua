@@ -4198,18 +4198,19 @@ function PawnIsPlayingWith(TargetName, TargetRealm)
 	-- Should we show it?
 	local UnitID
 	if Test then
-	   UnitID = "player"
+		UnitID = "player"
 	else
-	   if PawnCommon.HasPlayedWithVger then return end
-	   local Show
-	   Show, UnitID = PawnIsPlayingWith("Vger", "Azjol-Nerub")
-	   if not Show then return end 
+		if VgerCore.IsClassic then return end
+		if PawnCommon.HasPlayedWithVger then return end
+		local Show
+		Show, UnitID = PawnIsPlayingWith("Vger", "Azjol-Nerub")
+		if not Show then return end 
 	end
-	
+
 	-- Okay, we're gonna do it!
-	
+
 	LoadAddOn("Blizzard_TalkingHeadUI")
-	
+
 	TalkingHeadFrame_Reset(TalkingHeadFrame, "Hello!  I created your favorite addon Pawn.  Looks like we're playing together, so feel free to say hi, and have a great day!", "Vger")
 	TalkingHeadFrame.MainFrame.Model:SetUnit("player")
 	TalkingHeadFrame_FadeinFrames()
@@ -4218,12 +4219,12 @@ function PawnIsPlayingWith(TargetName, TargetRealm)
 	Model_ApplyUICamera(TalkingHeadFrame.MainFrame.Model, 105) -- Head and torso
 	TalkingHeadFrame.MainFrame.Model:SetAnimation(60) -- Talking animation
 	PlaySound(101228, "DIALOG") -- "Do you know who I am?"
-	
+
 	C_Timer.After(15, function() TalkingHeadFrame_FadeoutFrames() end)
-	
+
 	-- Once this has happened, don't ever do it again.
 	PawnCommon.HasPlayedWithVger = true
- end
+end
 
 ------------------------------------------------------------
 -- Pawn API
