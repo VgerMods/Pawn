@@ -35,143 +35,6 @@
 	<code>C:\Program Files\World of Warcraft\_retail_\Interface\AddOns</code><br />
 	<code>C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns</code>
 </p>
-<h2 id="ScaleTags">Scales</h2>
-<p><b>Out of date: </b>This section is a bit out-of-date, but it's still 
-relatively useful.&nbsp; The most important change since this was written is 
-that by default, Pawn will now just show you a built-in scale for your current 
-spec, and nothing else.&nbsp; On the Scale tab, switch to Manual mode to have 
-more control over your scales.</p>
-<p>Each of your characters has a unique set of options for Pawn, and can have 
-any number of valuation scales, which often (but not always) represent 
-different sets of gear or situations you find your character in, or different 
-talent specs.&nbsp; A 
-valuation scale has two things: a name, such as &quot;Shaman: elemental&quot;, and a list of 
-stats and how many points each stat is worth.</p>
-<p>The first thing you'll need to do is decide what you'll do with Pawn.&nbsp; 
-Many people can be perfectly happy just using the scales from Wowhead that come 
-with Pawn, and not need to customize a thing.&nbsp; But, you can customize Pawn 
-to do much more.&nbsp; You can make your own personal version of the Wowhead 
-scales with slightly tweaked stat values, import scale values from Rawr, or even 
-create a completely new scale.</p>
-<p>Or, maybe, someone has already shared a <strong>Pawn scale tag</strong> with you, so that you 
-can use a scale that they created or found themselves.</p>
-<h3>Pawn Scale Tags</h3>
-<p>Scale tags are a handy way that you can share your Pawn scales with other 
-people, similar to how you can share talent specs with others just by giving 
-them a link to the WoW talent calculator.&nbsp; A sample scale tag looks like 
-this:</p>
-<p class="codeblock">
-	( Pawn: v1: &quot;Healer stats&quot;: Intellect=1, Spirit=1 )</p>
-	<p>Generally, they&#39;re considerably longer than that, but the overall format 
-	is still the same.&nbsp; A scale tag includes the parentheses ( ) on the 
-	ends and everything in-between.</p>
-<p>It&#39;s possible to use Pawn along with scale tags that other people have 
-created and never have to do any custom calculations or work yourself.&nbsp; 
-Here&#39;s how you can use scale tags to share Pawn scales.</p>
-<h3>Adding a Pawn scale that someone shared with you</h3>
-<p>You can easily add Pawn scales that someone else shared with you on a website as a scale 
-tag to your own copy of Pawn.&nbsp; Highlight the entire scale tab, including 
-the parentheses ( ), and then press Ctrl+C to copy it to the clipboard.&nbsp; 
-Then, switch to WoW.&nbsp; To access the Pawn configuration UI, open 
-your character sheet and inventory (the <b>C</b> key) and click the Pawn button 
-in the lower-right corner.&nbsp; Or, type the following slash command:</p>
-<p class="codeblock">
-	<code>/pawn</code></p>
-<p>Click the <strong>Scale</strong> tab on this window, and then click <b>Import</b>.&nbsp; A window will appear where you can paste the entire scale tag that you got 
-from someone else.&nbsp; Press Ctrl+V to paste a scale tag from the clipboard 
-into this window.&nbsp; Once you&#39;re done, click OK, and that scale will be added 
-to your copy of Pawn.</p>
-<ul>
-	<li>You can&#39;t import a scale tag if the scale has the exact same name as a 
-	scale you already have.&nbsp; For example, if you have a scale named &quot;Pawn 
-	value&quot;, you can&#39;t import a new scale tag named &quot;Pawn value&quot;.</li>
-	<li>Make sure that 
-	you get the whole scale tag, including the &quot;(&quot; at the beginning and the &quot;)&quot; 
-	at the end, or it won&#39;t work.</li>
-</ul>
-<h4>Using Rawr</h4>
-<p>The popular program Rawr can generate highly-customized Pawn scales for you, 
-ready for import.&nbsp; Open Rawr, load your character, and then find the
-<strong>Slot</strong> dropdown in the <strong>Comparisons</strong> tab on the 
-right.&nbsp;&nbsp; Click it and select <strong>Relative stat values</strong>.&nbsp; 
-Then, click the <strong>Export</strong> dropdown in the upper-right and click
-<strong>Copy Pawn string to clipboard</strong>.&nbsp; You can then use the 
-normal Import feature to add this scale to Pawn.&nbsp; (Unfortunately, all 
-scales that Rawr produces will be called &quot;Rawr&quot;, so if you use Rawr for more 
-than one class or spec, you&#39;ll need to rename the scale yourself.)</p>
-<h3>Sharing a Pawn scale with others</h3>
-<p>You can share one of your Pawn scales with 
-others by exporting it from the Scale tab of the Pawn configuration UI.&nbsp; From here, choose the scale that you want to export (if you have more than 
-one) from the <strong>Select a scale</strong> list, and then click <b>Export</b>.&nbsp; A window will appear containing your entire scale tag, but most of it will be 
-scrolled off to the left where you can&#39;t see it.&nbsp; Press <b>Ctrl+C</b> to copy the 
-scale tag to your clipboard.&nbsp; Then, switch to your web browser or an 
-instant message window, or wherever you&#39;d like to share your Pawn scale, and 
-press <b>Ctrl+V</b> to paste the tag to that window.</p>
-<h3>Hiding scales that you don't want to see</h3>
-<p>If, for example, you're a druid who likes to play as a kitty and occasionally 
-heals, but never plays as a boomkin and never tanks, you might want to hide the 
-default Wowhead scales "Druid: balance" and "Druid: guardian" that come with 
-Pawn.&nbsp; That way there's less clutter on your tooltips, you aren't notified 
-about upgrades to gear you don't care about, and so on.&nbsp; To hide a scale, 
-open up the Pawn configuration UI, and then just shift-click the scale in the 
-list.&nbsp; To show any scale that's hidden, shift-click it.&nbsp; (If you are 
-not fond of shift-clicking things, you can also just click the scale and then 
-check or uncheck the "Show scale in tooltips" checkbox at the bottom of the 
-list.)</p>
-<p>You can have any number of scales visible.&nbsp; Your scales and settings are 
-shared between all of your characters, but the ones that are shown are specific 
-to which character you're currently playing.</p>
-<h2>Setting up a custom Pawn scale for one of your characters</h2>
-<p>You can customize your Pawn scale in the Pawn configuration UI.&nbsp; To show 
-it, click the Pawn button in the lower-right corner of the character inventory 
-window (the <b>C</b> key).</p>
-<p>Nobody thinks all 
-statistics are created equal.&nbsp; Warrior tanks don&#39;t care about intellect and 
-spirit.&nbsp; Priests don&#39;t care about strength.&nbsp; You can customize Pawn to 
-only look at the stats that you care about.&nbsp; Let&#39;s do it now.</p>
-<p>The Pawn configuration UI has everything you need to make changes to your 
-scale, as well as import scales from other people, export them so you can share 
-yours with others, and create multiple new scales for different situations.&nbsp; 
-Right now, the &quot;Pawn value&quot; scale is selected and ready to be modified.</p>
-<p>On the left, you see a long list of all of the different item stats that Pawn 
-understands.&nbsp; They&#39;re grouped into categories—the primary stats like 
-Stamina and Intellect are at the top, weapon stats are another section, 
-spell-related state are another, sockets for gems are another, and so on.&nbsp; 
-The default Pawn value scale that was created for you has a value for almost 
-every stat.</p>
-<p>So, let&#39;s make some changes.&nbsp; Let&#39;s start with a new default scale 
-and delete the stats that we don&#39;t care 
-about.&nbsp; Go to the <strong>Scale </strong>tab and click <strong>Empty</strong> 
-and give it a name to create a new one.&nbsp; Now you&#39;re on the <b>Weights</b> 
-tab and can customize the numbers.&nbsp; If you&#39;re a melee class, you can get rid of intellect and spirit.&nbsp; 
-To do this, click on Intellect in the list on the left (it&#39;s near the top).&nbsp; 
-When you click on a stat, you see a little description about the stat to the 
-right (there&#39;s not much to say about intellect), and a box where you can type a 
-new value.&nbsp; To get rid of intellect, either delete the number from the box, 
-replace it with 0, or just click <strong>Remove</strong>.&nbsp; Then, choose spirit from the list and delete it too.&nbsp; 
-You can delete any stats you don&#39;t care about, and you can change the value of 
-any stat in the list.&nbsp; (If you find yourself removing a lot of stats, you 
-can also create a new empty scale and start from scratch.&nbsp; That would 
-probably be easier than deleting everything individually.&nbsp; The downside is 
-that you don&#39;t get to see the starting values we suggested for each stat.)</p>
-<p>Cool.&nbsp; You don&#39;t have to do anything complicated just yet; that should 
-be fine.&nbsp; Your changes will take effect immediately; you can hover over new 
-items or click links in trade chat and you&#39;ll see updated values based on your 
-newly-modified scale.&nbsp; Once you have thing set up the way you like them, 
-Pawn will be customized to exactly what you care about in items.</p>
-<p>If you ever manage to really screw things up, you can click Delete to delete 
-the scale you&#39;re working on, and then click New default to create a new scale 
-from the defaults.&nbsp; If you name it &quot;Pawn value&quot; you&#39;ll be right back where 
-you started.</p>
-<h3>Setting up a second Pawn scale</h3>
-<p>You aren&#39;t limited to just one scale or a few; you can set up as many 
-as you like.&nbsp; To do this, go to the Scale tab on the Pawn configuration UI and click
-<b>
-Empty</b> to start a new scale with no values for any stat, or <b>Defaults</b> to start a new scale using the defaults as a starting point.&nbsp; 
-When you have two different scales, Pawn will show two numbers on each item you 
-hover over or click in chat.&nbsp; You can have any number of scales; just 
-choose the one that you want to work on in the configuration UI before you start 
-making changes to the stats.</p>
 <h2>Comparing items</h2>
 <p>You can use Pawn to easily compare two items.&nbsp; Open the Pawn UI and 
 click the <strong>Compare</strong> tab.&nbsp; Then, place an equippable item 
@@ -219,9 +82,8 @@ items with a red border in AtlasLoot.)</p>
 	season&#39;s Pendant of Dominance and Pendant of Subjugation.</li>
 </ul>
 <h2>Notes</h2>
-<p>Well, hopefully that&#39;s enough to get you started.&nbsp; If you&#39;re interested 
-in customizing Pawn further, check out the <b>Options</b> tab of the Pawn UI, 
-and rest of this document.</p>
+<p>If you&#39;re interested 
+in customizing Pawn further, check out the <b>Options</b> tab of the Pawn UI.</p>
 <h3>Contacting the author</h3>
 <p>I&#39;m interested in knowing what you think of Pawn, and what you use 
 it for.&nbsp; Bug reports and suggestions are cool too.&nbsp; The best way to contact me is through
@@ -249,7 +111,8 @@ you play World of Warcraft in.</p>
 <h3>Key bindings</h3>
 <p>In addition to the options in the Pawn UI, you can also set a key binding to 
 open and close the Pawn UI.&nbsp; Look for it in the list of key bindings under 
-&quot;Pawn.&quot;</p>
+&quot;Pawn.&quot;&nbsp; There are also key bindings for putting the item you're 
+currently hovering over into either slot of the Compare tab.</p>
 <h3>Making a backup</h3>
 <p>You can back up all of your custom scales.&nbsp; Just type <strong>/pawn 
 backup</strong> in the chat box, and a window will appear.&nbsp; Press Ctrl+C to 
@@ -268,9 +131,10 @@ SavedVariables folder.&nbsp; Look for the file named &quot;Pawn.lua&quot; and sa
 of that file to a safe location.</p>
 <h3>The starter scales</h3>
 <h4>Hiding</h4>
-<p>It&#39;s easy to hide any of the starter scales that you don&#39;t like from your 
+<p>(In Automatic mode, which is the default, this is handled for you 
+automatically when you change specs.)&nbsp; It&#39;s easy to hide any of the starter scales that you don&#39;t like from your 
 tooltips.&nbsp; Just select a scale from the list and then uncheck <b>Show in 
-tooltips</b>.</p>
+tooltips</b> on the Scales tab.&nbsp; Or just shift-click the scale.</p>
 <h4>Resetting</h4>
 <p>It&#39;s possible to customize the colors of the starter scales.&nbsp; If you&#39;d 
 like to undo any changes you&#39;ve made to the starter scales, you can execute 
@@ -388,14 +252,6 @@ numbers shown by Pawn.</p>
 I may not be able to add support for your favorite, but I might be able to 
 suggest a replacement, or update Pawn to work better in a future version for 
 popular mods.</p>
-<h3>Why doesn't Pawn work in my language?</h3>
-<p>Unlike most addons, Pawn will not function properly in a language that it 
-hasn't been translated into.&nbsp; Pawn needs to be able to "read" the text on 
-the tooltips, and it can't do that in languages it hasn't been translated into.&nbsp; 
-If you try to use Pawn in a language that it doesn't understand, you'll get an 
-error message when you log in.</p>
-<p>If you're interested in helping translate Pawn to your native language, let 
-me know!&nbsp; (I'll warn you up front that it's not an easy untertaking!)</p>
 <h3>Mods that have been tested and work with Pawn</h3>
 <p>This is not a conclusive list.&nbsp; If any of these mods doesn&#39;t seem to be 
 working with Pawn, please make sure that you have the latest version of both it 
@@ -452,6 +308,7 @@ and Pawn.</p>
 </ul>
 
 <h2>Updates</h2>
+<h3>Version 2.3.14</h3>
 <h3>Version 2.3.13</h3>
 <ul>
 	<li>Updated the Pawn logo.</li>
