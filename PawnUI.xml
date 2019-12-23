@@ -1758,15 +1758,62 @@
 	
 	</Frame>
 	
-	<!-- A generic dialog for asking for a string -->
-	<Frame name="PawnUIStringDialog" inherits="PawnUIDialogTemplate">
+	<!-- Generic dialogs for asking for a string -->
+	<Frame name="PawnUIStringDialogSingleLine" inherits="PawnUIDialogTemplate">
+	 	<Size><AbsDimension x="350" y="155" /></Size>
+
+		<!-- The art layer -->
+		<Layers>
+			<Layer level="ARTWORK">
+
+				<FontString parentKey="PromptText" inherits="GameFontNormal" justifyH="LEFT" justifyV="TOP">
+					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-25"/></Offset></Anchor></Anchors>
+					<Size><AbsDimension x="300" y="40" /></Size>
+				</FontString>
+
+			</Layer>
+		</Layers>
+
+		<!-- The UI elements -->
+		<Frames>
+
+			<!-- Main frame buttons and such -->
+			<EditBox parentKey="TextBox" inherits="InputBoxTemplate" hidden="false">
+				<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="50" y="-75" /></Offset></Anchor></Anchors>
+				<Size><AbsDimension x="250" y="25" /></Size>
+				<Scripts>
+					<OnTextChanged function="PawnUIStringDialog_TextBox_OnTextChanged" />
+				</Scripts>
+			</EditBox>
+			
+			<Button parentKey="OKButton" hidden="false" inherits="UIPanelButtonTemplate">
+				<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-125" y="20" /></Offset></Anchor></Anchors>
+				<Size><AbsDimension x="95" y="25" /></Size>
+				<Scripts>
+					<OnClick function="PawnUIStringDialog_OKButton_OnClick" />
+				</Scripts>
+			</Button>
+			
+			<Button parentKey="CancelButton" hidden="false" inherits="UIPanelButtonTemplate">
+				<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-20" y="20" /></Offset></Anchor></Anchors>
+				<Size><AbsDimension x="95" y="25" /></Size>
+				<Scripts>
+					<OnClick function="PawnUIStringDialog_CancelButton_OnClick" />
+				</Scripts>
+			</Button>
+			
+		</Frames>
+		
+	</Frame>
+	
+	<Frame name="PawnUIStringDialogMultiLine" inherits="PawnUIDialogTemplate">
 	 	<Size><AbsDimension x="350" y="230" /></Size>
 
 		<!-- The art layer -->
 		<Layers>
 			<Layer level="ARTWORK">
 
-				<FontString name="$parent_PromptText" inherits="GameFontNormal" justifyH="LEFT" justifyV="TOP">
+				<FontString parentKey="PromptText" inherits="GameFontNormal" justifyH="LEFT" justifyV="TOP">
 					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-25"/></Offset></Anchor></Anchors>
 					<Size><AbsDimension x="300" y="40" /></Size>
 				</FontString>
@@ -1779,13 +1826,13 @@
 
 			<!-- Main frame buttons and such -->
 
-			<ScrollFrame name="$parent_Scroller" inherits="UIPanelScrollFrameTemplate">
+			<ScrollFrame name="PawnUIStringDialogMultiLine_Scroller" inherits="UIPanelScrollFrameTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-75" /></Offset></Anchor>
 					<Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-43" y="65" /></Offset></Anchor>
 				</Anchors>
 				<ScrollChild>
-					<EditBox name="PawnUIStringDialog_TextBox" multiLine="true" hidden="false">
+					<EditBox name="PawnUIStringDialogMultiLine_TextBox" multiLine="true" hidden="false">
 						<Anchors>
 							<Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="0" /></Offset></Anchor>
 							<Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="0" y="0" /></Offset></Anchor>
@@ -1802,15 +1849,15 @@
 
 			<Frame>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parent_Scroller"><Offset><AbsDimension x="-7" y="7" /></Offset></Anchor>
-					<Anchor point="BOTTOMRIGHT" relativeTo="$parent_Scroller"><Offset><AbsDimension x="26" y="-7" /></Offset></Anchor>
+					<Anchor point="TOPLEFT" relativeTo="PawnUIStringDialogMultiLine_Scroller"><Offset><AbsDimension x="-7" y="7" /></Offset></Anchor>
+					<Anchor point="BOTTOMRIGHT" relativeTo="PawnUIStringDialogMultiLine_Scroller"><Offset><AbsDimension x="26" y="-7" /></Offset></Anchor>
 				</Anchors>
 				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 					<EdgeSize><AbsValue val="16" /></EdgeSize>
 				</Backdrop>
 			</Frame>
 
-			<Button name="$parent_OKButton" hidden="false" inherits="UIPanelButtonTemplate">
+			<Button parentKey="OKButton" hidden="false" inherits="UIPanelButtonTemplate">
 				<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-125" y="20" /></Offset></Anchor></Anchors>
 				<Size><AbsDimension x="95" y="25" /></Size>
 				<Scripts>
@@ -1818,7 +1865,7 @@
 				</Scripts>
 			</Button>
 			
-			<Button name="$parent_CancelButton" hidden="false" inherits="UIPanelButtonTemplate">
+			<Button parentKey="CancelButton" hidden="false" inherits="UIPanelButtonTemplate">
 				<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="-20" y="20" /></Offset></Anchor></Anchors>
 				<Size><AbsDimension x="95" y="25" /></Size>
 				<Scripts>
@@ -1828,6 +1875,12 @@
 			
 		</Frames>
 		
+		<Scripts>
+			<OnLoad>
+				PawnUIStringDialogMultiLine.TextBox = PawnUIStringDialogMultiLine_TextBox
+			</OnLoad>
+		</Scripts>
+
 	</Frame>
 	
 </Ui>

@@ -17,6 +17,9 @@ PawnUICurrentTabNumber = nil
 PawnUICurrentListIndex = 0
 PawnUICurrentStatIndex = 0
 
+-- The currently-active string dialog.
+local PawnUIStringDialog
+
 -- An array with indices 1 and 2 for the left and right compare items, respectively; each one is of the type returned by GetItemData.
 local PawnUIComparisonItems = {}
 -- An array with indices 1 and 2 for the first and second left side shortcut items.
@@ -288,7 +291,8 @@ end
 -- Selects a scale in the scales list.
 function PawnUI_SelectScale(ScaleName)
 	-- Close popup UI as necessary.
-	PawnUIStringDialog:Hide()
+	PawnUIStringDialogSingleLine:Hide()
+	PawnUIStringDialogMultiLine:Hide()
 	ColorPickerFrame:Hide()
 	-- Select the scale.
 	PawnUICurrentScale = ScaleName
@@ -449,7 +453,7 @@ end
 function PawnUIExportScale(ScaleName)
 	local ScaleTag = PawnGetScaleTag(ScaleName)
 	if ScaleTag then
-		PawnUIShowCopyableString(format(PawnLocal.ExportScaleMessage, PawnGetScaleLocalizedName(PawnUICurrentScale)), ScaleTag)
+		PawnUIShowCopyableString(format(PawnLocal.ExportScaleMessage, PawnGetScaleLocalizedName(PawnUICurrentScale)), ScaleTag, nil, true)
 		return true
 	else
 		return false
@@ -464,7 +468,7 @@ function PawnUIExportAllScales()
 		if not PawnScaleIsReadOnly(ScaleName) then ScaleTags = ScaleTags .. PawnGetScaleTag(ScaleName) .. "    " end
 	end
 	if ScaleTags and ScaleTags ~= "" then
-		PawnUIShowCopyableString(PawnLocal.ExportAllScalesMessage, ScaleTags)
+		PawnUIShowCopyableString(PawnLocal.ExportAllScalesMessage, ScaleTags, nil, true)
 		return true
 	else
 		return false
@@ -474,7 +478,7 @@ end
 -- Shows a dialog where the user can paste a scale tag from the clipboard.
 -- Immediately returns.
 function PawnUIImportScale()
-	PawnUIGetString(PawnLocal.ImportScaleMessage, "", PawnUIImportScaleCallback)
+	PawnUIGetString(PawnLocal.ImportScaleMessage, "", PawnUIImportScaleCallback, nil, true)
 end
 
 -- Callback function for PawnUIImportScale.
@@ -498,7 +502,7 @@ function PawnUIImportScaleCallback(ScaleTag)
 	end
 	if Status == PawnImportScaleResultTagError then
 		-- Don't use the tag that was pasted as the default value; it makes it harder to paste.
-		PawnUIGetString(PawnLocal.ImportScaleTagErrorMessage, "", PawnUIImportScaleCallback)
+		PawnUIGetString(PawnLocal.ImportScaleTagErrorMessage, "", PawnUIImportScaleCallback, nil, true)
 		return
 	end
 	
@@ -1528,7 +1532,7 @@ function PawnUIGetAllTextForItem(Item)
 	end
 	AllText = AllText .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(Item.Link, false)
 
-	PawnUIShowCopyableString(Item.Name, AllText)
+	PawnUIShowCopyableString(Item.Name, AllText, nil, true)
 end
 
 -- Called when one of the two upper item slots are clicked.
@@ -2362,7 +2366,8 @@ function PawnUISwitchToTab(Tab)
 	if ReloadingSameTab then return end
 	
 	-- Hide popup UI.
-	PawnUIStringDialog:Hide()
+	PawnUIStringDialogSingleLine:Hide()
+	PawnUIStringDialogMultiLine:Hide()
 	ColorPickerFrame:Hide()
 	
 	-- Then, update the tabstrip itself.
@@ -2463,37 +2468,46 @@ end
 -- Shows a dialog containing given prompt text, asking the user for a string.
 -- Calls OKCallbackFunction with the typed string as the only input if the user clicked OK.
 -- Calls CancelCallbackFunction if the user clicked Cancel.
-function PawnUIGetString(Prompt, DefaultValue, OKCallbackFunction, CancelCallbackFunction)
-	PawnUIGetStringCore(Prompt, DefaultValue, true, OKCallbackFunction, CancelCallbackFunction)
+function PawnUIGetString(Prompt, DefaultValue, OKCallbackFunction, CancelCallbackFunction, IsMultiLine)
+	PawnUIGetStringCore(Prompt, DefaultValue, true, OKCallbackFunction, CancelCallbackFunction, IsMultiLine)
 end
 
 -- Shows a dialog with a copyable string.
 -- Calls CallbackFunction when the user closes the dialog.
 -- Note: Successfully tested with strings of about 900 characters.
-function PawnUIShowCopyableString(Prompt, Value, CallbackFunction)
-	PawnUIGetStringCore(Prompt, Value, false, CallbackFunction, nil)
-	PawnUIStringDialog_TextBox:HighlightText()
+function PawnUIShowCopyableString(Prompt, Value, CallbackFunction, IsMultiLine)
+	PawnUIGetStringCore(Prompt, Value, false, CallbackFunction, nil, IsMultiLine)
+	PawnUIStringDialog.TextBox:HighlightText()
 end
 
 -- Core function called by PawnUIGetString.
-function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunction, CancelCallbackFunction)
-	PawnUIStringDialog_PromptText:SetText(Prompt)
-	PawnUIStringDialog_TextBox:SetText("") -- Causes the insertion point to move to the end on the next SetText
-	PawnUIStringDialog_TextBox:SetText(DefaultValue)
+function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunction, CancelCallbackFunction, IsMultiLine)
+	if PawnUIStringDialog and PawnUIStringDialog:IsVisible() then
+		PawnUIStringDialog_CancelButton_OnClick()
+	end
+	if IsMultiLine then
+		PawnUIStringDialog = PawnUIStringDialogMultiLine
+	else
+		PawnUIStringDialog = PawnUIStringDialogSingleLine
+	end
+
+	PawnUIStringDialog.PromptText:SetText(Prompt)
+	PawnUIStringDialog.TextBox:SetText("") -- Causes the insertion point to move to the end on the next SetText
+	PawnUIStringDialog.TextBox:SetText(DefaultValue)
 
 	if Cancelable then
-		PawnUIStringDialog_OKButton:Show()
-		PawnUIStringDialog_OKButton:SetText(OKAY)
-		PawnUIStringDialog_CancelButton:SetText(CANCEL)
+		PawnUIStringDialog.OKButton:Show()
+		PawnUIStringDialog.OKButton:SetText(OKAY)
+		PawnUIStringDialog.CancelButton:SetText(CANCEL)
 	else
-		PawnUIStringDialog_OKButton:Hide()
-		PawnUIStringDialog_CancelButton:SetText(CLOSE)
+		PawnUIStringDialog.OKButton:Hide()
+		PawnUIStringDialog.CancelButton:SetText(CLOSE)
 	end
 	PawnUIStringDialog.OKCallbackFunction = OKCallbackFunction
 	PawnUIStringDialog.CancelCallbackFunction = CancelCallbackFunction
 
 	PawnUIStringDialog:Show()
-	PawnUIStringDialog_TextBox:SetFocus()
+	PawnUIStringDialog.TextBox:SetFocus()
 end
 
 -- Cancels the string dialog if it's open.
@@ -2504,7 +2518,7 @@ end
 
 function PawnUIStringDialog_OKButton_OnClick()
 	PawnUIStringDialog:Hide()
-	if PawnUIStringDialog.OKCallbackFunction then PawnUIStringDialog.OKCallbackFunction(PawnUIStringDialog_TextBox:GetText()) end
+	if PawnUIStringDialog.OKCallbackFunction then PawnUIStringDialog.OKCallbackFunction(PawnUIStringDialog.TextBox:GetText()) end
 end
 
 function PawnUIStringDialog_CancelButton_OnClick()
@@ -2513,10 +2527,10 @@ function PawnUIStringDialog_CancelButton_OnClick()
 end
 
 function PawnUIStringDialog_TextBox_OnTextChanged()
-	if PawnUIStringDialog_TextBox:GetText() ~= "" then
-		PawnUIStringDialog_OKButton:Enable()
+	if PawnUIStringDialog.TextBox:GetText() ~= "" then
+		PawnUIStringDialog.OKButton:Enable()
 	else
-		PawnUIStringDialog_OKButton:Disable()
+		PawnUIStringDialog.OKButton:Disable()
 	end
 end
 
