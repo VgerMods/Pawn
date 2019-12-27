@@ -1597,6 +1597,34 @@
 			</Frame>
 			
 			<!-- The tab buttons -->
+			<!-- List the right-side tabs first so they overlap the others in case of custom fonts or long strings: the Gems tab is less important than Options. -->
+			<Button name="$parentTab6" inherits="CharacterFrameTabButtonTemplate" id="6" text="PawnUIFrame_AboutTab_Text">
+				<Anchors><Anchor point="RIGHT" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="-6" y="-8" /></Offset></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+						PawnUISwitchToTab(PawnUIAboutTabPage)
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentTab7" inherits="CharacterFrameTabButtonTemplate" id="7" text="PawnUIFrame_HelpTab_Text">
+				<Anchors><Anchor point="RIGHT" relativeTo="$parentTab6" relativePoint="LEFT"><Offset><AbsDimension x="16" y="0" /></Offset></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+						PawnUISwitchToTab(PawnUIHelpTabPage)
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="PawnUIFrame_OptionsTab_Text">
+				<Anchors><Anchor point="RIGHT" relativeTo="$parentTab7" relativePoint="LEFT"><Offset><AbsDimension x="16" y="0" /></Offset></Anchor></Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+						PawnUISwitchToTab(PawnUIOptionsTabPage)
+					</OnClick>
+				</Scripts>
+			</Button>
 			<Button name="$parentTab1" inherits="CharacterFrameTabButtonTemplate" id="1" text="PawnUIFrame_ScalesTab_Text">
 				<Anchors><Anchor point="LEFT" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="196" y="-8" /></Offset></Anchor></Anchors>
 				<Scripts>
@@ -1630,33 +1658,6 @@
 					<OnClick>
 						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
 						PawnUISwitchToTab(PawnUIGemsTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab6" inherits="CharacterFrameTabButtonTemplate" id="6" text="PawnUIFrame_AboutTab_Text">
-				<Anchors><Anchor point="RIGHT" relativePoint="BOTTOMRIGHT"><Offset><AbsDimension x="-6" y="-8" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIAboutTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab7" inherits="CharacterFrameTabButtonTemplate" id="7" text="PawnUIFrame_HelpTab_Text">
-				<Anchors><Anchor point="RIGHT" relativeTo="$parentTab6" relativePoint="LEFT"><Offset><AbsDimension x="16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIHelpTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab5" inherits="CharacterFrameTabButtonTemplate" id="5" text="PawnUIFrame_OptionsTab_Text">
-				<Anchors><Anchor point="RIGHT" relativeTo="$parentTab7" relativePoint="LEFT"><Offset><AbsDimension x="16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIOptionsTabPage)
 					</OnClick>
 				</Scripts>
 			</Button>
