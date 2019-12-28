@@ -607,8 +607,9 @@ Shortcut: Shift+click a scale]=],
 		["ValuesFollowSpecialization"] = "Only show upgrades for my best armor type after level 50",
 		["ValuesFollowSpecializationTooltip"] = "Enable this option to hide upgrades for armor that your class does not specialize in after level 50.  For example, at level 50 holy paladins learn Plate Specialization, which increases their intellect by 5% when wearing only plate armor.  When this option is chosen Pawn will never consider cloth, leather, or mail to be upgrades for level 50+ holy paladins.",
 		["ValuesHeader"] = "Stat weights for %s",
+		["ValuesIgnoreItemType"] = "These items are unusable",
 		["ValuesIgnoreStat"] = "Items with this are unusable",
-		["ValuesIgnoreStatTooltip"] = "Enable this option to cause any item with this stat to not get a value for this scale.  For example, shamans can't wear plate, so a scale designed for a shaman can mark plate as unusable so that plate armor doesn't get a value for that scale.",
+		["ValuesIgnoreStatTooltip"] = "Enable this option to cause any item of this type or with this stat to be ignored entirely for this scale.  For example, shamans can't wear plate, so a scale designed for a shaman can mark plate as unusable so that plate armor is never considered an upgrade.",
 		["ValuesNormalize"] = "Normalize values (like Wowhead)",
 		["ValuesNormalizeTooltip"] = [=[Enable this option to divide the final calculated value for an item by the sum of all stat values in your scale, like Wowhead and Lootzor do.  This helps to even out situations like where one scale has stat values around 1 and another has values around 5.  It also helps to keep numbers manageably small.
 

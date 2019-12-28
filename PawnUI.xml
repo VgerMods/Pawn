@@ -920,7 +920,7 @@
 					<CheckButton name="PawnUIFrame_IgnoreStatCheck" inherits="PawnUICheckboxTemplate">
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="275" y="-290" /></Offset></Anchor></Anchors>
 						<Layers><Layer level="ARTWORK">
-							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" text="PawnUIFrame_IgnoreStatCheck_Text" />
+							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" />
 						</Layer></Layers>
 						<Scripts><OnClick function="PawnUIFrame_IgnoreStatCheck_OnClick" /></Scripts>
 					</CheckButton>

@@ -654,6 +654,7 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 		["ValuesFollowSpecialization"] = "50等以後只顯示最佳護甲類型",
 		["ValuesFollowSpecializationTooltip"] = "啟用該選項來隱藏50等以後非職業專精的護甲類型。比如，神聖聖騎在50等學到了鎧甲專精, 當只裝備鎧甲時增加智力5%。當此選項選擇時Pawn將不會考慮布、皮及鎖甲對50等以上神聖聖騎士的提升",
 		["ValuesHeader"] = "調整 %s 權重",
+		["ValuesIgnoreItemType"] = "帶此屬性的物品沒有用處。",
 		["ValuesIgnoreStat"] = "帶此屬性的物品沒有用處。",
 		["ValuesIgnoreStatTooltip"] = "啟用這個選項讓此物品不計分數。例如，薩滿不能裝備鎧甲，所以為薩滿設計的權重可以標記鎧甲為不可用的，鎧甲即不計分。",
 		["ValuesNormalize"] = "數值標準化 (像 Wowhead)",

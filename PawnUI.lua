@@ -760,12 +760,15 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 			end
 		end
 		PawnUIFrame_IgnoreStatCheck:SetChecked(ThisStatIsIgnored)
-		if (not ThisScaleIsReadOnly) and (not PawnStats[Index][4]) then
+		local TypeOfStat = PawnStats[Index][4]
+		if (not ThisScaleIsReadOnly) and (TypeOfStat ~= PawnStatUnignorable) then
 			-- Shown and editable: scale is editable and stat is not unignorable
+			PawnUIFrame_IgnoreStatCheck_Label:SetText(TypeOfStat == PawnStatItemType and PawnLocal.UI.ValuesIgnoreItemType or PawnLocal.UI.ValuesIgnoreStat)
 			PawnUIFrame_IgnoreStatCheck:Show()
 			PawnUIFrame_IgnoreStatCheck:Enable()
 		elseif ThisScaleIsReadOnly and (ThisStatIsIgnored) then
 			-- Shown but not editable: scale is not editable and stat is currently ignored
+			PawnUIFrame_IgnoreStatCheck_Label:SetText(TypeOfStat == PawnStatItemType and PawnLocal.UI.ValuesIgnoreItemType or PawnLocal.UI.ValuesIgnoreStat)
 			PawnUIFrame_IgnoreStatCheck:Show()
 			PawnUIFrame_IgnoreStatCheck:Disable()
 		else

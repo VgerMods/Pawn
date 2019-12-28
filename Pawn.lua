@@ -2612,11 +2612,6 @@ function PawnParseScaleTag(ScaleTag)
 	if SpecID and Values.Class then
 		Values.Spec = PawnGetSpecIDFromName(Values.Class, SpecID)
 	end
-	if (not Values.Class) or (not Values.Spec) then
-		-- Never return just a class without a spec.
-		Values.Spec = nil
-		Values.Class = nil
-	end
 	
 	-- Looks like everything worked.
 	return Name, Values
@@ -3844,13 +3839,13 @@ function PawnEnableAllScalesForClass()
 end
 
 -- Returns the name of a scale that's designed for the specified class and spec, if there is one,
--- or nil if there isn't.
+-- or nil if there isn't.  (SpecID is optional, in case of Classic.)
 function PawnFindScaleForSpec(ClassID, SpecID)
-	if (not ClassID) or (not SpecID) then return nil end
+	if not ClassID then return nil end
 
 	local ScaleName, Scale
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
-		if Scale.ClassID == ClassID and Scale.SpecID == SpecID and Scale.Provider then return ScaleName end
+		if Scale.ClassID == ClassID and (SpecID == nil or Scale.SpecID == SpecID) and Scale.Provider then return ScaleName end
 	end
 
 	return nil
@@ -4617,8 +4612,11 @@ function PawnGetScaleTag(ScaleName)
 	local ScaleTag = "( Pawn: v" .. PawnCurrentScaleVersion .. ": \"" .. ScaleFriendlyName .. "\": "
 	local AddComma = false
 	local TemplateStats
-	if Scale.ClassID and Scale.SpecID then
-		ScaleTag = ScaleTag .. "Class=" .. PawnGetEnglishClassNameFromID(Scale.ClassID) .. ", Spec=" .. PawnGetEnglishSpecNameFromID(Scale.ClassID, Scale.SpecID)
+	if Scale.ClassID then
+		ScaleTag = ScaleTag .. "Class=" .. PawnGetEnglishClassNameFromID(Scale.ClassID)
+		if Scale.SpecID then
+			ScaleTag = ScaleTag .. ", Spec=" .. PawnGetEnglishSpecNameFromID(Scale.ClassID, Scale.SpecID)
+		end
 		AddComma = true
 		TemplateStats = PawnGetStatValuesForTemplate(PawnFindScaleTemplate(Scale.ClassID, Scale.SpecID), true)
 	end
@@ -4663,23 +4661,18 @@ function PawnImportScale(ScaleTag, Overwrite)
 	end
 
 	-- The "Class" and "Spec" parameters aren't actually stat values, so take them out of the list now.
-	local ClassID, SpecID
 	local UnlocalizedClassName, IconTexturePath, Role
-	if GetClassInfo then
-		-- Specializations don't exist in Classic as they do on live, so skip that.
-		ClassID = Values.Class
-		Values.Class = nil
-		SpecID = Values.Spec
-		Values.Spec = nil
-		if ClassID and not SpecID then
-			ClassID = nil
-		elseif SpecID and not ClassID then
-			SpecID = nil
-		elseif ClassID and SpecID then
-			_, UnlocalizedClassName = GetClassInfo(ClassID)
-			_, _, _, IconTexturePath, Role = GetSpecializationInfoForClassID(ClassID, SpecID)
-		end
+	local ClassID = Values.Class
+	Values.Class = nil
+	if ClassID then _, UnlocalizedClassName = PawnGetClassInfo(ClassID) end
+	local SpecID = Values.Spec
+	Values.Spec = nil
+	if SpecID and not ClassID then
+		SpecID = nil
+	elseif SpecID and VgerCore.IsClassic then
+		SpecID = nil
 	end
+	if SpecID then _, _, _, IconTexturePath, Role = GetSpecializationInfoForClassID(ClassID, SpecID) end
 		
 	local AlreadyExists = PawnCommon.Scales[ScaleName] ~= nil
 	if AlreadyExists and (PawnScaleIsReadOnly(ScaleName) or not Overwrite) then
@@ -4692,7 +4685,7 @@ function PawnImportScale(ScaleTag, Overwrite)
 	-- don't change other options about this scale, such as the color.
 
 	if not AlreadyExists then
-		if ClassID and SpecID then
+		if ClassID and (SpecID or VgerCore.IsClassic) then
 			PawnCommon.Scales[ScaleName] = PawnGetDefaultScale(ClassID, SpecID, true)
 			local Color = strsub(RAID_CLASS_COLORS[UnlocalizedClassName].colorStr, 3)
 			-- Choose a lighter color for death knights so it's easier to read.
@@ -4710,7 +4703,7 @@ function PawnImportScale(ScaleTag, Overwrite)
 	NewScale.IconTexturePath = IconTexturePath
 	NewScale.Role = Role
 
-	-- Merge the scale tag's stats into the template stats.
+	-- Merge the scale tag's stats into the template's (or the existing scale's) stats.
 	local StatName, Value
 	for StatName, Value in pairs(Values) do
 		NewScale.Values[StatName] = Value
