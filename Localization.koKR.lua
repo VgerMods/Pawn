@@ -405,21 +405,21 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Wand"] = "^마법봉$",
 		["Warforged"] = "^전쟁벼림$",
 		["Warglaives"] = "^전투검$",
-		["WeaponDamage"] = "^공격력 # [-~] #$",
-		["WeaponDamageArcane"] = "^비전 피해 #[-~]#$",
+		["WeaponDamage"] = "^공격력 # ?[-~] ?#$",
+		["WeaponDamageArcane"] = "^비전 피해 # ?[-~] ?#$",
 		["WeaponDamageArcaneExact"] = "^비전 피해 %+?#$",
 		["WeaponDamageEnchantment"] = "^무기 공격력 %+?#$",
 		["WeaponDamageEquip"] = "^착용 효과: 무기 공격력 %+?#%.$",
 		["WeaponDamageExact"] = "^공격력 %+?#$",
-		["WeaponDamageFire"] = "^화염 피해 #[-~]#$",
+		["WeaponDamageFire"] = "^화염 피해 # ?[-~] ?#$",
 		["WeaponDamageFireExact"] = "^화염 피해 %+?#$",
-		["WeaponDamageFrost"] = "^냉기 피해 #[-~]#$",
+		["WeaponDamageFrost"] = "^냉기 피해 # ?[-~] ?#$",
 		["WeaponDamageFrostExact"] = "^냉기 피해 %+?#$",
-		["WeaponDamageHoly"] = "^신성 피해 #[-~]#$",
+		["WeaponDamageHoly"] = "^신성 피해 # ?[-~] ?#$",
 		["WeaponDamageHolyExact"] = "^신성 피해 %+?#$",
-		["WeaponDamageNature"] = "^자연 피해 #[-~]#$",
+		["WeaponDamageNature"] = "^자연 피해 # ?[-~] ?#$",
 		["WeaponDamageNatureExact"] = "^자연 피해 %+?#$",
-		["WeaponDamageShadow"] = "^암흑 피해 #[-~]#$",
+		["WeaponDamageShadow"] = "^암흑 피해 # ?[-~] ?#$",
 		["WeaponDamageShadowExact"] = "^암흑 피해 %+?#$",
 	},
 	["UI"] = {
@@ -651,6 +651,33 @@ Pawn이 상점에 판매했거나, 파괴했거나, 다른 방법으로 더이�
 		["ValuesWelcomeReadOnly"] = "선택된 능력치 비율은 변경할 수 없습니다. 이 중요도를 변경하고 싶다면, 능력치 비율 탭으로 가서 수동 모드를 활성화하고 이 능력치 비율을 복사하세요.",
 	}
 }
+
+-- Special case: wands actually use different text on live versus classic.
+-- So, patch things up here.
+if VgerCore.IsClassic then
+
+	local TooltipParsing_Classic =
+	{
+		["WeaponDamageArcane"] = "^비전계 공격력 # ?[-~] ?#$",
+		["WeaponDamageArcaneExact"] = "^비전계 공격력 #$",
+		["WeaponDamageFire"] = "^화염계 공격력 # ?[-~] ?#$",
+		["WeaponDamageFireExact"] = "^화염계 공격력 #$",
+		["WeaponDamageFrost"] = "^냉기계 공격력 # ?[-~] ?#$",
+		["WeaponDamageFrostExact"] = "^냉기계 공격력 #$",
+		["WeaponDamageHoly"] = "^신성계 공격력 # ?[-~] ?#$",
+		["WeaponDamageHolyExact"] = "^신성계 공격력 #$",
+		["WeaponDamageNature"] = "^자연계 공격력 # ?[-~] ?#$",
+		["WeaponDamageNatureExact"] = "^자연계 공격력 #$",
+		["WeaponDamageShadow"] = "^암흑계 공격력 # ?[-~] ?#$",
+		["WeaponDamageShadowExact"] = "^암흑계 공격력 #$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
 end
 
 if GetLocale() == "koKR" then
