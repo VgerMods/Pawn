@@ -786,7 +786,7 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 		else
 			PawnUIFrame_NoUpgradesCheck:Show()
 		end
-		if (not VgerCore.IsClassic) and ThisStat == "IsCloth" or ThisStat == "IsLeather" or ThisStat == "IsMail" or ThisStat == "IsPlate" then
+		if (not VgerCore.IsClassic) and (ThisStat == "IsCloth" or ThisStat == "IsLeather" or ThisStat == "IsMail" or ThisStat == "IsPlate") then
 			PawnUIFrame_FollowSpecializationCheck:Show()
 		else
 			PawnUIFrame_FollowSpecializationCheck:Hide()
