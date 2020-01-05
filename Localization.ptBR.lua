@@ -96,6 +96,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Tecido",
 		["ClothInfo"] = "Pontos para distribuir se o item for tecido.",
+		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Crítico",
 		["CritInfo"] = "Ataque crítico. Aumenta a chance de seus ataques e magias de cura acertem com maior potência.",
 		--[[Translation missing --]]
@@ -287,6 +288,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Charges"] = "^.+ Cargas?$",
 		["Cloth"] = "^Tecido$",
 		["CooldownRemaining"] = "^Tempo de recarga restante:",
+		["Corruption"] = "^%+?# Corrupção$",
 		["Crit"] = "^%+?# Acerto Crítico%.?$",
 		["Crit2"] = "^%+?# de Acerto Crítico%.?$",
 		["CritPercent"] = "^Equipado: Aumenta em #%% a chance de realizar acertos críticos%.$",

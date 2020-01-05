@@ -96,6 +96,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "천",
 		["ClothInfo"] = "천 아이템일 경우 할당합니다.",
+		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "치명타 및 극대화",
 		["CritInfo"] = "치명타 및 극대화. 공격이나 치유 주문이 증가한 효과로 적중될 확률을 증가시킵니다.",
 		--[[Translation missing --]]
@@ -289,6 +290,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Charges"] = "^.+회 사용 가능$",
 		["Cloth"] = "^천$",
 		["CooldownRemaining"] = "^재사용 대기시간:",
+		["Corruption"] = "^타락 %+?#$",
 		["Crit"] = "^치명타 및 극대화 %+?#$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^착용 효과: 치명타를 적중시킬 확률이 #%%만큼 증가합니다%.$",

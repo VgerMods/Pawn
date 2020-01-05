@@ -96,6 +96,7 @@ PawnLocal =
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "布甲",
 		["ClothInfo"] = "此物若為布甲，則增計多少分數。",
+		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "致命一擊",
 		["CritInfo"] = "致命一擊: 影響近戰攻擊，遠程攻擊，法術。",
 		--[[Translation missing --]]
@@ -290,6 +291,7 @@ PawnLocal =
 		["Charges"] = "^.+次?$",
 		["Cloth"] = "^布甲$",
 		["CooldownRemaining"] = "^冷卻時間:",
+		["Corruption"] = "^%+?#腐化$",
 		["Crit"] = "^%+?#致命一擊$",
 		["Crit2"] = "^裝備: 提高#點致命一擊。$",
 		["CritPercent"] = "^裝備： 使你造成致命一擊的機率提高#%%。$",

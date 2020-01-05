@@ -99,6 +99,7 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Tissu",
 		["ClothInfo"] = "Points a etre assigné si l'item est en tissu",
+		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Crit",
 		["CritInfo"] = "Coup critique. affecte les attaques de mélée, les attaques a distance et les sorts",
 		--[[Translation missing --]]
@@ -298,6 +299,7 @@ Armure, quel que soit le type d'item. Pas de distinction entre l'armure de base 
 		["Charges"] = "^.+ Charges?$",
 		["Cloth"] = "^Tissu$",
 		["CooldownRemaining"] = "^Temps de recharge restant:",
+		["Corruption"] = "^%+?# Corruption$",
 		["Crit"] = "^%+?# Score de crit%.?$",
 		["Crit2"] = "^%+?# au score de critique$",
 		["CritPercent"] = "^Equipé : Augmente vos chances d'infliger un coup critique de #%%%.$",
@@ -686,6 +688,11 @@ if VgerCore.IsClassic then
 	for Key, NewString in pairs(TooltipParsing_Classic) do
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
+end
+
+-- *** In WoW 8.3, the thousands separator for French is changed AGAIN.
+if select(4, GetBuildInfo()) >= 80300 then
+	PawnLocal.ThousandsSeparator = ""
 end
 
 end

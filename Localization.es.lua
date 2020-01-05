@@ -100,6 +100,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Tela",
 		["ClothInfo"] = "Puntos que asignar si el objeto es de Tela.",
+		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Crit",
 		["CritInfo"] = "Golpe crítico.  Aumenta la probabilidad de que tus ataques y hechizos de curación sean más efectivos.",
 		--[[Translation missing --]]
@@ -299,6 +300,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Charges"] = "^.+ cargas?$",
 		["Cloth"] = "^Tela$",
 		["CooldownRemaining"] = "^Tiempo de reutilización restante:",
+		["Corruption"] = "^%+?# [Cc]orrupción$",
 		["Crit"] = "^%+?# golpe crítico%.?$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^Equipar: Mejora un #%% tu probabilidad de conseguir un golpe crítico%.$",

@@ -97,6 +97,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Stoffa",
 		["ClothInfo"] = "Punti da assegnare se l'oggetto è in stoffa",
+		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Critico",
 		["CritInfo"] = "Critico. Aumenta la possibilità che i tuoi attacchi e le tue cure colpiscano con potenza maggiore.",
 		--[[Translation missing --]]
@@ -303,6 +304,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Charges"] = "^.+ Cariche?$",
 		["Cloth"] = "^Stoffa$",
 		["CooldownRemaining"] = "^Recupero restante:",
+		["Corruption"] = "^%+?# Corruzione$",
 		["Crit"] = "^%+?# Indice di [Cc]ritico%.?$",
 		["Crit2"] = "UNUSED",
 		--[[Translation missing --]]
