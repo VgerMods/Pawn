@@ -282,10 +282,11 @@ and Pawn.</p>
 <h3><span style="text-decoration: underline;">In</span>compatible addons</h3>
 <ul>
 	<li>FreeUI<ul>
-		<li>(FreeUI changes a bunch of text on tooltips that makes it impossible 
+		<li>FreeUI changes a bunch of text on tooltips that makes it impossible 
 		for Pawn to read some stats off of them anymore.&nbsp; For example, it 
 		redefines ITEM_MOD_CRIT_RATING so that what would normally be "+25 
-		Critical Strike" shows up as "Crit +25".)</li>
+		Critical Strike" shows up as "Crit +25".&nbsp; Pawn doesn't support any 
+		addon that does that.</li>
 	</ul>
 	</li>
 	<li>Undermine Journal<ul>
@@ -309,6 +310,12 @@ and Pawn.</p>
 
 <h2>Updates</h2>
 <h3>Version 2.3.15</h3>
+<ul>
+	<li>WoW 8.3 PTR: Added support for the Corruption stat.&nbsp; If you assign 
+	it a value, you probably want to assign it a <i>negative</i> value.</li>
+	<li>WoW 8.3 PTR: Fixed a problem where high-level weapons would cause errors 
+	when playing in French.</li>
+</ul>
 <h3>Version 2.3.14</h3>
 <ul>
 	<li>WoW Classic: Scale tags can now specify a class like on retail.&nbsp; 
