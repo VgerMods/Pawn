@@ -11,11 +11,8 @@ local function PawnUseThisLocalization()
 PawnLocal = 
 {
 	["AverageItemLevelIgnoringRarityTooltipLine"] = "Durchschnittliches Itemlevel",
-	["BackupCommand"] = "backup",
 	["BaseValueWord"] = "Basis",
 	["CopyScaleEnterName"] = "Gib einen Wertungsnamen für die Kopie von %s ein:",
-	["DebugOffCommand"] = "debug aus",
-	["DebugOnCommand"] = "debug an",
 	["DecimalSeparator"] = ",",
 	["DeleteScaleConfirmation"] = "Willst du die Wertung %s wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden. Gib \"%s\" zur Bestätigung ein:",
 	["DidntUnderstandMessage"] = "   (?) Habe \"%s\" nicht verstanden.",
@@ -69,61 +66,46 @@ PawnLocal =
 	["UnusableStatMessage"] = "   -- %s ist unbenutzbar, keine Berechnung.",
 	["Usage"] = [=[Pawn by Vger-Azjol-Nerub
 www.vgermods.com
-	
+ 
 /pawn -- Pawn anzeigen oder verstecken
 /pawn debug [ an | aus ] -- Debug Infos in der Konsole anzeigen
 /pawn backup -- alle Bewertungsprofile sichern
-	
+ 
 Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readme.htm) die mit dieser Installation ausgeliefert wird.]=],
 	["ValueCalculationMessage"] = "   %g %s x %g pro = %g",
 	["VisibleScalesHeader"] = "%s's Wertungen",
 	["Stats"] = {
 		["AgilityInfo"] = "Beweglichkeit. Verstärkt Eure Angriffe und Fähigkeiten.",
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
 		["ArcaneSpellDamage"] = "Arkanzauberschaden",
-		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
 		["ArmorInfo"] = "Rüstung.  Körperliche Schadensreduktion.",
 		["ArmorTypes"] = "Waffenarten",
 		["AvoidanceInfo"] = "Vermeidung. Verringert den Schaden, den Ihr durch Flächenangriffe erleidet.",
-		--[[Translation missing --]]
 		["BlockRatingInfo"] = "Block chance.  Increases the chances of a successful shield block.",
-		--[[Translation missing --]]
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Stoff",
 		["ClothInfo"] = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand Stoff ist.",
-		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
+		["CorruptionInfo"] = "Verderbtheit von N'Zoth. Ein negativer Wert für \"Verderbnis\" entfernt Punkte aus der Punktzahl eines Elements basierend auf der Verderbnisstufe.",
 		["Crit"] = "Krit",
 		["CritInfo"] = "Kritische Treffer.  Chance, dass Angriffe und Heilungen stärkere Wirkung haben.",
-		--[[Translation missing --]]
 		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
-		--[[Translation missing --]]
 		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
 		["DpsInfo"] = "Waffenschaden pro Sekunde.  (Wenn du den DPS-Wert für Waffengattungen unterschiedlich definieren willst, scrolle runter zum Bereich \"Spezielle Waffenwertungen\"",
-		--[[Translation missing --]]
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
 		["FireSpellDamage"] = "Feuerzauberschaden",
-		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
-		--[[Translation missing --]]
 		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
 		["FrostSpellDamage"] = "Frostzauberschaden",
-		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "Tempo.  Erhöht Angriffs- und Zaubertempo.",
 		["Healing"] = "Zauberheilung",
-		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
-		--[[Translation missing --]]
 		["HitInfo"] = "Hit.  Increases the chance that your physical attacks hit the target, especially bosses.",
 		["HolySpellDamage"] = "Heiligzauberschaden",
-		--[[Translation missing --]]
 		["HolySpellDamageInfo"] = "Holy damage.  Increases the damage dealt by your holy spells.",
-		--[[Translation missing --]]
 		["Hp5Info"] = "Health regeneration per 5 seconds.  Increases the rate at which you regenerate health.",
 		["IndestructibleInfo"] = "Unzerstörbar.  Verhindert, dass Ihre Ausrüstung dauerhaften Schaden nimmt.",
 		["IndestructibleIs"] = "Sein |cffffffffunzerstörbar|r lohnt sich:",
@@ -137,23 +119,16 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["MinorStats"] = "Kleinere Werte",
 		["MovementSpeedInfo"] = "Bewegungsgeschwindigkeit. Bewirkt, dass euer Charakter schneller läuft.",
 		["Mp5"] = "Mana alle 5",
-		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
-		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
 		["NatureSpellDamage"] = "Naturzauberschaden",
-		--[[Translation missing --]]
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
-		--[[Translation missing --]]
 		["ParryInfo"] = "Parry.  Increases the chance that you'll parry enemy attacks.",
 		["Plate"] = "Platte",
 		["PlateInfo"] = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand Platte ist.",
-		--[[Translation missing --]]
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
-		--[[Translation missing --]]
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
 		["ShadowSpellDamage"] = "Schattenzauberschaden",
-		--[[Translation missing --]]
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
 		["Shield"] = "Schild",
 		["ShieldInfo"] = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand ein Schild ist.",
@@ -164,14 +139,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpeedBaselineIs"] = "|cffffffffTempogrundwert|r is:",
 		["SpeedInfo"] = "Waffenschaden pro Sekunde.  (Wenn du schnelle Waffen bevorzugst, dann sollte diese Nummer negativ sein. Siehe auch \"Tempogrundwert\" im Bereich \"Spezielle Waffenwertungen\".)",
 		["SpeedIs"] = "1 Sekunde |cffffffffWaffentempo|r entspricht:",
-		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
 		["SpellDamage"] = "Zauberschaden",
-		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
-		--[[Translation missing --]]
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
-		--[[Translation missing --]]
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "Ausdauer. Erhöht die Gesundheit.",
 		["StrengthInfo"] = "Stärke. Verstärkt Eure Angriffe und Fähigkeiten.",
@@ -391,7 +362,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Sword"] = "^Schwert$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ Min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ Sek%)$",
-		["Thrown"] = "^Thrown$",
+		["Thrown"] = "^Geworfen$",
 		["Thunderforged"] = "^Donnergeschmiedet$",
 		["Timeless"] = "^Zeitlos$",
 		["Titanforged"] = "^Titanengeschmiedet$",
@@ -466,7 +437,7 @@ Wenn z.B. "463" angegeben, dann wird Pawn Edelsteine für die Gegenstandsstufe 4
 
 Wenn du Quest-Belohnungen oder Dungeon-Beute erwirbst, die besser als deine aktuelle Ausrüstung sein könnten, wird Pawn es dich mit einem grünen Pfeilsymbol wissen lassen.
 
-	|cff8ec3e6Fire:|r |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% Verbesserung|r 
+ |cff8ec3e6Fire:|r |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% Verbesserung|r 
 
 
 |cff8ec3e6Probiere diese Features aus, wenn du dich an die Grundlagen gewöhnt hast:|r
@@ -634,7 +605,7 @@ Shortcut: Shift+click auf ein Bewertungsprofil]=],
 		["ValuesFollowSpecialization"] = "Zeige nur Upgrades für meinen besten Rüstungstyp ab Level 50",
 		["ValuesFollowSpecializationTooltip"] = "Aktiviere diese Option um Rüstungsupgrades zu verstecken für die deine Klasse nicht spezialisiert ist (ab Level 50).  Zum Beispiel lernt ein Heilig-Paladin ab Level 50 Plattenspezialisierung, die seine Intelligenz um 5% erhöht wenn er nur Plattenrüstung trägt.  Wenn diese Option ausgewählt ist wird Pawn keine Stoff, Leder oder Kettenrüstung als Upgrades für Level 50+ Heilig-Paladine berücksichtigen.",
 		["ValuesHeader"] = "Werte Gewichtung für %s",
-		["ValuesIgnoreItemType"] = "Unbenutzbar-Markierung für Gegenstände",
+		["ValuesIgnoreItemType"] = "Diese Gegenstände sind unbrauchbar",
 		["ValuesIgnoreStat"] = "Unbenutzbar-Markierung für Gegenstände",
 		["ValuesIgnoreStatTooltip"] = "Aktiviere diese Option um zu verhindern das unbenutzbare Gegenstände eine Wertung erhalten.  Schamanen können zum Beispiel keine Plattenrüstung tragen. Einen Schamanen-Profil kann Plattenrüstung als unbenutzbar markieren, so dass Plattenrüstung keine Wertung für dieses Profil erhält.",
 		["ValuesNormalize"] = "Werte normalisieren (ähnlich Wowhead)",
