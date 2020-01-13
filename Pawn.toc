@@ -1,4 +1,4 @@
-﻿## Interface: 80205
+﻿## Interface: 80300
 ## Title: Pawn
 ## Version: 2.3.16
 ## Notes: Pawn helps you compare items and find upgrades.
