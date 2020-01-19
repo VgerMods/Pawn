@@ -1965,7 +1965,8 @@ function PawnUIAboutTabPage_OnShow()
 	if VgerCore.IsClassic then
 		-- WoW Classic doesn't use the Mr. Robot scales, so hide that logo and information.
 		PawnUIFrame_MrRobotLogo:Hide()
-		PawnUIFrame_MrRobotLabel:Hide()
+		PawnUIFrame_MrRobotLabel:SetPoint("TOPLEFT", 25, -210)
+		PawnUIFrame_MrRobotLabel:SetText("Special thanks to HawsJon for collecting the stat weights used in the starter scales.")
 	end
 end
 
