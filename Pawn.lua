@@ -4109,8 +4109,6 @@ function PawnAddItemToLevelTracker(Item)
 		PutNewItemInSlot = Slot2
 	end
 
-	-- TODO: *** Rings and trinkets with the same ID should only be able to upgrade weaker versions of the same item
-
 	if PutNewItemInSlot then
 		if PawnCommon.ShowSlotDebugInfo then
 			VgerCore.Message(Item.Link .. " is now your best item in slot " .. PutNewItemInSlot .. ".")
@@ -4151,8 +4149,6 @@ function PawnIsItemAnItemLevelUpgrade(Item)
 		-- If the item is already one of your best, it can't be an upgrade.
 		return
 	end
-
-	-- TODO: *** Rings and trinkets with the same ID should only be able to upgrade weaker versions of the same item
 
 	local Difference
 	if Slot1 and PawnOptions.ItemLevels[Slot1] and Item.Level > PawnOptions.ItemLevels[Slot1].Level then
