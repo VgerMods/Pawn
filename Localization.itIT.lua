@@ -512,7 +512,7 @@ Per esempio, se impostato a "463", Pawn suggerirà gemme adatte per oggetti di l
 
 Quando ricevi ricompense da una missione o bottino da una spedizione che può essere migliore dell'equipaggiamento indossato, Pawn te lo indicherà con una freccia verde. Controlla anche altre informazioni utili al fondo del dialogo dell'oggetto.
 
-    |cff8ec3e6Fuoco:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% di miglioramento|r
+	|cff8ec3e6Fuoco:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% di miglioramento|r
 
 
 
@@ -697,6 +697,71 @@ Per maggiori informazioni su questa impostazione, leggere il file di readme.]=],
 		["ValuesWelcomeReadOnly"] = "Questa formula predefinita non può essere cambiata. Se desideri cambiare questi valori, vai nella scheda Formula, abilita la modalità Manuale, e fai una copia di questa formula.",
 	}
 }
+
+PawnLocal.Specs =
+{
+	[1] = {
+		{ Name="Armi", Icon=132355, Role="DAMAGER" },
+		{ Name="Furia", Icon=132347, Role="DAMAGER" },
+		{ Name="Protezione", Icon=132341, Role="TANK" },
+	},
+	[2] = {
+		{ Name="Sacro", Icon=135920, Role="HEALER" },
+		{ Name="Protezione", Icon=236264, Role="TANK" },
+		{ Name="Castigo", Icon=135873, Role="DAMAGER" },
+	},
+	[3] = {
+		{ Name="Affinità Animale", Icon=461112, Role="DAMAGER" },
+		{ Name="Precisione di Tiro", Icon=236179, Role="DAMAGER" },
+		{ Name="Sopravvivenza", Icon=461113, Role="DAMAGER" },
+	},
+	[4] = {
+		{ Name="Assassinio", Icon=236270, Role="DAMAGER" },
+		{ Name="Fuorilegge", Icon=236286, Role="DAMAGER" },
+		{ Name="Scaltrezza", Icon=132320, Role="DAMAGER" },
+	},
+	[5] = {
+		{ Name="Disciplina", Icon=135940, Role="HEALER" },
+		{ Name="Sacro", Icon=237542, Role="HEALER" },
+		{ Name="Ombra", Icon=136207, Role="DAMAGER" },
+	},
+	[6] = {
+		{ Name="Sangue", Icon=135770, Role="TANK" },
+		{ Name="Gelo", Icon=135773, Role="DAMAGER" },
+		{ Name="Empietà", Icon=135775, Role="DAMAGER" },
+	},
+	[7] = {
+		{ Name="Elementale", Icon=136048, Role="DAMAGER" },
+		{ Name="Potenziamento", Icon=237581, Role="DAMAGER" },
+		{ Name="Rigenerazione", Icon=136052, Role="HEALER" },
+	},
+	[8] = {
+		{ Name="Arcano", Icon=135932, Role="DAMAGER" },
+		{ Name="Fuoco", Icon=135810, Role="DAMAGER" },
+		{ Name="Gelo", Icon=135846, Role="DAMAGER" },
+	},
+	[9] = {
+		{ Name="Afflizione", Icon=136145, Role="DAMAGER" },
+		{ Name="Demonologia", Icon=136172, Role="DAMAGER" },
+		{ Name="Distruzione", Icon=136186, Role="DAMAGER" },
+	},
+	[10] = {
+		{ Name="Mastro Birraio", Icon=608951, Role="TANK" },
+		{ Name="Misticismo", Icon=608952, Role="HEALER" },
+		{ Name="Impeto", Icon=608953, Role="DAMAGER" },
+	},
+	[11] = {
+		{ Name="Equilibrio", Icon=136096, Role="DAMAGER" },
+		{ Name="Aggressore Ferino", Icon=132115, Role="DAMAGER" },
+		{ Name="Guardiano Ferino", Icon=132276, Role="TANK" },
+		{ Name="Rigenerazione", Icon=136041, Role="HEALER" },
+	},
+	[12] = {
+		{ Name="Rovina", Icon=1247264, Role="DAMAGER" },
+		{ Name="Vendetta", Icon=1247265, Role="TANK" },
+	},
+}
+
 end
 
 if GetLocale() == "itIT" then

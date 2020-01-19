@@ -471,7 +471,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 
 현재 장비보다 좋은 퀘스트 보상이나 던전 전리품을 획득하면, Pawn은 녹색 화살표 아이콘으로 알려줍니다.  아이템 툴팁 하단에서 기타 도움이 되는 정보를 확인할 수 있습니다.
 
-    |cff8ec3e6화염:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% 향상|r
+	|cff8ec3e6화염:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% 향상|r
 
 
 
@@ -680,6 +680,70 @@ if VgerCore.IsClassic then
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
 end
+
+PawnLocal.Specs =
+{
+	[1] = {
+		{ Name="무기", Icon=132355, Role="DAMAGER" },
+		{ Name="분노", Icon=132347, Role="DAMAGER" },
+		{ Name="방어", Icon=132341, Role="TANK" },
+	},
+	[2] = {
+		{ Name="신성", Icon=135920, Role="HEALER" },
+		{ Name="보호", Icon=236264, Role="TANK" },
+		{ Name="징벌", Icon=135873, Role="DAMAGER" },
+	},
+	[3] = {
+		{ Name="야수", Icon=461112, Role="DAMAGER" },
+		{ Name="사격", Icon=236179, Role="DAMAGER" },
+		{ Name="생존", Icon=461113, Role="DAMAGER" },
+	},
+	[4] = {
+		{ Name="암살", Icon=236270, Role="DAMAGER" },
+		{ Name="무법", Icon=236286, Role="DAMAGER" },
+		{ Name="잠행", Icon=132320, Role="DAMAGER" },
+	},
+	[5] = {
+		{ Name="수양", Icon=135940, Role="HEALER" },
+		{ Name="신성", Icon=237542, Role="HEALER" },
+		{ Name="암흑", Icon=136207, Role="DAMAGER" },
+	},
+	[6] = {
+		{ Name="혈기", Icon=135770, Role="TANK" },
+		{ Name="냉기", Icon=135773, Role="DAMAGER" },
+		{ Name="부정", Icon=135775, Role="DAMAGER" },
+	},
+	[7] = {
+		{ Name="정기", Icon=136048, Role="DAMAGER" },
+		{ Name="고양", Icon=237581, Role="DAMAGER" },
+		{ Name="복원", Icon=136052, Role="HEALER" },
+	},
+	[8] = {
+		{ Name="비전", Icon=135932, Role="DAMAGER" },
+		{ Name="화염", Icon=135810, Role="DAMAGER" },
+		{ Name="냉기", Icon=135846, Role="DAMAGER" },
+	},
+	[9] = {
+		{ Name="고통", Icon=136145, Role="DAMAGER" },
+		{ Name="악마", Icon=136172, Role="DAMAGER" },
+		{ Name="파괴", Icon=136186, Role="DAMAGER" },
+	},
+	[10] = {
+		{ Name="양조", Icon=608951, Role="TANK" },
+		{ Name="운무", Icon=608952, Role="HEALER" },
+		{ Name="풍운", Icon=608953, Role="DAMAGER" },
+	},
+	[11] = {
+		{ Name="조화", Icon=136096, Role="DAMAGER" },
+		{ Name="야성", Icon=132115, Role="DAMAGER" },
+		{ Name="수호", Icon=132276, Role="TANK" },
+		{ Name="회복", Icon=136041, Role="HEALER" },
+	},
+	[12] = {
+		{ Name="파멸", Icon=1247264, Role="DAMAGER" },
+		{ Name="복수", Icon=1247265, Role="TANK" },
+	},
+}
 
 end
 

@@ -627,6 +627,70 @@ if VgerCore.IsClassic then
 	PawnLocal.TooltipParsing.Speed = "^Tempo #$"
 end
 
+PawnLocal.Specs =
+{
+	[1] = {
+		{ Name="Waffen", Icon=132355, Role="DAMAGER" },
+		{ Name="Furor", Icon=132347, Role="DAMAGER" },
+		{ Name="Schutz", Icon=132341, Role="TANK" },
+	},
+	[2] = {
+		{ Name="Heilig", Icon=135920, Role="HEALER" },
+		{ Name="Schutz", Icon=236264, Role="TANK" },
+		{ Name="Vergeltung", Icon=135873, Role="DAMAGER" },
+	},
+	[3] = {
+		{ Name="Tierherrschaft", Icon=461112, Role="DAMAGER" },
+		{ Name="Treffsicherheit", Icon=236179, Role="DAMAGER" },
+		{ Name="Überleben", Icon=461113, Role="DAMAGER" },
+	},
+	[4] = {
+		{ Name="Meucheln", Icon=236270, Role="DAMAGER" },
+		{ Name="Gesetzlosigkeit", Icon=236286, Role="DAMAGER" },
+		{ Name="Täuschung", Icon=132320, Role="DAMAGER" },
+	},
+	[5] = {
+		{ Name="Disziplin", Icon=135940, Role="HEALER" },
+		{ Name="Heilig", Icon=237542, Role="HEALER" },
+		{ Name="Schatten", Icon=136207, Role="DAMAGER" },
+	},
+	[6] = {
+		{ Name="Blut", Icon=135770, Role="TANK" },
+		{ Name="Frost", Icon=135773, Role="DAMAGER" },
+		{ Name="Unheilig", Icon=135775, Role="DAMAGER" },
+	},
+	[7] = {
+		{ Name="Elementar", Icon=136048, Role="DAMAGER" },
+		{ Name="Verstärkung", Icon=237581, Role="DAMAGER" },
+		{ Name="Wiederherstellung", Icon=136052, Role="HEALER" },
+	},
+	[8] = {
+		{ Name="Arkan", Icon=135932, Role="DAMAGER" },
+		{ Name="Feuer", Icon=135810, Role="DAMAGER" },
+		{ Name="Frost", Icon=135846, Role="DAMAGER" },
+	},
+	[9] = {
+		{ Name="Gebrechen", Icon=136145, Role="DAMAGER" },
+		{ Name="Dämonologie", Icon=136172, Role="DAMAGER" },
+		{ Name="Zerstörung", Icon=136186, Role="DAMAGER" },
+	},
+	[10] = {
+		{ Name="Braumeister", Icon=608951, Role="TANK" },
+		{ Name="Nebelwirker", Icon=608952, Role="HEALER" },
+		{ Name="Windläufer", Icon=608953, Role="DAMAGER" },
+	},
+	[11] = {
+		{ Name="Gleichgewicht", Icon=136096, Role="DAMAGER" },
+		{ Name="Wildheit", Icon=132115, Role="DAMAGER" },
+		{ Name="Wächter", Icon=132276, Role="TANK" },
+		{ Name="Wiederherstellung", Icon=136041, Role="HEALER" },
+	},
+	[12] = {
+		{ Name="Verwüstung", Icon=1247264, Role="DAMAGER" },
+		{ Name="Rachsucht", Icon=1247265, Role="TANK" },
+	},
+}
+
 end
 
 if GetLocale() == "deDE" then

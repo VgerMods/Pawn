@@ -50,7 +50,7 @@ PawnLocal =
 	["RenameScaleEnterName"] = "Entrer un nouveau nom pour %s:",
 	["SocketBonusValueCalculationMessage"] = "   -- Le bonus de sertissage vaudrait: %g",
 	["StatNameText"] = "1 |cffffffff%s|r vaut:",
-	["ThousandsSeparator"] = "NBSP",
+	["ThousandsSeparator"] = "",
 	["TooltipBestAnnotation"] = "%s  |cff8ec3e6(meilleur)|r",
 	["TooltipBestAnnotationSimple"] = "%s  votre meilleur",
 	["TooltipBigUpgradeAnnotation"] = "%s  |TInterface\\AddOns\\Pawn\\Textures\\UpgradeArrow:0|t|cff00ff00 upgrade%s|r",
@@ -690,10 +690,69 @@ if VgerCore.IsClassic then
 	end
 end
 
--- *** In WoW 8.3, the thousands separator for French is changed AGAIN.
-if select(4, GetBuildInfo()) >= 80300 then
-	PawnLocal.ThousandsSeparator = ""
-end
+PawnLocal.Specs =
+{
+	[1] = {
+		{ Name="Armes", Icon=132355, Role="DAMAGER" },
+		{ Name="Fureur", Icon=132347, Role="DAMAGER" },
+		{ Name="Protection", Icon=132341, Role="TANK" },
+	},
+	[2] = {
+		{ Name="Sacré", Icon=135920, Role="HEALER" },
+		{ Name="Protection", Icon=236264, Role="TANK" },
+		{ Name="Vindicte", Icon=135873, Role="DAMAGER" },
+	},
+	[3] = {
+		{ Name="Maîtrise des bêtes", Icon=461112, Role="DAMAGER" },
+		{ Name="Précision", Icon=236179, Role="DAMAGER" },
+		{ Name="Survie", Icon=461113, Role="DAMAGER" },
+	},
+	[4] = {
+		{ Name="Assassinat", Icon=236270, Role="DAMAGER" },
+		{ Name="Hors-la-loi", Icon=236286, Role="DAMAGER" },
+		{ Name="Finesse", Icon=132320, Role="DAMAGER" },
+	},
+	[5] = {
+		{ Name="Discipline", Icon=135940, Role="HEALER" },
+		{ Name="Sacré", Icon=237542, Role="HEALER" },
+		{ Name="Ombre", Icon=136207, Role="DAMAGER" },
+	},
+	[6] = {
+		{ Name="Sang", Icon=135770, Role="TANK" },
+		{ Name="Givre", Icon=135773, Role="DAMAGER" },
+		{ Name="Impie", Icon=135775, Role="DAMAGER" },
+	},
+	[7] = {
+		{ Name="Élémentaire", Icon=136048, Role="DAMAGER" },
+		{ Name="Amélioration", Icon=237581, Role="DAMAGER" },
+		{ Name="Restauration", Icon=136052, Role="HEALER" },
+	},
+	[8] = {
+		{ Name="Arcanes", Icon=135932, Role="DAMAGER" },
+		{ Name="Feu", Icon=135810, Role="DAMAGER" },
+		{ Name="Givre", Icon=135846, Role="DAMAGER" },
+	},
+	[9] = {
+		{ Name="Affliction", Icon=136145, Role="DAMAGER" },
+		{ Name="Démonologie", Icon=136172, Role="DAMAGER" },
+		{ Name="Destruction", Icon=136186, Role="DAMAGER" },
+	},
+	[10] = {
+		{ Name="Maître brasseur", Icon=608951, Role="TANK" },
+		{ Name="Tisse-brume", Icon=608952, Role="HEALER" },
+		{ Name="Marche-vent", Icon=608953, Role="DAMAGER" },
+	},
+	[11] = {
+		{ Name="Équilibre", Icon=136096, Role="DAMAGER" },
+		{ Name="Farouche", Icon=132115, Role="DAMAGER" },
+		{ Name="Gardien", Icon=132276, Role="TANK" },
+		{ Name="Restauration", Icon=136041, Role="HEALER" },
+	},
+	[12] = {
+		{ Name="Dévastation", Icon=1247264, Role="DAMAGER" },
+		{ Name="Vengeance", Icon=1247265, Role="TANK" },
+	},
+}
 
 end
 

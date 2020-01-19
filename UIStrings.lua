@@ -79,7 +79,7 @@ local PawnStatsUnfiltered =
 	{L.ArcaneSpellDamage, "ArcaneSpellDamage", L.ArcaneSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
 	{L.FrostSpellDamage, "FrostSpellDamage", L.FrostSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
 	{L.HolySpellDamage, "HolySpellDamage", L.HolySpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_CORRUPTION or "Corruption", "Corruption", L.CorruptionInfo, PawnStatNormal, nil, PawnStatLiveOnly}, -- *** Can remove fallback after patch 8.3 hits
+	{ITEM_MOD_CORRUPTION, "Corruption", L.CorruptionInfo, PawnStatNormal, nil, PawnStatLiveOnly},
 
 	{L.WeaponStats},
 	{STAT_DPS_SHORT, "Dps", L.DpsInfo, PawnStatUnignorable},

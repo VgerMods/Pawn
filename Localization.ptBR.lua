@@ -468,7 +468,7 @@ Por exemplo, se for definido com "463", o Pawn irá mostrar gemas apropriadas pa
 
 Quando você ganhar recompensas de missões ou saques de masmorras que possam ser melhores que o seu equipamento atual, o Pawn te informará com um ícone de seta verde.
 
-    |cff8ec3e6Fogo:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% de melhoria|r
+	|cff8ec3e6Fogo:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% de melhoria|r
 
 
 
@@ -653,6 +653,71 @@ Para mais informação nessa opção, veja o arquivo readme.]=],
 		["ValuesWelcomeReadOnly"] = "Essa escala interna não pode ser alterada. Se você quiser customizar os valores, vá para a aba Escalas, ative o modo Manual, e faça uma cópia dessa escala.",
 	}
 }
+
+PawnLocal.Specs =
+{
+	[1] = {
+		{ Name="Armas", Icon=132355, Role="DAMAGER" },
+		{ Name="Fúria", Icon=132347, Role="DAMAGER" },
+		{ Name="Proteção", Icon=132341, Role="TANK" },
+	},
+	[2] = {
+		{ Name="Sagrado", Icon=135920, Role="HEALER" },
+		{ Name="Proteção", Icon=236264, Role="TANK" },
+		{ Name="Retribuição", Icon=135873, Role="DAMAGER" },
+	},
+	[3] = {
+		{ Name="Domínio das Feras", Icon=461112, Role="DAMAGER" },
+		{ Name="Precisão", Icon=236179, Role="DAMAGER" },
+		{ Name="Sobrevivência", Icon=461113, Role="DAMAGER" },
+	},
+	[4] = {
+		{ Name="Assassinato", Icon=236270, Role="DAMAGER" },
+		{ Name="Fora da Lei", Icon=236286, Role="DAMAGER" },
+		{ Name="Subterfúgio", Icon=132320, Role="DAMAGER" },
+	},
+	[5] = {
+		{ Name="Disciplina", Icon=135940, Role="HEALER" },
+		{ Name="Sagrado", Icon=237542, Role="HEALER" },
+		{ Name="Sombra", Icon=136207, Role="DAMAGER" },
+	},
+	[6] = {
+		{ Name="Sangue", Icon=135770, Role="TANK" },
+		{ Name="Gélido", Icon=135773, Role="DAMAGER" },
+		{ Name="Profano", Icon=135775, Role="DAMAGER" },
+	},
+	[7] = {
+		{ Name="Elemental", Icon=136048, Role="DAMAGER" },
+		{ Name="Aperfeiçoamento", Icon=237581, Role="DAMAGER" },
+		{ Name="Restauração", Icon=136052, Role="HEALER" },
+	},
+	[8] = {
+		{ Name="Arcano", Icon=135932, Role="DAMAGER" },
+		{ Name="Fogo", Icon=135810, Role="DAMAGER" },
+		{ Name="Gélido", Icon=135846, Role="DAMAGER" },
+	},
+	[9] = {
+		{ Name="Suplício", Icon=136145, Role="DAMAGER" },
+		{ Name="Demonologia", Icon=136172, Role="DAMAGER" },
+		{ Name="Destruição", Icon=136186, Role="DAMAGER" },
+	},
+	[10] = {
+		{ Name="Mestre Cervejeiro", Icon=608951, Role="TANK" },
+		{ Name="Tecelão da Névoa", Icon=608952, Role="HEALER" },
+		{ Name="Andarilho do Vento", Icon=608953, Role="DAMAGER" },
+	},
+	[11] = {
+		{ Name="Equilíbrio", Icon=136096, Role="DAMAGER" },
+		{ Name="Feral", Icon=132115, Role="DAMAGER" },
+		{ Name="Guardião", Icon=132276, Role="TANK" },
+		{ Name="Restauração", Icon=136041, Role="HEALER" },
+	},
+	[12] = {
+		{ Name="Devastação", Icon=1247264, Role="DAMAGER" },
+		{ Name="Vingança", Icon=1247265, Role="TANK" },
+	},
+}
+
 end
 
 if GetLocale() == "ptBR" then

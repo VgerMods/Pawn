@@ -624,6 +624,71 @@ For more information on this setting, see the readme file.]=],
 		["ValuesWelcomeReadOnly"] = "This built-in scale can't be changed.  If you'd like to customize these weights, go to the Scale tab, enable Manual mode, and make a copy of this scale."
 	}
 }
+
+PawnLocal.Specs =
+{
+    [1] = {
+        { Name="Arms", Icon=132355, Role="DAMAGER" },
+        { Name="Fury", Icon=132347, Role="DAMAGER" },
+        { Name="Protection", Icon=132341, Role="TANK" },
+    },
+    [2] = {
+        { Name="Holy", Icon=135920, Role="HEALER" },
+        { Name="Protection", Icon=236264, Role="TANK" },
+        { Name="Retribution", Icon=135873, Role="DAMAGER" },
+    },
+    [3] = {
+        { Name="Beast Mastery", Icon=461112, Role="DAMAGER" },
+        { Name="Marksmanship", Icon=236179, Role="DAMAGER" },
+        { Name="Survival", Icon=461113, Role="DAMAGER" },
+    },
+    [4] = {
+        { Name="Assassination", Icon=236270, Role="DAMAGER" },
+        { Name="Outlaw", Icon=236286, Role="DAMAGER" },
+        { Name="Subtlety", Icon=132320, Role="DAMAGER" },
+    },
+    [5] = {
+        { Name="Discipline", Icon=135940, Role="HEALER" },
+        { Name="Holy", Icon=237542, Role="HEALER" },
+        { Name="Shadow", Icon=136207, Role="DAMAGER" },
+    },
+    [6] = {
+        { Name="Blood", Icon=135770, Role="TANK" },
+        { Name="Frost", Icon=135773, Role="DAMAGER" },
+        { Name="Unholy", Icon=135775, Role="DAMAGER" },
+    },
+    [7] = {
+        { Name="Elemental", Icon=136048, Role="DAMAGER" },
+        { Name="Enhancement", Icon=237581, Role="DAMAGER" },
+        { Name="Restoration", Icon=136052, Role="HEALER" },
+    },
+    [8] = {
+        { Name="Arcane", Icon=135932, Role="DAMAGER" },
+        { Name="Fire", Icon=135810, Role="DAMAGER" },
+        { Name="Frost", Icon=135846, Role="DAMAGER" },
+    },
+    [9] = {
+        { Name="Affliction", Icon=136145, Role="DAMAGER" },
+        { Name="Demonology", Icon=136172, Role="DAMAGER" },
+        { Name="Destruction", Icon=136186, Role="DAMAGER" },
+    },
+    [10] = {
+        { Name="Brewmaster", Icon=608951, Role="TANK" },
+        { Name="Mistweaver", Icon=608952, Role="HEALER" },
+        { Name="Windwalker", Icon=608953, Role="DAMAGER" },
+    },
+    [11] = {
+        { Name="Balance", Icon=136096, Role="DAMAGER" },
+        { Name="Feral", Icon=132115, Role="DAMAGER" },
+        { Name="Guardian", Icon=132276, Role="TANK" },
+        { Name="Restoration", Icon=136041, Role="HEALER" },
+    },
+    [12] = {
+        { Name="Havoc", Icon=1247264, Role="DAMAGER" },
+        { Name="Vengeance", Icon=1247265, Role="TANK" },
+    },
+}
+
 end
 
 local Locale = GetLocale()

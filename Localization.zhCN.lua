@@ -649,6 +649,70 @@ if VgerCore.IsClassic then
 	end
 end
 
+PawnLocal.Specs =
+{
+	[1] = {
+		{ Name="武器", Icon=132355, Role="DAMAGER" },
+		{ Name="狂怒", Icon=132347, Role="DAMAGER" },
+		{ Name="防护", Icon=132341, Role="TANK" },
+	},
+	[2] = {
+		{ Name="神圣", Icon=135920, Role="HEALER" },
+		{ Name="防护", Icon=236264, Role="TANK" },
+		{ Name="惩戒", Icon=135873, Role="DAMAGER" },
+	},
+	[3] = {
+		{ Name="野兽控制", Icon=461112, Role="DAMAGER" },
+		{ Name="射击", Icon=236179, Role="DAMAGER" },
+		{ Name="生存", Icon=461113, Role="DAMAGER" },
+	},
+	[4] = {
+		{ Name="奇袭", Icon=236270, Role="DAMAGER" },
+		{ Name="狂徒", Icon=236286, Role="DAMAGER" },
+		{ Name="敏锐", Icon=132320, Role="DAMAGER" },
+	},
+	[5] = {
+		{ Name="戒律", Icon=135940, Role="HEALER" },
+		{ Name="神圣", Icon=237542, Role="HEALER" },
+		{ Name="暗影", Icon=136207, Role="DAMAGER" },
+	},
+	[6] = {
+		{ Name="鲜血", Icon=135770, Role="TANK" },
+		{ Name="冰霜", Icon=135773, Role="DAMAGER" },
+		{ Name="邪恶", Icon=135775, Role="DAMAGER" },
+	},
+	[7] = {
+		{ Name="元素", Icon=136048, Role="DAMAGER" },
+		{ Name="增强", Icon=237581, Role="DAMAGER" },
+		{ Name="恢复", Icon=136052, Role="HEALER" },
+	},
+	[8] = {
+		{ Name="奥术", Icon=135932, Role="DAMAGER" },
+		{ Name="火焰", Icon=135810, Role="DAMAGER" },
+		{ Name="冰霜", Icon=135846, Role="DAMAGER" },
+	},
+	[9] = {
+		{ Name="痛苦", Icon=136145, Role="DAMAGER" },
+		{ Name="恶魔学识", Icon=136172, Role="DAMAGER" },
+		{ Name="毁灭", Icon=136186, Role="DAMAGER" },
+	},
+	[10] = {
+		{ Name="酒仙", Icon=608951, Role="TANK" },
+		{ Name="织雾", Icon=608952, Role="HEALER" },
+		{ Name="踏风", Icon=608953, Role="DAMAGER" },
+	},
+	[11] = {
+		{ Name="平衡", Icon=136096, Role="DAMAGER" },
+		{ Name="野性", Icon=132115, Role="DAMAGER" },
+		{ Name="守护", Icon=132276, Role="TANK" },
+		{ Name="恢复", Icon=136041, Role="HEALER" },
+	},
+	[12] = {
+		{ Name="浩劫", Icon=1247264, Role="DAMAGER" },
+		{ Name="复仇", Icon=1247265, Role="TANK" },
+	},
+}
+
 end
 
 if GetLocale() == "zhCN" then

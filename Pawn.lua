@@ -5108,7 +5108,7 @@ function PawnAddPluginScaleFromTemplate(ProviderInternalName, ClassID, SpecID, S
 	local LocalizedClassName, UnlocalizedClassName = PawnGetClassInfo(ClassID)
 	local _, LocalizedSpecName, IconTexturePath, Role
 	if SpecID then
-		_, LocalizedSpecName, _, IconTexturePath, Role = GetSpecializationInfoForClassID(ClassID, SpecID)
+		_, LocalizedSpecName, _, IconTexturePath, Role = PawnGetSpecializationInfoForClassID(ClassID, SpecID)
 	end
 
 	local Template = PawnFindScaleTemplate(ClassID, SpecID)
@@ -5179,6 +5179,40 @@ function PawnGetClassInfo(ClassID)
 	end
 
 	return LOCALIZED_CLASS_NAMES_MALE[UnlocalizedClassName], UnlocalizedClassName
+end
+
+if VgerCore.IsClassic then
+	-- Classic doesn't have a Guardian spec for druids, so rename.
+	PawnLocal.Specs[11][3].Name = PawnLocal.Specs[11][2].Name .. " (" .. TANK .. ")"
+	PawnLocal.Specs[11][2].Name = PawnLocal.Specs[11][2].Name .. " (" .. DAMAGER .. ")"
+end
+
+-- Wraps the GetSpecializationInfoForClassID function so that it can be called on WoW Classic.
+-- On WoW Classic, this only returns: _, LocalizedSpecName, _, IconID, Role
+function PawnGetSpecializationInfoForClassID(ClassID, SpecID)
+	if GetSpecializationInfoForClassID then return GetSpecializationInfoForClassID(ClassID, SpecID) end
+
+	local SpecInfo = PawnLocal.Specs[ClassID][SpecID]
+	return nil, SpecInfo.Name, nil, SpecInfo.Texture, SpecInfo.Role
+end
+
+-- To generate PawnLocal.Specs to place into Localization.lua:
+-- /script PawnGenerateLocalizedSpecsTable()
+function PawnGenerateLocalizedSpecsTable()
+	local String = "PawnLocal.Specs =\r\n{\r\n"
+
+	local ClassID, SpecID
+	for ClassID = 1, GetNumClasses() do
+		String = String .. "    [" .. ClassID .. "] = {\r\n"
+		for SpecID = 1, GetNumSpecializationsForClassID(ClassID) do
+			local _, LocalizedSpecName, _, IconID, Role = GetSpecializationInfoForClassID(ClassID, SpecID)
+			String = String .. "        { Name=\"" .. LocalizedSpecName .. "\", Icon=" .. IconID .. ", Role=\"" .. Role .. "\" },\r\n"
+		end
+		String = String .. "    },\r\n"
+	end
+
+	String = String .. "}"
+	PawnUIShowCopyableString("PawnLocal.Specs", String, nil, true)
 end
 
 -- Returns the unenchanted item link of the best item that a user has for a particular scale and inventory type.

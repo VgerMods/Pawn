@@ -246,7 +246,7 @@ end
 function PawnUIFrame_ScaleSelector_UpdateAuto()
 	local Scale = PawnCommon.Scales[PawnUICurrentScale]
 	if Scale and Scale.ClassID and Scale.SpecID then
-		local _, LocalizedSpecName, _, IconTexturePath = GetSpecializationInfoForClassID(Scale.ClassID, Scale.SpecID)
+		local _, LocalizedSpecName, _, IconTexturePath = PawnGetSpecializationInfoForClassID(Scale.ClassID, Scale.SpecID)
 		PawnUIFrame_ScaleSelector_SpecLabel:SetText(LocalizedSpecName)
 		PawnUIFrame_ScaleSelector_SpecIcon:SetTexture(IconTexturePath)
 	else
