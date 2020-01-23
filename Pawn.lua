@@ -205,8 +205,9 @@ function PawnInitialize()
 		end)
 	
 	-- Main game tooltip
-	if GameTooltip.SetAuctionItem then
-		-- SetAuctionItem was removed in 8.3.0.
+	if VgerCore.IsClassic then
+		-- SetAuctionItem was removed in 8.3.0 but is still there on Classic.  The (incorrect) way that BankItems hooks this function
+		-- causes the detection to fail, so just directly check the version.
 		hooksecurefunc(GameTooltip, "SetAuctionItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionItem", ...) end)
 		hooksecurefunc(GameTooltip, "SetAuctionSellItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionSellItem", ...) end)
 	end
