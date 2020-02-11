@@ -718,6 +718,32 @@ PawnLocal.Specs =
 	},
 }
 
+-- Special case: wands actually use different text on live versus classic.
+-- So, patch things up here.
+if VgerCore.IsClassic then
+
+	local TooltipParsing_Classic =
+	{
+		["WeaponDamageArcane"] = "^%+?# %- # de dano tipo [aA]rcano$",
+		["WeaponDamageArcaneExact"] = "^%+?# de dano tipo [aA]rcano$",
+		["WeaponDamageFire"] = "^%+?# %- # de dano tipo [fF]ogo$",
+		["WeaponDamageFireExact"] = "^%+?# de dano tipo [fF]ogo$",
+		["WeaponDamageFrost"] = "^%+?# %- # de dano tipo [gG]elo$",
+		["WeaponDamageFrostExact"] = "^%+?# de dano tipo [gG]elo$",
+		["WeaponDamageHoly"] = "^%+?# %- # de dano tipo [sS]agrado$",
+		["WeaponDamageHolyExact"] = "^%+?# de dano tipo [sS]agrado$",
+		["WeaponDamageNature"] = "^%+?# %- # de dano tipo [nN]atureza$",
+		["WeaponDamageNatureExact"] = "^%+?# de dano tipo [nN]atureza$",
+		["WeaponDamageShadow"] = "^%+?# %- # de dano tipo [sS]ombra$",
+		["WeaponDamageShadowExact"] = "^%+?# de dano tipo [sS]ombra$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
 end
 
 if GetLocale() == "ptBR" then
