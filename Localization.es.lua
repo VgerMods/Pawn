@@ -745,6 +745,36 @@ if GetLocale() == "esES" then
 	PawnUseThisLocalization()
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
+
+	-- Special case: wands actually use different text on live versus classic.
+	-- So, patch things up here.
+	if VgerCore.IsClassic then
+		PawnLocal.ThousandsSeparator = "NBSP"
+
+		local TooltipParsing_Classic =
+		{
+			["WeaponDamage"] = "^# %- # Daño$",
+			["WeaponDamageExact"] = "^%+?# Daño$",
+			["Dps"] = "^%(# daño por segundo%)$",
+			["WeaponDamageArcane"] = "^%+?# %- # Arcano Daño$",
+			["WeaponDamageArcaneExact"] = "^%+?# Arcano Daño$",
+			["WeaponDamageFire"] = "^%+?# %- # Fuego Daño$",
+			["WeaponDamageFireExact"] = "^%+?# Fuego Daño$",
+			["WeaponDamageFrost"] = "^%+?# %- # Escarcha Daño$",
+			["WeaponDamageFrostExact"] = "^%+?# Escarcha Daño$",
+			["WeaponDamageHoly"] = "^%+?# %- # Sagrado Daño$",
+			["WeaponDamageHolyExact"] = "^%+?# Sagrado Daño$",
+			["WeaponDamageNature"] = "^%+?# %- # Naturaleza Daño$",
+			["WeaponDamageNatureExact"] = "^%+?# Naturaleza Daño$",
+			["WeaponDamageShadow"] = "^%+?# %- # Sombras Daño$",
+			["WeaponDamageShadowExact"] = "^%+?# Sombras Daño$",
+		}
+
+		local Key, NewString
+		for Key, NewString in pairs(TooltipParsing_Classic) do
+			PawnLocal.TooltipParsing[Key] = NewString
+		end
+	end
 elseif GetLocale() == "esMX" then 
 	PawnUseThisLocalization() 
 	PawnLocal.ThousandsSeparator = ","
