@@ -3423,7 +3423,8 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 	end end
 	
 	-- Now, scan all of the items in the player's equipment sets.
-	if not InventoryOnly then
+	-- (Equipment sets don't exist on Classic.)
+	if not InventoryOnly and not VgerCore.IsClassic then
 		local _, i
 		for _, i in pairs(C_EquipmentSet.GetEquipmentSetIDs()) do
 			local _, _, EquipmentSetID = C_EquipmentSet.GetEquipmentSetInfo(i)
