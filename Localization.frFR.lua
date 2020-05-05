@@ -667,6 +667,9 @@ Cette commande ne peut etre défaite!]=],
 -- So, patch things up here.
 if VgerCore.IsClassic then
 
+	PawnLocal.ThousandsSeparator = "NBSP"
+	PawnLocal.DecimalSeparator = "."
+
 	local TooltipParsing_Classic =
 	{
 		["WeaponDamageArcane"] = "^Dégâts %(Arcanes%) : # %- #$",

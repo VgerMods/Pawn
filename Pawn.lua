@@ -428,9 +428,12 @@ function PawnInitialize()
 	end
 
 	-- Warn them if Pawn might be broken due to changing the thousands or decimal separator.
-	if (LARGE_NUMBER_SEPERATOR and PawnLocal.ThousandsSeparator ~= LARGE_NUMBER_SEPERATOR) or
-	(DECIMAL_SEPERATOR and PawnLocal.DecimalSeparator ~= DECIMAL_SEPERATOR) then
-		VgerCore.Fail("Pawn may provide incorrect advice due to a potential addon conflict: Pawn is not compatible with Combat Numbers Separator, Titan Panel Artifact Power, or other addons that change the way that numbers appear.")
+	if GetLocale() ~= "frFR" or not VgerCore.IsClassic then
+		-- The separator strings are completely wrong on French WoW Classic.  :(
+		if (LARGE_NUMBER_SEPERATOR and PawnLocal.ThousandsSeparator ~= LARGE_NUMBER_SEPERATOR) or
+		(DECIMAL_SEPERATOR and PawnLocal.DecimalSeparator ~= DECIMAL_SEPERATOR) then
+			VgerCore.Fail("Pawn may provide incorrect advice due to a potential addon conflict: Pawn is not compatible with Combat Numbers Separator, Titan Panel Artifact Power, or other addons that change the way that numbers appear.")
+		end
 	end
 
 	-- If auto-spec is on, check their spec now in case they switched on a different PC.
@@ -2153,6 +2156,11 @@ function PawnLookForSingleStat(RegexTable, Stats, ThisString, DebugMessages)
 					-- the decimal separator, we need to substitute here, because tonumber() parses things
 					-- in English format only.
 					ExtractedValue = gsub(ExtractedValue, PawnLocal.DecimalSeparator, ".")
+				end
+				if Stat == "Speed" and VgerCore.IsClassic and GetLocale() == "frFR" then
+					-- In French WoW Classic, the weapon speed value uses a comma for the decimal even though everything else uses a period.
+					-- UGH BLIZZARD WHY MUST YOU DO THIS TO ME
+					ExtractedValue = gsub(ExtractedValue, ",", ".")
 				end
 				ExtractedValue = tonumber(ExtractedValue) -- broken onto multiple lines because gsub() returns multiple values and tonumber accepts multiple arguments
 				if Number < 0 then ExtractedValue = -ExtractedValue end
