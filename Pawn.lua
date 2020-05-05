@@ -1657,7 +1657,10 @@ function PawnGetInventoryItemValues(UnitName)
 				-- (We can't assume that the off-hand is empty just because the main hand slot contains a 2H weapon... stupid
 				-- Titan's Grip warriors.)
 				local ThisItemLevel = Item.Level
-				if not ThisItemLevel then return end -- If we have item information but no level, bail out rather than return inaccurate totals.
+				if not ThisItemLevel then
+					-- If we have item information but no level, bail out rather than return inaccurate totals.
+					return
+				end
 				if Slot == 16 then
 					local _, _, _, _, _, _, _, _, InvType = GetItemInfo(GetInventoryItemLink(UnitName, Slot))
 					if (InvType == "INVTYPE_2HWEAPON" or InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT") and GetInventoryItemID(UnitName, 17) == nil then
@@ -1678,6 +1681,15 @@ function PawnGetInventoryItemValues(UnitName)
 				for _, Entry in pairs(ItemValues) do
 					local ScaleName, Value = Entry[1], Entry[2]
 					PawnAddStatToTable(Total, ScaleName, Value) -- (not actually stats, but the function does what we want)
+				end
+			elseif Slot == 13 or Slot == 14 then
+				-- Failures to get stats from trinkets is normal, so don't bail out.  See if we can get the item level in a simpler way.
+				local ItemLink = GetInventoryItemLink(UnitName, Slot)
+				if ItemLink then
+					local ThisItemLevel = GetDetailedItemLevelInfo(ItemLink)
+					if ThisItemLevel then
+						TotalItemLevel = TotalItemLevel + ThisItemLevel
+					end
 				end
 			elseif ItemID then
 				-- If we have an item link but no item data, then the player HAS an item in that slot but we don't have data.
