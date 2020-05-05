@@ -140,7 +140,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["IntellectInfo"] = "Intelecto.  Aumenta el poder de hechizo para algunas clases.",
 		["Leather"] = "Cuero",
 		["LeatherInfo"] = "Puntos que asignar si el objeto es de Cuero",
-		["LeechInfo"] = "Restitución.  Te devuelve como sanación el daño que infliges o la sanación que realizas.",
+		["LeechInfo"] = "Robo de vida.  Te devuelve como sanación el daño que infliges o la sanación que realizas.",
 		["Mail"] = "Malla",
 		["MailInfo"] = "Puntos que asignar si el objeto es de malla.",
 		["MasteryInfo"] = "Maestría.  Mejora un bonus único para tu especialización.",
@@ -357,7 +357,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Hp54"] = "^UNUSED$",
 		["Intellect"] = "^%+?# d?e? ?[Ii]ntelecto$",
 		["Leather"] = "^Cuero$",
-		["Leech"] = "^%+# restitución$",
+		["Leech"] = "^%+# robo de vida$",
 		["Mace"] = "^Maza$",
 		["Mail"] = "^Malla$",
 		["Mastery"] = "^%+?# maestría$",
@@ -745,6 +745,8 @@ if GetLocale() == "esES" then
 	PawnUseThisLocalization()
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
+
+	PawnLocal.TooltipParsing.Leech = "^%+# Parasitar$"
 
 	-- Special case: wands actually use different text on live versus classic.
 	-- So, patch things up here.
