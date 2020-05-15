@@ -1577,41 +1577,43 @@ function PawnAddValuesToTooltip(Tooltip, ItemValues, UpgradeInfo, BestItemFor, S
 			end
 			
 			-- Add info to the tooltip if this item is an upgrade or best-in-slot.
-			local ThisUpgrade, _
-			WasUpgradeOrBest = false
-			if UpgradeInfo then
-				for _, ThisUpgrade in pairs(UpgradeInfo) do
-					if ThisUpgrade.ScaleName == ScaleName then
-						if ThisUpgrade.PercentUpgrade >= PawnBigUpgradeThreshold then -- 100 = 10,000%
-							-- For particularly huge upgrades, don't say ridiculous things like "999999999% upgrade"
-							TooltipText = format(PawnLocal.TooltipBigUpgradeAnnotation, TooltipText, "")
-						elseif NeedsEnhancements then
-							TooltipText = format(PawnLocal.TooltipUpgradeNeedsEnhancementsAnnotation, TooltipText, 100 * ThisUpgrade.PercentUpgrade, "")
-						else
-							TooltipText = format(PawnLocal.TooltipUpgradeAnnotation, TooltipText, 100 * ThisUpgrade.PercentUpgrade, "")
+			if TooltipText then
+				local ThisUpgrade, _
+				WasUpgradeOrBest = false
+				if UpgradeInfo then
+					for _, ThisUpgrade in pairs(UpgradeInfo) do
+						if ThisUpgrade.ScaleName == ScaleName then
+							if ThisUpgrade.PercentUpgrade >= PawnBigUpgradeThreshold then -- 100 = 10,000%
+								-- For particularly huge upgrades, don't say ridiculous things like "999999999% upgrade"
+								TooltipText = format(PawnLocal.TooltipBigUpgradeAnnotation, TooltipText, "")
+							elseif NeedsEnhancements then
+								TooltipText = format(PawnLocal.TooltipUpgradeNeedsEnhancementsAnnotation, TooltipText, 100 * ThisUpgrade.PercentUpgrade, "")
+							else
+								TooltipText = format(PawnLocal.TooltipUpgradeAnnotation, TooltipText, 100 * ThisUpgrade.PercentUpgrade, "")
+							end
+							WasUpgradeOrBest = true
+							break
 						end
-						WasUpgradeOrBest = true
-						break
+					end
+				elseif BestItemFor and BestItemFor[ScaleName] then
+					WasUpgradeOrBest = true
+					if PawnCommon.ShowValuesForUpgradesOnly then
+						TooltipText = format(PawnLocal.TooltipBestAnnotationSimple, TooltipText)
+					else
+						TooltipText = format(PawnLocal.TooltipBestAnnotation, TooltipText)
+					end
+				elseif SecondBestItemFor and SecondBestItemFor[ScaleName] then
+					WasUpgradeOrBest = true
+					if PawnCommon.ShowValuesForUpgradesOnly then
+						TooltipText = format(PawnLocal.TooltipSecondBestAnnotationSimple, TooltipText)
+					else
+						TooltipText = format(PawnLocal.TooltipSecondBestAnnotation, TooltipText)
 					end
 				end
-			elseif BestItemFor and BestItemFor[ScaleName] then
-				WasUpgradeOrBest = true
-				if PawnCommon.ShowValuesForUpgradesOnly then
-					TooltipText = format(PawnLocal.TooltipBestAnnotationSimple, TooltipText)
-				else
-					TooltipText = format(PawnLocal.TooltipBestAnnotation, TooltipText)
-				end
-			elseif SecondBestItemFor and SecondBestItemFor[ScaleName] then
-				WasUpgradeOrBest = true
-				if PawnCommon.ShowValuesForUpgradesOnly then
-					TooltipText = format(PawnLocal.TooltipSecondBestAnnotationSimple, TooltipText)
-				else
-					TooltipText = format(PawnLocal.TooltipSecondBestAnnotation, TooltipText)
-				end
+				if not WasUpgradeOrBest and PawnCommon.ShowValuesForUpgradesOnly then TooltipText = nil end
+				
+				PawnAddTooltipLine(Tooltip, TooltipText)
 			end
-			if not WasUpgradeOrBest and PawnCommon.ShowValuesForUpgradesOnly then TooltipText = nil end
-			
-			PawnAddTooltipLine(Tooltip, TooltipText)
 		end
 	end
 
