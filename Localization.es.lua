@@ -396,6 +396,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellCrit"] = "^Equipar: Mejora tu probabilidad de asestar un golpe crítico con hechizos un #%%%.$",
 		["SpellDamage"] = "^%+# daño con hechizos$",
 		["SpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño y la sanación de los hechizos y efectos mágicos%.$",
+		["SpellDamage3"] = "^UNUSED$",
 		["SpellHit"] = "^Equipar: Mejora un #%% tu probabilidad de golpear con hechizos%.$",
 		["SpellPower"] = "^%+?# poder con hechizos$",
 		["Spirit"] = "^%+?# d?e? ?[Ee]spíritu$",

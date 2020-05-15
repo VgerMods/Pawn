@@ -428,6 +428,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		--[[Translation missing --]]
 		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
 		--[[Translation missing --]]
+		["SpellDamage3"] = "^UNUSED$",
 		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
 		["SpellPower"] = "^%+?# Potenza [Mm]agica$",
 		["Spirit"] = "^%+?# Spirito$",

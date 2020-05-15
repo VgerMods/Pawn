@@ -358,6 +358,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
 		["SpellDamage"] = "^%+# Spell Damage$",
 		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
+		["SpellDamage3"] = "^UNUSED$",
 		["SpellPower"] = "^%+?# Spell Power$",
 		["Spirit"] = "^%+?# Spirit$",
 		["Staff"] = "^Staff$",
