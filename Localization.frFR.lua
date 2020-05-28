@@ -539,8 +539,8 @@ Fire:  156.7|r]=],
 Si la vérification est faite, vous pourriez utiliser une arme à deux mains et voir des armes à une main nettement inférieures en améliorations si elles sont meilleures que la meilleure (ou la deuxième) arme à une main que vous aviez auparavant, car Pawn suit les améliorations séparément pour les deux jeux d'armes.
 
 Si cela n'est pas vérifié, le fait d'équiper une arme à deux mains empêchera Pawn de vous montrer des améliorations pour les objets à une main et vice-versa.]=],
-		["OptionsUpgradeTrackingHeader"] = "comparaison d'amélioration:",
-		["OptionsUpgradeTrackingOff"] = "comparé à l'équipement équipé (recommandé)",
+		["OptionsUpgradeTrackingHeader"] = "Comparaison d'amélioration:",
+		["OptionsUpgradeTrackingOff"] = "Comparé à l'équipement équipé (recommandé)",
 		["OptionsUpgradeTrackingOffTooltip"] = "Pawn vous affichera vos pièces qui sont des améliorations en comparaison des pièces actuellement équipés",
 		["OptionsUpgradeTrackingOn"] = "Recherche pour chaque échelle (avancé)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(Pour les  utilisateurs avancé) Pawn essayera de recherché les meilleurs pièces dont vous etes équippé, independamment de chaque niveau que vous avez validé, et vous affichera les pièces qui vous sont des améliorations comparé à celle ci.",

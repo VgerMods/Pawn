@@ -124,7 +124,7 @@
 	</Button>
 	
 	<Button name="PawnUIFrame_StatsList_ItemTemplate" virtual="true" inherits="PawnUIFrame_Generic_ItemTemplate">
-		<Size><AbsDimension x="180" y="16" /></Size>
+		<Size><AbsDimension x="230" y="16" /></Size>
 		<Scripts>
 			<OnClick>PawnUIFrame_StatsList_OnClick(self:GetID())</OnClick>
 		</Scripts>
@@ -553,7 +553,7 @@
 								
 								<FontString name="PawnUIFrame_ScaleColorSwatch_Label" inherits="GameFontNormal" justifyH="LEFT" justifyV="MIDDLE" text="PawnUIFrame_ScaleColorSwatch_Label_Text"><!-- Change color -->
 									<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="320" y="-100"/></Offset></Anchor></Anchors>
-									<Size><AbsDimension x="100" y="25" /></Size>
+									<Size><AbsDimension x="150" y="25" /></Size>
 								</FontString>
 
 								<FontString name="PawnUIFrame_ScaleTypeLabel" inherits="GameFontNormal" justifyH="LEFT" justifyV="MIDDLE"><!-- You can change this scale from the Values tab. -->
@@ -788,15 +788,15 @@
 
 						<!-- Stat editing area -->
 						<FontString name="PawnUIFrame_DescriptionLabel" inherits="GameFontNormal" justifyH="LEFT" justifyV="TOP" text="PawnUIFrame_DescriptionLabel_Text"><!-- The primary stat, Stamina. -->
-							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="255" y="-105"/></Offset></Anchor></Anchors>
-							<Size><AbsDimension x="300" y="120" /></Size>
+							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="305" y="-105"/></Offset></Anchor></Anchors>
+							<Size><AbsDimension x="250" y="120" /></Size>
 						</FontString>
 						<FontString name="PawnUIFrame_StatNameLabel" inherits="GameFontNormal" justifyH="LEFT" justifyV="TOP" text="PawnUIFrame_StatNameLabel_Text"><!-- 1 Stamina is worth: -->
-							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="255" y="-230"/></Offset></Anchor></Anchors>
-							<Size><AbsDimension x="300" y="20" /></Size>
+							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="305" y="-230"/></Offset></Anchor></Anchors>
+							<Size><AbsDimension x="250" y="20" /></Size>
 						</FontString>
 						<FontString name="PawnUIFrame_StatValueLabel" inherits="ChatFontNormal" justifyH="LEFT" justifyV="MIDDLE"><!-- 1.234 -->
-							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="275" y="-255"/></Offset></Anchor></Anchors>
+							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-255"/></Offset></Anchor></Anchors>
 							<Size><AbsDimension x="140" y="25" /></Size>
 						</FontString>
 						
@@ -809,7 +809,7 @@
 					<!-- Stats list -->
 					<Frame>
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="20" y="-80" /></Offset></Anchor></Anchors>
-						<Size><AbsDimension x="213" y="336" /></Size>
+						<Size><AbsDimension x="263" y="336" /></Size>
 						<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
 							<Color a="0.5" r="0" g="0" b="0" />
 							<EdgeSize><AbsValue val="16" /></EdgeSize>
@@ -819,7 +819,7 @@
 					</Frame>
 					<ScrollFrame name="PawnUIFrame_StatsList" inherits="FauxScrollFrameTemplate">
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-86" /></Offset></Anchor></Anchors>
-						<Size><AbsDimension x="180" y="324" /></Size>
+						<Size><AbsDimension x="230" y="324" /></Size>
 						<Scripts>
 							<OnVerticalScroll>FauxScrollFrame_OnVerticalScroll(PawnUIFrame_StatsList, offset, 16, PawnUIFrame_StatsList_Update)</OnVerticalScroll>
 							<OnShow function="PawnUIFrame_StatsList_Update" />
@@ -831,7 +831,7 @@
 					</Button>
 					<Frame name="PawnUIFrame_StatsList_HighlightFrame" hidden="true">
 						<Anchors><Anchor point="TOPLEFT"></Anchor></Anchors>
-						<Size><AbsDimension x="180" y="16" /></Size>
+						<Size><AbsDimension x="230" y="16" /></Size>
 						<Layers>
 							<Layer level="ARTWORK">
 								<Texture name="PawnUIFrame_StatsList_Highlight" file="Interface\QuestFrame\UI-QuestLogTitleHighlight" alphaMode="ADD" />
@@ -902,7 +902,7 @@
 
 					<!-- Description and editing area -->
 					<EditBox name="PawnUIFrame_StatValueBox" inherits="InputBoxTemplate" hidden="false">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="275" y="-255"/></Offset></Anchor></Anchors>
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-255"/></Offset></Anchor></Anchors>
 						<Size><AbsDimension x="140" y="25" /></Size>
 						<Scripts>
 							<OnTextChanged function="PawnUIFrame_StatValueBox_OnTextChanged" />
@@ -910,7 +910,7 @@
 					</EditBox>
 					
 					<Button name="PawnUIFrame_ClearValueButton" inherits="PawnUIButtonTemplate" text="PawnUIFrame_ClearValueButton_Text">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="425" y="-255" /></Offset></Anchor></Anchors>
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="475" y="-255" /></Offset></Anchor></Anchors>
 						<Size><AbsDimension x="90" y="25" /></Size>
 						<Scripts>
 							<OnClick function="PawnUIFrame_ClearValueButton_OnClick" />
@@ -918,7 +918,7 @@
 					</Button>
 					
 					<CheckButton name="PawnUIFrame_IgnoreStatCheck" inherits="PawnUICheckboxTemplate">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="275" y="-290" /></Offset></Anchor></Anchors>
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-290" /></Offset></Anchor></Anchors>
 						<Layers><Layer level="ARTWORK">
 							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" />
 						</Layer></Layers>
@@ -926,7 +926,7 @@
 					</CheckButton>
 
 					<CheckButton name="PawnUIFrame_NoUpgradesCheck" inherits="PawnUICheckboxTemplate" hidden="true">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="275" y="-315" /></Offset></Anchor></Anchors>
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-315" /></Offset></Anchor></Anchors>
 						<Layers><Layer level="ARTWORK">
 							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" />
 						</Layer></Layers>
@@ -934,7 +934,7 @@
 					</CheckButton>
 
 					<CheckButton name="PawnUIFrame_FollowSpecializationCheck" inherits="PawnUICheckboxTemplate" hidden="true">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="275" y="-315" /></Offset></Anchor></Anchors>
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-315" /></Offset></Anchor></Anchors>
 						<Layers><Layer level="ARTWORK">
 							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" text="PawnUIFrame_FollowSpecializationCheck_Text" />
 						</Layer></Layers>
