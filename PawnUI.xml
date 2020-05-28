@@ -1516,7 +1516,7 @@
 
 					<Button name="PawnUIFrame_ResetUpgradesButton" inherits="PawnUIGreyButtonTemplate" text="PawnUIFrame_ResetUpgradesButton_Text">
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-405" /></Offset></Anchor></Anchors>
-						<Size><AbsDimension x="175" y="25" /></Size>
+						<Size><AbsDimension x="180" y="25" /></Size>
 						<Scripts><OnClick function="PawnUIFrame_ResetUpgradesButton_OnClick" /></Scripts>
 					</Button>
 
@@ -1701,7 +1701,7 @@
 	
 	<!-- Pawn's options page in Interface Options -->
 	<Frame name="PawnInterfaceOptionsFrame" inherits="PawnUITabPageTemplate">
-		<Size><AbsDimension x="385" y="409" /></Size>
+		<Size><AbsDimension x="500" y="409" /></Size>
 
 		<!-- Art layer -->
 		<Layers>
@@ -1714,24 +1714,24 @@
 				
 				<FontString name="PawnInterfaceOptionsFrame_AboutHeaderLabel" inherits="GameFontNormal" justifyH="LEFT" text="PawnUIFrame_AboutHeaderLabel_Text">
 					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="150" y="-10" /></Offset></Anchor></Anchors>
-					<Size><AbsDimension x="225" y="20" /></Size>
+					<Size><AbsDimension x="300" y="20" /></Size>
 				</FontString>
 				<FontString name="PawnInterfaceOptionsFrame_AboutVersionLabel" inherits="PawnFontSilver" justifyH="LEFT">
 					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="150" y="-30" /></Offset></Anchor></Anchors>
-					<Size><AbsDimension x="225" y="20" /></Size>
+					<Size><AbsDimension x="300" y="20" /></Size>
 				</FontString>
 				<FontString name="PawnInterfaceOptionsFrame_AboutTranslationLabel" inherits="PawnFontSilver" justifyH="LEFT" text="PawnUIFrame_AboutTranslationLabel_Text">
 					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="150" y="-50" /></Offset></Anchor></Anchors>
-					<Size><AbsDimension x="225" y="20" /></Size>
+					<Size><AbsDimension x="300" y="20" /></Size>
 				</FontString>
 
 				<FontString name="PawnInterfaceOptionsFrame_OptionsHeaderLabel" inherits="GameFontNormalLarge" justifyH="LEFT" text="PawnInterfaceOptionsFrame_OptionsHeaderLabel_Text">
 					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="15" y="-85" /></Offset></Anchor></Anchors>
-					<Size><AbsDimension x="355" y="20" /></Size>
+					<Size><AbsDimension x="470" y="20" /></Size>
 				</FontString>
 				<FontString name="PawnInterfaceOptionsFrame_OptionsSubHeaderLabel" inherits="GameFontHighlightSmall" justifyH="LEFT" text="PawnInterfaceOptionsFrame_OptionsSubHeaderLabel_Text">
 					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="15" y="-105" /></Offset></Anchor></Anchors>
-					<Size><AbsDimension x="355" y="40" /></Size>
+					<Size><AbsDimension x="470" y="40" /></Size>
 				</FontString>
 
 			</Layer>
