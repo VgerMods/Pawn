@@ -75,17 +75,13 @@ www.vgermods.com
 Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'aide (Readme.htm) inclu dans le mod.]=],
 	["ValueCalculationMessage"] = "   %g %s x %g chaque = %g",
 	["VisibleScalesHeader"] = "%s d échelles",
-
 	["Stats"] = {
 		["AgilityInfo"] = "L'agilité. Augmente la puissance des capacités de certaines classes.",
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
-		--[[Translation missing --]]
 		["ArcaneSpellDamage"] = "Arcane Damage",
-		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
-		["ArmorInfo"] = [=[Armure. Réduit les dégâts physiques reçus.]=],
+		["ArmorInfo"] = "Armure. Réduit les dégâts physiques reçus.",
 		["ArmorTypes"] = "Types d'armure",
 		["AvoidanceInfo"] = "Esquive. Réduit les dommages que vous subissez lors d'attaques de zone d'effet.",
 		["BlockRatingInfo"] = "Block chance.  Increases the chances of a successful shield block.",
@@ -95,37 +91,22 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Crit",
 		["CritInfo"] = "Coup critique. affecte les attaques de mélée, les attaques a distance et les sorts",
-		--[[Translation missing --]]
 		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
-		--[[Translation missing --]]
 		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
 		["DpsInfo"] = "dégat par secondes d'arme. (si vous voulez différentes estimation pour différents types d'arme, voir la section \"statistiques spéciale arme\".)",
-		--[[Translation missing --]]
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
-		--[[Translation missing --]]
 		["FireSpellDamage"] = "Fire Damage",
-		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
-		--[[Translation missing --]]
 		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
-		--[[Translation missing --]]
 		["FrostSpellDamage"] = "Frost Damage",
-		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "Hâte. affecte les attaques de mélée, les attaques a distance et les sorts",
-		--[[Translation missing --]]
 		["Healing"] = "Spell Healing",
-		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
-		--[[Translation missing --]]
 		["HitInfo"] = "Hit.  Increases the chance that your physical attacks hit the target, especially bosses.",
-		--[[Translation missing --]]
 		["HolySpellDamage"] = "Holy Damage",
-		--[[Translation missing --]]
 		["HolySpellDamageInfo"] = "Holy damage.  Increases the damage dealt by your holy spells.",
-		--[[Translation missing --]]
 		["Hp5Info"] = "Health regeneration per 5 seconds.  Increases the rate at which you regenerate health.",
 		["IndestructibleInfo"] = "Indestructible. évite que votre équipement prenne des dégâts.",
 		["IndestructibleIs"] = "Etre |cffffffffindestructible|r vaut mieux:",
@@ -138,27 +119,17 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["MasteryInfo"] = "Maîtrise. améliore le bonus unique de la spécialistation de votre classe",
 		["MinorStats"] = "Stats mineur",
 		["MovementSpeedInfo"] = "Vitesse de déplacement. Fait que le personnage court plus vite",
-		--[[Translation missing --]]
 		["Mp5"] = "Mana per 5",
-		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
-		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
-		--[[Translation missing --]]
 		["NatureSpellDamage"] = "Nature Damage",
-		--[[Translation missing --]]
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
-		--[[Translation missing --]]
 		["ParryInfo"] = "Parry.  Increases the chance that you'll parry enemy attacks.",
 		["Plate"] = "plaque",
 		["PlateInfo"] = "points a etre ajouté si l'item est en plaque",
-		--[[Translation missing --]]
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
-		--[[Translation missing --]]
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
-		--[[Translation missing --]]
 		["ShadowSpellDamage"] = "Shadow Damage",
-		--[[Translation missing --]]
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
 		["Shield"] = "Bouclier",
 		["ShieldInfo"] = "Points a ajouter si l objet est un bouclier",
@@ -169,15 +140,10 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpeedBaselineIs"] = "|cffffffffVitesse de référence|r est:",
 		["SpeedInfo"] = "Vitesse d'arme, en secondes par mouvement. (si vous préférez des armes rapide, ce nombre devrait etre negatif. Voir aussi: \"vitesse de référence\" dans la section \"stats spécifiques aux armes\"",
 		["SpeedIs"] = "1 seconde |cffffffffde vitesse de mouvement|r vaut:",
-		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
-		--[[Translation missing --]]
 		["SpellDamage"] = "Spell Damage",
-		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
-		--[[Translation missing --]]
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
-		--[[Translation missing --]]
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "La statistique principale, Endurance",
 		["StrengthInfo"] = "La statistique principale, Force",
@@ -269,7 +235,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["WeaponTypeWand"] = "Baguette",
 		["WeaponTypeWandInfo"] = "Points à etre assignés si l'objet est une baguette",
 		["WeaponTypeWarglaive"] = "Glaive de guerre",
-		["WeaponTypeWarglaiveInfo"] = "points devant etre assigné si la pièce est un Glaive de guerre"
+		["WeaponTypeWarglaiveInfo"] = "points devant etre assigné si la pièce est un Glaive de guerre",
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?# Agilité$",
@@ -292,6 +258,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Charges"] = "^.+ Charges?$",
 		["Cloth"] = "^Tissu$",
 		["CooldownRemaining"] = "^Temps de recharge restant:",
+		--[[Translation missing --]]
 		["Corruption"] = "^%+?# Corruption$",
 		["Crit"] = "^%+?# Score de crit%.?$",
 		["Crit2"] = "^%+?# au score de critique$",
@@ -398,6 +365,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Sword"] = "^Epée$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ sec%)$",
+		--[[Translation missing --]]
 		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Foudroyant$",
 		["Timeless"] = "^du Temps figé$",
@@ -433,7 +401,6 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["AboutTranslation"] = "Version francaise par Othor-eitrigg et Vernel-Garona",
 		["AboutVersion"] = "Version %s",
 		["AboutWebsite"] = "Pour d'autres mods par Vger, visitez vgermods.com.",
-		--[[Translation missing --]]
 		["AskMrRobotProvider"] = "Ask Mr. Robot scales",
 		["CompareClearItems"] = "Effacer",
 		["CompareClearItemsTooltip"] = "Supprimez les deux objets de la comparaison.",
@@ -540,6 +507,10 @@ Chaque objet dans World of Warcraft a un numéro d'ID qui lui est associé. Cett
 		["OptionsResetUpgradesTooltip"] = [=[Pawn oubliera ce qu il connait sur les meilleurs objets que vous avez équipé et re-scannera votre tenue pour fournir des informations d amélioration plus à jour dans le futur.
 
 Utilisez cette fonctionnalité si vous trouvez que Pawn effectue de mauvaises suggestions d amélioration comme résultat d objets que vous avez vendu, detruit, ou que vous n utilisez plus. Ceci affecte tous vos personnages qui utilisent Pawn.]=],
+		--[[Translation missing --]]
+		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
+		--[[Translation missing --]]
+		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
 		["OptionsShowRelicUpgrades"] = "Montrer les améliorations de reliques.",
 		["OptionsShowRelicUpgradesTooltip"] = "Pawn vous montrera quand une relique peut augmenter le niveau d'objet d'une de vos armes. (Ca fonctionne différement des autres fonctions d'amélioration car c'est uniquement basé sur le niveau d'objet et pas sur des stats.)",
 		["OptionsSocketingAdvisor"] = "Affiche les suggestions de châsses",
@@ -565,6 +536,8 @@ Fire:  156.7 |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% am
 |cff8ec3e6Frost:  123.4
 Fire:  156.7|r]=],
 		["OptionsUpgradeHeader"] = "affiche |TInterface\\AddOns\\Pawn\\Textures\\UpgradeArrow:0|t améliorations dans infobulle:",
+		--[[Translation missing --]]
+		["OptionsUpgradeSettingsHeader"] = "Upgrade options",
 		["OptionsUpgradesForBothWeaponTypes"] = "Affiche les améliorations pour 1H et 2H",
 		["OptionsUpgradesForBothWeaponTypesTooltip"] = [=[Les suggesteurs d amélioration de Pawn devraient surveiller et afficher les améliorations pour les armes à deux mains et vos ambidextrie (ou pour jeteur de sorts, main droite et tenu(e) en main gauche), ensembles d armes séparément.
 
@@ -632,7 +605,7 @@ Cette commande ne peut etre défaite!]=],
 		["ValuesTab"] = "Valeur",
 		["ValuesWelcome"] = "Vous pouvez personnaliser les valeurs qui sont assignés à chaque stats pour cette échelle. Pour gerer vos échelles et en ajouter de nouvelles, utilisez l'onglet Echelle",
 		["ValuesWelcomeNoScales"] = "Vous n'avez sélectionné aucune échelle. Pour commencer, aller a l onglet Echelle et crees-en une nouvelle ou coller une depuis Internet",
-		["ValuesWelcomeReadOnly"] = "L'echelle que vous avez sélectionné ne peut etre modifiée. Si vous voulez changer ces valeurs, allez dans l'onglet Echelle et faites une copie de cette échelle ou commencez une nouvelle."
+		["ValuesWelcomeReadOnly"] = "L'echelle que vous avez sélectionné ne peut etre modifiée. Si vous voulez changer ces valeurs, allez dans l'onglet Echelle et faites une copie de cette échelle ou commencez une nouvelle.",
 	}
 }
 
