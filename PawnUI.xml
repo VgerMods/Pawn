@@ -1516,7 +1516,7 @@
 
 					<Button name="PawnUIFrame_ResetUpgradesButton" inherits="PawnUIGreyButtonTemplate" text="PawnUIFrame_ResetUpgradesButton_Text">
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-405" /></Offset></Anchor></Anchors>
-						<Size><AbsDimension x="130" y="25" /></Size>
+						<Size><AbsDimension x="175" y="25" /></Size>
 						<Scripts><OnClick function="PawnUIFrame_ResetUpgradesButton_OnClick" /></Scripts>
 					</Button>
 
