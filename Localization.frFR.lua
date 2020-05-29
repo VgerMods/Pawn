@@ -426,9 +426,9 @@ Vous pouvez également comparer deux objets depuis vos objets équipés en utils
 		["GemsQualityLevelTooltip"] = [=[Le niveau des objets pour lesquels il faut suggérer des gemmes.
 
 Par exemple, si le niveau est de "175", alors Pawn affichera les gemmes qui sont appropriées pour être utilisées dans les objets de niveau 175. Si vous cliquez sur le bouton Pawn dans la fenêtre de châsse, Pawn le complétera pour vous automatiquement.]=],
-		["GemsShowBest"] = "Afficher les meilleures gemmes disponibles",
+		["GemsShowBest"] = "Les meilleures gemmes disponibles",
 		["GemsShowBestTooltip"] = "Affiche la meilleur gemme absolue pour l'échelle utilisée en ce moment. Certaines de ces gemmes seront trop puissantes pour être inseré dans des chasses d'objets trop vieux et de moins bonnes qualités.",
-		["GemsShowForItemLevel"] = "Afficher les gemmes recommandées pour un objet de niveau :",
+		["GemsShowForItemLevel"] = "Les gemmes recommandées pour un objet de niveau :",
 		["GemsShowForItemLevelTooltip"] = "Affiche les gemmes que Pawn recommande pour l'échelle à gauche qui est actuellement sélectionnée pour un objet d'un niveau spécifique indiqué dans le champs à droite de ce texte.",
 		["GemsTab"] = "Gemmes",
 		["GemsWelcome"] = "Sélectionnez une échelle sur la gauche pour afficher les recommandations de Pawn",

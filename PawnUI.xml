@@ -1,4 +1,4 @@
-﻿<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ../../BlizzardInterfaceCode/UI.xsd">
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ../../../BlizzardInterfaceCode/Interface/FrameXML/UI.xsd">
 
 	<!--
 		Pawn by Vger-Azjol-Nerub
@@ -1260,7 +1260,7 @@
 						<Scripts><OnClick function="PawnUIFrame_GemsForItemLevelRadio_Click" /></Scripts>
 					</CheckButton>
 					<EditBox name="PawnUIFrame_GemQualityLevelBox" inherits="InputBoxTemplate" numeric="true" letters="4" autoFocus="false">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="350" y="-65"/></Offset></Anchor></Anchors>
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="360" y="-65" /></Offset></Anchor></Anchors>
 						<Size><AbsDimension x="40" y="25" /></Size>
 						<Scripts>
 							<OnEnter function="PawnUIFrame_TooltipOn" />
