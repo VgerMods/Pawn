@@ -592,5 +592,5 @@ PawnNeverUsableStats =
 	-- Note: feral and guardian artifacts are actually off-hand items, even though druids can't normally equip them.
 
 	[12] = -- Demon Hunter
-	{ "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield" },
+	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield" },
 }
