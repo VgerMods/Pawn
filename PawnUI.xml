@@ -24,15 +24,9 @@
 		<Color r ="0.75" g="0.75" b="0.75" />
 	</Font>
 
-	<!-- Standard Pawn dialog and frame template -->	
+	<!-- Standard Pawn dialog template -->	
 	<Frame name="PawnUIDialogTemplate" virtual="true" parent="UIParent" frameStrata="FULLSCREEN_DIALOG" hidden="true" enableMouse="true">
 	 	<Anchors><Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER" /></Anchors>
-		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-			<Color a="1" r="0" g="0" b="0" />
-			<BackgroundInsets><AbsInset left="10" right="11" top="11" bottom="10" /></BackgroundInsets>
-			<TileSize><AbsValue val="32" /></TileSize>
-			<EdgeSize><AbsValue val="32" /></EdgeSize>
-		</Backdrop>
 	</Frame>
 
 	<!-- Standard Pawn large frame tab template -->
@@ -310,7 +304,6 @@
 	
 	<!-- Pawn tooltips that look like glowy hint boxes -->
 	<GameTooltip name="PawnUI_HintTooltip_PointsUp" virtual="true" inherits="GlowBoxTemplate, GameTooltipTemplate">
-		<Backdrop /><!-- Gets rid of the GameTooltipTemplate border -->
 		<Frames>
 			<Frame>
 				<Size x="53" y="21" />
@@ -335,8 +328,13 @@
 				</Layers>
 			</Frame>
 		</Frames>
+		<Scripts>
+			<OnLoad>
+				self:SetBackdrop({})
+			</OnLoad>
+		</Scripts>
 	</GameTooltip>
-	
+
 	<!-- Pawn loot upgrade advisor -->
 	<Button name="PawnLootUpgradeAdvisor" inherits="GlowBoxTemplate" enableMouse="true" virtual="true">
 		<Size x="260" y="100"/>
@@ -394,14 +392,10 @@
 
 
 	<!-- The main Pawn configuration UI -->
-	<Frame name="PawnUIFrame" toplevel="true" parent="UIParent" hidden="true" movable="true" enableMouse="true"><!-- WAS: frameStrata="MEDIUM" -->
+	<Frame name="PawnUIFrame" toplevel="true" parent="UIParent" hidden="true" movable="true" enableMouse="true">
 	 	<Anchors><Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER" /></Anchors>
 		<Size><AbsDimension x="800" y="525" /></Size>
 
-		<Backdrop bgFile="Interface\AddOns\Pawn\Textures\Background" tile="false">
-			<BackgroundInsets><AbsInset left="0" right="0" top="0" bottom="-311" /></BackgroundInsets>
-		</Backdrop>
-		
 		<Frames>
 
 			<Button name="PawnUIFrame_TinyCloseButton" hidden="false" inherits="UIPanelCloseButton">
@@ -810,12 +804,20 @@
 					<Frame>
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="20" y="-80" /></Offset></Anchor></Anchors>
 						<Size><AbsDimension x="263" y="336" /></Size>
-						<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-							<Color a="0.5" r="0" g="0" b="0" />
-							<EdgeSize><AbsValue val="16" /></EdgeSize>
-							<TileSize><AbsValue val="16" /></TileSize>
-							<BackgroundInsets><AbsInset left="4" right="4" top="4" bottom="4" /></BackgroundInsets>
-						</Backdrop>
+						<Scripts>
+							<OnLoad>
+								if BackdropTemplateMixin then Mixin(self, BackdropTemplateMixin) end
+								self:SetBackdrop({
+									bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+									edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+									tile = true,
+									edgeSize = 16,
+									tileSize = 16,
+									insets = { left = 4, right = 4, top = 4, bottom = 4 },
+								})
+								self:SetBackdropColor(0, 0, 0, 0.5)
+							</OnLoad>
+						</Scripts>
 					</Frame>
 					<ScrollFrame name="PawnUIFrame_StatsList" inherits="FauxScrollFrameTemplate">
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-86" /></Offset></Anchor></Anchors>
@@ -1681,6 +1683,13 @@
 				end
 				PawnUITabList = { PawnUIScalesTabPage, PawnUIValuesTabPage, PawnUICompareTabPage, PawnUIGemsTabPage, PawnUIOptionsTabPage, PawnUIAboutTabPage, PawnUIHelpTabPage }
 				PanelTemplates_SetNumTabs(PawnUIFrame, #PawnUITabList)
+
+				if BackdropTemplateMixin then Mixin(self, BackdropTemplateMixin) end
+				self:SetBackdrop({
+					bgFile = "Interface\\AddOns\\Pawn\\Textures\\Background",
+					tile = false,
+					insets = { left = 0, right = 0, top = 0, bottom = -311 },
+				})
 			</OnLoad>
 			<OnEvent>
 				PawnOnEvent(event, ...)
@@ -1804,7 +1813,21 @@
 			</Button>
 			
 		</Frames>
-		
+
+		<Scripts>
+			<OnLoad>
+				if BackdropTemplateMixin then Mixin(self, BackdropTemplateMixin) end
+				self:SetBackdrop({
+					bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+					edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+					tile = true,
+					tileSize = 32,
+					edgeSize = 32,
+					insets = { left = 10, right = 11, top = 11, bottom = 10 },
+				})
+			</OnLoad>
+		</Scripts>
+
 	</Frame>
 	
 	<Frame name="PawnUIStringDialogMultiLine" inherits="PawnUIDialogTemplate">
@@ -1853,9 +1876,17 @@
 					<Anchor point="TOPLEFT" relativeTo="PawnUIStringDialogMultiLine_Scroller"><Offset><AbsDimension x="-7" y="7" /></Offset></Anchor>
 					<Anchor point="BOTTOMRIGHT" relativeTo="PawnUIStringDialogMultiLine_Scroller"><Offset><AbsDimension x="26" y="-7" /></Offset></Anchor>
 				</Anchors>
-				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
-					<EdgeSize><AbsValue val="16" /></EdgeSize>
-				</Backdrop>
+				<Scripts>
+					<OnLoad>
+						if BackdropTemplateMixin then Mixin(self, BackdropTemplateMixin) end
+						self:SetBackdrop({
+							edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+							tile = true,
+							edgeSize = 16,
+						})
+						self:SetBackdropColor(0, 0, 0, 0.5)
+					</OnLoad>
+				</Scripts>
 			</Frame>
 
 			<Button parentKey="OKButton" hidden="false" inherits="UIPanelButtonTemplate">
@@ -1879,9 +1910,18 @@
 		<Scripts>
 			<OnLoad>
 				PawnUIStringDialogMultiLine.TextBox = PawnUIStringDialogMultiLine_TextBox
+
+				if BackdropTemplateMixin then Mixin(self, BackdropTemplateMixin) end
+				self:SetBackdrop({
+					bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+					edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+					tile = true,
+					tileSize = 32,
+					edgeSize = 32,
+					insets = { left = 10, right = 11, top = 11, bottom = 10 },
+				})
 			</OnLoad>
 		</Scripts>
-
 	</Frame>
 	
 </Ui>
