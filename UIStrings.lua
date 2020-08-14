@@ -240,8 +240,8 @@ PawnUIFrame_IgnoreStatCheck_Tooltip = L.ValuesIgnoreStatTooltip
 
 PawnUIFrame_NoUpgradesCheck_Tooltip = L.ValuesDoNotShowUpgradesTooltip
 
-PawnUIFrame_FollowSpecializationCheck_Text = L.ValuesFollowSpecialization
-PawnUIFrame_FollowSpecializationCheck_Tooltip = L.ValuesFollowSpecializationTooltip
+PawnUIFrame_FollowSpecializationCheck_Text = format(L.ValuesFollowSpecialization, PawnArmorSpecializationLevel)
+PawnUIFrame_FollowSpecializationCheck_Tooltip = format(L.ValuesFollowSpecializationTooltip, PawnArmorSpecializationLevel, PawnArmorSpecializationLevel, PawnArmorSpecializationLevel)
 
 PawnUIFrame_NormalizeValuesCheck_Text = L.ValuesNormalize
 PawnUIFrame_NormalizeValuesCheck_Tooltip = L.ValuesNormalizeTooltip
