@@ -1,0 +1,57 @@
+name: Package World of Warcraft addon
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+
+env:
+  CLASSIC_VERSION: 11305
+
+jobs:
+  package:
+    name: Create zips and tag
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get name of addon
+      id: init
+      run: |
+        addon_name=$(ls *.toc)
+        addon_name=$(basename $addon_name .toc)
+        tag_name=${addon_name}-${{github.event.inputs.version}}
+        echo "::set-output name=addon_name::${addon_name}"
+        echo "::set-output name=tag_name::${tag_name}"
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{steps.init.outputs.tag_name}}
+        path: |
+          ./**/*
+          !./**/.*
+
+    - name: Replace TOC version for Classic
+      run: |
+        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.CLASSIC_VERSION}}/g' ${{steps.init.outputs.addon_name}}.toc
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{steps.init.outputs.tag_name}}-Classic
+        path: |
+          ./**/*
+          !./**/.*
+
+    - name: Tag this version
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{steps.init.outputs.tag_name}}
+        release_name: ${{steps.init.outputs.addon_name}} ${{github.event.inputs.version}}
+        body: ""
+        draft: false
+        prerelease: false
