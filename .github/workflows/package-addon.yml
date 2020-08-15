@@ -28,35 +28,25 @@ jobs:
         echo "::set-output name=tag_name::${tag_name}"
 
     - name: Make folder for zips
-      run: mkdir .releases
+      run: |
+        mkdir -p .releases/${{steps.init.outputs.addon_name}}
+        rsync -r --exclude '.*' . .releases/${{steps.init.outputs.addon_name}}
 
     - name: Create retail zip
       run: |
-        zip -r .releases/${{steps.init.outputs.tag_name}}.zip . -x .* .*\**
-
-    - name: Upload retail zip as build artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: ${{steps.init.outputs.tag_name}}
-        path: |
-          ./**/*
-          !./**/.*
+        cd .releases
+        zip -r ${{steps.init.outputs.tag_name}}.zip ${{steps.init.outputs.addon_name}}
+        cd ..
 
     - name: Replace TOC version for Classic
       run: |
-        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.CLASSIC_VERSION}}/g' ${{steps.init.outputs.addon_name}}.toc
+        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.CLASSIC_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
 
     - name: Create Classic zip
       run: |
-        zip -r .releases/${{steps.init.outputs.tag_name}}-Classic.zip . -x .* .*\**
-
-    - name: Upload Classic zip as build artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: ${{steps.init.outputs.tag_name}}-Classic
-        path: |
-          ./**/*
-          !./**/.*
+        cd .releases
+        zip -r ${{steps.init.outputs.tag_name}}-Classic.zip ${{steps.init.outputs.addon_name}}
+        cd ..
 
     - name: Tag this version
       id: create_release
