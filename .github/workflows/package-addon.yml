@@ -35,7 +35,7 @@ jobs:
     - name: Create retail zip
       run: |
         cd .releases
-        zip -r ${{steps.init.outputs.tag_name}}.zip ${{steps.init.outputs.addon_name}}
+        zip -9 -r ${{steps.init.outputs.tag_name}}.zip ${{steps.init.outputs.addon_name}}
         cd ..
 
     - name: Replace TOC version for Classic
@@ -45,7 +45,7 @@ jobs:
     - name: Create Classic zip
       run: |
         cd .releases
-        zip -r ${{steps.init.outputs.tag_name}}-Classic.zip ${{steps.init.outputs.addon_name}}
+        zip -9 -r ${{steps.init.outputs.tag_name}}-Classic.zip ${{steps.init.outputs.addon_name}}
         cd ..
 
     - name: Tag this version
