@@ -441,12 +441,11 @@ Wenn du Quest-Belohnungen oder Dungeon-Beute erwirbst, die besser als deine aktu
  |cff8ec3e6Fire:|r |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% Verbesserung|r 
 
 
-|cff8ec3e6Probiere diese Features aus, wenn du dich an die Grundlagen gewöhnt hast:|r
+|cff8ec3e6Probiere diese Funktionen aus, sobald du dich an die Grundlagen gewöhnt hast:|r
 
 • Vergleiche die Werte von zwei Gegenstände mit Hilfe des Pawn "Vergleichen" Reiter.
-• Wechsele auf den Reiter Skalierung in den manuellen Modus, um Vorschläge für mehr als eine Spezifikation gleichzeitig anzuzeigen.
-• Verwende den Ask Mr. Robot-Simulator und erstelle ein benutzerdefinierten Maßstab für deinen Charakter, um eine individuellen Vorschlag zu erhalten.
-]=],
+• Wechsle auf den Reiter "Bewertungsprofil" in den manuellen Modus, um Vorschläge für mehr als eine Spezialisierung gleichzeitig anzuzeigen.
+• Verwende den Ask Mr. Robot-Simulator und erstelle eine brauchbare Wertung für deinen Charakter, um individuelle Vorschläge zu erhalten.]=],
 		["InterfaceOptionsBody"] = "Klicke die Pawn-Schaltfläche, um dorthin zu gelangen.  Du kannst Pawn auch von deiner Charakterübersicht aus öffnen oder ein Tastenkürzel daran binden.",
 		["InterfaceOptionsWelcome"] = "Optionen für Pawn findest du in der Pawn-Benutzeroberfläche.",
 		["InventoryButtonTooltip"] = "Klicke, um Pawn zu öffnen.",
