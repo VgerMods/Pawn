@@ -252,6 +252,7 @@ PawnRegexes =
 	{L.FireSpellDamage2, "FireSpellDamage"}, -- /pawn compare 944
 	{L.ShadowSpellDamage, "ShadowSpellDamage"}, -- /pawn compare item:789::::::1841
 	{L.ShadowSpellDamage2, "ShadowSpellDamage"}, -- /pawn compare 1980
+	{L.ShadowSpellDamage3, "ShadowSpellDamage"}, -- /pawn compare 19133, zhCN Classic only
 	{L.NatureSpellDamage, "NatureSpellDamage"}, -- /pawn compare item:789::::::1997
 	{L.NatureSpellDamage2, "NatureSpellDamage"}, -- /pawn compare 18829
 	{L.ArcaneSpellDamage, "ArcaneSpellDamage"}, -- /pawn compare item:789::::::1801

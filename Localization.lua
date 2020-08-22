@@ -350,6 +350,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["ShadowResist"] = "^%+?# Shadow Resistance$",
 		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
 		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Shield$",
 		["SocketBonusPrefix"] = "Socket Bonus: ",
 		["Speed"] = "^Speed #$",

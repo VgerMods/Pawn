@@ -346,6 +346,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["ShadowResist"] = "^%+?# Schattenwiderstand$",
 		["ShadowSpellDamage"] = "^%+# Schattenzauberschaden$",
 		["ShadowSpellDamage2"] = "^Anlegen: Erhöht durch Schattenzauber und Schatteneffekte zugefügten Schaden um bis zu #%.$",
+		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Schild$",
 		["SocketBonusPrefix"] = "Sockelbonus:",
 		["Speed"] = "^Geschwindigkeit #$",

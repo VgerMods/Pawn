@@ -417,6 +417,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["ShadowSpellDamage"] = "^%+# Shadow Spell Damage$",
 		--[[Translation missing --]]
 		["ShadowSpellDamage2"] = "^Equip: Increases damage done by Shadow spells and effects by up to #%.$",
+		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Scudo$",
 		["SocketBonusPrefix"] = "Bonus incavo:",
 		["Speed"] = "^Velocità #$",

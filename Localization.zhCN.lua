@@ -346,6 +346,7 @@ PawnLocal =
 		["ShadowResist"] = "^%+?# 暗影抗性$",
 		["ShadowSpellDamage"] = "^%+# 暗影法术伤害$",
 		["ShadowSpellDamage2"] = "^装备： ?提高暗影法术和效果所造成的伤害，最多#点。$",
+		["ShadowSpellDamage3"] = "^装备： ?使暗影法术所造成的伤害提高最多#点。$",
 		["Shield"] = "^盾牌$",
 		["SocketBonusPrefix"] = "镶孔奖励：",
 		["Speed"] = "^速度 #$",

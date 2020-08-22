@@ -389,6 +389,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["ShadowResist"] = "^%+?# resistencia a Sombras$",
 		["ShadowSpellDamage"] = "^%+# daño con hechizos de las Sombras$",
 		["ShadowSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos de las Sombras%.$",
+		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Escudo$",
 		["SocketBonusPrefix"] = "Bonus ranura: ",
 		["Speed"] = "^Velocidad #$",

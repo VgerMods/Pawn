@@ -377,6 +377,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["ShadowResist"] = "^%+?# de resistência a Sombra$",
 		["ShadowSpellDamage"] = "^%+# Dano Mágico de Sombra$",
 		["ShadowSpellDamage2"] = "^Equipado: Aumenta em até # o dano causado por feitiços e efeitos de Sombra%.$",
+		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Escudo$",
 		["SocketBonusPrefix"] = "Bônus de engaste: ",
 		["Speed"] = "^Velocidade #$",

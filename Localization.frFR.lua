@@ -347,6 +347,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["ShadowResist"] = "^%+?# à la résistance Ombre$",
 		["ShadowSpellDamage"] = "^%+# aux dégâts des sorts d'Ombre$",
 		["ShadowSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets d'Ombre de # au maximum%.$",
+		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Bouclier$",
 		["SocketBonusPrefix"] = "Bonus de sertissage :",
 		["Speed"] = "^Vitesse #$",
