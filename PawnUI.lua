@@ -1536,6 +1536,10 @@ function PawnUIGetAllTextForItem(Item)
 	AllText = AllText .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(Item.Link, false)
 
 	PawnUIShowCopyableString(Item.Name, AllText, nil, true)
+
+	-- Tip: If this doesn't work for your particular situation, you can also open an item link and then do this:
+	-- /script PawnUIShowCopyableString("", ItemRefTooltipTextLeft8:GetText(), nil, true)
+	-- (where "8" is the line of the tooltip that you want to extract)
 end
 
 -- Called when one of the two upper item slots are clicked.

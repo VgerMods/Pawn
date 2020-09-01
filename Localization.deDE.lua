@@ -268,6 +268,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["DisenchantingRequires"] = "^Entzaubern benötigt",
 		["Dodge"] = "^%+?#%%? Ausweichen$",
 		["Dodge2"] = "^UNUSED$",
+		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Anlegen: Erhöht Eure Chance, einem Angriff auszuweichen, um #%%%.$",
 		["Dps"] = "^%(# Schaden pro Sekunde%)$",
 		["DpsAdd"] = "^Erhöht # Schaden pro Sekunde$",

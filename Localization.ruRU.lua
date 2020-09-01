@@ -277,6 +277,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["DisenchantingRequires"] = "^Требуется",
 		["Dodge"] = "^%+?#%%? к уклонению$",
 		["Dodge2"] = "^%+?#%%? к показателю уклонения$",
+		["Dodge3"] = "^%+#%% к рейтингу уклонения$",
 		["DodgePercent"] = "^Если на персонаже: Увеличение рейтинга уклонения на #%%%.$",
 		["Dps"] = "^%(# ед%. урона в секунду%)$",
 		["DpsAdd"] = "^Добавляет # ед%. урона в секунду$",

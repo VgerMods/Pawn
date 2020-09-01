@@ -311,6 +311,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["DisenchantingRequires"] = "^Desencantar requiere",
 		["Dodge"] = "^%+?#%%? d?e? ?[eE]squivar$",
 		["Dodge2"] = "^UNUSED$",
+		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equipar: Aumenta un #%% tu probabilidad de esquivar un ataque%.$",
 		["Dps"] = "^%(# p%. de daño por segundo%)$",
 		["DpsAdd"] = "^Añade # p%. de daño por segundo$",

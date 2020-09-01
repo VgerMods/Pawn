@@ -299,6 +299,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["DisenchantingRequires"] = "^Desencantamento necessita",
 		["Dodge"] = "^%+?#%%? Esquiva$",
 		["Dodge2"] = "^%+?# de Esquiva$",
+		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equipado: Aumenta em #%% a chance de esquivar%-se de ataques%.$",
 		["Dps"] = "^%(# d?e? ?dano por segundo%)$",
 		["DpsAdd"] = "^Adiciona # dano por segundo$",

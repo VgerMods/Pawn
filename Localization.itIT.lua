@@ -316,7 +316,8 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^[Rr]ichiede [Dd]isincantamento",
 		["Dodge"] = "^%+?#%%? Schivata$",
-		["Dodge2"] = "UNUSED",
+		["Dodge2"] = "^UNUSED$",
+		["Dodge3"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
 		["Dps"] = "^%(# [Dd]anni per [Ss]econdo%)$",

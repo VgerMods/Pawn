@@ -268,6 +268,7 @@ PawnLocal =
 		["DisenchantingRequires"] = "^分解需要",
 		["Dodge"] = "^%+?#%%? 躲闪$",
 		["Dodge2"] = "^UNUSED$",
+		["Dodge3"] = "^躲闪 %+#%%$",
 		["DodgePercent"] = "^装备： ?使你躲闪攻击的几率提高#%%。$",
 		["Dps"] = "^%（每秒伤害#）$",
 		["DpsAdd"] = "^Adds # damage per second$",

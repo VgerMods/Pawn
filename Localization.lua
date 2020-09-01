@@ -272,6 +272,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["DisenchantingRequires"] = "^Disenchanting requires",
 		["Dodge"] = "^%+?#%%? Dodge$",
 		["Dodge2"] = "^UNUSED$",
+		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
 		["Dps"] = "^%(# damage per second%)$",
 		["DpsAdd"] = "^Adds # damage per second$",

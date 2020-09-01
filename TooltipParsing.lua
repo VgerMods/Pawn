@@ -55,7 +55,7 @@ PawnSeparatorIgnorePrefixes =
 PawnNormalizationRegexes =
 {
 	{"^\|c........(.+)$", "%1"}, -- "|cFF 0FF 0Heroic" --> "Heroic"
-	{"^([%w%s%.]+) %+(%d+)$", "+%2 %1"}, -- "Stamina +5" --> "+5 Stamina"
+	{"^([%w%s%.]+) %+(%d+)%%?$", "+%2 %1"}, -- "Stamina +5" --> "+5 Stamina"
 	{L.NormalizationEnchant, "%1"}, -- "Enchanted: +50 Strength" --> "+50 Strength" (ENCHANTED_TOOLTIP_LINE)
 }
 
@@ -190,8 +190,9 @@ PawnRegexes =
 	{L.EnchantmentTitaniumWeaponChain, "HasteRating", 28, PawnMultipleStatsFixed}, -- Weapon enchantment; also reduces disarm duration (may be obsolete?)
 	{L.EnchantmentPyriumWeaponChain, "HasteRating", 8, PawnMultipleStatsFixed}, -- Weapon enchantment; also reduces disarm duration
 	{L.EnchantmentLivingSteelWeaponChain, "CritRating", 13, PawnMultipleStatsFixed}, -- Weapon enchantment; also reduces disarm duration
-	{L.Dodge, "DodgeRating"}, -- /pawn compare item:789::::::1754
+	{L.Dodge, "DodgeRating"}, -- /pawn compare item:789::::::1754, or Classic arcanum and enchantment: /pawn compare item:19386:2622 /pawn compare item:21693:2545
 	{L.Dodge2, "DodgeRating"}, -- unused in English
+	{L.Dodge3, "DodgeRating"}, -- unused in English
 	{L.DodgePercent, "DodgeRating"}, -- /pawn compare 11755
 	{L.Parry, "ParryRating"},
 	{L.Parry2, "ParryRating"}, -- unused in English
