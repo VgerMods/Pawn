@@ -393,6 +393,7 @@ PawnLocal =
 		["SpellDamage"] = "^%+# 傷害及治療法術$",
 		["SpellDamage2"] = "^裝備： 提高法術和魔法效果所造成的傷害和治療效果，最多#點。$",
 		["SpellDamage3"] = "^UNUSED$",
+		["SpellDamage4"] = "^UNUSED$",
 		["SpellHit"] = "^裝備： 使你的法術擊中敵人的機率提高#%%。$",
 		["SpellPower"] = "^%+?#法術能量$",
 		["Spirit"] = "^%+?#精神$",

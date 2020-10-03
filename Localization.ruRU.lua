@@ -367,6 +367,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellDamage"] = "^%+# к наносящим урон и исцеляющим заклинаниям$",
 		["SpellDamage2"] = "^Если на персонаже: Увеличение урона и целительного действия магических заклинаний и эффектов не более чем на # ед%.$",
 		["SpellDamage3"] = "^UNUSED$",
+		["SpellDamage4"] = "^UNUSED$",
 		["SpellHit"] = "^Если на персонаже: Повышение на #%% рейтинга меткости заклинаний%.$",
 		["SpellPower"] = "^%+?# к силе заклинаний$",
 		["Spirit"] = "^%+?# к духу$",

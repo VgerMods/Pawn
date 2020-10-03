@@ -357,6 +357,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellDamage"] = "^%+# Schadenszauber und Heilzauber$",
 		["SpellDamage2"] = "^Anlegen: Erhöht durch Zauber und magische Effekte zugefügten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage3"] = "^UNUSED$",
+		["SpellDamage4"] = "^UNUSED$",
 		["SpellHit"] = "^Anlegen: Erhöht Eure Chance mit Zaubern zu treffen um #%%%.$",
 		["SpellPower"] = "^%+?# Zaubermacht$",
 		["Spirit"] = "^%+?# Willenskraft$",

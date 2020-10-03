@@ -388,6 +388,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["SpellDamage"] = "^Feitiços de Cura e de Dano %+#$",
 		["SpellDamage2"] = "^Equipado: Aumenta em até # o dano causado e a cura realizada por feitiços e efeitos mágicos.$",
 		["SpellDamage3"] = "^UNUSED$",
+		["SpellDamage4"] = "^UNUSED$",
 		["SpellHit"] = "^Equipado: Aumenta em #%% sua chance de acertar com feitiços%.$",
 		["SpellPower"] = "^%+?# d?e? ?Poder [mM]ágico$",
 		["Spirit"] = "^%+?# d?e? ?Espírito$",
