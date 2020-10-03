@@ -367,6 +367,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["NormalizationEnchant"] = "^마법부여: (.*)$",
 		["Parry"] = "^무기 막기 %+?#$",
 		["Parry2"] = "^UNUSED$",
+		["ParryPercent"] = "^착용 효과: 무기 막기 확률이 #%%만큼 증가합니다%.$",
 		["Plate"] = "^판금$",
 		["Polearm"] = "^장창$",
 		["PvPPower"] = "^PvP 위력 %+?#$",

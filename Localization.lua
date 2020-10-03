@@ -337,6 +337,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["NormalizationEnchant"] = "^Enchanted: (.*)$",
 		["Parry"] = "^%+?# Parry$",
 		["Parry2"] = "^UNUSED$",
+		["ParryPercent"] = "^Equip: Increases your chance to parry an attack by #%%%.$",
 		["Plate"] = "^Plate$",
 		["Polearm"] = "^Polearm$",
 		["PvPPower"] = "^%+?# PvP Power$",

@@ -334,6 +334,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["NormalizationEnchant"] = "^Enchanté : (.*)$",
 		["Parry"] = "^%+?# Parade$",
 		["Parry2"] = "^%+?# à la parade$",
+		["ParryPercent"] = "^Equipé : Augmente vos chances de parer une attaque de #%%%.$",
 		["Plate"] = "^Plaques$",
 		["Polearm"] = "^Arme d'hast$",
 		["PvPPower"] = "^%+?# [Pp]uissance %(JcJ%)$",

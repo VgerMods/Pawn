@@ -333,6 +333,7 @@ PawnLocal =
 		["NormalizationEnchant"] = "^附魔： ?(.*)$",
 		["Parry"] = "^%+?# 招架$",
 		["Parry2"] = "^UNUSED$",
+		["ParryPercent"] = "^装备： 使你招架攻击的几率提高#%%。$",
 		["Plate"] = "^板甲$",
 		["Polearm"] = "^长柄武器$",
 		["PvPPower"] = "^%+?# PvP强度$",

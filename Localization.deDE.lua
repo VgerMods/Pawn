@@ -333,6 +333,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["NormalizationEnchant"] = "^Verzaubert: (.*)$",
 		["Parry"] = "^%+?# Parieren$",
 		["Parry2"] = "^UNUSED$",
+		["ParryPercent"] = "^Anlegen: Erhöht Eure Chance, einen Angriff zu parieren, um #%%%.$",
 		["Plate"] = "^Platte$",
 		["Polearm"] = "^Stangenwaffe$",
 		["PvPPower"] = "^%+?# P[vV]P[- ]Macht$",

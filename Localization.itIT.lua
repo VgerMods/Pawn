@@ -400,6 +400,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["NormalizationEnchant"] = "^Incantato: (.*)$",
 		["Parry"] = "^%+?# [Ii]ndice di [Pp]arata$",
 		["Parry2"] = "UNUSED",
+		["ParryPercent"] = "UNUSED",
 		["Plate"] = "^Piastre$",
 		["Polearm"] = "^Arma ad asta$",
 		["PvPPower"] = "^%+?# Potenza PvP$",

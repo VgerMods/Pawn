@@ -343,6 +343,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["NormalizationEnchant"] = "^Чары: (.*)$",
 		["Parry"] = "^%+?# к парированию$",
 		["Parry2"] = "^%+?# к показателю парирования$",
+		["ParryPercent"] = "^Если на персонаже: Увеличение рейтинга парирования атак на #%%%.$",
 		["Plate"] = "^Латы$",
 		["Polearm"] = "^Древковое$",
 		["PvPPower"] = "^%+?# к PvP%-силе$",

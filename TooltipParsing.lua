@@ -196,6 +196,7 @@ PawnRegexes =
 	{L.DodgePercent, "DodgeRating"}, -- /pawn compare 11755
 	{L.Parry, "ParryRating"},
 	{L.Parry2, "ParryRating"}, -- unused in English
+	{L.ParryPercent, "ParryRating"}, -- Classic, /pawn compare 19351
 	{L.DefenseSkill, "DefenseRating"}, -- /pawn compare 19867
 	{L.DefenseSkillSimple, "DefenseRating"}, -- /pawn compare item:789::::::89
 	{L.BlockPercent, "BlockRating"}, -- /pawn compare 18499
