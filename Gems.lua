@@ -22,13 +22,13 @@
 local PawnGemData70Uncommon =
 {
 
-{ 23094, "Intellect", 4 }, -- Brilliant Blood Garnet
-{ 23095, "Strength", 4 }, -- Bold Blood Garnet
-{ 28595, "Agility", 4 }, -- Delicate Blood Garnet
-{ 23114, "CritRating", 4 }, -- Smooth Golden Draenite
-{ 23115, "Stamina", 4 }, -- Subtle Golden Draenite
-{ 23116, "CritRating", 4 }, -- Rigid Azure Moonstone
-{ 23119, "Versatility", 4 }, -- Sparkling Azure Moonstone
+{ 23094, "Intellect", 1 }, -- Brilliant Blood Garnet
+{ 23095, "Strength", 1 }, -- Bold Blood Garnet
+{ 28595, "Agility", 1 }, -- Delicate Blood Garnet
+{ 23114, "CritRating", 1 }, -- Smooth Golden Draenite
+{ 23115, "Stamina", 1 }, -- Subtle Golden Draenite
+{ 23116, "CritRating", 1 }, -- Rigid Azure Moonstone
+{ 23119, "Versatility", 1 }, -- Sparkling Azure Moonstone
 
 }
 
@@ -319,10 +319,10 @@ local PawnGemData110Epic =
 local PawnGemData120Uncommon =
 {
 
-{ 153710, "CritRating", 30 }, -- Deadly Solstone
-{ 153711, "HasteRating", 30 }, -- Quick Golden Beryl
-{ 153712, "Versatility", 30 }, -- Versatile Kyanite
-{ 153713, "MasteryRating", 30 }, -- Masterful Kubiline
+{ 153710, "CritRating", 4 }, -- Deadly Solstone
+{ 153711, "HasteRating", 4 }, -- Quick Golden Beryl
+{ 153712, "Versatility", 4 }, -- Versatile Kyanite
+{ 153713, "MasteryRating", 4 }, -- Masterful Kubiline
 
 }
 
@@ -333,10 +333,10 @@ local PawnGemData120Uncommon =
 local PawnGemData120Rare =
 {
 
-{ 154126, "CritRating", 40 }, -- Deadly Amberblaze
-{ 154127, "HasteRating", 40 }, -- Quick Owlseye
-{ 154128, "Versatility", 40 }, -- Versatile Royal Quartz
-{ 154129, "MasteryRating", 40 }, -- Masterful Tidal Amethyst
+{ 154126, "CritRating", 6 }, -- Deadly Amberblaze
+{ 154127, "HasteRating", 6 }, -- Quick Owlseye
+{ 154128, "Versatility", 6 }, -- Versatile Royal Quartz
+{ 154129, "MasteryRating", 6 }, -- Masterful Tidal Amethyst
 
 }
 
@@ -347,10 +347,10 @@ local PawnGemData120Rare =
 local PawnGemData120Epic =
 {
 
-{ 168639, "CritRating", 50 }, -- Deadly Lava Lazuli
-{ 168641, "HasteRating", 50 }, -- Quick Sand Spinel
-{ 168642, "Versatility", 50 }, -- Versatile Dark Opal
-{ 168640, "MasteryRating", 50 }, -- Masterful Sea Currant
+{ 168639, "CritRating", 7 }, -- Deadly Lava Lazuli
+{ 168641, "HasteRating", 7 }, -- Quick Sand Spinel
+{ 168642, "Versatility", 7 }, -- Versatile Dark Opal
+{ 168640, "MasteryRating", 7 }, -- Masterful Sea Currant
 
 }
 
@@ -369,26 +369,26 @@ local PawnGemData120Epic =
 
 PawnGemQualityLevels =
 {
-	{ 430, PawnGemData120Epic }, -- Azshara's Eternal Palace heroic
-	{ 385, PawnGemData120Rare }, -- Darkshore warfront and Battle for Dazar'Alor raid finder
-	{ 270, PawnGemData120Uncommon }, -- above Legion legendaries
-	{ 225, PawnGemData110Epic }, -- Heroic Antorus
-	{ 195, PawnGemData110Rare }, -- Heroic Tomb of Sargeras / higher than new Relinquished gear
-	{ 153, PawnGemData110Uncommon }, -- Higher than Mythic Hellfire Citadel gear (heirlooms scale to 160)
-	{ 141, PawnGemData100Epic }, -- Warlords of Draenor Mythic Blackrock Foundry / Heroic Hellfire Citadel
-	{ 138, PawnGemData100Rare }, -- Warlords of Draenor Mythic Highmaul / Heroic Blackrock Foundry / Raid Finder Hellfire Citadel end bosses
-	{ 136, PawnGemData100Uncommon }, -- Actual gem requirement for Immaculate versions
-	{ 116, PawnGemData90Rare }, -- Mists of Pandaria heroics
-	{ 114, PawnGemData90Uncommon }, -- Actual gem requirement
-	{ 110, PawnGemData85Epic }, -- Dragon Soul normal mode
-	{ 108, PawnGemData85Rare }, -- Cataclysm heroics
-	{ 104, PawnGemData85Uncommon }, -- Cataclysm dungeons
-	{ 102, PawnGemData80Epic }, -- Tier 10 sanctified epics (Sanctified Frost Witch's Regalia)
-	{ 100, PawnGemData80Rare }, -- Wrath of the Lich King heroics
-	{ 85, PawnGemData80Uncommon }, -- Low-level Wrath greens
-	{ 80, PawnGemData70Epic }, -- Burning Crusade epics (Cataclysm Harness)
-	{ 70, PawnGemData70Rare }, -- Burning Crusade level 70 non-heroics
+	{ 115, PawnGemData120Epic }, -- Azshara's Eternal Palace heroic
+	{ 105, PawnGemData120Rare }, -- Darkshore warfront and Battle for Dazar'Alor raid finder
+	{ 100, PawnGemData120Uncommon }, -- above Legion legendaries
+	-- { 225, PawnGemData110Epic }, -- Heroic Antorus
+	-- { 195, PawnGemData110Rare }, -- Heroic Tomb of Sargeras / higher than new Relinquished gear
+	-- { 153, PawnGemData110Uncommon }, -- Higher than Mythic Hellfire Citadel gear (heirlooms scale to 160)
+	-- { 141, PawnGemData100Epic }, -- Warlords of Draenor Mythic Blackrock Foundry / Heroic Hellfire Citadel
+	-- { 138, PawnGemData100Rare }, -- Warlords of Draenor Mythic Highmaul / Heroic Blackrock Foundry / Raid Finder Hellfire Citadel end bosses
+	-- { 136, PawnGemData100Uncommon }, -- Actual gem requirement for Immaculate versions
+	-- { 116, PawnGemData90Rare }, -- Mists of Pandaria heroics
+	-- { 114, PawnGemData90Uncommon }, -- Actual gem requirement
+	-- { 110, PawnGemData85Epic }, -- Dragon Soul normal mode
+	-- { 108, PawnGemData85Rare }, -- Cataclysm heroics
+	-- { 104, PawnGemData85Uncommon }, -- Cataclysm dungeons
+	-- { 102, PawnGemData80Epic }, -- Tier 10 sanctified epics (Sanctified Frost Witch's Regalia)
+	-- { 100, PawnGemData80Rare }, -- Wrath of the Lich King heroics
+	-- { 85, PawnGemData80Uncommon }, -- Low-level Wrath greens
+	-- { 80, PawnGemData70Epic }, -- Burning Crusade epics (Cataclysm Harness)
+	-- { 70, PawnGemData70Rare }, -- Burning Crusade level 70 non-heroics
 	{ 0, PawnGemData70Uncommon },
 }
 
-PawnMinimumItemLevelToConsiderGems = 310 -- Sockets on items below this ilvl are ignored
+PawnMinimumItemLevelToConsiderGems = 100 -- Sockets on items below this ilvl are ignored

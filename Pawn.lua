@@ -642,6 +642,12 @@ function PawnInitializeOptions()
 			PawnCommon.ShowItemLevelUpgrades = true
 		end
 	end
+	if PawnOptions.LastVersion < 2.0400 then
+		-- Pawn 2.4 came out with patch 9.0 and the level squish, so reset everything for this character.
+		PawnClearCache()
+		PawnInvalidateBestItems()
+		PawnClearBestItemLevelData()
+	end
 	if ((not VgerCore.IsClassic) and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
 		(VgerCore.IsClassic and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
 		-- If the Ask Mr. Robot scales have been updated since the last time they used Pawn, re-scan gear.
@@ -3086,9 +3092,6 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 		end
 	end
 
-	-- Is this item an heirloom or artifact that will continue to either scale or provide an XP boost?
-	local IsScalingHeirloom = (UnitLevel("player") <= PawnGetMaxLevelItemIsUsefulHeirloom(Item))
-	
 	local _
 	local UpgradeTable, BestItemTable, SecondBestItemTable
 	local ScaleName, Scale
@@ -3209,10 +3212,9 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 							elseif TwoSlotsForThisItemType and BestData[4] == nil then
 								-- There's an empty slot for this item to go into.
 								NewTableEntry = { ["ScaleName"] = ScaleName, ["LocalizedScaleName"] = Scale.LocalizedName or ScaleName, ["PercentUpgrade"] = PawnBigUpgradeThreshold }
-							elseif ThisValue > BestValue * 1.005 and (IsScalingHeirloom or UnitLevel("player") > BestMaxHeirloomLevel) then
+							elseif ThisValue > BestValue * 1.005 then
 								-- Hooray, it's an upgrade!  Add it to the table.
 								-- (Only count upgrades that are at least 0.5% better.)
-								-- If the best item is an heirloom, either the new one must be or the player must have outleveled it.
 								local Difference = ThisValue - BestValue
 								local PercentUpgrade
 								if CompareUsingItemLevelOnly then
@@ -3744,7 +3746,7 @@ function PawnIsArmorBestTypeForPlayer(Item)
 	if not Stats then return false end
 	-- If the item isn't armor then we don't need to check anything.	
 	if (not Stats.IsCloth) and (not Stats.IsLeather) and (not Stats.IsMail) and (not Stats.IsPlate) then return true end
-	-- Before level 50 it's fine if the player is wearing the wrong type of armor.
+	-- Before level 27 it's fine if the player is wearing the wrong type of armor.
 	local Level = UnitLevel("player")
 	local IsLevelForSpecialization = Level >= PawnArmorSpecializationLevel
 	-- Now, the rest depends on the user's class.
@@ -3808,13 +3810,8 @@ end
 -- these same requirements.
 function PawnGetMaxLevelItemIsUsefulHeirloom(Item)
 	if Item.Rarity == 6 then
-		-- This is an artifact, so the player won't get anything better until level 110 at the earliest.
-		-- (Battle for Azeroth leveling dungeons provide weapons that would be higher ilvl than most players' artifacts.)
-		if VgerCore.IsShadowlands then
-			return 49
-		else
-			return 109
-		end
+		-- This is an artifact, so the player won't get anything better until level 50.
+		return 49
 	elseif Item.UnenchantedStats and Item.UnenchantedStats.MaxScalingLevel then
 		-- This item scales until you reach MaxScalingLevel.
 		return Item.UnenchantedStats.MaxScalingLevel - 1
