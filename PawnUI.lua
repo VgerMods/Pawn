@@ -2218,12 +2218,13 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	if not PawnCommon.ShowQuestUpgradeAdvisor then return end
 
 	-- Now, get information about this quest.
+	local QuestID = C_QuestLog.GetSelectedQuest()
 	local IsInMap = WorldMapFrame:IsShown()
 	local StaticRewards, RewardChoices
 	local GetLinkFunction, GetRewardInfoFunction, GetChoiceInfoFunction
 	if QuestInfoFrame.questLog then
 		StaticRewards = GetNumQuestLogRewards()
-		RewardChoices = GetNumQuestLogChoices()
+		RewardChoices = GetNumQuestLogChoices(QuestID, false)
 		GetLinkFunction = GetQuestLogItemLink
 		GetRewardInfoFunction = GetQuestLogRewardInfo
 		GetChoiceInfoFunction = GetQuestLogChoiceInfo
@@ -2251,7 +2252,8 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		else
 			--VgerCore.Fail("Pawn can't display upgrade information because the server hasn't given us item stats for fixed rewards yet.")
 			-- TODO: Queue this up and retry these calculations later...
-			return
+			-- Important: Don't bail out if we didn't get stats for a static reward! You could, for example, get an item and a deprecated artifact power
+			-- item with no stats, and we want to make sure that the item that DOES have stats still shows up.
 		end
 	end
 	for i = 1, RewardChoices do
