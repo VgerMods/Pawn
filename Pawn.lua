@@ -2804,6 +2804,9 @@ function PawnCorrectScaleErrors(ScaleName)
 	-- Versions of Pawn before 2.1.16 had an error where the Role property was being incorrectly set to true/false
 	-- due to an API change.  If that happened to this scale, fix it.
 	if ThisScaleOptions.Role == true or ThisScaleOptions.Role == false then ThisScaleOptions.Role = nil end
+
+	-- Patch 9.0 removed the Corruption stat, though it still shows up on items.
+	ThisScale.Corruption = nil
 end
 
 -- Replaces one incorrect stat with a correct stat.
