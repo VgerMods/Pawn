@@ -2218,7 +2218,7 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	if not PawnCommon.ShowQuestUpgradeAdvisor then return end
 
 	-- Now, get information about this quest.
-	-- local QuestID = C_QuestLog.GetSelectedQuest()
+	local QuestID = GetQuestID()
 	local IsInMap = WorldMapFrame:IsShown()
 	local StaticRewards, RewardChoices
 	local GetLinkFunction, GetRewardInfoFunction, GetChoiceInfoFunction
