@@ -399,6 +399,7 @@ function PawnInitialize()
 
 	-- In-bag upgrade icons
 	if ContainerFrame_UpdateItemUpgradeIcons then
+		
 		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
 		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
@@ -410,6 +411,7 @@ function PawnInitialize()
 				return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
 			end
 		end
+
 		-- This should be an exact copy of this function from ContainerFrame.lua, except with IsContainerItemAnUpgrade replaced
 		-- with PawnIsContainerItemAnUpgrade. Changing IsContainerItemAnUpgrade now causes taint errors. :(
 		ContainerFrameItemButton_UpdateItemUpgradeIcon = function(self)
@@ -424,6 +426,7 @@ function PawnInitialize()
 				self:SetScript("OnUpdate", nil);
 			end
 		end
+
 	end
 
 	-- We're now effectively initialized.  Just the last steps of scale initialization remain.
