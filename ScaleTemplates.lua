@@ -198,7 +198,6 @@ PawnScaleTemplates =
 	["SpecID"] = 2, -- Frost
 	["Role"] = "DAMAGER",
 	["PrimaryStat"] = "Strength",
-	["HideUpgrades"] = 2, -- Hide 2H upgrades
 	["UnusableStats"] = { "IsFrill" }
 },
 
