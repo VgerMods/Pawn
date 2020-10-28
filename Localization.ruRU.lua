@@ -708,6 +708,10 @@ end
 
 if GetLocale() == "ruRU" then
 	PawnUseThisLocalization()
+
+	if not VgerCore.IsClassic then
+		PawnLocal.ThousandsSeparator = ""
+	end
 end
 
 -- After using this localization or deciding that we don't need it, remove it from memory.
