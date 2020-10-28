@@ -312,6 +312,18 @@ and Pawn.</p>
 <h2>Updates</h2>
 <h3>Version 2.4.2</h3>
 <ul>
+	<li>Pawn's bag arrows integration will no longer work by default with custom 
+	bag addons. (The game no longer allows customizing that functionality while 
+	in combat, and Pawn's previous integration caused errors while performing 
+	certain actions in combat. Disabling support for custom bag addons is 
+	currently the only way I can work around this.)<ul>
+		<li>To work around this, custom bag addons that call 
+		IsContainerItemAnUpgrade directly can use PawnIsContainerItemAnUpgrade 
+		when available instead, falling back to IsContainerItemAnUpgrade if it's 
+		nil. The game no longer works properly if IsContainerItemAnUpgrade is 
+		customized.</li>
+	</ul>
+	</li>
 	<li>You should no longer see a warning message about addon compatibility 
 	when playing on Russian WoW 9.0.</li>
 </ul>

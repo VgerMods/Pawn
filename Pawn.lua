@@ -400,7 +400,7 @@ function PawnInitialize()
 	-- In-bag upgrade icons
 	if ContainerFrame_UpdateItemUpgradeIcons then
 		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
-		IsContainerItemAnUpgrade = function(bagID, slot, ...)
+		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
 				local _, Count, _, _, _, _, ItemLink = GetContainerItemInfo(bagID, slot)
 				if not Count then return false end -- If the stack count is 0, it's clearly not an upgrade
@@ -409,7 +409,20 @@ function PawnInitialize()
 			else
 				return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
 			end
-			-- FUTURE: Consider hooking ContainerFrameItemButton_UpdateItemUpgradeIcon / ContainerFrame_UpdateItemUpgradeIcons instead, but then Pawn would need its own "retry when not enough information is available" logic.  And Pawn also would no longer automatically integrate with other bag addons.
+		end
+		-- This should be an exact copy of this function from ContainerFrame.lua, except with IsContainerItemAnUpgrade replaced
+		-- with PawnIsContainerItemAnUpgrade. Changing IsContainerItemAnUpgrade now causes taint errors. :(
+		ContainerFrameItemButton_UpdateItemUpgradeIcon = function(self)
+			self.timeSinceUpgradeCheck = 0;
+	
+			local itemIsUpgrade = PawnIsContainerItemAnUpgrade(self:GetParent():GetID(), self:GetID());
+			if ( itemIsUpgrade == nil and not self.isExtended) then -- nil means not all the data was available to determine if this is an upgrade.
+				self.UpgradeIcon:SetShown(false);
+				self:SetScript("OnUpdate", ContainerFrameItemButton_TryUpdateItemUpgradeIcon);
+			elseif (not self.isExtended) then
+				self.UpgradeIcon:SetShown(itemIsUpgrade);
+				self:SetScript("OnUpdate", nil);
+			end
 		end
 	end
 
