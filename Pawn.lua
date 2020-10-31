@@ -412,20 +412,21 @@ function PawnInitialize()
 			end
 		end
 
-		-- This should be an exact copy of this function from ContainerFrame.lua, except with IsContainerItemAnUpgrade replaced
-		-- with PawnIsContainerItemAnUpgrade. Changing IsContainerItemAnUpgrade now causes taint errors. :(
-		ContainerFrameItemButton_UpdateItemUpgradeIcon = function(self)
-			self.timeSinceUpgradeCheck = 0;
-	
-			local itemIsUpgrade = PawnIsContainerItemAnUpgrade(self:GetParent():GetID(), self:GetID());
-			if ( itemIsUpgrade == nil and not self.isExtended) then -- nil means not all the data was available to determine if this is an upgrade.
-				self.UpgradeIcon:SetShown(false);
-				self:SetScript("OnUpdate", ContainerFrameItemButton_TryUpdateItemUpgradeIcon);
-			elseif (not self.isExtended) then
-				self.UpgradeIcon:SetShown(itemIsUpgrade);
-				self:SetScript("OnUpdate", nil);
+		-- Changing IsContainerItemAnUpgrade now causes taint errors, and replacing this function with a copy of itself
+		-- works on its own, but breaks other addons that hook this function like CanIMogIt. So, our best option appears to
+		-- be to just let the default version run, and then change its results immediately after.
+		hooksecurefunc("ContainerFrameItemButton_UpdateItemUpgradeIcon", function(self)
+			if self.isExtended then return end
+			local IsUpgrade = PawnIsContainerItemAnUpgrade(self:GetParent():GetID(), self:GetID())
+
+			if IsUpgrade == nil then
+				self.UpgradeIcon:SetShown(false)
+				self:SetScript("OnUpdate", ContainerFrameItemButton_TryUpdateItemUpgradeIcon)
+			else
+				self.UpgradeIcon:SetShown(IsUpgrade)
+				self:SetScript("OnUpdate", nil)
 			end
-		end
+		end)
 
 	end
 
