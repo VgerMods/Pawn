@@ -658,10 +658,14 @@ function PawnInitializeOptions()
 			PawnCommon.ShowItemLevelUpgrades = true
 		end
 	end
-	if PawnOptions.LastVersion < 2.0400 then
-		-- Pawn 2.4 came out with patch 9.0 and the level squish, so reset everything for this character.
-		PawnClearCache()
+	if PawnCommon.LastVersion < 2.0403 then
+		-- Pawn 2.4 came out with patch 9.0 and the level squish, so reset everything.
+		-- Pawn 2.4.3 improved this behavior, so do it one last time.
 		PawnInvalidateBestItems()
+	end
+	if PawnOptions.LastVersion < 2.0400 then
+		-- The best item level data is still per-character, so we have to wait until first logon for that character.
+		-- If we already did that back in 2.4.0 we don't need to do this part again.
 		PawnClearBestItemLevelData()
 	end
 	if PawnCommon.LastVersion < 2.0402 and not VgerCore.IsClassic then
