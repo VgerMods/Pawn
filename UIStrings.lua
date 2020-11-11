@@ -3,7 +3,7 @@
 -- © 2006-2020 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
--- 
+--
 -- UI strings
 ------------------------------------------------------------
 
@@ -349,7 +349,7 @@ PawnUIFrame_MrRobotLabel_Text = L.AboutMrRobot
 -- Configuration UI, Help tab
 PawnUIFrame_HelpTab_Text = L.HelpTab
 PawnUIFrame_GettingStartedLabel_Text = L.HelpText
-	
+
 -- Interface Options page
 PawnInterfaceOptionsFrame_OptionsHeaderLabel_Text = L.InterfaceOptionsWelcome
 PawnInterfaceOptionsFrame_OptionsSubHeaderLabel_Text = L.InterfaceOptionsBody
