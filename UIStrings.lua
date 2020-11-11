@@ -56,8 +56,8 @@ local PawnStatsUnfiltered =
 	{L.SpellDamage, "SpellDamage", L.SpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
 	{L.Healing, "Healing", L.HealingInfo, PawnStatNormal, nil, PawnStatClassicOnly},
 	{ITEM_MOD_DEFENSE_SKILL_RATING_SHORT, "DefenseRating", L.DefenseInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_DODGE_RATING_SHORT, "DodgeRating", L.DodgeInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_PARRY_RATING_SHORT , "ParryRating", L.ParryInfo, PawnStatNormal, nil, PawnStatClassicOnly},
+	{ITEM_MOD_DODGE_RATING_SHORT, "DodgeRating", L.DodgeInfo, PawnStatNormal, nil},
+	{ITEM_MOD_PARRY_RATING_SHORT , "ParryRating", L.ParryInfo, PawnStatNormal, nil},
 	{ITEM_MOD_BLOCK_RATING_SHORT, "BlockRating", L.BlockRatingInfo, PawnStatNormal, nil, PawnStatClassicOnly},
 	{ITEM_MOD_BLOCK_VALUE_SHORT, "BlockValue", L.BlockValueInfo, PawnStatNormal, nil, PawnStatClassicOnly},
 
