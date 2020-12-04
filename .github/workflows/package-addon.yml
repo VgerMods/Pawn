@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  CLASSIC_VERSION: 11305
+  CLASSIC_VERSION: 11306
 
 jobs:
   package:
