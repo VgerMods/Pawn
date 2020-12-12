@@ -4889,7 +4889,7 @@ function PawnGetScaleColor(ScaleName, Unenchanted)
 end
 
 -- Sets the color of a scale in six-character hex format.  The unenchanted color for the scale will also be set
--- to a slightly darker color.
+-- to a slightly darker color. (Use nil for HexColor to reset the scale to the default color.)
 function PawnSetScaleColor(ScaleName, HexColor)
 	if not PawnIsInitialized then VgerCore.Fail("Can't change scale colors until Pawn is initialized") return end
 	
@@ -4902,14 +4902,19 @@ function PawnSetScaleColor(ScaleName, HexColor)
 		VgerCore.Fail("ScaleName must be the name of an existing scale, and is case-sensitive.")
 		return nil
 	end
-	if not HexColor or strlen(HexColor) ~= 6 then
+	if HexColor and strlen(HexColor) ~= 6 then
 		VgerCore.Fail("HexColor must be a six-digit hexadecimal color code, such as '66c0ff'.")
 		return nil
 	end
 
-	local r, g, b = VgerCore.HexToRGB(HexColor)
-	Scale.Color = HexColor
-	Scale.UnenchantedColor = VgerCore.RGBToHex(r * PawnScaleColorDarkFactor, g * PawnScaleColorDarkFactor, b * PawnScaleColorDarkFactor)
+	if HexColor then
+		local r, g, b = VgerCore.HexToRGB(HexColor)
+		Scale.Color = HexColor
+		Scale.UnenchantedColor = VgerCore.RGBToHex(r * PawnScaleColorDarkFactor, g * PawnScaleColorDarkFactor, b * PawnScaleColorDarkFactor)
+	else
+		Scale.Color = nil
+		Scale.UnenchantedColor = nil
+	end
 end
 
 -- Gets whether a stat is a 1-handed weapon stat, a 2-handed weapon stat, or neither.  (Only tracks things that go into either the main hand
@@ -5184,7 +5189,13 @@ function PawnAddPluginScaleFromTemplate(ProviderInternalName, ClassID, SpecID, S
 		end
 	end
 
-	local Color = strsub(RAID_CLASS_COLORS[UnlocalizedClassName].colorStr, 3)
+	local Color
+	if RAID_CLASS_COLORS[UnlocalizedClassName].colorStr then
+		-- Sometime other addons try to change RAID_CLASS_COLORS and don't include colorStr. If that happens, just skip this scale color.
+		Color = strsub(RAID_CLASS_COLORS[UnlocalizedClassName].colorStr, 3)
+	else
+		VgerCore.Fail("An addon changed the class color for " .. UnlocalizedClassName .. " but didn't finish the job. That class will show up in the wrong color in Pawn.")
+	end
 	-- Choose a lighter color for death knights so it's easier to read.
 	if ClassID == 6 then Color = "ff4d6b" end
 
