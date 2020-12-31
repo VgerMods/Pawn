@@ -302,7 +302,7 @@ function PawnInitialize()
 		function(object, button)
 			if button == "RightButton" then
 				local _, ItemLink = ItemRefTooltip:GetItem()
-				PawnUI_SetCompareItemAndShow(2, ItemLink)
+				if ItemLink then PawnUI_SetCompareItemAndShow(2, ItemLink) end
 			end
 		end)
 	
