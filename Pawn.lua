@@ -235,17 +235,7 @@ function PawnInitialize()
 	hooksecurefunc(GameTooltip, "SetLootItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetLootItem", ...) end)
 	hooksecurefunc(GameTooltip, "SetLootRollItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetLootRollItem", ...) end)
 	hooksecurefunc(GameTooltip, "SetMerchantItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetMerchantItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetQuestItem",
-		function(self, ...)
-			-- BUG IN WoW 6.2: This item will come through with an item ID of 0 and we'll fail to get stats from it normally.
-			-- Special thanks to Phanx for suggesting this workaround!
-			local ItemLink = GetQuestItemLink(...)
-			if ItemLink then
-				PawnUpdateTooltip("GameTooltip", "SetHyperlink", ItemLink)
-			else
-				PawnUpdateTooltip("GameTooltip", "SetQuestItem", ...)
-			end
-		end)
+	hooksecurefunc(GameTooltip, "SetQuestItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetQuestItem", ...) end)
 	hooksecurefunc(GameTooltip, "SetQuestLogItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetQuestLogItem", ...) end)
 	hooksecurefunc(GameTooltip, "SetSendMailItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetSendMailItem", ...) end)
 	if GameTooltip.SetSocketGem then
@@ -1487,7 +1477,11 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 		if IDs then
 			PawnAddTooltipLine(Tooltip, PawnLocal.ItemIDTooltipLine .. ":  " .. IDs, VgerCore.Color.OrangeR, VgerCore.Color.OrangeG, VgerCore.Color.OrangeB)
 			TooltipWasUpdated = true
+		else
+			VgerCore.Message("*** couldn't format item ID for " .. tostring(ItemLink))
 		end
+	else
+		VgerCore.Message("*** didn't have item ID")
 	end
 	
 	-- Show the updated tooltip.	
@@ -2619,7 +2613,10 @@ end
 -- Returns a nice-looking string that shows the item IDs for an item, its enchantments, and its gems.
 function PawnGetItemIDsForDisplay(ItemLink, Formatted)
 	local Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|%x+|Hitem:(%-?%d+)([^|]+)|")
-	if not Pos then return end
+	if not Pos then
+		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^item:(%-?%d+)([%d%-:]+)")
+		if not Pos then return end
+	end
 	if Formatted == nil then Formatted = true end
 
 	if MoreInfo and MoreInfo ~= "" then
@@ -3747,10 +3744,12 @@ function PawnFindInterestingItems(List)
 		elseif (not DoNotVendor) and Info.RewardType == "choice" then
 			-- If we haven't already found a choice item upgrade, and this is a choice item, see
 			-- if it's the best thing to vendor.
-			local _, _, _, _, _, _, _, _, _, _, Value = GetItemInfo(Info.Item.Link)
-			if Value and Value > HighestValue then
-				HighestValue = Value
-				HighestValueInfo = Info
+			if Info.Item.Link then
+				local _, _, _, _, _, _, _, _, _, _, Value = GetItemInfo(Info.Item.Link)
+				if Value and Value > HighestValue then
+					HighestValue = Value
+					HighestValueInfo = Info
+				end
 			end
 		end
 	end
