@@ -1072,8 +1072,8 @@ function PawnGetItemData(ItemLink)
 	-- If we have an item link, we can extract basic data from it from the user's WoW cache (not the Pawn item cache).
 	-- We get a new, normalized version of ItemLink so that items don't end up in the cache multiple times if they're requested
 	-- using different styles of links that all point to the same item.
-	local ItemID = GetItemInfoInstant(ItemLink)
-	local ItemName, NewItemLink, ItemRarity, ItemLevel, _, _, _, _, InvType, ItemTexture = GetItemInfo(ItemLink)
+	local ItemID, _, _, InvType, ItemTexture = GetItemInfoInstant(ItemLink)
+	local ItemName, NewItemLink, ItemRarity, ItemLevel = GetItemInfo(ItemLink)
 	if NewItemLink then
 		ItemLink = NewItemLink
 	else
@@ -1477,11 +1477,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 		if IDs then
 			PawnAddTooltipLine(Tooltip, PawnLocal.ItemIDTooltipLine .. ":  " .. IDs, VgerCore.Color.OrangeR, VgerCore.Color.OrangeG, VgerCore.Color.OrangeB)
 			TooltipWasUpdated = true
-		else
-			VgerCore.Message("*** couldn't format item ID for " .. tostring(ItemLink))
 		end
-	else
-		VgerCore.Message("*** didn't have item ID")
 	end
 	
 	-- Show the updated tooltip.	

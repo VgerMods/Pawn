@@ -2222,17 +2222,17 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	if C_QuestLog.GetSelectedQuest then QuestID = C_QuestLog.GetSelectedQuest() end
 	local IsInMap = WorldMapFrame:IsShown()
 	local StaticRewards, RewardChoices
-	local GetLinkFunction, GetRewardInfoFunction, GetChoiceInfoFunction
+	local SetQuestRewardFunctionName, GetRewardInfoFunction, GetChoiceInfoFunction
 	if QuestInfoFrame.questLog then
 		StaticRewards = GetNumQuestLogRewards()
 		RewardChoices = GetNumQuestLogChoices(QuestID, false)
-		GetLinkFunction = GetQuestLogItemLink
+		SetQuestRewardFunctionName = "SetQuestLogItem"
 		GetRewardInfoFunction = GetQuestLogRewardInfo
 		GetChoiceInfoFunction = GetQuestLogChoiceInfo
 	else
 		StaticRewards = GetNumQuestRewards()
 		RewardChoices = GetNumQuestChoices()
-		GetLinkFunction = GetQuestItemLink
+		SetQuestRewardFunctionName = "SetQuestItem"
 		GetRewardInfoFunction = function(Index) return GetQuestItemInfo("reward", Index) end
 		GetChoiceInfoFunction = function(Index) return GetQuestItemInfo("choice", Index) end
 	end
@@ -2245,8 +2245,14 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	
 	-- Gather up all of the rewards for this quest.
 	local QuestRewards = { }
+	local Tooltip = _G[PawnPrivateTooltipName]
 	for i = 1, StaticRewards do
-		local Item = PawnGetItemData(GetLinkFunction("reward", i))
+		-- BUG: In 9.0, the "get the item link for a quest reward" functions return incorrect data for some Shadowlands quests, so
+		-- we work around this by calling the "show this quest reward on a tooltip" method and then getting the item link from THAT, which is correct.
+		Tooltip[SetQuestRewardFunctionName](Tooltip, "reward", i)
+		local _, ItemLink = Tooltip:GetItem()
+		local Item = PawnGetItemData(ItemLink)
+
 		if Item then
 			local _, _, _, _, Usable = GetRewardInfoFunction(i)
 			tinsert(QuestRewards, { ["Item"] = Item, ["RewardType"] = "reward", ["Usable"] = Usable, ["Index"] = i + RewardChoices })
@@ -2258,7 +2264,10 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		end
 	end
 	for i = 1, RewardChoices do
-		local Item = PawnGetItemData(GetLinkFunction("choice", i))
+		Tooltip[SetQuestRewardFunctionName](Tooltip, "choice", i)
+		local _, ItemLink = Tooltip:GetItem()
+		local Item = PawnGetItemData(ItemLink)
+
 		if Item then
 			local _, _, _, _, Usable = GetChoiceInfoFunction(i)
 			tinsert(QuestRewards, { ["Item"] = Item, ["RewardType"] = "choice", ["Usable"] = Usable, ["Index"] = i })
