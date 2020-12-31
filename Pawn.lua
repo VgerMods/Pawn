@@ -246,17 +246,7 @@ function PawnInitialize()
 				PawnUpdateTooltip("GameTooltip", "SetQuestItem", ...)
 			end
 		end)
-	hooksecurefunc(GameTooltip, "SetQuestLogItem",
-		function(self, ...)
-			-- BUG IN WoW 6.2: This item will come through with an item ID of 0 and we'll fail to get stats from it normally.
-			-- Special thanks to Phanx for suggesting this workaround!
-			local ItemLink = GetQuestLogItemLink(...)
-			if ItemLink then
-				PawnUpdateTooltip("GameTooltip", "SetHyperlink", ItemLink)
-			else
-				PawnUpdateTooltip("GameTooltip", "SetQuestLogItem", ...)
-			end
-		end)
+	hooksecurefunc(GameTooltip, "SetQuestLogItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetQuestLogItem", ...) end)
 	hooksecurefunc(GameTooltip, "SetSendMailItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetSendMailItem", ...) end)
 	if GameTooltip.SetSocketGem then
 		-- Gems don't exist in Classic.
