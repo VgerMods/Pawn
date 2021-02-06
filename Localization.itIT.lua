@@ -11,11 +11,8 @@ local function PawnUseThisLocalization()
 PawnLocal =
 {
 	["AverageItemLevelIgnoringRarityTooltipLine"] = "Livello oggetti medio",
-	["BackupCommand"] = "riserva",
 	["BaseValueWord"] = "base",
 	["CopyScaleEnterName"] = "Inserisci un nome per la tua nuova formula, copiato da %s:",
-	["DebugOffCommand"] = "debug off",
-	["DebugOnCommand"] = "debug on",
 	["DecimalSeparator"] = ",",
 	["DeleteScaleConfirmation"] = "Sei sicuro di voler cancellare %s? Questa operazione non è reversibile. Scrivi \"%s\" per confermare:",
 	["DidntUnderstandMessage"] = "   (?) Non ho capito \"%s\".",
@@ -80,12 +77,9 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 	["VisibleScalesHeader"] = "Formule di %s",
 	["Stats"] = {
 		["AgilityInfo"] = "Agilità. Aumenta la potenza d'attacco per alcune classi.",
-		--[[Translation missing --]]
-		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
-		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "Arcane Damage",
+		["ApInfo"] = "Potenza d'Attacco. Aumenta il danno fisico degli attacchi. Non include la potenza d'attacco guadagnata da forza e agilità.",
+		["ArcaneResistInfo"] = "Resistenza Arcana. Riduce il danno subito da attacchi arcani.",
+		["ArcaneSpellDamage"] = "Danno Arcano",
 		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
 		["ArmorInfo"] = "Armatura. Non include il bonus di armatura specifico del difensore",
@@ -97,7 +91,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Stoffa",
 		["ClothInfo"] = "Punti da assegnare se l'oggetto è in stoffa",
-		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
+		["CorruptionInfo"] = "Corruzione di N'Zoth. Un valore negativo di Corruzione rimuoverà punti dal punteggio dell'oggetto in base al livello di corruzione.",
 		["Crit"] = "Critico",
 		["CritInfo"] = "Critico. Aumenta la possibilità che i tuoi attacchi e le tue cure colpiscano con potenza maggiore.",
 		--[[Translation missing --]]
@@ -280,13 +274,9 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Agility"] = "^%+?# [Aa]gilità$",
 		["AllStats"] = "^%+?# a tutti gli attributi$",
 		["Ap"] = "^%+?# [Pp]otenza d'attacco$",
-		--[[Translation missing --]]
-		["Ap2"] = "^Equip: %+# Attack Power%.$",
-		--[[Translation missing --]]
-		["ArcaneResist"] = "^%+?# Arcane Resistance$",
-		--[[Translation missing --]]
-		["ArcaneSpellDamage"] = "^%+# Arcane Spell Damage$",
-		--[[Translation missing --]]
+		["Ap2"] = "^Equipaggia: %+# Potenza d'Attacco%.$",
+		["ArcaneResist"] = "^%+?# Resistenza Arcana$",
+		["ArcaneSpellDamage"] = "^%+# Danno Magico Arcano$",
 		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",
 		["Armor"] = "^%+?# [Aa]rmatura$",
 		["Armor2"] = "UNUSED",
@@ -399,8 +389,8 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
 		["NormalizationEnchant"] = "^Incantato: (.*)$",
 		["Parry"] = "^%+?# [Ii]ndice di [Pp]arata$",
-		["Parry2"] = "UNUSED",
-		["ParryPercent"] = "UNUSED",
+		["Parry2"] = "^UNUSED$",
+		["ParryPercent"] = "^UNUSED$",
 		["Plate"] = "^Piastre$",
 		["Polearm"] = "^Arma ad asta$",
 		["PvPPower"] = "^%+?# Potenza PvP$",
@@ -491,7 +481,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["CompareSpecialEffects"] = "Effetti speciali",
 		["CompareSwap"] = "‹ Scambia ›",
 		["CompareSwapTooltip"] = "Scambia l'oggetto a sinistra con l'oggetto a destra.",
-		["CompareTab"] = "Compara",
+		["CompareTab"] = "Confronta",
 		["CompareVersus"] = "—vs.—",
 		["CompareWelcomeRight"] = [=[Quindi trascina un oggetto in questo riquadro.
 
@@ -523,7 +513,7 @@ Quando ricevi ricompense da una missione o bottino da una spedizione che può es
 
 |cff8ec3e6Prova queste funzionalità una volta che avrai imparato le basi:|r
 
- • Compara le statistiche di due oggetti usando la sezione Compara di Pawn.
+ • Confronta le statistiche di due oggetti usando la sezione Compara di Pawn.
  • Fai tasto destro su di un link ad un oggetto per vedere come viene paragonato al tuo attuale oggetto.
  • Nella scheda Formula, passa a modalità Manuale per mostrare suggerimenti per più di una specializzazione alla volta.
  • Usa il simulatore Ask Mr. Robot e costruisci una formula personalizzata per il tuo personaggio per ottenere suggerimenti più specifici.]=],
@@ -594,10 +584,8 @@ Ogni oggetto in World of Warcraft ha un numero ID associato ad esso. Questa info
 		["OptionsResetUpgradesTooltip"] = [=[Pawn dimenticherà ciò che sa sui migliori oggetti che tu abbia mai equipaggiato, e scansionerà nuovamente il tuo equipaggiamento per fornire informazioni maggiormente aggiornate in futuro.
 
 Usa questa funzionalità se pensi che Pawn stia fornendo degli scarsi suggerimenti di miglioramento come risultato di un oggetto che hai venduto, distrutto o che non usi più. Questo avrà effetto su tutti i tuoi personaggi che usano Pawn.]=],
-		--[[Translation missing --]]
-		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
-		--[[Translation missing --]]
-		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
+		["OptionsShowItemLevelUpgrades"] = "Mostra miglioramenti del livello dell'oggetto",
+		["OptionsShowItemLevelUpgradesTooltip"] = "In aggiunta ai normali miglioramenti, Pawn mostrerà gli oggetti che hanno un livello dell'oggetto più alto di quello precedentemente equipaggiato.",
 		["OptionsShowRelicUpgrades"] = "Mostra i miglioramenti delle reliquie",
 		["OptionsShowRelicUpgradesTooltip"] = "Pawn ti mostrerà quando una reliquia aumenta il livello dell'oggetto di una delle tue armi artefatto. (Funziona diversamente dalle altre funzionalità di miglioramento, visto che è basato sul livello dell'oggetto e non sulle caratteristiche)",
 		["OptionsSocketingAdvisor"] = "Mostra l'avviso per gli incavi",
@@ -642,7 +630,7 @@ Se disattivata, equipaggiando un'arma a 2 mani impedirà a Pawn di mostrare i mi
 		["ScaleAutoOff2"] = "Lasciami gestire le formule.",
 		["ScaleAutoOffTooltip"] = "Pawn ti lascierà scegliere manualmente quale formula usare per i suoi calcoli, permettendoti di abilitare più di una formula alla volta, aggiungere formule custom, e molto altro.",
 		["ScaleAutoOn"] = "Automatico",
-		["ScaleAutoOn2"] = "Mostra solo la mia specializzazione corrente.",
+		["ScaleAutoOn2"] = "Mostra solo la spec corrente.",
 		["ScaleAutoOnTooltip"] = "Pawn mostrerà automaticamente la tua specializzazione corrente nel dialogo degli oggetti, e la userà per consigliare e suggerire miglioramenti.",
 		["ScaleAutoWelcome"] = [=[Pawn mostrerà suggerimenti per la tua specializzazione corrente.
 
@@ -669,7 +657,7 @@ Questo comando non può essere annullato.]=],
 		["ScaleSelectorHeader"] = "Seleziona una formula:",
 		["ScaleSelectorShowingSuggestionsFor"] = "Mostro suggerimenti per",
 		["ScaleSelectorShowScale"] = "Mostra la formula nei tooltip",
-		["ScaleSelectorShowScaleTooltip"] = [=[Quando questa opzione è attivata, i valori per questa formula verranno mostrati nei tooltip degli oggetti per questo personaggio. Ogni formula essere mostrata per uno dei tuoi personaggi, diversi personaggi o nessun personaggio.
+		["ScaleSelectorShowScaleTooltip"] = [=[Abilita questa opzione per mostrare i valori di questa formula nei tooltip degli oggetti e far sì che Pawn suggerisca quali sono dei miglioramenti. Puoi avere più di una formula abilitata per ogni personaggio.
 
 Scorciatoia: Shift+click su una formula]=],
 		["ScaleShareHeader"] = "Condividi le tue formule",
@@ -687,7 +675,7 @@ Scorciatoia: Shift+click su una formula]=],
 		["ValuesFollowSpecialization"] = "Mostra solo i miglioramenti per il mio miglior tipo di armatura dopo il livello %d",
 		["ValuesFollowSpecializationTooltip"] = "Abilita questa opzione per nascondere i miglioramenti dell'armatura in cui la tua classe non è specializzata dopo il livello %d. Per esempio, al livello %d un paladino sacro impara Specializzazione: Armature a Piastre, che aumenta il proprio intelletto del 5%% quando indossa solo armature in piastre. Quando questa opzione è selezionata Pawn non considererà mai stoffa, pelle o maglia come miglioramenti per paladini sacri di livello %d+.",
 		["ValuesHeader"] = "Pesi delle caratteristice per %s",
-		["ValuesIgnoreItemType"] = "Gli oggetti con questa sono inutilizzabili",
+		["ValuesIgnoreItemType"] = "Questi oggetti non sono utilizzabili",
 		["ValuesIgnoreStat"] = "Gli oggetti con questa sono inutilizzabili",
 		["ValuesIgnoreStatTooltip"] = "Abilita questa opzione per far in modo che ogni oggetto con questa statistica non ottenga valore per questa formula. Per esempio, gli sciamani non possono indossare piastre, quindi una formula per uno sciamano può impostare piastre come inutilizzabile così che quelle armature non ottengano valore per quella formula.",
 		["ValuesNormalize"] = "Normalizza valori (come Wowhead)",
