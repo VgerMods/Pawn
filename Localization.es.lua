@@ -289,10 +289,10 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["ArcaneSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos Arcanos%.$",
 		["Armor"] = "^%+?# p%. de armadura$",
 		["Armor2"] = "^UNUSED$",
-		["Avoidance"] = "^%+# elusión$",
+		["Avoidance"] = "^%+# eludir$",
 		["Axe"] = "^Hacha$",
 		["BagSlots"] = "^%d+ casillas .+$",
-		["Block"] = "^%+?# bloqueo$",
+		["Block"] = "^%+?# de bloqueo$",
 		["BlockPercent"] = "^Equipar: Aumenta un #%% tu probabilidad de bloquear ataques con un escudo%.$",
 		["BlockValue"] = "^Equipar: Aumenta el valor de bloqueo de tu escudo # p%.$",
 		["Bow"] = "^Arco$",
@@ -338,7 +338,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Gun"] = "^Arma de fuego$",
 		["Haste"] = "^%+?# celeridad$",
 		["Haste2"] = "^UNUSED$",
-		["HaventCollectedAppearance"] = "^Aun no has recogido este aspecto$",
+		["HaventCollectedAppearance"] = "^No has conseguido esta apariencia%.$",
 		["Healing"] = "^%+# de hechizos de sanación$",
 		["Healing2"] = "^Equipar: Aumenta hasta # p%. la sanación de los hechizos y efectos%.$",
 		["HeirloomLevelRange"] = "^Requiere un nivel entre %d+ y (%d+)",
@@ -751,12 +751,13 @@ if GetLocale() == "esES" then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 
+	PawnLocal.TooltipParsing.Avoidance = "^%+# Evasión$"
+	PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	PawnLocal.TooltipParsing.Leech = "^%+# Parasitar$"
 
 	-- Special case: wands actually use different text on live versus classic.
 	-- So, patch things up here.
 	if VgerCore.IsClassic then
-		PawnLocal.ThousandsSeparator = "NBSP"
 
 		local TooltipParsing_Classic =
 		{
