@@ -8,7 +8,7 @@
 
 local ScaleProviderName = "MrRobot"
 
-PawnMrRobotLastUpdatedVersion = 2.0413
+PawnMrRobotLastUpdatedVersion = 2.0415
 
 
 function PawnMrRobotScaleProvider_AddScales()
@@ -67,7 +67,7 @@ PawnAddPluginScaleFromTemplate(
 	ScaleProviderName,
 	11, -- Druid
 	3, -- Guardian
-	{ Agility=32.93, Armor=126.38, Avoidance=1.64, CritRating=15.92, HasteRating=0.01, Indestructible=0.01, Leech=15.48, MasteryRating=26.07, MaxDamage=0.01, MinDamage=0.01, MovementSpeed=0.01, Stamina=68.06, Versatility=30.52 }
+	{ Agility=82.31, Armor=201.28, Avoidance=0.02, CritRating=23.85, HasteRating=34.94, Indestructible=0.01, Leech=34.26, MasteryRating=46.02, MaxDamage=32.97, MinDamage=32.97, MovementSpeed=0.01, Stamina=130.01, Versatility=56.79 }
 )
 
 PawnAddPluginScaleFromTemplate(

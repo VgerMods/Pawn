@@ -301,6 +301,10 @@ and Pawn.</p>
 
 <h2>Updates</h2>
 <h3>Version 2.4.15</h3>
+<ul>
+	<li>Shadowlands: Updated stat weights for Guardian Druid based on a new 
+	simulation from Ask Mr. Robot.</li>
+</ul>
 <h3>Version 2.4.14</h3>
 <ul>
 	<li>Spanish, Shadowlands only: Fixed a problem where off-hand frill items 
@@ -399,12 +403,12 @@ and Pawn.</p>
 		combat, so before this change, Pawn's bag arrow integration caused 
 		errors while performing certain actions in combat, such as swapping 
 		weapons from the character sheet. Disabling support for custom bag 
-		addons is unfortunately the only way I can work around this.<li>To work around this, custom bag addons that call 
+		addons is unfortunately the only way I can work around this.</li>
+		<li>To work around this, custom bag addons that call 
 			IsContainerItemAnUpgrade directly can use 
 			PawnIsContainerItemAnUpgrade when available instead, falling back to 
 			IsContainerItemAnUpgrade if it's nil. Then Pawn will control the bag 
 		arrows like it did before.</li>
-		</li>
 	</ul>
 	</li>
 	<li>Pawn will now show two-handed weapons as potential upgrades for 
