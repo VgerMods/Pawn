@@ -265,7 +265,7 @@ local PawnGemData16 =
 
 PawnGemQualityLevels =
 {
-	{ 190, PawnGemData16 }, -- Second tier of crafted Shadowlands legendaries
+	{ 175, PawnGemData16 }, -- Rank 1 crafted Shadowlands legendaries (177 is rank 4 covenant armor)
 	{ 144, PawnGemData12 }, -- Mythic Ny'alotha is 140
 	{ 115, PawnGemData7 }, -- Azshara's Eternal Palace heroic
 	{ 105, PawnGemData6 },
@@ -274,4 +274,4 @@ PawnGemQualityLevels =
 	{ 0, PawnGemData1 },
 }
 
-PawnMinimumItemLevelToConsiderGems = 100 -- Sockets on items below this ilvl are ignored by default
+PawnMinimumItemLevelToConsiderGems = 144 -- Sockets on items below this ilvl are ignored by default
