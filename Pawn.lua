@@ -380,6 +380,12 @@ function PawnInitialize()
 		LinkWrangler.RegisterCallback("Pawn", PawnLinkWranglerOnTooltip, "refreshcomp")
 	end
 
+    -- ArkInventory integration -- register the pawn upgrade rule
+    if ArkInventoryRules then
+        local arkInventoryModule = ArkInventoryRules:NewModule("Pawn")
+        ArkInventoryRules.Register( arkInventoryModule, "PAWNUPGRADE", ArkInventoryPawnUpgradeRule)
+    end
+
 	-- In-bag upgrade icons
 	if ContainerFrame_UpdateItemUpgradeIcons then
 
@@ -778,6 +784,25 @@ function PawnLinkWranglerOnTooltip(Tooltip, ItemLink)
 	if not Tooltip then return end
 	PawnUpdateTooltip(Tooltip:GetName(), "SetHyperlink", ItemLink)
 	PawnAttachIconToTooltip(Tooltip, false, ItemLink)
+end
+
+-- ArkInventory Rule
+function ArkInventoryPawnUpgradeRule( ... )
+    local fn = "PAWNUPGRADE" -- Rule name for errors
+    if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
+
+    -- Verify that the item string information is loaded and not nil and that it is a valid item before continuing
+    if not ArkInventoryRules.Object.h or ArkInventoryRules.Object.class ~= "item" then return false end
+
+    -- Parse the incoming item and retrieve the data
+    local ac = select( '#', ... )
+    local info = ArkInventory.ObjectInfoArray( ArkInventoryRules.Object.h )
+
+    -- Extract the itemLink from the ArkInventory info object
+    local itemLink = info.info[2]
+
+    -- Use the same logic for determining whether or not an arrow should be shown, for consistency
+    return PawnShouldItemLinkHaveUpgradeArrow(itemLink, true)
 end
 
 -- If debugging is enabled, show a message; otherwise, do nothing.
