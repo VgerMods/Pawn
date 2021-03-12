@@ -279,12 +279,12 @@ and Pawn.</p>
 	<li>tdItemTip</li>
 	<li>tekKompare</li>
 </ul>
-<h3>ArkInventory Rule</h3>
-<p>When you have ArkInventory, ArkInventoryRules, and Pawn enabled, you can use the <code>pawnupgrade()</code> rule in
+<h4>ArkInventory</h4>
+<p>When you have ArkInventory, ArkInventoryRules, <i>and</i> Pawn enabled, you can use the <code>pawnupgrade()</code> rule in
 ArkInventory to run a Pawn comparison on items in your inventory for sorting. This will return true if the item is
 an upgrade and false if it is indeterminate or not an upgrade. To determine if something is not an upgrade, use
 <code>pawnnotupgrade()</code>. This rule will return true if the item is definitely not an upgrade, and false if it is
-indeterminate or an upgrade. This can be used for auto-sell rules, such as <code>bind(3) and pawnnotupgrade()</code>.
+indeterminate or an upgrade. This can be used for auto-sell rules, such as <code>bind(3) and pawnnotupgrade()</code>.</p>
 <h3><span style="text-decoration: underline;">In</span>compatible addons</h3>
 <ul>
 	<li>FreeUI<ul>
@@ -308,6 +308,17 @@ indeterminate or an upgrade. This can be used for auto-sell rules, such as <code
 
 <h2>Updates</h2>
 <h3>Version 2.4.17</h3>
+<ul>
+	<li>Added ArkInventory integration, contributed by a Pawn fan named Matthew. 
+	(Well, I don't know if he <i>said</i> he's a fan. I'm assuming here.)<ul>
+		<li>When you have ArkInventory and ArkInventoryRules enabled, you can use the <code>pawnupgrade()</code> rule in
+ArkInventory to run a Pawn comparison on items in your inventory for sorting. This will return true if the item is
+an upgrade and false if it is indeterminate or not an upgrade. To determine if something is not an upgrade, use
+<code>pawnnotupgrade()</code>. This rule will return true if the item is definitely not an upgrade, and false if it is
+indeterminate or an upgrade. This can be used for auto-sell rules, such as <code>bind(3) and pawnnotupgrade()</code>.</li>
+	</ul>
+	</li>
+</ul>
 <h3>Version 2.4.16</h3>
 <ul>
 	<li>Shadowlands: Pawn will now suggest the +16 stat jewel clusters instead 
