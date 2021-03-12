@@ -380,6 +380,13 @@ function PawnInitialize()
 		LinkWrangler.RegisterCallback("Pawn", PawnLinkWranglerOnTooltip, "refreshcomp")
 	end
 
+    -- ArkInventory integration -- register the pawn upgrade rule
+    if ArkInventoryRules then
+        local arkInventoryModule = ArkInventoryRules:NewModule("Pawn")
+        ArkInventoryRules.Register( arkInventoryModule, "PAWNUPGRADE", ArkInventoryPawnUpgradeRule)
+        ArkInventoryRules.Register( arkInventoryModule, "PAWNNOTUPGRADE", ArkInventoryPawnNotUpgradeRule)
+    end
+
 	-- In-bag upgrade icons
 	if ContainerFrame_UpdateItemUpgradeIcons then
 
@@ -778,6 +785,93 @@ function PawnLinkWranglerOnTooltip(Tooltip, ItemLink)
 	if not Tooltip then return end
 	PawnUpdateTooltip(Tooltip:GetName(), "SetHyperlink", ItemLink)
 	PawnAttachIconToTooltip(Tooltip, false, ItemLink)
+end
+
+-- ArkInventory Rules
+function GetPawnStatusForArkInventoryRule(...)
+    if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
+
+    -- Verify that the item string information is loaded and not nil and that it is a valid item before continuing
+    if not ArkInventoryRules.Object.h or ArkInventoryRules.Object.class ~= "item" then return false end
+
+    -- Parse the incoming item and retrieve the data
+    local info = ArkInventory.ObjectInfoArray( ArkInventoryRules.Object.h )
+
+    -- Extract the itemLink from the ArkInventory info object
+    local itemLink = info.info[2]
+
+    -- Use the same logic for determining whether or not an arrow should be shown, for consistency
+    return PawnIsItemDefinitivelyAnUpgrade(itemLink, true)
+end
+
+function ArkInventoryPawnUpgradeRule( ... )
+    local fn = "PAWNUPGRADE" -- Rule name for errors
+
+    -- for pawnupgrade(), we only want to return true if Pawn is sure that it is an upgrade.
+    -- this means for nil or false, we return false
+    return GetPawnStatusForArkInventoryRule( ... ) == true
+end
+
+function ArkInventoryPawnNotUpgradeRule( ... )
+    local fn = "PAWNNOTUPGRADE" -- Rule name for errors
+
+    -- for pawnnotupgrade(), we only want to return true if Pawn is sure that it is not an upgrade
+    -- this means for nil or true, we return false
+    return GetPawnStatusForArkInventoryRule( ... ) == false
+end
+
+-- This is largely the same as getting the item data for a link and then calling PawnIsItemAnUpgrade on it,
+-- but this one also works with relics, can support minimum level requirements, and so on.  This function decidedly
+-- does not offer an opinion on items that are not gear or do not have stats. This means a true is a definitive upgrade
+-- and a false is definitively not an upgrade. Otherwise, this function returns nil
+-- Returns:
+--   true: This item is indeed an upgrade for something.
+--   false: This item is not an upgrade.
+--   nil: We're not sure or don't care because it isn't gear.
+function PawnIsItemDefinitivelyAnUpgrade(ItemLink, CheckLevel)
+    if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
+
+    --if PawnOptions.DebugBagArrows then VgerCore.Message("Checking upgrade information for " .. tostring(ItemLink)) end
+
+    local _, _, _, _, MinLevel = GetItemInfo(ItemLink)
+
+    -- if it doesn't have a minlevel, we don't care because it isn't gear
+    if MinLevel == nil then return nil end
+
+    -- if the gear minlevel is higher than the player, we don't care to determine if it is an upgrade, since they can't use it yet
+    -- but may not want to mark it as not an upgrade
+    if CheckLevel and UnitLevel("player") < MinLevel then return nil end
+    if PawnCanItemHaveStats(ItemLink) then
+        local Item = PawnGetItemData(ItemLink)
+        -- if there are no stats, we don't know what's happening, so we won't make a judgment
+        if Item == nil or Item.Link == nil then return nil end
+        if PawnOptions.DebugBagArrows then
+            local UpgradeInfo, ItemLevelIncrease, BestItemFor, SecondBestItemFor, NeedsEnhancements = PawnIsItemAnUpgrade(Item)
+            if UpgradeInfo ~= nil then
+                if PawnOptions.DebugBagArrows then VgerCore.Message("Found upgrade for " .. ItemLink) end
+                local i
+                for i = 1, #UpgradeInfo do
+                    local u = UpgradeInfo[i]
+                    if PawnOptions.DebugBagArrows then VgerCore.Message("  " .. u.LocalizedScaleName .. ": +" .. u.PercentUpgrade .. "% vs. " .. tostring(u.ExistingItemLink)) end
+                end
+            end
+
+            -- if upgrade info was returned, it's an upgrade. if not, it isn't
+            return UpgradeInfo ~= nil
+        else
+            local UpgradeInfo, ItemLevelIncrease = PawnIsItemAnUpgrade(Item)
+
+            -- if upgrade info was returned, it's an upgrade OR if there is an item level increase, it's an upgrade
+            return UpgradeInfo ~= nil or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease ~= nil)
+        end
+    elseif PawnCommon.ShowRelicUpgrades and PawnCanItemBeArtifactUpgrade(ItemLink) then
+
+        -- if there is relic upgrade information, it's an upgrade
+        return PawnGetRelicUpgradeInfo(ItemLink) ~= nil
+    else
+        -- if the item can't have stats, it isn't gear (probably), so we don't care.
+        return nil
+    end
 end
 
 -- If debugging is enabled, show a message; otherwise, do nothing.
