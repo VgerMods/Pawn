@@ -50,7 +50,7 @@ PawnLocal =
 	["RenameScaleEnterName"] = "Введите новое имя шкалы %s:",
 	["SocketBonusValueCalculationMessage"] = "   -- Гнездо оценивается как: %g",
 	["StatNameText"] = "1 |cffffffff%s|r цениться:",
-	["ThousandsSeparator"] = " ",
+	["ThousandsSeparator"] = "",
 	["TooltipBestAnnotation"] = "%s  |cff8ec3e6(лучшая)|r",
 	["TooltipBestAnnotationSimple"] = "%s  ваша лучшая",
 	["TooltipBigUpgradeAnnotation"] = "%s  |TInterface\\AddOns\\Pawn\\Textures\\UpgradeArrow:0|t|cff00ff00 улучшение%s|r",
@@ -708,10 +708,6 @@ end
 
 if GetLocale() == "ruRU" then
 	PawnUseThisLocalization()
-
-	if not VgerCore.IsClassic then
-		PawnLocal.ThousandsSeparator = ""
-	end
 end
 
 -- After using this localization or deciding that we don't need it, remove it from memory.
