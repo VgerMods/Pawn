@@ -1,6 +1,6 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2021 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2021 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 --
 -- Ask Mr. Robot scales
@@ -291,9 +291,9 @@ end -- PawnMrRobotScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if not VgerCore.IsClassic then
+if VgerCore.IsShadowlands then
 	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.AskMrRobotProvider, PawnMrRobotScaleProvider_AddScales)
 else
-	-- These scales aren't useful on WoW Classic, so skip them.
+	-- These scales aren't useful on WoW Classic versions, so skip them.
 	PawnMrRobotScaleProvider_AddScales = nil
 end

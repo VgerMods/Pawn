@@ -1,9 +1,9 @@
 ﻿-- VgerCore  by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2021 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2021 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.12 -- IsShadowlands
-local VgerCoreThisVersion = 1.12
+-- Version 1.0.13 -- IsBurningCrusade, SpecsExist, etc.
+local VgerCoreThisVersion = 1.13
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -20,7 +20,16 @@ VgerCore.Version = VgerCoreThisVersion
 
 -- What version is this?
 VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC)
+VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC)
 VgerCore.IsShadowlands = (select(4, GetBuildInfo()) >= 90000)
+
+VgerCore.DeathKnightsExist = VgerCore.IsShadowlands
+VgerCore.MonksExist = VgerCore.IsShadowlands
+VgerCore.DemonHuntersExist = VgerCore.IsShadowlands
+VgerCore.SpecsExist = VgerCore.IsShadowlands
+VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsBurningCrusade
+VgerCore.ArtifactsExist = VgerCore.IsShadowlands
+VgerCore.EquipmentSetsExist = VgerCore.IsShadowlands
 
 -- Common colors
 VgerCore.Color = {}

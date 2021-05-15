@@ -1,6 +1,6 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2021 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2021 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
 -- 
@@ -21,9 +21,14 @@ PawnSingleStatMultiplier = "_SingleMultiplier"
 PawnMultipleStatsFixed = "_MultipleFixed"
 PawnMultipleStatsExtract = "_MultipleExtract"
 
-local IsClassic = VgerCore.IsClassic
+local IsShadowlands = VgerCore.IsShadowlands
 
-PawnArmorSpecializationLevel = 27 -- https://shadowlands.wowhead.com/spell=86538/mail-specialization
+if VgerCore.IsShadowlands then
+	PawnArmorSpecializationLevel = 27 -- https://wowhead.com/spell=86538/mail-specialization
+else
+	-- Armor specializations were added in Cataclysm.
+	PawnArmorSpecializationLevel = 0
+end
 
 ------------------------------------------------------------
 -- Localization
@@ -42,8 +47,8 @@ end
 
 -- Turns a game constant into a regular expression but without the ^ and $ on the ends.
 function PawnGameConstantUnwrapped(Text)
-	-- Some of these constants don't exist on Classic, so skip them: but not on live, where we would want this to error out.
-	if Text == nil and IsClassic then return "^UNUSED$" end
+	-- Some of these constants don't exist on Classic versions, so skip them: but not on live, where we would want this to error out.
+	if Text == nil and not IsShadowlands then return "^UNUSED$" end
 
 	local Ret1 = gsub(Text, "%%", "%%%%")
 	return gsub(Ret1, "%-", "%%-")

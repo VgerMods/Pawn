@@ -1,6 +1,6 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2021 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2021 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 --
 -- User interface code
@@ -570,7 +570,7 @@ function PawnUIFrame_DeleteScaleButton_OnOK(ConfirmationText)
 end
 
 function PawnUI_ScalesTab_SelectFrame()
-	if VgerCore.IsClassic then
+	if not VgerCore.SpecsExist then
 		PawnUIFrame_AutoSelectScalesOnButton:Hide()
 		PawnUIFrame_AutoSelectScalesOffButton.SelectedTexture:Show()
 		PawnUIScalesTab_AutoFrame:Hide()
@@ -789,7 +789,7 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 		else
 			PawnUIFrame_NoUpgradesCheck:Show()
 		end
-		if (not VgerCore.IsClassic) and (ThisStat == "IsCloth" or ThisStat == "IsLeather" or ThisStat == "IsMail" or ThisStat == "IsPlate") then
+		if (PawnArmorSpecializationLevel > 0) and (ThisStat == "IsCloth" or ThisStat == "IsLeather" or ThisStat == "IsMail" or ThisStat == "IsPlate") then
 			PawnUIFrame_FollowSpecializationCheck:Show()
 		else
 			PawnUIFrame_FollowSpecializationCheck:Hide()
@@ -1401,7 +1401,8 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 
 	-- Hack for WoW Classic: after a moment, refresh the whole thing, because we might have gotten
 	-- incomplete data from the tooltip the first time.
-	if not IsAutomatedRefresh and VgerCore.IsClassic then
+	-- TODO: See if this is still necessary for Burning Crusade Classic.
+	if not IsAutomatedRefresh and (VgerCore.IsClassic or VgerCore.IsBurningCrusade) then
 		local AutomatedRefresh = function()
 			if PawnUIComparisonItems[1] then PawnUIComparisonItems[1] = PawnGetItemData(PawnUIComparisonItems[1].Link) end
 			if PawnUIComparisonItems[2] then PawnUIComparisonItems[2] = PawnGetItemData(PawnUIComparisonItems[2].Link) end
@@ -1823,7 +1824,7 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_UpgradeTrackingList_UpdateSelection()
 
 	-- Advisor options
-	if VgerCore.IsClassic then
+	if not VgerCore.IsShadowlands then
 		-- The bag upgrade advisor isn't supported on Classic.
 		PawnUIFrame_ShowBagUpgradeAdvisorCheck:Hide()
 	else
@@ -1966,7 +1967,7 @@ function PawnUIAboutTabPage_OnShow()
 	if Version then 
 		PawnUIFrame_AboutVersionLabel:SetText(format(PawnUIFrame_AboutVersionLabel_Text, Version))
 	end
-	if VgerCore.IsClassic then
+	if not VgerCore.IsShadowlands then
 		-- WoW Classic doesn't use the Mr. Robot scales, so hide that logo and information.
 		PawnUIFrame_MrRobotLogo:Hide()
 		PawnUIFrame_MrRobotLabel:SetPoint("TOPLEFT", 25, -210)
@@ -2429,12 +2430,14 @@ function PawnUI_EnsureLoaded()
 		PawnUIOpenedYet = true
 		PawnUIFrame_ScaleSelector_Refresh()
 		PawnUIFrame_ShowScaleCheck_Label:SetText(format(PawnUIFrame_ShowScaleCheck_Label_Text, UnitName("player")))
-		if VgerCore.IsClassic then
-			-- WoW Classic doesn't have gems or specs.
+		if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+			-- WoW Classic doesn't have gems.
+			-- TODO: Show this tab once gems are working on Burning Crusade Classic.
 			PawnUIFrameTab4:Hide()
 			PawnUIFrame_IgnoreGemsWhileLevelingCheck:Hide()
 			PawnUIFrame_ShowSocketingAdvisorCheck:Hide()
-
+		end
+		if not VgerCore.HasSpecs then
 			PawnUIFrame_ShowSpecIconsCheck:Hide()
 		end
 		if not PawnCommon then

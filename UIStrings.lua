@@ -1,6 +1,6 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2021 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2021 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
 -- 
@@ -17,12 +17,13 @@ local L
 -- For conciseness
 L = PawnLocal.Stats
 
-PawnStatLiveOnly = 1
-PawnStatClassicOnly = 2
+local PawnStatClassic = 1
+local PawnStatBurningCrusade = 2
+local PawnStatLive = 999
 
-PawnStatNormal = 1
-PawnStatUnignorable = 2
-PawnStatItemType = 3
+local PawnStatNormal = 1
+local PawnStatUnignorable = 2
+local PawnStatItemType = 3
 
 -- The master list of all stats that Pawn supports.
 -- First column is the friendly translated name of the stat.
@@ -30,7 +31,7 @@ PawnStatItemType = 3
 -- Third column is the description of the stat; if not present, then it won't show up on the Values tab.
 -- Fourth column is true if the stat can't be ignored.
 -- Fifth column is an optional chunk of text instead of the "1 ___ is worth:" prompt.
--- Sixth column is optional, and determines whether the stat is shown for live only, classic only, or both.
+-- Sixth column is optional, and determines which versions of WoW the stat shows up in.
 -- If only a name is present, the row becomes an uneditable header in the UI and is otherwise ignored.
 local PawnStatsUnfiltered =
 {
@@ -39,46 +40,47 @@ local PawnStatsUnfiltered =
 	{SPELL_STAT2_NAME, "Agility", L.AgilityInfo, PawnStatUnignorable},
 	{SPELL_STAT4_NAME, "Intellect", L.IntellectInfo, PawnStatUnignorable},
 	{SPELL_STAT3_NAME, "Stamina", L.StaminaInfo, PawnStatUnignorable},
-	{SPELL_STAT5_NAME, "Spirit", L.SpiritInfo, PawnStatUnignorable, nil, PawnStatClassicOnly},
+	{SPELL_STAT5_NAME, "Spirit", L.SpiritInfo, PawnStatUnignorable, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{ARMOR, "Armor", L.ArmorInfo, PawnStatUnignorable},
 
 	{STAT_CATEGORY_ENHANCEMENTS},
-	{ITEM_MOD_HIT_RATING_SHORT, "HitRating", L.HitInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_HIT_SPELL_RATING_SHORT, "SpellHitRating", L.SpellHitInfo, PawnStatNormal, nil, PawnStatClassicOnly},
+	{ITEM_MOD_HIT_RATING_SHORT, "HitRating", L.HitInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_HIT_SPELL_RATING_SHORT, "SpellHitRating", L.SpellHitInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{L.Crit, "CritRating", L.CritInfo},
-	{ITEM_MOD_CRIT_SPELL_RATING_SHORT, "SpellCritRating", L.SpellCritInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{STAT_HASTE, "HasteRating", L.HasteInfo, PawnStatNormal, nil, PawnStatLiveOnly},
-	{STAT_MASTERY, "MasteryRating", L.MasteryInfo, PawnStatNormal, nil, PawnStatLiveOnly},
-	{STAT_VERSATILITY, "Versatility", L.VersatilityInfo, PawnStatNormal, nil, PawnStatLiveOnly},
-	{ITEM_MOD_ATTACK_POWER_SHORT, "Ap", L.ApInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_RANGED_ATTACK_POWER_SHORT, "Rap", L.RapInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_FERAL_ATTACK_POWER_SHORT, "FeralAp", L.FeralApInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.SpellDamage, "SpellDamage", L.SpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.Healing, "Healing", L.HealingInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_DEFENSE_SKILL_RATING_SHORT, "DefenseRating", L.DefenseInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_DODGE_RATING_SHORT, "DodgeRating", L.DodgeInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_PARRY_RATING_SHORT , "ParryRating", L.ParryInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_BLOCK_RATING_SHORT, "BlockRating", L.BlockRatingInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_BLOCK_VALUE_SHORT, "BlockValue", L.BlockValueInfo, PawnStatNormal, nil, PawnStatClassicOnly},
+	{ITEM_MOD_CRIT_SPELL_RATING_SHORT, "SpellCritRating", L.SpellCritInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{STAT_HASTE, "HasteRating", L.HasteInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true, PawnStatLive = true }},
+	{STAT_MASTERY, "MasteryRating", L.MasteryInfo, PawnStatNormal, nil, { PawnStatLive = true }},
+	{STAT_VERSATILITY, "Versatility", L.VersatilityInfo, PawnStatNormal, nil, { PawnStatLive = true }},
+	{ITEM_MOD_ATTACK_POWER_SHORT, "Ap", L.ApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_RANGED_ATTACK_POWER_SHORT, "Rap", L.RapInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_FERAL_ATTACK_POWER_SHORT, "FeralAp", L.FeralApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.SpellDamage, "SpellDamage", L.SpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.Healing, "Healing", L.HealingInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_DEFENSE_SKILL_RATING_SHORT, "DefenseRating", L.DefenseInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_DODGE_RATING_SHORT, "DodgeRating", L.DodgeInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_PARRY_RATING_SHORT , "ParryRating", L.ParryInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_BLOCK_RATING_SHORT, "BlockRating", L.BlockRatingInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_BLOCK_VALUE_SHORT, "BlockValue", L.BlockValueInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	-- TODO: Add Resilience and Expertise and other Burning Crusade stats
 
 	{L.MinorStats},
-	{STAT_MOVEMENT_SPEED, "MovementSpeed", L.MovementSpeedInfo, PawnStatNormal, nil, PawnStatLiveOnly},
-	{STAT_AVOIDANCE, "Avoidance", L.AvoidanceInfo, PawnStatNormal, nil, PawnStatLiveOnly},
-	{STAT_LIFESTEAL, "Leech", L.LeechInfo, PawnStatNormal, nil, PawnStatLiveOnly},
-	{STAT_STURDINESS, "Indestructible", L.IndestructibleInfo, PawnStatNormal, L.IndestructibleIs, PawnStatLiveOnly},
-	{ITEM_MOD_POWER_REGEN0_SHORT, "Mp5", L.Mp5Info, PawnStatNormal, nil, PawnStatClassicOnly},
-	{ITEM_MOD_HEALTH_REGEN_SHORT, "Hp5", L.Hp5Info, PawnStatNormal, nil, PawnStatClassicOnly},
-	{RESISTANCE2_NAME, "FireResist", L.FireResistInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{RESISTANCE3_NAME, "NatureResist", L.NatureResistInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{RESISTANCE4_NAME, "FrostResist", L.FrostResistInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{RESISTANCE5_NAME, "ShadowResist", L.ShadowResistInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{RESISTANCE6_NAME, "ArcaneResist", L.ArcaneResistInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.FireSpellDamage, "FireSpellDamage", L.FireSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.ShadowSpellDamage, "ShadowSpellDamage", L.ShadowSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.NatureSpellDamage, "NatureSpellDamage", L.NatureSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.ArcaneSpellDamage, "ArcaneSpellDamage", L.ArcaneSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.FrostSpellDamage, "FrostSpellDamage", L.FrostSpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
-	{L.HolySpellDamage, "HolySpellDamage", L.HolySpellDamageInfo, PawnStatNormal, nil, PawnStatClassicOnly},
+	{STAT_MOVEMENT_SPEED, "MovementSpeed", L.MovementSpeedInfo, PawnStatNormal, nil, { PawnStatLive = true }},
+	{STAT_AVOIDANCE, "Avoidance", L.AvoidanceInfo, PawnStatNormal, nil, { PawnStatLive = true }},
+	{STAT_LIFESTEAL, "Leech", L.LeechInfo, PawnStatNormal, nil, { PawnStatLive = true }},
+	{STAT_STURDINESS, "Indestructible", L.IndestructibleInfo, PawnStatNormal, L.IndestructibleIs, { PawnStatLive = true }},
+	{ITEM_MOD_POWER_REGEN0_SHORT, "Mp5", L.Mp5Info, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_HEALTH_REGEN_SHORT, "Hp5", L.Hp5Info, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{RESISTANCE2_NAME, "FireResist", L.FireResistInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{RESISTANCE3_NAME, "NatureResist", L.NatureResistInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{RESISTANCE4_NAME, "FrostResist", L.FrostResistInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{RESISTANCE5_NAME, "ShadowResist", L.ShadowResistInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{RESISTANCE6_NAME, "ArcaneResist", L.ArcaneResistInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.FireSpellDamage, "FireSpellDamage", L.FireSpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.ShadowSpellDamage, "ShadowSpellDamage", L.ShadowSpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.NatureSpellDamage, "NatureSpellDamage", L.NatureSpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.ArcaneSpellDamage, "ArcaneSpellDamage", L.ArcaneSpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.FrostSpellDamage, "FrostSpellDamage", L.FrostSpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{L.HolySpellDamage, "HolySpellDamage", L.HolySpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 
 	{L.WeaponStats},
 	{STAT_DPS_SHORT, "Dps", L.DpsInfo, PawnStatUnignorable},
@@ -106,7 +108,7 @@ local PawnStatsUnfiltered =
 	{L.WeaponType1HSword, "IsSword", L.WeaponType1HSwordInfo, PawnStatItemType},
 	{L.WeaponType2HSword, "Is2HSword", L.WeaponType2HSwordInfo, PawnStatItemType},
 	{L.WeaponTypeWand, "IsWand", L.WeaponTypeWandInfo, PawnStatItemType},
-	{L.WeaponTypeWarglaive, "IsWarglaive", L.WeaponTypeWarglaiveInfo, PawnStatItemType, nil, PawnStatLiveOnly},
+	{L.WeaponTypeWarglaive, "IsWarglaive", L.WeaponTypeWarglaiveInfo, PawnStatItemType, nil, { PawnStatLive = true }},
 	{L.WeaponTypeOffHand, "IsOffHand", L.WeaponTypeOffHandInfo, PawnStatItemType},
 	{L.WeaponTypeFrill, "IsFrill", L.WeaponTypeFrillInfo, PawnStatItemType},
 
@@ -142,13 +144,13 @@ local PawnStatsUnfiltered =
 
 -- Filter this list based on expansion level.
 local i, Stat
-local IsClassic = VgerCore.IsClassic
 PawnStats = {}
 
 for i, Stat in pairs(PawnStatsUnfiltered) do
 	if	(Stat[6] == nil) or
-		(Stat[6] == PawnStatClassicOnly and IsClassic) or
-		(Stat[6] == PawnStatLiveOnly and not IsClassic) then
+		(Stat[6].PawnStatClassic and VgerCore.IsClassic) or
+		(Stat[6].PawnStatBurningCrusade and VgerCore.IsBurningCrusade) or
+		(Stat[6].PawnStatLive and VgerCore.IsShadowlands) then
 		Stat[6] = nil
 		tinsert(PawnStats, Stat)
 	end

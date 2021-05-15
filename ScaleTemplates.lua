@@ -1,6 +1,6 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2021 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2021 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 --
 -- Scale templates
@@ -14,7 +14,7 @@
 function PawnFindScaleTemplate(ClassID, SpecID)
 	local _, Template
 	
-	if VgerCore.IsClassic then
+	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 		for _, Template in pairs(PawnScaleTemplatesClassic) do
 			if Template.ClassID == ClassID then return Template end
 		end
@@ -34,7 +34,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 	if NoStats then
 		ScaleValues = {}
 	else
-		if VgerCore.IsClassic then
+		if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 			ScaleValues = 
 			{
 				["Stamina"] = 0.01,
@@ -169,7 +169,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 		for _, StatName in pairs(Template.UnusableStats) do
 			ScaleValues[StatName] = PawnIgnoreStatValue
 
-			if VgerCore.IsClassic and StatName == "IsShield" then
+			if (VgerCore.IsClassic or VgerCore.IsBurningCrusade) and StatName == "IsShield" then
 				ScaleValues.BlockRating = nil
 				ScaleValues.BlockValue = nil
 			end
@@ -594,7 +594,7 @@ PawnNeverUsableStats =
 	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield" },
 }
 
-if VgerCore.IsClassic then
-	-- Rogues can't use axes in Classic.
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+	-- Rogues didn't learn to use axes until Wrath of the Lich King.
 	tinsert(PawnNeverUsableStats[4], "IsAxe")
 end

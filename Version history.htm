@@ -17,6 +17,176 @@
 	For recent version history, see the <a href="Readme.htm">Pawn readme</a>. 
 	(I got tired of the version history section of the <a href="Readme.htm">
 	readme</a> being longer than the rest of it, so I moved parts here.)</p>
+<h3>Version 2.4.18</h3>
+<ul>
+	<li>Russian WoW Classic: You should no longer see a warning about addon 
+	incompatibility when logging in.</li>
+</ul>
+<h3>Version 2.4.17</h3>
+<ul>
+	<li>Added ArkInventory integration, contributed by a Pawn fan named Matthew. 
+	(Well, I don't know if he <i>said</i> he's a fan. I'm assuming here.)<ul>
+		<li>When you have ArkInventory and ArkInventoryRules enabled, you can use the <code>pawnupgrade()</code> rule in
+ArkInventory to run a Pawn comparison on items in your inventory for sorting. This will return true if the item is
+an upgrade and false if it is indeterminate or not an upgrade. To determine if something is not an upgrade, use
+<code>pawnnotupgrade()</code>. This rule will return true if the item is definitely not an upgrade, and false if it is
+indeterminate or an upgrade. This can be used for auto-sell rules, such as <code>bind(3) and pawnnotupgrade()</code>.</li>
+	</ul>
+	</li>
+</ul>
+<h3>Version 2.4.16</h3>
+<ul>
+	<li>Shadowlands: Pawn will now suggest the +16 stat jewel clusters instead 
+	of +12 stat gems for items level 175 and higher.</li>
+</ul>
+<h3>Version 2.4.15</h3>
+<ul>
+	<li>Shadowlands: Updated stat weights for Guardian Druid based on a new 
+	simulation from Ask Mr. Robot.</li>
+</ul>
+<h3>Version 2.4.14</h3>
+<ul>
+	<li>Spanish, Shadowlands only: Fixed a problem where off-hand frill items 
+	were being misidentified as off-hand weapons, so they didn't show upgrades 
+	or values for casters. (This problem didn't apply to Classic or to other 
+	languages.)</li>
+	<li>Spanish, Spain only, Classic only: Fixed a problem where an error 
+	message appeared when logging in.</li>
+	<li>Spanish: Fixed detection of Avoidance and Block Value on some items in 
+	certain situations.</li>
+</ul>
+<h3>Version 2.4.13</h3>
+<ul>
+	<li>Shadowlands: I've included a new set of stat weights from Ask Mr. Robot 
+	yet again—the most notable changes will be for healers, who will see the 
+	value of mastery increased significantly.</li>
+	<li>Improved a few bits of the Italian translation.</li>
+</ul>
+<h3>Version 2.4.12</h3>
+<ul>
+	<li>Shadowlands: Pawn 2.4.11 included the wrong set of stat weights; this 
+	version includes the stat weights that were <i>intended</i> to come with 
+	2.4.11. Apologies for the error!</li>
+</ul>
+<h3>Version 2.4.11</h3>
+<ul>
+	<li>Shadowlands: Pawn now includes new default stat weights for all classes 
+	and specs from Ask Mr. Robot, optimized for typical characters in Mythic 
+	Keystone dungeons. These should give you much better gearing advice than the 
+	previous defaults, but remember that you'll always get the most accurate 
+	advice for your character if you import stat weights from your favorite 
+	simulator (like Ask Mr. Robot).</li>
+	<li>Pawn's "compare item left" and "compare item right" keybinds work 
+	with world quest item rewards once again.</li>
+</ul>
+<h3>Version 2.4.10</h3>
+<ul>
+	<li>Worked around a bug in WoW that was causing Pawn to show incorrect 
+	upgrade information for some Shadowlands quest rewards.</li>
+	<li>Fixed a bug where clicking links in chat and then right-clicking the 
+	window that appeared would open Pawn's Compare tab even if it was for 
+	something that wasn't an item, such as an achievement.</li>
+</ul>
+<h3>Version 2.4.9</h3>
+<ul>
+	<li>Added Pawn annotations for tooltips of item rewards in the Great Vault. 
+	(I think. Thanks Crazy Carl!)</li>
+</ul>
+<h3>Version 2.4.8</h3>
+<ul>
+	<li>Pawn can now recover and continue working if another addon changes any 
+	of the class colors and does so incorrectly.</li>
+</ul>
+<h3>Version 2.4.7</h3>
+<ul>
+	<li>Changed the graphics in the Pawn UI to look more Maw-like.</li>
+	<li>WoW Classic: In German, mail armor is now properly detected again after 
+	the Naxxramas patch.</li>
+</ul>
+<h3>Version 2.4.6</h3>
+<ul>
+	<li>Pawn will no longer appear as "out of date" after updating to WoW 9.0.2.</li>
+</ul>
+<h3>Version 2.4.5</h3>
+<ul>
+	<li>WoW Classic: In Russian, shadow spell damage is now properly recognized 
+	on items. (This problem didn't affect other schools of magic or other 
+	languages.)</li>
+</ul>
+<h3>Version 2.4.4</h3>
+<ul>
+	<li>Pawn's bag icons should now cooperate with Can I Mog It?'s bag icons 
+	again. Special thanks to the author of that addon, who inspired a much 
+	simpler solution that what I had come up with.</li>
+</ul>
+<h3>Version 2.4.3</h3>
+<ul>
+	<li>Pawn now has a more complete set of gem recommendations, including new 
+	gems from the Shadowlands. For example, for resto shamans on an ilvl 100 
+	item, Pawn will suggest five different +4 crit gems from different 
+	expansions, so you can buy the one that's cheapest.<ul>
+		<li>This is just new recommendations, not a new feature—there still 
+		isn't a way to further customize gem quality levels to your exact 
+		tastes, but that's still on the to-do list.</li>
+	</ul>
+	</li>
+	<li>Pawn was a little overzealous in resetting data that might have been 
+	affected by the level squish, so I've changed the way it works to be less 
+	annoying for people who have a lot of alts.</li>
+</ul>
+<h3>Version 2.4.2</h3>
+<ul>
+	<li><b>Pawn's bag arrows integration will no longer work by default with 
+	custom bag addons.</b><ul>
+		<li>The game no longer allows customizing that functionality while in 
+		combat, so before this change, Pawn's bag arrow integration caused 
+		errors while performing certain actions in combat, such as swapping 
+		weapons from the character sheet. Disabling support for custom bag 
+		addons is unfortunately the only way I can work around this.</li>
+		<li>To work around this, custom bag addons that call 
+			IsContainerItemAnUpgrade directly can use 
+			PawnIsContainerItemAnUpgrade when available instead, falling back to 
+			IsContainerItemAnUpgrade if it's nil. Then Pawn will control the bag 
+		arrows like it did before.</li>
+	</ul>
+	</li>
+	<li>Pawn will now show two-handed weapons as potential upgrades for 
+	two-handed Frost Death Knights. If you're all about the dual-wielding life 
+	and want to turn this back off, you can go to Pawn's Values tab, select 
+	"Axe: 2H" (or any other 2H type) under "Weapon types", and then select 
+	"Don't show upgrades for 2H items."</li>
+	<li>You should no longer see a warning message about addon compatibility 
+	when playing on Russian WoW 9.0.</li>
+</ul>
+<h3>Version 2.4.1</h3>
+<ul>
+	<li>WoW Classic: Hopefully fixed an error that occurred when turning in a 
+	quest.</li>
+</ul>
+<h3>Version 2.4</h3>
+<ul>
+	<li>Welcome to WoW 9.0 and the level squish! Pawn had to wipe its memory of 
+	everything it knew about your characters before the squish since none of 
+	that information is correct anymore, so for a little while it might show you 
+	upgrades that aren't actually upgrades until it learns about your sweet 
+	epics. This shouldn't last long, and will automatically resolve itself as 
+	you play.<ul>
+		<li>This version is meant for WoW 9.0 (Shadowlands pre-patch) and WoW 
+		Classic only.</li>
+	</ul>
+	</li>
+	<li>Pawn should give reasonable gem recommendations and calculations in this 
+	version, but I'll continue to refine them in the coming days to give more 
+	helpful suggestions at lower levels.</li>
+	<li>Default stat weights have not been updated. Players participating in 
+	high-level raiding may want to import custom weights from a simulator 
+	instead of using the built-in guidance.</li>
+	<li>The Corruption stat has been removed, since it no longer has any effect 
+	on your character and appears greyed out.</li>
+	<li>Fixed a problem where if a quest gave you a useful item and a junk item 
+	(such as a gray artifact power item from Legion), Pawn would sometimes fail 
+	to show upgrade arrows on the non-junk item.</li>
+</ul>
 <h3>Version 2.3.36</h3>
 <ul>
 	<li>WoW Classic: Added support for parry chance on items. (The UI has been 
