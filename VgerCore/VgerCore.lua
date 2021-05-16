@@ -20,7 +20,7 @@ VgerCore.Version = VgerCoreThisVersion
 
 -- What version is this?
 VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC)
-VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC)
+VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC) -- includes pre-patch
 VgerCore.IsShadowlands = (select(4, GetBuildInfo()) >= 90000)
 
 VgerCore.DeathKnightsExist = VgerCore.IsShadowlands

@@ -2401,15 +2401,16 @@ local PawnFindStringInRegexTable_ShownOneError
 --		Returns {}, {} if the string was ignored.
 function PawnFindStringInRegexTable(String, RegexTable)
 	if (String == nil) or (String == "") or (String == " ") then return {}, {} end
-	local Entry, LastRegex
+	local Entry, LastRegex, LastStat
 	for _, Entry in pairs(RegexTable) do
 		if Entry[1] == nil then
 			if not PawnFindStringInRegexTable_ShownOneError then
-				VgerCore.Fail("Localization error in regex table in the entry after \"" .. VgerCore.Color.Blue .. PawnEscapeString(tostring(LastRegex)) .. "|r\".")
+				VgerCore.Fail("Localization error in regex table in the entry after " .. LastStat .. " \"" .. VgerCore.Color.Blue .. PawnEscapeString(tostring(LastRegex)) .. "|r\".")
 				PawnFindStringInRegexTable_ShownOneError = true
 			end
 		else
 			LastRegex = Entry[1]
+			LastStat = Entry[2]
 			local StartPos, EndPos, m1, m2, m3, m4, m5 = strfind(String, LastRegex)
 			if StartPos then return Entry, { m1, m2, m3, m4, m5 } end
 		end
@@ -2890,7 +2891,6 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.MetaSocketEffect = nil
 
 	-- These stats aren't used in the live OR classic realms.
-	ThisScale.ExpertiseRating = nil
 	ThisScale.ArmorPenetration = nil
 	ThisScale.Mana = nil
 	ThisScale.Health = nil
@@ -2899,8 +2899,13 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.BonusArmor = nil
 	ThisScale.Multistrike = nil
 	ThisScale.SpellPower = nil
-	ThisScale.ResilienceRating = nil
-	ThisScale.SpellPenetration = nil
+
+	-- These were introduced in Burning Crusade Classic.
+	if not VgerCore.IsBurningCrusade then
+		ThisScale.ExpertiseRating = nil
+		ThisScale.ResilienceRating = nil
+		ThisScale.SpellPenetration = nil
+	end
 
 	-- Pawn 1.9.7 makes it impossible to ignore primary stats, since they're on all armor now.
 	if ThisScale.Stamina == PawnIgnoreStatValue then ThisScale.Stamina = nil end

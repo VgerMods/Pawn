@@ -194,10 +194,14 @@ PawnRegexes =
 	{L.Dodge, "DodgeRating"}, -- /pawn compare item:789::::::1754, or Classic arcanum and enchantment: /pawn compare item:19386:2622 /pawn compare item:21693:2545
 	{L.Dodge2, "DodgeRating"}, -- unused in English
 	{L.Dodge3, "DodgeRating"}, -- unused in English
-	{L.DodgePercent, "DodgeRating"}, -- /pawn compare 11755
+	{L.DodgePercent, "DodgeRating"}, -- Classic, /pawn compare 11755
+	{L.DodgeRating, "DodgeRating"}, -- Burning Crusade Classic, /pawn compare 11755
+	{L.DodgeRatingShort, "DodgeRating"}, -- Burning Crusade Classic, /pawn compare item:789::::::1754
 	{L.Parry, "ParryRating"},
 	{L.Parry2, "ParryRating"}, -- unused in English
 	{L.ParryPercent, "ParryRating"}, -- Classic, /pawn compare 19351
+	{L.ParryRating, "ParryRating"}, -- Burning Crusade Classic, /pawn compare 19351
+	{L.ParryRatingShort, "ParryRating"}, -- Burning Crusade Classic, /pawn compare 24036
 	{L.DefenseSkill, "DefenseRating"}, -- /pawn compare 19867
 	{L.DefenseSkillSimple, "DefenseRating"}, -- /pawn compare item:789::::::89
 	{L.BlockPercent, "BlockRating"}, -- /pawn compare 18499
@@ -215,12 +219,24 @@ PawnRegexes =
 	{L.Hit, "HitRating"}, -- /pawn compare 16947
 	{L.Hit2, "HitRating"}, -- unused in English
 	{L.SpellHit, "SpellHitRating"}, -- /pawn compare 16795
+	{L.ExpertiseRating, "ExpertiseRating"}, -- Burning Crusade, /pawn compare 19351
+	-- {L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, /pawn compare 39910
+	-- {L.ArmorPenetration, "ArmorPenetration"}, -- Wrath, /pawn compare 21563
+	-- {L.ArmorPenetrationShort, "ArmorPenetration"}, -- Wrath, Fractured Scarlet Ruby
 	{L.Resilience, "Stamina"}, -- Mystic Dawnstone
 	{L.Resilience2, "Stamina"}, -- unused in English
+	{L.ResilienceRating, "ResilienceRating"}, -- /pawn compare 29181
+	{L.ResilienceRatingShort, "ResilienceRating"}, -- Burning Crusade, Mystic Dawnstone
 	{L.PvPPower, "Stamina"}, -- Stormy Chalcedony
 	{L.EnchantmentCounterweight, "HasteRating"}, -- won't work on classic since the live string includes the word "haste" and it's worded differently in classic
 	{L.Haste, "HasteRating"}, -- Leggings of the Betrayed
 	{L.Haste2, "HasteRating"}, -- unused in English
+	{L.HasteRating, "HasteRating"}, -- Burning Crusade, /pawn compare 32570
+	{L.HasteRatingShort, "HasteRating"},
+	{L.SpellHasteRating, "SpellHasteRating"}, -- /pawn compare 34360
+	{L.SpellHasteRatingShort, "SpellHasteRating"}, -- https://tbc.wowhead.com/item=35315/quick-dawnstone
+	{L.SpellPenetration, "SpellPenetration"}, -- Burning Crusade, /pawn compare 21563
+	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, Stormy Star of Elune
 	{L.Mastery, "MasteryRating"}, -- Zen Dream Emerald
 	{L.Mastery2, "MasteryRating"}, -- unused in English
 	{L.Versatility, "Versatility"}, -- http://wod.wowhead.com/item=100945
@@ -252,6 +268,7 @@ PawnRegexes =
 	{L.SpellDamage2, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- /pawn compare 16947
 	{L.SpellDamage3, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- French on Classic uses two different wordings:  /pawn compare 20641 vs. /pawn compare 10041
 	{L.SpellDamage4, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- Simplified Chinese on Classic uses many different wordings:  /pawn compare 16923 vs. /pawn compare 18608
+	{L.SpellDamageAndHealing, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 2, PawnMultipleStatsExtract}, -- Burning Crusade, /pawn compare 34360
 	{L.FireSpellDamage, "FireSpellDamage"}, -- /pawn compare item:789::::::1878
 	{L.FireSpellDamage2, "FireSpellDamage"}, -- /pawn compare 944
 	{L.ShadowSpellDamage, "ShadowSpellDamage"}, -- /pawn compare item:789::::::1841
