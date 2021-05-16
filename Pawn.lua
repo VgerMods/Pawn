@@ -674,7 +674,7 @@ function PawnInitializeOptions()
 	PawnOptions.LastVersion = PawnVersion
 
 	-- Pawn on WoW Classic doesn't have Automatic mode.
-	if VgerCore.SpecsExist then
+	if not VgerCore.SpecsExist then
 		PawnOptions.AutoSelectScales = false
 	end
 
