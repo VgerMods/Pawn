@@ -202,23 +202,34 @@ PawnRegexes =
 	{L.ParryPercent, "ParryRating"}, -- Classic, /pawn compare 19351
 	{L.ParryRating, "ParryRating"}, -- Burning Crusade Classic, /pawn compare 19351
 	{L.ParryRatingShort, "ParryRating"}, -- Burning Crusade Classic, /pawn compare 24036
-	{L.DefenseSkill, "DefenseRating"}, -- /pawn compare 19867
-	{L.DefenseSkillSimple, "DefenseRating"}, -- /pawn compare item:789::::::89
-	{L.BlockPercent, "BlockRating"}, -- /pawn compare 18499
-	{L.Block, "BlockValue"}, -- /pawn compare 18499
-	{L.BlockValue, "BlockValue"}, -- /pawn compare 18499
+	{L.DefenseRating, "DefenseRating"}, -- Burning Crusade, /pawn compare 19867
+	{L.DefenseRatingSimple, "DefenseRating"}, -- Burning Crusade, /pawn compare item:789::::::89
+	{L.DefenseSkill, "DefenseRating"}, -- Classic, /pawn compare 19867
+	{L.DefenseSkillSimple, "DefenseRating"}, -- Classic, /pawn compare item:789::::::89
+	{L.BlockPercent, "BlockRating"}, -- Classic, /pawn compare 18499
+	{L.BlockRating, "BlockRating"}, -- Burning Crusade, /pawn compare 18499
+	{L.Block, "BlockValue"}, -- Classic, /pawn compare 18499
+	{L.BlockValue, "BlockValue"}, -- Classic, /pawn compare 18499
 	{L.Dps}, -- Ignore this; DPS is calculated manually
 	{L.DpsAdd, "Dps"},
 	{L.EnchantmentFieryWeapon, "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment
 	{L.Crit, "CritRating"},
 	{L.Crit2, "CritRating"},
-	{L.CritPercent, "CritRating"}, -- /pawn compare 15062
+	{L.CritPercent, "CritRating"}, -- Classic, /pawn compare 15062
+	{L.CritRating, "CritRating"}, -- Burning Crusade, /pawn compare 15062
+	{L.CritRatingShort, "CritRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24048/smooth-dawnstone
 	{L.ScopeCrit, "CritRating"},
 	{L.ScopeRangedCrit, "CritRating"}, -- Heartseeker Scope
-	{L.SpellCrit, "SpellCritRating"}, -- /pawn compare 16947
-	{L.Hit, "HitRating"}, -- /pawn compare 16947
+	{L.SpellCrit, "SpellCritRating"}, -- Classic, /pawn compare 16947
+	{L.SpellCritRating, "SpellCritRating"}, -- Burning Crusade, /pawn compare 16947
+	{L.SpellCritRatingShort, "SpellCritRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24050/gleaming-dawnstone
+	{L.Hit, "HitRating"}, -- Classic, /pawn compare 16947
 	{L.Hit2, "HitRating"}, -- unused in English
+	{L.HitRating, "HitRating"}, -- Burning Crusade, /pawn compare 28182
+	{L.HitRatingShort, "HitRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24051/rigid-dawnstone
 	{L.SpellHit, "SpellHitRating"}, -- /pawn compare 16795
+	{L.SpellHitRating, "SpellHitRating"}, -- Burning Crusade, /pawn compare 16795
+	{L.SpellHitRatingShort, "SpellHitRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=31861/great-dawnstone
 	{L.ExpertiseRating, "ExpertiseRating"}, -- Burning Crusade, /pawn compare 19351
 	-- {L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, /pawn compare 39910
 	-- {L.ArmorPenetration, "ArmorPenetration"}, -- Wrath, /pawn compare 21563
