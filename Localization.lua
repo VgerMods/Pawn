@@ -72,7 +72,7 @@ www.vgermods.com
 /pawn -- show or hide the Pawn UI
 /pawn debug [ on | off ] -- spam debug messages to the console
 /pawn backup -- backup all of your scales to scale tags
-/pawn compare [ left item [ right ]] item -- compare items
+/pawn compare [ left | right ] ItemID | ItemLink -- compare items
  
 For more information on customizing Pawn, please see the help file (Readme.htm) that comes with the mod.
 ]=],
@@ -122,9 +122,9 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["MailInfo"] = "Points to be assigned if the item is mail.",
 		["MasteryInfo"] = "Mastery.  Improves the unique bonus of your class specialization.",
 		["MinorStats"] = "Minor stats",
+		["MovementSpeedInfo"] = "Movement speed.  Causes your character to run faster.",
 		["Mp5"] = "Mana per 5",
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
-		["MovementSpeedInfo"] = "Movement speed.  Causes your character to run faster.",
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
 		["NatureSpellDamage"] = "Nature Damage",
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
@@ -241,7 +241,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["WeaponTypeWand"] = "Wand",
 		["WeaponTypeWandInfo"] = "Points to be assigned if the item is a wand.",
 		["WeaponTypeWarglaive"] = "Warglaive",
-		["WeaponTypeWarglaiveInfo"] = "Points to be assigned if the item is a warglaive."
+		["WeaponTypeWarglaiveInfo"] = "Points to be assigned if the item is a warglaive.",
 	},
 	["TooltipParsing"] = {
 		["Agility"] = "^%+?# Agility$",
@@ -424,7 +424,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["WeaponDamageNature"] = "^%+?# %- # Nature Damage$",
 		["WeaponDamageNatureExact"] = "^%+?# Nature Damage$",
 		["WeaponDamageShadow"] = "^%+?# %- # Shadow Damage$",
-		["WeaponDamageShadowExact"] = "^%+?# Shadow Damage$"
+		["WeaponDamageShadowExact"] = "^%+?# Shadow Damage$",
 	},
 	["UI"] = {
 		["AboutHeader"] = "About Pawn",
@@ -547,14 +547,14 @@ Every item in World of Warcraft has an ID number associated with it.  This infor
 		["OptionsOtherHeader"] = "Other options",
 		["OptionsQuestUpgradeAdvisor"] = "Show quest upgrade advisor",
 		["OptionsQuestUpgradeAdvisorTooltip"] = "In your quest log and when talking to NPCs, if one of the quest reward choices is an upgrade for your current gear, Pawn will show a green arrow icon on that item.  If none of the items is an upgrade, Pawn will show a pile of coins on the item that is worth the most when sold to a vendor.",
-		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
-		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
-		["OptionsShowRelicUpgrades"] = "Show relic upgrades",
-		["OptionsShowRelicUpgradesTooltip"] = "Pawn will show you when a relic would increase the item level of one of your artifact weapons.  (This works differently from other upgrade features, since it's based on item level, not stats.)",
 		["OptionsResetUpgrades"] = "Re-scan gear",
 		["OptionsResetUpgradesTooltip"] = [=[Pawn will forget what it knows about the best items you've ever equipped and re-scan your gear in order to provide more up-to-date upgrade information in the future.
 
 Use this feature if you find that Pawn is making poor upgrade suggestions as a result of items that you've vendored, destroyed, or otherwise do not use anymore.  This will affect all of your characters that use Pawn.]=],
+		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
+		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
+		["OptionsShowRelicUpgrades"] = "Show relic upgrades",
+		["OptionsShowRelicUpgradesTooltip"] = "Pawn will show you when a relic would increase the item level of one of your artifact weapons.  (This works differently from other upgrade features, since it's based on item level, not stats.)",
 		["OptionsSocketingAdvisor"] = "Show socketing advisor",
 		["OptionsSocketingAdvisorTooltip"] = "When adding gems to an item, Pawn will show a popup suggesting gems that you can add to the item that will maximize its power.  (To see the full list of gem suggestions for each color, see the Gems tab, where you can also customize the quality of gems to use.)",
 		["OptionsTab"] = "Options",
@@ -654,7 +654,7 @@ For more information on this setting, see the readme file.]=],
 		["ValuesTab"] = "Weights",
 		["ValuesWelcome"] = "You can customize the weights that are assigned to each stat for this scale.  To manage your scales and add new ones, use Manual mode on the Scale tab.",
 		["ValuesWelcomeNoScales"] = "You have no scale selected.  To get started, go to the Scale tab and start a new scale or paste one from the internet.",
-		["ValuesWelcomeReadOnly"] = "This built-in scale can't be changed.  If you'd like to customize these weights, go to the Scale tab, enable Manual mode, and make a copy of this scale."
+		["ValuesWelcomeReadOnly"] = "This built-in scale can't be changed.  If you'd like to customize these weights, go to the Scale tab, enable Manual mode, and make a copy of this scale.",
 	}
 }
 
