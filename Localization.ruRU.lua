@@ -11,11 +11,8 @@ local function PawnUseThisLocalization()
 PawnLocal =
 {
 	["AverageItemLevelIgnoringRarityTooltipLine"] = "Средний уровень",
-	["BackupCommand"] = "сделать резервную копию",
 	["BaseValueWord"] = "база",
 	["CopyScaleEnterName"] = "Введите имя для новой шкалы копии %s:",
-	["DebugOffCommand"] = "отладка выкл",
-	["DebugOnCommand"] = "отладка вкл",
 	["DecimalSeparator"] = ",",
 	["DeleteScaleConfirmation"] = "Вы уверены что хотите удалить %s? Отменить удаление будет невозможно. Наберите \"%s\" для подтверждения:",
 	["DidntUnderstandMessage"] = "   (?) не распознано \"%s\".",
@@ -91,12 +88,15 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["BlockValueInfo"] = "Показатель блокирования.  Увеличивает поглащаемый урон щитом при успешной блокировке.",
 		["Cloth"] = "Ткань",
 		["ClothInfo"] = "Значения для вещей из ткани",
+		--[[Translation missing --]]
 		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Критический удар",
 		["CritInfo"] = "Критический удар. Увеличивает шанс что ваши атакующие и исцеляющие заклинания ударят с увеличенной силой.",
 		["DefenseInfo"] = "Навык защиты.  Уменьшение вероятности того, что по вам попадёт атака боссов.",
 		["DodgeInfo"] = "Уклонение.  Увеличивает шанс что вы полностью уклонитесь от атаки.",
 		["DpsInfo"] = "Урон от оружия в секунду",
+		--[[Translation missing --]]
+		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
 		["FeralApInfo"] = "Сила атаки зверя.  Увеличивает урон атакам друида находящегося в формах силы зверя.  Не включает в себя силу атаки полученную от Силы и Ловкости.",
 		["FireResistInfo"] = "Сопротивление огню.  Понижает урон от атак и заклинаний в которых используется огонь.",
 		["FireSpellDamage"] = "Урон огнем",
@@ -131,6 +131,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Plate"] = "Латы",
 		["PlateInfo"] = "Очки присваиваются только если вещь - латные доспехи.",
 		["RapInfo"] = "Сила атаки дальнего боя.  Увеличивает урон физических атак дальнего боя.  Не включает в себя силу атаки полученную от Ловкости.",
+		--[[Translation missing --]]
+		["ResilienceInfo"] = "Resilience. Reduces the chance that you'll be critically hit, and decreases the damage of critical hits that you do take.",
 		["ShadowResistInfo"] = "Сопротивление темной магии.   Понижает урон от атак и заклинаний в которых используется темная магия.",
 		["ShadowSpellDamage"] = "Урон темной магии",
 		["ShadowSpellDamageInfo"] = "Урон темной магии.  Увеличивает урон наносимый заклинаниями темной магии.",
@@ -143,15 +145,12 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpeedBaselineIs"] = "|cffffffffБазовая скорость|r:",
 		["SpeedInfo"] = "Скорость оружия (в секундах за удар).",
 		["SpeedIs"] = "1 секунда |cffffffffскорость удара|r ценится:",
-		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
-		--[[Translation missing --]]
 		["SpellDamage"] = "Spell Damage",
-		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
-		--[[Translation missing --]]
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
 		--[[Translation missing --]]
+		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "Выносливость. Увеличивает количество жизни. ",
 		["StrengthInfo"] = "Сила. Увеличивает силу атаки для некоторых классов.",
@@ -260,6 +259,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["BagSlots"] = "^%d+ [Яя]чеек .+$",
 		["Block"] = "^Блокирование: #$",
 		["BlockPercent"] = "^Если на персонаже: Увеличение рейтинга блока щитом на #%%%,$",
+		--[[Translation missing --]]
+		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
 		["BlockValue"] = "^Если на персонаже: Увеличение показателя блока щитом на # ед%.$",
 		["Bow"] = "^Лук$",
 		["ChanceOnHit"] = "Возможно при попадании:",
@@ -270,8 +271,16 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Crit"] = "^%+?# к критическому удару$",
 		["Crit2"] = "^%+?# к показателю критического удара$",
 		["CritPercent"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на #%%%.$",
+		--[[Translation missing --]]
+		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
 		["Crossbow"] = "^Арбалет$",
 		["Dagger"] = "^Кинжал$",
+		--[[Translation missing --]]
+		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
+		--[[Translation missing --]]
+		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
 		["DefenseSkill"] = "^Если на персонаже: Увеличение рейтинга защиты на # ед%.$",
 		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Требуется",
@@ -279,6 +288,10 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Dodge2"] = "^%+?#%%? к показателю уклонения$",
 		["Dodge3"] = "^%+#%% к рейтингу уклонения$",
 		["DodgePercent"] = "^Если на персонаже: Увеличение рейтинга уклонения на #%%%.$",
+		--[[Translation missing --]]
+		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
+		--[[Translation missing --]]
+		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
 		["Dps"] = "^%(# ед%. урона в секунду%)$",
 		["DpsAdd"] = "^Добавляет # ед%. урона в секунду$",
 		["Duration"] = "^Срок действия:",
@@ -292,6 +305,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["EnchantmentPyriumWeaponChain"] = "^Колчедановая цепь для оружия$",
 		["EnchantmentTitaniumWeaponChain"] = "^Титановая цепь для оружия$",
 		["Equip"] = "Если на персонаже:",
+		--[[Translation missing --]]
+		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 		["FeralAp"] = "^Если на персонаже: Увеличивает силу атаки на # ед%. в облике кошки, медведя и лютого медведя%.$",
 		["FireResist"] = "^Устойчивость: %+# огонь$",
 		["FireSpellDamage"] = "^%+# к урону от заклинаний огня$",
@@ -304,6 +319,10 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Gun"] = "^Огнестрельное$",
 		["Haste"] = "^%+?# к скорости$",
 		["Haste2"] = "^%+?# к показателю скорости$",
+		--[[Translation missing --]]
+		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		--[[Translation missing --]]
+		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^У вас еще нет такой модели.$",
 		["Healing"] = "^%+# к исцеляющим заклинаниям$",
 		["Healing2"] = "^Если на персонаже: Усиливает исцеление от заклинаний и эффектов максимум на # ед%.$",
@@ -315,8 +334,11 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["HeroicThunderforged"] = "^Создано в Кузне Грома %(героич%.%)$",
 		["HeroicWarforged"] = "^Предмет закален в бою %(героич%.%)$",
 		["Hit"] = "^Если на персонаже: Вероятность нанесения удара увеличена на #%%%.$",
-		--[[Translation missing --]]
 		["Hit2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HitRating"] = "^Equip: Improves hit rating by #%.$",
+		--[[Translation missing --]]
+		["HitRatingShort"] = "^%+?# Hit Rating$",
 		["HolySpellDamage"] = "^%+# к урону от заклинаний светлой магии$",
 		["HolySpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами светлой магии, на # ед%.$",
 		["Hp5"] = "^Восстанавливает # здоровья каждые 5 сек%.$",
@@ -344,6 +366,10 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Parry"] = "^%+?# к парированию$",
 		["Parry2"] = "^%+?# к показателю парирования$",
 		["ParryPercent"] = "^Если на персонаже: Увеличение рейтинга парирования атак на #%%%.$",
+		--[[Translation missing --]]
+		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
+		--[[Translation missing --]]
+		["ParryRatingShort"] = "^%+?# Parry Rating$",
 		["Plate"] = "^Латы$",
 		["Polearm"] = "^Древковое$",
 		["PvPPower"] = "^%+?# к PvP%-силе$",
@@ -352,23 +378,46 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Requires2"] = "^Требуемый уровень",
 		["Resilience"] = "^%+?# к PvP%-устойчивости$",
 		["Resilience2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
+		--[[Translation missing --]]
+		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
 		["Scope"] = "^Scope %(%+# Damage%)$",
 		["ScopeCrit"] = "^Scope %(%+# Critical Strike%)$",
 		["ScopeRangedCrit"] = "^%+?# Ranged Critical Strike$",
 		["ShadowResist"] = "^Устойчивость: %+# тьма$",
 		["ShadowSpellDamage"] = "^%+# к урону от заклинаний темной магии$",
 		["ShadowSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами темной магии, на # ед%.$",
+		--[[Translation missing --]]
 		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Щит$",
 		["SocketBonusPrefix"] = "При соответствии цвета:",
 		["Speed"] = "^Скорость #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Если на персонаже: Увеличение рейтинга критического эффекта заклинаний на #%%%.$",
+		--[[Translation missing --]]
+		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^%+# к наносящим урон и исцеляющим заклинаниям$",
 		["SpellDamage2"] = "^Если на персонаже: Увеличение урона и целительного действия магических заклинаний и эффектов не более чем на # ед%.$",
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
+		--[[Translation missing --]]
+		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
 		["SpellHit"] = "^Если на персонаже: Повышение на #%% рейтинга меткости заклинаний%.$",
+		--[[Translation missing --]]
+		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
+		--[[Translation missing --]]
+		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
+		--[[Translation missing --]]
+		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
 		["SpellPower"] = "^%+?# к силе заклинаний$",
 		["Spirit"] = "^%+?# к духу$",
 		["Staff"] = "^Посох$",
@@ -377,6 +426,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Sword"] = "^Меч$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ мин%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ сек%)$",
+		--[[Translation missing --]]
 		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Создано в Кузне Грома$",
 		["Timeless"] = "^Вневременной предмет$",

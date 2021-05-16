@@ -87,12 +87,14 @@ PawnLocal =
 		["BlockValueInfo"] = "格挡值: 增加成功格挡后盾牌吸收的伤害值。",
 		["Cloth"] = "布甲",
 		["ClothInfo"] = "物品类型为布甲。",
-		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
+		["CorruptionInfo"] = "恩佐斯的腐蚀。此项腐蚀的属性将根据装备腐蚀等级来扣除相应的评分。",
 		["Crit"] = "爆击",
 		["CritInfo"] = "爆击等级，影响近战、远程和法术的爆击几率。(在经典旧世中, 仅对物理攻击生效。)",
 		["DefenseInfo"] = "防御技能: 减少被首领攻击命中的几率。",
 		["DodgeInfo"] = "闪避: 增加完全闪避攻击的几率。",
 		["DpsInfo"] = "武器的每秒伤害。(如果你想要给不同类型的武器估分，前往 \"特殊武器属性\" 部分。)",
+		--[[Translation missing --]]
+		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
 		["FeralApInfo"] = "野性攻击强度: 增加德鲁伊在野性形态下的攻击伤害 (不包含力量和敏捷的加成)。",
 		["FireResistInfo"] = "火焰抗性: 减少受到的火焰伤害。",
 		["FireSpellDamage"] = "火焰法术伤害",
@@ -127,6 +129,8 @@ PawnLocal =
 		["Plate"] = "板甲",
 		["PlateInfo"] = "物品类型为板甲。",
 		["RapInfo"] = "远程攻击强度: 增加远程攻击所造成的伤害 (不包含敏捷的加成)。",
+		--[[Translation missing --]]
+		["ResilienceInfo"] = "Resilience. Reduces the chance that you'll be critically hit, and decreases the damage of critical hits that you do take.",
 		["ShadowResistInfo"] = "暗影抗性: 减少受到的暗影伤害。",
 		["ShadowSpellDamage"] = "暗影法术伤害",
 		["ShadowSpellDamageInfo"] = "暗影法术伤害: 增加释放暗影法术所造成的伤害。",
@@ -143,6 +147,8 @@ PawnLocal =
 		["SpellDamage"] = "法术伤害",
 		["SpellDamageInfo"] = "法术伤害: 增加释放法术所造成的伤害。",
 		["SpellHitInfo"] = "法术命中: 增加法术攻击命中目标的几率 (对于首领而言尤为重要)。",
+		--[[Translation missing --]]
+		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
 		["SpiritInfo"] = "精神 - 影响非战斗状态下生命和法力的恢复速度 (在战斗状态下, 仅影响法力的恢复速度).",
 		["StaminaInfo"] = "耐力，增加你的生命值上限。",
 		["StrengthInfo"] = "力量，为力量型职业增加攻击强度。",
@@ -251,6 +257,8 @@ PawnLocal =
 		["BagSlots"] = "^%d+格容器 .+$",
 		["Block"] = "^#点格挡$",
 		["BlockPercent"] = "^装备： ?使你用盾牌格挡攻击的几率提高#%%。$",
+		--[[Translation missing --]]
+		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
 		["BlockValue"] = "^装备： ?使你的盾牌的格挡值提高#点。$",
 		["Bow"] = "^弓$",
 		["ChanceOnHit"] = "击中时可能：",
@@ -261,8 +269,16 @@ PawnLocal =
 		["Crit"] = "^%+?# 爆击$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^装备： ?使你造成致命一击的几率提高#%%。$",
+		--[[Translation missing --]]
+		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
 		["Crossbow"] = "^弩$",
 		["Dagger"] = "^匕首$",
+		--[[Translation missing --]]
+		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
+		--[[Translation missing --]]
+		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
 		["DefenseSkill"] = "^装备： ?防御技能提高#点。$",
 		["DefenseSkillSimple"] = "^%+?# 防御$",
 		["DisenchantingRequires"] = "^分解需要",
@@ -270,6 +286,10 @@ PawnLocal =
 		["Dodge2"] = "^UNUSED$",
 		["Dodge3"] = "^躲闪 %+#%%$",
 		["DodgePercent"] = "^装备： ?使你躲闪攻击的几率提高#%%。$",
+		--[[Translation missing --]]
+		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
+		--[[Translation missing --]]
+		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
 		["Dps"] = "^%（每秒伤害#）$",
 		["DpsAdd"] = "^Adds # damage per second$",
 		["Duration"] = "^耐久度:",
@@ -283,6 +303,8 @@ PawnLocal =
 		["EnchantmentPyriumWeaponChain"] = "^燃钢武器链$",
 		["EnchantmentTitaniumWeaponChain"] = "^泰坦神铁武器链$",
 		["Equip"] = "装备：",
+		--[[Translation missing --]]
+		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 		["FeralAp"] = "^装备： ?在猎豹、熊和巨熊形态下的攻击强度提高#点。$",
 		["FireResist"] = "^%+?# 火焰抗性$",
 		["FireSpellDamage"] = "^%+# 火焰法术伤害$",
@@ -295,6 +317,10 @@ PawnLocal =
 		["Gun"] = "^枪械$",
 		["Haste"] = "^%+?# 急速$",
 		["Haste2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		--[[Translation missing --]]
+		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^你尚未收藏过此外观$",
 		["Healing"] = "^%+# 治疗量$",
 		["Healing2"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
@@ -307,6 +333,10 @@ PawnLocal =
 		["HeroicWarforged"] = "英雄战火",
 		["Hit"] = "^装备： ?使你击中目标的几率提高#%%。$",
 		["Hit2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HitRating"] = "^Equip: Improves hit rating by #%.$",
+		--[[Translation missing --]]
+		["HitRatingShort"] = "^%+?# Hit Rating$",
 		["HolySpellDamage"] = "^%+# 神圣法术伤害$",
 		["HolySpellDamage2"] = "^装备： ?提高神圣法术和效果所造成的伤害，最多#点。$",
 		["Hp5"] = "^装备: 每5秒恢复#生命力。$",
@@ -334,6 +364,10 @@ PawnLocal =
 		["Parry"] = "^%+?# 招架$",
 		["Parry2"] = "^UNUSED$",
 		["ParryPercent"] = "^装备： 使你招架攻击的几率提高#%%。$",
+		--[[Translation missing --]]
+		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
+		--[[Translation missing --]]
+		["ParryRatingShort"] = "^%+?# Parry Rating$",
 		["Plate"] = "^板甲$",
 		["Polearm"] = "^长柄武器$",
 		["PvPPower"] = "^%+?# PvP强度$",
@@ -342,6 +376,10 @@ PawnLocal =
 		["Requires2"] = "^UNUSED$",
 		["Resilience"] = "^%+?# PvP韧性$",
 		["Resilience2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
+		--[[Translation missing --]]
+		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
 		["Scope"] = "^瞄准镜%（%+# 伤害%）$",
 		["ScopeCrit"] = "^瞄准镜 %(%+# 爆击%)$",
 		["ScopeRangedCrit"] = "^%+?# 远程爆击$",
@@ -354,11 +392,29 @@ PawnLocal =
 		["Speed"] = "^速度 #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^装备： ?使你的法术造成爆击的几率提高#%%。$",
+		--[[Translation missing --]]
+		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^%+# 伤害和治疗法术$",
 		["SpellDamage2"] = "^装备： ?提高所有法术和魔法效果所造成的伤害和治疗效果，最多#点。$",
 		["SpellDamage3"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
 		["SpellDamage4"] = "^装备： ?使治疗法术和效果所回复的生命值提高#点。$",
+		--[[Translation missing --]]
+		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
+		--[[Translation missing --]]
+		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
 		["SpellHit"] = "^装备： ?使你的法术击中敌人的几率提高#%%。$",
+		--[[Translation missing --]]
+		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
+		--[[Translation missing --]]
+		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
+		--[[Translation missing --]]
+		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
 		["SpellPower"] = "^%+?# 法术强度$",
 		["Spirit"] = "^%+?# 精神$",
 		["Staff"] = "^法杖$",
@@ -367,7 +423,7 @@ PawnLocal =
 		["Sword"] = "^剑$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ 分钟%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ 秒%)$",
-		["Thrown"] = "^Thrown$",
+		["Thrown"] = "^投掷武器$",
 		["Thunderforged"] = "雷霆",
 		["Timeless"] = "永恒",
 		["Titanforged"] = "^泰坦造物$",
@@ -610,7 +666,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["ValuesFollowSpecialization"] = "只有显示%d等以后我最佳护甲类型的提升",
 		["ValuesFollowSpecializationTooltip"] = "启用该选项来隐藏%d等以后非职业专精的护甲类型。比如，神圣圣骑士在%d等学到了鎧甲专精, 当只装备鎧甲时增加智力5%%。当此选项选择时Pawn将不会考虑布、皮及锁甲对%d+神圣圣骑士的提升",
 		["ValuesHeader"] = "调整 %s 分值",
-		["ValuesIgnoreItemType"] = "带此属性的物品没有用处。",
+		["ValuesIgnoreItemType"] = "这些物品不可用",
 		["ValuesIgnoreStat"] = "带此属性的物品没有用处。",
 		["ValuesIgnoreStatTooltip"] = "启用这个选项，将不能使用的物品设为无效。例如萨满不能装备板甲，板甲无论属性再好，对萨满来说，属性权重为0。",
 		["ValuesNormalize"] = "校正数值 (比如 Wowhead)",

@@ -11,11 +11,8 @@ local function PawnUseThisLocalization()
 PawnLocal =
 {
 	["AverageItemLevelIgnoringRarityTooltipLine"] = "Nível de item médio",
-	["BackupCommand"] = "backup",
 	["BaseValueWord"] = "base",
 	["CopyScaleEnterName"] = "Digite o nome para sua nova escala, uma cópia de %s:",
-	["DebugOffCommand"] = "debug off",
-	["DebugOnCommand"] = "debug on",
 	["DecimalSeparator"] = ",",
 	["DeleteScaleConfirmation"] = "Você quer mesmo deletar %s? Isso não pode ser desfeito. Digite \"%s\" para confirmar:",
 	["DidntUnderstandMessage"] = "   (?) Não entendi \"%s\".",
@@ -80,52 +77,39 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 	["VisibleScalesHeader"] = "Escalas de %s",
 	["Stats"] = {
 		["AgilityInfo"] = "Agilidade. Aumenta o poder das habilidades de algumas classes.",
-		--[[Translation missing --]]
 		["ApInfo"] = "Attack Power.  Increases the damage of physical attacks.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
 		["ArcaneResistInfo"] = "Arcane Resistance.  Reduces the damage taken from arcane-based attacks.",
 		["ArcaneSpellDamage"] = "Dano Arcano",
-		--[[Translation missing --]]
 		["ArcaneSpellDamageInfo"] = "Arcane damage.  Increases the damage dealt by your arcane spells.",
 		["ArmorInfo"] = "Armadura. Reduz o dano físico recebido.",
 		["ArmorTypes"] = "Tipos de armaduras",
 		["AvoidanceInfo"] = "Evasiva. Reduz o dano que você recebe de ataques de área.",
-		--[[Translation missing --]]
 		["BlockRatingInfo"] = "Block chance.  Increases the chances of a successful shield block.",
-		--[[Translation missing --]]
 		["BlockValueInfo"] = "Shield block value.  Increases the damage that a shield absorbs when it successfully blocks.",
 		["Cloth"] = "Tecido",
 		["ClothInfo"] = "Pontos para distribuir se o item for tecido.",
+		--[[Translation missing --]]
 		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Crítico",
 		["CritInfo"] = "Ataque crítico. Aumenta a chance de seus ataques e magias de cura acertem com maior potência.",
-		--[[Translation missing --]]
 		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
-		--[[Translation missing --]]
 		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
 		["DpsInfo"] = "Dano por segundo da arma. (Se você quiser valorizar DPS diferentes para diferentes tipos de armas, veja a seção \"Atributos especiais de armas\".)",
 		--[[Translation missing --]]
+		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
-		--[[Translation missing --]]
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
 		["FireSpellDamage"] = "Dano de Fogo",
-		--[[Translation missing --]]
 		["FireSpellDamageInfo"] = "Fire damage.  Increases the damage dealt by your fire spells.",
-		--[[Translation missing --]]
 		["FrostResistInfo"] = "Frost Resistance.  Reduces the damage taken from frost-based attacks.",
 		["FrostSpellDamage"] = "Dano de Gelo",
-		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "Aceleração. Aumenta a velocidade em que suas magias são lançadas e seus recursos regeneram.",
 		["Healing"] = "Feitiços de Cura",
-		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
-		--[[Translation missing --]]
 		["HitInfo"] = "Hit.  Increases the chance that your physical attacks hit the target, especially bosses.",
 		["HolySpellDamage"] = "Dano de Sagrados",
-		--[[Translation missing --]]
 		["HolySpellDamageInfo"] = "Holy damage.  Increases the damage dealt by your holy spells.",
-		--[[Translation missing --]]
 		["Hp5Info"] = "Health regeneration per 5 seconds.  Increases the rate at which you regenerate health.",
 		["IndestructibleInfo"] = "Indestrutível. Previne que seu equipamento tome dano de durabilidade.",
 		["IndestructibleIs"] = "Ser|cffffffffindestrutível|r vale:",
@@ -139,23 +123,18 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["MinorStats"] = "Atributos menores",
 		["MovementSpeedInfo"] = "Velocidade de movimento. Faz com que o seu personagem corra mais rápido.",
 		["Mp5"] = "Mana a cada 5",
-		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
-		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
 		["NatureSpellDamage"] = "Dano de Natureza",
-		--[[Translation missing --]]
 		["NatureSpellDamageInfo"] = "Nature damage.  Increases the damage dealt by your nature spells.",
-		--[[Translation missing --]]
 		["ParryInfo"] = "Parry.  Increases the chance that you'll parry enemy attacks.",
 		["Plate"] = "Placas",
 		["PlateInfo"] = "Pontos para distribuir se o item for de placas.",
-		--[[Translation missing --]]
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
 		--[[Translation missing --]]
+		["ResilienceInfo"] = "Resilience. Reduces the chance that you'll be critically hit, and decreases the damage of critical hits that you do take.",
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
 		["ShadowSpellDamage"] = "Dano de Sombra",
-		--[[Translation missing --]]
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
 		["Shield"] = "Escudo",
 		["ShieldInfo"] = "Pontos para distribuir se o item for um escudo.",
@@ -166,14 +145,12 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["SpeedBaselineIs"] = "|cffffffffVelocidade base|r é:",
 		["SpeedInfo"] = "Velocidade da arma, em golpes por segundo. (Se você prefere armas mais rápidas, este número deve ser negativo. Veja também: \"velocidade base\" na seção \"Atributos especiais de armas\".)",
 		["SpeedIs"] = "1 segundo |cffffffffvelocidade do golpe|r vale:",
-		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
 		["SpellDamage"] = "Dano Mágico",
-		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
-		--[[Translation missing --]]
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
 		--[[Translation missing --]]
+		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "Vigor. Aumenta sua vida.",
 		["StrengthInfo"] = "Força. Aumenta o poder das habilidades de algumas classes.",
@@ -282,6 +259,8 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["BagSlots"] = "^%d+ Compartimento .+$",
 		["Block"] = "^Bloqueio de #$",
 		["BlockPercent"] = "^Equipado: Aumenta em #%% a chance de bloquear ataques com o escudo%.$",
+		--[[Translation missing --]]
+		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
 		["BlockValue"] = "^Equipado: Aumenta em # o valor de bloqueio do seu escudo%.$",
 		["Bow"] = "^Arco$",
 		["ChanceOnHit"] = "Chance ao acertar:",
@@ -292,15 +271,28 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Crit"] = "^%+?# Acerto Crítico%.?$",
 		["Crit2"] = "^%+?# de Acerto Crítico%.?$",
 		["CritPercent"] = "^Equipado: Aumenta em #%% a chance de realizar acertos críticos%.$",
+		--[[Translation missing --]]
+		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
 		["Crossbow"] = "^Besta$",
 		["Dagger"] = "^Adaga$",
+		--[[Translation missing --]]
+		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
+		--[[Translation missing --]]
+		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
 		["DefenseSkill"] = "^Equipado: Defesa aumentada em #%.$",
 		["DefenseSkillSimple"] = "^%+?# Defesa$",
 		["DisenchantingRequires"] = "^Desencantamento necessita",
 		["Dodge"] = "^%+?#%%? Esquiva$",
 		["Dodge2"] = "^%+?# de Esquiva$",
+		--[[Translation missing --]]
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equipado: Aumenta em #%% a chance de esquivar%-se de ataques%.$",
+		--[[Translation missing --]]
+		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
+		--[[Translation missing --]]
+		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
 		["Dps"] = "^%(# d?e? ?dano por segundo%)$",
 		["DpsAdd"] = "^Adiciona # dano por segundo$",
 		["Duration"] = "^Dura%ç%ão:",
@@ -314,6 +306,8 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["EnchantmentPyriumWeaponChain"] = "^Corrente de Arma de Pírio$",
 		["EnchantmentTitaniumWeaponChain"] = "^Corrente de Arma de Titânico$",
 		["Equip"] = "Equipado:",
+		--[[Translation missing --]]
+		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 		["FeralAp"] = "^Equipado: %+# de Poder de Ataque sob forma de Felino, Urso e Urso Hediondo%.$",
 		["FireResist"] = "^%+?# de resistência a Fogo$",
 		["FireSpellDamage"] = "^%+# Dano Mágico de Fogo$",
@@ -326,6 +320,10 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Gun"] = "^Arma$",
 		["Haste"] = "^%+?# Aceleração$",
 		["Haste2"] = "^%+?# de Aceleração$",
+		--[[Translation missing --]]
+		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		--[[Translation missing --]]
+		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^Você não coletou essa aparência$",
 		["Healing"] = "^%+# Feitiços de Cura$",
 		["Healing2"] = "^Equipado: Aumenta em até # a cura realizada por feitiços e efeitos mágicos%.$",
@@ -338,6 +336,10 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["HeroicWarforged"] = "^Forjado para a Guerra Heroico$",
 		["Hit"] = "^Equipado: Aumenta em #%% a chance de acerto%.$",
 		["Hit2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HitRating"] = "^Equip: Improves hit rating by #%.$",
+		--[[Translation missing --]]
+		["HitRatingShort"] = "^%+?# Hit Rating$",
 		["HolySpellDamage"] = "^%+# Dano Mágico Sagrados$",
 		["HolySpellDamage2"] = "^Equipado: Aumenta em até # o dano causado por feitiços e efeitos Sagrados%.$",
 		["Hp5"] = "^Equipado: Restaura # pontos de vida a cada 5 s%.$",
@@ -365,6 +367,10 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Parry"] = "^%+?# Aparo$",
 		["Parry2"] = "^%+?# de Aparo$",
 		["ParryPercent"] = "^Equipado: Aumenta em #%% a sua chance de aparar ataques%.$",
+		--[[Translation missing --]]
+		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
+		--[[Translation missing --]]
+		["ParryRatingShort"] = "^%+?# Parry Rating$",
 		["Plate"] = "^Placas$",
 		["Polearm"] = "^Arma de Haste$",
 		["PvPPower"] = "^%+?# d?e? ?Poder JxJ$",
@@ -373,23 +379,47 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Requires2"] = "^UNUSED$",
 		["Resilience"] = "^%+?# Resiliência JxJ$",
 		["Resilience2"] = "^%+?# de Resiliência JxJ$",
+		--[[Translation missing --]]
+		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
+		--[[Translation missing --]]
+		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
 		["Scope"] = "^Mira %(%+# de Dano%)$",
 		["ScopeCrit"] = "^Mira %(%+# Acerto Crítico%)$",
 		["ScopeRangedCrit"] = "^%+?# Acerto Crítico de Longo Alcance$",
 		["ShadowResist"] = "^%+?# de resistência a Sombra$",
 		["ShadowSpellDamage"] = "^%+# Dano Mágico de Sombra$",
 		["ShadowSpellDamage2"] = "^Equipado: Aumenta em até # o dano causado por feitiços e efeitos de Sombra%.$",
+		--[[Translation missing --]]
 		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Escudo$",
 		["SocketBonusPrefix"] = "Bônus de engaste: ",
 		["Speed"] = "^Velocidade #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Equipado: Aumenta em #%% a chance de realizar acertos críticos com feitiços%.$",
+		--[[Translation missing --]]
+		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^Feitiços de Cura e de Dano %+#$",
 		["SpellDamage2"] = "^Equipado: Aumenta em até # o dano causado e a cura realizada por feitiços e efeitos mágicos.$",
+		--[[Translation missing --]]
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
+		--[[Translation missing --]]
+		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
 		["SpellHit"] = "^Equipado: Aumenta em #%% sua chance de acertar com feitiços%.$",
+		--[[Translation missing --]]
+		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
+		--[[Translation missing --]]
+		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
+		--[[Translation missing --]]
+		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
 		["SpellPower"] = "^%+?# d?e? ?Poder [mM]ágico$",
 		["Spirit"] = "^%+?# d?e? ?Espírito$",
 		["Staff"] = "^Cajado$",
@@ -398,6 +428,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Sword"] = "^Espada$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ min%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ s%)$",
+		--[[Translation missing --]]
 		["Thrown"] = "^Thrown$",
 		["Thunderforged"] = "^Forjado pelo Trovão$",
 		["Timeless"] = "^Perene$",
@@ -473,7 +504,7 @@ Por exemplo, se for definido com "463", o Pawn irá mostrar gemas apropriadas pa
 
 Quando você ganhar recompensas de missões ou saques de masmorras que possam ser melhores que o seu equipamento atual, o Pawn te informará com um ícone de seta verde.
 
-	|cff8ec3e6Fogo:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% de melhoria|r
+    |cff8ec3e6Fogo:|r  |TInterface\AddOns\Pawn\Textures\UpgradeArrow:0|t |cff00ff00+10% de melhoria|r
 
 
 

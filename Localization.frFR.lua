@@ -94,6 +94,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
 		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
 		["DpsInfo"] = "Valeur de dégats par secondes de l'arme. (si vous désirez différentes estimations pour différents types d'armes, référez-vous à la section \"statistiques spéciale arme\".)",
+		--[[Translation missing --]]
+		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
 		["FireResistInfo"] = "Fire Resistance.  Reduces the damage taken from fire-based attacks.",
 		["FireSpellDamage"] = "Fire Damage",
@@ -128,6 +130,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Plate"] = "Plaque",
 		["PlateInfo"] = "points a etre ajouté si l'item est en plaque",
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
+		--[[Translation missing --]]
+		["ResilienceInfo"] = "Resilience. Reduces the chance that you'll be critically hit, and decreases the damage of critical hits that you do take.",
 		["ShadowResistInfo"] = "Shadow Resistance.  Reduces the damage taken from shadow-based attacks.",
 		["ShadowSpellDamage"] = "Shadow Damage",
 		["ShadowSpellDamageInfo"] = "Shadow damage.  Increases the damage dealt by your shadow spells.",
@@ -144,6 +148,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellDamage"] = "Spell Damage",
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
+		--[[Translation missing --]]
+		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "L'endurance. Augmente votre santé et vos points de vies.",
 		["StrengthInfo"] = "La force. Augmente la puissance d'attaque et les capacités de certaines classes.",
@@ -252,18 +258,29 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["BagSlots"] = "^Sac %d+ .+$",
 		["Block"] = "^Bloquer : #$",
 		["BlockPercent"] = "^Equipé : Augmente vos chances de bloquer les attaques avec un bouclier de #%%%.$",
+		--[[Translation missing --]]
+		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
 		["BlockValue"] = "^Equipé : Augmente le score de blocage de votre bouclier de #%.$",
 		["Bow"] = "^Arc$",
 		["ChanceOnHit"] = "Chances de toucher :",
 		["Charges"] = "^.+ Charges?$",
 		["Cloth"] = "^Tissu$",
 		["CooldownRemaining"] = "^Temps de recharge restant:",
+		--[[Translation missing --]]
 		["Corruption"] = "^%+?# Corruption$",
 		["Crit"] = "^%+?# Score de crit%.?$",
 		["Crit2"] = "^%+?# au score de critique$",
 		["CritPercent"] = "^Equipé : Augmente vos chances d'infliger un coup critique de #%%%.$",
+		--[[Translation missing --]]
+		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
 		["Crossbow"] = "^Arbalète$",
 		["Dagger"] = "^Dague$",
+		--[[Translation missing --]]
+		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
+		--[[Translation missing --]]
+		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
 		["DefenseSkill"] = "^Equipé : Défense augmentée de #%.$",
 		["DefenseSkillSimple"] = "^%+?# Défense$",
 		["DisenchantingRequires"] = "^L'enchantement requiert",
@@ -271,6 +288,10 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Dodge2"] = "^%+?# à l'esquive$",
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equipé : Augmente vos chances d'esquiver une attaque de #%%%.$",
+		--[[Translation missing --]]
+		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
+		--[[Translation missing --]]
+		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
 		["Dps"] = "^%(# dégâts par seconde%)$",
 		["DpsAdd"] = "^Ajoute # dégâts par seconde$",
 		["Duration"] = "^Durée :",
@@ -284,6 +305,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["EnchantmentPyriumWeaponChain"] = "^Dragonne en pyrium$",
 		["EnchantmentTitaniumWeaponChain"] = "^Dragonne en titane$",
 		["Equip"] = "Équipé :",
+		--[[Translation missing --]]
+		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 		["FeralAp"] = "^Equipé : %+# à la puissance d'attaque pour les formes de félin, d'ours et d'ours redoutable uniquement%.$",
 		["FireResist"] = "^%+?# à la résistance Feu$",
 		["FireSpellDamage"] = "^%+# aux dégâts des sorts de Feu$",
@@ -296,6 +319,10 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Gun"] = "^Arme à feu$",
 		["Haste"] = "^%+?# Hâte$",
 		["Haste2"] = "^%+?# à la Hâte",
+		--[[Translation missing --]]
+		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		--[[Translation missing --]]
+		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^Vous n'avez pas récupéré cette apparence$",
 		["Healing"] = "^%+# aux sorts de soins$",
 		["Healing2"] = "^Equipé : Augmente les soins prodigués par les sorts et effets de # au maximum%.$",
@@ -308,6 +335,10 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["HeroicWarforged"] = "^De guerre héroïque$",
 		["Hit"] = "^Equipé : Augmente vos chances de toucher de #%%%.$",
 		["Hit2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HitRating"] = "^Equip: Improves hit rating by #%.$",
+		--[[Translation missing --]]
+		["HitRatingShort"] = "^%+?# Hit Rating$",
 		["HolySpellDamage"] = "^%+# aux dégâts des sorts du Sacré$",
 		["HolySpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets du Sacré de # au maximum%.$",
 		["Hp5"] = " ^%+?# Points de [vV]ie [tT]outes les 5 [sS]%.?$",
@@ -335,6 +366,10 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Parry"] = "^%+?# Parade$",
 		["Parry2"] = "^%+?# à la parade$",
 		["ParryPercent"] = "^Equipé : Augmente vos chances de parer une attaque de #%%%.$",
+		--[[Translation missing --]]
+		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
+		--[[Translation missing --]]
+		["ParryRatingShort"] = "^%+?# Parry Rating$",
 		["Plate"] = "^Plaques$",
 		["Polearm"] = "^Arme d'hast$",
 		["PvPPower"] = "^%+?# [Pp]uissance %(JcJ%)$",
@@ -343,23 +378,46 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Requires2"] = "^Niveau [%d%.,]+ requis$",
 		["Resilience"] = "^%+?# Résilience %(JcJ%)$",
 		["Resilience2"] = "^%+?# à la résilience %(JcJ%)$",
+		--[[Translation missing --]]
+		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
+		--[[Translation missing --]]
+		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
 		["Scope"] = "^Lunette %(%+# points de dégâts%)$",
 		["ScopeCrit"] = "^Lunette %(%+# au score de critique%)$",
 		["ScopeRangedCrit"] = "^%+?# au score de critique à distance$",
 		["ShadowResist"] = "^%+?# à la résistance Ombre$",
 		["ShadowSpellDamage"] = "^%+# aux dégâts des sorts d'Ombre$",
 		["ShadowSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets d'Ombre de # au maximum%.$",
+		--[[Translation missing --]]
 		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Bouclier$",
 		["SocketBonusPrefix"] = "Bonus de sertissage :",
 		["Speed"] = "^Vitesse #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Equipé : Augmente vos chances d'infliger un coup critique avec vos sorts de #%%%.$",
+		--[[Translation missing --]]
+		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^%+# aux dégâts et aux sorts de soins$",
 		["SpellDamage2"] = "^Equipé : Augmente les dégâts et les soins produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage3"] = "^Equipé : Augmente les soins et dégâts produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage4"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
+		--[[Translation missing --]]
+		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
 		["SpellHit"] = "^Equipé : Augmente vos chances de toucher avec des sorts de #%%%.$",
+		--[[Translation missing --]]
+		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
+		--[[Translation missing --]]
+		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
+		--[[Translation missing --]]
+		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
 		["SpellPower"] = "^%+?# Puissance des sorts$",
 		["Spirit"] = "^%+?# Esprit$",
 		["Staff"] = "^Bâton$",
@@ -591,8 +649,8 @@ Cette commande ne peut etre défaite!]=],
 		["ValuesDoNotShowUpgradesFor1H"] = "Ne pas afficher d'amélioration pour les objets a une main",
 		["ValuesDoNotShowUpgradesFor2H"] = "Ne pas afficher d'amélioration pour les objets a deux mains",
 		["ValuesDoNotShowUpgradesTooltip"] = "Cette option permet de cacher les améliorations pour ce type d'objet. Par exemple, même si les tanks paladin peuvent utiliser des armes a deux mains, une arme à deux mains n'est jamais une \"amélioration\" pour un ensemble de paladin tank, aussi Pawn ne devrait pas afficher informations d amélioration pour eux. De même, les Paladin Vindicte peuvent utiliser des armes a une main, mais ce n'est jamais une amélioration.",
-		["ValuesFollowSpecialization"] = "Ne montrer que les améliorations pour mon meilleur type d'armure au delà du niveau 50",
-		["ValuesFollowSpecializationTooltip"] = "Cette option permet de cacher les améliorations d'armure dans laquelle votre classe n est pas spécialisé après le niveau 50. Par exemple, au niveau 50 les Paladin Sacré apprennent la spécialisation plaque, ce qui augmente leur intelligence de 5%% quand ils portent seulement de la plaque. Quand cette option est choisie, Pawn ne tiendra jamais compte du tissu, cuir, ou maille comme des améliorations pour des paladins sacré au dessus du niveau 50",
+		["ValuesFollowSpecialization"] = "Ne montrer que les améliorations pour mon meilleur type d'armure au delà du niveau %d",
+		["ValuesFollowSpecializationTooltip"] = "Cette option permet de cacher les améliorations d'armure dans laquelle votre classe n est pas spécialisé après le niveau %d. Par exemple, au niveau %d les Paladin Sacré apprennent la spécialisation plaque, ce qui augmente leur intelligence de 5%% quand ils portent seulement de la plaque. Quand cette option est choisie, Pawn ne tiendra jamais compte du tissu, cuir, ou maille comme des améliorations pour des paladins sacré au dessus du niveau %d.",
 		["ValuesHeader"] = "Pondérations de statistiques pour %s",
 		["ValuesIgnoreItemType"] = "Ces objets sont inutilisables",
 		["ValuesIgnoreStat"] = "Les objets avec ceci sont inutilisables",

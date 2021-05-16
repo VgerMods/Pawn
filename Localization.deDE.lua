@@ -81,7 +81,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["ArcaneSpellDamage"] = "Arkanzauberschaden",
 		["ArcaneSpellDamageInfo"] = "Arkanzauberschaden. Erhöht den durch deine arkanen Zauber verursachten Schaden.",
 		["ArmorInfo"] = "Rüstung.  Körperliche Schadensreduktion.",
-		["ArmorTypes"] = "Waffenarten",
+		["ArmorTypes"] = "Rüstungstypen",
 		["AvoidanceInfo"] = "Vermeidung. Verringert den Schaden, den Ihr durch Flächenangriffe erleidet.",
 		["BlockRatingInfo"] = "Block Chance. Erhöht die Chancen auf einen erfolgreichen Schildblock.",
 		["BlockValueInfo"] = "Schildblockwert. Erhöht den Schaden, den ein Schild absorbiert, wenn er erfolgreich blockt.",
@@ -93,6 +93,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["DefenseInfo"] = "Verteidigungsfähigkeit. Verringert die Wahrscheinlichkeit, dass du von Boss-Angriffen getroffen wirst.",
 		["DodgeInfo"] = "Ausweichen. Erhöht die Wahrscheinlichkeit, dass du Angriffen vollständig ausweichst.",
 		["DpsInfo"] = "Waffenschaden pro Sekunde.  (Wenn du den DPS-Wert für verschiedene Waffentypen unterschiedlich bewerten möchtest, scrolle runter zum Bereich \"Spezielle Waffenwertungen\"",
+		["ExpertiseInfo"] = "Sachverstand. Negiert die Chancen deines Feindes, auszuweichen und zu parieren.",
 		["FeralApInfo"] = "Wilde Angriffskraft. Erhöht den Schaden von Druidenangriffen in wilder Form. Beinhaltet keine Angriffskraft, die durch Stärke und Beweglichkeit gewonnen wird.",
 		["FireResistInfo"] = "Feuerwiderstand. Reduziert den Schaden durch feuerbasierte Angriffe.",
 		["FireSpellDamage"] = "Feuerzauberschaden",
@@ -127,6 +128,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Plate"] = "Platte",
 		["PlateInfo"] = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand Platte ist.",
 		["RapInfo"] = "Distanzangriffskraft. Erhöht den Schaden von physischen Distanzangriffen. Beinhaltet keine Angriffskraft, die durch Beweglichkeit gewonnen wird.",
+		["ResilienceInfo"] = "Elastizität. Reduziert die Wahrscheinlichkeit, dass Sie kritisch getroffen werden, und verringert den Schaden kritischer Treffer, die Sie erleiden.",
 		["ShadowResistInfo"] = "Schattenwiderstand. Reduziert den Schaden durch schattenbasierte Angriffe.",
 		["ShadowSpellDamage"] = "Schattenzauberschaden",
 		["ShadowSpellDamageInfo"] = "Schattenzauberschaden. Erhöht den durch deine Schattenzauber verursachten Schaden.",
@@ -143,6 +145,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellDamage"] = "Zauberschaden",
 		["SpellDamageInfo"] = "Zauberschaden. Erhöht den durch deine Angriffszauber verursachten Schaden.",
 		["SpellHitInfo"] = "Zaubertreffer. Erhöht die Wahrscheinlichkeit, dass deine Schadenszauber das Ziel treffen, insbesondere Bosse.",
+		["SpellPenetrationInfo"] = "Zauberdurchdringung. Negiert die Widerstände eines Feindes gegen deine Zauber.",
 		["SpiritInfo"] = "Willenskraft. Beeinflusst die Manaregeneration außerhalb des Kampfes.",
 		["StaminaInfo"] = "Ausdauer. Erhöht die Gesundheit.",
 		["StrengthInfo"] = "Stärke. Verstärkt Eure Angriffe und Fähigkeiten.",
@@ -228,7 +231,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["WeaponTypeOffHandInfo"] = "Für eine reine Schildhandwaffe zugeteilte Punkte.  Zählt nicht bei Verzauberungen, Schilden oder Waffen, die in beiden Händen verwendet werden können oder Zaubergegenständen für die Schildhand.",
 		["WeaponTypePolearm"] = "Stangenwaffe",
 		["WeaponTypePolearmInfo"] = "Für eine Stangenwaffe zugeteilte Punkte.",
-		["WeaponTypes"] = "Waffenarten",
+		["WeaponTypes"] = "Waffentypen",
 		["WeaponTypeStaff"] = "Stab",
 		["WeaponTypeStaffInfo"] = "Für einen Stab zugeteilte Punkte.",
 		["WeaponTypeWand"] = "Zauberstab",
@@ -251,6 +254,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["BagSlots"] = "^%d+ Platz .+$",
 		["Block"] = "^%+?# Blocken$",
 		["BlockPercent"] = "^Anlegen: Erhöht Eure Chance, Angriffe mit einem Schild zu blocken, um #%%%.$",
+		--[[Translation missing --]]
+		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
 		["BlockValue"] = "^Anlegen: Erhöht den Blockwert Eures Schildes um #%.$",
 		["Bow"] = "^Bogen$",
 		["ChanceOnHit"] = "Trefferchance:",
@@ -261,8 +266,16 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Crit"] = "^%+?# [Kk]ritischer Trefferwert%.?$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer zu erzielen, um #%%%.$",
+		--[[Translation missing --]]
+		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
 		["Crossbow"] = "^Armbrust$",
 		["Dagger"] = "^Dolch$",
+		--[[Translation missing --]]
+		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
+		--[[Translation missing --]]
+		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
 		["DefenseSkill"] = "^Anlegen: Verteidigung %+#%.$",
 		["DefenseSkillSimple"] = "^%+?# Verteidigung$",
 		["DisenchantingRequires"] = "^Entzaubern benötigt",
@@ -270,6 +283,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Dodge2"] = "^UNUSED$",
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Anlegen: Erhöht Eure Chance, einem Angriff auszuweichen, um #%%%.$",
+		--[[Translation missing --]]
+		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
+		--[[Translation missing --]]
+		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
 		["Dps"] = "^%(# Schaden pro Sekunde%)$",
 		["DpsAdd"] = "^Erhöht # Schaden pro Sekunde$",
 		["Duration"] = "^Dauer:",
@@ -283,6 +300,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["EnchantmentPyriumWeaponChain"] = "^Pyriumwaffenkette$",
 		["EnchantmentTitaniumWeaponChain"] = "^Titanwaffenkette$",
 		["Equip"] = "Anlegen:",
+		--[[Translation missing --]]
+		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 		["FeralAp"] = "^Anlegen: %+# Angriffskraft in Katzengestalt, Bärengestalt oder Terrorbärengestalt%.$",
 		["FireResist"] = "^%+?# Feuerwiderstand$",
 		["FireSpellDamage"] = "^%+# Feuerzauberschaden$",
@@ -295,6 +314,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Gun"] = "^Schusswaffe$",
 		["Haste"] = "^%+?# Tempo$",
 		["Haste2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		--[[Translation missing --]]
+		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt$",
 		["Healing"] = "^%+# Heilzauber$",
 		["Healing2"] = "^Anlegen: Erhöht durch Zauber und Effekte verursachte Heilung um bis zu #%.$",
@@ -307,6 +330,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["HeroicWarforged"] = "^Heroisch, Kriegsgeschmiedet$",
 		["Hit"] = "^Anlegen: Verbessert Eure Trefferchance um #%%%.$",
 		["Hit2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["HitRating"] = "^Equip: Improves hit rating by #%.$",
+		--[[Translation missing --]]
+		["HitRatingShort"] = "^%+?# Hit Rating$",
 		["HolySpellDamage"] = "^%+# Heiligzauberschaden$",
 		["HolySpellDamage2"] = "^Anlegen: Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu #%.$",
 		["Hp5"] = "^Anlegen: Stellt # Gesundheit alle 5 Sek%. wieder her%.?$",
@@ -334,6 +361,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Parry"] = "^%+?# Parieren$",
 		["Parry2"] = "^UNUSED$",
 		["ParryPercent"] = "^Anlegen: Erhöht Eure Chance, einen Angriff zu parieren, um #%%%.$",
+		--[[Translation missing --]]
+		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
+		--[[Translation missing --]]
+		["ParryRatingShort"] = "^%+?# Parry Rating$",
 		["Plate"] = "^Platte$",
 		["Polearm"] = "^Stangenwaffe$",
 		["PvPPower"] = "^%+?# P[vV]P[- ]Macht$",
@@ -342,6 +373,10 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Requires2"] = "^Benötigt",
 		["Resilience"] = "^%+?# P[vV]P[- ]Abhärtung$",
 		["Resilience2"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
+		--[[Translation missing --]]
+		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
 		["Scope"] = "^Zielfernrohr %(%+# Schaden%)$",
 		["ScopeCrit"] = "^Zielfernrohr %(%+# kritischer Trefferwert%)$",
 		["ScopeRangedCrit"] = "^%+?# kritische Ferntrefferwertung$",
@@ -354,11 +389,29 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Speed"] = "^Geschwindigkeit #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer durch Zauber zu erzielen, um #%%%.$",
+		--[[Translation missing --]]
+		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		--[[Translation missing --]]
+		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^%+# Schadenszauber und Heilzauber$",
 		["SpellDamage2"] = "^Anlegen: Erhöht durch Zauber und magische Effekte zugefügten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
+		--[[Translation missing --]]
+		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
+		--[[Translation missing --]]
+		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
 		["SpellHit"] = "^Anlegen: Erhöht Eure Chance mit Zaubern zu treffen um #%%%.$",
+		--[[Translation missing --]]
+		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
+		--[[Translation missing --]]
+		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
+		--[[Translation missing --]]
+		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
+		--[[Translation missing --]]
+		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
 		["SpellPower"] = "^%+?# Zaubermacht$",
 		["Spirit"] = "^%+?# Willenskraft$",
 		["Staff"] = "^Stab$",
@@ -397,7 +450,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 	["UI"] = {
 		["AboutHeader"] = "Über Pawn",
 		["AboutMrRobot"] = "Standardwerte werden zur Verfügung gestellt durch den großzügigen Mr. Robot. Sie sind ein guter Ausgangspunkt für Charaktere mit typischen Talenten und Artefaktpunkteverteilungen in typischen Kämpfen. Du kannst genauere, benutzerdefinierte Wertegewichtungen erhalten, indem du den Simulator von Ask Mr. Robot auf askmrrobot.com verwendest.",
-		["AboutReadme"] = "Neu bei Pawn? Schau dir den \"Los geht's\" Reiter für eine erste Info an.  Mehr Informationen findest du in der mitgelieferten README Datei!",
+		["AboutReadme"] = "Neu bei Pawn? Eine grundlegende Einführung findest du auf dem \"Los geht's\" Reiter.",
 		["AboutTab"] = "Über",
 		["AboutTranslation"] = "Deutsche Übersetzung von SunnySunflow, Sandmahn",
 		["AboutVersion"] = "Version %s",
