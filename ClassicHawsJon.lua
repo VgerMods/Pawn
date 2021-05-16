@@ -9,25 +9,46 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0320
+PawnClassicLastUpdatedVersion = 2.0500
 
 
 function PawnClassicScaleProvider_AddScales()
 
 	-- Level 60 rating conversions
-	local HitRatingPer = 9.37931
-	local SpellHitRatingPer = 8
-	local CritRatingPer = 8.5
-	local SpellCritRatingPer = 8
-	local HasteRatingPer = 8.03
-	local SpellHasteRatingPer = 8.03
-	local ExpertiseRatingPer = 2.34483
-	local ArmorPenetrationPer = 3.75
-	local SpellPenetrationPer = 1
-	local DefenseRatingPer = 1.5
-	local DodgeRatingPer = 9.44
-	local ParryRatingPer = 9.44
-	local BlockRatingPer = 6.9
+	local HitRatingPer, SpellHitRatingPer, CritRatingPer, SpellCritRatingPer, HasteRatingPer, SpellHasteRatingPer, ExpertiseRatingPer, ArmorPenetrationPer, SpellPenetrationPer, DefenseRatingPer, DodgeRatingPer, ParryRatingPer, BlockRatingPer
+	
+	-- We use the same stat weights for Classic and Burning Crusade Classic, but on Classic, these stats all appear as percentages,
+	-- so we pre-multiply each stat weight by the rating multiplier. These weights were originally designed for Burning Crusade, so
+	-- they don't require any further modification on Burning Crusade Classic (including prepatch) servers.
+	if VgerCore.IsClassic then
+		HitRatingPer = 9.37931
+		SpellHitRatingPer = 8
+		CritRatingPer = 8.5
+		SpellCritRatingPer = 8
+		HasteRatingPer = 8.03
+		SpellHasteRatingPer = 8.03
+		ExpertiseRatingPer = 2.34483
+		ArmorPenetrationPer = 3.75
+		SpellPenetrationPer = 1
+		DefenseRatingPer = 1.5
+		DodgeRatingPer = 9.44
+		ParryRatingPer = 9.44
+		BlockRatingPer = 6.9
+	else
+		HitRatingPer = 1
+		SpellHitRatingPer = 1
+		CritRatingPer = 1
+		SpellCritRatingPer = 1
+		HasteRatingPer = 1
+		SpellHasteRatingPer = 1
+		ExpertiseRatingPer = 1
+		ArmorPenetrationPer = 1
+		SpellPenetrationPer = 1
+		DefenseRatingPer = 1
+		DodgeRatingPer = 1
+		ParryRatingPer = 1
+		BlockRatingPer = 1
+	end
 
 	PawnAddPluginScaleFromTemplate(
 		ScaleProviderName,
