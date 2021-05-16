@@ -680,7 +680,7 @@ function PawnInitializeOptions()
 
 	-- Finally, this stuff needs to get done after options are changed.
 	PawnRecreateAnnotationFormats()
-	
+
 end
 
 -- If the specified setting does not exist in the common settings list, this function first tries to migrate it from the
