@@ -247,7 +247,7 @@ PawnLocal =
 		["AllStats"] = "^%+?# 所有属性$",
 		["Ap"] = "^%+?# 攻击强度$",
 		["Ap2"] = "^装备： ?%+# 攻击强度。$",
-		["Ap3"] = "^UNUSED$",
+		["Ap3"] = "^装备： 攻击强度提高#点。$",
 		["ArcaneResist"] = "^%+?# 奥术抗性$",
 		["ArcaneSpellDamage"] = "^%+# 奥术法术伤害$",
 		["ArcaneSpellDamage2"] = "^装备： ?提高奥术法术和效果所造成的伤害，最多#点。$",
@@ -258,8 +258,7 @@ PawnLocal =
 		["BagSlots"] = "^%d+格容器 .+$",
 		["Block"] = "^#点格挡$",
 		["BlockPercent"] = "^装备： ?使你用盾牌格挡攻击的几率提高#%%。$",
-		--[[Translation missing --]]
-		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
+		["BlockRating"] = "^装备： 使你的格挡等级提高#。$",
 		["BlockValue"] = "^装备： ?使你的盾牌的格挡值提高#点。$",
 		["Bow"] = "^弓$",
 		["ChanceOnHit"] = "击中时可能：",
@@ -270,16 +269,12 @@ PawnLocal =
 		["Crit"] = "^%+?# 爆击$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^装备： ?使你造成致命一击的几率提高#%%。$",
-		--[[Translation missing --]]
-		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
+		["CritRating"] = "^装备： 使你的爆击等级提高#。$",
+		["CritRatingShort"] = "^%+?# 爆击等级$",
 		["Crossbow"] = "^弩$",
 		["Dagger"] = "^匕首$",
-		--[[Translation missing --]]
-		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
-		--[[Translation missing --]]
-		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
+		["DefenseRating"] = "^装备： 防御等级提高#。$",
+		["DefenseRatingSimple"] = "^%+?# 防御等级$",
 		["DefenseSkill"] = "^装备： ?防御技能提高#点。$",
 		["DefenseSkillSimple"] = "^%+?# 防御$",
 		["DisenchantingRequires"] = "^分解需要",
@@ -287,10 +282,8 @@ PawnLocal =
 		["Dodge2"] = "^UNUSED$",
 		["Dodge3"] = "^躲闪 %+#%%$",
 		["DodgePercent"] = "^装备： ?使你躲闪攻击的几率提高#%%。$",
-		--[[Translation missing --]]
-		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
-		--[[Translation missing --]]
-		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
+		["DodgeRating"] = "^装备： 使你的躲闪等级提高#。$",
+		["DodgeRatingShort"] = "^%+?# 躲闪等级$",
 		["Dps"] = "^%（每秒伤害#）$",
 		["DpsAdd"] = "^Adds # damage per second$",
 		["Duration"] = "^耐久度:",
@@ -304,8 +297,7 @@ PawnLocal =
 		["EnchantmentPyriumWeaponChain"] = "^燃钢武器链$",
 		["EnchantmentTitaniumWeaponChain"] = "^泰坦神铁武器链$",
 		["Equip"] = "装备：",
-		--[[Translation missing --]]
-		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
+		["ExpertiseRating"] = "^装备： 使你的精准等级提高#点。$",
 		["FeralAp"] = "^装备： ?在猎豹、熊和巨熊形态下的攻击强度提高#点。$",
 		["FireResist"] = "^%+?# 火焰抗性$",
 		["FireSpellDamage"] = "^%+# 火焰法术伤害$",
@@ -318,10 +310,8 @@ PawnLocal =
 		["Gun"] = "^枪械$",
 		["Haste"] = "^%+?# 急速$",
 		["Haste2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
-		--[[Translation missing --]]
-		["HasteRatingShort"] = "^%+?# Haste Rating$",
+		["HasteRating"] = "^装备： 急速等级提高#点。$",
+		["HasteRatingShort"] = "^%+?# 急速等级$",
 		["HaventCollectedAppearance"] = "^你尚未收藏过此外观$",
 		["Healing"] = "^%+# 治疗量$",
 		["Healing2"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
@@ -334,10 +324,8 @@ PawnLocal =
 		["HeroicWarforged"] = "英雄战火",
 		["Hit"] = "^装备： ?使你击中目标的几率提高#%%。$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HitRating"] = "^Equip: Improves hit rating by #%.$",
-		--[[Translation missing --]]
-		["HitRatingShort"] = "^%+?# Hit Rating$",
+		["HitRating"] = "^装备： 命中等级提高#点。$",
+		["HitRatingShort"] = "^%+?# 命中等级$",
 		["HolySpellDamage"] = "^%+# 神圣法术伤害$",
 		["HolySpellDamage2"] = "^装备： ?提高神圣法术和效果所造成的伤害，最多#点。$",
 		["Hp5"] = "^装备: 每5秒恢复#生命力。$",
@@ -365,10 +353,8 @@ PawnLocal =
 		["Parry"] = "^%+?# 招架$",
 		["Parry2"] = "^UNUSED$",
 		["ParryPercent"] = "^装备： 使你招架攻击的几率提高#%%。$",
-		--[[Translation missing --]]
-		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
-		--[[Translation missing --]]
-		["ParryRatingShort"] = "^%+?# Parry Rating$",
+		["ParryRating"] = "^装备： 使你的招架等级提高#。$",
+		["ParryRatingShort"] = "^%+?# 招架等级$",
 		["Plate"] = "^板甲$",
 		["Polearm"] = "^长柄武器$",
 		["PvPPower"] = "^%+?# PvP强度$",
@@ -377,10 +363,8 @@ PawnLocal =
 		["Requires2"] = "^UNUSED$",
 		["Resilience"] = "^%+?# PvP韧性$",
 		["Resilience2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
-		--[[Translation missing --]]
-		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
+		["ResilienceRating"] = "^装备： 使你的韧性等级提高#点。$",
+		["ResilienceRatingShort"] = "^%+?# 韧性等级$",
 		["Scope"] = "^瞄准镜%（%+# 伤害%）$",
 		["ScopeCrit"] = "^瞄准镜 %(%+# 爆击%)$",
 		["ScopeRangedCrit"] = "^%+?# 远程爆击$",
@@ -393,29 +377,20 @@ PawnLocal =
 		["Speed"] = "^速度 #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^装备： ?使你的法术造成爆击的几率提高#%%。$",
-		--[[Translation missing --]]
-		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
+		["SpellCritRating"] = "^装备： 使你的法术爆击等级提高#。$",
+		["SpellCritRatingShort"] = "^%+?# 法术爆击等级$",
 		["SpellDamage"] = "^%+# 伤害和治疗法术$",
 		["SpellDamage2"] = "^装备： ?提高所有法术和魔法效果所造成的伤害和治疗效果，最多#点。$",
 		["SpellDamage3"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
 		["SpellDamage4"] = "^装备： ?使治疗法术和效果所回复的生命值提高#点。$",
-		--[[Translation missing --]]
-		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
-		--[[Translation missing --]]
-		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
+		["SpellDamageAndHealing"] = "^装备： 使法术治疗提高最多#点，法术伤害提高最多#点。$",
+		["SpellHasteRating"] = "^装备： 法术急速等级提高#点。$",
+		["SpellHasteRatingShort"] = "^%+?# 法术急速等级$",
 		["SpellHit"] = "^装备： ?使你的法术击中敌人的几率提高#%%。$",
-		--[[Translation missing --]]
-		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
-		--[[Translation missing --]]
-		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
-		--[[Translation missing --]]
-		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
+		["SpellHitRating"] = "^装备： 使你的法术命中等级提高#。$",
+		["SpellHitRatingShort"] = "^%+?# 法术命中等级$",
+		["SpellPenetration"] = "^装备： 使你的法术穿透提高#。$",
+		["SpellPenetrationShort"] = "^%+?# 法术穿透$",
 		["SpellPower"] = "^%+?# 法术强度$",
 		["Spirit"] = "^%+?# 精神$",
 		["Staff"] = "^法杖$",
@@ -683,7 +658,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 
 -- Special case: weapon actually use different text on live vs. classic. Function of Intellect is different too.
 -- So, patch things up here.
-if VgerCore.IsClassic then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 
 	local TooltipParsing_Classic =
 	{
@@ -707,6 +682,20 @@ if VgerCore.IsClassic then
 
 	local Key, NewString
 	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
+if VgerCore.IsBurningCrusade then
+
+	local TooltipParsing_BurningCrusade =
+	{
+		["Block"] = "^#格挡$",
+		["BlockValue"] = "^装备： 使你的盾牌格挡值提高#点。$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_BurningCrusade) do
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
 end
