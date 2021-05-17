@@ -249,7 +249,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["AllStats"] = "^%+?# ко всем характеристикам$",
 		["Ap"] = "^%+?# к силе атаки$",
 		["Ap2"] = "^Если на персонаже: Увеличивает силу атаки на #%.$",
-		["Ap3"] = "^UNUSED$",
+		["Ap3"] = "^Если на персонаже: Повышает силу атаки на #%.$",
 		["ArcaneResist"] = "^Устойчивость: %+# Тайная магия$",
 		["ArcaneSpellDamage"] = "^%+# к урону от заклинаний тайной магии$",
 		["ArcaneSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами тайной магии, на # ед%.$",
@@ -260,8 +260,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["BagSlots"] = "^%d+ [Яя]чеек .+$",
 		["Block"] = "^Блокирование: #$",
 		["BlockPercent"] = "^Если на персонаже: Увеличение рейтинга блока щитом на #%%%,$",
-		--[[Translation missing --]]
-		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
+		["BlockRating"] = "^Если на персонаже: Увеличение рейтинга блока на # ед%.$",
 		["BlockValue"] = "^Если на персонаже: Увеличение показателя блока щитом на # ед%.$",
 		["Bow"] = "^Лук$",
 		["ChanceOnHit"] = "Возможно при попадании:",
@@ -272,16 +271,12 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Crit"] = "^%+?# к критическому удару$",
 		["Crit2"] = "^%+?# к показателю критического удара$",
 		["CritPercent"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на #%%%.$",
-		--[[Translation missing --]]
-		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
+		["CritRating"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на # ед%.$",
+		["CritRatingShort"] = "^%+?# к рейтингу критического удара$",
 		["Crossbow"] = "^Арбалет$",
 		["Dagger"] = "^Кинжал$",
-		--[[Translation missing --]]
-		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
-		--[[Translation missing --]]
-		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
+		["DefenseRating"] = "^Если на персонаже: Повышает рейтинг защиты на #%.$",
+		["DefenseRatingSimple"] = "^%+?# к рейтингу защиты$",
 		["DefenseSkill"] = "^Если на персонаже: Увеличение рейтинга защиты на # ед%.$",
 		["DefenseSkillSimple"] = "^%+?# Defense$",
 		["DisenchantingRequires"] = "^Требуется",
@@ -289,10 +284,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Dodge2"] = "^%+?#%%? к показателю уклонения$",
 		["Dodge3"] = "^%+#%% к рейтингу уклонения$",
 		["DodgePercent"] = "^Если на персонаже: Увеличение рейтинга уклонения на #%%%.$",
-		--[[Translation missing --]]
-		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
-		--[[Translation missing --]]
-		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
+		["DodgeRating"] = "^Если на персонаже: Увеличение рейтинга уклонения на # ед%.$",
+		["DodgeRatingShort"] = "^%+?# к рейтингу уклонения$",
 		["Dps"] = "^%(# ед%. урона в секунду%)$",
 		["DpsAdd"] = "^Добавляет # ед%. урона в секунду$",
 		["Duration"] = "^Срок действия:",
@@ -306,8 +299,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["EnchantmentPyriumWeaponChain"] = "^Колчедановая цепь для оружия$",
 		["EnchantmentTitaniumWeaponChain"] = "^Титановая цепь для оружия$",
 		["Equip"] = "Если на персонаже:",
-		--[[Translation missing --]]
-		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
+		["ExpertiseRating"] = "^Если на персонаже: Повышает рейтинг мастерства на #%.$",
 		["FeralAp"] = "^Если на персонаже: Увеличивает силу атаки на # ед%. в облике кошки, медведя и лютого медведя%.$",
 		["FireResist"] = "^Устойчивость: %+# огонь$",
 		["FireSpellDamage"] = "^%+# к урону от заклинаний огня$",
@@ -320,10 +312,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Gun"] = "^Огнестрельное$",
 		["Haste"] = "^%+?# к скорости$",
 		["Haste2"] = "^%+?# к показателю скорости$",
-		--[[Translation missing --]]
-		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
-		--[[Translation missing --]]
-		["HasteRatingShort"] = "^%+?# Haste Rating$",
+		["HasteRating"] = "^Если на персонаже: Повышает рейтинг скорости боя на #%.$",
+		["HasteRatingShort"] = "^%+?# к рейтинг скорости$",
 		["HaventCollectedAppearance"] = "^У вас еще нет такой модели.$",
 		["Healing"] = "^%+# к исцеляющим заклинаниям$",
 		["Healing2"] = "^Если на персонаже: Усиливает исцеление от заклинаний и эффектов максимум на # ед%.$",
@@ -336,10 +326,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["HeroicWarforged"] = "^Предмет закален в бою %(героич%.%)$",
 		["Hit"] = "^Если на персонаже: Вероятность нанесения удара увеличена на #%%%.$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HitRating"] = "^Equip: Improves hit rating by #%.$",
-		--[[Translation missing --]]
-		["HitRatingShort"] = "^%+?# Hit Rating$",
+		["HitRating"] = "^Если на персонаже: Повышает рейтинг меткости на #%.$",
+		["HitRatingShort"] = "^%+?# к рейтингу меткости$",
 		["HolySpellDamage"] = "^%+# к урону от заклинаний светлой магии$",
 		["HolySpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами светлой магии, на # ед%.$",
 		["Hp5"] = "^Восстанавливает # здоровья каждые 5 сек%.$",
@@ -367,10 +355,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Parry"] = "^%+?# к парированию$",
 		["Parry2"] = "^%+?# к показателю парирования$",
 		["ParryPercent"] = "^Если на персонаже: Увеличение рейтинга парирования атак на #%%%.$",
-		--[[Translation missing --]]
-		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
-		--[[Translation missing --]]
-		["ParryRatingShort"] = "^%+?# Parry Rating$",
+		["ParryRating"] = "^Если на персонаже: Увеличение рейтинга парирования атак на # ед%.$",
+		["ParryRatingShort"] = "^%+?# к рейтингу парирования$",
 		["Plate"] = "^Латы$",
 		["Polearm"] = "^Древковое$",
 		["PvPPower"] = "^%+?# к PvP%-силе$",
@@ -379,46 +365,35 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Requires2"] = "^Требуемый уровень",
 		["Resilience"] = "^%+?# к PvP%-устойчивости$",
 		["Resilience2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
-		--[[Translation missing --]]
-		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
+		["ResilienceRating"] = "^Если на персонаже: Повышает рейтинг устойчивости на #%.$",
+		["ResilienceRatingShort"] = "^%+?# к рейтингу устойчивости$",
 		["Scope"] = "^Scope %(%+# Damage%)$",
 		["ScopeCrit"] = "^Scope %(%+# Critical Strike%)$",
 		["ScopeRangedCrit"] = "^%+?# Ranged Critical Strike$",
 		["ShadowResist"] = "^Устойчивость: %+# тьма$",
 		["ShadowSpellDamage"] = "^%+# к урону от заклинаний темной магии$",
 		["ShadowSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами темной магии, на # ед%.$",
-		--[[Translation missing --]]
 		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Щит$",
 		["SocketBonusPrefix"] = "При соответствии цвета:",
 		["Speed"] = "^Скорость #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Если на персонаже: Увеличение рейтинга критического эффекта заклинаний на #%%%.$",
-		--[[Translation missing --]]
-		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
+		["SpellCritRating"] = "^Если на персонаже: Повышает рейтинг критического эффекта заклинаний на #%.$",
+		["SpellCritRatingShort"] = "^%+?# к рейтингу критического удара заклинаниями$",
 		["SpellDamage"] = "^%+# к наносящим урон и исцеляющим заклинаниям$",
 		["SpellDamage2"] = "^Если на персонаже: Увеличение урона и целительного действия магических заклинаний и эффектов не более чем на # ед%.$",
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
-		--[[Translation missing --]]
-		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
+		["SpellDamageAndHealing"] = "^Если на персонаже: Усиливает исходящее исцеление максимум на # ед%., а урон от магических эффектов и заклинаний – максимум на # ед%.$",
+		["SpellHasteRating"] = "^Если на персонаже: Повышает рейтинг скорости заклинаний на #%.$",
+		["SpellHasteRatingShort"] = "^%+?# к рейтингу скорости заклинаний$",
 		["SpellHit"] = "^Если на персонаже: Повышение на #%% рейтинга меткости заклинаний%.$",
 		--[[Translation missing --]]
 		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
-		--[[Translation missing --]]
-		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
-		--[[Translation missing --]]
-		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
+		["SpellHitRatingShort"] = "^%+?# к рейтингу меткости заклинаний$",
+		["SpellPenetration"] = "^Если на персонаже: Увеличивает проникающую способность заклинаний на #%.$",
+		["SpellPenetrationShort"] = "^%+?# к проникающей способности заклинаний$",
 		["SpellPower"] = "^%+?# к силе заклинаний$",
 		["Spirit"] = "^%+?# к духу$",
 		["Staff"] = "^Посох$",
@@ -427,8 +402,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Sword"] = "^Меч$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+ мин%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+ сек%)$",
-		--[[Translation missing --]]
-		["Thrown"] = "^Thrown$",
+		["Thrown"] = "^Метательное оружие$",
 		["Thunderforged"] = "^Создано в Кузне Грома$",
 		["Timeless"] = "^Вневременной предмет$",
 		["Titanforged"] = "^Кованый титанами$",
@@ -755,10 +729,15 @@ PawnLocal.Specs =
 	},
 }
 
+if VgerCore.IsBurningCrusade then
+	PawnLocal.DecimalSeparator = ","
+	PawnLocal.ThousandsSeparator = ","
+end
+
 end
 
 if GetLocale() == "ruRU" then
-	PawnUseThisLocalization()
+	PawnUseThisLocalization()	
 end
 
 -- After using this localization or deciding that we don't need it, remove it from memory.
