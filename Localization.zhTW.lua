@@ -250,6 +250,7 @@ PawnLocal =
 		["AllStats"] = "^%+?#所有屬性$",
 		["Ap"] = "^%+?#攻擊強度$",
 		["Ap2"] = "^裝備： %+#攻擊強度。$",
+		["Ap3"] = "^UNUSED$",
 		["ArcaneResist"] = "^%+?# 祕法抗性$",
 		["ArcaneSpellDamage"] = "^%+# 祕法法術傷害$",
 		["ArcaneSpellDamage2"] = "^裝備： 祕法法術和效果造成的傷害提高最多#點。$",

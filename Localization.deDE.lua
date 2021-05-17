@@ -244,6 +244,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["AllStats"] = "^%+?# [Aa]lle [Ww]erte$",
 		["Ap"] = "^%+?# Angriffskraft$",
 		["Ap2"] = "^Anlegen: %+# Angriffskraft%.$",
+		["Ap3"] = "^Anlegen: Erhöht die Angriffskraft um #%.$",
 		["ArcaneResist"] = "^%+?# Arkanwiderstand$",
 		["ArcaneSpellDamage"] = "^%+# Arkanzauberschaden$",
 		["ArcaneSpellDamage2"] = "^Anlegen: Erhöht durch Arkanzauber und Arkaneffekte zugefügten Schaden um bis zu #%.$",
@@ -254,8 +255,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["BagSlots"] = "^%d+ Platz .+$",
 		["Block"] = "^%+?# Blocken$",
 		["BlockPercent"] = "^Anlegen: Erhöht Eure Chance, Angriffe mit einem Schild zu blocken, um #%%%.$",
-		--[[Translation missing --]]
-		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
+		["BlockRating"] = "^Anlegen: Erhöht Eure Blockwertung um #%.$",
 		["BlockValue"] = "^Anlegen: Erhöht den Blockwert Eures Schildes um #%.$",
 		["Bow"] = "^Bogen$",
 		["ChanceOnHit"] = "Trefferchance:",
@@ -266,16 +266,12 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Crit"] = "^%+?# [Kk]ritischer Trefferwert%.?$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer zu erzielen, um #%%%.$",
-		--[[Translation missing --]]
-		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
+		["CritRating"] = "^Anlegen: Erhöht Eure kritische Trefferwertung um #%.$",
+		["CritRatingShort"] = "^%+?# Kritische Trefferwertung$",
 		["Crossbow"] = "^Armbrust$",
 		["Dagger"] = "^Dolch$",
-		--[[Translation missing --]]
-		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
-		--[[Translation missing --]]
-		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
+		["DefenseRating"] = "^Anlegen: Erhöht Verteidigungswertung um #%.$",
+		["DefenseRatingSimple"] = "^%+?# Verteidigungswertung$",
 		["DefenseSkill"] = "^Anlegen: Verteidigung %+#%.$",
 		["DefenseSkillSimple"] = "^%+?# Verteidigung$",
 		["DisenchantingRequires"] = "^Entzaubern benötigt",
@@ -283,10 +279,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Dodge2"] = "^UNUSED$",
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Anlegen: Erhöht Eure Chance, einem Angriff auszuweichen, um #%%%.$",
-		--[[Translation missing --]]
-		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
-		--[[Translation missing --]]
-		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
+		["DodgeRating"] = "^Anlegen: Erhöht Eure Ausweichwertung um #%.$",
+		["DodgeRatingShort"] = "^%+?#%%? Ausweichwertung$",
 		["Dps"] = "^%(# Schaden pro Sekunde%)$",
 		["DpsAdd"] = "^Erhöht # Schaden pro Sekunde$",
 		["Duration"] = "^Dauer:",
@@ -300,8 +294,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["EnchantmentPyriumWeaponChain"] = "^Pyriumwaffenkette$",
 		["EnchantmentTitaniumWeaponChain"] = "^Titanwaffenkette$",
 		["Equip"] = "Anlegen:",
-		--[[Translation missing --]]
-		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
+		["ExpertiseRating"] = "^Anlegen: Erhöht Eure Waffenkundewertung um #%.$",
 		["FeralAp"] = "^Anlegen: %+# Angriffskraft in Katzengestalt, Bärengestalt oder Terrorbärengestalt%.$",
 		["FireResist"] = "^%+?# Feuerwiderstand$",
 		["FireSpellDamage"] = "^%+# Feuerzauberschaden$",
@@ -314,8 +307,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Gun"] = "^Schusswaffe$",
 		["Haste"] = "^%+?# Tempo$",
 		["Haste2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		["HasteRating"] = "^Anlegen: Erhöht die Tempowertung um #%.$",
 		--[[Translation missing --]]
 		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt$",
@@ -330,10 +322,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["HeroicWarforged"] = "^Heroisch, Kriegsgeschmiedet$",
 		["Hit"] = "^Anlegen: Verbessert Eure Trefferchance um #%%%.$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HitRating"] = "^Equip: Improves hit rating by #%.$",
-		--[[Translation missing --]]
-		["HitRatingShort"] = "^%+?# Hit Rating$",
+		["HitRating"] = "^Anlegen: Erhöht die Trefferwertung um #%.$",
+		["HitRatingShort"] = "^%+?# Trefferwertung$",
 		["HolySpellDamage"] = "^%+# Heiligzauberschaden$",
 		["HolySpellDamage2"] = "^Anlegen: Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu #%.$",
 		["Hp5"] = "^Anlegen: Stellt # Gesundheit alle 5 Sek%. wieder her%.?$",
@@ -349,7 +339,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Mastery2"] = "^UNUSED$",
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%xBenötigt",
 		["MovementSpeed"] = "^%+# Bewegungsgeschwindigkeit$",
-		["Mp5"] = "^Anlegen: Stellt alle 5 Sek%. # Punkt%(e%) Mana wieder her%.$",
+		["Mp5"] = "^Anlegen: Stellt alle 5 Sek%. # Mana wieder her%.$",
 		["Mp52"] = "^%+?# Mana alle 5 Sek%.$",
 		["MultiStatHeading"] = "^Mehrere Werte$",
 		["MultiStatSeparator1"] = "und",
@@ -361,10 +351,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Parry"] = "^%+?# Parieren$",
 		["Parry2"] = "^UNUSED$",
 		["ParryPercent"] = "^Anlegen: Erhöht Eure Chance, einen Angriff zu parieren, um #%%%.$",
-		--[[Translation missing --]]
-		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
-		--[[Translation missing --]]
-		["ParryRatingShort"] = "^%+?# Parry Rating$",
+		["ParryRating"] = "^Anlegen: Erhöht Eure Parierwertung um #%.$",
+		["ParryRatingShort"] = "^%+?# Parierwertung$",
 		["Plate"] = "^Platte$",
 		["Polearm"] = "^Stangenwaffe$",
 		["PvPPower"] = "^%+?# P[vV]P[- ]Macht$",
@@ -373,10 +361,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Requires2"] = "^Benötigt",
 		["Resilience"] = "^%+?# P[vV]P[- ]Abhärtung$",
 		["Resilience2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
-		--[[Translation missing --]]
-		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
+		["ResilienceRating"] = "^Anlegen: Erhöht Eure Abhärtungswertung um #%.$",
+		["ResilienceRatingShort"] = "^%+?# Abhärtungswertung$",
 		["Scope"] = "^Zielfernrohr %(%+# Schaden%)$",
 		["ScopeCrit"] = "^Zielfernrohr %(%+# kritischer Trefferwert%)$",
 		["ScopeRangedCrit"] = "^%+?# kritische Ferntrefferwertung$",
@@ -389,29 +375,20 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Speed"] = "^Geschwindigkeit #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer durch Zauber zu erzielen, um #%%%.$",
-		--[[Translation missing --]]
-		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
+		["SpellCritRating"] = "^Anlegen: Erhöht Eure kritische Zaubertrefferwertung um #%.$",
+		["SpellCritRatingShort"] = "^%+?# Kritische Zaubertrefferwertung$",
 		["SpellDamage"] = "^%+# Schadenszauber und Heilzauber$",
 		["SpellDamage2"] = "^Anlegen: Erhöht durch Zauber und magische Effekte zugefügten Schaden und Heilung um bis zu #%.$",
-		["SpellDamage3"] = "^UNUSED$",
+		["SpellDamage3"] = "^Anlegen: Erhöht durch Zauber und magische Effekte verursachten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage4"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
-		--[[Translation missing --]]
-		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
+		["SpellDamageAndHealing"] = "^Anlegen: Erhöht durch sämtliche Zauber und magische Effekte verursachte Heilung um bis zu # und den verursachten Schaden um bis zu #%.$",
+		["SpellHasteRating"] = "^Anlegen: Erhöht die Zaubertempowertung um #%.$",
+		["SpellHasteRatingShort"] = "^%+?# Zaubertempowertung$",
 		["SpellHit"] = "^Anlegen: Erhöht Eure Chance mit Zaubern zu treffen um #%%%.$",
-		--[[Translation missing --]]
-		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
-		--[[Translation missing --]]
-		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
-		--[[Translation missing --]]
-		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
+		["SpellHitRating"] = "^Anlegen: Erhöht Eure Zaubertrefferwertung um #%.$",
+		["SpellHitRatingShort"] = "^%+?# Zaubertrefferwertung$",
+		["SpellPenetration"] = "^Anlegen: Erhöht Eure Zauberdurchschlagskraft um #%.$",
+		["SpellPenetrationShort"] = "^%+?# Zauberdurchschlagskraft$",
 		["SpellPower"] = "^%+?# Zaubermacht$",
 		["Spirit"] = "^%+?# Willenskraft$",
 		["Staff"] = "^Stab$",
@@ -669,7 +646,7 @@ Weitere Informationen zu dieser Einstellung findest du in der Readme-Datei.]=],
 
 -- Special case: weapon speed and Mail use different words on Classic.
 -- So, patch things up here.
-if VgerCore.IsClassic then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	PawnLocal.Mail = "Schwere Rüstung"
 	PawnLocal.MailInfo = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand Schwere Rüstung ist."
 	PawnLocal.TooltipParsing.Mail = "^Schwere Rüstung$"

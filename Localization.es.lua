@@ -288,6 +288,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["AllStats"] = "^%+?# todas las estadísticas$",
 		["Ap"] = "^%+?# [Pp]oder de ataque$",
 		["Ap2"] = "^Equipar: Aumenta # p%. el poder de ataque%.$",
+		["Ap3"] = "^UNUSED$",
 		["ArcaneResist"] = "^%+?# resistencia a Arcano$",
 		["ArcaneSpellDamage"] = "^%+# daño con hechizos Arcano$",
 		["ArcaneSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos Arcanos%.$",

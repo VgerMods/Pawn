@@ -248,6 +248,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["AllStats"] = "^%+?# a tutti gli attributi$",
 		["Ap"] = "^%+?# [Pp]otenza d'attacco$",
 		["Ap2"] = "^Equipaggia: %+# Potenza d'Attacco%.$",
+		["Ap3"] = "^UNUSED$",
 		["ArcaneResist"] = "^%+?# Resistenza Arcana$",
 		["ArcaneSpellDamage"] = "^%+# Danno Magico Arcano$",
 		["ArcaneSpellDamage2"] = "^Equip: Increases damage done by Arcane spells and effects by up to #%.$",

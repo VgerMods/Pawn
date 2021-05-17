@@ -249,6 +249,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["AllStats"] = "^%+?# em Todos os [aA]tributos$",
 		["Ap"] = "^%+?# d?e? ?Poder de [aA]taque$",
 		["Ap2"] = "^Equipado: %+# de Poder de Ataque%.$",
+		["Ap3"] = "^UNUSED$",
 		["ArcaneResist"] = "^%+?# de resistência a Arcano$",
 		["ArcaneSpellDamage"] = "^%+# Dano Mágico Arcano$",
 		["ArcaneSpellDamage2"] = "^Equipado: Aumenta em até # o dano causado por feitiços e efeitos Arcanos%.$",

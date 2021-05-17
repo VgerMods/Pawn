@@ -217,7 +217,7 @@ PawnRegexes =
 	{L.Crit2, "CritRating"},
 	{L.CritPercent, "CritRating"}, -- Classic, /pawn compare 15062
 	{L.CritRating, "CritRating"}, -- Burning Crusade, /pawn compare 15062
-	{L.CritRatingShort, "CritRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24048/smooth-dawnstone
+	{L.CritRatingShort, "CritRating"}, -- Burning Crusade, /pawn compare item:789::::::78
 	{L.ScopeCrit, "CritRating"},
 	{L.ScopeRangedCrit, "CritRating"}, -- Heartseeker Scope
 	{L.SpellCrit, "SpellCritRating"}, -- Classic, /pawn compare 16947
@@ -237,17 +237,17 @@ PawnRegexes =
 	{L.Resilience, "Stamina"}, -- Mystic Dawnstone
 	{L.Resilience2, "Stamina"}, -- unused in English
 	{L.ResilienceRating, "ResilienceRating"}, -- /pawn compare 29181
-	{L.ResilienceRatingShort, "ResilienceRating"}, -- Burning Crusade, Mystic Dawnstone
+	{L.ResilienceRatingShort, "ResilienceRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24053/mystic-dawnstone
 	{L.PvPPower, "Stamina"}, -- Stormy Chalcedony
 	{L.EnchantmentCounterweight, "HasteRating"}, -- won't work on classic since the live string includes the word "haste" and it's worded differently in classic
 	{L.Haste, "HasteRating"}, -- Leggings of the Betrayed
 	{L.Haste2, "HasteRating"}, -- unused in English
 	{L.HasteRating, "HasteRating"}, -- Burning Crusade, /pawn compare 32570
-	{L.HasteRatingShort, "HasteRating"},
+	{L.HasteRatingShort, "HasteRating"}, -- Wrath, Quick Sun Crystal / Burning Crusade, random-stat items only
 	{L.SpellHasteRating, "SpellHasteRating"}, -- /pawn compare 34360
 	{L.SpellHasteRatingShort, "SpellHasteRating"}, -- https://tbc.wowhead.com/item=35315/quick-dawnstone
 	{L.SpellPenetration, "SpellPenetration"}, -- Burning Crusade, /pawn compare 21563
-	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, Stormy Star of Elune
+	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, https://tbc.wowhead.com/item=24039/stormy-star-of-elune
 	{L.Mastery, "MasteryRating"}, -- Zen Dream Emerald
 	{L.Mastery2, "MasteryRating"}, -- unused in English
 	{L.Versatility, "Versatility"}, -- http://wod.wowhead.com/item=100945
@@ -257,13 +257,14 @@ PawnRegexes =
 	{L.MovementSpeed, "MovementSpeed"}, -- http://wod.wowhead.com/item=100945
 	{L.Ap, "Ap"}, -- /pawn compare item:789::::::1547
 	{L.Ap2, "Ap"}, -- /pawn compare 15062
+	{L.Ap3, "Ap"}, -- unused in English
 	{L.Rap, "Rap"}, -- /pawn compare 18473
 	{L.FeralAp, "FeralAp"}, -- /pawn compare 22988
 	{L.Mp5, "Mp5"}, -- /pawn compare 22988
 	{L.Mp52, "Mp5"}, -- /pawn compare item:789::::::2074
 	{L.Hp5, "Hp5"}, -- (on live, we used to count 1 HP5 = 3 Stamina)
 	{L.Hp52, "Hp5"}, -- Demon's Blood
-	{L.Hp53, "Hp5"}, -- Aquamarine Signet of Regeneration
+	{L.Hp53, "Hp5"}, -- Aquamarine Signet of Regeneration or /pawn compare item:789::::::2110
 	{L.Hp54, "Hp5"}, -- Lifestone
 	{L.EnchantmentHealth, "Stamina", 1/12.5, PawnSingleStatMultiplier}, -- +100 health head/leg enchantment (counting 1 HP = 1/12.5 Stamina)
 	{L.EnchantmentHealth2, "Stamina", 1/12.5, PawnSingleStatMultiplier}, -- +150 health enchantment (counting 1 HP = 1/12.5 Stamina)

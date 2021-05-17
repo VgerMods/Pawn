@@ -248,6 +248,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["AllStats"] = "^%+?# à toutes les caractéristiques$",
 		["Ap"] = "^%+?# à la puissance d'attaque$",
 		["Ap2"] = "^Equipé : %+# à la puissance d'attaque%.$",
+		["Ap3"] = "^UNUSED$",
 		["ArcaneResist"] = "^%+?# à la résistance Arcanes$",
 		["ArcaneSpellDamage"] = "^%+# aux dégâts des sorts des Arcanes$",
 		["ArcaneSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets des Arcanes de # au maximum%.$",

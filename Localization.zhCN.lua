@@ -247,6 +247,7 @@ PawnLocal =
 		["AllStats"] = "^%+?# 所有属性$",
 		["Ap"] = "^%+?# 攻击强度$",
 		["Ap2"] = "^装备： ?%+# 攻击强度。$",
+		["Ap3"] = "^UNUSED$",
 		["ArcaneResist"] = "^%+?# 奥术抗性$",
 		["ArcaneSpellDamage"] = "^%+# 奥术法术伤害$",
 		["ArcaneSpellDamage2"] = "^装备： ?提高奥术法术和效果所造成的伤害，最多#点。$",
