@@ -1,15 +1,10 @@
 ﻿## Interface: 90005
 ## Title: Pawn
-## Version: 2.5 beta 3
+## Version: 2.5
 ## Notes: Pawn helps you compare items and find upgrades.
 ## OptionalDependencies: AtlasLoot, EQCompare, EquipCompare, LinkWrangler, MobInfo2, MultiTips, Outfitter, ArkInventoryRules
 ## SavedVariables: PawnCommon
 ## SavedVariablesPerCharacter: PawnOptions, PawnMrRobotScaleProviderOptions, PawnClassicScaleProviderOptions
-
-## Title-zhTW: [裝備比較]Pawn
-## Notes-zhTW: 計算屬性ep值並給予較好的建議，其他還有珠寶的建議以及重鑄的建議..等，也有裝備屬性比較介面。
-
-## Title-ruRU: |cff00ff00Pawn|r Русская Версия
 
 VgerCore\VgerCore.lua
 
