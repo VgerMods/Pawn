@@ -948,7 +948,6 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 	if PawnCommon.Debug then return end
 	-- If this is WoW Classic, the cache is also disabled.
 	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	-- TODO: See if this can be removed for BC.
 	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then return end
 
 	-- Otherwise, search the item cache for this item.
@@ -970,7 +969,6 @@ function PawnCacheItem(CachedItem)
 	if PawnCommon.Debug then return end
 	-- If this is WoW Classic, the cache is also disabled.
 	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	-- TODO: See if this can be removed for BC.
 	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then return end
 	
 	-- Cache it.
