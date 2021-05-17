@@ -310,7 +310,7 @@ indeterminate or an upgrade. This can be used for auto-sell rules, such as <code
 <h3>Version 2.5</h3>
 <p><b>This version introduces early partial support for Burning Crusade 
 	Classic and the pre-patch. </b>Not all relevant Pawn features are supported 
-yet, and only English is working.</p>
+yet, and only English, Spanish, and German are working.</p>
 <p><b>Important:</b> If you imported custom scales on Classic and are continuing 
 to Burning Crusade Classic, including the pre-patch, you'll need to update your 
 weights for all of the percentage-based stats. If, for example, your value for 
@@ -318,6 +318,17 @@ Crit is 10, an item that gives 1% crit would be worth 10 points on Classic, but
 would be worth 80 in Burning Crusade Classic and the pre-patch, because that 
 item will change to have 8 crit rating.</p>
 <h4>Beta 3</h4>
+<ul>
+	<li>Added support for Spanish and German.<ul>
+		<li>Known issue: The Spanish PTR currently has a bug where items are 
+		showing spell hit and spell crit as percentages instead of ratings. Pawn 
+		currently processes these items correctly, but once the bug is fixed, 
+		Pawn will need an additional adjustment to work again.</li>
+	</ul>
+	</li>
+	<li>Fixed a bug in beta 2 where Armor Penetration was appearing in the list 
+	of stats.</li>
+</ul>
 <h4>Beta 2</h4>
 <ul>
 	<li>Added support for new stats: Expertise Rating, Resilience Rating, Haste 
