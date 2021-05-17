@@ -234,8 +234,8 @@ PawnRegexes =
 	-- {L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, /pawn compare 39910
 	-- {L.ArmorPenetration, "ArmorPenetration"}, -- Wrath, /pawn compare 21563
 	-- {L.ArmorPenetrationShort, "ArmorPenetration"}, -- Wrath, Fractured Scarlet Ruby
-	{L.Resilience, "Stamina"}, -- Mystic Dawnstone
-	{L.Resilience2, "Stamina"}, -- unused in English
+	{L.Resilience, "ResilienceRating"}, -- Mystic Dawnstone
+	{L.Resilience2, "ResilienceRating"}, -- unused in English
 	{L.ResilienceRating, "ResilienceRating"}, -- /pawn compare 29181
 	{L.ResilienceRatingShort, "ResilienceRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24053/mystic-dawnstone
 	{L.PvPPower, "Stamina"}, -- Stormy Chalcedony
