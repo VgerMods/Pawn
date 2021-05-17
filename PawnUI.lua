@@ -1514,11 +1514,22 @@ end
 
 -- Gets all of the text from an item tooltip and then puts it into a box where it can be copied.
 function PawnUIGetAllTextForItem(Item)
-	if not Item or not Item.Link then return end
+	if not Item then return end
+	local ItemLink
+	if type(Item) == "table" then
+		if Item.Link then
+			ItemLink = Item.Link
+		else
+			return 
+		end
+	elseif type(Item) == "string" then
+		ItemLink = Item
+		Item = nil
+	end
 	local Tooltip = _G[PawnPrivateTooltipName]
 	VgerCore.Assert(Tooltip, "Failed to find the private tooltip.")
 
-	Tooltip:SetHyperlink(Item.Link)
+	Tooltip:SetHyperlink(ItemLink)
 
 	local NumLines = Tooltip:NumLines()
 	local i
@@ -1534,9 +1545,15 @@ function PawnUIGetAllTextForItem(Item)
 			end
 		end
 	end
-	AllText = AllText .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(Item.Link, false)
+	AllText = AllText .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(ItemLink, false)
 
-	PawnUIShowCopyableString(Item.Name, AllText, nil, true)
+	local ItemName
+	if Item then
+		ItemName = Item.Name
+	else
+		ItemName = (_G[PawnPrivateTooltipName .. "TextLeft1"]):GetText()
+	end
+	PawnUIShowCopyableString(ItemName, AllText, nil, true)
 
 	-- Tip: If this doesn't work for your particular situation, you can also open an item link and then do this:
 	-- /script PawnUIShowCopyableString("", ItemRefTooltipTextLeft8:GetText(), nil, true)
