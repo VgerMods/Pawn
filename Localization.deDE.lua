@@ -308,8 +308,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Haste"] = "^%+?# Tempo$",
 		["Haste2"] = "^UNUSED$",
 		["HasteRating"] = "^Anlegen: Erhöht die Tempowertung um #%.$",
-		--[[Translation missing --]]
-		["HasteRatingShort"] = "^%+?# Haste Rating$",
+		["HasteRatingShort"] = "^%+?# Tempowertung$",
 		["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt$",
 		["Healing"] = "^%+# Heilzauber$",
 		["Healing2"] = "^Anlegen: Erhöht durch Zauber und Effekte verursachte Heilung um bis zu #%.$",
