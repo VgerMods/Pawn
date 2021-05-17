@@ -248,7 +248,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["AllStats"] = "^%+?# à toutes les caractéristiques$",
 		["Ap"] = "^%+?# à la puissance d'attaque$",
 		["Ap2"] = "^Equipé : %+# à la puissance d'attaque%.$",
-		["Ap3"] = "^UNUSED$",
+		["Ap3"] = "^Équipé : Augmente de # la puissance d'attaque%.$",
 		["ArcaneResist"] = "^%+?# à la résistance Arcanes$",
 		["ArcaneSpellDamage"] = "^%+# aux dégâts des sorts des Arcanes$",
 		["ArcaneSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets des Arcanes de # au maximum%.$",
@@ -259,29 +259,23 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["BagSlots"] = "^Sac %d+ .+$",
 		["Block"] = "^Bloquer : #$",
 		["BlockPercent"] = "^Equipé : Augmente vos chances de bloquer les attaques avec un bouclier de #%%%.$",
-		--[[Translation missing --]]
-		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
+		["BlockRating"] = "^Équipé : Augmente votre score de blocage de #%.$",
 		["BlockValue"] = "^Equipé : Augmente le score de blocage de votre bouclier de #%.$",
 		["Bow"] = "^Arc$",
 		["ChanceOnHit"] = "Chances de toucher :",
 		["Charges"] = "^.+ Charges?$",
 		["Cloth"] = "^Tissu$",
 		["CooldownRemaining"] = "^Temps de recharge restant:",
-		--[[Translation missing --]]
 		["Corruption"] = "^%+?# Corruption$",
 		["Crit"] = "^%+?# Score de crit%.?$",
 		["Crit2"] = "^%+?# au score de critique$",
 		["CritPercent"] = "^Equipé : Augmente vos chances d'infliger un coup critique de #%%%.$",
-		--[[Translation missing --]]
-		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
+		["CritRating"] = "^Équipé : Augmente votre score de coup critique de #%.$",
+		["CritRatingShort"] = "^%+?# au score de coup critique$",
 		["Crossbow"] = "^Arbalète$",
 		["Dagger"] = "^Dague$",
-		--[[Translation missing --]]
-		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
-		--[[Translation missing --]]
-		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
+		["DefenseRating"] = "^Équipé : Score de défense augmenté de #%.$",
+		["DefenseRatingSimple"] = "^%+?# au score de défense$",
 		["DefenseSkill"] = "^Equipé : Défense augmentée de #%.$",
 		["DefenseSkillSimple"] = "^%+?# Défense$",
 		["DisenchantingRequires"] = "^L'enchantement requiert",
@@ -289,10 +283,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Dodge2"] = "^%+?# à l'esquive$",
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equipé : Augmente vos chances d'esquiver une attaque de #%%%.$",
-		--[[Translation missing --]]
-		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
-		--[[Translation missing --]]
-		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
+		["DodgeRating"] = "^Équipé : Augmente votre score d'esquive de #%.$",
+		["DodgeRatingShort"] = "^%+?#%%? au score d'esquive$",
 		["Dps"] = "^%(# dégâts par seconde%)$",
 		["DpsAdd"] = "^Ajoute # dégâts par seconde$",
 		["Duration"] = "^Durée :",
@@ -306,8 +298,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["EnchantmentPyriumWeaponChain"] = "^Dragonne en pyrium$",
 		["EnchantmentTitaniumWeaponChain"] = "^Dragonne en titane$",
 		["Equip"] = "Équipé :",
-		--[[Translation missing --]]
-		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
+		["ExpertiseRating"] = "^Équipé : Augmente de # le score d’expertise%.$",
 		["FeralAp"] = "^Equipé : %+# à la puissance d'attaque pour les formes de félin, d'ours et d'ours redoutable uniquement%.$",
 		["FireResist"] = "^%+?# à la résistance Feu$",
 		["FireSpellDamage"] = "^%+# aux dégâts des sorts de Feu$",
@@ -320,10 +311,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Gun"] = "^Arme à feu$",
 		["Haste"] = "^%+?# Hâte$",
 		["Haste2"] = "^%+?# à la Hâte",
-		--[[Translation missing --]]
-		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
-		--[[Translation missing --]]
-		["HasteRatingShort"] = "^%+?# Haste Rating$",
+		["HasteRating"] = "^Équipé : Augmente de # le score de hâte%.$",
+		["HasteRatingShort"] = "^%+?# au score de hâte$",
 		["HaventCollectedAppearance"] = "^Vous n'avez pas récupéré cette apparence$",
 		["Healing"] = "^%+# aux sorts de soins$",
 		["Healing2"] = "^Equipé : Augmente les soins prodigués par les sorts et effets de # au maximum%.$",
@@ -336,10 +325,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["HeroicWarforged"] = "^De guerre héroïque$",
 		["Hit"] = "^Equipé : Augmente vos chances de toucher de #%%%.$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HitRating"] = "^Equip: Improves hit rating by #%.$",
-		--[[Translation missing --]]
-		["HitRatingShort"] = "^%+?# Hit Rating$",
+		["HitRating"] = "^Équipé : Augmente de # le score de toucher%.$",
+		["HitRatingShort"] = "^%+?# au score de toucher$",
 		["HolySpellDamage"] = "^%+# aux dégâts des sorts du Sacré$",
 		["HolySpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets du Sacré de # au maximum%.$",
 		["Hp5"] = " ^%+?# Points de [vV]ie [tT]outes les 5 [sS]%.?$",
@@ -367,10 +354,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Parry"] = "^%+?# Parade$",
 		["Parry2"] = "^%+?# à la parade$",
 		["ParryPercent"] = "^Equipé : Augmente vos chances de parer une attaque de #%%%.$",
-		--[[Translation missing --]]
-		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
-		--[[Translation missing --]]
-		["ParryRatingShort"] = "^%+?# Parry Rating$",
+		["ParryRating"] = "^Équipé : Augmente votre score de parade de #%.$",
+		["ParryRatingShort"] = "^%+?# au score de parade$",
 		["Plate"] = "^Plaques$",
 		["Polearm"] = "^Arme d'hast$",
 		["PvPPower"] = "^%+?# [Pp]uissance %(JcJ%)$",
@@ -379,46 +364,34 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Requires2"] = "^Niveau [%d%.,]+ requis$",
 		["Resilience"] = "^%+?# Résilience %(JcJ%)$",
 		["Resilience2"] = "^%+?# à la résilience %(JcJ%)$",
-		--[[Translation missing --]]
-		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
-		--[[Translation missing --]]
-		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
+		["ResilienceRating"] = "^Équipé : Augmente de # le score de résilience%.$",
+		["ResilienceRatingShort"] = "^%+?# au score de résilience$",
 		["Scope"] = "^Lunette %(%+# points de dégâts%)$",
 		["ScopeCrit"] = "^Lunette %(%+# au score de critique%)$",
 		["ScopeRangedCrit"] = "^%+?# au score de critique à distance$",
 		["ShadowResist"] = "^%+?# à la résistance Ombre$",
 		["ShadowSpellDamage"] = "^%+# aux dégâts des sorts d'Ombre$",
 		["ShadowSpellDamage2"] = "^Equipé : Augmente les dégâts infligés par les sorts et effets d'Ombre de # au maximum%.$",
-		--[[Translation missing --]]
 		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^Bouclier$",
 		["SocketBonusPrefix"] = "Bonus de sertissage :",
 		["Speed"] = "^Vitesse #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Equipé : Augmente vos chances d'infliger un coup critique avec vos sorts de #%%%.$",
-		--[[Translation missing --]]
-		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
+		["SpellCritRating"] = "^Équipé : Augmente le score de coup critique des sorts de #%.$",
+		["SpellCritRatingShort"] = "^%+?# au score de critique des sorts$",
 		["SpellDamage"] = "^%+# aux dégâts et aux sorts de soins$",
 		["SpellDamage2"] = "^Equipé : Augmente les dégâts et les soins produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage3"] = "^Equipé : Augmente les soins et dégâts produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage4"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
-		--[[Translation missing --]]
-		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
+		["SpellDamageAndHealing"] = "^Équipé : Augmente les soins prodigués d'un maximum de # et les dégâts d'un maximum de # pour tous les sorts et effets magiques%.$",
+		["SpellHasteRating"] = "^Équipé : Augmente de # le score de hâte des sorts%.$",
+		["SpellHasteRatingShort"] = "^%+?# au score de hâte des sorts$",
 		["SpellHit"] = "^Equipé : Augmente vos chances de toucher avec des sorts de #%%%.$",
-		--[[Translation missing --]]
-		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
-		--[[Translation missing --]]
-		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
-		--[[Translation missing --]]
-		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
+		["SpellHitRating"] = "^Équipé : Augmente le score de toucher des sorts de #%.$",
+		["SpellHitRatingShort"] = "^%+?# au score de toucher des sorts$",
+		["SpellPenetration"] = "^Équipé : Augmente la pénétration de vos sorts de #%.$",
+		["SpellPenetrationShort"] = "^%+?# à la pénétration des sorts$",
 		["SpellPower"] = "^%+?# Puissance des sorts$",
 		["Spirit"] = "^%+?# Esprit$",
 		["Staff"] = "^Bâton$",
@@ -693,6 +666,20 @@ if VgerCore.IsClassic then
 
 	local Key, NewString
 	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
+if VgerCore.IsBurningCrusade then
+
+	local TooltipParsing_BurningCrusade =
+	{
+		["Block"] = "^Bloquer : #$",
+		["BlockValue"] = "^Équipé : Augmente la valeur de blocage de votre bouclier de #%.$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_BurningCrusade) do
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
 end
