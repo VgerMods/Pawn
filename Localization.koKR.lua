@@ -260,8 +260,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["BagSlots"] = "^%d+칸.+$",
 		["Block"] = "^#의 피해 방어$",
 		["BlockPercent"] = "^착용 효과: 방패로 적의 공격을 방어할 확률이 #%%만큼 증가합니다%.$",
-		--[[Translation missing --]]
-		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
+		["BlockRating"] = "^착용 효과: 방패 막기 숙련도가 #만큼 증가합니다%.$",
 		["BlockValue"] = "^착용 효과: 방패의 피해 방어량이 #만큼 증가합니다%.$",
 		["Bow"] = "^활$",
 		["ChanceOnHit"] = "발동 효과:",
@@ -272,28 +271,21 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Crit"] = "^치명타 및 극대화 %+?#$",
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^착용 효과: 치명타를 적중시킬 확률이 #%%만큼 증가합니다%.$",
-		--[[Translation missing --]]
-		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
+		["CritRating"] = "^착용 효과: 치명타 적중도가 #만큼 증가합니다%.$",
+		["CritRatingShort"] = "^치명타 적중도 %+#$",
 		["Crossbow"] = "^석궁$",
 		["Dagger"] = "^단검$",
-		--[[Translation missing --]]
-		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
-		--[[Translation missing --]]
-		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
+		["DefenseRating"] = "^착용 효과: 방어 숙련도가 #만큼 증가합니다%.$",
+		["DefenseRatingSimple"] = "^UNUSED$",
 		["DefenseSkill"] = "^착용 효과: 방어 숙련도 %+#$",
 		["DefenseSkillSimple"] = "^방어 숙련도 %+#$",
 		["DisenchantingRequires"] = "^마력 추출 요구 사항",
 		["Dodge"] = "^회피 %+?#%%?$",
 		["Dodge2"] = "^UNUSED$",
-		--[[Translation missing --]]
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^착용 효과: 공격을 회피할 확률이 #%%만큼 증가합니다%.$",
-		--[[Translation missing --]]
-		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
-		--[[Translation missing --]]
-		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
+		["DodgeRating"] = "^착용 효과: 회피 숙련도가 #만큼 증가합니다%.$",
+		["DodgeRatingShort"] = "^회피 숙련도 %+#$",
 		["Dps"] = "^%(초당 공격력 #%)$",
 		["DpsAdd"] = "^초당 공격력 # 추가$",
 		["Duration"] = "^지속시간:",
@@ -307,8 +299,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["EnchantmentPyriumWeaponChain"] = "^황철 무기 사슬$",
 		["EnchantmentTitaniumWeaponChain"] = "^티타늄 무기 사슬$",
 		["Equip"] = "착용 효과:",
-		--[[Translation missing --]]
-		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
+		["ExpertiseRating"] = "^착용 효과: 숙련도가 #만큼 증가합니다%.$",
 		["FeralAp"] = "^착용 효과: 표범, 광포한 곰, 곰 변신 상태일 때 전투력이 #만큼 증가합니다%.$",
 		["FireResist"] = "^화염 저항력 %+#$",
 		["FireSpellDamage"] = "^화염 주문 공격력 %+#$",
@@ -321,8 +312,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Gun"] = "^총$",
 		["Haste"] = "^가속 %+?#$",
 		["Haste2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HasteRating"] = "^Equip: Improves haste rating by #%.$",
+		["HasteRating"] = "^착용 효과: 가속도가 #만큼 증가합니다%.$",
 		--[[Translation missing --]]
 		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^아직 수집하지 않은 형상입니다%.$",
@@ -337,10 +327,8 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["HeroicWarforged"] = "^상급 전쟁벼림$",
 		["Hit"] = "^착용 효과: 무기의 적중률이 #%%만큼 증가합니다%.$",
 		["Hit2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["HitRating"] = "^Equip: Improves hit rating by #%.$",
-		--[[Translation missing --]]
-		["HitRatingShort"] = "^%+?# Hit Rating$",
+		["HitRating"] = "^착용 효과: 적중도가 #만큼 증가합니다%.$",
+		["HitRatingShort"] = "^적중도 %+#$",
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 		["HolySpellDamage2"] = "^착용 효과: 신성 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 		["Hp5"] = "^착용 효과: 5초마다 # 생명력이 회복됩니다%.$",
@@ -368,10 +356,8 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Parry"] = "^무기 막기 %+?#$",
 		["Parry2"] = "^UNUSED$",
 		["ParryPercent"] = "^착용 효과: 무기 막기 확률이 #%%만큼 증가합니다%.$",
-		--[[Translation missing --]]
-		["ParryRating"] = "^Equip: Increases your parry rating by #%.$",
-		--[[Translation missing --]]
-		["ParryRatingShort"] = "^%+?# Parry Rating$",
+		["ParryRating"] = "^착용 효과: 무기 막기 숙련도가 #만큼 증가합니다%.$",
+		["ParryRatingShort"] = "^무기 막기 숙련도 %+#$",
 		["Plate"] = "^판금$",
 		["Polearm"] = "^장창$",
 		["PvPPower"] = "^PvP 위력 %+?#$",
@@ -380,46 +366,34 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Requires2"] = "^최소 요구 레벨",
 		["Resilience"] = "^PvP 탄력 %+?#$",
 		["Resilience2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["ResilienceRating"] = "^Equip: Improves your resilience rating by #%.$",
-		--[[Translation missing --]]
-		["ResilienceRatingShort"] = "^%+?# Resilience Rating$",
+		["ResilienceRating"] = "^착용 효과: 탄력도가 #만큼 증가합니다%.$",
+		["ResilienceRatingShort"] = "^탄력도 %+#$",
 		["Scope"] = "^조준경 %(공격력 %+#%)$",
 		["ScopeCrit"] = "^조준경 %(치명타 %+#%)$",
 		["ScopeRangedCrit"] = "^원거리 치명타 %+?#$",
 		["ShadowResist"] = "^암흑 저항력 %+#$",
 		["ShadowSpellDamage"] = "^암흑 주문 공격력 %+#$",
 		["ShadowSpellDamage2"] = "^착용 효과: 암흑 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
-		--[[Translation missing --]]
 		["ShadowSpellDamage3"] = "^UNUSED$",
 		["Shield"] = "^방패$",
 		["SocketBonusPrefix"] = "보석 장착 보너스:",
 		["Speed"] = "^속도 #$",
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^착용 효과: 주문이 극대화 효과를 낼 확률이 #%%만큼 증가합니다%.$",
-		--[[Translation missing --]]
-		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
-		--[[Translation missing --]]
-		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
+		["SpellCritRating"] = "^착용 효과: 주문의 극대화 적중도가 #만큼 증가합니다%.$",
+		["SpellCritRatingShort"] = "^주문 극대화 적중도 %+#$",
 		["SpellDamage"] = "^치유 및 주문 공격력 %+#$",
 		["SpellDamage2"] = "^착용 효과: 모든 주문 및 효과에 의한 피해와 치유량이 최대 #만큼 증가합니다%.$",
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
-		--[[Translation missing --]]
-		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
+		["SpellDamageAndHealing"] = "^착용 효과: 모든 주문 및 효과에 의한 치유량이 최대 #만큼, 공격력이 최대 #만큼 증가합니다%.$",
+		["SpellHasteRating"] = "^착용 효과: 주문 시전 가속도가 #만큼 증가합니다%.$",
+		["SpellHasteRatingShort"] = "^주문 시전 가속도 %+#$",
 		["SpellHit"] = "^착용 효과: 주문의 적중률이 #%%만큼 증가합니다%.$",
-		--[[Translation missing --]]
-		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
-		--[[Translation missing --]]
-		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
-		--[[Translation missing --]]
-		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
-		--[[Translation missing --]]
-		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
+		["SpellHitRating"] = "^착용 효과: 주문 적중도가 #만큼 증가합니다%.$",
+		["SpellHitRatingShort"] = "^주문 적중도 %+#$",
+		["SpellPenetration"] = "^착용 효과: 주문 관통력이 #만큼 증가합니다%.$",
+		["SpellPenetrationShort"] = "^주문 관통력 %+#$",
 		["SpellPower"] = "^주문력 %+?#$",
 		["Spirit"] = "^정신력 %+?#$",
 		["Staff"] = "^지팡이$",
@@ -428,8 +402,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["Sword"] = "^도검$",
 		["TemporaryBuffMinutes"] = "^.+%(%d+분%)$",
 		["TemporaryBuffSeconds"] = "^.+%(%d+초%)$",
-		--[[Translation missing --]]
-		["Thrown"] = "^Thrown$",
+		["Thrown"] = "^투척 무기$",
 		["Thunderforged"] = "^천둥벼림$",
 		["Timeless"] = "^영원의 장비$",
 		["Titanforged"] = "^티탄벼림$",
