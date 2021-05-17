@@ -1529,6 +1529,7 @@ function PawnUIGetAllTextForItem(Item)
 	local Tooltip = _G[PawnPrivateTooltipName]
 	VgerCore.Assert(Tooltip, "Failed to find the private tooltip.")
 
+	Tooltip:ClearLines()
 	Tooltip:SetHyperlink(ItemLink)
 
 	local NumLines = Tooltip:NumLines()
