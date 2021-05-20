@@ -339,6 +339,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["HitRating"] = "^Equip: Improves hit rating by #%.$",
 		--[[Translation missing --]]
 		["HitRatingShort"] = "^%+?# Hit Rating$",
+		["HitRating2"] = "^UNUSED$",
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
 		["Hp5"] = "^%+?# Salute ogni 5 s.$",
@@ -356,6 +357,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["MovementSpeed"] = "^%+# [Vv]elocità$",
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
 		["Mp52"] = "^%+?# mana every 5 sec%.$",
+		["Mp53"] = "^UNUSED$",
 		["MultiStatHeading"] = "^Statistiche Multiple$",
 		["MultiStatSeparator1"] = "e",
 		["Multistrike"] = "^%+# [Ii]ndice di [Rr]eplicazione$",
