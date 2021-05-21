@@ -786,6 +786,7 @@ if GetLocale() == "esES" then
 	PawnLocal.DecimalSeparator = ","
 
 	PawnLocal.TooltipParsing.Avoidance = "^%+# Evasión$"
+	PawnLocal.TooltipParsing.CritRating = "^Equipar: Mejora el índice de golpe crítico en # p%.$"
 	PawnLocal.TooltipParsing.Leech = "^%+# Parasitar$"
 	PawnLocal.TooltipParsing.ResilienceRating = "^Equipar: Mejora tu índice de temple en #%.$"
 	PawnLocal.TooltipParsing.SpellDamageAndHealing = "^Equipar: Aumenta la sanación que haces hasta # p%. y el daño que infliges hasta # p%. con todos los hechizos mágicos y efectos%.$"
