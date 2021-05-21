@@ -424,6 +424,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Speed2"] = "^Veloc%. #$",
 		["SpellCrit"] = "^Equipar: Mejora tu probabilidad de asestar un golpe crítico con hechizos un #%%%.$",
 		["SpellCritRating"] = "^Equipar: Aumenta tu índice de golpe crítico con hechizos e?n? ?# p%.$",
+		["SpellCritRating2"] = "^Equipar: Mejora # p%. el golpe crítico con hechizos%.$",
 		["SpellCritRatingShort"] = "^%+?# índice de golpe crítico con hechizos$",
 		["SpellDamage"] = "^%+# de daño y Hechizos de curación$",
 		["SpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño y la sanación de los hechizos y efectos mágicos%.$",
@@ -790,6 +791,7 @@ if GetLocale() == "esES" then
 	PawnLocal.TooltipParsing.CritRating = "^Equipar: Mejora el índice de golpe crítico en # p%.$"
 	PawnLocal.TooltipParsing.Leech = "^%+# Parasitar$"
 	PawnLocal.TooltipParsing.ResilienceRating = "^Equipar: Mejora tu índice de temple en #%.$"
+	PawnLocal.TooltipParsing.SpellCritRating2 = "^Equipar: Mejora el índice de golpe crítico con hechizos en # p%.$"
 	PawnLocal.TooltipParsing.SpellDamageAndHealing = "^Equipar: Aumenta la sanación que haces hasta # p%. y el daño que infliges hasta # p%. con todos los hechizos mágicos y efectos%.$"
 	PawnLocal.TooltipParsing.SpellHasteRating = "^Equipar: Mejora el índice de celeridad con hechizos en # p%.$"
 

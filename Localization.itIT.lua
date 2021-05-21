@@ -401,6 +401,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by #%%%.$",
 		--[[Translation missing --]]
 		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		["SpellCritRating2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^%+# Spell Damage$",

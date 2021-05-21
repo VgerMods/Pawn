@@ -384,6 +384,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Speed2"] = "^UNUSED$",
 		["SpellCrit"] = "^Equip: Improves your chance to get a critical strike with spells by #%%%.$",
 		["SpellCritRating"] = "^Equip: Increases your spell critical strike rating by #%.$",
+		["SpellCritRating2"] = "^Equip: Improves spell critical strike rating by #%.$",
 		["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 		["SpellDamage"] = "^%+# Damage and Healing Spells$",
 		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
