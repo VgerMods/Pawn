@@ -272,6 +272,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Crit2"] = "^%+?# к показателю критического удара$",
 		["CritPercent"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на #%%%.$",
 		["CritRating"] = "^Если на персонаже: Увеличение вероятности нанесения критического урона на # ед%.$",
+		["CritRating2"] = "^UNUSED$",
 		["CritRatingShort"] = "^%+?# к рейтингу критического удара$",
 		["Crossbow"] = "^Арбалет$",
 		["Dagger"] = "^Кинжал$",

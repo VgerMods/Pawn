@@ -217,6 +217,7 @@ PawnRegexes =
 	{L.Crit2, "CritRating"},
 	{L.CritPercent, "CritRating"}, -- Classic, /pawn compare 15062
 	{L.CritRating, "CritRating"}, -- Burning Crusade, /pawn compare 15062
+	{L.CritRating2, "CritRating"}, -- Burning Crusade, /pawn compare 30710
 	{L.CritRatingShort, "CritRating"}, -- Burning Crusade, /pawn compare item:789::::::78
 	{L.ScopeCrit, "CritRating"},
 	{L.ScopeRangedCrit, "CritRating"}, -- Heartseeker Scope
