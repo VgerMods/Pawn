@@ -314,6 +314,7 @@ PawnLocal =
 		["Haste"] = "^%+?#加速$",
 		["Haste2"] = "^裝備: 提高#點加速。$",
 		["HasteRating"] = "^裝備: 提高#點加速。$",
+		["HasteRating2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^你尚未收藏過此外觀$",
@@ -330,6 +331,7 @@ PawnLocal =
 		["Hit2"] = "^UNUSED$",
 		["HitRating"] = "^裝備: 提高#點命中。$",
 		["HitRating2"] = "^裝備: 使你的命中等級提高#點。$",
+		["HitRating3"] = "^UNUSED$",
 		["HitRatingShort"] = "^%+?#命中等級$",
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 		["HolySpellDamage2"] = "^裝備： 提高神聖法術和效果所造成的傷害，最多#點。$",
