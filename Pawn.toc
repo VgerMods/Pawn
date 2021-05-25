@@ -23,6 +23,8 @@ Localization.zhTW.lua
 UIStrings.lua
 TooltipParsing.lua
 Gems.lua
+GemsClassic.lua
+GemsBurningCrusade.lua
 ScaleTemplates.lua
 Pawn.lua
 PawnUI.lua

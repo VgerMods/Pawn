@@ -7,6 +7,9 @@
 ------------------------------------------------------------
 
 
+if VgerCore.IsShadowlands then
+
+
 -- Gem table row format:
 -- { ItemID, Class, "Stat1" Quantity1, "Stat2", Quantity2 }
 -- 	ItemID: The item ID of this gem.
@@ -275,3 +278,5 @@ PawnGemQualityLevels =
 }
 
 PawnMinimumItemLevelToConsiderGems = 144 -- Sockets on items below this ilvl are ignored by default
+
+end -- if VgerCore.IsShadowlands
