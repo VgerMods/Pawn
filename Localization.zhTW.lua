@@ -689,7 +689,7 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 
 -- Special case: weapons actually use different text on live versus classic.
 -- So, patch things up here.
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+if VgerCore.IsClassic then
 
 	local TooltipParsing_Classic =
 	{
@@ -718,7 +718,32 @@ if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 end
 
 if VgerCore.IsBurningCrusade then
-	PawnLocal.TooltipParsing.BlockValue = "^裝備: 使你盾牌的格擋值提高#點。$"
+
+	local TooltipParsing_BurningCrusade =
+	{
+		["BlockValue"] = "^裝備: 使你盾牌的格擋值提高#點。$",
+		["Dps"] = "^%（每秒傷害#%）$",
+		["WeaponDamage"] = "^# %- #傷害$",
+		["WeaponDamageArcane"] = "^%+?# %- #秘法傷害$",
+		["WeaponDamageArcaneExact"] = "^%+?#秘法傷害$",
+		["WeaponDamageEquip"] = "^裝備: %+?#武器傷害。$",
+		["WeaponDamageExact"] = "^%+?#傷害$",
+		["WeaponDamageFire"] = "^%+?# %- #火焰傷害$",
+		["WeaponDamageFireExact"] = "^%+?#火焰傷害$",
+		["WeaponDamageFrost"] = "^%+?# %- #冰霜傷害$",
+		["WeaponDamageFrostExact"] = "^%+?#冰霜傷害$",
+		["WeaponDamageHoly"] = "^%+?# %- #神聖傷害$",
+		["WeaponDamageHolyExact"] = "^%+?#神聖傷害$",
+		["WeaponDamageNature"] = "^%+?# %- #自然傷害$",
+		["WeaponDamageNatureExact"] = "^%+?#自然傷害$",
+		["WeaponDamageShadow"] = "^%+?# %- #暗影傷害$",
+		["WeaponDamageShadowExact"] = "^%+?#暗影傷害$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_BurningCrusade) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end	
 end
 
 PawnLocal.Specs =
