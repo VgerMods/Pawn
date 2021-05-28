@@ -664,7 +664,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 	}
 }
 
--- Special case: weapon actually use different text on live vs. classic. Function of Intellect is different too.
+-- Special case: wands use different text on Classic.
 -- So, patch things up here.
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 
@@ -684,8 +684,6 @@ if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 		["WeaponDamageNatureExact"] = "^%+?# 自然伤害$",
 		["WeaponDamageShadow"] = "^%+?# %- #暗影伤害$",
 		["WeaponDamageShadowExact"] = "^%+?# 暗影伤害$",
-
-		["IntellectInfo"] = "智力 - 增加法术爆击几率, 更快地提高武器熟练度.",
 	}
 
 	local Key, NewString
@@ -700,6 +698,7 @@ if VgerCore.IsBurningCrusade then
 	{
 		["Block"] = "^#格挡$",
 		["BlockValue"] = "^装备： 使你的盾牌格挡值提高#点。$",
+		["SpellHit"] = "^装备： 法术命中等级提高#点。$",
 	}
 
 	local Key, NewString
