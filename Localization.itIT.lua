@@ -280,6 +280,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Dagger"] = "^Pugnale$",
 		--[[Translation missing --]]
 		["DefenseRating"] = "^Equip: Increases defense rating by #%.$",
+		["DefenseRating2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["DefenseRatingSimple"] = "^%+?# Defense Rating$",
 		["DefenseSkill"] = "^Equip: Increased Defense %+#%.$",

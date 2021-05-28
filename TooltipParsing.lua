@@ -203,6 +203,7 @@ PawnRegexes =
 	{L.ParryRating, "ParryRating"}, -- Burning Crusade Classic, /pawn compare 19351
 	{L.ParryRatingShort, "ParryRating"}, -- Burning Crusade Classic, /pawn compare 24036
 	{L.DefenseRating, "DefenseRating"}, -- Burning Crusade, /pawn compare 19867
+	{L.DefenseRating2, "DefenseRating"}, -- Burning Crusade esMX or deDE, /pawn compare 29171
 	{L.DefenseRatingSimple, "DefenseRating"}, -- Burning Crusade, /pawn compare item:789::::::89
 	{L.DefenseSkill, "DefenseRating"}, -- Classic, /pawn compare 19867
 	{L.DefenseSkillSimple, "DefenseRating"}, -- Classic, /pawn compare item:789::::::89
@@ -264,7 +265,8 @@ PawnRegexes =
 	{L.Ap2, "Ap"}, -- /pawn compare 15062
 	{L.Ap3, "Ap"}, -- /pawn compare 18821
 	{L.Rap, "Rap"}, -- /pawn compare 18473
-	{L.FeralAp, "FeralAp"}, -- /pawn compare 22988
+	{L.FeralAp, "FeralAp"}, -- Classic, /pawn compare 22988
+	{L.FeralApMoonkin, "FeralAp"}, -- Burning Crusade Classic, /pawn compare 22988
 	{L.Mp5, "Mp5"}, -- /pawn compare 22988
 	{L.Mp52, "Mp5"}, -- /pawn compare item:789::::::2074
 	{L.Mp53, "Mp5"}, -- Burning Crusade Classic, socket bonus on /pawn compare 34360
