@@ -311,7 +311,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^Equipar: Mejora un #%% tu probabilidad de conseguir un golpe crítico%.$",
 		["CritRating"] = "^Equipar: Aumenta tu índice de golpe crítico e?n? ?# p%.$",
-		["CritRating2"] = "^UNUSED$",
+		["CritRating2"] = "^Equipar: Mejora el índice de golpe crítico en # p%.$",
 		["CritRatingShort"] = "^%+?# índice de golpe crítico$",
 		["Crossbow"] = "^Ballesta$",
 		["Dagger"] = "^Daga$",
@@ -788,7 +788,6 @@ if GetLocale() == "esES" then
 	PawnLocal.DecimalSeparator = ","
 
 	PawnLocal.TooltipParsing.Avoidance = "^%+# Evasión$"
-	PawnLocal.TooltipParsing.CritRating = "^Equipar: Mejora el índice de golpe crítico en # p%.$"
 	PawnLocal.TooltipParsing.Leech = "^%+# Parasitar$"
 	PawnLocal.TooltipParsing.ResilienceRating = "^Equipar: Mejora tu índice de temple en #%.$"
 	PawnLocal.TooltipParsing.SpellCritRating2 = "^Equipar: Mejora el índice de golpe crítico con hechizos en # p%.$"
@@ -806,6 +805,15 @@ if GetLocale() == "esES" then
 			["NatureResist"] = "^%+?# Naturaleza Resistencia$",
 			["ShadowResist"] = "^%+?# Sombras Resistencia$",
 			["SpellDamage2"] = "^Equipar: Aumenta el daño y la curación de los hechizos mágicos y los efectos hasta en # p%.$",
+			["FireSpellDamage"] = "^%+?# de daño de Hechizos de Fuego$",
+			["FireSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Fuego y los efectos hasta en # p%.$",
+			["FrostSpellDamage"] = "^%+?# de daño de Hechizos de Escarcha$",
+			["FrostSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Escarcha y los efectos hasta en # p%.$",
+			["HolySpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en # p%.$",
+			["NatureSpellDamage"] = "^%+?# de daño de Hechizos de Naturaleza$",
+			["NatureSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Naturaleza y los efectos hasta en # p%.$",
+			["ShadowSpellDamage"] = "^%+?# de daño de Hechizos de Sombras$",
+			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Sombras y los efectos hasta en # p%.$",
 		}
 
 		local Key, NewString
@@ -830,20 +838,11 @@ if GetLocale() == "esES" then
 			["DodgePercent"] = "^Equipar: Aumenta la probabilidad de esquivar un ataque en un #%%%.$",
 			["Dps"] = "^%(# daño por segundo%)$",
 			["FeralAp"] = "^Equipar: %+# p%. de poder de ataque solo bajo formas felinas, de oso y de oso nefasto%.$",
-			["FireSpellDamage"] = "^%+?# de daño de Hechizos de Fuego$",
-			["FireSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Fuego y los efectos hasta en # p%.$",
-			["FrostSpellDamage"] = "^%+?# de daño de Hechizos de Escarcha$",
-			["FrostSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Escarcha y los efectos hasta en # p%.$",
 			["Healing"] = "^%+# de Hechizos de curación$",
 			["Healing2"] = "^Equipar: Aumenta la curación de los hechizos y los efectos hasta en # p%.$",
 			["Hit"] = "^Equipar: Mejora tu probabilidad de alcanzar el objetivo en un #%%%.$",
-			["HolySpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en # p%.$",
 			["Mp52"] = "^%+?# de maná cada 5 seg%.$",
-			["NatureSpellDamage"] = "^%+?# de daño de Hechizos de Naturaleza$",
-			["NatureSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Naturaleza y los efectos hasta en # p%.$",
 			["Rap"] = "^Equipar: %+# p%. de poder de ataque a distancia%.$",
-			["ShadowSpellDamage"] = "^%+?# de daño de Hechizos de Sombras$",
-			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Sombras y los efectos hasta en # p%.$",
 			["SpellCrit"] = "^Equipar: Mejora tu probabilidad de conseguir un golpe crítico en #%%% con los hechizos%.$",
 			["SpellHit"] = "^Equipar: Mejora tu probabilidad de alcanzar el objetivo con hechizos en un #%%%.$",
 			["WeaponDamage"] = "^# %- # Daño$",
