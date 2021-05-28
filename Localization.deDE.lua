@@ -326,7 +326,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Hit"] = "^Anlegen: Verbessert Eure Trefferchance um #%%%.$",
 		["Hit2"] = "^UNUSED$",
 		["HitRating"] = "^Anlegen: Erhöht die Trefferwertung um #%.$",
-		["HitRating2"] = "^UNUSED$",
+		["HitRating2"] = "^Anlegen: Erhöht Eure Trefferwertung um #%.$",
 		["HitRating3"] = "^UNUSED$",
 		["HitRatingShort"] = "^%+?# Trefferwertung$",
 		["HolySpellDamage"] = "^%+# Heiligzauberschaden$",
