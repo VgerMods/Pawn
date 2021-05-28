@@ -807,15 +807,11 @@ if GetLocale() == "esES" then
 			["NatureResist"] = "^%+?# Naturaleza Resistencia$",
 			["ShadowResist"] = "^%+?# Sombras Resistencia$",
 			["SpellDamage2"] = "^Equipar: Aumenta el daño y la curación de los hechizos mágicos y los efectos hasta en # p%.$",
+			["ArcaneSpellDamage"] = "^%+?# de daño de Hechizos Arcanos$",
 			["FireSpellDamage"] = "^%+?# de daño de Hechizos de Fuego$",
-			["FireSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Fuego y los efectos hasta en # p%.$",
 			["FrostSpellDamage"] = "^%+?# de daño de Hechizos de Escarcha$",
-			["FrostSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Escarcha y los efectos hasta en # p%.$",
-			["HolySpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en # p%.$",
 			["NatureSpellDamage"] = "^%+?# de daño de Hechizos de Naturaleza$",
-			["NatureSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Naturaleza y los efectos hasta en # p%.$",
 			["ShadowSpellDamage"] = "^%+?# de daño de Hechizos de Sombras$",
-			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Sombras y los efectos hasta en # p%.$",
 		}
 
 		local Key, NewString
@@ -829,7 +825,6 @@ if GetLocale() == "esES" then
 		local TooltipParsing_Classic =
 		{
 			["Ap"] = "^%+?# de poder de ataque$",
-			["ArcaneSpellDamage"] = "^%+?# de daño de Hechizos Arcanos$",
 			["ArcaneSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos Arcanos y los efectos hasta en # p%.$",
 			["Armor"] = "^%+?# armadura$",
 			["Block"] = "^%+?# bloquear$",
@@ -861,6 +856,11 @@ if GetLocale() == "esES" then
 			["WeaponDamageNatureExact"] = "^%+?# Naturaleza Daño$",
 			["WeaponDamageShadow"] = "^%+?# %- # Sombras Daño$",
 			["WeaponDamageShadowExact"] = "^%+?# Sombras Daño$",
+			["FireSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Fuego y los efectos hasta en # p%.$",
+			["FrostSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Escarcha y los efectos hasta en # p%.$",
+			["HolySpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en # p%.$",
+			["NatureSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Naturaleza y los efectos hasta en # p%.$",
+			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Sombras y los efectos hasta en # p%.$",
 		}
 
 		local Key, NewString
@@ -870,8 +870,24 @@ if GetLocale() == "esES" then
 	end
 
 	if VgerCore.IsBurningCrusade then
-		PawnLocal.TooltipParsing.Ap2 = "^Equipar: Aumenta el poder de ataque en # p%.$"
-		PawnLocal.TooltipParsing.SpellDamage2 = "^Equipar: Aumenta el daño y la sanación de los hechizos mágicos y los efectos hasta en # p%.$"
+		
+		local TooltipParsing_BurningCrusade =
+		{
+			["Ap2"] = "^Equipar: Aumenta el poder de ataque en # p%.$",
+			["SpellDamage2"] = "^Equipar: Aumenta el daño y la sanación de los hechizos mágicos y los efectos hasta en # p%.$",
+			["ArcaneSpellDamage"] = "^%+?# daño con hechizos Arcano$",
+			["FireSpellDamage"] = "^%+?# daño con hechizos de Fuego$",
+			["FrostSpellDamage"] = "^%+?# daño con hechizos de Escarcha$",
+			["NatureSpellDamage"] = "^%+?# daño con hechizos de Naturaleza$",
+			["ShadowSpellDamage"] = "^%+?# daño con hechizos de Sombras$",
+			["ShadowSpellDamage"] = "^%+?# daño con hechizos de las Sombras$",
+			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de las Sombras y los efectos hasta en # p%.$",
+		}
+
+		local Key, NewString
+		for Key, NewString in pairs(TooltipParsing_BurningCrusade) do
+			PawnLocal.TooltipParsing[Key] = NewString
+		end
 	end
 
 	if VgerCore.IsShadowlands or VgerCore.IsBurningCrusade then
