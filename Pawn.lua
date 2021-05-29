@@ -2718,9 +2718,21 @@ end
 function PawnGetItemIDsForDisplay(ItemLink, Formatted)
 	local Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|%x+|Hitem:(%-?%d+)([^|]+)|")
 	if not Pos then
-		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^item:(%-?%d+)([%d%-:]+)")
+		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^item:(%-?%d+):?(.*)")
 		if not Pos then return end
 	end
+
+	if MoreInfo then
+		-- Strip off stray colons.
+		Pos = strlen(MoreInfo)
+		while Pos > 1 and strsub(MoreInfo, Pos, Pos) == ":" do Pos = Pos - 1 end
+		MoreInfo = strsub(MoreInfo, 1, Pos)
+		-- Strip off the character level if that's the only thing after the ID.
+		local ColonsAndLevel = "::::::::" .. UnitLevel("player")
+		Pos = strlen(MoreInfo) - strlen(ColonsAndLevel)
+		if strsub(MoreInfo, Pos) == ColonsAndLevel then MoreInfo = strsub(MoreInfo, 1, Pos) end
+	end
+
 	if Formatted == nil then Formatted = true end
 
 	if MoreInfo and MoreInfo ~= "" then
