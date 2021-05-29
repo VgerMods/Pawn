@@ -1401,7 +1401,6 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 
 	-- Hack for WoW Classic: after a moment, refresh the whole thing, because we might have gotten
 	-- incomplete data from the tooltip the first time.
-	-- TODO: See if this is still necessary for Burning Crusade Classic.
 	if not IsAutomatedRefresh and (VgerCore.IsClassic or VgerCore.IsBurningCrusade) then
 		local AutomatedRefresh = function()
 			if PawnUIComparisonItems[1] then PawnUIComparisonItems[1] = PawnGetItemData(PawnUIComparisonItems[1].Link) end
@@ -2449,9 +2448,8 @@ function PawnUI_EnsureLoaded()
 		PawnUIOpenedYet = true
 		PawnUIFrame_ScaleSelector_Refresh()
 		PawnUIFrame_ShowScaleCheck_Label:SetText(format(PawnUIFrame_ShowScaleCheck_Label_Text, UnitName("player")))
-		if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
-			-- WoW Classic doesn't have gems.
-			-- TODO: Show this tab once gems are working on Burning Crusade Classic.
+		if VgerCore.IsClassic then
+			-- WoW Classic Era doesn't have gems.
 			PawnUIFrameTab4:Hide()
 			PawnUIFrame_IgnoreGemsWhileLevelingCheck:Hide()
 			PawnUIFrame_ShowSocketingAdvisorCheck:Hide()

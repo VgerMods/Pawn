@@ -11,35 +11,36 @@ if VgerCore.IsShadowlands then
 
 
 -- Gem table row format:
--- { ItemID, Class, "Stat1" Quantity1, "Stat2", Quantity2 }
--- 	ItemID: The item ID of this gem.
---	"Stat": The stat that this gem gives.
---	Quantity: How much of the stat that the gem gives.
---	("Stat", Quantity can be repeated again...)
---	Pawn will use the 9th slot for storing a cache of scale values.
+-- { ID, S, R, Y, B, [Item] }
+-- ID: The gem's item ID
+-- Stats: A table of stats that the gem gives
+-- R: true if it's a red gem
+-- Y: true if it's a yellow gem
+-- B: true if it's a blue gem
+-- Item: The cached item data for the gem, used by PawnGetGemData
 
 
 local PawnGemData1 =
 {
 
 -- No ilvl requirement
-{ 23094, "Intellect", 1 }, -- Brilliant Blood Garnet
-{ 23095, "Strength", 1 }, -- Bold Blood Garnet
-{ 28595, "Agility", 1 }, -- Delicate Blood Garnet
-{ 23114, "CritRating", 1 }, -- Smooth Golden Draenite
-{ 23115, "Stamina", 1 }, -- Subtle Golden Draenite
-{ 23116, "CritRating", 1 }, -- Rigid Azure Moonstone
-{ 23119, "Versatility", 1 }, -- Sparkling Azure Moonstone
+{ ID = 23094, Stats = { Intellect = 1 } }, -- Brilliant Blood Garnet
+{ ID = 23095, Stats = { Strength = 1 } }, -- Bold Blood Garnet
+{ ID = 28595, Stats = { Agility = 1 } }, -- Delicate Blood Garnet
+{ ID = 23114, Stats = { CritRating = 1 } }, -- Smooth Golden Draenite
+{ ID = 23115, Stats = { Stamina = 1 } }, -- Subtle Golden Draenite
+{ ID = 23116, Stats = { CritRating = 1 } }, -- Rigid Azure Moonstone
+{ ID = 23119, Stats = { Versatility = 1 } }, -- Sparkling Azure Moonstone
 
-{ 39900, "Strength", 1 }, -- Bold Bloodstone
-{ 39905, "Agility", 1 }, -- Delicate Bloodstone
-{ 39910, "HasteRating", 1 }, -- Precise Bloodstone
-{ 39911, "Intellect", 1 }, -- Brilliant Bloodstone
-{ 39909, "CritRating", 1 }, -- Smooth Sun Crystal
-{ 39918, "HasteRating", 1 }, -- Quick Sun Crystal
-{ 39915, "CritRating", 1 }, -- Rigid Chalcedony
-{ 39919, "Stamina", 1 }, -- Solid Chalcedony
-{ 39920, "Versatility", 1 }, -- Sparkling Chalcedony
+{ ID = 39900, Stats = { Strength = 1 } }, -- Bold Bloodstone
+{ ID = 39905, Stats = { Agility = 1 } }, -- Delicate Bloodstone
+{ ID = 39910, Stats = { HasteRating = 1 } }, -- Precise Bloodstone
+{ ID = 39911, Stats = { Intellect = 1 } }, -- Brilliant Bloodstone
+{ ID = 39909, Stats = { CritRating = 1 } }, -- Smooth Sun Crystal
+{ ID = 39918, Stats = { HasteRating = 1 } }, -- Quick Sun Crystal
+{ ID = 39915, Stats = { CritRating = 1 } }, -- Rigid Chalcedony
+{ ID = 39919, Stats = { Stamina = 1 } }, -- Solid Chalcedony
+{ ID = 39920, Stats = { Versatility = 1 } }, -- Sparkling Chalcedony
 
 }
 
@@ -48,55 +49,55 @@ local PawnGemData2 =
 {
 
 -- No ilvl requirement
-{ 24027, "Strength", 2 }, -- Bold Living Ruby
-{ 24028, "Agility", 2 }, -- Delicate Living Ruby
-{ 24030, "Intellect", 2 }, -- Brilliant Living Ruby
-{ 24048, "CritRating", 2 }, -- Smooth Dawnstone
-{ 35315, "HasteRating", 2 }, -- Quick Dawnstone
-{ 24033, "Stamina", 2 }, -- Solid Star of Elune
-{ 24035, "Versatility", 2 }, -- Sparkling Star of Elune
-{ 24051, "CritRating", 2 }, -- Rigid Star of Elune
+{ ID = 24027, Stats = { Strength = 2 } }, -- Bold Living Ruby
+{ ID = 24028, Stats = { Agility = 2 } }, -- Delicate Living Ruby
+{ ID = 24030, Stats = { Intellect = 2 } }, -- Brilliant Living Ruby
+{ ID = 24048, Stats = { CritRating = 2 } }, -- Smooth Dawnstone
+{ ID = 35315, Stats = { HasteRating = 2 } }, -- Quick Dawnstone
+{ ID = 24033, Stats = { Stamina = 2 } }, -- Solid Star of Elune
+{ ID = 24035, Stats = { Versatility = 2 } }, -- Sparkling Star of Elune
+{ ID = 24051, Stats = { CritRating = 2 } }, -- Rigid Star of Elune
 
-{ 39996, "Strength", 2 }, -- Bold Scarlet Ruby
-{ 39997, "Agility", 2 }, -- Delicate Scarlet Ruby
-{ 39998, "Intellect", 2 }, -- Brilliant Scarlet Ruby
-{ 40003, "HasteRating", 2 }, -- Precise Scarlet Ruby
-{ 40002, "CritRating", 2 }, -- Smooth Autumn's Glow
-{ 40017, "HasteRating", 2 }, -- Quick Autumn's Glow
-{ 40008, "Stamina", 2 }, -- Solid Sky Sapphire
-{ 40009, "Versatility", 2 }, -- Sparkling Sky Sapphire
-{ 40014, "CritRating", 2 }, -- Rigid Sky Sapphire
+{ ID = 39996, Stats = { Strength = 2 } }, -- Bold Scarlet Ruby
+{ ID = 39997, Stats = { Agility = 2 } }, -- Delicate Scarlet Ruby
+{ ID = 39998, Stats = { Intellect = 2 } }, -- Brilliant Scarlet Ruby
+{ ID = 40003, Stats = { HasteRating = 2 } }, -- Precise Scarlet Ruby
+{ ID = 40002, Stats = { CritRating = 2 } }, -- Smooth Autumn's Glow
+{ ID = 40017, Stats = { HasteRating = 2 } }, -- Quick Autumn's Glow
+{ ID = 40008, Stats = { Stamina = 2 } }, -- Solid Sky Sapphire
+{ ID = 40009, Stats = { Versatility = 2 } }, -- Sparkling Sky Sapphire
+{ ID = 40014, Stats = { CritRating = 2 } }, -- Rigid Sky Sapphire
 
 -- Requires ilvl 35
-{ 52081, "Strength", 2 }, -- Bold Carnelian
-{ 52082, "Agility", 2 }, -- Delicate Carnelian
-{ 52084, "Intellect", 2 }, -- Brilliant Carnelian
-{ 52085, "HasteRating", 2 }, -- Precise Carnelian
-{ 52091, "CritRating", 2 }, -- Smooth Alicite
-{ 52093, "HasteRating", 2 }, -- Quick Alicite
-{ 52094, "MasteryRating", 2 }, -- Fractured Alicite
-{ 52086, "Stamina", 2 }, -- Solid Zephyrite
-{ 52087, "Versatility", 2 }, -- Sparkling Zephyrite
-{ 52089, "CritRating", 2 }, -- Rigid Zephyrite
+{ ID = 52081, Stats = { Strength = 2 } }, -- Bold Carnelian
+{ ID = 52082, Stats = { Agility = 2 } }, -- Delicate Carnelian
+{ ID = 52084, Stats = { Intellect = 2 } }, -- Brilliant Carnelian
+{ ID = 52085, Stats = { HasteRating = 2 } }, -- Precise Carnelian
+{ ID = 52091, Stats = { CritRating = 2 } }, -- Smooth Alicite
+{ ID = 52093, Stats = { HasteRating = 2 } }, -- Quick Alicite
+{ ID = 52094, Stats = { MasteryRating = 2 } }, -- Fractured Alicite
+{ ID = 52086, Stats = { Stamina = 2 } }, -- Solid Zephyrite
+{ ID = 52087, Stats = { Versatility = 2 } }, -- Sparkling Zephyrite
+{ ID = 52089, Stats = { CritRating = 2 } }, -- Rigid Zephyrite
 
 -- Requires ilvl 38
-{ 76560, "Agility", 2 }, -- Delicate Pandarian Garnet
-{ 76561, "HasteRating", 2 }, -- Precise Pandarian Garnet
-{ 76562, "Intellect", 2 }, -- Brilliant Pandarian Garnet
-{ 76564, "Strength", 2 }, -- Bold Pandarian Garnet
-{ 76565, "CritRating", 2 }, -- Smooth Sunstone
-{ 76567, "HasteRating", 2 }, -- Quick Sunstone
-{ 76568, "MasteryRating", 2 }, -- Fractured Sunstone
-{ 76502, "CritRating", 2 }, -- Rigid Lapis Lazuli
-{ 76505, "Versatility", 2 }, -- Sparkling Lapis Lazuli
-{ 76506, "Stamina", 2 }, -- Solid Lapis Lazuli
+{ ID = 76560, Stats = { Agility = 2 } }, -- Delicate Pandarian Garnet
+{ ID = 76561, Stats = { HasteRating = 2 } }, -- Precise Pandarian Garnet
+{ ID = 76562, Stats = { Intellect = 2 } }, -- Brilliant Pandarian Garnet
+{ ID = 76564, Stats = { Strength = 2 } }, -- Bold Pandarian Garnet
+{ ID = 76565, Stats = { CritRating = 2 } }, -- Smooth Sunstone
+{ ID = 76567, Stats = { HasteRating = 2 } }, -- Quick Sunstone
+{ ID = 76568, Stats = { MasteryRating = 2 } }, -- Fractured Sunstone
+{ ID = 76502, Stats = { CritRating = 2 } }, -- Rigid Lapis Lazuli
+{ ID = 76505, Stats = { Versatility = 2 } }, -- Sparkling Lapis Lazuli
+{ ID = 76506, Stats = { Stamina = 2 } }, -- Solid Lapis Lazuli
 
 -- Requires ilvl 44
-{ 115803, "CritRating", 2 }, -- Critical Strike Taladite
-{ 115804, "HasteRating", 2 }, -- Haste Taladite
-{ 115805, "MasteryRating", 2 }, -- Mastery Taladite
-{ 115807, "Versatility", 2 }, -- Versatility Taladite
-{ 115808, "Stamina", 2 }, -- Stamina Taladite
+{ ID = 115803, Stats = { CritRating = 2 } }, -- Critical Strike Taladite
+{ ID = 115804, Stats = { HasteRating = 2 } }, -- Haste Taladite
+{ ID = 115805, Stats = { MasteryRating = 2 } }, -- Mastery Taladite
+{ ID = 115807, Stats = { Versatility = 2 } }, -- Versatility Taladite
+{ ID = 115808, Stats = { Stamina = 2 } }, -- Stamina Taladite
 
 }
 
@@ -105,55 +106,55 @@ local PawnGemData3 =
 {
 
 -- No ilvl requirement
-{ 32193, "Strength", 3 }, -- Bold Crimson Spinel
-{ 32194, "Agility", 3 }, -- Delicate Crimson Spinel
-{ 32195, "Intellect", 3 }, -- Brilliant Crimson Spinel
-{ 32205, "CritRating", 3 }, -- Smooth Lionseye
-{ 35761, "HasteRating", 3 }, -- Quick Lionseye
-{ 32200, "Stamina", 3 }, -- Solid Empyrean Sapphire
-{ 32201, "Versatility", 3 }, -- Sparkling Empyrean Sapphire
-{ 32210, "CritRating", 3 }, -- Rigid Empyrean Sapphire
+{ ID = 32193, Stats = { Strength = 3 } }, -- Bold Crimson Spinel
+{ ID = 32194, Stats = { Agility = 3 } }, -- Delicate Crimson Spinel
+{ ID = 32195, Stats = { Intellect = 3 } }, -- Brilliant Crimson Spinel
+{ ID = 32205, Stats = { CritRating = 3 } }, -- Smooth Lionseye
+{ ID = 35761, Stats = { HasteRating = 3 } }, -- Quick Lionseye
+{ ID = 32200, Stats = { Stamina = 3 } }, -- Solid Empyrean Sapphire
+{ ID = 32201, Stats = { Versatility = 3 } }, -- Sparkling Empyrean Sapphire
+{ ID = 32210, Stats = { CritRating = 3 } }, -- Rigid Empyrean Sapphire
 
-{ 40111, "Strength", 3 }, -- Bold Cardinal Ruby
-{ 40112, "Agility", 3 }, -- Delicate Cardinal Ruby
-{ 40113, "Intellect", 3 }, -- Brilliant Cardinal Ruby
-{ 40118, "HasteRating", 3 }, -- Precise Cardinal Ruby
-{ 40117, "CritRating", 3 }, -- Smooth King's Amber
-{ 40128, "HasteRating", 3 }, -- Quick King's Amber
-{ 40119, "Stamina", 3 }, -- Solid Majestic Zircon
-{ 40120, "Versatility", 3 }, -- Sparkling Majestic Zircon
-{ 40125, "CritRating", 3 }, -- Rigid Majestic Zircon
+{ ID = 40111, Stats = { Strength = 3 } }, -- Bold Cardinal Ruby
+{ ID = 40112, Stats = { Agility = 3 } }, -- Delicate Cardinal Ruby
+{ ID = 40113, Stats = { Intellect = 3 } }, -- Brilliant Cardinal Ruby
+{ ID = 40118, Stats = { HasteRating = 3 } }, -- Precise Cardinal Ruby
+{ ID = 40117, Stats = { CritRating = 3 } }, -- Smooth King's Amber
+{ ID = 40128, Stats = { HasteRating = 3 } }, -- Quick King's Amber
+{ ID = 40119, Stats = { Stamina = 3 } }, -- Solid Majestic Zircon
+{ ID = 40120, Stats = { Versatility = 3 } }, -- Sparkling Majestic Zircon
+{ ID = 40125, Stats = { CritRating = 3 } }, -- Rigid Majestic Zircon
 
 -- Requires ilvl 35
-{ 52206, "Strength", 3 }, -- Bold Inferno Ruby
-{ 52207, "Intellect", 3 }, -- Brilliant Inferno Ruby
-{ 52212, "Agility", 3 }, -- Delicate Inferno Ruby
-{ 52230, "HasteRating", 3 }, -- Precise Inferno Ruby
-{ 52219, "MasteryRating", 3 }, -- Fractured Amberjewel
-{ 52232, "HasteRating", 3 }, -- Quick Amberjewel
-{ 52241, "CritRating", 3 }, -- Smooth Amberjewel
-{ 52235, "CritRating", 3 }, -- Rigid Ocean Sapphire
-{ 52242, "Stamina", 3 }, -- Solid Ocean Sapphire
-{ 52244, "Versatility", 3 }, -- Sparkling Ocean Sapphire
+{ ID = 52206, Stats = { Strength = 3 } }, -- Bold Inferno Ruby
+{ ID = 52207, Stats = { Intellect = 3 } }, -- Brilliant Inferno Ruby
+{ ID = 52212, Stats = { Agility = 3 } }, -- Delicate Inferno Ruby
+{ ID = 52230, Stats = { HasteRating = 3 } }, -- Precise Inferno Ruby
+{ ID = 52219, Stats = { MasteryRating = 3 } }, -- Fractured Amberjewel
+{ ID = 52232, Stats = { HasteRating = 3 } }, -- Quick Amberjewel
+{ ID = 52241, Stats = { CritRating = 3 } }, -- Smooth Amberjewel
+{ ID = 52235, Stats = { CritRating = 3 } }, -- Rigid Ocean Sapphire
+{ ID = 52242, Stats = { Stamina = 3 } }, -- Solid Ocean Sapphire
+{ ID = 52244, Stats = { Versatility = 3 } }, -- Sparkling Ocean Sapphire
 
 -- Requires ilvl 38
-{ 76692, "Agility", 3 }, -- Delicate Primordial Ruby
-{ 76693, "HasteRating", 3 }, -- Precise Primordial Ruby
-{ 76694, "Intellect", 3 }, -- Brilliant Primordial Ruby
-{ 76696, "Strength", 3 }, -- Bold Primordial Ruby
-{ 76697, "CritRating", 3 }, -- Smooth Sun's Radiance
-{ 76699, "HasteRating", 3 }, -- Quick Sun's Radiance
-{ 76700, "MasteryRating", 3 }, -- Fractured Sun's Radiance
-{ 76636, "CritRating", 3 }, -- Rigid River's Heart
-{ 76638, "Versatility", 3 }, -- Sparkling River's Heart
-{ 76639, "Stamina", 3 }, -- Solid River's Heart
+{ ID = 76692, Stats = { Agility = 3 } }, -- Delicate Primordial Ruby
+{ ID = 76693, Stats = { HasteRating = 3 } }, -- Precise Primordial Ruby
+{ ID = 76694, Stats = { Intellect = 3 } }, -- Brilliant Primordial Ruby
+{ ID = 76696, Stats = { Strength = 3 } }, -- Bold Primordial Ruby
+{ ID = 76697, Stats = { CritRating = 3 } }, -- Smooth Sun's Radiance
+{ ID = 76699, Stats = { HasteRating = 3 } }, -- Quick Sun's Radiance
+{ ID = 76700, Stats = { MasteryRating = 3 } }, -- Fractured Sun's Radiance
+{ ID = 76636, Stats = { CritRating = 3 } }, -- Rigid River's Heart
+{ ID = 76638, Stats = { Versatility = 3 } }, -- Sparkling River's Heart
+{ ID = 76639, Stats = { Stamina = 3 } }, -- Solid River's Heart
 
 -- Requires ilvl 44
-{ 115809, "CritRating", 3 }, -- Greater Critical Strike Taladite
-{ 115811, "HasteRating", 3 }, -- Greater Haste Taladite
-{ 115812, "MasteryRating", 3 }, -- Greater Mastery Taladite
-{ 115814, "Versatility", 3 }, -- Greater Versatility Taladite
-{ 115815, "Stamina", 3 }, -- Greater Stamina Taladite
+{ ID = 115809, Stats = { CritRating = 3 } }, -- Greater Critical Strike Taladite
+{ ID = 115811, Stats = { HasteRating = 3 } }, -- Greater Haste Taladite
+{ ID = 115812, Stats = { MasteryRating = 3 } }, -- Greater Mastery Taladite
+{ ID = 115814, Stats = { Versatility = 3 } }, -- Greater Versatility Taladite
+{ ID = 115815, Stats = { Stamina = 3 } }, -- Greater Stamina Taladite
 
 }
 
@@ -162,34 +163,34 @@ local PawnGemData4 =
 {
 
 -- Requires ilvl 36
-{ 71879, "Agility", 4 }, -- Delicate Queen's Garnet
-{ 71880, "HasteRating", 4 }, -- Precise Queen's Garnet
-{ 71881, "Intellect", 4 }, -- Brilliant Queen's Garnet
-{ 71883, "Strength", 4 }, -- Bold Queen's Garnet
-{ 71874, "CritRating", 4 }, -- Smooth Lightstone
-{ 71876, "HasteRating", 4 }, -- Quick Lightstone
-{ 71877, "MasteryRating", 4 }, -- Fractured Lightstone
-{ 71817, "CritRating", 4 }, -- Rigid Deepholm Iolite
-{ 71819, "Versatility", 4 }, -- Sparkling Deepholm Iolite
-{ 71820, "Stamina", 4 }, -- Solid Deepholm Iolite
+{ ID = 71879, Stats = { Agility = 4 } }, -- Delicate Queen's Garnet
+{ ID = 71880, Stats = { HasteRating = 4 } }, -- Precise Queen's Garnet
+{ ID = 71881, Stats = { Intellect = 4 } }, -- Brilliant Queen's Garnet
+{ ID = 71883, Stats = { Strength = 4 } }, -- Bold Queen's Garnet
+{ ID = 71874, Stats = { CritRating = 4 } }, -- Smooth Lightstone
+{ ID = 71876, Stats = { HasteRating = 4 } }, -- Quick Lightstone
+{ ID = 71877, Stats = { MasteryRating = 4 } }, -- Fractured Lightstone
+{ ID = 71817, Stats = { CritRating = 4 } }, -- Rigid Deepholm Iolite
+{ ID = 71819, Stats = { Versatility = 4 } }, -- Sparkling Deepholm Iolite
+{ ID = 71820, Stats = { Stamina = 4 } }, -- Solid Deepholm Iolite
 
 -- Requires ilvl 44
-{ 130215, "CritRating", 4 }, -- Deadly Deep Amber
-{ 130216, "HasteRating", 4 }, -- Quick Azsunite
-{ 130217, "Versatility", 4 }, -- Versatile Skystone
-{ 130218, "MasteryRating", 4 }, -- Masterful Queen's Opal
+{ ID = 130215, Stats = { CritRating = 4 } }, -- Deadly Deep Amber
+{ ID = 130216, Stats = { HasteRating = 4 } }, -- Quick Azsunite
+{ ID = 130217, Stats = { Versatility = 4 } }, -- Versatile Skystone
+{ ID = 130218, Stats = { MasteryRating = 4 } }, -- Masterful Queen's Opal
 
-{ 127760, "CritRating", 4 }, -- Immaculate Critical Strike Taladite
-{ 127761, "HasteRating", 4 }, -- Immaculate Haste Taladite
-{ 127762, "MasteryRating", 4 }, -- Immaculate Mastery Taladite
-{ 127764, "Versatility", 4 }, -- Immaculate Versatility Taladite
-{ 127765, "Stamina", 4 }, -- Immaculate Stamina Taladite
+{ ID = 127760, Stats = { CritRating = 4 } }, -- Immaculate Critical Strike Taladite
+{ ID = 127761, Stats = { HasteRating = 4 } }, -- Immaculate Haste Taladite
+{ ID = 127762, Stats = { MasteryRating = 4 } }, -- Immaculate Mastery Taladite
+{ ID = 127764, Stats = { Versatility = 4 } }, -- Immaculate Versatility Taladite
+{ ID = 127765, Stats = { Stamina = 4 } }, -- Immaculate Stamina Taladite
 
 -- Requires ilvl 50
-{ 153710, "CritRating", 4 }, -- Deadly Solstone
-{ 153711, "HasteRating", 4 }, -- Quick Golden Beryl
-{ 153712, "Versatility", 4 }, -- Versatile Kyanite
-{ 153713, "MasteryRating", 4 }, -- Masterful Kubiline
+{ ID = 153710, Stats = { CritRating = 4 } }, -- Deadly Solstone
+{ ID = 153711, Stats = { HasteRating = 4 } }, -- Quick Golden Beryl
+{ ID = 153712, Stats = { Versatility = 4 } }, -- Versatile Kyanite
+{ ID = 153713, Stats = { MasteryRating = 4 } }, -- Masterful Kubiline
 
 }
 
@@ -198,16 +199,16 @@ local PawnGemData6 =
 {
 
 -- Requires ilvl 44
-{ 130219, "CritRating", 6 }, -- Deadly Eye of Prophecy
-{ 130220, "HasteRating", 6 }, -- Quick Dawnlight
-{ 130221, "Versatility", 6 }, -- Versatile Maelstrom Sapphire
-{ 130222, "MasteryRating", 6 }, -- Masterful Shadowruby
+{ ID = 130219, Stats = { CritRating = 6 } }, -- Deadly Eye of Prophecy
+{ ID = 130220, Stats = { HasteRating = 6 } }, -- Quick Dawnlight
+{ ID = 130221, Stats = { Versatility = 6 } }, -- Versatile Maelstrom Sapphire
+{ ID = 130222, Stats = { MasteryRating = 6 } }, -- Masterful Shadowruby
 
 -- Requires ilvl 50
-{ 154126, "CritRating", 6 }, -- Deadly Amberblaze
-{ 154127, "HasteRating", 6 }, -- Quick Owlseye
-{ 154128, "Versatility", 6 }, -- Versatile Royal Quartz
-{ 154129, "MasteryRating", 6 }, -- Masterful Tidal Amethyst
+{ ID = 154126, Stats = { CritRating = 6 } }, -- Deadly Amberblaze
+{ ID = 154127, Stats = { HasteRating = 6 } }, -- Quick Owlseye
+{ ID = 154128, Stats = { Versatility = 6 } }, -- Versatile Royal Quartz
+{ ID = 154129, Stats = { MasteryRating = 6 } }, -- Masterful Tidal Amethyst
 
 }
 
@@ -216,16 +217,16 @@ local PawnGemData7 =
 {
 
 -- Requires ilvl 44
-{ 151580, "CritRating", 7 }, -- Deadly Deep Chemirine
-{ 151583, "HasteRating", 7 }, -- Quick Lightsphene
-{ 151584, "MasteryRating", 7 }, -- Masterful Argulite
-{ 151585, "Versatility", 7 }, -- Versatile Labradorite
+{ ID = 151580, Stats = { CritRating = 7 } }, -- Deadly Deep Chemirine
+{ ID = 151583, Stats = { HasteRating = 7 } }, -- Quick Lightsphene
+{ ID = 151584, Stats = { MasteryRating = 7 } }, -- Masterful Argulite
+{ ID = 151585, Stats = { Versatility = 7 } }, -- Versatile Labradorite
 
 -- Requires ilvl 50
-{ 168639, "CritRating", 7 }, -- Deadly Lava Lazuli
-{ 168641, "HasteRating", 7 }, -- Quick Sand Spinel
-{ 168642, "Versatility", 7 }, -- Versatile Dark Opal
-{ 168640, "MasteryRating", 7 }, -- Masterful Sea Currant
+{ ID = 168639, Stats = { CritRating = 7 } }, -- Deadly Lava Lazuli
+{ ID = 168641, Stats = { HasteRating = 7 } }, -- Quick Sand Spinel
+{ ID = 168642, Stats = { Versatility = 7 } }, -- Versatile Dark Opal
+{ ID = 168640, Stats = { MasteryRating = 7 } }, -- Masterful Sea Currant
 
 }
 
@@ -234,10 +235,10 @@ local PawnGemData12 =
 {
 
 -- No ilvl requirement
-{ 173121, "CritRating", 12 }, -- Deadly Jewel Doublet
-{ 173122, "HasteRating", 12 }, -- Quick Jewel Doublet
-{ 173124, "MasteryRating", 12 }, -- Masterful Jewel Doublet
-{ 173123, "Versatility", 12 }, -- Versatile Jewel Doublet
+{ ID = 173121, Stats = { CritRating = 12 } }, -- Deadly Jewel Doublet
+{ ID = 173122, Stats = { HasteRating = 12 } }, -- Quick Jewel Doublet
+{ ID = 173124, Stats = { MasteryRating = 12 } }, -- Masterful Jewel Doublet
+{ ID = 173123, Stats = { Versatility = 12 } }, -- Versatile Jewel Doublet
 
 }
 
@@ -246,10 +247,10 @@ local PawnGemData16 =
 {
 
 -- No ilvl requirement
-{ 173127, "CritRating", 16 }, -- Deadly Jewel Cluster
-{ 173128, "HasteRating", 16 }, -- Quick Jewel Cluster
-{ 173130, "MasteryRating", 16 }, -- Masterful Jewel Cluster
-{ 173129, "Versatility", 16 }, -- Versatile Jewel Cluster
+{ ID = 173127, Stats = { CritRating = 16 } }, -- Deadly Jewel Cluster
+{ ID = 173128, Stats = { HasteRating = 16 } }, -- Quick Jewel Cluster
+{ ID = 173130, Stats = { MasteryRating = 16 } }, -- Masterful Jewel Cluster
+{ ID = 173129, Stats = { Versatility = 16 } }, -- Versatile Jewel Cluster
 
 }
 
@@ -275,6 +276,10 @@ PawnGemQualityLevels =
 	{ 100, PawnGemData4 }, -- Early level 50 endgame gear
 	{ 44, PawnGemData3 }, -- Don't show gems with a level requirement before 44
 	{ 0, PawnGemData1 },
+}
+
+PawnMetaGemQualityLevels =
+{
 }
 
 PawnMinimumItemLevelToConsiderGems = 144 -- Sockets on items below this ilvl are ignored by default

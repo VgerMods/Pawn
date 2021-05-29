@@ -997,11 +997,11 @@ function PawnClearCacheValuesOnly()
 		end
 	end
 	-- Then, the gem caches.  For each gem meta-table, look at the gem table (which is in
-	-- column 3) and then clear out the contents of column 9 of that table.
-	local GemTable
-	for _, GemTable in pairs(PawnGemQualityLevels) do
-		for _, CachedItem in pairs(GemTable[2]) do
-			CachedItem[9] = nil
+	-- column 3) and then clear out that table's item data cache.
+	local GemQualityData, GemData
+	for _, GemQualityData in pairs(PawnGemQualityLevels) do
+		for _, GemData in pairs(GemQualityData[2]) do
+			GemData.Item = nil
 		end
 	end
 	-- Then, the Compare tab's cache.
@@ -1300,9 +1300,9 @@ end
 -- Return value type is the same as PawnGetCachedItem.
 function PawnGetGemData(GemData)
 	-- If we've already called this function for this gem, keep the stored data.
-	if GemData[6] then return GemData[6] end
+	if GemData.Item then return GemData.Item end
 	
-	local ItemID = GemData[1]
+	local ItemID = GemData.ID
 	local ItemName, ItemLink, ItemRarity, ItemLevel, _, _, _, _, _, ItemTexture = GetItemInfo(ItemID)
 	if ItemLink == nil or ItemName == nil then
 		-- If the gem doesn't exist in the user's local cache, we'll have to fake up some info for it.
@@ -1314,17 +1314,11 @@ function PawnGetGemData(GemData)
 	Item.Rarity = ItemRarity
 	Item.Level = GetDetailedItemLevelInfo(ItemLink) or ItemLevel
 	Item.Texture = ItemTexture
-	Item.UnenchantedStats = { }
-	if GemData[2] then
-		Item.UnenchantedStats[GemData[2]] = GemData[3]
-	end
-	if GemData[4] then
-		Item.UnenchantedStats[GemData[4]] = GemData[5]
-	end
+	Item.UnenchantedStats = GemData.Stats or { }
 	PawnRecalculateItemValuesIfNecessary(Item, true) -- Ignore the user's normalization factor when determining these gem values.
 	
 	-- Save this value for next time.
-	GemData[6] = Item
+	GemData.Item = Item
 	return Item
 end
 
@@ -3068,9 +3062,9 @@ end
 function PawnGetGemQualityForItem(GemQualityLevels, ItemLevel)
 	if not ItemLevel then return GemQualityLevels[1][1] end
 
-	local _, GemData, GemLevel
-	for _, GemData in pairs(GemQualityLevels) do
-		GemLevel = GemData[1]
+	local _, GemQualityData, GemLevel
+	for _, GemQualityData in pairs(GemQualityLevels) do
+		GemLevel = GemQualityData[1]
 		if ItemLevel >= GemLevel then return GemLevel end
 	end
 	VgerCore.Fail("Couldn't find an appropriate gem quality level for an item of level " .. tostring(ItemLevel) .. " in the specified item table.")
@@ -3090,6 +3084,7 @@ function PawnFindBestGems(ScaleName, GemTable)
 	local BestItems = { }
 
 	-- Go through the list of gems, checking each item that matches one of the find criteria.
+	-- TODO: Implement filtering
 	local GemData, ThisGem, _
 	for _, GemData in pairs(GemTable) do
 		ThisGem = PawnGetGemData(GemData)
@@ -3105,7 +3100,7 @@ function PawnFindBestGems(ScaleName, GemTable)
 				tinsert(BestItems, ThisGem)
 			end
 		else
-			VgerCore.Fail("Failed to get information about gem " .. GemData[1])
+			VgerCore.Fail("Failed to get information about gem " .. GemData.ID)
 		end
 	end
 	
