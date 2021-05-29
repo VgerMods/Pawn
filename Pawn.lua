@@ -1075,6 +1075,12 @@ function PawnRecalculateScaleTotal(ScaleName)
 		{
 			["PrismaticSocket"] = { },
 			["PrismaticSocketValue"] = { },
+			["RedSocket"] = { },
+			["RedSocketValue"] = { },
+			["YellowSocket"] = { },
+			["YellowSocketValue"] = { },
+			["BlueSocket"] = { },
+			["BlueSocketValue"] = { },
 		}
 	end
 	local ThisScaleBestGems = PawnScaleBestGems[ScaleName]
@@ -1091,8 +1097,23 @@ function PawnRecalculateScaleTotal(ScaleName)
 		end
 
 		local BestPrismatic
-		BestPrismatic, ThisScaleBestGems.PrismaticSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, true, true, true)
+		BestPrismatic, ThisScaleBestGems.PrismaticSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
 		ThisScaleBestGems.PrismaticSocketValue[ItemLevel] = BestPrismatic
+
+		-- Classic Era and the retail realms don't have colored sockets anymore, so don't bother trying to calculate for those.
+		if not VgerCore.IsClassic and not VgerCore.IsShadowlands then
+			local BestRed
+			BestRed, ThisScaleBestGems.RedSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, true, false, false)
+			ThisScaleBestGems.RedSocketValue[ItemLevel] = BestRed
+
+			local BestYellow
+			BestYellow, ThisScaleBestGems.YellowSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, true, false)
+			ThisScaleBestGems.YellowSocketValue[ItemLevel] = BestYellow
+
+			local BestBlue
+			BestBlue, ThisScaleBestGems.BlueSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, false, true)
+			ThisScaleBestGems.BlueSocketValue[ItemLevel] = BestBlue
+		end
 	end
 
 end
@@ -3075,29 +3096,31 @@ end
 -- 	Parameters: ScaleName, GemTable
 --		ScaleName: The name of the scale for which to find gems.
 --		GemTable: The gem table to search through.
+--		RedOnly, YellowOnly, BlueOnly: Filters the results to only gems of a certain color.
 --	Return value: Value, GemList
 --		Value: The value of the best gem or gems for the chosen colors.
 --		GemList: A table of gems of that value.  Each item in the list is in the standard Pawn item table format, and
 --			the list is sorted alphabetically by name.
-function PawnFindBestGems(ScaleName, GemTable)
+function PawnFindBestGems(ScaleName, GemTable, RedOnly, YellowOnly, BlueOnly)
 	local BestScore = 0
 	local BestItems = { }
 
 	-- Go through the list of gems, checking each item that matches one of the find criteria.
-	-- TODO: Implement filtering
 	local GemData, ThisGem, _
 	for _, GemData in pairs(GemTable) do
 		ThisGem = PawnGetGemData(GemData)
 		if ThisGem then
-			local ThisValue = PawnGetItemValue(ThisGem.UnenchantedStats, ThisGem.Level, nil, ScaleName, false, true)
-			if ThisValue and ThisValue > BestScore then
-				-- This gem is better than any we've found so far.
-				BestScore = ThisValue
-				wipe(BestItems)
-				tinsert(BestItems, ThisGem)
-			elseif ThisValue and ThisValue == BestScore then
-				-- This gem is tied with the best gems we've found so far.
-				tinsert(BestItems, ThisGem)
+			if ((not RedOnly) or GemData.R) and ((not YellowOnly) or GemData.Y) and ((not BlueOnly) or GemData.B) then
+				local ThisValue = PawnGetItemValue(ThisGem.UnenchantedStats, ThisGem.Level, nil, ScaleName, false, true)
+				if ThisValue and ThisValue > BestScore then
+					-- This gem is better than any we've found so far.
+					BestScore = ThisValue
+					wipe(BestItems)
+					tinsert(BestItems, ThisGem)
+				elseif ThisValue and ThisValue == BestScore then
+					-- This gem is tied with the best gems we've found so far.
+					tinsert(BestItems, ThisGem)
+				end
 			end
 		else
 			VgerCore.Fail("Failed to get information about gem " .. GemData.ID)

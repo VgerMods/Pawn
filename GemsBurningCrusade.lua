@@ -67,7 +67,7 @@ local PawnGemDataUncommon =
 ------------------------------------------------------------
 
 { ID = 23098, R = true, Y = true, Stats = { CritRating = 3, Strength = 3 } }, -- Inscribed Flame Spessarite
-{ ID = 23099, R = true, Y = true, Stats = { HasteRating = 3, Intellect = 3 } }, -- Reckless Flame Spessarite
+-- { ID = 23099, R = true, Y = true, Stats = { HasteRating = 3, Intellect = 3 } }, -- Reckless Flame Spessarite
 { ID = 23101, R = true, Y = true, Stats = { CritRating = 3, Intellect = 3 } }, -- Potent Flame Spessarite
 { ID = 31869, R = true, Y = true, Stats = { CritRating = 3, Agility = 3 } }, -- Deadly Flame Spessarite
 
@@ -137,7 +137,7 @@ local PawnGemDataRare =
 
 { ID = 24058, R = true, Y = true, Stats = { CritRating = 4, Strength = 4 } }, -- Inscribed Noble Topaz
 { ID = 24059, R = true, Y = true, Stats = { Intellect = 4, CritRating = 4 } }, -- Potent Noble Topaz
-{ ID = 24060, R = true, Y = true, Stats = { Intellect = 4, HasteRating = 4 } }, -- Reckless Noble Topaz
+-- { ID = 24060, R = true, Y = true, Stats = { Intellect = 4, HasteRating = 4 } }, -- Reckless Noble Topaz
 { ID = 31868, R = true, Y = true, Stats = { CritRating = 4, Agility = 4 } }, -- Deadly Noble Topaz
 
 
@@ -148,7 +148,7 @@ local PawnGemDataRare =
 { ID = 24032, Y = true, Stats = { DodgeRating = 8 } }, -- Subtle Dawnstone
 { ID = 24048, Y = true, Stats = { CritRating = 8 } }, -- Smooth Dawnstone
 { ID = 24053, Y = true, Stats = { ResilienceRating = 8 } }, -- Mystic Dawnstone
-{ ID = 35315, Y = true, Stats = { HasteRating = 8 } }, -- Quick Dawnstone
+-- { ID = 35315, Y = true, Stats = { HasteRating = 8 } }, -- Quick Dawnstone
 
 
 ------------------------------------------------------------
@@ -158,7 +158,7 @@ local PawnGemDataRare =
 { ID = 24066, Y = true, B = true, Stats = { CritRating = 4, SpellPenetration = 5 } }, -- Radiant Talasite
 { ID = 24067, Y = true, B = true, Stats = { CritRating = 4, Stamina = 6 } }, -- Jagged Talasite
 { ID = 33782, Y = true, B = true, Stats = { Stamina = 6, ResilienceRating = 4 } }, -- Steady Talasite
-{ ID = 35318, Y = true, B = true, Stats = { HasteRating = 4, Stamina = 6 } }, -- Forceful Talasite
+-- { ID = 35318, Y = true, B = true, Stats = { HasteRating = 4, Stamina = 6 } }, -- Forceful Talasite
 { ID = 35707, Y = true, B = true, Stats = { DodgeRating = 4, Stamina = 6 } }, -- Regal Talasite
 
 
@@ -210,7 +210,7 @@ local PawnGemDataEpic =
 
 { ID = 32217, R = true, Y = true, Stats = { CritRating = 5, Strength = 5 } }, -- Inscribed Pyrestone
 { ID = 32218, R = true, Y = true, Stats = { Intellect = 5, CritRating = 5 } }, -- Potent Pyrestone
-{ ID = 32219, R = true, Y = true, Stats = { Intellect = 5, HasteRating = 5 } }, -- Reckless Pyrestone
+-- { ID = 32219, R = true, Y = true, Stats = { Intellect = 5, HasteRating = 5 } }, -- Reckless Pyrestone
 { ID = 32222, R = true, Y = true, Stats = { CritRating = 5, Agility = 5 } }, -- Deadly Pyrestone
 
 
@@ -221,7 +221,7 @@ local PawnGemDataEpic =
 { ID = 32198, Y = true, Stats = { DodgeRating = 10 } }, -- Subtle Lionseye
 { ID = 32205, Y = true, Stats = { CritRating = 10 } }, -- Smooth Lionseye
 { ID = 32209, Y = true, Stats = { ResilienceRating = 10 } }, -- Mystic Lionseye
-{ ID = 35761, Y = true, Stats = { HasteRating = 10 } }, -- Quick Lionseye
+-- { ID = 35761, Y = true, Stats = { HasteRating = 10 } }, -- Quick Lionseye
 
 
 ------------------------------------------------------------
@@ -232,7 +232,7 @@ local PawnGemDataEpic =
 { ID = 32224, Y = true, B = true, Stats = { CritRating = 5, SpellPenetration = 6 } }, -- Radiant Seaspray Emerald
 { ID = 32226, Y = true, B = true, Stats = { CritRating = 5, Stamina = 7 } }, -- Jagged Seaspray Emerald
 { ID = 35758, Y = true, B = true, Stats = { Stamina = 7, ResilienceRating = 5 } }, -- Steady Seaspray Emerald
-{ ID = 35759, Y = true, B = true, Stats = { HasteRating = 5, Stamina = 7 } }, -- Forceful Seaspray Emerald
+-- { ID = 35759, Y = true, B = true, Stats = { HasteRating = 5, Stamina = 7 } }, -- Forceful Seaspray Emerald
 
 
 ------------------------------------------------------------
@@ -311,4 +311,4 @@ PawnMetaGemQualityLevels =
 
 PawnMinimumItemLevelToConsiderGems = 85 -- Hellfire Ramparts level 60 dungeon blue
 	
-end
+end -- if VgerCore.IsBurningCrusade

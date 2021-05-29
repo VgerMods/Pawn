@@ -1670,11 +1670,10 @@ end
 function PawnUI_ShowBestGems()
 	-- Always clear out the existing gems, no matter what happens next.
 	PawnUI_DeleteGemLines()
+	-- If no scale is selected, we can't show a gem list.  (This is a valid case!)
 	if not PawnUICurrentScale or PawnUICurrentScale == PawnLocal.NoScale then return end
 	
 	-- Update the gem list for this scale.
-	
-	-- If no scale is selected, we can't show a gem list.  (This is a valid case!)
 	if not PawnScaleBestGems[PawnUICurrentScale] then
 		VgerCore.Fail("Failed to build a gem list because no best-gem data was available for this scale.")
 		return
@@ -1685,11 +1684,37 @@ function PawnUI_ShowBestGems()
 
 	local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, PawnUIGemQualityLevel)
 
-	if #(PawnScaleBestGems[PawnUICurrentScale].PrismaticSocket[GemQualityLevel]) > 0 then
-		for _, GemData in pairs(PawnScaleBestGems[PawnUICurrentScale].PrismaticSocket[GemQualityLevel]) do
-			PawnUI_AddGemLine(GemData.Name, GemData.Texture, GemData.ID)
+	if not VgerCore.IsClassic and not VgerCore.IsShadowlands then
+		-- Burning Crusade Classic: Divide by color
+		if #(PawnScaleBestGems[PawnUICurrentScale].RedSocket[GemQualityLevel]) > 0 then
+			PawnUI_AddGemHeaderLine(format(PawnLocal.UI.GemsColorHeader, RED_GEM))
+			for _, GemData in pairs(PawnScaleBestGems[PawnUICurrentScale].RedSocket[GemQualityLevel]) do
+				PawnUI_AddGemLine(GemData.Name, GemData.Texture, GemData.ID)
+			end
+			ShownGems = true
 		end
-		ShownGems = true
+		if #(PawnScaleBestGems[PawnUICurrentScale].YellowSocket[GemQualityLevel]) > 0 then
+			PawnUI_AddGemHeaderLine(format(PawnLocal.UI.GemsColorHeader, YELLOW_GEM))
+			for _, GemData in pairs(PawnScaleBestGems[PawnUICurrentScale].YellowSocket[GemQualityLevel]) do
+				PawnUI_AddGemLine(GemData.Name, GemData.Texture, GemData.ID)
+			end
+			ShownGems = true
+		end
+		if #(PawnScaleBestGems[PawnUICurrentScale].BlueSocket[GemQualityLevel]) > 0 then
+			PawnUI_AddGemHeaderLine(format(PawnLocal.UI.GemsColorHeader, BLUE_GEM))
+			for _, GemData in pairs(PawnScaleBestGems[PawnUICurrentScale].BlueSocket[GemQualityLevel]) do
+				PawnUI_AddGemLine(GemData.Name, GemData.Texture, GemData.ID)
+			end
+			ShownGems = true
+		end
+	else
+		-- Non-Classic WoW: All sockets are prismatic
+		if #(PawnScaleBestGems[PawnUICurrentScale].PrismaticSocket[GemQualityLevel]) > 0 then
+			for _, GemData in pairs(PawnScaleBestGems[PawnUICurrentScale].PrismaticSocket[GemQualityLevel]) do
+				PawnUI_AddGemLine(GemData.Name, GemData.Texture, GemData.ID)
+			end
+			ShownGems = true
+		end
 	end
 
 	if not ShownGems then
