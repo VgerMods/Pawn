@@ -2488,7 +2488,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			Stat ~= "RedSocket" and
 			Stat ~= "YellowSocket" and
 			Stat ~= "BlueSocket" and
-			Stat ~= "MetaSocket" and
+			Stat ~= "MetaSocket"
 		then
 			if ThisValue then
 				-- This stat has a value; add it to the running total.
@@ -2537,7 +2537,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				ProcessSockets("YellowSocket")
 				ProcessSockets("BlueSocket")
 
-				-- TODO: Handle meta sockets
+				-- TODO: Handle meta sockets ***
 			end
 
 			-- Decide what to do with socket bonuses.
@@ -2558,7 +2558,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 					TotalSocketValue = TotalSocketValue + SocketBonusValue
 				end
 
-				-- TODO: Handle breaking socket bonuses
+				-- TODO: Handle breaking socket bonuses ***
 			end
 
 		else

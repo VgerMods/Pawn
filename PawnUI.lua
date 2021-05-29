@@ -1323,7 +1323,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 		PawnUI_AddComparisonStatLineNumbers(PawnLocal.UI.CompareGemTotalValue, TotalSocketValue1, TotalSocketValue2, false) -- hide differential
 	end
 
-	-- TODO: Show socket bonuses
+	-- TODO: Show socket bonuses ***
 
 	-- Everything else below this point goes under an "Other" header.
 	LastFoundHeader = PawnLocal.UI.CompareOtherHeader
