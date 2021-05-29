@@ -397,6 +397,7 @@ PawnLocal =
 		["SpellHasteRatingShort"] = "^%+?# 法术急速等级$",
 		["SpellHit"] = "^装备： ?使你的法术击中敌人的几率提高#%%。$",
 		["SpellHitRating"] = "^装备： 使你的法术命中等级提高#。$",
+		["SpellHitRating2"] = "^UNUSED$",
 		["SpellHitRatingShort"] = "^%+?# 法术命中等级$",
 		["SpellPenetration"] = "^装备： 使你的法术穿透提高#。$",
 		["SpellPenetrationShort"] = "^%+?# 法术穿透$",

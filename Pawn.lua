@@ -36,7 +36,9 @@ local PawnScaleTotals = { }
 --	Best gem data is broken down first by scale name, then by socket, then by minimum item level.  "Gem info" is yet another table.
 -- PawnScaleBestGems["Scale name"] = {
 --	["PrismaticSocket"] = { [0] = { gem info }, },
---	["PrismaticSocketValue"] = { [0] = 234.56, } }
+--	["PrismaticSocketValue"] = { [0] = 234.56, }
+--  ...and also Red, Yellow, Blue in place of Prismatic
+-- }
 PawnScaleBestGems = { }
 
 PawnPlayerFullName = nil

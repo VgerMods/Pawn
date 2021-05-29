@@ -399,6 +399,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["SpellHasteRatingShort"] = "^%+?# Taxa de Aceleração de Feitiço$",
 		["SpellHit"] = "^Equipado: Aumenta em #%% sua chance de acertar com feitiços%.$",
 		["SpellHitRating"] = "^Equipado: Aumenta em # sua taxa de acerto de feitiços%.$",
+		["SpellHitRating2"] = "^UNUSED$",
 		["SpellHitRatingShort"] = "^%+?# Taxa de Acerto de Feitiço$",
 		["SpellPenetration"] = "^Equipado: Aumenta em # sua penetração de feitiços%.$",
 		["SpellPenetrationShort"] = "^%+?# Penetração de Feitiço$",

@@ -419,6 +419,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["SpellHit"] = "^Equip: Improves your chance to hit with spells by #%%%.$",
 		--[[Translation missing --]]
 		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
+		["SpellHitRating2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
 		--[[Translation missing --]]

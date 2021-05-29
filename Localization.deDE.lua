@@ -394,6 +394,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellHasteRatingShort"] = "^%+?# Zaubertempowertung$",
 		["SpellHit"] = "^Anlegen: Erhöht Eure Chance mit Zaubern zu treffen um #%%%.$",
 		["SpellHitRating"] = "^Anlegen: Erhöht d?i?e?E?u?r?e? Zaubertrefferwertung um #%.$",
+		["SpellHitRating2"] = "^UNUSED$",
 		["SpellHitRatingShort"] = "^%+?# Zaubertrefferwertung$",
 		["SpellPenetration"] = "^Anlegen: Erhöht d?i?e?E?u?r?e? Zauberdurchschlagskraft um #%.$",
 		["SpellPenetrationShort"] = "^%+?# Zauberdurchschlagskraft$",
