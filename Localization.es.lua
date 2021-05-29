@@ -433,6 +433,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Equipar: Aumenta hasta # p%. la sanación realizada y hasta # p%. todo el daño infligido con todos los hechizos y efectos mágicos%.$",
+		["SpellDamageAndHealingShort"] = "^UNUSED$",
 		["SpellHasteRating"] = "^Equipar: Aumenta el índice de celeridad con hechizos e?n? ?# p%.$",
 		["SpellHasteRatingShort"] = "^%+?# índice de celeridad con hechizos$",
 		["SpellHit"] = "^Equipar: Mejora un #%% tu probabilidad de golpear con hechizos%.$",

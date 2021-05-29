@@ -394,6 +394,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Equipado: Aumenta em # a cura realizada e em até # o dano causado por todos os feitiços e efeitos mágicos%.$",
+		["SpellDamageAndHealingShort"] = "^UNUSED$",
 		["SpellHasteRating"] = "^Equipado: Aumenta em # a taxa de aceleração de feitiço%.$",
 		["SpellHasteRatingShort"] = "^%+?# Taxa de Aceleração de Feitiço$",
 		["SpellHit"] = "^Equipado: Aumenta em #%% sua chance de acertar com feitiços%.$",

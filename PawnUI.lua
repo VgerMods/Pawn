@@ -1524,6 +1524,7 @@ function PawnUIGetAllTextForItem(Item)
 		end
 	elseif type(Item) == "string" then
 		ItemLink = Item
+		PawnGetItemData(ItemLink) -- Not actually used, but call this here so we can use /pawn debug.
 		Item = nil
 	end
 	local Tooltip = _G[PawnPrivateTooltipName]
