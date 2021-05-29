@@ -155,6 +155,7 @@ local PawnGemDataRare =
 -- Green gems
 ------------------------------------------------------------
 
+{ ID = 24065, Y = true, B = true, Stats = { Intellect = 4, Mp5 = 2 } }, -- Dazzling Talasite
 { ID = 24066, Y = true, B = true, Stats = { CritRating = 4, SpellPenetration = 5 } }, -- Radiant Talasite
 { ID = 24067, Y = true, B = true, Stats = { CritRating = 4, Stamina = 6 } }, -- Jagged Talasite
 { ID = 33782, Y = true, B = true, Stats = { Stamina = 6, ResilienceRating = 4 } }, -- Steady Talasite
@@ -180,7 +181,6 @@ local PawnGemDataRare =
 { ID = 24055, R = true, B = true, Stats = { Stamina = 6, Agility = 4 } }, -- Shifting Nightseye
 { ID = 24056, R = true, B = true, Stats = { Intellect = 5, Stamina = 6 } }, -- Timeless Nightseye
 { ID = 24061, R = true, B = true, Stats = { HitRating = 4, Agility = 4 } }, -- Glinting Nightseye
-{ ID = 24065, R = true, B = true, Stats = { Intellect = 4, Spirit = 4 } }, -- Purified Nightseye
 { ID = 31867, R = true, B = true, Stats = { Intellect = 4, HitRating = 4 } }, -- Veiled Nightseye
 
 
@@ -230,6 +230,7 @@ local PawnGemDataEpic =
 
 { ID = 32223, Y = true, B = true, Stats = { DodgeRating = 5, Stamina = 7 } }, -- Regal Seaspray Emerald
 { ID = 32224, Y = true, B = true, Stats = { CritRating = 5, SpellPenetration = 6 } }, -- Radiant Seaspray Emerald
+{ ID = 32225, Y = true, B = true, Stats = { Intellect = 5, Mp5 = 2 } }, -- Dazzling Seaspray Emerald
 { ID = 32226, Y = true, B = true, Stats = { CritRating = 5, Stamina = 7 } }, -- Jagged Seaspray Emerald
 { ID = 35758, Y = true, B = true, Stats = { Stamina = 7, ResilienceRating = 5 } }, -- Steady Seaspray Emerald
 -- { ID = 35759, Y = true, B = true, Stats = { HasteRating = 5, Stamina = 7 } }, -- Forceful Seaspray Emerald
@@ -254,7 +255,6 @@ local PawnGemDataEpic =
 { ID = 32215, R = true, B = true, Stats = { Intellect = 5, Stamina = 7 } }, -- Timeless Shadowsong Amethyst
 { ID = 32220, R = true, B = true, Stats = { HitRating = 5, Agility = 5 } }, -- Glinting Shadowsong Amethyst
 { ID = 32221, R = true, B = true, Stats = { Intellect = 5, HitRating = 5 } }, -- Veiled Shadowsong Amethyst
-{ ID = 32225, R = true, B = true, Stats = { Intellect = 5, Spirit = 5 } }, -- Purified Shadowsong Amethyst
 
 
 }
