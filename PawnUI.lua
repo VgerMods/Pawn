@@ -1291,17 +1291,25 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	-- Add gem and socket information.
 	LastFoundHeader = PawnLocal.UI.CompareSocketsHeader
 
-	local HasSockets1 = Item1.UnenchantedStats.PrismaticSocket
-	local HasSockets2 = Item2.UnenchantedStats.PrismaticSocket
-	if not HasSockets1 or HasSockets1 <= 0 then HasSockets1 = nil end
-	if not HasSockets2 or HasSockets2 <= 0 then HasSockets2 = nil end
-	if HasSockets1 or HasSockets2 then
-		if LastFoundHeader then
-			PawnUI_AddComparisonHeaderLine(LastFoundHeader)
-			LastFoundHeader = nil
+	local AddSockets = function(Stat, FriendlyName)
+		local HasSockets1 = Item1.UnenchantedStats[Stat]
+		local HasSockets2 = Item2.UnenchantedStats[Stat]
+		if not HasSockets1 or HasSockets1 <= 0 then HasSockets1 = nil end
+		if not HasSockets2 or HasSockets2 <= 0 then HasSockets2 = nil end
+		if HasSockets1 or HasSockets2 then
+			if LastFoundHeader then
+				PawnUI_AddComparisonHeaderLine(LastFoundHeader)
+				LastFoundHeader = nil
+			end
+			PawnUI_AddComparisonStatLineNumbers(FriendlyName, HasSockets1, HasSockets2, false) -- hide differential
 		end
-		PawnUI_AddComparisonStatLineNumbers(PawnLocal.UI.CompareColoredSockets, HasSockets1, HasSockets2, false) -- hide differential
 	end
+
+	AddSockets("PrismaticSocket", PawnLocal.UI.CompareColoredSockets)
+	AddSockets("RedSocket", RED_GEM)
+	AddSockets("YellowSocket", YELLOW_GEM)
+	AddSockets("BlueSocket", BLUE_GEM)
+	AddSockets("MetaSocket", META_GEM)
 
 	local _, TotalSocketValue1 = PawnGetItemValue(ItemStats1, Item1.Level, ItemSocketBonusStats1, PawnUICurrentScale, false, true)
 	local _, TotalSocketValue2 = PawnGetItemValue(ItemStats2, Item2.Level, ItemSocketBonusStats2, PawnUICurrentScale, false, true)
@@ -2057,9 +2065,13 @@ function PawnUI_OnSocketUpdate()
 			local TextColor = VgerCore.Color.Blue
 			if Scale.Color and strlen(Scale.Color) == 6 then TextColor = "|cff" .. Scale.Color end
 			
-			local SocketCount = GetNumSockets()
-			local PrismaticSockets = ItemStats.PrismaticSocket
-			if PrismaticSockets and PrismaticSockets > 0 then
+			local SocketCount = 0
+				+ (ItemStats.PrismaticSocket or 0)
+				+ (ItemStats.RedSocket or 0)
+				+ (ItemStats.YellowSocket or 0)
+				+ (ItemStats.BlueSocket or 0)
+
+			if SocketCount > 0 then
 				local BestGems = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level)
 				if BestGems then
 					if PawnOptions.AutoSelectScales then
@@ -2071,6 +2083,7 @@ function PawnUI_OnSocketUpdate()
 					end
 				end
 			end
+
 		end
 	end
 	
