@@ -308,6 +308,16 @@ indeterminate or an upgrade. This can be used for auto-sell rules, such as <code
 
 <h2>Updates</h2>
 <h3>Version 2.5.9</h3>
+<ul>
+	<li>On Burning Crusade Classic, when determining a socketed item's value, 
+	Pawn will now decide whether the item's value would be maximized by 
+	following the socket bonus, or ignoring the bonus and using all of the same 
+	type of gem.<ul>
+		<li>This is not yet reflected in the socketing advisor popup.</li>
+		<li>Meta gems are not yet supported.</li>
+	</ul>
+	</li>
+</ul>
 <h3>Version 2.5.8</h3>
 <ul>
 	<li>Pawn now includes colored sockets in the value of an item like it does 
@@ -315,11 +325,7 @@ indeterminate or an upgrade. This can be used for auto-sell rules, such as <code
 	based on the best gems that fit that socket's color of an appropriate 
 	quality level for the item. Like prismatic sockets, there's no way to 
 	manually override the value of a colored socket or to fine-tune the quality 
-	level of the gem used in the calculation.<ul>
-		<li>Socket bonuses (including breaking the socket bonus when applicable) 
-		and meta gems are not yet supported.</li>
-	</ul>
-	</li>
+	level of the gem used in the calculation.</li>
 	<li>Colored and meta sockets are now shown on Pawn's Compare tab.</li>
 	<li>The socketing advisor will now appear for socketed items in Burning 
 	Crusade Classic.</li>
