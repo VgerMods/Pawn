@@ -438,7 +438,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellHasteRatingShort"] = "^%+?# índice de celeridad con hechizos$",
 		["SpellHit"] = "^Equipar: Mejora un #%% tu probabilidad de golpear con hechizos%.$",
 		["SpellHitRating"] = "^Equipar: Aumenta tu índice de golpe con hechizos e?n? ?# p%.$",
-		["SpellHitRating2"] = "^UNUSED$",
+		["SpellHitRating2"] = "^Equipar: Mejora # p%. el golpe con hechizos%.$",
 		["SpellHitRatingShort"] = "^%+?# índice de golpe con hechizos$",
 		["SpellPenetration"] = "^Equipar: Aumenta la penetración de tus hechizos e?n? ?# p%.$",
 		["SpellPenetrationShort"] = "^%+?# penetración de hechizos$",
@@ -797,6 +797,7 @@ if GetLocale() == "esES" then
 	PawnLocal.TooltipParsing.SpellCritRating2 = "^Equipar: Mejora el índice de golpe crítico con hechizos en # p%.$"
 	PawnLocal.TooltipParsing.SpellDamageAndHealing = "^Equipar: Aumenta la sanación que haces hasta # p%. y el daño que infliges hasta # p%. con todos los hechizos mágicos y efectos%.$"
 	PawnLocal.TooltipParsing.SpellHasteRating = "^Equipar: Mejora el índice de celeridad con hechizos en # p%.$"
+	PawnLocal.TooltipParsing.SpellHitRating = "^Equipar: Mejora el índice de golpe con hechizos en # p%.$"
 
 	if VgerCore.IsClassic then
 

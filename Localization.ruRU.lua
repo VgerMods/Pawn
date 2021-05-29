@@ -400,7 +400,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellHit"] = "^Если на персонаже: Повышение на #%% рейтинга меткости заклинаний%.$",
 		--[[Translation missing --]]
 		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
-		["SpellHitRating2"] = "^UNUSED$",
+		["SpellHitRating2"] = "^Если на персонаже: Меткость %(заклинания%) %+#%.$",
 		["SpellHitRatingShort"] = "^%+?# к рейтингу меткости заклинаний$",
 		["SpellPenetration"] = "^Если на персонаже: Увеличивает проникающую способность заклинаний на #%.$",
 		["SpellPenetrationShort"] = "^%+?# к проникающей способности заклинаний$",
