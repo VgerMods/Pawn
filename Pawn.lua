@@ -2483,7 +2483,13 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			break
 		end
 		-- Sockets need to be considered separately since their value depends on the item's level.
-		if Stat ~= "PrismaticSocket" then
+		if
+			Stat ~= "PrismaticSocket" and
+			Stat ~= "RedSocket" and
+			Stat ~= "YellowSocket" and
+			Stat ~= "BlueSocket" and
+			Stat ~= "MetaSocket" and
+		then
 			if ThisValue then
 				-- This stat has a value; add it to the running total.
 				if ScaleValues.SpeedBaseline and (
@@ -2513,18 +2519,27 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 
 			-- Decide what to do with sockets.
 			if ShouldIncludeSockets then
-				Stat = "PrismaticSocket" Quantity = Item[Stat]
-				if Quantity then
-					GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
-					ThisValue = ThisScaleBestGems[Stat .. "Value"][GemQualityLevel]
-					if ThisValue then
-						TotalSocketValue = TotalSocketValue + Quantity * ThisValue
-						Total = Total + Quantity * ThisValue
-						if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
+
+				local ProcessSockets = function(Stat)
+					Quantity = Item[Stat]
+					if Quantity then
+						GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
+						ThisValue = ThisScaleBestGems[Stat .. "Value"][GemQualityLevel]
+						if ThisValue then
+							TotalSocketValue = TotalSocketValue + Quantity * ThisValue
+							Total = Total + Quantity * ThisValue
+							if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
+						end
 					end
 				end
+				ProcessSockets("PrismaticSocket")
+				ProcessSockets("RedSocket")
+				ProcessSockets("YellowSocket")
+				ProcessSockets("BlueSocket")
+
+				-- TODO: Handle meta sockets
 			end
-			
+
 			-- Decide what to do with socket bonuses.
 			if SocketBonus then
 				local SocketBonusValue = 0
@@ -2542,6 +2557,8 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 					Total = Total + SocketBonusValue
 					TotalSocketValue = TotalSocketValue + SocketBonusValue
 				end
+
+				-- TODO: Handle breaking socket bonuses
 			end
 
 		else
