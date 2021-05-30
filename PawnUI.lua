@@ -1235,7 +1235,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	PawnUICompareItemScoreArrow2:Hide()
 	PawnUIFrame_CompareSwapButton:Hide()
 	PawnUI_DeleteComparisonLines()
-	
+
 	-- There must be a scale selected to perform a comparison.
 	PawnUI_EnsureLoaded()
 	if (not PawnUICurrentScale) or (PawnUICurrentScale == PawnLocal.NoScale) then return end
@@ -1252,13 +1252,13 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	local ItemSocketBonusStats2 = Item2.UnenchantedSocketBonusStats
 	local ThisScale = PawnCommon.Scales[PawnUICurrentScale]
 	local ThisScaleValues = ThisScale.Values
-	
+
 	-- For items that have socket bonuses, we actually go through the list twice -- the first loop goes until we get to
 	-- the place in the list where the socket bonus should be displayed, and then we pause the first loop and go into
 	-- the second loop.  Once the second loop completes, we return to the first loop and finish it.
 	if (not ItemStats1) or (not ItemStats2) then return end
 	local CurrentItemStats1, CurrentItemStats2 = ItemStats1, ItemStats2
-	
+
 	local StatCount = #PawnStats
 	local LastFoundHeader
 	local i = 1
@@ -1311,8 +1311,11 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	AddSockets("BlueSocket", BLUE_GEM)
 	AddSockets("MetaSocket", META_GEM)
 
-	local _, TotalSocketValue1 = PawnGetItemValue(ItemStats1, Item1.Level, ItemSocketBonusStats1, PawnUICurrentScale, false, true)
-	local _, TotalSocketValue2 = PawnGetItemValue(ItemStats2, Item2.Level, ItemSocketBonusStats2, PawnUICurrentScale, false, true)
+	local _, TotalSocketValue1, SocketBonusValue1 = PawnGetItemValue(ItemStats1, Item1.Level, ItemSocketBonusStats1, PawnUICurrentScale, false, true)
+	local _, TotalSocketValue2, SocketBonusValue2 = PawnGetItemValue(ItemStats2, Item2.Level, ItemSocketBonusStats2, PawnUICurrentScale, false, true)
+	if TotalSocketValue1 and SocketBonusValue1 then TotalSocketValue1 = TotalSocketValue1 - SocketBonusValue1 end -- socket bonus is already included in total socket value
+	if TotalSocketValue2 and SocketBonusValue2 then TotalSocketValue2 = TotalSocketValue2 - SocketBonusValue2 end
+
 	if not TotalSocketValue1 or TotalSocketValue1 <= 0 then TotalSocketValue1 = nil end
 	if not TotalSocketValue2 or TotalSocketValue2 <= 0 then TotalSocketValue2 = nil end
 	if TotalSocketValue1 or TotalSocketValue2 then
@@ -1322,12 +1325,19 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 		end
 		PawnUI_AddComparisonStatLineNumbers(PawnLocal.UI.CompareGemTotalValue, TotalSocketValue1, TotalSocketValue2, false) -- hide differential
 	end
-
-	-- TODO: Show socket bonuses (PawnLocal.UI.CompareSocketBonus) ***
+	if not SocketBonusValue1 or SocketBonusValue1 <= 0 then SocketBonusValue1 = nil end
+	if not SocketBonusValue2 or SocketBonusValue2 <= 0 then SocketBonusValue2 = nil end
+	if SocketBonusValue1 or SocketBonusValue2 then
+		if LastFoundHeader then
+			PawnUI_AddComparisonHeaderLine(LastFoundHeader)
+			LastFoundHeader = nil
+		end
+		PawnUI_AddComparisonStatLineNumbers(PawnLocal.UI.CompareSocketBonus, SocketBonusValue1, SocketBonusValue2, false) -- hide differential
+	end
 
 	-- Everything else below this point goes under an "Other" header.
 	LastFoundHeader = PawnLocal.UI.CompareOtherHeader
-	
+
 	-- Add item level information if the user normally has item levels visible.
 	-- Note that for upgradeable items, this won't be the upgradeable level of the item—the GetItemInfo API doesn't return the
 	-- correct item level for upgraded items.  We don't use the item level for anything important, so that'll just be a known limitation for now.
@@ -1341,7 +1351,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 		end
 		PawnUI_AddComparisonStatLineNumbers(PawnLocal.ItemLevelTooltipLine, Level1, Level2, false) -- hide differential
 	end
-	
+
 	-- Add asterisk indicator.
 	local Asterisk1, Asterisk2
 	if Item1.UnknownLines then Asterisk1 = YES end
@@ -1353,10 +1363,10 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 		end
 		PawnUI_AddComparisonStatLineStrings(PawnLocal.UI.CompareSpecialEffects .. " " .. PawnDiamondTexture, Asterisk1, Asterisk2)
 	end
-	
+
 	-- Update the scrolling stat area's height.
 	PawnUI_RefreshCompareScrollFrame()
-	
+
 	-- Update the total item score row.
 	local ValueFormat = "%." .. PawnCommon.Digits .. "f"
 	local r, g, b = VgerCore.HexToRGB(PawnCommon.Scales[PawnUICurrentScale].Color)
