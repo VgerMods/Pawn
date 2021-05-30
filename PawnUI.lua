@@ -2082,15 +2082,43 @@ function PawnUI_OnSocketUpdate()
 				+ (ItemStats.RedSocket or 0)
 				+ (ItemStats.YellowSocket or 0)
 				+ (ItemStats.BlueSocket or 0)
+			-- We intentionally ignore meta sockets, because meta gems should be selected for their non-stat effects.
 
 			if SocketCount > 0 then
-				local BestGems = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level)
-				if BestGems then
+				local _, _, SocketBonusValue = PawnGetItemValue(Item.UnenchantedStats, Item.Level, Item.SocketBonusStats, ScaleName, false, true)
+				local GemListString, IsVague
+				if SocketBonusValue and SocketBonusValue > 0 then
+					local ThisColorGemList
+					if ItemStats.PrismaticSocket then
+						ThisColorGemList = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level, "Prismatic")
+						if ItemStats.PrismaticSocket > 1 then ThisColorGemList = ItemStats.PrismaticSocket .. " " .. ThisColorGemList end
+						if GemListString then GemListString = GemListString .. ", " .. ThisColorGemList else GemListString = ThisColorGemList end
+					end
+					if ItemStats.RedSocket then
+						ThisColorGemList = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level, "Red")
+						if ItemStats.RedSocket > 1 then ThisColorGemList = ItemStats.RedSocket .. " " .. ThisColorGemList end
+						if GemListString then GemListString = GemListString .. ", " .. ThisColorGemList else GemListString = ThisColorGemList end
+					end
+					if ItemStats.YellowSocket then
+						ThisColorGemList = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level, "Yellow")
+						if ItemStats.YellowSocket > 1 then ThisColorGemList = ItemStats.YellowSocket .. " " .. ThisColorGemList end
+						if GemListString then GemListString = GemListString .. ", " .. ThisColorGemList else GemListString = ThisColorGemList end
+					end
+					if ItemStats.BlueSocket then
+						ThisColorGemList = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level, "Blue")
+						if ItemStats.BlueSocket > 1 then ThisColorGemList = ItemStats.BlueSocket .. " " .. ThisColorGemList end
+						if GemListString then GemListString = GemListString .. ", " .. ThisColorGemList else GemListString = ThisColorGemList end
+					end
+				else
+					GemListString, IsVague = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level, "Prismatic")
+					if IsVague then GemListString = PawnLocal.GemListMany end
+				end
+				if GemListString then
 					if PawnOptions.AutoSelectScales then
-						-- Use a simplified list if the auto-select scales option is enabled.
-						PawnSocketingTooltip:AddLine(BestGems, 1, 1, 1)
+						-- Use a simplified list when Automatic mode is enabled, since we don't need to list multiple scales.
+						PawnSocketingTooltip:AddLine(GemListString, 1, 1, 1)
 					else
-						local TooltipText = TextColor .. PawnGetScaleLocalizedName(ScaleName) .. ":  |r" .. BestGems
+						local TooltipText = TextColor .. PawnGetScaleLocalizedName(ScaleName) .. ":  |r" .. GemListString
 						PawnSocketingTooltip:AddLine(TooltipText, 1, 1, 1)
 					end
 				end
