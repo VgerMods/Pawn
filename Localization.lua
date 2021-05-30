@@ -391,7 +391,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellDamage"] = "^%+# Damage and Healing Spells$",
 		["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
 		["SpellDamage3"] = "^%+# Healing and Spell Damage$",
-		["SpellDamage4"] = "^UNUSED$",
+		["SpellDamage4"] = "^%+# Spell Damage$",
 		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
 		["SpellDamageAndHealingShort"] = "^%+# Healing and %+# Spell Damage$",
 		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
