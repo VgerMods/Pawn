@@ -2647,7 +2647,7 @@ function PawnGetGemListString(ScaleName, ListAll, ItemLevel, Color)
 					return format(PawnLocal.GemList2, ItemName1, Item.Name)
 				end
 			end
-		elseif Color == "Red" or Color == "Yellow" or Color == "Blue"
+		elseif Color == "Red" or Color == "Yellow" or Color == "Blue" then
 			-- If there are three or more best gems AND it's a specific color, we can at least return the socket color.
 			return _G[toupper(Color) .. "_GEM"], true
 		end
