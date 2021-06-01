@@ -119,6 +119,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Mail"] = "Maille",
 		["MailInfo"] = "Points à attribuer si l'objet est en maille",
 		["MasteryInfo"] = "Maîtrise. Augmente les dégâts, les soins, les points de vies et les soins reçus en fonction des classes.",
+		["MetaSocketEffectInfo"] = "Effets spéciaux de méta gemme. Points à attribuer pour la partie non statistique d'une méta gemme (par exemple, \"Augmentation mineure de la vitesse de course\" ou \"1% Spell Reflect\").",
 		["MinorStats"] = "Statistiques secondaires",
 		["MovementSpeedInfo"] = "Vitesse de déplacement. Fait que personnage se déplace plus rapidement.",
 		["Mp5"] = "Mana per 5",

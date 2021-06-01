@@ -120,6 +120,7 @@ PawnLocal =
 		["Mail"] = "鎖甲",
 		["MailInfo"] = "此物若為鎖甲，則增計多少分數。",
 		["MasteryInfo"] = "精通: 提高你主天賦的特有加成。",
+		["MetaSocketEffectInfo"] = "元寶石特效。 為元寶石的非屬性部分分配的點數（例如，“小跑速度增加”或“1% 法術反射”）。",
 		["MinorStats"] = "其他",
 		["MovementSpeedInfo"] = "移動速度: 提高你角色的移動速度",
 		["Mp5"] = "法力每5秒",

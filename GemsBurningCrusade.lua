@@ -266,31 +266,17 @@ local PawnGemDataEpic =
 local PawnMetaGemDataRare =
 {
 
-
-------------------------------------------------------------
--- Meta gems: Earthstorm
-------------------------------------------------------------
-
-{ ID = 25896, Stats = { Stamina = 18, MetaSocketEffect = 1 } }, -- Powerful Earthstorm Diamond
-{ ID = 25897, Stats = { Intellect = 12, MetaSocketEffect = 1 } }, -- Bracing Earthstorm Diamond
-{ ID = 25898, Stats = { DodgeRating = 12, MetaSocketEffect = 1 } }, -- Tenacious Earthstorm Diamond
-{ ID = 25899, Stats = { MetaSocketEffect = 1 } }, -- Brutal Earthstorm Diamond
-{ ID = 25901, Stats = { Intellect = 12, MetaSocketEffect = 1 } }, -- Insightful Earthstorm Diamond
-{ ID = 32409, Stats = { MetaSocketEffect = 1, Agility = 12 } }, -- Relentless Earthstorm Diamond
-{ ID = 35501, Stats = { DodgeRating = 12, MetaSocketEffect = 1 } }, -- Eternal Earthstorm Diamond
-
-
-------------------------------------------------------------
--- Meta gems: Skyfire
-------------------------------------------------------------
-
-{ ID = 25890, Stats = { CritRating = 14, MetaSocketEffect = 1 } }, -- Destructive Skyfire Diamond
-{ ID = 25893, Stats = { MetaSocketEffect = 1 } }, -- Mystical Skyfire Diamond
-{ ID = 25894, Stats = { CritRating = 12, MetaSocketEffect = 1 } }, -- Swift Skyfire Diamond
-{ ID = 25895, Stats = { MetaSocketEffect = 1 } }, -- Enigmatic Skyfire Diamond
-{ ID = 32410, Stats = { MetaSocketEffect = 1 } }, -- Thundering Skyfire Diamond
-{ ID = 34220, Stats = { CritRating = 12, MetaSocketEffect = 1 } }, -- Chaotic Skyfire Diamond
-{ ID = 35503, Stats = { Intellect = 12, MetaSocketEffect = 1 } }, -- Ember Skyfire Diamond
+	
+{ ID = 25896, Stats = { Stamina = 18 } }, -- Powerful Earthstorm Diamond
+{ ID = 25897, Stats = { Healing = 26, SpellDamage = 9 } }, -- Bracing Earthstorm Diamond
+{ ID = 25898, Stats = { DefenseRating = 12 } }, -- Tenacious Earthstorm Diamond
+{ ID = 25901, Stats = { Intellect = 12 } }, -- Insightful Earthstorm Diamond
+{ ID = 32409, Stats = { Agility = 12 } }, -- Relentless Earthstorm Diamond
+{ ID = 35501, Stats = { DefenseRating = 12 } }, -- Eternal Earthstorm Diamond
+{ ID = 25890, Stats = { SpellCritRating = 14 } }, -- Destructive Skyfire Diamond
+{ ID = 25894, Stats = { Ap = 24 } }, -- Swift Skyfire Diamond
+{ ID = 34220, Stats = { SpellCritRating = 12 } }, -- Chaotic Skyfire Diamond
+{ ID = 35503, Stats = { SpellDamage = 14 } }, -- Ember Skyfire Diamond
 
 
 }

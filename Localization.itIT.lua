@@ -119,6 +119,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Mail"] = "Maglia",
 		["MailInfo"] = "Punti da assegnare se l'oggetto è in maglia",
 		["MasteryInfo"] = "Maestria. Aumenta l'abilità unica della tua specializzazione di classe",
+		["MetaSocketEffectInfo"] = "Effetti speciali con meta gemma. Punti da assegnare per la parte non statistica di una meta gemma (ad esempio, un aumento minore della velocità di corsa o un riflesso dell'incantesimo dell'1%).",
 		["MinorStats"] = "Attributi minori",
 		["MovementSpeedInfo"] = "Velocità di movimento. Fà si che il tuo personaggio corra più veloce.",
 		["Mp5"] = "Mana per 5",

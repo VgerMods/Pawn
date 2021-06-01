@@ -67,6 +67,9 @@ local PawnStatsUnfiltered =
 	{ITEM_MOD_BLOCK_VALUE_SHORT, "BlockValue", L.BlockValueInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{ITEM_MOD_RESILIENCE_RATING_SHORT, "ResilienceRating", L.ResilienceInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true }},
 
+	{L.Sockets, nil, nil, nil, nil, { PawnStatBurningCrusade = true }},
+	{EMPTY_SOCKET_META, "MetaSocketEffect", L.MetaSocketEffectInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true }},
+
 	{L.MinorStats},
 	{STAT_MOVEMENT_SPEED, "MovementSpeed", L.MovementSpeedInfo, PawnStatNormal, nil, { PawnStatLive = true }},
 	{STAT_AVOIDANCE, "Avoidance", L.AvoidanceInfo, PawnStatNormal, nil, { PawnStatLive = true }},

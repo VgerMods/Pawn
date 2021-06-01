@@ -117,6 +117,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Mail"] = "Kette",
 		["MailInfo"] = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand Kette ist.",
 		["MasteryInfo"] = "Meisterschaft. Verbessert den einzigartigen Bonus Eurer Klassenspezialisierung.",
+		["MetaSocketEffectInfo"] = "Meta-Edelstein-Spezialeffekte. Punkte, die für den nicht-statistischen Teil eines Meta-Edelsteins zugewiesen werden (z. B. \"Geringfügige Erhöhung der Laufgeschwindigkeit\" oder \"1% Zauberreflexion\").",
 		["MinorStats"] = "Kleinere Werte",
 		["MovementSpeedInfo"] = "Bewegungsgeschwindigkeit. Bewirkt, dass euer Charakter schneller läuft.",
 		["Mp5"] = "Mana alle 5",

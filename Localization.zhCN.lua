@@ -118,6 +118,7 @@ PawnLocal =
 		["Mail"] = "锁甲",
 		["MailInfo"] = "物品类型为锁甲。",
 		["MasteryInfo"] = "精通等级，从你投入点数最多的天赋树中获得的奖励。",
+		["MetaSocketEffectInfo"] = "元宝石特效。 为元宝石的非属性部分分配的点数（例如，“小跑速度增加”或“1% 法术反射”）。",
 		["MinorStats"] = "副属性",
 		["MovementSpeedInfo"] = "移动速度，使你的角色跑得更快。",
 		["Mp5"] = "每5秒回蓝",

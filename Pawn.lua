@@ -1083,7 +1083,8 @@ function PawnRecalculateScaleTotal(ScaleName)
 			["YellowSocketValue"] = { },
 			["BlueSocket"] = { },
 			["BlueSocketValue"] = { },
-		}
+			["MetaSocket"] = { },
+			["MetaSocketValue"] = { },		}
 	end
 	local ThisScaleBestGems = PawnScaleBestGems[ScaleName]
 
@@ -1102,7 +1103,7 @@ function PawnRecalculateScaleTotal(ScaleName)
 		BestPrismatic, ThisScaleBestGems.PrismaticSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
 		ThisScaleBestGems.PrismaticSocketValue[ItemLevel] = BestPrismatic
 
-		-- Classic Era and the retail realms don't have colored sockets anymore, so don't bother trying to calculate for those.
+		-- Classic Era and the retail realms don't have colored sockets, so don't bother trying to calculate for those.
 		if not VgerCore.IsClassic and not VgerCore.IsShadowlands then
 			local BestRed
 			BestRed, ThisScaleBestGems.RedSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, true, false, false)
@@ -1115,6 +1116,24 @@ function PawnRecalculateScaleTotal(ScaleName)
 			local BestBlue
 			BestBlue, ThisScaleBestGems.BlueSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, false, true)
 			ThisScaleBestGems.BlueSocketValue[ItemLevel] = BestBlue
+		end
+	end
+
+	-- Now the meta gems.
+	if not VgerCore.IsClassic and not VgerCore.IsShadowlands then
+		for _, QualityLevelData in pairs(PawnMetaGemQualityLevels) do
+			local ItemLevel = QualityLevelData[1]
+			local GemData = QualityLevelData[2]
+
+			if PawnCommon.Debug then
+				VgerCore.Message("")
+				VgerCore.Message("META GEMS FOR ITEM LEVEL " .. tostring(ItemLevel))
+				VgerCore.Message("")
+			end
+
+			local BestMeta
+			BestMeta, ThisScaleBestGems.MetaSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
+			ThisScaleBestGems.MetaSocketValue[ItemLevel] = BestMeta
 		end
 	end
 
@@ -1279,7 +1298,10 @@ function PawnGetItemData(ItemLink)
 			Item.Stats.RedSocket = nil
 			Item.Stats.YellowSocket = nil
 			Item.Stats.BlueSocket = nil
-			Item.Stats.MetaSocket = nil
+			if Item.Stats.MetaSocket then
+				Item.Stats.MetaSocket = nil
+				Item.Stats.MetaSocketEffect = nil
+			end
 		end
 
 		-- If the item doesn't have any stats, don't cache it.  This is done to work around a problem a few people were seeing where
@@ -2507,7 +2529,8 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			Stat ~= "RedSocket" and
 			Stat ~= "YellowSocket" and
 			Stat ~= "BlueSocket" and
-			Stat ~= "MetaSocket"
+			Stat ~= "MetaSocket" and
+			Stat ~= "MetaSocketEffect"
 		then
 			if ThisValue then
 				-- This stat has a value; add it to the running total.
@@ -2589,10 +2612,18 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				else
 					TotalSocketValue = ProperSocketValue
 				end
+
+				-- Finally, meta sockets are just kind of their own separate thing.
+				TotalSocketValue = TotalSocketValue + SocketValue("MetaSocket")
+				ThisValue = ScaleValues.MetaSocketEffect
+				if ThisValue then
+					Stat = "MetaSocketEffect"
+					Quantity = Item[Stat]
+					TotalSocketValue = TotalSocketValue + Quantity * ThisValue
+					if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
+				end
+
 				Total = Total + TotalSocketValue
-
-				-- TODO: Handle meta sockets ***
-
 			end -- if ShouldIncludeSockets
 
 		else
@@ -2601,7 +2632,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			VgerCore.Assert(NoNormalization, "Item value calculation will be incomplete because we don't have best gem data and thus can't calculate values for sockets.")
 		end
 	end
-	
+
 	-- Perform normalizations on the total if that option is enabled.
 	if (not IsUnusable) and (not NoNormalization) and PawnScaleTotals[ScaleName] and PawnScaleTotals[ScaleName] > 0 then
 		if ScaleOptions.NormalizationFactor and ScaleOptions.NormalizationFactor > 0 then
@@ -2609,9 +2640,9 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			Total = ScaleOptions.NormalizationFactor * Total / PawnScaleTotals[ScaleName]
 		end
 	end
-	
+
 	if DebugMessages then PawnDebugMessage(format(PawnLocal.TotalValueMessage, Total)) end
-	
+
 	return Total, TotalSocketValue, SocketBonusValue
 end
 
@@ -2971,7 +3002,6 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.CogwheelSocket = nil
 	ThisScale.ColorlessSocket = nil
 	ThisScale.MetaSocket = nil
-	ThisScale.MetaSocketEffect = nil
 
 	-- These stats aren't used in the live OR classic realms.
 	ThisScale.ArmorPenetration = nil

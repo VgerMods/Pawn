@@ -121,6 +121,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Mail"] = "Mail",
 		["MailInfo"] = "Points to be assigned if the item is mail.",
 		["MasteryInfo"] = "Mastery.  Improves the unique bonus of your class specialization.",
+		["MetaSocketEffectInfo"] = "Meta gem special effects. Points to be assigned for the non-stat portion of a meta gem (for example, \"Minor Run Speed Increase\" or \"1% Spell Reflect\").",
 		["MinorStats"] = "Minor stats",
 		["MovementSpeedInfo"] = "Movement speed.  Causes your character to run faster.",
 		["Mp5"] = "Mana per 5",

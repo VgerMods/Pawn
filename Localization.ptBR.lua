@@ -120,6 +120,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Mail"] = "Malha",
 		["MailInfo"] = "Pontos para distribuir se o item for malha.",
 		["MasteryInfo"] = "Maestria.  Melhora o bônus único da especialização da sua classe",
+		["MetaSocketEffectInfo"] = "Efeitos especiais de gema meta. Pontos a serem atribuídos para a parte não estatística de uma meta gema (por exemplo, \"Aumento de velocidade de corrida menor\" ou \"Reflexo de feitiço de 1% \").",
 		["MinorStats"] = "Atributos menores",
 		["MovementSpeedInfo"] = "Velocidade de movimento. Faz com que o seu personagem corra mais rápido.",
 		["Mp5"] = "Mana a cada 5",

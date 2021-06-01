@@ -1268,7 +1268,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 		local Title, StatName = ThisStatInfo[1], ThisStatInfo[2]
 		
 		-- Is this a stat header, or an actual stat?
-		if StatName then
+		if StatName and StatName ~= "MetaSocketEffect" then
 			-- This is a stat name.  Is this stat present in the scale AND one of the items?
 			local StatValue = ThisScaleValues[StatName]
 			local Stats1, Stats2 = CurrentItemStats1[StatName], CurrentItemStats2[StatName]
