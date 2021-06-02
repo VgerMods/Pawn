@@ -321,6 +321,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["HaventCollectedAppearance"] = "^You haven't collected this appearance$",
 		["Healing"] = "^%+# Healing Spells$",
 		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing3"] = "^%+?# Healing$",
 		["HeirloomLevelRange"] = "^Requires level %d+ to (%d+)",
 		["HeirloomXpBoost"] = "^Equip: Experience gained",
 		["HeirloomXpBoost2"] = "^UNUSED$",

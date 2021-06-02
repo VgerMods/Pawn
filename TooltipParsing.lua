@@ -306,6 +306,7 @@ PawnRegexes =
 	{L.HolySpellDamage2, "HolySpellDamage"}, -- /pawn compare 20504
 	{L.Healing, "Healing"}, -- /pawn compare item:789::::::2028
 	{L.Healing2, "Healing"}, -- /pawn compare 16947
+	{L.Healing3, "Healing"},  -- /pawn compare item:24593::::::-38:701562918:61
 	{L.SpellPower, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- enchantments
 	{PawnGameConstant(EMPTY_SOCKET_RED), "RedSocket", 1, PawnMultipleStatsFixed},
 	{PawnGameConstant(EMPTY_SOCKET_YELLOW), "YellowSocket", 1, PawnMultipleStatsFixed},
