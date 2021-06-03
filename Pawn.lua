@@ -2619,8 +2619,10 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				if ThisValue then
 					Stat = "MetaSocketEffect"
 					Quantity = Item[Stat]
-					TotalSocketValue = TotalSocketValue + Quantity * ThisValue
-					if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
+					if Quantity then
+						TotalSocketValue = TotalSocketValue + Quantity * ThisValue
+						if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
+					end
 				end
 
 				Total = Total + TotalSocketValue
