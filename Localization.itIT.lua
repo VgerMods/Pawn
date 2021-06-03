@@ -330,8 +330,9 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		--[[Translation missing --]]
 		["HasteRatingShort"] = "^%+?# Haste Rating$",
 		["HaventCollectedAppearance"] = "^Non hai ottenuto questo aspetto$",
-		["Healing"] = "^%+# Healing Spells$",
-		["Healing2"] = "^Equip: Increases healing done by spells and effects by up to #%.$",
+		["Healing"] = "^UNUSED$",
+		["Healing2"] = "^UNUSED$",
+		["Healing3"] = "^UNUSED$",
 		["HeirloomLevelRange"] = "^Richiede un livello da %d+ a (%d+)",
 		["HeirloomXpBoost"] = "^Equipaggia: Aumenta l'esperienza",
 		["HeirloomXpBoost2"] = "UNUSED",

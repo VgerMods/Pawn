@@ -317,6 +317,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt$",
 		["Healing"] = "^%+# Heilzauber$",
 		["Healing2"] = "^Anlegen: Erhöht durch Zauber und Effekte verursachte Heilung um bis zu #%.$",
+		["Healing3"] = "^%+# Heilung$",
 		["HeirloomLevelRange"] = "^Benötigt Stufe %d bis #",
 		["HeirloomXpBoost"] = "^Anlegen: Erhaltene Erfahrung",
 		["HeirloomXpBoost2"] = "^UNUSED$",

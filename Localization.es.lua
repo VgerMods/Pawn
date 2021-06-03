@@ -123,8 +123,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["FrostSpellDamageInfo"] = "Frost damage.  Increases the damage dealt by your frost spells.",
 		["HasteInfo"] = "Celeridad.  Aumenta la velocidad de ataque y de lanzamiento de hechizos y la regeneracion de energía o enfoque.",
-		--[[Translation missing --]]
-		["Healing"] = "Spell Healing",
+		["Healing"] = "Sanación",
 		--[[Translation missing --]]
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
 		--[[Translation missing --]]
@@ -361,6 +360,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["HasteRatingShort"] = "^%+?# celeridad$",
 		["Healing"] = "^%+# de hechizos de sanación$",
 		["Healing2"] = "^Equipar: Aumenta hasta # p%. la sanación de los hechizos y efectos%.$",
+		["Healing3"] = "^%+# sanación$",
 		["HeirloomLevelRange"] = "^Requiere un nivel entre %d+ y (%d+)",
 		["HeirloomXpBoost"] = "^Equipar: La experiencia obtenida",
 		["HeirloomXpBoost2"] = "^UNUSED$",

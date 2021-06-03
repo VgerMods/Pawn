@@ -321,6 +321,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["HaventCollectedAppearance"] = "^Vous n'avez pas récupéré cette apparence$",
 		["Healing"] = "^%+# aux sorts de soins$",
 		["Healing2"] = "^Equipé : Augmente les soins prodigués par les sorts et effets de # au maximum%.$",
+		["Healing3"] = "^%+# aux soins$",
 		["HeirloomLevelRange"] = "^Requier un niveau de %d+ à (%d+)",
 		["HeirloomXpBoost"] = "^Equipé : L?'?[Ee]xpérience gagnée",
 		["HeirloomXpBoost2"] = "^UNUSED$",

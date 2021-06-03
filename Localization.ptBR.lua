@@ -322,6 +322,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["HaventCollectedAppearance"] = "^Você não coletou essa aparência$",
 		["Healing"] = "^%+# Feitiços de Cura$",
 		["Healing2"] = "^Equipado: Aumenta em até # a cura realizada por feitiços e efeitos mágicos%.$",
+		["Healing3"] = "^%+# Cura$",
 		["HeirloomLevelRange"] = "^Requer nível entre %d+ e (%d+)",
 		["HeirloomXpBoost"] = "^Equipado: Experiência obtida",
 		["HeirloomXpBoost2"] = "^UNUSED$",

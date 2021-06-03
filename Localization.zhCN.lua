@@ -320,6 +320,7 @@ PawnLocal =
 		["HaventCollectedAppearance"] = "^你尚未收藏过此外观$",
 		["Healing"] = "^%+# 治疗量$",
 		["Healing2"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
+		["Healing3"] = "^%+# 治疗$",
 		["HeirloomLevelRange"] = "^需要等级 %d+ 到 (%d+)",
 		["HeirloomXpBoost"] = "^装备： ?获得的经验值提高",
 		["HeirloomXpBoost2"] = "^UNUSED$",
