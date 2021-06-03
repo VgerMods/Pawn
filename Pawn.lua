@@ -2809,7 +2809,7 @@ end
 function PawnGetItemIDsForDisplay(ItemLink, Formatted)
 	local Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|%x+|Hitem:(%-?%d+)([^|]+)|")
 	if not Pos then
-		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^item:(%-?%d+):?(.*)")
+		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^item:(%-?%d+)(:?.*)")
 		if not Pos then return end
 	end
 

@@ -181,8 +181,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpeedIs"] = "1 segundo |cffffffffswing speed|r vale:",
 		--[[Translation missing --]]
 		["SpellCritInfo"] = "Spell critical strike.  Increases the chance that your spells will hit with increased potency.",
-		--[[Translation missing --]]
-		["SpellDamage"] = "Spell Damage",
+		["SpellDamage"] = "Daño de hechizos",
 		--[[Translation missing --]]
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
 		--[[Translation missing --]]
@@ -434,7 +433,8 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Equipar: Aumenta hasta # p%. la sanación realizada y hasta # p%. todo el daño infligido con todos los hechizos y efectos mágicos%.$",
-		["SpellDamageAndHealingShort"] = "^UNUSED$",
+		["SpellDamageAndHealingEnchant"] = "^Hechizos de sanación %+#$",
+		["SpellDamageAndHealingShort"] = "^%+# de hechizos de sanación$",
 		["SpellHasteRating"] = "^Equipar: Aumenta el índice de celeridad con hechizos e?n? ?# p%.$",
 		["SpellHasteRatingShort"] = "^%+?# índice de celeridad con hechizos$",
 		["SpellHit"] = "^Equipar: Mejora un #%% tu probabilidad de golpear con hechizos%.$",
@@ -797,6 +797,8 @@ if GetLocale() == "esES" then
 	PawnLocal.TooltipParsing.ResilienceRating = "^Equipar: Mejora tu índice de temple en #%.$"
 	PawnLocal.TooltipParsing.SpellCritRating2 = "^Equipar: Mejora el índice de golpe crítico con hechizos en # p%.$"
 	PawnLocal.TooltipParsing.SpellDamageAndHealing = "^Equipar: Aumenta la sanación que haces hasta # p%. y el daño que infliges hasta # p%. con todos los hechizos mágicos y efectos%.$"
+	PawnLocal.TooltipParsing.SpellDamageAndHealingEnchant = "^%+# sanación y %+# daño de hechizos$"
+	PawnLocal.TooltipParsing.SpellDamageAndHealingShort = "^%+# hechizos de sanación y %+# hechizos de daño$"
 	PawnLocal.TooltipParsing.SpellHasteRating = "^Equipar: Mejora el índice de celeridad con hechizos en # p%.$"
 	PawnLocal.TooltipParsing.SpellHitRating = "^Equipar: Mejora el índice de golpe con hechizos en # p%.$"
 
