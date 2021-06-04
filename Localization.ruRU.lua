@@ -408,6 +408,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellHitRating2"] = "^Если на персонаже: Меткость %(заклинания%) %+#%.$",
 		["SpellHitRatingShort"] = "^%+?# к рейтингу меткости заклинаний$",
 		["SpellPenetration"] = "^Если на персонаже: Увеличивает проникающую способность заклинаний на #%.$",
+		["SpellPenetrationClassic"] = "^Если на персонаже: Снижает сопротивление магии целей ваших заклинаний на #%.$",
 		["SpellPenetrationShort"] = "^%+?# к проникающей способности заклинаний$",
 		["SpellPower"] = "^%+?# к силе заклинаний$",
 		["Spirit"] = "^%+?# к духу$",

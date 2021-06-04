@@ -428,10 +428,9 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["SpellHitRating2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
-		--[[Translation missing --]]
-		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
-		--[[Translation missing --]]
-		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
+		["SpellPenetration"] = "^UNUSED$",
+		["SpellPenetrationClassic"] = "^UNUSED$",
+		["SpellPenetrationShort"] = "^UNUSED$",
 		["SpellPower"] = "^%+?# Potenza [Mm]agica$",
 		["Spirit"] = "^%+?# Spirito$",
 		["Staff"] = "^Bastone$",

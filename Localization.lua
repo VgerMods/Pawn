@@ -406,6 +406,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellHitRating2"] = "^Equip: Improves spell hit rating by #%.$",
 		["SpellHitRatingShort"] = "^%+?# Spell Hit Rating$",
 		["SpellPenetration"] = "^Equip: Increases your spell penetration by #%.$",
+		["SpellPenetrationClassic"] = "^Equip: Decreases the magical resistances of your spell targets by #%.$",
 		["SpellPenetrationShort"] = "^%+?# Spell Penetration$",
 		["SpellPower"] = "^%+?# Spell Power$",
 		["Spirit"] = "^%+?# Spirit$",

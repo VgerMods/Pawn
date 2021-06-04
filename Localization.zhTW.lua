@@ -409,6 +409,7 @@ PawnLocal =
 		["SpellHitRating2"] = "^裝備: 提高#點法術命中。$",
 		["SpellHitRatingShort"] = "^%+?#法術命中等級$",
 		["SpellPenetration"] = "^裝備: 使你的法術穿透力提高#點。$",
+		["SpellPenetrationClassic"] = "^裝備： 使你法術目標的魔法抗性降低#點。$",
 		["SpellPenetrationShort"] = "^%+?#法術穿透力$",
 		["SpellPower"] = "^%+?#法術能量$",
 		["Spirit"] = "^%+?#精神$",

@@ -406,6 +406,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellHitRating2"] = "^Équipé : Augmente de # le score de toucher des sorts%.$",
 		["SpellHitRatingShort"] = "^%+?# au score de toucher des sorts$",
 		["SpellPenetration"] = "^Équipé : Augmente la pénétration de vos sorts de #%.$",
+		["SpellPenetrationClassic"] = "^Equipé : Diminue les résistances magiques des cibles de vos sorts de #%.$",
 		["SpellPenetrationShort"] = "^%+?# à la pénétration des sorts$",
 		["SpellPower"] = "^%+?# Puissance des sorts$",
 		["Spirit"] = "^%+?# Esprit$",

@@ -402,6 +402,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellHitRating2"] = "^Anlegen: Erhöht die Zaubertrefferwertung um #%.$",
 		["SpellHitRatingShort"] = "^%+?# Zaubertrefferwertung$",
 		["SpellPenetration"] = "^Anlegen: Erhöht d?i?e?E?u?r?e? Zauberdurchschlagskraft um #%.$",
+		["SpellPenetrationClassic"] = "^Anlegen: Reduziert die Magiewiderstände der Ziele Eurer Zauber um #%.$",
 		["SpellPenetrationShort"] = "^%+?# Zauberdurchschlagskraft$",
 		["SpellPower"] = "^%+?# Zaubermacht$",
 		["Spirit"] = "^%+?# Willenskraft$",

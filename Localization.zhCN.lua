@@ -405,6 +405,7 @@ PawnLocal =
 		["SpellHitRating2"] = "^UNUSED$",
 		["SpellHitRatingShort"] = "^%+?# 法术命中等级$",
 		["SpellPenetration"] = "^装备： 使你的法术穿透提高#。$",
+		["SpellPenetrationClassic"] = "^装备： 使你的法术目标的魔法抗性降低#点。$",
 		["SpellPenetrationShort"] = "^%+?# 法术穿透$",
 		["SpellPower"] = "^%+?# 法术强度$",
 		["Spirit"] = "^%+?# 精神$",
