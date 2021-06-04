@@ -3006,7 +3006,6 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.MetaSocket = nil
 
 	-- These stats aren't used in the live OR classic realms.
-	ThisScale.ArmorPenetration = nil
 	ThisScale.Mana = nil
 	ThisScale.Health = nil
 	ThisScale.BaseArmor = nil
