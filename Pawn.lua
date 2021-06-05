@@ -2010,12 +2010,13 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	local Stats, SocketBonusStats, UnknownLines = {}, {}, {}
 	local HadUnknown = false
 	local SocketBonusIsValid = false
+	local UnderstoodAnyLinesYet = false
 
 	for i = ItemNameLineNumber + 1, Tooltip:NumLines() do
 		local LeftLine = _G[TooltipName .. "TextLeft" .. i]
 		local LeftLineText = LeftLine:GetText()
 		if not LeftLineText then break end
-		
+
 		-- Look for this line in the "kill lines" list.  If it's there, we're done.
 		local IsKillLine = false
 		-- Dirty, dirty hack for artifacts: check the color of the text; if it's artifact gold and it's not at the beginning of the tooltip, then treat it as a kill line.
@@ -2033,7 +2034,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			end
 		end
 		if IsKillLine then break end
-		
+
 		for Side = 1, 2 do
 			local CurrentParseText, RegexTable, CurrentDebugMessages, IgnoreErrors
 			if Side == 1 then
@@ -2049,7 +2050,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 				CurrentDebugMessages = false
 				IgnoreErrors = true
 			end
-			
+
 			local ThisLineIsSocketBonus = false
 			if Side == 1 and strfind(CurrentParseText, PawnLocal.TooltipParsing.SocketBonusPrefix, 1, true) then
 				-- This line is the socket bonus.
@@ -2062,14 +2063,22 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 				end
 				CurrentParseText = strsub(CurrentParseText, strlen(PawnLocal.TooltipParsing.SocketBonusPrefix) + 1)
 			end
-			
+
 			local Understood
 			if ThisLineIsSocketBonus then
 				Understood = PawnLookForSingleStat(RegexTable, SocketBonusStats, CurrentParseText, CurrentDebugMessages)
 			else
 				Understood = PawnLookForSingleStat(RegexTable, Stats, CurrentParseText, CurrentDebugMessages)
 			end
-			
+
+            if Understood and not UnderstoodAnyLinesYet then
+                -- If this is the first full line on the tooltip we've understood, and there were lines before this that we didn't understand, they don't count.
+                -- They were probably things like "Mythic".
+                UnderstoodAnyLinesYet = true
+                HadUnknown = false
+                UnknownLines = {}
+            end
+
 			if not Understood then
 				-- We don't understand this line.  Let's see if it's a complex stat.
 				
@@ -2085,7 +2094,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 						break
 					end
 				end
-				
+
 				-- If this line wasn't ignorable, try to break it up.
 				if not IgnoreLine then
 					-- We'll assume the entire line was understood for now, but if we find any PART that
