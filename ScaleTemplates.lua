@@ -498,17 +498,6 @@ PawnScaleTemplates =
 
 }
 
--- Adjustments for WoW Classic:
-if VgerCore.IsClassic then
-	for _, Template in pairs(PawnScaleTemplates) do
-		-- Enhancement Shaman
-		if Template.ClassID == 7 and Template.SpecID == 2 then
-			Template.HideUpgrades = nil
-			Template.UnusableStats.IsOffHand = true
-		end
-	end
-end
-
 PawnScaleTemplatesClassic =
 {
 
@@ -599,6 +588,11 @@ PawnNeverUsableStats =
 	[12] = -- Demon Hunter
 	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield" },
 }
+
+if VgerCore.IsClassic then
+	-- Shamans didn't learn to dual-wield until Burning Crusade.
+	tinsert(PawnNeverUsableStats[7], "IsOffHand")
+end
 
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	-- Rogues didn't learn to use axes until Wrath of the Lich King.
