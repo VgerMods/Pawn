@@ -2630,11 +2630,12 @@ end
 
 -- Cancels the string dialog if it's open.
 function PawnUIGetStringCancel()
-	if not PawnUIStringDialog:IsVisible() then return end
+	if not PawnUIStringDialog or not PawnUIStringDialog:IsVisible() then return end
 	PawnUIStringDialog_CancelButton_OnClick()
 end
 
 function PawnUIStringDialog_OKButton_OnClick()
+	if not PawnUIStringDialog.OKButton:IsVisible() or not PawnUIStringDialog.OKButton:IsEnabled() then return end
 	PawnUIStringDialog:Hide()
 	if PawnUIStringDialog.OKCallbackFunction then PawnUIStringDialog.OKCallbackFunction(PawnUIStringDialog.TextBox:GetText()) end
 end
