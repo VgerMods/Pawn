@@ -85,12 +85,12 @@ local PawnGemDataUncommon =
 -- Yellow gems
 ------------------------------------------------------------
 
-{ ID = 28938, Y = true, Stats = { Intellect = 6 } }, -- Brilliant Golden Draenite
-{ ID = 28944, Y = true, Stats = { SpellCritRating = 6 } }, -- Gleaming Golden Draenite
-{ ID = 28947, Y = true, Stats = { DefenseRating = 6 } }, -- Thick Golden Draenite
-{ ID = 28948, Y = true, Stats = { HitRating = 6 } }, -- Rigid Golden Draenite
-{ ID = 34069, Y = true, Stats = { CritRating = 6 } }, -- Smooth Golden Draenite
-{ ID = 39451, Y = true, Stats = { SpellHitRating = 6 } }, -- Great Golden Draenite
+{ ID = 23113, Y = true, Stats = { Intellect = 6 } }, -- Brilliant Golden Draenite
+{ ID = 23114, Y = true, Stats = { SpellCritRating = 6 } }, -- Gleaming Golden Draenite
+{ ID = 23115, Y = true, Stats = { DefenseRating = 6 } }, -- Thick Golden Draenite
+{ ID = 23116, Y = true, Stats = { HitRating = 6 } }, -- Rigid Golden Draenite
+{ ID = 28290, Y = true, Stats = { CritRating = 6 } }, -- Smooth Golden Draenite
+{ ID = 31860, Y = true, Stats = { SpellHitRating = 6 } }, -- Great Golden Draenite
 
 
 ------------------------------------------------------------
