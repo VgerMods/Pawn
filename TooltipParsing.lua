@@ -196,6 +196,7 @@ PawnRegexes =
 	{L.Dodge3, "DodgeRating"}, -- unused in English
 	{L.DodgePercent, "DodgeRating"}, -- Classic, /pawn compare 11755
 	{L.DodgeRating, "DodgeRating"}, -- Burning Crusade Classic, /pawn compare 11755
+	{L.DodgeRating2, "DodgeRating"}, -- Burning Crusade Classic, /pawn compare 29323
 	{L.DodgeRatingShort, "DodgeRating"}, -- Burning Crusade Classic, /pawn compare item:789::::::1754
 	{L.Parry, "ParryRating"},
 	{L.Parry2, "ParryRating"}, -- unused in English
@@ -209,6 +210,7 @@ PawnRegexes =
 	{L.DefenseSkillSimple, "DefenseRating"}, -- Classic, /pawn compare item:789::::::89
 	{L.BlockPercent, "BlockRating"}, -- Classic, /pawn compare 18499
 	{L.BlockRating, "BlockRating"}, -- Burning Crusade, /pawn compare 18499
+	{L.BlockRating2, "BlockRating"}, -- Burning Crusade, /pawn compare 29323
 	{L.Block, "BlockValue"}, -- Classic, /pawn compare 18499
 	{L.BlockValue, "BlockValue"}, -- Classic, /pawn compare 18499
 	{L.Dps}, -- Ignore this; DPS is calculated manually

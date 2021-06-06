@@ -262,8 +262,8 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["BagSlots"] = "^%d+ Scomparto .+$",
 		["Block"] = "^%+?# Block$",
 		["BlockPercent"] = "^Equip: Increases your chance to block attacks with a shield by #%%%.$",
-		--[[Translation missing --]]
-		["BlockRating"] = "^Equip: Increases your block rating by #%.$",
+		["BlockRating"] = "^UNUSED$",
+		["BlockRating2"] = "^UNUSED$",
 		["BlockValue"] = "^Equip: Increases the block value of your shield by #%.$",
 		["Bow"] = "^Acro$",
 		["ChanceOnHit"] = "Probabilità d'impatto:",
@@ -293,9 +293,8 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Dodge2"] = "^UNUSED$",
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equip: Increases your chance to dodge an attack by #%%%.$",
-		--[[Translation missing --]]
-		["DodgeRating"] = "^Equip: Increases your dodge rating by #%.$",
-		--[[Translation missing --]]
+		["DodgeRating"] = "^UNUSED$",
+		["DodgeRating2"] = "^UNUSED$",
 		["DodgeRatingShort"] = "^%+?#%%? Dodge Rating$",
 		["Dps"] = "^%(# [Dd]anni per [Ss]econdo%)$",
 		["DpsAdd"] = "^Aggiunge # [Dd]anni per [Ss]econdo",

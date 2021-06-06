@@ -301,6 +301,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Block"] = "^%+?# de bloqueo$",
 		["BlockPercent"] = "^Equipar: Aumenta un #%% tu probabilidad de bloquear ataques con un escudo%.$",
 		["BlockRating"] = "^Equipar: Aumenta tu índice de bloqueo e?n? ?# p%.$",
+		["BlockRating2"] = "^Equipar: Aumenta # p%. el bloqueo con escudo%.$",
 		["BlockValue"] = "^Equipar: Aumenta el valor de bloqueo de tu escudo # p%.$",
 		["Bow"] = "^Arco$",
 		["ChanceOnHit"] = "Probabilidad al acertar:",
@@ -327,6 +328,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Dodge3"] = "^UNUSED$",
 		["DodgePercent"] = "^Equipar: Aumenta un #%% tu probabilidad de esquivar un ataque%.$",
 		["DodgeRating"] = "^Equipar: Aumenta tu índice de esquivar e?n? ?# p%.$",
+		["DodgeRating2"] = "^Equipar: Aumenta # p%. tu índice de esquivar%.$",
 		["DodgeRatingShort"] = "^%+?#%%? índice de esquivar$",
 		["Dps"] = "^%(# p%. de daño por segundo%)$",
 		["DpsAdd"] = "^Añade # p%. de daño por segundo$",
@@ -795,16 +797,25 @@ if GetLocale() == "esES" then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 
-	PawnLocal.TooltipParsing.Avoidance = "^%+# Evasión$"
-	PawnLocal.TooltipParsing.Leech = "^%+# Parasitar$"
-	PawnLocal.TooltipParsing.ResilienceRating = "^Equipar: Mejora tu índice de temple en #%.$"
-	PawnLocal.TooltipParsing.SpellCritRating2 = "^Equipar: Mejora el índice de golpe crítico con hechizos en # p%.$"
-	PawnLocal.TooltipParsing.SpellDamageAndHealing = "^Equipar: Aumenta la sanación que haces hasta # p%. y el daño que infliges hasta # p%. con todos los hechizos mágicos y efectos%.$"
-	PawnLocal.TooltipParsing.SpellDamageAndHealingEnchant = "^%+# sanación y %+# daño de hechizos$"
-	PawnLocal.TooltipParsing.SpellDamageAndHealingShort = "^%+# hechizos de sanación y %+# hechizos de daño$"
-	PawnLocal.TooltipParsing.SpellHasteRating = "^Equipar: Mejora el índice de celeridad con hechizos en # p%.$"
-	PawnLocal.TooltipParsing.SpellHitRating = "^Equipar: Mejora el índice de golpe con hechizos en # p%.$"
-	PawnLocal.TooltipParsing.SpellPenetrationClassic = "^Equipar: Reduce las resistencias mágicas de los objetivos de tus hechizos en # p%.$"
+	local TooltipParsing_All =
+	{
+		["Avoidance"] = "^%+# Evasión$",
+		["BlockRating2"] = "^Equipar: Aumenta tu índice de bloqueo con escudo en # p%.$",
+		["Leech"] = "^%+# Parasitar$",
+		["ResilienceRating"] = "^Equipar: Mejora tu índice de temple en #%.$",
+		["SpellCritRating2"] = "^Equipar: Mejora el índice de golpe crítico con hechizos en # p%.$",
+		["SpellDamageAndHealing"] = "^Equipar: Aumenta la sanación que haces hasta # p%. y el daño que infliges hasta # p%. con todos los hechizos mágicos y efectos%.$",
+		["SpellDamageAndHealingEnchant"] = "^%+# sanación y %+# daño de hechizos$",
+		["SpellDamageAndHealingShort"] = "^%+# hechizos de sanación y %+# hechizos de daño$",
+		["SpellHasteRating"] = "^Equipar: Mejora el índice de celeridad con hechizos en # p%.$",
+		["SpellHitRating"] = "^Equipar: Mejora el índice de golpe con hechizos en # p%.$",
+		["SpellPenetrationClassic"] = "^Equipar: Reduce las resistencias mágicas de los objetivos de tus hechizos en # p%.$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_All) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
 
 	if VgerCore.IsClassic then
 
