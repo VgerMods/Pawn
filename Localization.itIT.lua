@@ -367,6 +367,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
 		["Mp52"] = "^%+?# mana every 5 sec%.$",
 		["Mp53"] = "^UNUSED$",
+		["Mp54"] = "^UNUSED$",
 		["MultiStatHeading"] = "^Statistiche Multiple$",
 		["MultiStatSeparator1"] = "e",
 		["Multistrike"] = "^%+# [Ii]ndice di [Rr]eplicazione$",
@@ -417,6 +418,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["SpellDamageAndHealing"] = "^UNUSED$",
 		["SpellDamageAndHealingEnchant"] = "^UNUSED$",
 		["SpellDamageAndHealingShort"] = "^UNUSED$",
+		["SpellDamageAndHealingShort2"] = "^UNUSED$",
 		--[[Translation missing --]]
 		["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
 		--[[Translation missing --]]
