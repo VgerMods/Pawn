@@ -278,6 +278,8 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["WeaponTypes"] = "Tipos de armas",
 		["WeaponTypeStaff"] = "Vara",
 		["WeaponTypeStaffInfo"] = "Puntos que asignar si el objeto es una vara.",
+		["WeaponTypeThrown"] = "Arrojadiza",
+		["WeaponTypeThrownInfo"] = "Puntos que asignar si el objeto es una arrojadiza.",
 		["WeaponTypeWand"] = "Varita",
 		["WeaponTypeWandInfo"] = "Puntos que asignar si el objeto es una varita.",
 		["WeaponTypeWarglaive"] = "Guja de Guerra",

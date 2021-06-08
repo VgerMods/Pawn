@@ -240,6 +240,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["WeaponTypes"] = "Weapon types",
 		["WeaponTypeStaff"] = "Staff",
 		["WeaponTypeStaffInfo"] = "Points to be assigned if the item is a staff.",
+		["WeaponTypeThrown"] = "Thrown weapon",
+		["WeaponTypeThrownInfo"] = "Points to be assigned if the item is a thrown weapon.",
 		["WeaponTypeWand"] = "Wand",
 		["WeaponTypeWandInfo"] = "Points to be assigned if the item is a wand.",
 		["WeaponTypeWarglaive"] = "Warglaive",

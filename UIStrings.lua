@@ -115,6 +115,7 @@ local PawnStatsUnfiltered =
 	{L.WeaponType1HSword, "IsSword", L.WeaponType1HSwordInfo, PawnStatItemType},
 	{L.WeaponType2HSword, "Is2HSword", L.WeaponType2HSwordInfo, PawnStatItemType},
 	{L.WeaponTypeWand, "IsWand", L.WeaponTypeWandInfo, PawnStatItemType},
+	{L.WeaponTypeThrown, "IsThrown", L.WeaponTypeThrownInfo, PawnStatItemType, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{L.WeaponTypeWarglaive, "IsWarglaive", L.WeaponTypeWarglaiveInfo, PawnStatItemType, nil, { PawnStatLive = true }},
 	{L.WeaponTypeOffHand, "IsOffHand", L.WeaponTypeOffHandInfo, PawnStatItemType},
 	{L.WeaponTypeFrill, "IsFrill", L.WeaponTypeFrillInfo, PawnStatItemType},

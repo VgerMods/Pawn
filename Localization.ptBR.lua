@@ -241,6 +241,8 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["WeaponTypes"] = "Tipos de armas",
 		["WeaponTypeStaff"] = "Cajado",
 		["WeaponTypeStaffInfo"] = "Pontos para distribuir se o item for um cajado.",
+		["WeaponTypeThrown"] = "Arremesso",
+		["WeaponTypeThrownInfo"] = "Pontos para distribuir se o item for um arremesso.",
 		["WeaponTypeWand"] = "Varinha",
 		["WeaponTypeWandInfo"] = "Pontos para distribuir se o item for uma varinha.",
 		["WeaponTypeWarglaive"] = "Glaive de Guerra",

@@ -241,6 +241,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["WeaponTypes"] = "Типы оружия",
 		["WeaponTypeStaff"] = "Посох",
 		["WeaponTypeStaffInfo"] = "Очки присваиваются только если вещь - посох.",
+		["WeaponTypeThrown"] = "Метательное оружие",
+		["WeaponTypeThrownInfo"] = "Очки присваиваются только если вещь - Метательное оружие.",
 		["WeaponTypeWand"] = "Жезл",
 		["WeaponTypeWandInfo"] = "Очки присваиваются только если вещь - жезл.",
 		["WeaponTypeWarglaive"] = "Боевые клинки",

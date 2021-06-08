@@ -240,6 +240,8 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["WeaponTypes"] = "Type d'armes",
 		["WeaponTypeStaff"] = "Bâton",
 		["WeaponTypeStaffInfo"] = "Points à attribuer si l'objet est un bâton",
+		["WeaponTypeThrown"] = "Armes de jet",
+		["WeaponTypeThrownInfo"] = "Points à attribuer si l'objet est un arme de jet.",
 		["WeaponTypeWand"] = "Baguette",
 		["WeaponTypeWandInfo"] = "Points à attribuer si l'objet est une baguette",
 		["WeaponTypeWarglaive"] = "Glaive de guerre",

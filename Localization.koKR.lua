@@ -241,6 +241,8 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["WeaponTypes"] = "무기 유형",
 		["WeaponTypeStaff"] = "지팡이",
 		["WeaponTypeStaffInfo"] = "지팡이 아이템일때 할당합니다.",
+		["WeaponTypeThrown"] = "투척 무기",
+		["WeaponTypeThrownInfo"] = "투척 무기 아이템일때 할당합니다.",
 		["WeaponTypeWand"] = "마법봉",
 		["WeaponTypeWandInfo"] = "마법봉 아이템일때 할당합니다.",
 		["WeaponTypeWarglaive"] = "전투검",

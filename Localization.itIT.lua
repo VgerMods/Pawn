@@ -240,6 +240,8 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["WeaponTypes"] = "Tipi di armi",
 		["WeaponTypeStaff"] = "Bastone",
 		["WeaponTypeStaffInfo"] = "Punti da assegnare se l'arma è un bastone",
+		["WeaponTypeThrown"] = "Arma da lancio",
+		["WeaponTypeThrownInfo"] = "Punti da assegnare se l'arma da lancio.",
 		["WeaponTypeWand"] = "Bacchetta",
 		["WeaponTypeWandInfo"] = "Punti da assegnare se l'arma è una bacchetta.",
 		["WeaponTypeWarglaive"] = "Lame da Guerra",

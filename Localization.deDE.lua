@@ -236,6 +236,8 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["WeaponTypes"] = "Waffentypen",
 		["WeaponTypeStaff"] = "Stab",
 		["WeaponTypeStaffInfo"] = "Für einen Stab zugeteilte Punkte.",
+		["WeaponTypeThrown"] = "Wurfwaffe",
+		["WeaponTypeThrownInfo"] = "Für einen Wurfwaffe zugeteilte Punkte.",
 		["WeaponTypeWand"] = "Zauberstab",
 		["WeaponTypeWandInfo"] = "Für einen Zauberstab zugeteilte Punkte.",
 		["WeaponTypeWarglaive"] = "Kriegsgleve",
