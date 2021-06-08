@@ -555,7 +555,7 @@ PawnNeverUsableStats =
 	{ "IsWand", "IsWarglaive" },
 
 	[2] = -- Paladin
-	{ "IsDagger", "IsFist", "IsStaff", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsOffHand" },
+	{ "IsDagger", "IsFist", "IsStaff", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsOffHand", "IsThrown" },
 
 	[3] = -- Hunter
 	{ "IsWand", "IsMace", "Is2HMace", "IsWarglaive", "IsPlate", "IsShield" },
@@ -563,30 +563,30 @@ PawnNeverUsableStats =
 	[4] = -- Rogue
 	{ "IsPolearm", "IsStaff", "Is2HAxe", "Is2HMace", "Is2HSword", "IsWand", "IsWarglaive", "IsMail", "IsPlate", "IsShield" },
 
-	[5] = --Priest
-	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "IsSword", "Is2HSword", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield" },
+	[5] = -- Priest
+	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "IsSword", "Is2HSword", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield", "IsThrown" },
 
 	[6] = -- Death Knight
-	{ "IsDagger", "IsFist", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsStaff", "IsWarglaive", "IsShield" },
+	{ "IsDagger", "IsFist", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsStaff", "IsWarglaive", "IsShield", "IsThrown" },
 
 	[7] = -- Shaman
-	{ "IsPolearm", "IsSword", "Is2HSword", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsPlate" },
+	{ "IsPolearm", "IsSword", "Is2HSword", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsPlate", "IsThrown" },
 
-	[8] = --Mage
-	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "Is2HSword", "IsMace", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield" },
+	[8] = -- Mage
+	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "Is2HSword", "IsMace", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield", "IsThrown" },
 
 	[9] = -- Warlock
-	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "Is2HSword", "IsMace", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield" },
+	{ "IsAxe", "Is2HAxe", "IsFist", "IsPolearm", "Is2HSword", "IsMace", "Is2HMace", "IsWarglaive", "IsBow", "IsCrossbow", "IsGun", "IsOffHand", "IsLeather", "IsMail", "IsPlate", "IsShield", "IsThrown" },
 
 	[10] = -- Monk
-	{ "IsDagger", "Is2HAxe", "Is2HMace", "Is2HSword", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsMail", "IsPlate", "IsShield", "IsOffHand" },
+	{ "IsDagger", "Is2HAxe", "Is2HMace", "Is2HSword", "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsWarglaive", "IsMail", "IsPlate", "IsShield", "IsOffHand", "IsThrown" },
 
 	[11] = -- Druid
-	{ "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsAxe", "Is2HAxe", "IsSword", "Is2HSword", "IsWarglaive", "IsOffHand", "IsMail", "IsPlate", "IsShield" },
+	{ "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsAxe", "Is2HAxe", "IsSword", "Is2HSword", "IsWarglaive", "IsOffHand", "IsMail", "IsPlate", "IsShield", "IsThrown" },
 	-- Note: feral and guardian artifacts are actually off-hand items, even though druids can't normally equip them.
 
 	[12] = -- Demon Hunter
-	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield" },
+	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield", "IsThrown" },
 }
 
 if VgerCore.IsClassic then
