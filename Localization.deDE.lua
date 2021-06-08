@@ -274,7 +274,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Crit2"] = "^UNUSED$",
 		["CritPercent"] = "^Anlegen: Erhöht Eure Chance, einen kritischen Treffer zu erzielen, um #%%%.$",
 		["CritRating"] = "^Anlegen: Erhöht Eure kritische Trefferwertung um #%.$",
-		["CritRating2"] = "^UNUSED$",
+		["CritRating2"] = "^Anlegen: Erhöht die kritische Trefferwertung um #%.$",
 		["CritRatingShort"] = "^%+?# Kritische Trefferwertung$",
 		["Crossbow"] = "^Armbrust$",
 		["Dagger"] = "^Dolch$",
