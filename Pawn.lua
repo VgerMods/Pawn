@@ -2823,11 +2823,14 @@ function PawnGetItemIDsForDisplay(ItemLink, Formatted)
 	end
 
 	if MoreInfo then
-		-- Strip off stray colons.
+		-- Strip off stray colons and :0.
 		Pos = strlen(MoreInfo)
-		while Pos > 1 and strsub(MoreInfo, Pos, Pos) == ":" do Pos = Pos - 1 end
+		while Pos >= 1 and strsub(MoreInfo, Pos, Pos) == ":" do Pos = Pos - 1 end
 		MoreInfo = strsub(MoreInfo, 1, Pos)
-		-- Strip off the character level if that's the only thing after the ID.
+		Pos = strlen(MoreInfo)
+		while Pos >= 2 and strsub(MoreInfo, Pos - 1, Pos) == ":0" do Pos = Pos - 2 end
+		MoreInfo = strsub(MoreInfo, 1, Pos)
+		-- Strip off the character level too if that's the only thing after the ID.
 		local ColonsAndLevel = "::::::::" .. UnitLevel("player")
 		Pos = strlen(MoreInfo) - strlen(ColonsAndLevel)
 		if strsub(MoreInfo, Pos) == ColonsAndLevel then MoreInfo = strsub(MoreInfo, 1, Pos) end
