@@ -4127,9 +4127,10 @@ function PawnGetMaxLevelItemIsUsefulHeirloom(Item)
 	if Item.Rarity == 6 then
 		-- This is an artifact, so the player won't get anything better until level 50.
 		return 49
-	elseif Item.UnenchantedStats and Item.UnenchantedStats.MaxScalingLevel then
-		-- This item scales until you reach MaxScalingLevel.
-		return Item.UnenchantedStats.MaxScalingLevel - 1
+	-- (In Shadowlands, heirloom XP scaling was removed. But it might come back in a future Classic version.)
+	-- elseif Item.UnenchantedStats and Item.UnenchantedStats.MaxScalingLevel then
+	-- 	-- This item scales until you reach MaxScalingLevel.
+	-- 	return Item.UnenchantedStats.MaxScalingLevel - 1
 	else
 		-- This item doesn't scale.
 		return 0
