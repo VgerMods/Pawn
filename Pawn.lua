@@ -948,9 +948,6 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 	if (not PawnItemCache) or (#PawnItemCache == 0) then return end
 	-- If debug mode is on, the cache is disabled.
 	if PawnCommon.Debug then return end
-	-- If this is WoW Classic, the cache is also disabled.
-	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then return end
 
 	-- Otherwise, search the item cache for this item.
 	local _
@@ -958,20 +955,39 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 		if (not NumLines) or (NumLines == CachedItem.NumLines) then
 			if ItemLink and CachedItem.Link then
 				if ItemLink == CachedItem.Link then
+					if PawnCommon.DebugCache then
+						VgerCore.Message(VgerCore.Color.Green .. "    Found item in cache!")
+					end
 					return CachedItem
 				end
 			end
 		end
 	end
+	if PawnCommon.DebugCache then
+		VgerCore.Message(VgerCore.Color.Salmon .. "    Item was not in the cache.")
+	end
 end
 
--- Adds an item to the item cache, removing existing items if necessary.
+-- Removes a single stale item from the cache.
+function PawnUncacheItem(CachedItem)
+	-- If debug mode is on, the cache is disabled.
+	if PawnCommon.Debug or CachedItem == nil or PawnItemCache == nil then return end
+
+	local Index = VgerCore.IndexOf(PawnItemCache, CachedItem)
+	if Index then
+		tremove(PawnItemCache, Index)
+		if PawnCommon.DebugCache then
+			VgerCore.Message("Successfully removed " .. tostring(CachedItem.Link) .. " from the cache.")
+		end
+	else
+		VgerCore.Fail("Failed to uncache " .. tostring(CachedItem.Link) .. " because we didn't find it in the cache.")
+	end
+end
+
+-- Adds an item to the item cache, removing existing items if necessary to make room.
 function PawnCacheItem(CachedItem)
 	-- If debug mode is on, the cache is disabled.
 	if PawnCommon.Debug then return end
-	-- If this is WoW Classic, the cache is also disabled.
-	-- (There's a problem I haven't tracked down yet where item tooltips are returned with incomplete stats and then get cached in that incomplete state.)
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then return end
 	
 	-- Cache it.
 	if PawnItemCacheMaxSize <= 0 then return end
@@ -1184,6 +1200,11 @@ function PawnGetItemData(ItemLink)
 	-- Only item links are supported; other links are not.
 	if PawnGetHyperlinkType(ItemLink) ~= "item" then return end
 
+	if PawnCommon.DebugCache then
+		VgerCore.Message("  Getting item data for " .. ItemLink)
+		VgerCore.Message("    because: " .. debugstack(2, 1, 0))
+	end
+
 	-- If this type of item can't ever have stats (food, for example), just bail out.
 	-- We don't use this codepath in the case of artifact relics.
 	if not PawnCanItemHaveStats(ItemLink) then return end
@@ -1198,20 +1219,28 @@ function PawnGetItemData(ItemLink)
 	else
 		-- We didn't get a new item link.  This is almost certainly because the item is not in the user's local WoW cache.
 		-- REVIEW: In the future, would it be possible to detect this case, and then poll the tooltip until item information
-		-- comes back, and THEN parse and annotate it?  There's also an OnTooltipSetItem event.
+		-- comes back, and THEN parse and annotate it?  There's also an OnTooltipSetItem event, and also an Item mixin.
 	end
 	
 	-- Now, with that information, we can look up the item in the Pawn item cache.
-	local Item = PawnGetCachedItem(ItemLink, ItemName)
-	if not Item and not NewItemLink then
+	local CachedItem = PawnGetCachedItem(ItemLink, ItemName)
+	if not CachedItem and not NewItemLink then
 		-- The item isn't in the user's WoW cache or Pawn cache.  Bail out now.
 		if PawnCommon.DebugCache then VgerCore.Message("Pawn debug cache: PawnGetItemData is bailing out because it didn't get item data in time for " .. ItemLink) end
 		return 
 	end
-	if Item and Item.Values then
-		return Item
+	if CachedItem and CachedItem.Values then
+		if VgerCore.IsShadowlands then
+			return CachedItem
+		end
 	end
 	-- If Item is non-null but Item.Values is null, we're not done yet!
+	local Item
+	if VgerCore.IsShadowlands then
+		Item = CachedItem
+	end
+	-- On Classic versions, we don't know for sure yet if our cached item is workable: it might have had incomplete data. We'll continue as if we didn't find anything in the
+	-- cache, and then only count it as a valid cache hit if the item tooltip had the correct number of lines.
 
 	-- If we don't have a cached item at all, that means we have to load a tooltip and parse it.
 	if not Item then
@@ -1235,6 +1264,26 @@ function PawnGetItemData(ItemLink)
 		-- First the enchanted stats.
 		Item.Stats, Item.SocketBonusStats, Item.UnknownLines, Item.PrettyLink = PawnGetStatsFromTooltipWithMethod(PawnPrivateTooltipName, true, "SetHyperlink", Item.Link)
 		Item.NumLines = (_G[PawnPrivateTooltipName]):NumLines()
+		if CachedItem then
+			-- Okay, we had already found this item in the cache, but we didn't know at the time if the cached version of the item is reliable. We'll consider it as reliable if the tooltip
+			-- now has the same number of lines as it did last time.
+			if Item.NumLines == CachedItem.NumLines then
+				if PawnCommon.DebugCache then
+					VgerCore.Message(VgerCore.Color.Green .. "    Cached item and this tooltip both had " .. Item.NumLines .. " lines, so using cached item")
+				end
+				return CachedItem
+			else
+				-- The item in the cache has a different number of lines than this new item, so remove the old item from the cache, and then we'll add the new one later.
+				PawnUncacheItem(CachedItem)
+				if PawnCommon.DebugCache then
+					VgerCore.Message(VgerCore.Color.Salmon .. "    Tooltip has " .. Item.NumLines .. " lines but cached line had " .. CachedItem.NumLines .. ", so removing old item from cache")
+				end
+			end
+		else
+			if PawnCommon.DebugCache then
+				VgerCore.Message("    Tooltip has " .. Item.NumLines .. " lines")
+			end
+		end
 
 		if (not VgerCore.RangedSlotExists) and (InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT") then
 			-- We convert ranged weapons into the correct "handedness" of weapons since there's no ranged slot anymore.
@@ -1509,6 +1558,8 @@ end
 local ItemLevelSearchPattern1 = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
 local ItemLevelSearchPattern2 = gsub(ITEM_LEVEL_PLUS, "%%d%+", "(%%d+)%%+")
 
+local TooltipUpdateCounter = 0
+
 -- Updates a specific tooltip.
 function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	if not PawnCommon.Scales then return end
@@ -1521,6 +1572,12 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 
 	-- Start by getting the item link.
 	local ItemLink = PawnGetItemLinkFromTooltip(TooltipName, MethodName, Param1, ...)
+
+	if PawnCommon.DebugCache then
+		TooltipUpdateCounter = TooltipUpdateCounter + 1
+		VgerCore.Message("==========")
+		VgerCore.Message("[" .. TooltipUpdateCounter .. "] Updating " .. TooltipName .. " (" .. Tooltip:NumLines() .. " lines): " .. (ItemLink or "(no item link)"))
+	end
 
 	-- Then get the item or relic data.
 	local Item, IsRelic
@@ -1617,7 +1674,11 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 			TooltipWasUpdated = true
 		end
 	end
-	
+
+	if PawnCommon.DebugCache then
+		PawnAddTooltipLine(Tooltip, "[Pawn update #" .. TooltipUpdateCounter .. "]", VgerCore.Color.BlueR, VgerCore.Color.BlueG, VgerCore.Color.BlueB)
+	end
+
 	-- Show the updated tooltip.	
 	if TooltipWasUpdated then Tooltip:Show() end
 
@@ -2673,7 +2734,7 @@ function PawnGetGemListString(ScaleName, ListAll, ItemLevel, Color)
 			if ListAll then Separator = "\n" else Separator = ", " end
 			for _, GemInfo in pairs(GemTable) do
 				local ThisGemName
-				local Item = PawnGetItemData("item:" .. GemInfo.ID)
+				local Item = PawnGetGemData(GemInfo)
 				if Item and Item.Name then
 					ThisGemName = Item.Name
 				else
@@ -2691,16 +2752,16 @@ function PawnGetGemListString(ScaleName, ListAll, ItemLevel, Color)
 		if #GemTable == 1 then
 			-- There's exactly one best gem for this scale, so return its name.
 			-- If it's in the Pawn cache, use its name from there.
-			local Item = PawnGetItemData("item:" .. GemTable[1].ID)
+			local Item = PawnGetGemData(GemTable[1])
 			if Item and Item.Name then
 				return Item.Name
 			end
 		elseif #GemTable == 2 then
 			-- If there are exactly two best gems, we can include those names.
-			local Item = PawnGetItemData("item:" .. GemTable[1].ID)
+			local Item = PawnGetGemData(GemTable[1])
 			if Item and Item.Name then
 				local ItemName1 = Item.Name
-				Item = PawnGetItemData("item:" .. GemTable[2].ID)
+				Item = PawnGetGemData(GemTable[2])
 				if Item and Item.Name then
 					return format(PawnLocal.GemList2, ItemName1, Item.Name)
 				end
@@ -3312,31 +3373,33 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 	local UnenchantedItemLink, NeedsEnhancements = PawnUnenchantItemLink(Item.Link, true)
 	VgerCore.Assert(UnenchantedItemLink ~= nil, "PawnIsItemAnUpgrade failed to get an item link for item " .. tostring(Item.ID))
 
-	-- Don't show 1H upgrades if using a 2H item, and vice-versa.
-	-- And, don't show any weapons or off-hands as upgrades if they have an artifact equipped.
-	local MainWeaponLink = GetInventoryItemLink("player", INVSLOT_MAINHAND) or GetInventoryItemLink("player", INVSLOT_OFFHAND)
-	if MainWeaponLink then
-		local MainWeapon = PawnGetItemData(MainWeaponLink)
-		if MainWeapon then
-			if MainWeapon.Rarity == 6 then
-				-- They're wielding an artifact, so ignore handedness checks.
-				if InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPONOFFHAND" or InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE" or InvType == "INVTYPE_2HWEAPON" then
-					-- If they're wielding an artifact weapon and also looking at an artifact weapon, it can't be an upgrade, since artifact weapons are spec-specific.  So, bail out.
-					if Item.Rarity == 6 then
-						SkipScoreBasedUpgrades = true
+	if InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPONOFFHAND" or InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE" or InvType == "INVTYPE_2HWEAPON" or InvType == "INVTYPE_RANGED" then
+		-- Don't show 1H upgrades if using a 2H item, and vice-versa.
+		-- And, don't show any weapons or off-hands as upgrades if they have an artifact equipped.
+		local MainWeaponLink = GetInventoryItemLink("player", INVSLOT_MAINHAND) or GetInventoryItemLink("player", INVSLOT_OFFHAND)
+		if MainWeaponLink then
+			local MainWeapon = PawnGetItemData(MainWeaponLink)
+			if MainWeapon then
+				if MainWeapon.Rarity == 6 then
+					-- They're wielding an artifact, so ignore handedness checks.
+					if InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPONOFFHAND" or InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE" or InvType == "INVTYPE_2HWEAPON" then
+						-- If they're wielding an artifact weapon and also looking at an artifact weapon, it can't be an upgrade, since artifact weapons are spec-specific.  So, bail out.
+						if Item.Rarity == 6 then
+							SkipScoreBasedUpgrades = true
+						end
+						-- Otherwise, compare the new non-artifact weapon using item level only.
+						CompareUsingItemLevelOnly = true
 					end
-					-- Otherwise, compare the new non-artifact weapon using item level only.
-					CompareUsingItemLevelOnly = true
+				elseif MainWeapon.InvType == "INVTYPE_2HWEAPON" then
+					-- They're using a two-handed weapon.  Bail out now if this is a one-handed weapon.
+					if InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPONOFFHAND" or InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE" then SkipScoreBasedUpgrades = true end
+				else
+					-- They're using a one-handed weapon.  Bail out now if this is a two-handed weapon.
+					if InvType == "INVTYPE_2HWEAPON" then SkipScoreBasedUpgrades = true end
 				end
-			elseif MainWeapon.InvType == "INVTYPE_2HWEAPON" then
-				-- They're using a two-handed weapon.  Bail out now if this is a one-handed weapon.
-				if InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPONOFFHAND" or InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE" then SkipScoreBasedUpgrades = true end
-			else
-				-- They're using a one-handed weapon.  Bail out now if this is a two-handed weapon.
-				if InvType == "INVTYPE_2HWEAPON" then SkipScoreBasedUpgrades = true end
 			end
 		end
-	end
+	end -- if InvType == ...
 
 	local _
 	local UpgradeTable, BestItemTable, SecondBestItemTable
