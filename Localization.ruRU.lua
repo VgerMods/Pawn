@@ -408,6 +408,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellDamage2"] = "^Если на персонаже: Увеличение урона и целительного действия магических заклинаний и эффектов не более чем на # ед%.$",
 		["SpellDamage3"] = "^Если на персонаже: Увеличивает урон и объем исцеления от магических заклинаний и эффектов максимум на # ед%.$",
 		["SpellDamage4"] = "^%+# к урону от заклинаний$",
+		["SpellDamage5"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Если на персонаже: Усиливает исходящее исцеление максимум на # ед%., а урон от магических эффектов и заклинаний – максимум на # ед%.$",
 		["SpellDamageAndHealingEnchant"] = "^BUG IN GAME$",
 		["SpellDamageAndHealingShort"] = "^UNUSED$",

@@ -440,6 +440,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño y la sanación de los hechizos y efectos mágicos%.$",
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
+		["SpellDamage5"] = "^%+# daño y sanación con hechizos$",
 		["SpellDamageAndHealing"] = "^Equipar: Aumenta hasta # p%. la sanación realizada y hasta # p%. todo el daño infligido con todos los hechizos y efectos mágicos%.$",
 		["SpellDamageAndHealingEnchant"] = "^BUG IN GAME$",
 		["SpellDamageAndHealingShort"] = "^BUG IN GAME$",

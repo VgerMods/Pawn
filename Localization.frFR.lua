@@ -407,6 +407,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellDamage2"] = "^Équipé : Augmente les dégâts et les soins produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage3"] = "^Equipé : Augmente les soins et dégâts produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage4"] = "^UNUSED$",
+		["SpellDamage5"] = "^%+# aux dégâts des sorts et aux soins$",
 		["SpellDamageAndHealing"] = "^Équipé : Augmente les soins prodigués d'un maximum de # et les dégâts d'un maximum de # pour tous les sorts et effets magiques%.$",
 		["SpellDamageAndHealingEnchant"] = "^%+# aux soins et %+# aux dégâts des sorts$",
 		["SpellDamageAndHealingShort"] = "^%+# aux sorts de soins et %+# aux dégâts des sorts$",

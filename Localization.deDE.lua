@@ -403,6 +403,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellDamage2"] = "^Anlegen: Erhöht durch Zauber und magische Effekte zugefügten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage3"] = "^Anlegen: Erhöht durch Zauber und magische Effekte verursachten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage4"] = "^UNUSED$",
+		["SpellDamage5"] = "^%+?# Zauberschaden und Heilung$",
 		["SpellDamageAndHealing"] = "^Anlegen: Erhöht durch sämtliche Zauber und magische Effekte verursachte Heilung um bis zu # und den verursachten Schaden um bis zu #%.$",
 		["SpellDamageAndHealingEnchant"] = "^%+# Heilung %+# Zauberschaden$",
 		["SpellDamageAndHealingShort"] = "^%+# Heilzauber und %+# Schadenszauber$",
