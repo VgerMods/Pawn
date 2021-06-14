@@ -274,7 +274,7 @@ PawnRegexes =
 	{L.Mp5, "Mp5"}, -- /pawn compare 22988
 	{L.Mp52, "Mp5"}, -- /pawn compare item:789::::::2074
 	{L.Mp53, "Mp5"}, -- Burning Crusade, socket bonus on /pawn compare 34360
-	{L.Mp54, "Mp5"}, -- Burning Crusade, /script PawnUIGetAllTextForItem("item:24057")
+	{L.Mp54, "Mp5"}, -- Burning Crusade, /script PawnUIGetAllTextForItem("item:24057") and /pawn compare 28522
 	{L.Mp55, "Mp5"}, -- Burning Crusade, /pawn compare 28304
 	{L.Hp5, "Hp5"}, -- (on live, we used to count 1 HP5 = 3 Stamina)
 	{L.Hp52, "Hp5"}, -- Demon's Blood

@@ -363,7 +363,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Mp5"] = "^Equipé : Rend # points de mana toutes les 5 secondes%.$",
 		["Mp52"] = "^%+?# points de mana toutes les 5 sec%.$",
 		["Mp53"] = "^%+?# points de mana toutes les 5 secondes$",
-		["Mp54"] = "^UNUSED$",
+		["Mp54"] = "^Équipé : Rend # points de mana toutes les 5 sec%.$",
 		["Mp55"] = "^UNUSED$",
 		["MultiStatHeading"] = "^Stats Multiple$",
 		["MultiStatSeparator1"] = "et",
