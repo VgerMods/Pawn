@@ -312,6 +312,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["CritPercent"] = "^Equipar: Mejora un #%% tu probabilidad de conseguir un golpe crítico%.$",
 		["CritRating"] = "^Equipar: Aumenta tu índice de golpe crítico e?n? ?# p%.$",
 		["CritRating2"] = "^Equipar: Mejora el índice de golpe crítico en # p%.$",
+		["CritRating3"] = "^Equipar: Aumenta # p%. el golpe crítico%.$",
 		["CritRatingShort"] = "^%+?# índice de golpe crítico$",
 		["Crossbow"] = "^Ballesta$",
 		["Dagger"] = "^Daga$",

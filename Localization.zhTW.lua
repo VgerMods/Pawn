@@ -281,6 +281,7 @@ PawnLocal =
 		["CritPercent"] = "^裝備： 使你造成致命一擊的機率提高#%%。$",
 		["CritRating"] = "^裝備: 使你的致命一擊等級提高#點。$",
 		["CritRating2"] = "^UNUSED$",
+		["CritRating3"] = "^UNUSED$",
 		["CritRatingShort"] = "^%+?#致命一擊等級$",
 		["Crossbow"] = "^弩$",
 		["Dagger"] = "^匕首$",

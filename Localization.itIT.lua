@@ -277,11 +277,10 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Crit"] = "^%+?# Indice di [Cc]ritico%.?$",
 		["Crit2"] = "UNUSED",
 		["CritPercent"] = "^Equip: Improves your chance to get a critical strike by #%%%.$",
-		--[[Translation missing --]]
-		["CritRating"] = "^Equip: Increases your critical strike rating by #%.$",
+		["CritRating"] = "^UNUSED$",
 		["CritRating2"] = "^UNUSED$",
-		--[[Translation missing --]]
-		["CritRatingShort"] = "^%+?# Critical Strike Rating$",
+		["CritRating3"] = "^UNUSED$",
+		["CritRatingShort"] = "^UNUSED$",
 		["Crossbow"] = "^Balestra$",
 		["Dagger"] = "^Pugnale$",
 		--[[Translation missing --]]

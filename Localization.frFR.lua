@@ -279,6 +279,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["CritPercent"] = "^Equipé : Augmente vos chances d'infliger un coup critique de #%%%.$",
 		["CritRating"] = "^Équipé : Augmente votre score de coup critique de #%.$",
 		["CritRating2"] = "^UNUSED$",
+		["CritRating3"] = "^Équipé : Augmente de # le score de coup critique%.$",
 		["CritRatingShort"] = "^%+?# au score de coup critique$",
 		["Crossbow"] = "^Arbalète$",
 		["Dagger"] = "^Dague$",

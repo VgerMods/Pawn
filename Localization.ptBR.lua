@@ -280,6 +280,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["CritPercent"] = "^Equipado: Aumenta em #%% a chance de realizar acertos críticos%.$",
 		["CritRating"] = "^Equipado: Aumenta em # a taxa de acerto crítico%.$",
 		["CritRating2"] = "^UNUSED$",
+		["CritRating3"] = "^UNUSED$",
 		["CritRatingShort"] = "^%+?# Taxa de Acerto Crítico$",
 		["Crossbow"] = "^Besta$",
 		["Dagger"] = "^Adaga$",
