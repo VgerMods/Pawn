@@ -72,3 +72,8 @@ end
 function PawnGameConstantIgnoredNumberPlaceholder(Text)
 	return gsub(PawnGameConstant(Text), "%%%%d", "%%d+")
 end
+
+-- Escapes a string so that it can be more easily printed.
+function PawnEscapeString(String)
+	return gsub(gsub(gsub(String, "\r", "\\r"), "\n", "\\n"), "|", "||")
+end

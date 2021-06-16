@@ -2512,7 +2512,6 @@ function PawnAddStatsToTable(Dest, Source)
 	end
 end
 
-local PawnFindStringInRegexTable_ShownOneError
 -- Looks for the first regular expression in a given table that matches the given string.
 -- Parameters: String, RegexTable
 --		String: The string to look for.
@@ -2524,19 +2523,12 @@ local PawnFindStringInRegexTable_ShownOneError
 --		Returns {}, {} if the string was ignored.
 function PawnFindStringInRegexTable(String, RegexTable)
 	if (String == nil) or (String == "") or (String == " ") then return {}, {} end
-	local Entry, LastRegex, LastStat
+	local Entry
 	for _, Entry in pairs(RegexTable) do
-		if Entry[1] == nil then
-			if not PawnFindStringInRegexTable_ShownOneError then
-				VgerCore.Fail("Localization error in regex table in the entry after " .. LastStat .. " \"" .. VgerCore.Color.Blue .. PawnEscapeString(tostring(LastRegex)) .. "|r\".")
-				PawnFindStringInRegexTable_ShownOneError = true
-			end
-		else
-			LastRegex = Entry[1]
-			LastStat = Entry[2]
-			local StartPos, EndPos, m1, m2, m3, m4, m5 = strfind(String, LastRegex)
-			if StartPos then return Entry, { m1, m2, m3, m4, m5 } end
-		end
+		LastRegex = Entry[1]
+		LastStat = Entry[2]
+		local StartPos, EndPos, m1, m2, m3, m4, m5 = strfind(String, LastRegex)
+		if StartPos then return Entry, { m1, m2, m3, m4, m5 } end
 	end
 	return nil, nil
 end
@@ -3029,11 +3021,6 @@ function PawnGetEnglishSpecNameFromID(ClassID, SpecID)
 	local SpecTable = SpecIDToEnglishNameMap[ClassID]
 	if not SpecTable then return end
 	return SpecTable[SpecID]
-end
-
--- Escapes a string so that it can be more easily printed.
-function PawnEscapeString(String)
-	return gsub(gsub(gsub(String, "\r", "\\r"), "\n", "\\n"), "|", "||")
 end
 
 -- Corrects errors in scales: either human errors, or to correct for bugs in current or past versions of Pawn.
