@@ -333,6 +333,6 @@ PawnMetaGemQualityLevels =
 	{ 0, PawnMetaGemDataRare },
 }
 
-PawnMinimumItemLevelToConsiderGems = 85 -- Hellfire Ramparts level 60 dungeon blue
+PawnMinimumItemLevelToConsiderGems = 100
 	
 end -- if VgerCore.IsBurningCrusade
