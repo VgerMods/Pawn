@@ -99,7 +99,7 @@ local PawnGemDataUncommon =
 
 { ID = 23103, Y = true, B = true, Stats = { SpellCritRating = 3, SpellPenetration = 4 } }, -- Radiant Deep Peridot
 { ID = 23104, Y = true, B = true, Stats = { CritRating = 3, Stamina = 4 } }, -- Jagged Deep Peridot
-{ ID = 23105, Y = true, B = true, Stats = { DefenseRating = 3, Stamina = 4 } }, -- Regal Deep Peridot
+{ ID = 23105, Y = true, B = true, Stats = { DefenseRating = 3, Stamina = 4 } }, -- Enduring Deep Peridot
 { ID = 23106, Y = true, B = true, Stats = { Mp5 = 1, Intellect = 3 } }, -- Dazzling Deep Peridot
 
 
