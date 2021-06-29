@@ -406,6 +406,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["SpellCritRating"] = "^Equipado: Aumenta em # a taxa de acerto crítico de seus feitiços%.$",
 		["SpellCritRating2"] = "^Equipado: Aumenta em # a taxa de acerto crítico de feitiços%.$",
 		["SpellCritRatingShort"] = "^%+?# Taxa de Acerto Crítico de Feitiço$",
+		["SpellCritRatingShort2"] = "^UNUSED$",
 		["SpellDamage"] = "^Feitiços de Cura e de Dano %+#$",
 		["SpellDamage2"] = "^Equipado: Aumenta em até # o dano causado e a cura realizada por feitiços e efeitos mágicos.$",
 		["SpellDamage3"] = "^UNUSED$",

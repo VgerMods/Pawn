@@ -229,6 +229,7 @@ PawnRegexes =
 	{L.SpellCritRating, "SpellCritRating"}, -- Burning Crusade, /pawn compare 16947
 	{L.SpellCritRating2, "SpellCritRating"}, -- Burning Crusade, /pawn compare 24256
 	{L.SpellCritRatingShort, "SpellCritRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24050/gleaming-dawnstone
+	{L.SpellCritRatingShort2, "SpellCritRating"}, -- Burning Crusade, /pawn compare 29317 (socket bonus)
 	{L.Hit, "HitRating"}, -- Classic, /pawn compare 16947
 	{L.Hit2, "HitRating"}, -- unused in English
 	{L.HitRating, "HitRating"}, -- Burning Crusade, /pawn compare 28182

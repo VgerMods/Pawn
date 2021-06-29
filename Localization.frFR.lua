@@ -405,6 +405,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellCritRating"] = "^Équipé : Augmente le score de coup critique des sorts de #%.$",
 		["SpellCritRating2"] = "^Équipé : Augmente de # le score de coup critique des sorts%.$",
 		["SpellCritRatingShort"] = "^%+?# au score de critique des sorts$",
+		["SpellCritRatingShort2"] = "^%+?# au score de coup critique des sorts$",
 		["SpellDamage"] = "^%+# aux dégâts et aux sorts de soins$",
 		["SpellDamage2"] = "^Équipé : Augmente les dégâts et les soins produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage3"] = "^Equipé : Augmente les soins et dégâts produits par les sorts et effets magiques de # au maximum%.$",

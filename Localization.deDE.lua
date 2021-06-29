@@ -401,6 +401,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellCritRating"] = "^Anlegen: Erhöht d?i?e?E?u?r?e? kritische Zaubertrefferwertung um #%.$",
 		["SpellCritRating2"] = "^UNUSED$",
 		["SpellCritRatingShort"] = "^%+?# Kritische Zaubertrefferwertung$",
+		["SpellCritRatingShort2"] = "^UNUSED$",
 		["SpellDamage"] = "^%+# Schadenszauber und Heilzauber$",
 		["SpellDamage2"] = "^Anlegen: Erhöht durch Zauber und magische Effekte zugefügten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage3"] = "^Anlegen: Erhöht durch Zauber und magische Effekte verursachten Schaden und Heilung um bis zu #%.$",

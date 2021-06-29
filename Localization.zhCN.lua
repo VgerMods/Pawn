@@ -404,6 +404,7 @@ PawnLocal =
 		["SpellCritRating"] = "^装备： 使你的法术爆击等级提高#。$",
 		["SpellCritRating2"] = "^装备： 法术爆击等级提高#点。$",
 		["SpellCritRatingShort"] = "^%+?# 法术爆击等级$",
+		["SpellCritRatingShort2"] = "^UNUSED$",
 		["SpellDamage"] = "^%+# 伤害和治疗法术$",
 		["SpellDamage2"] = "^装备： ?提高所有法术和魔法效果所造成的伤害和治疗效果，最多#点。$",
 		["SpellDamage3"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
