@@ -1337,11 +1337,15 @@ function PawnGetItemData(ItemLink)
 		-- MetaSocketEffect is special: if it's present in the unenchanted version of an item it should appear
 		-- in the enchanted version too, if the enchanted version's socket is full.
 		if Item.UnenchantedStats and Item.Stats and Item.UnenchantedStats.MetaSocketEffect and not Item.Stats.MetaSocketEffect and not Item.Stats.MetaSocket then
+			PawnDebugMessage("")
+			PawnDebugMessage("Copying meta socket effect (" .. Item.UnenchantedStats.MetaSocketEffect .. ") from base to current.")
 			Item.Stats.MetaSocketEffect = Item.UnenchantedStats.MetaSocketEffect
 		end
 
 		-- Enchanted items should not get points for empty sockets, nor do they get socket bonuses if there are any empty sockets.
 		if Item.Stats and (Item.Stats.PrismaticSocket or Item.Stats.RedSocket or Item.Stats.YellowSocket or Item.Stats.BlueSocket or Item.Stats.MetaSocket) then
+			PawnDebugMessage("")
+			PawnDebugMessage("Counting empty sockets as 0 for current value.")
 			Item.SocketBonusStats = {}
 			Item.Stats.PrismaticSocket = nil
 			Item.Stats.RedSocket = nil
@@ -2117,9 +2121,14 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 				-- This line is the socket bonus.
 				ThisLineIsSocketBonus = true
 				if LeftLine.GetTextColor then
-					SocketBonusIsValid = (LeftLine:GetTextColor() == 0) -- green's red component is 0, but grey's red component is .5	
+					SocketBonusIsValid = (LeftLine:GetTextColor() == 0) -- green's red component is 0, but grey's red component is .5
+					if SocketBonusIsValid then
+						PawnDebugMessage("  Socket bonus (valid):")
+					else
+						PawnDebugMessage("  Socket bonus (invalid):")
+					end
 				else
-					PawnDebugMessage(VgerCore.Color.Blue .. "Failed to determine whether socket bonus was valid, so assuming that it is indeed valid.")
+					PawnDebugMessage(VgerCore.Color.Blue .. "  Socket bonus (not sure if valid):")
 					SocketBonusIsValid = true
 				end
 				CurrentParseText = strsub(CurrentParseText, strlen(PawnLocal.TooltipParsing.SocketBonusPrefix) + 1)
@@ -2328,15 +2337,18 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	-- Now, socket bonuses require special handling.
 	if SocketBonusIsValid then
 		-- If the socket bonus is valid (green), then just add those stats directly to the main stats table and be done with it.
+		PawnDebugMessage("   (Including socket bonus stats because requirements were met)")
 		PawnAddStatsToTable(Stats, SocketBonusStats)
 		SocketBonusStats = {}
 	else
 		-- If the socket bonus is not valid, then we need to check for sockets.
-		if Stats["PrismaticSocket"] or Stats["RedSocket"] or Stats["YellowSocket"] or Stats["BlueSocket"]or Stats["MetaSocket"] then
+		if Stats["PrismaticSocket"] or Stats["RedSocket"] or Stats["YellowSocket"] or Stats["BlueSocket"] or Stats["MetaSocket"] then
 			-- There are sockets left, so the player could still meet the requirements.
+			PawnDebugMessage("   (Socket bonus requirements could potentially be met)")
 		else
 			-- There are no sockets left and the socket bonus requirements were not met.  Ignore the
 			-- socket bonus, since the user purposely chose to mis-socket.
+			PawnDebugMessage("   (Ignoring socket bonus stats since the requirements were not met)")
 			SocketBonusStats = {}
 		end
 	end
@@ -2626,18 +2638,22 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				Item.RedSocket or
 				Item.YellowSocket or
 				Item.BlueSocket or
-				Item.MetaSocket
+				Item.MetaSocket or
+				Item.MetaSocketEffect
 			) then
 
 				local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
+				local MetaGemQualityLevel = PawnGetGemQualityForItem(PawnMetaGemQualityLevels, ItemLevel)
 
-				local SocketValue = function(Stat)
+				local SocketValue = function(Stat, GemQualityLevel)
 					local Quantity = Item[Stat]
 					if Quantity then
 						local ThisValue = ThisScaleBestGems[Stat .. "Value"][GemQualityLevel]
 						if ThisValue then
 							if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
 							return Quantity * ThisValue
+						else
+							if DebugMessages then PawnDebugMessage("   No known value for " .. Quantity .. " " .. Stat) end
 						end
 					end
 					return 0
@@ -2661,10 +2677,10 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 					end
 					if DebugMessages then PawnDebugMessage(format(PawnLocal.SocketBonusValueCalculationMessage, SocketBonusValue)) end
 					ProperSocketValue =
-						SocketValue("PrismaticSocket") +
-						SocketValue("RedSocket") +
-						SocketValue("YellowSocket") +
-						SocketValue("BlueSocket") +
+						SocketValue("PrismaticSocket", GemQualityLevel) +
+						SocketValue("RedSocket", GemQualityLevel) +
+						SocketValue("YellowSocket", GemQualityLevel) +
+						SocketValue("BlueSocket", GemQualityLevel) +
 						SocketBonusValue
 				end -- if SocketBonus
 				
@@ -2677,7 +2693,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				end
 
 				-- Finally, meta sockets are just kind of their own separate thing.
-				TotalSocketValue = TotalSocketValue + SocketValue("MetaSocket")
+				TotalSocketValue = TotalSocketValue + SocketValue("MetaSocket", MetaGemQualityLevel)
 				ThisValue = ScaleValues.MetaSocketEffect
 				if ThisValue then
 					Stat = "MetaSocketEffect"
