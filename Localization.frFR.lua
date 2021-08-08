@@ -686,7 +686,6 @@ if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	{
 		["WeaponDamageArcane"] = "^Dégâts %(Arcanes%) : # %- #$",
 		["WeaponDamageArcaneExact"] = "^Dégâts %(Arcanes%) : #$",
-		["WeaponDamageExact"] = "^Dégâts : #$",
 		["WeaponDamageFire"] = "^Dégâts %(Feu%) : # %- #$",
 		["WeaponDamageFireExact"] = "^Dégâts %(Feu%) : #$",
 		["WeaponDamageFrost"] = "^Dégâts %(Givre%) : # %- #$",
