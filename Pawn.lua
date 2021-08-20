@@ -2076,6 +2076,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	local HadUnknown = false
 	local SocketBonusIsValid = false
 	local UnderstoodAnyLinesYet = false
+	local LookForNBSP = GetLocale() == "frFR"
 
 	for i = ItemNameLineNumber + 1, Tooltip:NumLines() do
 		local LeftLine = _G[TooltipName .. "TextLeft" .. i]
@@ -2114,6 +2115,11 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 				RegexTable = PawnRightHandRegexes
 				CurrentDebugMessages = false
 				IgnoreErrors = true
+			end
+
+			-- Just for French: replace any non-breaking spaces in the string with regular spaces.
+			if LookForNBSP then
+				CurrentParseText = gsub(CurrentParseText, "\194\160", " ")
 			end
 
 			local ThisLineIsSocketBonus = false

@@ -308,6 +308,23 @@ indeterminate or an upgrade. This can be used for auto-sell rules, such as <code
 
 <h2>Updates</h2>
 <h3>Version 2.5.24</h3>
+<ul>
+	<li>Pawn will now once again recognize specific schools of spell damage on 
+	items in French Burning Crusade Classic. (Other languages, Classic Era, and 
+	Shadowlands were not affected.)</li>
+	<li>Made a couple of small changes to help make French compatibility 
+	problems easier to fix in the future.<ul>
+		<li>For the curious, in French it's normal to put a space before AND 
+		after a colon, as in "Équipé&nbsp;: Augmente...". Sometimes, Blizzard uses a 
+		"non-breaking space" instead of a regular space before the colon, and a 
+		regular space after, which is also common. Unfortunately, they're not 
+		consistent; sometimes they just use two regular spaces. And you 
+		can't <em>see</em> the difference, but to code, 
+		those two spaces are as different as A and Z. With this change, Pawn will now always treat 
+		non-breaking spaces and regular spaces the same.</li>
+	</ul>
+	</li>
+</ul>
 <h3>Version 2.5.23</h3>
 <ul>
 	<li>Fixes a harmless but annoying error that could occur when interacting 

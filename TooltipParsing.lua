@@ -12,7 +12,7 @@ local L = PawnLocal.TooltipParsing
 if PawnLocal.ThousandsSeparator == "NBSP" then PawnLocal.ThousandsSeparator = "\194\160" end
 local Key, Value
 for Key, Value in pairs(L) do
-	L[Key] = gsub(gsub(Value, "#", "(-?[%%d%%.,\194\160 ]+)"), "NBSP", "\194\160")
+	L[Key] = gsub(Value, "#", "(-?[%%d%%., ]+)")
 end
 
 ------------------------------------------------------------
