@@ -1661,9 +1661,8 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Color or reset the tooltip border as necessary.
-	-- *** Disabled for 9.1.5 until I can figure out how to make this work again.
-	if PawnCommon.ColorTooltipBorder and Tooltip.SetBackdropBorderColor then
-		if UpgradeInfo or (ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades) then Tooltip:SetBackdropBorderColor(0, 1, 0) else Tooltip:SetBackdropBorderColor(1, 1, 1) end
+	if PawnCommon.ColorTooltipBorder then
+		if UpgradeInfo or (ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades) then PawnSetTooltipBorderColor(Tooltip, 0, 1, 0) else PawnSetTooltipBorderColor(Tooltip, 1, 1, 1) end
 	end
 	
 	-- Add the item ID to the tooltip if known.
@@ -1685,6 +1684,28 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	if Item and PawnCommon.DebugDoubleTooltips and TooltipName == "GameTooltip" then
 		VgerCore.Message("===== Annotating " .. TooltipName .. " for " .. tostring(Item.Name) .. ": =====")
 		VgerCore.Message(debugstack(5))
+	end
+end
+
+-- A wrapper for Tooltip:SetBackdropBorderColor that continues to work in WoW 9.1.5+.
+function PawnSetTooltipBorderColor(Tooltip, r, g, b, a)
+	if a == nil then a = 1 end
+	if Tooltip.SetBackdropBorderColor then
+		Tooltip:SetBackdropBorderColor(r, g, b, a)
+	elseif Tooltip.NineSlice.TopEdge then
+		-- Seems like this SHOULD work:
+		-- Tooltip.NineSlice:SetBorderColor(r, g, b, a)
+		-- ...but for some reason it doesn't (in the 9.1.5 PTR), so just do it manually for now.
+		Tooltip.NineSlice.TopLeftCorner:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.TopRightCorner:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.BottomLeftCorner:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.BottomRightCorner:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.TopEdge:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.BottomEdge:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.LeftEdge:SetVertexColor(r, g, b, a)
+		Tooltip.NineSlice.RightEdge:SetVertexColor(r, g, b, a)
+	else
+		VgerCore.Fail("Pawn doesn't know how to change tooltip border colors in this version of WoW.")
 	end
 end
 
