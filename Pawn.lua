@@ -1661,7 +1661,8 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Color or reset the tooltip border as necessary.
-	if PawnCommon.ColorTooltipBorder then
+	-- *** Disabled for 9.1.5 until I can figure out how to make this work again.
+	if PawnCommon.ColorTooltipBorder and Tooltip.SetBackdropBorderColor then
 		if UpgradeInfo or (ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades) then Tooltip:SetBackdropBorderColor(0, 1, 0) else Tooltip:SetBackdropBorderColor(1, 1, 1) end
 	end
 	
