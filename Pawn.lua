@@ -793,16 +793,11 @@ end
 function GetPawnStatusForArkInventoryRule(...)
 	if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
 
-	-- Verify that the item string information is loaded and not nil and that it is a valid item before continuing.
-	if not ArkInventoryRules.Object.h or ArkInventoryRules.Object.class ~= "item" then return false end
-
-	-- Parse the incoming item and retrieve the data
-	local Info = ArkInventory.ObjectInfoArray(ArkInventoryRules.Object.h)
-
-	-- Extract the itemLink from the ArkInventory info object
-	local ItemLink = Info.info[2]
+	local Info = ArkInventoryRules.Object.info
+	if not Info or ArkInventoryRules.Object.class ~= "item" then return false end
 
 	-- Use the same logic for determining whether or not an arrow should be shown, for consistency
+	local ItemLink = Info.h
 	return PawnIsItemDefinitivelyAnUpgrade(ItemLink, true)
 end
 
