@@ -343,6 +343,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["HitRatingShort"] = "^%+?# Trefferwertung$",
 		["HolySpellDamage"] = "^%+# Heiligzauberschaden$",
 		["HolySpellDamage2"] = "^Anlegen: Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu #%.$",
+		["HolySpellDamage3"] = "^UNUSED$",
 		["Hp5"] = "^Anlegen: Stellt # Gesundheit alle 5 Sek%. wieder her%.?$",
 		["Hp52"] = "^Anlegen: Stellt alle 5 Sek%. # Gesundheit wieder her%.?$",
 		["Hp53"] = "^%+?# Gesundheit alle 5 [sS]ek%.?$",

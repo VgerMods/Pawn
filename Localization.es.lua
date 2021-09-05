@@ -127,8 +127,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["HealingInfo"] = "Spell healing.  Increases the power of your healing spells.",
 		--[[Translation missing --]]
 		["HitInfo"] = "Hit.  Increases the chance that your physical attacks hit the target, especially bosses.",
-		--[[Translation missing --]]
-		["HolySpellDamage"] = "Holy Damage",
+		["HolySpellDamage"] = "Daños de Sagrados",
 		--[[Translation missing --]]
 		["HolySpellDamageInfo"] = "Holy damage.  Increases the damage dealt by your holy spells.",
 		--[[Translation missing --]]
@@ -380,6 +379,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["HitRatingShort"] = "^%+?# índice de golpe$",
 		["HolySpellDamage"] = "^%+# daño con hechizos Sagrados$",
 		["HolySpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos Sagrados%.$",
+		["HolySpellDamage3"] = "^UNUSED$",
 		["Hp5"] = "^# [sS]alud cada 5 s%.?$",
 		["Hp52"] = "^Equipar: Restaura # de vida cada 5 segundos%.$",
 		["Hp53"] = "^Restaura %+?# [vV]ida [cC]ada 5 [sS]egundos%.?$",
@@ -891,6 +891,7 @@ if GetLocale() == "esES" then
 			["FireSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Fuego y los efectos hasta en # p%.$",
 			["FrostSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Escarcha y los efectos hasta en # p%.$",
 			["HolySpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en # p%.$",
+			["HolySpellDamage3"] = "^Equipar: Aumenta el daño infligido por hechizos y efectos Sagrados hasta en # p%.$",
 			["NatureSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Naturaleza y los efectos hasta en # p%.$",
 			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de Sombras y los efectos hasta en # p%.$",
 		}

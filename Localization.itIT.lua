@@ -347,6 +347,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["HitRating3"] = "^UNUSED$",
 		["HolySpellDamage"] = "^UNUSED$",
 		["HolySpellDamage2"] = "^UNUSED$",
+		["HolySpellDamage3"] = "^UNUSED$",
 		["Hp5"] = "^%+?# Salute ogni 5 s.$",
 		["Hp52"] = "UNUSED",
 		["Hp53"] = "UNUSED",

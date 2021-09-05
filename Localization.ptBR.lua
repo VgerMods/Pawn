@@ -348,6 +348,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["HitRatingShort"] = "^%+?# Taxa de Acerto$",
 		["HolySpellDamage"] = "^%+# Dano Mágico Sagrados$",
 		["HolySpellDamage2"] = "^Equipado: Aumenta em até # o dano causado por feitiços e efeitos Sagrados%.$",
+		["HolySpellDamage3"] = "^UNUSED$",
 		["Hp5"] = "^Equipado: Restaura # pontos de vida a cada 5 s%.$",
 		["Hp52"] = "^Equipado: Recupera # pontos de vida a cada 5 s%.$",
 		["Hp53"] = "^Recupera %+?# [pP]ontos [dD]e [vV]ida [aA] [cC]ada 5 [sS]%.?$",

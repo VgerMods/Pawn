@@ -347,6 +347,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["HitRatingShort"] = "^%+?# Hit Rating$",
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 		["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
+		["HolySpellDamage3"] = "^Equip: Increases the damage done by Holy spells and effects by up to #%.$",
 		["Hp5"] = "^Equip: Restores # health every 5 sec%.$",
 		["Hp52"] = "^Equip: Restores # health per 5 sec%.$",
 		["Hp53"] = "^Restores %+?# [hH]ealth [pP]er 5 [sS]ec%.?$",

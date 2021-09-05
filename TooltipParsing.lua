@@ -321,6 +321,7 @@ PawnRegexes =
 	{L.FrostSpellDamage3, "FrostSpellDamage"}, -- /pawn compare item:789::::::-23
 	{L.HolySpellDamage, "HolySpellDamage"},
 	{L.HolySpellDamage2, "HolySpellDamage"}, -- /pawn compare 20504
+	{L.HolySpellDamage3, "HolySpellDamage"}, -- /pawn compare 30642
 	{L.Healing, "Healing"}, -- /pawn compare item:789::::::2028
 	{L.Healing2, "Healing"}, -- /pawn compare 16947
 	{L.Healing3, "Healing"}, -- Burning Crusade, /pawn compare item:789::::::-38

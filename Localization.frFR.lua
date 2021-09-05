@@ -347,6 +347,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["HitRatingShort"] = "^%+?# au score de toucher$",
 		["HolySpellDamage"] = "^%+# aux dégâts des sorts du Sacré$",
 		["HolySpellDamage2"] = "^E?\195?\137?quipé : Augmente les dégâts infligés par les sorts et effets du Sacré de # au maximum%.$",
+		["HolySpellDamage3"] = "^E?\195?\137?quipé : Augmente de # au maximum les dégâts infligés par les sorts et effets du Sacré%.$",
 		["Hp5"] = "^%+?# [pP]oints de [vV]ie [tT]outes les 5 [sS]%.?$",
 		["Hp52"] = "^E?\195?\137?quipé : Reconstitue # de vie par 5 sec%.$",
 		["Hp53"] = "^%+?# [pP]oints de [vV]ie [tT]outes les 5 [sS]ec%.?$",

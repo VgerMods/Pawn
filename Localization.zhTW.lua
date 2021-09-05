@@ -350,6 +350,7 @@ PawnLocal =
 		["HitRatingShort"] = "^%+?#命中等級$",
 		["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 		["HolySpellDamage2"] = "^裝備： 提高神聖法術和效果所造成的傷害，最多#點。$",
+		["HolySpellDamage3"] = "^裝備: 使神聖法術和效果所造成的傷害提高最多#點。$",
 		["Hp5"] = "^裝備: 每5秒恢復#生命力。$",
 		["Hp52"] = "^每5秒恢復#點?生命力。?$",
 		["Hp53"] = "^UNUSED$",
