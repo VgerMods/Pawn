@@ -94,6 +94,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["CritInfo"] = "Coup critique. Augmente vos chances d'avoir une efficacité supplémentaire pour les attaques et les soins.",
 		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
 		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
+		["DominationSocketInfo"] = "La valeur d'un socket pour un fragment de domination moyen.",
 		["DpsInfo"] = "Valeur de dégats par secondes de l'arme. (si vous désirez différentes estimations pour différents types d'armes, référez-vous à la section \"statistiques spéciale arme\".)",
 		--[[Translation missing --]]
 		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",

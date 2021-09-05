@@ -93,6 +93,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["CritInfo"] = "Kritische Treffer.  Chance, dass Angriffe und Heilungen stärkere Wirkung haben.",
 		["DefenseInfo"] = "Verteidigungsfähigkeit. Verringert die Wahrscheinlichkeit, dass du von Boss-Angriffen getroffen wirst.",
 		["DodgeInfo"] = "Ausweichen. Erhöht die Wahrscheinlichkeit, dass du Angriffen vollständig ausweichst.",
+		["DominationSocketInfo"] = "Der Wert eines Sockels für einen durchschnittlichen Dominationssplitter.",
 		["DpsInfo"] = "Waffenschaden pro Sekunde.  (Wenn du den DPS-Wert für verschiedene Waffentypen unterschiedlich bewerten möchtest, scrolle runter zum Bereich \"Spezielle Waffenwertungen\"",
 		["ExpertiseInfo"] = "Geschick. Macht die Chancen deines Feindes, auszuweichen und zu parieren,  zunichte.",
 		["FeralApInfo"] = "Wilde Angriffskraft. Erhöht den Schaden von Druidenangriffen in wilder Form. Beinhaltet keine Angriffskraft, die durch Stärke und Beweglichkeit gewonnen wird.",

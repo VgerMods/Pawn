@@ -95,6 +95,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["CritInfo"] = "Критический удар. Увеличивает шанс что ваши атакующие и исцеляющие заклинания ударят с увеличенной силой.",
 		["DefenseInfo"] = "Навык защиты.  Уменьшение вероятности того, что по вам попадёт атака боссов.",
 		["DodgeInfo"] = "Уклонение.  Увеличивает шанс что вы полностью уклонитесь от атаки.",
+		["DominationSocketInfo"] = "Значение сокета для среднего Осколка господства.",
 		["DpsInfo"] = "Урон от оружия в секунду",
 		--[[Translation missing --]]
 		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",

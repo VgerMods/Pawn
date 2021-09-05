@@ -97,6 +97,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["CritInfo"] = "Critical strike.  Increases the chance that your attacks and healing spells will hit with increased potency.  (In WoW Classic, this only affects physical attacks.)",
 		["DefenseInfo"] = "Defense skill.  Decreases the chance that you'll be hit by boss attacks.",
 		["DodgeInfo"] = "Dodge.  Increases the chance that you'll dodge attacks entirely.",
+		["DominationSocketInfo"] = "The value of a socket for an average Shard of Domination.",
 		["DpsInfo"] = "Weapon damage per second.  (If you want to value DPS differently for different types of weapons, see the \"Special weapon stats\" section.)",
 		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
 		["FeralApInfo"] = "Feral Attack Power.  Increases the damage of druid attacks when in feral forms.  Does not include attack power gained from strength and agility.",
