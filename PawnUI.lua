@@ -2044,6 +2044,7 @@ end
 ------------------------------------------------------------
 
 function PawnUI_OnSocketUpdate()
+	if PawnSocketingTooltip then PawnSocketingTooltip:Hide() end
 	if not PawnCommon.ShowSocketingAdvisor then return end
 
 	-- Find out what item it is.
