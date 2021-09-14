@@ -123,11 +123,11 @@ function PawnUI_InventoryPawnButton_OnEnter(this)
 end
 
 function PawnUI_InspectPawnButton_OnEnter(this)
-	VgerCore.Assert(INSPECTED_UNIT, "Pawn doesn't know who you're inspecting.")
 	GameTooltip:ClearLines()
 	GameTooltip:SetOwner(this, "ANCHOR_BOTTOMRIGHT")
 	GameTooltip:AddLine("Pawn", 1, 1, 1, 1)
-	if INSPECTED_UNIT then PawnUI_AddInventoryTotalsToTooltip(GameTooltip, INSPECTED_UNIT) end
+	-- For some reason INSPECTED_UNIT isn't getting set in Classic, so fall back to target if it's nil.
+	PawnUI_AddInventoryTotalsToTooltip(GameTooltip, INSPECTED_UNIT or "target")
 	GameTooltip:Show()
 end
 
