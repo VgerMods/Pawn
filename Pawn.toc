@@ -6,6 +6,8 @@
 ## SavedVariables: PawnCommon
 ## SavedVariablesPerCharacter: PawnOptions, PawnMrRobotScaleProviderOptions, PawnClassicScaleProviderOptions
 
+## X-Wago-ID: R4N2k46L
+
 VgerCore\VgerCore.lua
 
 Core.lua
