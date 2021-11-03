@@ -330,7 +330,13 @@
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				self:SetBackdrop({})
+				if self.NineSlice then
+					-- WoW 9.1.5
+					self.NineSlice:Hide()
+				elseif self.SetBackdrop then
+					-- Burning Crusade Classic
+					self:SetBackdrop({})
+				end
 			</OnLoad>
 		</Scripts>
 	</GameTooltip>
