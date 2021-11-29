@@ -861,7 +861,7 @@ function PawnDebugMessage(Message)
 	end
 end
 
--- Processes an Pawn slash command.
+-- Processes a Pawn slash command.
 function PawnCommand(Command)
 	if Command == "" then
 		PawnUIShow()
@@ -875,6 +875,17 @@ function PawnCommand(Command)
 		if PawnUIFrame_DebugCheck then PawnUIFrame_DebugCheck:SetChecked(PawnCommon.Debug) end
 	elseif Command == "backup" then
 		PawnUIExportAllScales()
+	elseif strsub(Command, 1, 7) == "tooltip" then
+		local ItemLink = strsub(Command, 9)
+		local ItemID = tonumber(ItemLink)
+		ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE")
+		if ItemID then
+			ItemRefTooltip:SetItemByID(ItemID)
+		else
+			if strsub(ItemLink, 1, 5) ~= "item:" then ItemLink = "item:" .. ItemLink end
+			ItemRefTooltip:SetHyperlink(ItemLink)
+		end
+		ItemRefTooltip:Show()
 	elseif strsub(Command, 1, 7) == "compare" then
 		local CompareIndex, ItemLink1, ItemLink2
 		if strsub(Command, 9, 13) == "left " then
