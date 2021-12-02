@@ -359,7 +359,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Mastery2"] = "^UNUSED$",
 		["MetaGemRequirements"] = "|cff%x%x%x%x%x%xBenötigt",
 		["MovementSpeed"] = "^%+# Bewegungsgeschwindigkeit$",
-		["Mp5"] = "^Anlegen: Stellt alle 5 Sek%. # Mana wieder her%.$",
+		["Mp5"] = "^Anlegen: Stellt alle 5 Sek%. # Punkt%(e%) Mana wieder her%.$",
 		["Mp52"] = "^%+?# Mana alle 5 Sek%.$",
 		["Mp53"] = "^Alle 5 Sek%. # Mana$",
 		["Mp54"] = "^UNUSED$",
