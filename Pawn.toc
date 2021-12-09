@@ -1,6 +1,6 @@
 ﻿## Interface: 90105
 ## Title: Pawn
-## Version: 2.5.31
+## Version: 2.5.32
 ## Notes: Pawn helps you compare items and find upgrades.
 ## OptionalDependencies: AtlasLoot, EQCompare, EquipCompare, LinkWrangler, MobInfo2, MultiTips, Outfitter, ArkInventoryRules
 ## SavedVariables: PawnCommon
