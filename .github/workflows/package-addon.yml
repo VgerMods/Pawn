@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  CLASSIC_VERSION: 11401
+  CLASSIC_VERSION: 11402
   BURNING_CRUSADE_VERSION: 20503
 
 jobs:
