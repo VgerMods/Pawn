@@ -157,8 +157,6 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				["Avoidance"] = 0.01,
 				["Leech"] = 0.01,
 				["Indestructible"] = 0.01,
-
-				["DominationSocket"] = 0.37,
 			}
 
 			ScaleValues[Template.PrimaryStat] = 1

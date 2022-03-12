@@ -1348,13 +1348,6 @@ function PawnGetItemData(ItemLink)
 			Item.Stats.MetaSocketEffect = Item.UnenchantedStats.MetaSocketEffect
 		end
 
-		-- Same with DominationSocket.
-		if Item.UnenchantedStats and Item.Stats and Item.UnenchantedStats.DominationSocket and not Item.Stats.DominationSocket then
-			PawnDebugMessage("")
-			PawnDebugMessage("Copying domination socket value from base to current.")
-			Item.Stats.DominationSocket = Item.UnenchantedStats.DominationSocket
-		end
-
 		-- Enchanted items should not get points for empty sockets, nor do they get socket bonuses if there are any empty sockets.
 		if Item.Stats and (Item.Stats.PrismaticSocket or Item.Stats.RedSocket or Item.Stats.YellowSocket or Item.Stats.BlueSocket or Item.Stats.MetaSocket) then
 			PawnDebugMessage("")
@@ -2649,8 +2642,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			Stat ~= "YellowSocket" and
 			Stat ~= "BlueSocket" and
 			Stat ~= "MetaSocket" and
-			Stat ~= "MetaSocketEffect" and
-			Stat ~= "DominationSocket"
+			Stat ~= "MetaSocketEffect"
 		then
 			if ThisValue then
 				-- This stat has a value; add it to the running total.
@@ -2685,8 +2677,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				Item.YellowSocket or
 				Item.BlueSocket or
 				Item.MetaSocket or
-				Item.MetaSocketEffect or
-				Item.DominationSocket
+				Item.MetaSocketEffect
 			) then
 
 				local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
@@ -2744,17 +2735,6 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				ThisValue = ScaleValues.MetaSocketEffect
 				if ThisValue then
 					Stat = "MetaSocketEffect"
-					Quantity = Item[Stat]
-					if Quantity then
-						TotalSocketValue = TotalSocketValue + Quantity * ThisValue
-						if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
-					end
-				end
-
-				-- Same with domination sockets.
-				ThisValue = ScaleValues.DominationSocket
-				if ThisValue then
-					Stat = "DominationSocket"
 					Quantity = Item[Stat]
 					if Quantity then
 						TotalSocketValue = TotalSocketValue + Quantity * ThisValue
@@ -3170,6 +3150,9 @@ function PawnCorrectScaleErrors(ScaleName)
 
 	-- Patch 9.0 removed the Corruption stat, though it still shows up on items.
 	ThisScale.Corruption = nil
+
+	-- Patch 9.2 removed the effects of domination shards outside of the Maw.
+	ThisScale.DominationSocket = nil
 end
 
 -- Replaces one incorrect stat with a correct stat.
@@ -5535,11 +5518,6 @@ function PawnAddPluginScaleFromTemplate(ProviderInternalName, ClassID, SpecID, S
 		for StatName, Value in pairs(Stats) do
 			ScaleValues[StatName] = Stats[StatName]
 		end
-	end
-
-	if ScaleValues.DominationSocket == nil and ScaleValues.Leech then
-		-- Desolate Shard of Rev provides 45 Leech and is easy for non-raiders to attain, so use that as the default value for a domination socket.
-		ScaleValues.DominationSocket = ScaleValues.Leech * 45
 	end
 
 	local Color
