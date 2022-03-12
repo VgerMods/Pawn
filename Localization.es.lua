@@ -913,7 +913,6 @@ if GetLocale() == "esES" then
 			["FireSpellDamage"] = "^%+?# daño con hechizos de Fuego$",
 			["FrostSpellDamage"] = "^%+?# daño con hechizos de Escarcha$",
 			["NatureSpellDamage"] = "^%+?# daño con hechizos de Naturaleza$",
-			["ShadowSpellDamage"] = "^%+?# daño con hechizos de Sombras$",
 			["ShadowSpellDamage"] = "^%+?# daño con hechizos de las Sombras$",
 			["ShadowSpellDamage2"] = "^Equipar: Aumenta el daño causado por los hechizos de las Sombras y los efectos hasta en # p%.$",
 		}
