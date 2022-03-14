@@ -207,7 +207,7 @@ local PawnGemDataRare =
 { ID = 24057, R = true, B = true, Stats = { Healing = 9, SpellDamage = 3, Mp5 = 2 } }, -- Royal Nightseye
 { ID = 31863, R = true, B = true, Stats = { Ap = 8, Stamina = 6 } }, -- Balanced Nightseye
 { ID = 31865, R = true, B = true, Stats = { Ap = 8, Mp5 = 2 } }, -- Infused Nightseye
--- { ID = 35707, R = true, B = true, Stats = { DodgeRating = 4, Stamina = 6 } }, -- Regal Nightseye (PHASE 3)
+-- { ID = 35707, R = true, B = true, Stats = { DodgeRating = 4, Stamina = 6 } }, -- Regal Nightseye (PHASE 5)
 
 
 }
