@@ -417,7 +417,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellDamageAndHealing"] = "^Если на персонаже: Усиливает исходящее исцеление максимум на # ед%., а урон от магических эффектов и заклинаний – максимум на # ед%.$",
 		["SpellDamageAndHealing2"] = "^Если на персонаже: Усиливает исцеление от магических заклинаний и эффектов максимум на # ед%. и увеличивает урон от них максимум на # ед%.$",
 		["SpellDamageAndHealingEnchant"] = "^BUG IN GAME$",
-		["SpellDamageAndHealingShort"] = "^UNUSED$",
+		["SpellDamageAndHealingShort"] = "^%+# к лечению и %+# к урону от заклинаний$",
 		["SpellDamageAndHealingShort2"] = "^UNUSED$",
 		["SpellHasteRating"] = "^Если на персонаже: Повышает рейтинг скорости заклинаний на #%.$",
 		["SpellHasteRatingShort"] = "^%+?# к рейтингу скорости заклинаний$",
