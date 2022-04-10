@@ -416,6 +416,7 @@ PawnLocal =
 		["SpellDamage3"] = "^裝備: 使所有法術和魔法效果所造成的傷害和治療效果提高最多#點。$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamage5"] = "^%+#法術傷害和治療$",
+		["SpellDamage6"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^果提高最多#點，法術傷害提高最多#點。$",
 		["SpellDamageAndHealing2"] = "^裝備: 使法術和魔法效果所造成的治療效果提高最多#點，法術傷害提高最多#點。$",
 		["SpellDamageAndHealingEnchant"] = "^%+#治療和%+#法術傷害",
