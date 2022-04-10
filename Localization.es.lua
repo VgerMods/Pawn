@@ -3,7 +3,7 @@
 -- © 2006-2022 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
--- 
+--
 -- Spanish (European and Latin American) resources
 -- See special cases at the end of the file!
 ------------------------------------------------------------
@@ -445,6 +445,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellDamage3"] = "^UNUSED$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamage5"] = "^%+# daño y sanación con hechizos$",
+		["SpellDamage6"] = "^Equipar: Aumenta el daño y la sanación de los hechizos mágicos y los efectos hasta en # p%.$",
 		["SpellDamageAndHealing"] = "^Equipar: Aumenta hasta # p%. la sanación realizada y hasta # p%. todo el daño infligido con todos los hechizos y efectos mágicos%.$",
 		["SpellDamageAndHealing2"] = "^UNUSED$",
 		["SpellDamageAndHealingEnchant"] = "^BUG IN GAME$",
@@ -904,7 +905,7 @@ if GetLocale() == "esES" then
 	end
 
 	if VgerCore.IsBurningCrusade then
-		
+
 		local TooltipParsing_BurningCrusade =
 		{
 			["Ap2"] = "^Equipar: Aumenta el poder de ataque en # p%.$",
@@ -927,15 +928,15 @@ if GetLocale() == "esES" then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 
-elseif GetLocale() == "esMX" then 
-	PawnUseThisLocalization() 
+elseif GetLocale() == "esMX" then
+	PawnUseThisLocalization()
 	PawnLocal.ThousandsSeparator = ","
 	PawnLocal.DecimalSeparator = "."
 
 	if VgerCore.IsBurningCrusade then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
-end 
+end
 
 -- After using this localization or deciding that we don't need it, remove it from memory.
 PawnUseThisLocalization = nil

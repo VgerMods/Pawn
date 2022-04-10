@@ -3,7 +3,7 @@
 -- © 2006-2022 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
--- 
+--
 -- Korean resources
 ------------------------------------------------------------
 
@@ -415,6 +415,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["SpellDamage3"] = "^착용 효과: 모든 주문 및 효과의 공격력과 치유량이 최대 #만큼 증가합니다%.$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamage5"] = "^주문 공격력 및 치유량 %+#$",
+		["SpellDamage6"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^착용 효과: 모든 주문 및 효과에 의한 치유량이 최대 #만큼, 공격력이 최대 #만큼 증가합니다%.$",
 		["SpellDamageAndHealing2"] = "^UNUSED$",
 		["SpellDamageAndHealingEnchant"] = "^UNUSED$",

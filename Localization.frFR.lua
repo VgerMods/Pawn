@@ -3,7 +3,7 @@
 -- © 2006-2022 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
--- 
+--
 -- French resources
 ------------------------------------------------------------
 
@@ -413,6 +413,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellDamage3"] = "^E?\195?\137?quipé : Augmente les soins et dégâts produits par les sorts et effets magiques de # au maximum%.$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamage5"] = "^%+# aux dégâts des sorts et aux soins$",
+		["SpellDamage6"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Équipé : Augmente les soins prodigués d'un maximum de # et les dégâts d'un maximum de # pour tous les sorts et effets magiques%.$",
 		["SpellDamageAndHealing2"] = "^UNUSED$",
 		["SpellDamageAndHealingEnchant"] = "^%+# aux soins et %+# aux dégâts des sorts$",

@@ -3,7 +3,7 @@
 -- © 2006-2022 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
--- 
+--
 -- English resources
 ------------------------------------------------------------
 
@@ -413,6 +413,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellDamage3"] = "^%+# Healing and Spell Damage$",
 		["SpellDamage4"] = "^%+# Spell Damage$",
 		["SpellDamage5"] = "^UNUSED$",
+		["SpellDamage6"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Equip: Increases healing done by up to # and damage done by up to # for all magical spells and effects%.$",
 		["SpellDamageAndHealing2"] = "^UNUSED$",
 		["SpellDamageAndHealingEnchant"] = "^%+# Healing and %+# Spell Damage$",

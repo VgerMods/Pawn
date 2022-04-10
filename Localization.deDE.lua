@@ -3,7 +3,7 @@
 -- © 2006-2022 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 
--- 
+--
 -- German resources
 ------------------------------------------------------------
 
@@ -409,6 +409,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["SpellDamage3"] = "^Anlegen: Erhöht durch Zauber und magische Effekte verursachten Schaden und Heilung um bis zu #%.$",
 		["SpellDamage4"] = "^UNUSED$",
 		["SpellDamage5"] = "^%+?# Zauberschaden und Heilung$",
+		["SpellDamage6"] = "^UNUSED$",
 		["SpellDamageAndHealing"] = "^Anlegen: Erhöht durch sämtliche Zauber und magische Effekte verursachte Heilung um bis zu # und den verursachten Schaden um bis zu #%.$",
 		["SpellDamageAndHealing2"] = "^UNUSED$",
 		["SpellDamageAndHealingEnchant"] = "^%+# Heilung %+# Zauberschaden$",
