@@ -266,7 +266,13 @@ function PawnInitialize()
 	if GameTooltip.SetWeeklyReward then
 		hooksecurefunc(GameTooltip, "SetWeeklyReward", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetWeeklyReward", ...) end)
 	end
-	hooksecurefunc(GameTooltip, "Hide", function(self, ...) PawnLastHoveredItem = nil end)
+	hooksecurefunc(GameTooltip, "Hide",
+		function(self, ...)
+			PawnLastHoveredItem = nil
+			-- Hacky fix to prevent the green tooltip border from "leaking" if the next thing that is hovered over is not an item.
+			-- (Without this, hovering over an upgrade item and then a spell button would still get you a green border.)
+			if PawnCommon.ColorTooltipBorder then PawnSetTooltipBorderColor(GameTooltip, 1, 1, 1) end
+		end)
 
 	-- World quest embedded tooltips
 	hooksecurefunc("EmbeddedItemTooltip_SetItemByQuestReward",
