@@ -144,15 +144,15 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				ScaleValues.FeralAp = nil
 			end
 		else
-			ScaleValues = 
+			ScaleValues =
 			{
 				["Stamina"] = 0.01,
-	
+
 				["CritRating"] = 0.5,
 				["HasteRating"] = 0.5,
 				["MasteryRating"] = 0.5,
 				["Versatility"] = 0.5,
-	
+
 				["MovementSpeed"] = 0.01,
 				["Avoidance"] = 0.01,
 				["Leech"] = 0.01,
