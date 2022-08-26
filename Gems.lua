@@ -7,7 +7,7 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsShadowlands then
+if VgerCore.IsMainline then
 
 
 -- Gem table row format:
@@ -285,4 +285,4 @@ PawnMetaGemQualityLevels =
 
 PawnMinimumItemLevelToConsiderGems = 144 -- Sockets on items below this ilvl are ignored by default
 
-end -- if VgerCore.IsShadowlands
+end -- if VgerCore.IsMainline

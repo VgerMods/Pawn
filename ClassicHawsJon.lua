@@ -348,7 +348,7 @@ end -- PawnClassicScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 	-- These scales were actually intended for Burning Crusade, but they're the best we have for Classic too, so use them on both.
 	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.StarterProvider, PawnClassicScaleProvider_AddScales)
 else

@@ -765,7 +765,7 @@ PawnLocal.Specs =
 	},
 }
 
-if VgerCore.IsBurningCrusade then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 	PawnLocal.DecimalSeparator = ","
 	PawnLocal.ThousandsSeparator = ","
 end

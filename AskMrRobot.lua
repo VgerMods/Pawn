@@ -291,7 +291,7 @@ end -- PawnMrRobotScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if VgerCore.IsShadowlands then
+if VgerCore.IsMainline then
 	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.AskMrRobotProvider, PawnMrRobotScaleProvider_AddScales)
 else
 	-- These scales aren't useful on WoW Classic versions, so skip them.

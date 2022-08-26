@@ -2,8 +2,8 @@
 -- www.vgermods.com
 -- © 2006-2022 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.14 -- IndexOf
-local VgerCoreThisVersion = 1.14
+-- Version 1.0.15 -- IsWrath, IsMainline, IsDragonflight
+local VgerCoreThisVersion = 1.15
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -19,17 +19,22 @@ VgerCore = {}
 VgerCore.Version = VgerCoreThisVersion
 
 -- What version is this?
+local BuildNumber = select(4, GetBuildInfo())
 VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC)
-VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC) -- includes pre-patch
-VgerCore.IsShadowlands = (select(4, GetBuildInfo()) >= 90000)
+VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_LEVEL_CURRENT == LE_EXPANSION_BURNING_CRUSADE) -- includes pre-patch
+VgerCore.IsWrath = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_LEVEL_CURRENT >= LE_EXPANSION_WRATH_OF_THE_LICH_KING) -- includes pre-patch
+VgerCore.IsMainline = BuildNumber >= 90000
+VgerCore.IsDragonflight = VgerCore.IsMainline and BuildNumber >= 100000
+VgerCore.IsShadowlands = VgerCore.IsMainline and BuildNumber >= 90000
 
-VgerCore.DeathKnightsExist = VgerCore.IsShadowlands
-VgerCore.MonksExist = VgerCore.IsShadowlands
-VgerCore.DemonHuntersExist = VgerCore.IsShadowlands
-VgerCore.SpecsExist = VgerCore.IsShadowlands
-VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsBurningCrusade
-VgerCore.ArtifactsExist = VgerCore.IsShadowlands
-VgerCore.EquipmentSetsExist = VgerCore.IsShadowlands
+VgerCore.DeathKnightsExist = VgerCore.IsWrath or VgerCore.IsMainline
+VgerCore.MonksExist = VgerCore.IsMainline
+VgerCore.DemonHuntersExist = VgerCore.IsMainline
+VgerCore.EvokersExist = VgerCore.IsDragonflight
+VgerCore.SpecsExist = VgerCore.IsMainline
+VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath -- or VgerCore.IsCataclysm
+VgerCore.ArtifactsExist = VgerCore.IsMainline
+VgerCore.EquipmentSetsExist = VgerCore.IsWrath or VgerCore.IsMainline
 
 -- Common colors
 VgerCore.Color = {}

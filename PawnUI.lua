@@ -1422,7 +1422,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 
 	-- Hack for WoW Classic: after a moment, refresh the whole thing, because we might have gotten
 	-- incomplete data from the tooltip the first time.
-	if not IsAutomatedRefresh and (VgerCore.IsClassic or VgerCore.IsBurningCrusade) then
+	if not IsAutomatedRefresh and (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) then
 		local AutomatedRefresh = function()
 			if PawnUIComparisonItems[1] then PawnUIComparisonItems[1] = PawnGetItemData(PawnUIComparisonItems[1].Link) end
 			if PawnUIComparisonItems[2] then PawnUIComparisonItems[2] = PawnGetItemData(PawnUIComparisonItems[2].Link) end
@@ -1705,8 +1705,8 @@ function PawnUI_ShowBestGems()
 
 	local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, PawnUIGemQualityLevel)
 
-	if not VgerCore.IsClassic and not VgerCore.IsShadowlands then
-		-- Burning Crusade Classic: Divide by color
+	if not VgerCore.IsClassic and not VgerCore.IsRetail then
+		-- Burning Crusade Classic and Wrath Classic: Divide by color
 		if #(PawnScaleBestGems[PawnUICurrentScale].RedSocket[GemQualityLevel]) > 0 then
 			PawnUI_AddGemHeaderLine(format(PawnLocal.UI.GemsColorHeader, RED_GEM))
 			for _, GemData in pairs(PawnScaleBestGems[PawnUICurrentScale].RedSocket[GemQualityLevel]) do
@@ -1888,7 +1888,7 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_UpgradeTrackingList_UpdateSelection()
 
 	-- Advisor options
-	if not VgerCore.IsShadowlands then
+	if not VgerCore.IsMainline then
 		-- The bag upgrade advisor isn't supported on Classic.
 		PawnUIFrame_ShowBagUpgradeAdvisorCheck:Hide()
 	else
@@ -2031,7 +2031,7 @@ function PawnUIAboutTabPage_OnShow()
 	if Version then
 		PawnUIFrame_AboutVersionLabel:SetText(format(PawnUIFrame_AboutVersionLabel_Text, Version))
 	end
-	if not VgerCore.IsShadowlands then
+	if not VgerCore.IsMainline then
 		-- WoW Classic doesn't use the Mr. Robot scales, so hide that logo and information.
 		PawnUIFrame_MrRobotLogo:Hide()
 		PawnUIFrame_MrRobotLabel:SetPoint("TOPLEFT", 25, -210)

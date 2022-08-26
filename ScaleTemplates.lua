@@ -14,7 +14,7 @@
 function PawnFindScaleTemplate(ClassID, SpecID)
 	local _, Template
 	
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 		for _, Template in pairs(PawnScaleTemplatesClassic) do
 			if Template.ClassID == ClassID then return Template end
 		end
@@ -175,7 +175,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 		for _, StatName in pairs(Template.UnusableStats) do
 			ScaleValues[StatName] = PawnIgnoreStatValue
 
-			if (VgerCore.IsClassic or VgerCore.IsBurningCrusade) and StatName == "IsShield" then
+			if (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) and StatName == "IsShield" then
 				ScaleValues.BlockRating = nil
 				ScaleValues.BlockValue = nil
 			end

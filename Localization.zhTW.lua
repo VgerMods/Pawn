@@ -745,7 +745,7 @@ if VgerCore.IsClassic then
 	end
 end
 
-if VgerCore.IsBurningCrusade then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 	local TooltipParsing_BurningCrusade =
 	{

@@ -854,7 +854,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 		local TooltipParsing_Classic =
 		{
@@ -904,7 +904,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsBurningCrusade then
+	if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 		local TooltipParsing_BurningCrusade =
 		{
@@ -924,7 +924,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsShadowlands or VgerCore.IsBurningCrusade then
+	if VgerCore.IsRetail or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 
@@ -933,7 +933,7 @@ elseif GetLocale() == "esMX" then
 	PawnLocal.ThousandsSeparator = ","
 	PawnLocal.DecimalSeparator = "."
 
-	if VgerCore.IsBurningCrusade then
+	if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 end

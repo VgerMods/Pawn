@@ -7,7 +7,7 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsBurningCrusade then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 
 --========================================
@@ -335,4 +335,4 @@ PawnMetaGemQualityLevels =
 
 PawnMinimumItemLevelToConsiderGems = 100
 	
-end -- if VgerCore.IsBurningCrusade
+end -- if VgerCore.IsBurningCrusade or VgerCore.IsWrath

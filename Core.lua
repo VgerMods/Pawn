@@ -21,9 +21,9 @@ PawnSingleStatMultiplier = "_SingleMultiplier"
 PawnMultipleStatsFixed = "_MultipleFixed"
 PawnMultipleStatsExtract = "_MultipleExtract"
 
-local IsShadowlands = VgerCore.IsShadowlands
+local IsMainline = VgerCore.IsMainline
 
-if IsShadowlands then
+if IsMainline then
 	-- From Legion onward, there's no minimum level for wearing your class's best armor.
 	PawnBestArmorMinimumLevel = 0
 	-- From Cataclysm onward, armor specializations heavily penalize using the wrong armor type starting at level 50, changed to 27 in Shadowlands. https://wowhead.com/spell=86538/mail-specialization
@@ -52,7 +52,7 @@ end
 -- Turns a game constant into a regular expression but without the ^ and $ on the ends.
 function PawnGameConstantUnwrapped(Text)
 	-- Some of these constants don't exist on Classic versions, so skip them: but not on live, where we would want this to error out.
-	if Text == nil and not IsShadowlands then return "^UNUSED$" end
+	if Text == nil and not IsMainline then return "^UNUSED$" end
 
 	local Ret1 = gsub(Text, "%%", "%%%%")
 	return gsub(Ret1, "%-", "%%-")

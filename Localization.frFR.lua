@@ -689,7 +689,7 @@ if VgerCore.IsClassic then
 	PawnLocal.DecimalSeparator = "."
 end
 
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 	local TooltipParsing_Classic =
 	{
 		["WeaponDamageArcane"] = "^Dégâts %(Arcanes%) : # %- #$",
@@ -712,7 +712,7 @@ if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	end
 end
 
-if VgerCore.IsBurningCrusade then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 	local TooltipParsing_BurningCrusade =
 	{

@@ -694,7 +694,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 
 -- Special case: wands use different text on Classic.
 -- So, patch things up here.
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 	local TooltipParsing_Classic =
 	{
@@ -720,7 +720,7 @@ if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	end
 end
 
-if VgerCore.IsBurningCrusade then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 
 	local TooltipParsing_BurningCrusade =
 	{
