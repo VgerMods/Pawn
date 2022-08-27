@@ -184,6 +184,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
 		--[[Translation missing --]]
 		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
+		["SpellPowerInfo"] = "",
 		--[[Translation missing --]]
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "Aguante.  Aumenta tu vida.",
@@ -461,6 +462,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["SpellPenetrationClassic"] = "^Equipar: Las resistencias mágicas de los objetivos de tus hechizos se reducen # p%.$",
 		["SpellPenetrationShort"] = "^%+?# penetración de hechizos$",
 		["SpellPower"] = "^%+?# poder con hechizos$",
+		["SpellPower2"] = "^Equipar: Aumenta el poder con hechizos # p%.$",
 		["Spirit"] = "^%+?# d?e? ?[Ee]spíritu$",
 		["Staff"] = "^Bastón$",
 		["Stamina"] = "^%+?# d?e? ?[Aa]guante$",
@@ -924,7 +926,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsRetail or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsMainline or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 

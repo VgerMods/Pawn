@@ -3165,6 +3165,14 @@ function PawnCorrectScaleErrors(ScaleName)
 
 	-- Patch 9.2 removed the effects of domination shards outside of the Maw.
 	ThisScale.DominationSocket = nil
+
+	-- Wrath Classic merges SpellDamage and Healing into SpellPower.
+	if VgerCore.IsWrath then
+		ThisScale.SpellPower = ThisScale.SpellDamage or 0
+		if ThisScale.Healing > ThisScale.SpellPower then ThisScale.SpellPower = ThisScale.Healing end
+		ThisScale.SpellDamage = nil
+		ThisScale.Healing = nil
+	end
 end
 
 -- Replaces one incorrect stat with a correct stat.

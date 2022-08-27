@@ -152,6 +152,7 @@ PawnLocal =
 		["SpellHitInfo"] = "法术命中: 增加法术攻击命中目标的几率 (对于首领而言尤为重要)。",
 		--[[Translation missing --]]
 		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
+		["SpellPowerInfo"] = "",
 		["SpiritInfo"] = "精神 - 影响非战斗状态下生命和法力的恢复速度 (在战斗状态下, 仅影响法力的恢复速度).",
 		["StaminaInfo"] = "耐力，增加你的生命值上限。",
 		["StrengthInfo"] = "力量，为力量型职业增加攻击强度。",
@@ -428,6 +429,7 @@ PawnLocal =
 		["SpellPenetrationClassic"] = "^装备： 使你的法术目标的魔法抗性降低#点。$",
 		["SpellPenetrationShort"] = "^%+?# 法术穿透$",
 		["SpellPower"] = "^%+?# 法术强度$",
+		["SpellPower2"] = "^装备： 法术强度提高#点。$",
 		["Spirit"] = "^%+?# 精神$",
 		["Staff"] = "^法杖$",
 		["Stamina"] = "^%+?# 耐力$",

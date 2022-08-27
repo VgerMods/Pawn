@@ -36,7 +36,7 @@ local PawnStatsUnfiltered =
 	{SPELL_STAT2_NAME, "Agility", L.AgilityInfo, PawnStatUnignorable},
 	{SPELL_STAT4_NAME, "Intellect", L.IntellectInfo, PawnStatUnignorable},
 	{SPELL_STAT3_NAME, "Stamina", L.StaminaInfo, PawnStatUnignorable},
-	{SPELL_STAT5_NAME, "Spirit", L.SpiritInfo, PawnStatUnignorable, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{SPELL_STAT5_NAME, "Spirit", L.SpiritInfo, PawnStatUnignorable, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{ARMOR, "Armor", L.ArmorInfo, PawnStatUnignorable},
 
 	{STAT_CATEGORY_ENHANCEMENTS},
@@ -55,8 +55,8 @@ local PawnStatsUnfiltered =
 	{ITEM_MOD_RANGED_ATTACK_POWER_SHORT, "Rap", L.RapInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{ITEM_MOD_FERAL_ATTACK_POWER_SHORT, "FeralAp", L.FeralApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{L.SpellDamage, "SpellDamage", L.SpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
-	-- Wrath: add spell power
 	{L.Healing, "Healing", L.HealingInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_SPELL_POWER_SHORT, "SpellPower", L.SpellPowerInfo, PawnStatNormal, nil, { PawnStatWrath = true }},
 	{ITEM_MOD_DEFENSE_SKILL_RATING_SHORT, "DefenseRating", L.DefenseInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{ITEM_MOD_DODGE_RATING_SHORT, "DodgeRating", L.DodgeInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{ITEM_MOD_PARRY_RATING_SHORT , "ParryRating", L.ParryInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},

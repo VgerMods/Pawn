@@ -155,6 +155,7 @@ PawnLocal =
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
 		--[[Translation missing --]]
 		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
+		["SpellPowerInfo"] = "",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "主要屬性, 耐力.",
 		["StrengthInfo"] = "主要屬性, 力量.",
@@ -432,6 +433,7 @@ PawnLocal =
 		["SpellPenetrationClassic"] = "^裝備： 使你法術目標的魔法抗性降低#點。$",
 		["SpellPenetrationShort"] = "^%+?#法術穿透力$",
 		["SpellPower"] = "^%+?#法術能量$",
+		["SpellPower2"] = "^裝備： 提高#點法術能量。$",
 		["Spirit"] = "^%+?#精神$",
 		["Staff"] = "^法杖$",
 		["Stamina"] = "^%+?#耐力$",

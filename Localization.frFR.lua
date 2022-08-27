@@ -153,6 +153,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
 		--[[Translation missing --]]
 		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
+		["SpellPowerInfo"] = "",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "L'endurance. Augmente votre santé et vos points de vies.",
 		["StrengthInfo"] = "La force. Augmente la puissance d'attaque et les capacités de certaines classes.",
@@ -429,6 +430,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["SpellPenetrationClassic"] = "^E?\195?\137?quipé : Diminue les résistances magiques des cibles de vos sorts de #%.$",
 		["SpellPenetrationShort"] = "^%+?# à la pénétration des sorts$",
 		["SpellPower"] = "^%+?# Puissance des sorts$",
+		["SpellPower2"] = "^Équipé : Augmente la puissance des sorts de #%.$",
 		["Spirit"] = "^%+?# Esprit$",
 		["Staff"] = "^Bâton$",
 		["Stamina"] = "^%+?# Endurance$",

@@ -154,6 +154,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
 		--[[Translation missing --]]
 		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
+		["SpellPowerInfo"] = "",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "체력. 생명력을 증가시킵니다.",
 		["StrengthInfo"] = "힘. 몇몇 직업의 전투력을 증가시킵니다.",
@@ -431,6 +432,7 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 		["SpellPenetrationClassic"] = "^착용 효과: 자신의 주문에 대한 대상의 마법 저항력을 #만큼 감소시킵니다%.$",
 		["SpellPenetrationShort"] = "^주문 관통력 %+#$",
 		["SpellPower"] = "^주문력 %+?#$",
+		["SpellPower2"] = "^착용 효과: 주문력이 #만큼 증가합니다%.$",
 		["Spirit"] = "^정신력 %+?#$",
 		["Staff"] = "^지팡이$",
 		["Stamina"] = "^체력 %+?#$",

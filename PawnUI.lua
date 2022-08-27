@@ -1705,7 +1705,7 @@ function PawnUI_ShowBestGems()
 
 	local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, PawnUIGemQualityLevel)
 
-	if not VgerCore.IsClassic and not VgerCore.IsRetail then
+	if not VgerCore.IsClassic and not VgerCore.IsMainline then
 		-- Burning Crusade Classic and Wrath Classic: Divide by color
 		if #(PawnScaleBestGems[PawnUICurrentScale].RedSocket[GemQualityLevel]) > 0 then
 			PawnUI_AddGemHeaderLine(format(PawnLocal.UI.GemsColorHeader, RED_GEM))
