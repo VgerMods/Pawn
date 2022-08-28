@@ -308,20 +308,39 @@ indeterminate or an upgrade. This can be used for auto-sell rules, such as <code
 
 <h2>Updates</h2>
 <h3>Version 2.6</h3>
-<p>Introduces support for the Wrath of the Lich King Classic pre-patch.</p>
+<p>This version introduces support for the Wrath of the Lich King Classic 
+pre-patch.</p>
 <ul>
+	<li>There are all-new default stat weights for all classes and specs, 
+	including death knights, curated by HawsJon (thanks!). These should provide 
+	more accurate advice for level 80 and the mechanics changes in the 
+	pre-patch.<ul>
+		<li>As always, simulating your character and maintaining custom stat 
+		weights will yield even better advice, specifically tailored for your 
+		character.</li>
+	</ul>
+	</li>
 	<li>Spell damage and spell healing have been converted into a single stat, 
-	spell power. Your old scales will be converted automatically by choosing the 
-	better of the two weights.</li>
+	spell power. Existing custom scales will be converted automatically by 
+	choosing the better of the two weights, and then you can continue to adjust 
+	as needed.</li>
+	<li>Hit, crit, and haste have been converted from individual melee and spell 
+	ratings to a single rating each. Existing custom scales will be converted 
+	automatically by choosing the better of the two weights, and then you can 
+	continue to adjust as needed.</li>
 	<li>Pawn now includes data for the Wrath of the Lich King Classic gems, but 
-	it won't suggest those on the Burning Crusade items you currently have.</li>
+	it won't start suggesting those gems until you start getting Northrend gear.</li>
+	<li>There is currently no way to distinguish between armor and bonus 
+	armor—sorry, bear tanks.</li>
 </ul>
-<p>Some things are not supported:</p>
+<p>This version also includes minor fixes for Shadowlands, Classic Era, and The 
+Burning Crusade.</p>
 <ul>
-	<li>The default stat weights have not been updated for Wrath.</li>
-	<li>There are no default stat weights for death knights.</li>
-	<li>Armor and bonus armor are treated the same. (The distinction is 
-	particularly useful for bear tanks.)</li>
+	<li>Shadowlands: Added Pawn annotations to the tooltips for converted items 
+	at the Creation Catalyst. (Thanks Ian!)</li>
+	<li>Classic: Fixed a problem with the default stat weights where Pawn was 
+	suggesting dual-wielding weapons for protection warriors and paladins 
+	instead of using a shield.</li>
 </ul>
 <h3>Older versions</h3>
 <p>See the <a href="Version%20history.htm">version history</a> document for 
