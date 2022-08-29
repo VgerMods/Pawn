@@ -3139,7 +3139,6 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.IsRelic = nil
 	ThisScale.BonusArmor = nil
 	ThisScale.Multistrike = nil
-	ThisScale.SpellPower = nil
 
 	-- These were introduced in Classic versions.
 	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) then
@@ -3148,6 +3147,11 @@ function PawnCorrectScaleErrors(ScaleName)
 	if not (VgerCore.IsBurningCrusade or VgerCore.IsWrath) then
 		ThisScale.ExpertiseRating = nil
 		ThisScale.ResilienceRating = nil
+	end
+
+	-- Spell power appeared in Wrath but disappeared again later.
+	if not VgerCore.IsWrath then
+		ThisScale.SpellPower = nil
 	end
 
 	-- Pawn 1.9.7 makes it impossible to ignore primary stats, since they're on all armor now.
