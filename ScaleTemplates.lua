@@ -13,7 +13,7 @@
 -- Returns the template from PawnScaleTemplates for a given class ID and spec ID.
 function PawnFindScaleTemplate(ClassID, SpecID)
 	local _, Template
-	
+
 	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 		for _, Template in pairs(PawnScaleTemplatesClassic) do
 			if Template.ClassID == ClassID then return Template end
@@ -34,8 +34,8 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 	if NoStats then
 		ScaleValues = {}
 	else
-		if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
-			ScaleValues = 
+		if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+			ScaleValues =
 			{
 				["Stamina"] = 0.01,
 				["Armor"] = 0.1,
@@ -500,6 +500,11 @@ PawnScaleTemplates =
 
 PawnScaleTemplatesClassic =
 {
+
+{
+	["ClassID"] = 6, -- Death Knight
+	["PrimaryStats"] = { "Strength", "Agility", "Stamina" }
+},
 
 {
 	["ClassID"] = 11, -- Druid
