@@ -811,6 +811,11 @@ if GetLocale() == "esES" then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 
+	if VgerCore.IsWrath then
+		-- Wrath Classic on esES has an incorrect LARGE_NUMBER_SEPERATOR.
+		PawnLocal.ThousandsSeparator = ","
+	end
+
 	local TooltipParsing_All =
 	{
 		["Avoidance"] = "^%+# Evasión$",

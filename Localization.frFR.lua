@@ -689,6 +689,9 @@ Cette commande ne peut etre défaite!]=],
 if VgerCore.IsClassic then
 	PawnLocal.ThousandsSeparator = "NBSP"
 	PawnLocal.DecimalSeparator = "."
+elseif VgerCore.IsWrath then
+	PawnLocal.ThousandsSeparator = "NBSP"
+	PawnLocal.DecimalSeparator = ","
 end
 
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then

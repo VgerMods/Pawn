@@ -431,7 +431,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["SpellPenetrationClassic"] = "^Equipado: Reduz em # as resistências mágicas dos alvos dos seus feitiços%.$",
 		["SpellPenetrationShort"] = "^%+?# Penetração de Feitiço$",
 		["SpellPower"] = "^%+?# d?e? ?Poder [mM]ágico$",
-		["SpellPower2"] = "^Equipar: Aumenta em # o poder mágico.$",
+		["SpellPower2"] = "^Equipado: Aumenta em # o poder mágico.$",
 		["Spirit"] = "^%+?# d?e? ?Espírito$",
 		["Staff"] = "^Cajado$",
 		["Stamina"] = "^%+?# d?e? ?Vigor$",
