@@ -22,7 +22,7 @@ VgerCore.Version = VgerCoreThisVersion
 local BuildNumber = select(4, GetBuildInfo())
 VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC)
 VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_LEVEL_CURRENT == LE_EXPANSION_BURNING_CRUSADE) -- includes pre-patch
-VgerCore.IsWrath = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_WRATH_OF_THE_LICH_KING and LE_EXPANSION_LEVEL_CURRENT >= LE_EXPANSION_WRATH_OF_THE_LICH_KING) -- includes pre-patch
+VgerCore.IsWrath = ((WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC or WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC) and LE_EXPANSION_WRATH_OF_THE_LICH_KING and LE_EXPANSION_LEVEL_CURRENT >= LE_EXPANSION_WRATH_OF_THE_LICH_KING) -- includes pre-patch
 VgerCore.IsMainline = BuildNumber >= 90000
 VgerCore.IsDragonflight = VgerCore.IsMainline and BuildNumber >= 100000
 VgerCore.IsShadowlands = VgerCore.IsMainline and BuildNumber >= 90000
