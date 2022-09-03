@@ -319,7 +319,9 @@ function PawnClassicScaleProvider_AddScales()
 
 	elseif VgerCore.IsWrath then ------------------------------------------------------------
 
-		PawnAddPluginScaleFromTemplate(
+		local Scale
+
+		Scale = PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
 			6, -- Death Knight
 			1, -- Blood
@@ -328,8 +330,9 @@ function PawnClassicScaleProvider_AddScales()
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
 		)
+		Scale.LocalizedName = Scale.LocalizedName .. " " .. DAMAGER
 
-		PawnAddPluginScaleFromTemplate(
+		Scale = PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
 			6, -- Death Knight
 			2, -- Frost (tank)
@@ -338,8 +341,9 @@ function PawnClassicScaleProvider_AddScales()
 			Stamina=1, Health=0.09, Hp5=2, Armor=0.02, DefenseRating=0.89, DodgeRating=0.72, ParryRating=0.54, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=1, FireResist=0.2, FrostResist=0.2, ArcaneResist=0.2, ShadowResist=0.2, NatureResist=0.2,
 			MetaSocket=35, }
 		)
+		Scale.LocalizedName = Scale.LocalizedName .. " " .. TANK
 
-		PawnAddPluginScaleFromTemplate(
+		Scale = PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
 			6, -- Death Knight
 			3, -- Unholy
@@ -348,6 +352,7 @@ function PawnClassicScaleProvider_AddScales()
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
 		)
+		Scale.LocalizedName = Scale.LocalizedName .. " " .. DAMAGER
 
 		PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
