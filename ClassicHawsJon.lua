@@ -9,7 +9,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0600
+PawnClassicLastUpdatedVersion = 2.0602
 
 
 function PawnClassicScaleProvider_AddScales()
@@ -325,7 +325,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			6, -- Death Knight
 			1, -- Blood
-			{ Strength=1, Agility=0.48, MeleeDps=3.4, RangedDps=0, Ap=0.35, Rap=0, FeralAp=0, HitRating=0.87, ExpertiseRating=0.86, CritRating=0.54, HasteRating=0.52, ArmorPenetration=0.95,
+			{ Strength=1, Agility=0.48, Dps=0, MeleeDps=3.4, RangedDps=0, Ap=0.35, Rap=0, FeralAp=0, HitRating=0.87, ExpertiseRating=0.86, CritRating=0.54, HasteRating=0.52, ArmorPenetration=0.95,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -336,7 +336,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			6, -- Death Knight
 			2, -- Frost (tank)
-			{ Strength=1, Agility=0.78, MeleeDps=3.48, RangedDps=0, Ap=0.37, Rap=0, FeralAp=0, HitRating=1.03, ExpertiseRating=0.84, CritRating=0.46, HasteRating=0.29, ArmorPenetration=0.63,
+			{ Strength=1, Agility=0.78, Dps=0, MeleeDps=3.48, RangedDps=0, Ap=0.37, Rap=0, FeralAp=0, HitRating=1.03, ExpertiseRating=0.84, CritRating=0.46, HasteRating=0.29, ArmorPenetration=0.63,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=1, Health=0.09, Hp5=2, Armor=0.02, DefenseRating=0.89, DodgeRating=0.72, ParryRating=0.54, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=1, FireResist=0.2, FrostResist=0.2, ArcaneResist=0.2, ShadowResist=0.2, NatureResist=0.2,
 			MetaSocket=35, }
@@ -347,7 +347,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			6, -- Death Knight
 			3, -- Unholy
-			{ Strength=1, Agility=0.31, MeleeDps=2.09, RangedDps=0, Ap=0.34, Rap=0, FeralAp=0, HitRating=0.66, ExpertiseRating=0.51, CritRating=0.45, HasteRating=0.48, ArmorPenetration=0.32,
+			{ Strength=1, Agility=0.31, Dps=0, MeleeDps=2.09, RangedDps=0, Ap=0.34, Rap=0, FeralAp=0, HitRating=0.66, ExpertiseRating=0.51, CritRating=0.45, HasteRating=0.48, ArmorPenetration=0.32,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -358,7 +358,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			11, -- Druid
 			1, -- Balance
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.21, ExpertiseRating=0, CritRating=0.62, HasteRating=0.8, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.21, ExpertiseRating=0, CritRating=0.62, HasteRating=0.8, ArmorPenetration=0,
 			Intellect=0.38, Mana=0.032, Spirit=0.34, Mp5=0.58, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0.64, ShadowSpellDamage=0, NatureSpellDamage=0.43, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.21,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -368,7 +368,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			11, -- Druid
 			2, -- Feral (Damage)
-			{ Strength=1.35, Agility=1, MeleeDps=0, RangedDps=0, Ap=0.61, Rap=0, FeralAp=0.61, HitRating=0.59, ExpertiseRating=0.59, CritRating=0.47, HasteRating=0.41, ArmorPenetration=0.59,
+			{ Strength=1.35, Agility=1, Dps=0, MeleeDps=0, RangedDps=0, Ap=0.61, Rap=0, FeralAp=0.61, HitRating=0.59, ExpertiseRating=0.59, CritRating=0.47, HasteRating=0.41, ArmorPenetration=0.59,
 			Intellect=0.1, Mana=0.009, Spirit=0.05, Mp5=0.3, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -378,7 +378,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			11, -- Druid
 			3, -- Feral (Tank)
-			{ Strength=0.41, Agility=0.47, MeleeDps=0, RangedDps=0, Ap=0.34, Rap=0, FeralAp=0.34, HitRating=0.16, ExpertiseRating=0.18, CritRating=0.15, HasteRating=0.31, ArmorPenetration=0.2,
+			{ Strength=0.41, Agility=0.47, Dps=0, MeleeDps=0, RangedDps=0, Ap=0.34, Rap=0, FeralAp=0.34, HitRating=0.16, ExpertiseRating=0.18, CritRating=0.15, HasteRating=0.31, ArmorPenetration=0.2,
 			Intellect=0.1, Mana=0.009, Spirit=0.05, Mp5=0.3, SpellPower=0.025, NatureSpellDamage=0.025, HolySpellDamage=0, SpellPenetration=0,
 			Stamina=1, Health=0.055, Hp5=2, Armor=0.15, DefenseRating=0.26, DodgeRating=0.56, ParryRating=0, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=1, FireResist=0.2, FrostResist=0.2, ArcaneResist=0.2, ShadowResist=0.2, NatureResist=0.2,
 			MetaSocket=35, }
@@ -388,7 +388,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			11, -- Druid
 			4, -- Restoration
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.35, HasteRating=1, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.35, HasteRating=1, ArmorPenetration=0,
 			Intellect=0.66, Mana=0.036, Spirit=0.94, Mp5=1.8, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0.88, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -398,7 +398,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			3, -- Hunter
 			1, -- Beast Mastery
-			{ Strength=0.05, Agility=1, MeleeDps=0.75, RangedDps=2.6, Ap=0.46, Rap=0.46, FeralAp=0, HitRating=1.08, ExpertiseRating=0.05, CritRating=0.84, HasteRating=0.16, ArmorPenetration=0.96,
+			{ Strength=0.05, Agility=1, Dps=0, MeleeDps=0.75, RangedDps=2.6, Ap=0.46, Rap=0.46, FeralAp=0, HitRating=1.08, ExpertiseRating=0.05, CritRating=0.84, HasteRating=0.16, ArmorPenetration=0.96,
 			Intellect=0.55, Mana=0.03, Spirit=0.05, Mp5=2.4, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -408,7 +408,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			3, -- Hunter
 			2, -- Marksmanship
-			{ Strength=0.05, Agility=1, MeleeDps=0.75, RangedDps=2.6, Ap=0.46, Rap=0.46, FeralAp=0, HitRating=1.08, ExpertiseRating=0.05, CritRating=0.84, HasteRating=0.16, ArmorPenetration=0.96,
+			{ Strength=0.05, Agility=1, Dps=0, MeleeDps=0.75, RangedDps=2.6, Ap=0.46, Rap=0.46, FeralAp=0, HitRating=1.08, ExpertiseRating=0.05, CritRating=0.84, HasteRating=0.16, ArmorPenetration=0.96,
 				Intellect=0.55, Mana=0.03, Spirit=0.05, Mp5=2.4, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 				Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -418,7 +418,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			3, -- Hunter
 			3, -- Survival
-			{ Strength=0.05, Agility=1, MeleeDps=0.75, RangedDps=2.6, Ap=0.46, Rap=0.46, FeralAp=0, HitRating=1.08, ExpertiseRating=0.05, CritRating=0.84, HasteRating=0.16, ArmorPenetration=0.96,
+			{ Strength=0.05, Agility=1, Dps=0, MeleeDps=0.75, RangedDps=2.6, Ap=0.46, Rap=0.46, FeralAp=0, HitRating=1.08, ExpertiseRating=0.05, CritRating=0.84, HasteRating=0.16, ArmorPenetration=0.96,
 			Intellect=0.55, Mana=0.03, Spirit=0.05, Mp5=2.4, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -428,7 +428,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			8, -- Mage
 			1, -- Arcane
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0.87, ExpertiseRating=0, CritRating=0.6, HasteRating=0.59, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0.87, ExpertiseRating=0, CritRating=0.6, HasteRating=0.59, ArmorPenetration=0,
 			Intellect=0.46, Mana=0.025, Spirit=0.42, Mp5=1.13, FireSpellDamage=0.064, FrostSpellDamage=0.22, ArcaneSpellDamage=0.95, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.09,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -438,7 +438,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			8, -- Mage
 			2, -- Fire
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0.93, ExpertiseRating=0, CritRating=0.77, HasteRating=0.82, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0.93, ExpertiseRating=0, CritRating=0.77, HasteRating=0.82, ArmorPenetration=0,
 			Intellect=0.44, Mana=0.024, Spirit=0.46, Mp5=0.9, FireSpellDamage=0.95, FrostSpellDamage=0.32, ArcaneSpellDamage=0.168, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.09,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -448,7 +448,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			8, -- Mage
 			3, -- Frost
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.22, ExpertiseRating=0, CritRating=0.58, HasteRating=0.63, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.22, ExpertiseRating=0, CritRating=0.58, HasteRating=0.63, ArmorPenetration=0,
 			Intellect=0.37, Mana=0.02, Spirit=0.38, Mp5=0.8, FireSpellDamage=0.05, FrostSpellDamage=0.95, ArcaneSpellDamage=0.13, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.07,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -458,7 +458,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			2, -- Paladin
 			1, -- Holy
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.46, HasteRating=0.39, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.46, HasteRating=0.39, ArmorPenetration=0,
 			Intellect=1, Mana=0.009, Spirit=0.28, Mp5=1.6, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0.01, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -468,7 +468,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			2, -- Paladin
 			2, -- Protection
-			{ Strength=0.64, Agility=0.8, MeleeDps=1.77, RangedDps=0, Ap=0.064, Rap=0, FeralAp=0, HitRating=0.78, ExpertiseRating=0.27, CritRating=0.6, HasteRating=0.42, ArmorPenetration=0.14,
+			{ Strength=0.64, Agility=0.8, Dps=0, MeleeDps=1.77, RangedDps=0, Ap=0.064, Rap=0, FeralAp=0, HitRating=0.78, ExpertiseRating=0.27, CritRating=0.6, HasteRating=0.42, ArmorPenetration=0.14,
 			Intellect=0.5, Mana=0.045, Spirit=0.05, Mp5=1, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0.44, SpellPower=0.44, SpellPenetration=0.03,
 			Stamina=1, Health=0.09, Hp5=2, Armor=0.02, DefenseRating=0.7, DodgeRating=0.7, ParryRating=0.6, BlockRating=0.6, BlockValue=0.15, ResilienceRating=0.2, AllResist=1, FireResist=0.2, FrostResist=0.2, ArcaneResist=0.2, ShadowResist=0.2, NatureResist=0.2,
 			MetaSocket=35, }
@@ -478,7 +478,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			2, -- Paladin
 			3, -- Retribution
-			{ Strength=1, Agility=0.46, MeleeDps=5.5, RangedDps=0, Ap=0.41, Rap=0, FeralAp=0, HitRating=0.84, ExpertiseRating=0.52, CritRating=0.44, HasteRating=0.35, ArmorPenetration=0.3,
+			{ Strength=1, Agility=0.46, Dps=0, MeleeDps=5.5, RangedDps=0, Ap=0.41, Rap=0, FeralAp=0, HitRating=0.84, ExpertiseRating=0.52, CritRating=0.44, HasteRating=0.35, ArmorPenetration=0.3,
 			Intellect=0.24, Mana=0.013, Spirit=0.05, Mp5=1.4, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0.2, SpellPower=0.2, SpellPenetration=0.010,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -488,7 +488,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			5, -- Priest
 			1, -- Discipline
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.68, HasteRating=0.59, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.68, HasteRating=0.59, ArmorPenetration=0,
 			Intellect=1, Mana=0.055, Spirit=0.42, Mp5=1.8, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=58, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -498,7 +498,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			5, -- Priest
 			2, -- Holy
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.42, HasteRating=0.58, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.42, HasteRating=0.58, ArmorPenetration=0,
 			Intellect=0.83, Mana=0.046, Spirit=1, Mp5=2.44, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0.7, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -508,7 +508,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			5, -- Priest
 			3, -- Shadow
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.12, ExpertiseRating=0, CritRating=0.61, HasteRating=0.56, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.12, ExpertiseRating=0, CritRating=0.61, HasteRating=0.56, ArmorPenetration=0,
 			Intellect=0.19, Mana=0.01, Spirit=0.21, Mp5=1, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=1, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.08,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -519,7 +519,7 @@ function PawnClassicScaleProvider_AddScales()
 			4, -- Rogue
 			1, -- Assassination
 			{ IsOffHand=PawnIgnoreStatValue, IsFrill=PawnIgnoreStatValue, IsShield=PawnIgnoreStatValue,
-			Strength=0.5, Agility=1, MeleeDps=3, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.85, HasteRating=0.81, ArmorPenetration=1, MeleeMinDamage=1.25, MeleeMaxDamage=1.25,
+			Strength=0.5, Agility=1, Dps=0, MeleeDps=3, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.85, HasteRating=0.81, ArmorPenetration=1, MeleeMinDamage=1.25, MeleeMaxDamage=1.25,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -530,7 +530,7 @@ function PawnClassicScaleProvider_AddScales()
 			4, -- Rogue
 			2, -- Combat
 			{ IsOffHand=PawnIgnoreStatValue, IsFrill=PawnIgnoreStatValue, IsShield=PawnIgnoreStatValue,
-			Strength=0.5, Agility=1, MeleeDps=3, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.97, HasteRating=0.7, ArmorPenetration=1, MeleeMinDamage=0.875, MeleeMaxDamage=0.875,
+			Strength=0.5, Agility=1, Dps=0, MeleeDps=3, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.97, HasteRating=0.7, ArmorPenetration=1, MeleeMinDamage=0.875, MeleeMaxDamage=0.875,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -541,7 +541,7 @@ function PawnClassicScaleProvider_AddScales()
 			4, -- Rogue
 			3, -- Subtlety
 			{ IsOffHand=PawnIgnoreStatValue, IsFrill=PawnIgnoreStatValue, IsShield=PawnIgnoreStatValue,
-			Strength=0.5, Agility=1, MeleeDps=3, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.85, HasteRating=0.81, ArmorPenetration=1, MeleeMinDamage=1.25, MeleeMaxDamage=1.25,
+			Strength=0.5, Agility=1, Dps=0, MeleeDps=3, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.85, HasteRating=0.81, ArmorPenetration=1, MeleeMinDamage=1.25, MeleeMaxDamage=1.25,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -552,7 +552,7 @@ function PawnClassicScaleProvider_AddScales()
 			4, -- Rogue
 			nil,
 			{ IsCloth=PawnIgnoreStatValue, IsLeather=PawnIgnoreStatValue, IsMail=PawnIgnoreStatValue, IsPlate=PawnIgnoreStatValue, IsShield=PawnIgnoreStatValue, IsRanged=PawnIgnoreStatValue, MainHandDps=PawnIgnoreStatValue, IsFrill=PawnIgnoreStatValue,
-			Strength=0.5, Agility=1, MeleeDps=2, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.85, HasteRating=0.8, ArmorPenetration=1, MeleeSpeed=-80, SpeedBaseline=2.9,
+			Strength=0.5, Agility=1, Dps=0, MeleeDps=2, RangedDps=0, Ap=0.45, Rap=0, FeralAp=0, HitRating=0.92, ExpertiseRating=0.84, CritRating=0.85, HasteRating=0.8, ArmorPenetration=1, MeleeSpeed=-80, SpeedBaseline=2.9,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -562,7 +562,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			7, -- Shaman
 			1, -- Elemental
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.94, ExpertiseRating=0, CritRating=0.68, HasteRating=1.01, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.94, ExpertiseRating=0, CritRating=0.68, HasteRating=1.01, ArmorPenetration=0,
 			Intellect=0.19, Mana=0.008, Spirit=0.09, Mp5=1.14, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0.95, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.38,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -572,7 +572,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			7, -- Shaman
 			2, -- Enhancement
-			{ Strength=0.65, Agility=1, MeleeDps=3.4, RangedDps=0, Ap=0.59, Rap=0, FeralAp=0, HitRating=1.8, ExpertiseRating=1.53, CritRating=0.98, HasteRating=0.76, ArmorPenetration=0.47,
+			{ Strength=0.65, Agility=1, Dps=0, MeleeDps=3.4, RangedDps=0, Ap=0.59, Rap=0, FeralAp=0, HitRating=1.8, ExpertiseRating=1.53, CritRating=0.98, HasteRating=0.76, ArmorPenetration=0.47,
 			Intellect=1, Mana=0.03, Spirit=0.05, Mp5=1, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0.3, HolySpellDamage=0, SpellPower=0.53, SpellPenetration=0.11,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -582,7 +582,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			7, -- Shaman
 			3, -- Restoration
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.95, HasteRating=1.8, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.95, HasteRating=1.8, ArmorPenetration=0,
 			Intellect=0.75, Mana=0.009, Spirit=0.61, Mp5=0.95, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -592,7 +592,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			9, -- Warlock
 			1, -- Affliction
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.13, ExpertiseRating=0, CritRating=0.4, HasteRating=0.64, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.13, ExpertiseRating=0, CritRating=0.4, HasteRating=0.64, ArmorPenetration=0,
 			Intellect=0.15, Mana=0.008, Spirit=0.51, Mp5=1, FireSpellDamage=0.6, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0.6, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.08,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -602,7 +602,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			9, -- Warlock
 			2, -- Demonology
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.18, ExpertiseRating=0, CritRating=0.42, HasteRating=0.68, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.18, ExpertiseRating=0, CritRating=0.42, HasteRating=0.68, ArmorPenetration=0,
 			Intellect=0.15, Mana=0.008, Spirit=0.48, Mp5=1, FireSpellDamage=0.6, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0.6, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.08,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -612,7 +612,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			9, -- Warlock
 			3, -- Destruction
-			{ Strength=0, Agility=0.05, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.39, ExpertiseRating=0, CritRating=0.61, HasteRating=0.8, ArmorPenetration=0,
+			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=1.39, ExpertiseRating=0, CritRating=0.61, HasteRating=0.8, ArmorPenetration=0,
 			Intellect=0.23, Mana=0.012, Spirit=0.55, Mp5=1, FireSpellDamage=0.6, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0.6, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=1, SpellPenetration=0.08,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -622,7 +622,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			1, -- Warrior
 			1, -- Arms
-			{ Strength=1, Agility=0.69, MeleeDps=5.31, RangedDps=0, Ap=0.52, Rap=0, FeralAp=0, HitRating=0.88, ExpertiseRating=1.21, CritRating=0.85, HasteRating=0.57, ArmorPenetration=1.1,
+			{ Strength=1, Agility=0.69, Dps=0, MeleeDps=5.31, RangedDps=0, Ap=0.52, Rap=0, FeralAp=0, HitRating=0.88, ExpertiseRating=1.21, CritRating=0.85, HasteRating=0.57, ArmorPenetration=1.1,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -632,7 +632,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			1, -- Warrior
 			2, -- Fury
-			{ Strength=1, Agility=0.77, MeleeDps=5.22, RangedDps=0, Ap=0.66, Rap=0, FeralAp=0, HitRating=0.55, ExpertiseRating=1.5, CritRating=0.93, HasteRating=0.79, ArmorPenetration=1.38,
+			{ Strength=1, Agility=0.77, Dps=0, MeleeDps=5.22, RangedDps=0, Ap=0.66, Rap=0, FeralAp=0, HitRating=0.55, ExpertiseRating=1.5, CritRating=0.93, HasteRating=0.79, ArmorPenetration=1.38,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.12, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
@@ -643,7 +643,7 @@ function PawnClassicScaleProvider_AddScales()
 			1, -- Warrior
 			3, -- Protection
 			{ IsOffHand=PawnIgnoreStatValue,
-			Strength=0.33, Agility=0.59, MeleeDps=3.13, RangedDps=0, Ap=0.34, Rap=0, FeralAp=0, HitRating=0.67, ExpertiseRating=0.94, CritRating=0.28, HasteRating=0.21, ArmorPenetration=0.29,
+			Strength=0.33, Agility=0.59, Dps=0, MeleeDps=3.13, RangedDps=0, Ap=0.34, Rap=0, FeralAp=0, HitRating=0.67, ExpertiseRating=0.94, CritRating=0.28, HasteRating=0.21, ArmorPenetration=0.29,
 			Intellect=0, Mana=0, Spirit=0.05, Mp5=0, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellPenetration=0,
 			Stamina=1, Health=0.09, Hp5=2, Armor=0.02, DefenseRating=0.81, DodgeRating=0.7, ParryRating=0.58, BlockRating=0.59, BlockValue=0.35, ResilienceRating=0.2, AllResist=1, FireResist=0.2, FrostResist=0.2, ArcaneResist=0.2, ShadowResist=0.2, NatureResist=0.2,
 			MetaSocket=35, }
