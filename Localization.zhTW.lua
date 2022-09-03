@@ -773,7 +773,32 @@ if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 	local Key, NewString
 	for Key, NewString in pairs(TooltipParsing_BurningCrusade) do
 		PawnLocal.TooltipParsing[Key] = NewString
-	end	
+	end
+end
+
+if VgerCore.IsWrath then
+
+	local TooltipParsing_Wrath =
+	{
+		["BlockRating"] = "^裝備: 提高#點格擋等級。$",
+		["CritRating"] = "^裝備: 提高#點致命一擊等級。$",
+		["CritRating2"] = "^裝備: 提高#點致命一擊等級。$",
+		["CritRating3"] = "^裝備: 提高#點致命一擊等級。$",
+		["CritRatingShort"] = "^裝備: 提高#點致命一擊等級。$",
+		["DefenseRating"] = "^裝備: 提高#點防禦等級。$",
+		["ExpertiseRating"] = "^裝備: 提高#點熟練等級。$",
+		["HasteRating"] = "^裝備: 提高#點加速等級。$",
+		["HitRating"] = "^裝備: 提高#點命中等級。$",
+		["HitRating2"] = "^裝備: 提高#點命中等級。$",
+		["Hp55"] = "^每5秒恢復#生命力$",
+		["ResilienceRating"] = "^裝備: 提高#點韌性等級。$",
+		["SpellPower2"] = "^裝備: 提高#點法術能量。$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Wrath) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
 end
 
 PawnLocal.Specs =
