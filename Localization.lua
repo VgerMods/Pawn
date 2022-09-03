@@ -314,6 +314,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 		["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
 		["FeralApMoonkin"] = "^Equip: Increases attack power by # in Cat, Bear, Dire Bear, and Moonkin forms only%.$",
+		["FeralApWrath"] = "^Increases attack power by # in Cat, Bear, Dire Bear, and Moonkin forms only%.$",
 		["FireResist"] = "^%+?# Fire Resistance$",
 		["FireSpellDamage"] = "^%+# Fire Spell Damage$",
 		["FireSpellDamage2"] = "^Equip: Increases damage done by Fire spells and effects by up to #%.$",

@@ -314,6 +314,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["ExpertiseRating"] = "^Équipé : Augmente de # le score d’expertise%.$",
 		["FeralAp"] = "^E?\195?\137?quipé : %+# à la puissance d'attaque pour les formes de félin, d'ours et d'ours redoutable uniquement%.$",
 		["FeralApMoonkin"] = "^Équipé : Augmente de # la puissance d'attaque pour les formes de félin, d'ours, d'ours redoutable et de sélénien uniquement%.$",
+		["FeralApWrath"] = "^Augmente de # la puissance d'attaque pour les formes de félin, d'ours, d'ours redoutable et de sélénien uniquement%.$",
 		["FireResist"] = "^%+?# à la résistance Feu$",
 		["FireSpellDamage"] = "^%+# aux dégâts des sorts de Feu$",
 		["FireSpellDamage2"] = "^E?\195?\137?quipé : Augmente les dégâts infligés par les sorts et effets de Feu de # au maximum%.$",

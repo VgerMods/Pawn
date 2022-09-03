@@ -315,6 +315,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["ExpertiseRating"] = "^Equipado: Aumenta em # a taxa de aptidão%.$",
 		["FeralAp"] = "^Equipado: %+# de Poder de Ataque sob forma de Felino, Urso e Urso Hediondo%.$",
 		["FeralApMoonkin"] = "^Equipado: Aumenta em # o poder de ataque quando em forma de Felino, Urso, Urso Hediondo e Luniscante%.$",
+		["FeralApWrath"] = "^Aumenta em # o poder de ataque quando em forma de Felino, Urso, Urso Hediondo e Luniscante%.$",
 		["FireResist"] = "^%+?# de resistência a Fogo$",
 		["FireSpellDamage"] = "^%+# Dano Mágico de Fogo$",
 		["FireSpellDamage2"] = "^Equipado: Aumenta em até # o dano causado por feitiços e efeitos de Fogo%.$",

@@ -273,6 +273,7 @@ PawnRegexes =
 	{L.Rap, "Rap"}, -- /pawn compare 18473
 	{L.FeralAp, "FeralAp"}, -- Classic, /pawn compare 22988
 	{L.FeralApMoonkin, "FeralAp"}, -- Burning Crusade, /pawn compare 22988
+	{L.FeralApWrath}, -- Wrath, /pawn compare 22988 (in Wrath it only appears on druid items and is not a real stat, but it shouldn't get an orange diamond)
 	{L.Mp5, "Mp5"}, -- /pawn compare 22988
 	{L.Mp52, "Mp5"}, -- /pawn compare item:789::::::2074
 	{L.Mp53, "Mp5"}, -- Burning Crusade, socket bonus on /pawn compare 34360

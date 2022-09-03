@@ -314,6 +314,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["ExpertiseRating"] = "^UNUSED$",
 		["FeralAp"] = "^UNUSED$",
 		["FeralApMoonkin"] = "^UNUSED$",
+		["FeralApWrath"] = "^UNUSED$",
 		["FireResist"] = "^UNUSED$",
 		["FireSpellDamage"] = "^UNUSED$",
 		["FireSpellDamage2"] = "^UNUSED$",

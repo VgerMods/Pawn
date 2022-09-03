@@ -346,6 +346,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["ExpertiseRating"] = "^Equipar: Aumenta tu índice de pericia [ue]n # ?p?%.$",
 		["FeralAp"] = "^Equipar: %+# p%. de poder de ataque solo en las formas felina, de oso y de oso temible%.$",
 		["FeralApMoonkin"] = "^Equipar: Aumenta e?n? ?# p%. el poder de ataque bajo formas felinas, de oso, de oso temible y de lechúcico lunar%.$",
+		["FeralApWrath"] = "^Aumenta e?n? ?# p%. el poder de ataque bajo formas felinas, de oso, de oso temible y de lechúcico lunar%.$",
 		["FireResist"] = "^%+?# resistencia a Fuego$",
 		["FireSpellDamage"] = "^%+# daño con hechizos de Fuego$",
 		["FireSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos de Fuego%.$",

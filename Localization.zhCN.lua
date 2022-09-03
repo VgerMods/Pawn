@@ -313,6 +313,7 @@ PawnLocal =
 		["ExpertiseRating"] = "^装备： 使你的精准等级提高#点。$",
 		["FeralAp"] = "^装备： ?在猎豹、熊和巨熊形态下的攻击强度提高#点。$",
 		["FeralApMoonkin"] = "^装备： 在猎豹、熊、巨熊和枭兽形态下的攻击强度提高#点。$",
+		["FeralApWrath"] = "^在猎豹、熊、巨熊和枭兽形态下的攻击强度提高#点。$",
 		["FireResist"] = "^%+?# 火焰抗性$",
 		["FireSpellDamage"] = "^%+# 火焰法术伤害$",
 		["FireSpellDamage2"] = "^装备： ?提高火焰法术和效果所造成的伤害，最多#点。$",

@@ -309,6 +309,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["ExpertiseRating"] = "^Anlegen: Erhöht Eure Waffenkundewertung um #%.$",
 		["FeralAp"] = "^Anlegen: %+# Angriffskraft in Katzengestalt, Bärengestalt oder Terrorbärengestalt%.$",
 		["FeralApMoonkin"] = "^Anlegen: Erhöht die Angriffskraft in Katzengestalt, Bärengestalt, Terrorbärengestalt oder Mondkingestalt um #%.$",
+		["FeralApWrath"] = "^Erhöht die Angriffskraft in Katzengestalt, Bärengestalt, Terrorbärengestalt oder Mondkingestalt um #%.$",
 		["FireResist"] = "^%+?# Feuerwiderstand$",
 		["FireSpellDamage"] = "^%+# Feuerzauberschaden$",
 		["FireSpellDamage2"] = "^Anlegen: Erhöht durch Feuerzauber und Feuereffekte zugefügten Schaden um bis zu #%.$",
