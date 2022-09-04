@@ -52,7 +52,7 @@ local PawnStatsUnfiltered =
 	{STAT_MASTERY, "MasteryRating", L.MasteryInfo, PawnStatNormal, nil, { PawnStatMainline = true }},
 	{STAT_VERSATILITY, "Versatility", L.VersatilityInfo, PawnStatNormal, nil, { PawnStatMainline = true }},
 	{ITEM_MOD_ATTACK_POWER_SHORT, "Ap", L.ApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
-	{ITEM_MOD_RANGED_ATTACK_POWER_SHORT, "Rap", L.RapInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
+	{ITEM_MOD_RANGED_ATTACK_POWER_SHORT, "Rap", L.RapInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{ITEM_MOD_FERAL_ATTACK_POWER_SHORT, "FeralAp", L.FeralApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{L.SpellDamage, "SpellDamage", L.SpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{L.Healing, "Healing", L.HealingInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
