@@ -63,7 +63,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				["Ap"] = 0.5,
 				["Rap"] = 0.4,
 				["FeralAp"] = 0.5,
-	
+
 				["SpellDamage"] = 0.855,
 				["Healing"] = 0.455,
 
@@ -73,7 +73,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				["BlockRating"] = 1,
 				["BlockValue"] = 0.65,
 				["ResilienceRating"] = 1,
-	
+
 				["MetaSocketEffect"] = 36,
 
 				["Mp5"] = 2.5,
@@ -142,6 +142,16 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 			-- Only druids can make use of feral AP.
 			if Template.ClassID ~= 11 then
 				ScaleValues.FeralAp = nil
+			end
+
+			-- Wrath merged some stats together.
+			if VgerCore.IsWrath then
+				ScaleValues.SpellCritRating = nil
+				ScaleValues.SpellHitRating = nil
+				ScaleValues.SpellHasteRating = nil
+				ScaleValues.SpellPower = ScaleValues.SpellDamage
+				ScaleValues.SpellDamage = nil
+				ScaleValues.Healing = nil
 			end
 		else
 			ScaleValues =

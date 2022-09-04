@@ -9,7 +9,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0602
+PawnClassicLastUpdatedVersion = 2.0603
 
 
 function PawnClassicScaleProvider_AddScales()
@@ -489,7 +489,7 @@ function PawnClassicScaleProvider_AddScales()
 			5, -- Priest
 			1, -- Discipline
 			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=0, ExpertiseRating=0, CritRating=0.68, HasteRating=0.59, ArmorPenetration=0,
-			Intellect=1, Mana=0.055, Spirit=0.42, Mp5=1.8, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=58, SpellPenetration=0,
+			Intellect=1, Mana=0.055, Spirit=0.42, Mp5=1.8, FireSpellDamage=0, FrostSpellDamage=0, ArcaneSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0.58, SpellPenetration=0,
 			Stamina=0.3, Health=0.03, Hp5=1, Armor=0.005, DefenseRating=0.05, DodgeRating=0.05, ParryRating=0.05, BlockRating=0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04,
 			MetaSocket=35, }
 		)
