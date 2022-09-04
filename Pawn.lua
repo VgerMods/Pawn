@@ -1287,7 +1287,9 @@ function PawnGetItemData(ItemLink)
 				if PawnCommon.DebugCache then
 					VgerCore.Message(VgerCore.Color.Green .. "    Cached item and this tooltip both had " .. Item.NumLines .. " lines, so using cached item")
 				end
-				return CachedItem
+				if CachedItem.Values then
+					return CachedItem
+				end
 			else
 				-- The item in the cache has a different number of lines than this new item, so remove the old item from the cache, and then we'll add the new one later.
 				PawnUncacheItem(CachedItem)
