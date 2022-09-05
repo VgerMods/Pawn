@@ -264,6 +264,8 @@ PawnLocal =
 		["Armor"] = "^#點護甲$",
 		["Armor2"] = "^裝備: %+#點護甲值。$",
 		["ArmorPenetration"] = "^裝備: 你的攻擊無視目標#點護甲值。$",
+		["ArmorPenetrationRating"] = "^裝備: 提高#點護甲穿透等級。$",
+		["ArmorPenetrationShort"] = "^%+?#護甲穿透等級$",
 		["Avoidance"] = "^%+#迴避$",
 		["Axe"] = "^斧$",
 		["BagSlots"] = "^%d+格容器$",
@@ -314,6 +316,7 @@ PawnLocal =
 		["EnchantmentTitaniumWeaponChain"] = "^泰坦鋼武器鍊$",
 		["Equip"] = "裝備: ",
 		["ExpertiseRating"] = "^裝備: 提高#點熟練。$",
+		["ExpertiseRatingShort"] = "^%+?#熟練等級$",
 		["FeralAp"] = "^裝備： 在獵豹、熊或巨熊形態下的攻擊強度提高#點。$",
 		["FeralApMoonkin"] = "^裝備: 在獵豹、熊、巨熊和梟獸形態下的攻擊強度提高#點。$",
 		["FeralApWrath"] = "^使你在獵豹、熊、巨熊和梟獸形態下的攻擊強度提高#點。$",
@@ -781,6 +784,7 @@ if VgerCore.IsWrath then
 
 	local TooltipParsing_Wrath =
 	{
+		["Ap3"] = "^裝備: 提高#點攻擊強度。$",
 		["BlockRating"] = "^裝備: 提高#點格擋等級。$",
 		["CritRating"] = "^裝備: 提高#點致命一擊等級。$",
 		["CritRating2"] = "^裝備: 提高#點致命一擊等級。$",
