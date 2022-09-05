@@ -890,7 +890,7 @@ function PawnCommand(Command)
 		local ItemID = tonumber(ItemLink)
 		ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE")
 		if ItemID then
-			ItemRefTooltip:SetItemByID(ItemID)
+			ItemRefTooltip:SetHyperlink("item:" .. ItemID)
 		else
 			if strsub(ItemLink, 1, 5) ~= "item:" then ItemLink = "item:" .. ItemLink end
 			ItemRefTooltip:SetHyperlink(ItemLink)
