@@ -684,6 +684,7 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 		["ScaleRename"] = "重新命名",
 		["ScaleRenameTooltip"] = "重新命名這個權重.",
 		["ScaleSelectorHeader"] = "選擇一個權重:",
+		["ScaleSelectorNoneWarning"] = "至少選擇一項。",
 		["ScaleSelectorShowingSuggestionsFor"] = "當前屬性權重的專精",
 		["ScaleSelectorShowScale"] = "在提示欄中顯示權重",
 		["ScaleSelectorShowScaleTooltip"] = "當選取時，此權重值將顯示在此角色的物品提示欄中。每個權重可以顯示在一個、多個，或無角色中。",

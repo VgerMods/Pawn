@@ -668,6 +668,7 @@ Este comando não pode ser desfeito!]=],
 		["ScaleRename"] = "Renomear",
 		["ScaleRenameTooltip"] = "Renomeia esta escala.",
 		["ScaleSelectorHeader"] = "Selecione uma escala:",
+		["ScaleSelectorNoneWarning"] = "Selecione pelo menos um.",
 		["ScaleSelectorShowingSuggestionsFor"] = "Mostrando sugestões para",
 		["ScaleSelectorShowScale"] = "Mostrar esta escala nas dicas de ferramentas",
 		["ScaleSelectorShowScaleTooltip"] = [=[Ative essa opção para mostrar essa escala nas dicas de ferramentas de itens e fazer com que o Pawn use-a para sugerir melhorias. Você pode ter mais de uma escala ativa em cada personagem.

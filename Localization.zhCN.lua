@@ -666,6 +666,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["ScaleRename"] = "重命名",
 		["ScaleRenameTooltip"] = "为这个属性权重重命名.",
 		["ScaleSelectorHeader"] = "选择一个属性权重:",
+		["ScaleSelectorNoneWarning"] = "至少选择一项。",
 		["ScaleSelectorShowingSuggestionsFor"] = "当前属性权重的专精",
 		["ScaleSelectorShowScale"] = "在提示栏中显示属性权重",
 		["ScaleSelectorShowScaleTooltip"] = "当这个选项被选中时，此属性权重将显示在此角色的物品工具提示上。每个属性权重可以显示在一个角色，多个角色，或干脆不显示。",

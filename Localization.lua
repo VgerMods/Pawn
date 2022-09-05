@@ -665,6 +665,7 @@ This command cannot be undone!]=],
 		["ScaleRename"] = "Rename",
 		["ScaleRenameTooltip"] = "Rename this scale.",
 		["ScaleSelectorHeader"] = "Select a scale:",
+		["ScaleSelectorNoneWarning"] = "Shift-click at least one for advice.",
 		["ScaleSelectorShowingSuggestionsFor"] = "Showing suggestions for",
 		["ScaleSelectorShowScale"] = "Show this scale in tooltips",
 		["ScaleSelectorShowScaleTooltip"] = [=[Enable this option to show this scale in item tooltips and have Pawn use it to suggest upgrades.  You can have more than one scale enabled on each character.

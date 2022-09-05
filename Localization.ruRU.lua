@@ -663,6 +663,7 @@ If unchecked, equipping a two-handed weapon will prevent Pawn from showing you u
 		["ScaleRename"] = "Переименовать",
 		["ScaleRenameTooltip"] = "Переименовать шкалу.",
 		["ScaleSelectorHeader"] = "Выбрать шкалу:",
+		["ScaleSelectorNoneWarning"] = "Выберите хотя бы один.",
 		["ScaleSelectorShowingSuggestionsFor"] = "Отображать подсказки для",
 		["ScaleSelectorShowScale"] = "Отображать шкалу в подсказках",
 		["ScaleSelectorShowScaleTooltip"] = [=[When this option is checked, values for this scale will show up in item tooltips for this character.  Each scale can show up for one of your characters, multiple characters, or no characters at all.

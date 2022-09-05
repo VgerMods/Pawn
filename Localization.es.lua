@@ -708,6 +708,7 @@ This ¡el comando no se puede deshacer!]=],
 		["ScaleRename"] = "Renombrar",
 		["ScaleRenameTooltip"] = "Renombra ésta escala.",
 		["ScaleSelectorHeader"] = "Selecciona una escala:",
+		["ScaleSelectorNoneWarning"] = "Seleccione al menos uno.",
 		["ScaleSelectorShowingSuggestionsFor"] = "Mostrando sugerencias para",
 		["ScaleSelectorShowScale"] = "Muestra ésta escala en tooltips",
 		["ScaleSelectorShowScaleTooltip"] = [=[Cuando esta opción está activada, los valores de ésta escala se mostrarán en los tooltips de objetos de éste personaje.  Cada escala se puede mostrar para uno de tus personajes, varios personajes, o ningún personaje. 

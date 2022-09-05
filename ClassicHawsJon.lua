@@ -670,15 +670,15 @@ function PawnClassicScaleProvider_AddScales()
 
 	-- Since Pawn doesn't have an Automatic mode on Classic, enable the template scales when logging in for the first time
 	-- IF the player hasn't already added a non-provider scale.
-	if PawnClassicScaleProviderOptions.LastAdded < 2 then
+	-- For death knights only, do a one-time re-show on 2.6.5 since for some reason it wasn't working for some people.
+	if PawnClassicScaleProviderOptions.LastAdded < 2 or (Class == "DEATHKNIGHT" and PawnClassicScaleProviderOptions.LastAdded < 3) then
 		PawnSetAllScaleProviderScalesVisible(ScaleProviderName, false)
 		if PawnGetVisibleScaleCount() == 0 then
 			PawnEnableAllScalesForClass()
 		end
 	end
 
-	-- These scales are new, and we don't need any upgrade logic yet.
-	PawnClassicScaleProviderOptions.LastAdded = 2
+	PawnClassicScaleProviderOptions.LastAdded = 3
 
 	-- After this function terminates there's no need for it anymore, so cause it to self-destruct to save memory.
 	PawnClassicScaleProvider_AddScales = nil

@@ -650,6 +650,7 @@ Feuer:  156.7|r]=],
 		["ScaleRename"] = "Umbenennen",
 		["ScaleRenameTooltip"] = "Bewertungsprofil umbenennen.",
 		["ScaleSelectorHeader"] = "Wähle ein Profil:",
+		["ScaleSelectorNoneWarning"] = "Wählen Sie mindestens eine aus.",
 		["ScaleSelectorShowingSuggestionsFor"] = "Zeige Vorschläge für",
 		["ScaleSelectorShowScale"] = "Zeigt dieses Bewertungsprofil im Gegenstand-Tooltip an.",
 		["ScaleSelectorShowScaleTooltip"] = [=[Aktiviere diese Option, um dieses Bewertungsprofil in den Gegenstand-Tooltips anzuzeigen und lass sie von Pawn verwenden, um Verbesserungen vorzuschlagen. Du kannst mehr als ein Bewertungsprofil für jeden Charakter aktivieren. 

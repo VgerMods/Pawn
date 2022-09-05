@@ -108,7 +108,7 @@
 			<Color r=".196" g=".388" b=".8" />
 		</HighlightTexture>
 	</Button>
-	
+
 	<Button name="PawnUIFrame_ScaleSelector_ItemTemplate" virtual="true" inherits="PawnUIFrame_Generic_ItemTemplate" useParentLevel="true">
 		<Size><AbsDimension x="150" y="16" /></Size>
 		<DisabledFont style="PawnFontBlueSmall" />
@@ -385,7 +385,6 @@
 		<Size><AbsDimension x="40" y="40" /></Size>
 	</Texture>
 
-	
 	<!-- Pawn quest advisor -->
 	<Texture name="PawnUI_QuestAdvisorTexture" file="Interface\AddOns\Pawn\Textures\UpgradeArrowBig" virtual="true" hidden="true">
 		<Anchors><Anchor point="BOTTOMLEFT"><Offset><AbsDimension x="15" y="-5" /></Offset></Anchor></Anchors>
@@ -395,7 +394,6 @@
 		<Anchors><Anchor point="BOTTOMLEFT"><Offset><AbsDimension x="15" y="-5" /></Offset></Anchor></Anchors>
 		<Size><AbsDimension x="18" y="18" /></Size>
 	</Texture>
-
 
 	<!-- The main Pawn configuration UI -->
 	<Frame name="PawnUIFrame" toplevel="true" parent="UIParent" hidden="true" movable="true" enableMouse="true">
@@ -470,6 +468,23 @@
 								<!-- Content added dynamically, and size updated dynamically -->
 
 								<Frames>
+
+									<Frame name="PawnUIFrame_ScaleSelector_NoneWarning">
+										<Anchors><Anchor point="TOPLEFT" /></Anchors>
+										<Size><AbsDimension x="162" y="80" /></Size>
+										<Layers>
+											<Layer level="ARTWORK">
+												<Texture file="Interface\DialogFrame\UI-Dialog-Icon-AlertNew">
+													<Anchors><Anchor point="TOP" x="0" y="-12" /></Anchors>
+													<Size><AbsDimension x="32" y="32" /></Size>
+												</Texture>
+												<FontString text="PawnUIFrame_ScaleSelector_NoneWarning_Text" inherits="GameFontNormalSmall" justifyH="MIDDLE" justifyV="MIDDLE">
+													<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="8" y="-40"/></Offset></Anchor></Anchors>
+													<Size><AbsDimension x="146" y="40" /></Size>
+												</FontString>
+											</Layer>
+										</Layers>
+									</Frame>
 
 									<Frame name="PawnUIFrame_ScaleSelector_HighlightFrame" hidden="true">
 										<Anchors><Anchor point="TOPLEFT"></Anchor></Anchors>

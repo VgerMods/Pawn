@@ -190,6 +190,7 @@ PawnUIHeaders = -- (%s is the name of the current scale)
 
 -- Configuration UI, Scale selector
 PawnUIFrame_ScaleSelector_Header_Text = L.ScaleSelectorHeader
+PawnUIFrame_ScaleSelector_NoneWarning_Text = L.ScaleSelectorNoneWarning
 PawnUIFrame_ShowScaleCheck_Label_Text = L.ScaleSelectorShowScale
 PawnUIFrame_ShowScaleCheck_Tooltip = L.ScaleSelectorShowScaleTooltip
 PawnUIFrame_ScaleSelector_ShowingSuggestionsFor_Text = L.ScaleSelectorShowingSuggestionsFor

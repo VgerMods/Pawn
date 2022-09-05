@@ -665,6 +665,7 @@ Questo comando non può essere annullato.]=],
 		["ScaleRename"] = "Rinomina",
 		["ScaleRenameTooltip"] = "Rinomina questa formula.",
 		["ScaleSelectorHeader"] = "Seleziona una formula:",
+		["ScaleSelectorNoneWarning"] = "Selezionane almeno uno.",
 		["ScaleSelectorShowingSuggestionsFor"] = "Mostro suggerimenti per",
 		["ScaleSelectorShowScale"] = "Mostra la formula nei tooltip",
 		["ScaleSelectorShowScaleTooltip"] = [=[Abilita questa opzione per mostrare i valori di questa formula nei tooltip degli oggetti e far sì che Pawn suggerisca quali sono dei miglioramenti. Puoi avere più di una formula abilitata per ogni personaggio.

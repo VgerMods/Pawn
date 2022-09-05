@@ -668,6 +668,7 @@ Pawn이 상점에 판매했거나, 파괴했거나, 다른 방법으로 더이�
 		["ScaleRename"] = "이름 변경",
 		["ScaleRenameTooltip"] = "이 능력치 비율의 이름을 변경합니다.",
 		["ScaleSelectorHeader"] = "능력치 비율 선택:",
+		["ScaleSelectorNoneWarning"] = "하나 이상 선택.",
 		["ScaleSelectorShowingSuggestionsFor"] = "다음에 대한 정보 표시: ",
 		["ScaleSelectorShowScale"] = "툴팁에 능력치 비율 표시",
 		["ScaleSelectorShowScaleTooltip"] = [=[이 옵션을 선택하면 이 캐릭터의 아이템 툴팁에 이 능력치 비율의 값을 표시합니다. 각 능력치 비율 별로 한 캐릭터, 여러 캐릭터, 또는 아무 캐릭터에도 표시하지 않게 설정할 수 있습니다.
