@@ -86,19 +86,16 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["ArmorTypes"] = "Типы брони",
 		["AvoidanceInfo"] = "Избегание. Уменьшение получаемого урона от заклинаний действующих по области (AOE)",
 		["BlockRatingInfo"] = "Блокирование.  Увеличивает вероятность блока щитом.",
-		["BlockValueInfo"] = "Показатель блокирования.  Увеличивает поглащаемый урон щитом при успешной блокировке.",
+		["BlockValueInfo"] = "Показатель блокирования. Увеличивает поглощаемый щитом урон при успешной блокировке.",
 		["Cloth"] = "Ткань",
 		["ClothInfo"] = "Значения для вещей из ткани",
-		--[[Translation missing --]]
 		["CorruptionInfo"] = "Corruption of N'Zoth.  A negative value for Corruption will remove points from an item's score based on the level of corruption.",
 		["Crit"] = "Критический удар",
 		["CritInfo"] = "Критический удар. Увеличивает шанс что ваши атакующие и исцеляющие заклинания ударят с увеличенной силой.",
 		["DefenseInfo"] = "Навык защиты.  Уменьшение вероятности того, что по вам попадёт атака боссов.",
 		["DodgeInfo"] = "Уклонение.  Увеличивает шанс что вы полностью уклонитесь от атаки.",
-		["DominationSocketInfo"] = "Значение сокета для среднего Осколка господства.",
 		["DpsInfo"] = "Урон от оружия в секунду",
-		--[[Translation missing --]]
-		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
+		["ExpertiseInfo"] = "Мастерство. Снижает вероятность уклонения или парирования вашего удара.",
 		["FeralApInfo"] = "Сила атаки зверя.  Увеличивает урон атакам друида находящегося в формах силы зверя.  Не включает в себя силу атаки полученную от Силы и Ловкости.",
 		["FireResistInfo"] = "Сопротивление огню.  Понижает урон от атак и заклинаний в которых используется огонь.",
 		["FireSpellDamage"] = "Урон огнем",
@@ -134,7 +131,6 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Plate"] = "Латы",
 		["PlateInfo"] = "Очки присваиваются только если вещь - латные доспехи.",
 		["RapInfo"] = "Сила атаки дальнего боя.  Увеличивает урон физических атак дальнего боя.  Не включает в себя силу атаки полученную от Ловкости.",
-		--[[Translation missing --]]
 		["ResilienceInfo"] = "Resilience. Reduces the chance that you'll be critically hit, and decreases the damage of critical hits that you do take.",
 		["ShadowResistInfo"] = "Сопротивление темной магии.   Понижает урон от атак и заклинаний в которых используется темная магия.",
 		["ShadowSpellDamage"] = "Урон темной магии",
@@ -152,9 +148,8 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellDamage"] = "Spell Damage",
 		["SpellDamageInfo"] = "Spell damage.  Increases the damage dealt by your offensive spells.",
 		["SpellHitInfo"] = "Spell Hit.  Increases the chance that your damaging spells hit the target, especially bosses.",
-		--[[Translation missing --]]
 		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
-		["SpellPowerInfo"] = "",
+		["SpellPowerInfo"] = "Сила заклинаний. Увеличивает урон и объем исцеления от ваших заклинаний.",
 		["SpiritInfo"] = "Spirit.  Affects your out-of-combat mana regeneration.",
 		["StaminaInfo"] = "Выносливость. Увеличивает количество жизни. ",
 		["StrengthInfo"] = "Сила. Увеличивает силу атаки для некоторых классов.",
@@ -428,7 +423,6 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["SpellHasteRating"] = "^Если на персонаже: Повышает рейтинг скорости заклинаний на #%.$",
 		["SpellHasteRatingShort"] = "^%+?# к рейтингу скорости заклинаний$",
 		["SpellHit"] = "^Если на персонаже: Повышение на #%% рейтинга меткости заклинаний%.$",
-		--[[Translation missing --]]
 		["SpellHitRating"] = "^Equip: Increases your spell hit rating by #%.$",
 		["SpellHitRating2"] = "^Если на персонаже: Меткость %(заклинания%) %+#%.$",
 		["SpellHitRatingShort"] = "^%+?# к рейтингу меткости заклинаний$",
@@ -598,10 +592,8 @@ Every item in World of Warcraft has an ID number associated with it.  This infor
 		["OptionsResetUpgradesTooltip"] = [=[Pawn will forget what it knows about the best items you've ever equipped and re-scan your gear in order to provide more up-to-date upgrade information in the future.
 
 Use this feature if you find that Pawn is making poor upgrade suggestions as a result of items that you've vendored, destroyed, or otherwise do not use anymore.  This will affect all of your characters that use Pawn.]=],
-		--[[Translation missing --]]
-		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
-		--[[Translation missing --]]
-		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
+		["OptionsShowItemLevelUpgrades"] = "Показывать улучшения уровня предмета",
+		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn будет показывать улучшения по уровню предмета наряду с улучшением по характеристикам.",
 		["OptionsShowRelicUpgrades"] = "Отображать улучшения для реликвий",
 		["OptionsShowRelicUpgradesTooltip"] = "Pawn будет показывать вам если реликвия улучшит уровень одного из ваших артефактов. (работает несколько иначе чем другие советы по улучшения, т.к. основано только на уровне вещи, а не на статах)",
 		["OptionsSocketingAdvisor"] = "Отображать советы по камням",
