@@ -271,7 +271,8 @@ PawnRegexes =
 	{L.Ap, "Ap"}, -- /pawn compare item:789::::::1547
 	{L.Ap2, "Ap"}, -- /pawn compare 15062
 	{L.Ap3, "Ap"}, -- /pawn compare 18821
-	{L.Rap, "Rap"}, -- /pawn compare 18473
+	{L.Rap, "Rap"}, -- Classic, /pawn compare 18473
+	{L.Rap2, "Rap"}, -- Burning Crusade and Wrath Classic, /pawn compare 18713
 	{L.FeralAp, "FeralAp"}, -- Classic, /pawn compare 22988
 	{L.FeralApMoonkin, "FeralAp"}, -- Burning Crusade, /pawn compare 22988
 	{L.FeralApWrath}, -- Wrath, /pawn compare 22988 (in Wrath it only appears on druid items and is not a real stat, but it shouldn't get an orange diamond)
@@ -330,6 +331,7 @@ PawnRegexes =
 	{L.Healing3, "Healing"}, -- Burning Crusade, /pawn compare item:789::::::-38
 	{L.SpellPower, "SpellPower"}, -- /pawn tooltip 39998
 	{L.SpellPower2, "SpellPower"}, -- /pawn compare 40585
+	{L.SpellPower3, "SpellPower"}, -- /pawn compare item:20686::::::2159
 	{PawnGameConstant(EMPTY_SOCKET_RED), "RedSocket", 1, PawnMultipleStatsFixed},
 	{PawnGameConstant(EMPTY_SOCKET_YELLOW), "YellowSocket", 1, PawnMultipleStatsFixed},
 	{PawnGameConstant(EMPTY_SOCKET_BLUE), "BlueSocket", 1, PawnMultipleStatsFixed},
