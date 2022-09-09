@@ -25,6 +25,8 @@ UIStrings.lua
 TooltipParsing.lua
 Gems.lua
 GemsClassic.lua
+GemsBurningCrusade.lua
+GemsWrath.lua
 ScaleTemplates.lua
 Pawn.lua
 PawnUI.lua
