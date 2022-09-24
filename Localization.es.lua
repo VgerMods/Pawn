@@ -295,6 +295,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Armor2"] = "^UNUSED$",
 		["ArmorPenetration"] = "^Equipar: Tus ataques ignoran # p%. de la armadura de tu oponente%.$",
 		["ArmorPenetrationRating"] = "^Equipar: Aumenta el índice de penetración de armadura # p%.$",
+		["ArmorPenetrationRating2"] = "^UNUSED$",
 		["ArmorPenetrationShort"] = "^%+?# índice de penetración de armadura$",
 		["Avoidance"] = "^%+# eludir$",
 		["Axe"] = "^Hacha$",

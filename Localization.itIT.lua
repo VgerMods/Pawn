@@ -263,6 +263,7 @@ Per maggiori informazioni su come personalizzare Pawn, per favore leggere il fil
 		["Armor2"] = "UNUSED",
 		["ArmorPenetration"] = "UNUSED",
 		["ArmorPenetrationRating"] = "^UNUSED$",
+		["ArmorPenetrationRating2"] = "^UNUSED$",
 		["ArmorPenetrationShort"] = "^UNUSED$",
 		["Avoidance"] = "^%+# Indice d'elusione$",
 		["Axe"] = "^Ascia$",

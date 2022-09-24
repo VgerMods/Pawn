@@ -259,6 +259,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["Armor2"] = "^%+?# к броне$",
 		["ArmorPenetration"] = "^Если на персонаже: Эффективность брони противника против ваших атак снижена на # ед%.$",
 		["ArmorPenetrationRating"] = "^Если на персонаже: Увеличивает рейтинг пробивания брони на #%.$",
+		["ArmorPenetrationRating2"] = "^UNUSED$",
 		["ArmorPenetrationShort"] = "^%+?# к рейтингу пробивания брони$",
 		["Avoidance"] = "^%+# к избеганию$",
 		["Axe"] = "^Топор$",

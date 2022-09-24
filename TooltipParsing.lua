@@ -242,8 +242,9 @@ PawnRegexes =
 	{L.SpellHitRatingShort, "SpellHitRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=31861/great-dawnstone
 	{L.ExpertiseRating, "ExpertiseRating"}, -- Burning Crusade, /pawn compare 19351
 	{L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, Precise Bloodstone
-	{L.ArmorPenetration, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 34703
+	{L.ArmorPenetration, "ArmorPenetration"},
 	{L.ArmorPenetrationRating, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 34703
+	{L.ArmorPenetrationRating2, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 41592
 	{L.ArmorPenetrationShort, "ArmorPenetration"}, -- Wrath, Fractured Scarlet Ruby
 	{L.Resilience, "ResilienceRating"}, -- Mystic Dawnstone
 	{L.Resilience2, "ResilienceRating"}, -- unused in English

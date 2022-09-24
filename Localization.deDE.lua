@@ -258,6 +258,7 @@ Weitere Informationen zur Anpassung von Pawn findet ihr in der Hilfedatei (Readm
 		["Armor2"] = "^UNUSED$",
 		["ArmorPenetration"] = "^Anlegen: Eure Angriffe ignorieren # Rüstung Eures Gegners%.$",
 		["ArmorPenetrationRating"] = "^Anlegen: Erhöht die Rüstungsdurchschlagwertung um #%.$",
+		["ArmorPenetrationRating2"] = "^UNUSED$",
 		["ArmorPenetrationShort"] = "^%+?# Rüstungsdurchschlagwertung$",
 		["Avoidance"] = "^%+# Vermeidung$",
 		["Axe"] = "^Axt$",

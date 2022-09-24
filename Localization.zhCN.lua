@@ -262,6 +262,7 @@ PawnLocal =
 		["Armor2"] = "^UNUSED$",
 		["ArmorPenetration"] = "^装备： 你的攻击无视目标的#点护甲值。$",
 		["ArmorPenetrationRating"] = "^装备： 护甲穿透等级提高#。$",
+		["ArmorPenetrationRating2"] = "^UNUSED$",
 		["ArmorPenetrationShort"] = "^%+?# 护甲穿透等级$",
 		["Avoidance"] = "^%+# 闪避$",
 		["Axe"] = "^斧$",

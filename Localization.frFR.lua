@@ -263,6 +263,7 @@ Pour plus d'information sur la Personnalisation de Pawn, regarder le fichier d'a
 		["Armor2"] = "^UNUSED$",
 		["ArmorPenetration"] = "^Équipé : Vos attaques ignorent # points de l'armure de votre adversaire%.$",
 		["ArmorPenetrationRating"] = "^Équipé : Augmente de # le score de pénétration d'armure%.$",
+		["ArmorPenetrationRating2"] = "^UNUSED$",
 		["ArmorPenetrationShort"] = "^%+?# au score de pénétration d'armure$",
 		["Avoidance"] = "^%+# Évitement$",
 		["Axe"] = "^Hache$",
