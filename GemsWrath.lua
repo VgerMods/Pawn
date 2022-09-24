@@ -724,8 +724,8 @@ PawnGemQualityLevels =
 {
 	-- { 245, PawnGemData80Epic }, -- Trial of the Crusader 25 normal (PHASE 3)
 	{ 200, PawnGemData80Rare }, -- Heroic dungeons and Naxx 10
-	{ 160, PawnGemData80Uncommon }, -- Higher than any TBC gear
-	{ 151, PawnGemData70Epic }, -- Tier 6 (PHASE 3) (T4 / Karazhan is 115; T5 is 133; T6 is 151; Sunwell is 154)
+	{ 165, PawnGemData80Uncommon }, -- Higher than any TBC gear
+	{ 151, PawnGemData70Epic }, -- Tier 6 (T4 / Karazhan is 115; T5 is 133; T6 is 151; Sunwell is 154)
 	{ 100, PawnGemData70Rare }, -- Lowest-level level 70 item; heroic dungeons
 	{ 90, PawnGemData70Uncommon }, -- Zangarmarsh gear gets green gems
 	{ 0, PawnGemData60Common }, -- Hellfire Peninsula gear gets white gems
@@ -737,6 +737,6 @@ PawnMetaGemQualityLevels =
 	{ 0, PawnMetaGemData70Rare },
 }
 
-PawnMinimumItemLevelToConsiderGems = 100
+PawnMinimumItemLevelToConsiderGems = 187
 
 end -- if VgerCore.IsWrath
