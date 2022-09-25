@@ -279,6 +279,22 @@ PawnScaleTemplates =
 },
 
 {
+	["ClassID"] = 13, -- Evoker
+	["SpecID"] = 1, -- Devastation
+	["Role"] = "DAMAGER",
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 13, -- Evoker
+	["SpecID"] = 2, -- Preservation
+	["Role"] = "HEALER",
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
 	["ClassID"] = 3, -- Hunter
 	["SpecID"] = 1, -- Beast Mastery
 	["Role"] = "DAMAGER",
@@ -563,6 +579,49 @@ PawnScaleTemplatesClassic =
 
 }
 
+-- PawnNewbieSpec: Which spec should we give advice for before level 10?
+PawnNewbieSpec =
+{
+	[1] = -- Warrior
+	1, -- Arms
+
+	[2] = -- Paladin
+	3, -- Retribution
+
+	[3] = -- Hunter
+	2, -- Marksmanship
+
+	[4] = -- Rogue
+	1, -- Assassination
+
+	[5] = -- Priest
+	3, -- Shadow
+
+	[6] = -- Death Knight
+	2, -- Frost
+
+	[7] = -- Shaman
+	1, -- Elemental
+
+	[8] = -- Mage
+	1, -- Arcane
+
+	[9] = -- Warlock
+	2, -- Destruction
+
+	[10] = -- Monk
+	3, -- Windwalker
+
+	[11] = -- Druid
+	1, -- Balance
+
+	[12] = -- Demon Hunter
+	2, -- Vengeance
+
+	[13] = -- Evoker
+	2, -- Devastation
+}
+
 -- PawnNeverUsableStats: Master list of stats that are NEVER usable for each class, regardless of spec. 
 PawnNeverUsableStats =
 {
@@ -602,6 +661,9 @@ PawnNeverUsableStats =
 
 	[12] = -- Demon Hunter
 	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield", "IsThrown" },
+
+	[13] = -- Evoker
+	{  "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsPolearm", "IsWarglaive", "IsOffHand", "IsPlate", "IsShield", "IsThrown" },
 }
 
 if VgerCore.IsClassic then

@@ -177,6 +177,17 @@ L = PawnLocal.UI
 
 
 -- Configuration UI
+PawnUITabLabels =
+{
+	L.ScaleTab,
+	L.ValuesTab,
+	L.CompareTab,
+	L.GemsTab,
+	L.OptionsTab,
+	L.HelpTab,
+	L.AboutTab,
+}
+
 PawnUIHeaders = -- (%s is the name of the current scale)
 {
 	L.ScaleHeader, -- Scale tab
@@ -184,8 +195,8 @@ PawnUIHeaders = -- (%s is the name of the current scale)
 	L.CompareHeader, -- Compare tab
 	L.GemsHeader, -- Gems tab
 	L.OptionsHeader, -- Options tab
-	L.AboutHeader, -- About tab
 	L.HelpHeader, -- Getting Started tab
+	L.AboutHeader, -- About tab
 }
 
 -- Configuration UI, Scale selector
@@ -196,8 +207,6 @@ PawnUIFrame_ShowScaleCheck_Tooltip = L.ScaleSelectorShowScaleTooltip
 PawnUIFrame_ScaleSelector_ShowingSuggestionsFor_Text = L.ScaleSelectorShowingSuggestionsFor
 
 -- Configuration UI, Scale tab
-PawnUIFrame_ScalesTab_Text = L.ScaleTab
-
 PawnUIFrame_ScalesWelcomeLabel_Text = L.ScaleWelcome
 
 PawnUIFrame_RenameScaleButton_Text = L.ScaleRename
@@ -235,8 +244,6 @@ PawnUIFrame_AutoSelectScalesOffButton_Subtext = L.ScaleAutoOff2
 PawnUIFrame_AutoSelectScalesOffButton_Tooltip = L.ScaleAutoOffTooltip
 
 -- Configuration UI, Values tab
-PawnUIFrame_ValuesTab_Text = L.ValuesTab
-
 PawnUIFrame_ValuesWelcomeLabel_NormalText = L.ValuesWelcome
 PawnUIFrame_ValuesWelcomeLabel_NoScalesText = L.ValuesWelcomeNoScales
 PawnUIFrame_ValuesWelcomeLabel_ReadOnlyScaleText = L.ValuesWelcomeReadOnly
@@ -255,8 +262,6 @@ PawnUIFrame_NormalizeValuesCheck_Text = L.ValuesNormalize
 PawnUIFrame_NormalizeValuesCheck_Tooltip = L.ValuesNormalizeTooltip
 
 -- Configuration UI, Compare tab
-PawnUIFrame_CompareTab_Text = L.CompareTab
-
 PawnUIFrame_VersusHeader_Text = L.CompareVersus -- Short for "versus."  Appears between the names of the two items.
 PawnUIFrame_VersusHeader_NoItem = L.CompareSlotEmpty -- Text displayed next to empty item slots.
 
@@ -271,7 +276,6 @@ PawnUIFrame_CompareSwapButton_Text = L.CompareSwap
 PawnUIFrame_CompareSwapButton_Tooltip = L.CompareSwapTooltip
 
 -- Configuration UI, Gems tab
-PawnUIFrame_GemsTab_Text = L.GemsTab
 PawnUIFrame_GemsHeaderLabel_Text = L.GemsWelcome
 
 PawnUIFrame_BestGemsRadio_Text = L.GemsShowBest
@@ -282,7 +286,6 @@ PawnUIFrame_GemQualityLevelBox_Label = L.GemsQualityLevel
 PawnUIFrame_GemQualityLevelBox_Tooltip = L.GemsQualityLevelTooltip
 
 -- Configuration UI, Options tab
-PawnUIFrame_OptionsTab_Text = L.OptionsTab
 PawnUIFrame_OptionsHeaderLabel_Text = L.OptionsWelcome
 
 PawnUIFrame_TooltipOptionsHeaderLabel_Text = L.OptionsTooltipHeader
@@ -346,8 +349,10 @@ PawnUIFrame_ShowItemIDsCheck_Tooltip = L.OptionsItemIDsTooltip
 PawnUIFrame_ResetUpgradesButton_Text = L.OptionsResetUpgrades
 PawnUIFrame_ResetUpgradesButton_Tooltip = L.OptionsResetUpgradesTooltip
 
+-- Configuration UI, Help tab
+PawnUIFrame_GettingStartedLabel_Text = L.HelpText
+
 -- Configuration UI, About tab
-PawnUIFrame_AboutTab_Text = L.AboutTab
 PawnUIFrame_AboutHeaderLabel_Text = format(PETITION_CREATOR, "Vger-Azjol-Nerub")
 PawnUIFrame_AboutVersionLabel_Text = L.AboutVersion
 PawnUIFrame_AboutTranslationLabel_Text = L.AboutTranslation -- Translators: credit yourself here... "Klingon translation by Stovokor"
@@ -355,10 +360,6 @@ PawnUIFrame_ReadmeLabel_Text = L.AboutReadme
 PawnUIFrame_WebsiteLabel_Text = L.AboutWebsite
 PawnUIFrame_MrRobotLabel_Text = L.AboutMrRobot
 
--- Configuration UI, Help tab
-PawnUIFrame_HelpTab_Text = L.HelpTab
-PawnUIFrame_GettingStartedLabel_Text = L.HelpText
-	
 -- Interface Options page
 PawnInterfaceOptionsFrame_OptionsHeaderLabel_Text = L.InterfaceOptionsWelcome
 PawnInterfaceOptionsFrame_OptionsSubHeaderLabel_Text = L.InterfaceOptionsBody

@@ -218,6 +218,7 @@ function PawnUIFrame_ScaleSelector_Refresh()
 	PawnUITotalScaleLines = 0
 
 	-- Get a sorted list of scale data and display it all.
+	local ScaleData
 	local ScaleList = PawnGetAllScalesEx()
 	PawnUIIsShowingNoneWarning = true
 	for _, ScaleData in pairs(ScaleList) do
@@ -232,7 +233,7 @@ function PawnUIFrame_ScaleSelector_Refresh()
 		PawnUIFrame_ScaleSelector_NoneWarning:Hide()
 	end
 
-	local NewSelectedScale, FirstScale, ScaleData, LastHeader, _
+	local NewSelectedScale, FirstScale, LastHeader, _
 	for _, ScaleData in pairs(ScaleList) do
 		local ScaleName = ScaleData.Name
 		if ScaleName == PawnUICurrentScale then NewSelectedScale = ScaleName end
@@ -2455,6 +2456,39 @@ end
 -- Usage: <OnLoad function="PawnUIRegisterRightClickOnLoad" />
 function PawnUIRegisterRightClickOnLoad(self)
 	self:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+end
+
+-- Create the tab strip under the Pawn UI.
+-- We need to do this in Lua because there's no tab template that exists in every version of the game.
+function PawnUICreateTabs()
+	local TabCount = #PawnUITabList
+	local TabTemplate
+	if VgerCore.IsDragonflight then
+		TabTemplate = "PanelTabButtonTemplate"
+	else
+		TabTemplate = "CharacterFrameTabButtonTemplate"
+	end
+
+	local LastTab
+	for i = 1, TabCount do
+		local ThisTab = CreateFrame("Button", "PawnUIFrameTab" .. i, PawnUIFrame, TabTemplate, i)
+		ThisTab:SetText(PawnUITabLabels[i])
+		if i == 1 then
+			ThisTab:SetPoint("LEFT", PawnUIFrame, "BOTTOMLEFT", 196, -8)
+		else
+			ThisTab:SetPoint("LEFT", LastTab, "RIGHT", -16, 0)
+		end
+		ThisTab:SetScript("OnClick", PawnUITab_OnClick)
+		LastTab = ThisTab
+	end
+
+	PanelTemplates_SetNumTabs(PawnUIFrame, TabCount)
+end
+
+function PawnUITab_OnClick(self)
+	local TabNumber = self:GetID()
+	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
+	PawnUISwitchToTab(PawnUITabList[TabNumber])
 end
 
 -- Switches to a tab by its Page.
