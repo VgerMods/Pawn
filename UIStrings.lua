@@ -184,8 +184,8 @@ PawnUIHeaders = -- (%s is the name of the current scale)
 	L.CompareHeader, -- Compare tab
 	L.GemsHeader, -- Gems tab
 	L.OptionsHeader, -- Options tab
-	L.AboutHeader, -- About tab
 	L.HelpHeader, -- Getting Started tab
+	L.AboutHeader, -- About tab
 }
 
 -- Configuration UI, Scale selector
@@ -346,6 +346,10 @@ PawnUIFrame_ShowItemIDsCheck_Tooltip = L.OptionsItemIDsTooltip
 PawnUIFrame_ResetUpgradesButton_Text = L.OptionsResetUpgrades
 PawnUIFrame_ResetUpgradesButton_Tooltip = L.OptionsResetUpgradesTooltip
 
+-- Configuration UI, Help tab
+PawnUIFrame_HelpTab_Text = L.HelpTab
+PawnUIFrame_GettingStartedLabel_Text = L.HelpText
+
 -- Configuration UI, About tab
 PawnUIFrame_AboutTab_Text = L.AboutTab
 PawnUIFrame_AboutHeaderLabel_Text = format(PETITION_CREATOR, "Vger-Azjol-Nerub")
@@ -355,10 +359,6 @@ PawnUIFrame_ReadmeLabel_Text = L.AboutReadme
 PawnUIFrame_WebsiteLabel_Text = L.AboutWebsite
 PawnUIFrame_MrRobotLabel_Text = L.AboutMrRobot
 
--- Configuration UI, Help tab
-PawnUIFrame_HelpTab_Text = L.HelpTab
-PawnUIFrame_GettingStartedLabel_Text = L.HelpText
-	
 -- Interface Options page
 PawnInterfaceOptionsFrame_OptionsHeaderLabel_Text = L.InterfaceOptionsWelcome
 PawnInterfaceOptionsFrame_OptionsSubHeaderLabel_Text = L.InterfaceOptionsBody
