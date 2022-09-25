@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.0608
+PawnVersion = 2.0700
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.17
@@ -4245,6 +4245,10 @@ function PawnOnSpecChanged()
 
 	local _, _, ClassID = UnitClass("player")
 	local SpecID = GetSpecialization()
+	-- If the player hasn't chosen a spec yet, choose one for them.
+	if SpecID == 5 then
+		SpecID = PawnNewbieSpec[ClassID]
+	end
 
 	-- Disable all scales that don't match the current spec, activate any that do, and then select one
 	-- of them in the UI.

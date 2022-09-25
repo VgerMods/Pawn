@@ -17,6 +17,124 @@
 	For recent version history, see the <a href="Readme.htm">Pawn readme</a>. 
 	(I got tired of the version history section of the <a href="Readme.htm">
 	readme</a> being longer than the rest of it, so I moved parts here.)</p>
+<h3>Version 2.6.7</h3>
+<ul>
+	<li>Wrath of the Lich King Classic: The individual schools of spell damage 
+	(of Fiery Wrath, etc.) will now show up on the Weights tab like they did in 
+	Classic Era and Burning Crusade Classic, though those stats are no longer 
+	found on Northrend items.</li>
+	<li>Wrath of the Lich King Classic: Added a new version of the default 
+	protection paladin stat weights with some small adjustments to optimize for 
+	threat generation.</li>
+</ul>
+<h3>Version 2.6.6</h3>
+<ul>
+	<li>Wrath of the Lich King Classic: Fixed Pawn's gem recommendations for 
+	Burning Crusade items on the Wrath pre-patch. (The Northrend gem 
+	recommendations were correct, but the Outland gems were still being 
+	recommended based on their old stats from Burning Crusade.)</li>
+	<li>Wrath of the Lich King Classic: Added support for ranged attack power on 
+	more types of items in all languages.</li>
+	<li>Wrath of the Lich King Classic: Added support for spell power on items 
+	"of Sorcery" in French and Latin American Spanish.</li>
+</ul>
+<h3>Version 2.6.5</h3>
+<ul>
+	<li>The list of scales will now display a warning at the top if you don't 
+	have any scales visible. (Most of Pawn's features don't do anything if no 
+	scales are visible, but it's okay to ignore the warning if that's what you 
+	really want.)</li>
+	<li>Wrath of the Lich King Classic: The first time you log in on a death 
+	knight after updating, Pawn will re-show all of the death knight starter 
+	scales if you don't have any custom scales shown.</li>
+</ul>
+<h3>Version 2.6.4</h3>
+<ul>
+	<li>Wrath of the Lich King Classic: Ranged attack power will now show up in 
+	the list of stat weights and on the Compare tab again.</li>
+	<li>Wrath of the Lich King Classic: Added support for armor penetration and 
+	expertise on more types of items in all languages.</li>
+	<li>Wrath of the Lich King Classic: Added support for attack power on more 
+	types of items in European Spanish, Latin American Spanish, and Traditional 
+	Chinese.</li>
+	<li>Includes Russian translation updates.</li>
+</ul>
+<h3>Version 2.6.3</h3>
+<ul>
+	<li>Wrath of the Lich King Classic: Fixed a problem that started occurring 
+	after the latest Wrath update that caused Pawn to sometimes stop annotating 
+	tooltips for a while after you changed anything about your current scales 
+	(changing visibility, changing stat weights, etc.).</li>
+	<li>Wrath of the Lich King Classic: Fixed a problem where some specs were 
+	getting hit, crit, and haste ratings of 1 instead of 0 or a fraction as 
+	intended.</li>
+	<li>Wrath of the Lich King Classic: Fixed a typo that caused the default 
+	spell power weight for discipline priests to be 100⨉ what it was intended to 
+	be. Oops.</li>
+</ul>
+<h3>Version 2.6.2</h3>
+<ul>
+	<li>Wrath of the Lich King Classic: The death knight starter scales now 
+	indicate in the name whether they're providing advice for tanking or DPS.</li>
+	<li>Wrath of the Lich King Classic: Feral attack power now works as it did 
+	in Pawn 1.1 back when Wrath was new—it's not a real stat on items in Wrath, 
+	but it appears on tooltips when playing a druid. A value you assign to feral 
+	attack power will work the same as if it were a real stat, like before the 
+	pre-patch. You can assign points to melee weapon DPS or feral attack power, 
+	but you probably don't want to assign points to both.</li>
+	<li>Wrath of the Lich King Classic: Fixed a problem where weapon DPS was 
+	contributing more to an item's score than intended when using the default 
+	stat weights.</li>
+	<li>Traditional Chinese Wrath of the Lich King Classic: Pawn now supports 
+	Wrath Classic (including the pre-patch) in Traditional Chinese.</li>
+	<li>German Wrath of the Lich King Classic: Includes a minor translation 
+	update.</li>
+</ul>
+<h3>Version 2.6.1</h3>
+<ul>
+	<li>Wrath of the Lich King Classic pre-patch: Today's Wrath Classic patch 
+	broke addons that need to detect which version of the game you're playing, 
+	including Pawn. This version of Pawn should work correctly again after that 
+	change.</li>
+</ul>
+<h3>Version 2.6</h3>
+<p>This version introduces support for the Wrath of the Lich King Classic 
+pre-patch.</p>
+<ul>
+	<li>There are all-new default stat weights for all classes and specs, 
+	including death knights, curated by HawsJon (thanks!). These should provide 
+	more accurate advice for level 80 and the mechanics changes in the 
+	pre-patch.<ul>
+		<li>As always, simulating your character and maintaining custom stat 
+		weights will yield even better advice, specifically tailored for your 
+		character.</li>
+	</ul>
+	</li>
+	<li>Spell damage and spell healing have been converted into a single stat, 
+	spell power. Existing custom scales will be converted automatically by 
+	choosing the better of the two weights, and then you can continue to adjust 
+	as needed.</li>
+	<li>Hit, crit, and haste have been converted from individual melee and spell 
+	ratings to a single rating each. Existing custom scales will be converted 
+	automatically by choosing the better of the two weights, and then you can 
+	continue to adjust as needed.</li>
+	<li>Pawn now includes data for the Wrath of the Lich King Classic gems, but 
+	it won't start suggesting those gems until you start getting Northrend gear. 
+	You can still browse them on the Gems tab.</li>
+	<li>There is currently no way to distinguish between armor and bonus 
+	armor—sorry, bear tanks.</li>
+	<li>This version of Pawn will not work properly in Traditional 
+	Chinese on Wrath Classic due to an updated translation.</li>
+</ul>
+<p>This version also includes minor fixes for Shadowlands, Classic Era, and The 
+Burning Crusade.</p>
+<ul>
+	<li>Shadowlands: Added Pawn annotations to the tooltips for converted items 
+	at the Creation Catalyst. (Thanks Ian!)</li>
+	<li>Classic: Fixed a problem with the default stat weights where Pawn was 
+	suggesting dual-wielding weapons for protection warriors and paladins 
+	instead of using a shield.</li>
+</ul>
 <h3>Version 2.5.38</h3>
 <ul>
 	<li>Burning Crusade Classic: The new Shattered Sun gems for Content Phase 5 will now show 

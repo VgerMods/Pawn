@@ -1618,71 +1618,6 @@
 					
 				</Layers>
 			</Frame>
-			
-			<!-- The tab buttons -->
-			<Button name="$parentTab1" inherits="PanelTabButtonTemplate" id="1" text="PawnUIFrame_ScalesTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT"><Offset><AbsDimension x="196" y="-8" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIScalesTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab2" inherits="PanelTabButtonTemplate" id="2" text="PawnUIFrame_ValuesTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIValuesTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab3" inherits="PanelTabButtonTemplate" id="3" text="PawnUIFrame_CompareTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUICompareTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab4" inherits="PanelTabButtonTemplate" id="4" text="PawnUIFrame_GemsTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parentTab3" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIGemsTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab5" inherits="PanelTabButtonTemplate" id="5" text="PawnUIFrame_OptionsTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parentTab4" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIOptionsTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab6" inherits="PanelTabButtonTemplate" id="6" text="PawnUIFrame_HelpTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parentTab5" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIHelpTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
-			<Button name="$parentTab7" inherits="PanelTabButtonTemplate" id="7" text="PawnUIFrame_AboutTab_Text">
-				<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="RIGHT"><Offset><AbsDimension x="-16" y="0" /></Offset></Anchor></Anchors>
-				<Scripts>
-					<OnClick>
-						PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB)
-						PawnUISwitchToTab(PawnUIAboutTabPage)
-					</OnClick>
-				</Scripts>
-			</Button>
 
 		</Frames>
 
@@ -1703,8 +1638,9 @@
 				if VgerCore.ArtifactsExist then
 					self:RegisterEvent("ARTIFACT_UPDATE")
 				end
+
 				PawnUITabList = { PawnUIScalesTabPage, PawnUIValuesTabPage, PawnUICompareTabPage, PawnUIGemsTabPage, PawnUIOptionsTabPage, PawnUIHelpTabPage, PawnUIAboutTabPage }
-				PanelTemplates_SetNumTabs(PawnUIFrame, #PawnUITabList)
+				PawnUICreateTabs()
 
 				if BackdropTemplateMixin then Mixin(self, BackdropTemplateMixin) end
 				self:SetBackdrop({
