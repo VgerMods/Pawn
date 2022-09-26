@@ -4168,7 +4168,7 @@ function PawnIsArmorBestTypeForPlayer(Item)
 		else
 			return false
 		end
-	elseif Class == "HUNTER" or Class == "SHAMAN" then
+	elseif Class == "HUNTER" or Class == "SHAMAN" or Class == "EVOKER" then
 		if IsLevelForSpecialization then
 			if Stats.IsMail then return true else return false end
 		elseif Stats.IsLeather or Stats.IsCloth then
