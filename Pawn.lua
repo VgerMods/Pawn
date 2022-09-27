@@ -399,8 +399,10 @@ function PawnInitialize()
 	end
 
 	-- In-bag upgrade icons
-	if ContainerFrame_UpdateItemUpgradeIcons then
-
+	
+-- THIS NO LONGER EXISTS AND THUS ALL UNDER iT NEVER RUNS
+--if ContainerFrame_UpdateItemUpgradeIcons then
+		
 		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
 		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
@@ -417,20 +419,27 @@ function PawnInitialize()
 		-- Changing IsContainerItemAnUpgrade now causes taint errors, and replacing this function with a copy of itself
 		-- works on its own, but breaks other addons that hook this function like CanIMogIt. So, our best option appears to
 		-- be to just let the default version run, and then change its results immediately after.
-		hooksecurefunc("ContainerFrameItemButton_UpdateItemUpgradeIcon", function(self)
-			if self.isExtended then return end
-			local IsUpgrade = PawnIsContainerItemAnUpgrade(self:GetParent():GetID(), self:GetID())
-
-			if IsUpgrade == nil then
-				self.UpgradeIcon:SetShown(false)
-				self:SetScript("OnUpdate", ContainerFrameItemButton_TryUpdateItemUpgradeIcon)
-			else
-				self.UpgradeIcon:SetShown(IsUpgrade)
-				self:SetScript("OnUpdate", nil)
-			end
-		end)
-
-	end
+		
+		-- I DONT HAVE THE EXPERIENCE TO HOOK INTO A BUTTON SO I HOOKED ALL THE BAG FRAMES AND ITERATED OVER ALL BUTTONS
+		-- Loop all bags.
+	  for BagIndex, BagFrame in ContainerFrameUtil_EnumerateContainerFrames() do
+			hooksecurefunc(BagFrame,"UpdateItems", function(self)
+				for i, itemButton in self:EnumerateValidItems() do
+					local bagID = itemButton:GetBagID();
+					local texture, itemCount, locked, quality, readable, _, itemLink, isFiltered, noValue, itemID, isBound = GetContainerItemInfo(bagID, itemButton:GetID());
+					if itemButton.isExtended then return end
+					local IsUpgrade = PawnIsContainerItemAnUpgrade(bagID, itemButton:GetID())
+					if IsUpgrade == nil then
+						itemButton.UpgradeIcon:SetShown(false)
+						itemButton:SetScript("OnUpdate", ContainerFrameItemButton_TryUpdateItemUpgradeIcon)
+					else
+						itemButton.UpgradeIcon:SetShown(IsUpgrade)
+						itemButton:SetScript("OnUpdate", nil)
+					end
+				end
+			end)
+    end 
+--end
 
 	-- We're now effectively initialized.  Just the last steps of scale initialization remain.
 	PawnIsInitialized = true
