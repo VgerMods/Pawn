@@ -195,10 +195,10 @@ function PawnInitialize()
 		function()
 			PawnOnItemLost(PawnLastCursorItemLink)
 		end)
-	hooksecurefunc("UseContainerItem",
+	hooksecurefunc(C_Container,"UseContainerItem",
 		function(BagID, Slot)
 			if MerchantFrame:IsShown() then
-				if ItemLink then PawnOnItemLost(GetContainerItemLink(BagID, Slot)) end
+				if ItemLink then PawnOnItemLost(C_Container.GetContainerItemLink(BagID, Slot)) end
 			end
 		end)
 	hooksecurefunc("PickupMerchantItem",
@@ -406,7 +406,7 @@ function PawnInitialize()
 		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
 		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
-				local _, Count, _, _, _, _, ItemLink = GetContainerItemInfo(bagID, slot)
+				local _, Count, _, _, _, _, ItemLink = C_Container.GetContainerItemInfo(bagID, slot)
 				if not Count then return false end -- If the stack count is 0, it's clearly not an upgrade
 				if not ItemLink then return nil end -- If we didn't get an item link, but there's an item there, try again later
 				return PawnShouldItemLinkHaveUpgradeArrow(ItemLink, true) -- true means to check player level
@@ -426,7 +426,7 @@ function PawnInitialize()
 			hooksecurefunc(BagFrame,"UpdateItems", function(self)
 				for i, itemButton in self:EnumerateValidItems() do
 					local bagID = itemButton:GetBagID();
-					local texture, itemCount, locked, quality, readable, _, itemLink, isFiltered, noValue, itemID, isBound = GetContainerItemInfo(bagID, itemButton:GetID());
+					local texture, itemCount, locked, quality, readable, _, itemLink, isFiltered, noValue, itemID, isBound = C_Container.GetContainerItemInfo(bagID, itemButton:GetID());
 					if itemButton.isExtended then return end
 					local IsUpgrade = PawnIsContainerItemAnUpgrade(bagID, itemButton:GetID())
 					if IsUpgrade == nil then
