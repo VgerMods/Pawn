@@ -408,10 +408,9 @@ function PawnInitialize()
 			if PawnCommon.ShowBagUpgradeAdvisor then
 				local info = C_Container.GetContainerItemInfo(bagID, slot)
 				if not info then return false end
-			VgerCore.Fail("checking " .. bagID .. " - " .. slot )
 				if not info.stackCount then return false end -- If the stack count is 0, it's clearly not an upgrade
 				if not info.hyperlink then return nil end -- If we didn't get an item link, but there's an item there, try again later
-				return PawnShouldItemLinkHaveUpgradeArrow(info.ItemLink, true) -- true means to check player level
+				return PawnShouldItemLinkHaveUpgradeArrow(info.hyperlink, true) -- true means to check player level
 			else
 				---@diagnostic disable-next-line: redundant-parameter
 				return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
@@ -427,7 +426,7 @@ function PawnInitialize()
 	  for BagIndex, BagFrame in ContainerFrameUtil_EnumerateContainerFrames() do
 			hooksecurefunc(BagFrame,"UpdateItems", function(self)
 				for i, itemButton in self:EnumerateValidItems() do
-					--if itemButton.isExtended then return end
+					if itemButton.isExtended then return end
 					local IsUpgrade = PawnIsContainerItemAnUpgrade(itemButton:GetBagID(), itemButton:GetID())
 					if IsUpgrade == nil then
 						itemButton.UpgradeIcon:SetShown(false)
@@ -5754,12 +5753,11 @@ end
 --   nil: We're not sure yet.
 function PawnShouldItemLinkHaveUpgradeArrow(ItemLink, CheckLevel)
 	if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
-
 	--if PawnOptions.DebugBagArrows then VgerCore.Message("Checking upgrade information for " .. tostring(ItemLink)) end
 
-	--local _, _, _, _, MinLevel = GetItemInfo(ItemLink)
-	--if MinLevel == nil then return nil end
-	--if CheckLevel and UnitLevel("player") < MinLevel then return false end
+	local _, _, _, _, MinLevel = GetItemInfo(ItemLink)
+	if MinLevel == nil then return nil end
+	if CheckLevel and UnitLevel("player") < MinLevel then return false end
 	if PawnCanItemHaveStats(ItemLink) then
 		local Item = PawnGetItemData(ItemLink)
 		if Item == nil or Item.Link == nil then return nil end -- If we don't have stats for the item yet, ask again later.
