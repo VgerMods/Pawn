@@ -195,12 +195,22 @@ function PawnInitialize()
 		function()
 			PawnOnItemLost(PawnLastCursorItemLink)
 		end)
-	hooksecurefunc("UseContainerItem",
-		function(BagID, Slot)
+	if C_Container and C_Container.UseContainerItem then
+		-- WoW 10.0 moved UseContainerItem into C_Container.
+		hooksecurefunc(C_Container, "UseContainerItem", function(BagID, Slot)
 			if MerchantFrame:IsShown() then
-				if ItemLink then PawnOnItemLost(GetContainerItemLink(BagID, Slot)) end
+				local ItemLink = C_Container GetContainerItemLink(BagID, Slot)
+				if ItemLink then PawnOnItemLost(ItemLink) end
 			end
 		end)
+	else
+		hooksecurefunc("UseContainerItem", function(BagID, Slot)
+			if MerchantFrame:IsShown() then
+				local ItemLink = GetContainerItemLink(BagID, Slot)
+				if ItemLink then PawnOnItemLost(ItemLink) end
+			end
+		end)
+	end
 	hooksecurefunc("PickupMerchantItem",
 		function(Index)
 			if Index == 0 then PawnOnItemLost(PawnLastCursorItemLink) end
@@ -399,8 +409,7 @@ function PawnInitialize()
 	end
 
 	-- In-bag upgrade icons
-	if ContainerFrame_UpdateItemUpgradeIcons then
-
+	if VgerCore.IsMainline then
 		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
 		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
@@ -413,23 +422,45 @@ function PawnInitialize()
 				return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
 			end
 		end
-
-		-- Changing IsContainerItemAnUpgrade now causes taint errors, and replacing this function with a copy of itself
-		-- works on its own, but breaks other addons that hook this function like CanIMogIt. So, our best option appears to
-		-- be to just let the default version run, and then change its results immediately after.
-		hooksecurefunc("ContainerFrameItemButton_UpdateItemUpgradeIcon", function(self)
+		PawnUpdateItemUpgradeIcon = function(self)
 			if self.isExtended then return end
 			local IsUpgrade = PawnIsContainerItemAnUpgrade(self:GetParent():GetID(), self:GetID())
 
 			if IsUpgrade == nil then
 				self.UpgradeIcon:SetShown(false)
-				self:SetScript("OnUpdate", ContainerFrameItemButton_TryUpdateItemUpgradeIcon)
+				self:SetScript("OnUpdate", self.TryUpdateItemUpgradeIcon or ContainerFrameItemButton_TryUpdateItemUpgradeIcon)
 			else
 				self.UpgradeIcon:SetShown(IsUpgrade)
 				self:SetScript("OnUpdate", nil)
 			end
-		end)
+		end
+	end
 
+	if ContainerFrameItemButtonMixin and ContainerFrameItemButtonMixin.UpdateItemUpgradeIcon then
+		-- Dragonflight onward
+
+		-- IMPORTANT: As of October 1, this does not work with the new combined bags, only the traditional style.
+		-- But, the built-in upgrade arrows don't appear to work with either version, so... improvement?
+
+		-- First, hook ContainerFrameItemButtonMixin to affect all future bag frames.
+		hooksecurefunc(ContainerFrameItemButtonMixin, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
+		-- Unfortunately, the Mixin is not a prototype and changes are not retroactive to bags that have already been created,
+		-- so now we need to update all of those.
+		for i = 1, NUM_TOTAL_BAG_FRAMES do
+			local Bag = _G["ContainerFrame" .. i]
+			if Bag.Items then
+				for j, Button in Bag:EnumerateItems() do
+					Mixin(Button, ContainerFrameItemButtonMixin)
+				end
+			end
+		end
+	elseif ContainerFrame_UpdateItemUpgradeIcons then
+		-- Legion through Shadowlands
+
+		-- Changing IsContainerItemAnUpgrade now causes taint errors, and replacing this function with a copy of itself
+		-- works on its own, but breaks other addons that hook this function like CanIMogIt. So, our best option appears to
+		-- be to just let the default version run, and then change its results immediately after.
+		hooksecurefunc("ContainerFrameItemButton_UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
 	end
 
 	-- We're now effectively initialized.  Just the last steps of scale initialization remain.
@@ -3876,7 +3907,11 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 						VgerCore.Assert(IsOnPlayer or IsInBank, "Equipment set contains new location data that Pawn doesn't understand; EquipmentManager_UnpackLocation may have been updated.")
 						ItemLink = GetInventoryItemLink("player", Slot)
 					else
-						ItemLink = GetContainerItemLink(Bag, Slot)
+						if C_Container and C_Container.GetContainerItemLink then
+							ItemLink = C_Container.GetContainerItemLink(Bag, Slot)
+						else
+							ItemLink = GetContainerItemLink(Bag, Slot)
+						end
 					end
 
 					-- Now that we have an item link we can proceed as usual.
@@ -4087,7 +4122,11 @@ function PawnOnItemLocked(arg1, arg2)
 	if arg2 == nil then
 		ItemLink = GetInventoryItemLink("player", arg1)
 	else
-		ItemLink = GetContainerItemLink(arg1, arg2)
+		if C_Container and C_Container.GetContainerItemLink then
+			ItemLink = C_Container.GetContainerItemLink(arg1, arg2)
+		else
+			ItemLink = GetContainerItemLink(arg1, arg2)
+		end
 	end
 	if ItemLink then
 		PawnLastCursorItemLink = PawnUnenchantItemLink(ItemLink, true)

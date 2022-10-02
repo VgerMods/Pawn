@@ -1987,7 +1987,15 @@ function PawnUIFrame_ShowBagUpgradeAdvisorCheck_OnClick()
 	local BagIndex
 	for BagIndex = 1, NUM_CONTAINER_FRAMES, 1 do
 		local BagFrame = _G["ContainerFrame" .. BagIndex];
-		if BagFrame:IsShown() then ContainerFrame_UpdateItemUpgradeIcons(BagFrame) end
+		if BagFrame:IsShown() then
+			if BagFrame.UpdateItemUpgradeIcons then
+				-- Dragonflight onward
+				BagFrame:UpdateItemUpgradeIcons()
+			else
+				-- Legion through Shadowlands
+				ContainerFrame_UpdateItemUpgradeIcons(BagFrame)
+			end
+		end
 	end
 end
 
