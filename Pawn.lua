@@ -199,15 +199,13 @@ function PawnInitialize()
 		-- WoW 10.0 moved UseContainerItem into C_Container.
 		hooksecurefunc(C_Container, "UseContainerItem", function(BagID, Slot)
 			if MerchantFrame:IsShown() then
-				local ItemLink = C_Container GetContainerItemLink(BagID, Slot)
-				if ItemLink then PawnOnItemLost(ItemLink) end
+				PawnOnItemLost(C_Container.GetContainerItemLink(BagID, Slot))
 			end
 		end)
 	else
 		hooksecurefunc("UseContainerItem", function(BagID, Slot)
 			if MerchantFrame:IsShown() then
-				local ItemLink = GetContainerItemLink(BagID, Slot)
-				if ItemLink then PawnOnItemLost(ItemLink) end
+				PawnOnItemLost(GetContainerItemLink(BagID, Slot))
 			end
 		end)
 	end
@@ -4064,6 +4062,7 @@ end)
 function PawnOnItemLost(ItemLink)
 	if not ItemLink then return end
 	ItemLink = PawnUnenchantItemLink(ItemLink, true)
+	if not ItemLink then return end -- If it's, say, a battle pet.
 	local _, _, _, _, _, _, _, _, InvType = GetItemInfo(ItemLink)
 	if not InvType or InvType == "" or InvType == "INVTYPE_TRINKET" or InvType == "INVTYPE_BAG" or InvType == "INVTYPE_QUIVER" or InvType == "INVTYPE_TABARD" or InvType == "INVTYPE_BODY" then return end
 	if InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE" then
