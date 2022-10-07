@@ -461,6 +461,11 @@ function PawnInitialize()
 		hooksecurefunc("ContainerFrameItemButton_UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
 	end
 
+	-- Dragonflight professions UI
+	if C_TradeSkillUI.SetTooltipRecipeResultItem then
+		hooksecurefunc(C_TradeSkillUI, "SetTooltipRecipeResultItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "C_TradeSkillUI.SetTooltipRecipeResultItem") end)
+	end
+
 	-- We're now effectively initialized.  Just the last steps of scale initialization remain.
 	PawnIsInitialized = true
 
