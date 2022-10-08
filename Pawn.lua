@@ -2129,7 +2129,7 @@ end
 -- Parameters: TooltipName, DebugMessages
 --		TooltipName: The tooltip to read.
 --		DebugMessages: If true (default), debug messages will be shown.
--- Return value: Stats, UnknownLines
+-- Return value: Stats, SocketBonusStats, UnknownLines, PrettyLink
 --		Stats: The table of stats for the item.
 --		SocketBonusStats: The table of stats for the item's socket bonus.
 --		UnknownLines: A list of lines in the tooltip that were not understood.
