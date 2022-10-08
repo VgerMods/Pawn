@@ -462,7 +462,7 @@ function PawnInitialize()
 	end
 
 	-- Dragonflight professions UI
-	if C_TradeSkillUI.SetTooltipRecipeResultItem then
+	if C_TradeSkillUI and C_TradeSkillUI.SetTooltipRecipeResultItem then
 		hooksecurefunc(C_TradeSkillUI, "SetTooltipRecipeResultItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "C_TradeSkillUI.SetTooltipRecipeResultItem") end)
 	end
 
