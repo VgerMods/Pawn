@@ -371,7 +371,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 		["MovementSpeed"] = "^%+# Speed$",
 		["Mp5"] = "^Equip: Restores # mana per 5 sec%.$",
 		["Mp52"] = "^%+?# mana every 5 sec%.$",
-		["Mp53"] = "^%+?# Mana [Pp]er 5 sec%.$",
+		["Mp53"] = "^%+?# [Mm]ana [Pp]er 5 sec%.$",
 		["Mp54"] = "^%+?# Mana every 5 seconds$",
 		["Mp55"] = "^UNUSED$",
 		["MultiStatHeading"] = "^Multiple Stats$",
