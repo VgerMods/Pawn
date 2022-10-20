@@ -425,18 +425,15 @@ function PawnInitialize()
 	if ContainerFrameItemButtonMixin and ContainerFrameItemButtonMixin.UpdateItemUpgradeIcon then
 		-- Dragonflight onward
 
-		-- IMPORTANT: As of October 1, this does not work with the new combined bags, only the traditional style.
-		-- But, the built-in upgrade arrows don't appear to work with either version, so... improvement?
-
 		-- First, hook ContainerFrameItemButtonMixin to affect all future bag frames.
 		hooksecurefunc(ContainerFrameItemButtonMixin, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
-		-- Unfortunately, the Mixin is not a prototype and changes are not retroactive to bags that have already been created,
+		-- Unfortunately, the Mixin is not a prototype so changes are not retroactive to bags that have already been created,
 		-- so now we need to update all of those.
 		for i = 1, NUM_TOTAL_BAG_FRAMES do
 			local Bag = _G["ContainerFrame" .. i]
 			if Bag.Items then
 				for j, Button in Bag:EnumerateItems() do
-					Mixin(Button, ContainerFrameItemButtonMixin)
+					hooksecurefunc(Button, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
 				end
 			end
 		end
