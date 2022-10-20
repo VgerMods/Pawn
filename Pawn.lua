@@ -410,7 +410,7 @@ function PawnInitialize()
 		end
 		PawnUpdateItemUpgradeIcon = function(self)
 			if self.isExtended then return end
-			local IsUpgrade = PawnIsContainerItemAnUpgrade(self:GetParent():GetID(), self:GetID())
+			local IsUpgrade = PawnIsContainerItemAnUpgrade(self.GetBagID and self:GetBagID() or self:GetParent():GetID(), self:GetID())
 
 			if IsUpgrade == nil then
 				self.UpgradeIcon:SetShown(false)
