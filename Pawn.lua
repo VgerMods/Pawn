@@ -127,6 +127,8 @@ function PawnOnEvent(Event, arg1, arg2, ...)
 	elseif Event == "ITEM_LOCKED" then
 		PawnOnItemLocked(arg1, arg2)
 		PawnOnInventoryChanged()
+	elseif Event == "MERCHANT_UPDATE" then
+		PawnOnItemLost(GetBuybackItemLink(GetNumBuybackItems()))
 	elseif Event == "ADDON_LOADED" then
 		PawnOnAddonLoaded(arg1)
 	elseif Event == "PLAYER_SPECIALIZATION_CHANGED" and arg1 == "player" then
@@ -195,20 +197,6 @@ function PawnInitialize()
 		function()
 			PawnOnItemLost(PawnLastCursorItemLink)
 		end)
-	if C_Container and C_Container.UseContainerItem then
-		-- WoW 10.0 moved UseContainerItem into C_Container.
-		hooksecurefunc(C_Container, "UseContainerItem", function(BagID, Slot)
-			if MerchantFrame:IsShown() then
-				PawnOnItemLost(C_Container.GetContainerItemLink(BagID, Slot))
-			end
-		end)
-	else
-		hooksecurefunc("UseContainerItem", function(BagID, Slot)
-			if MerchantFrame:IsShown() then
-				PawnOnItemLost(GetContainerItemLink(BagID, Slot))
-			end
-		end)
-	end
 	hooksecurefunc("PickupMerchantItem",
 		function(Index)
 			if Index == 0 then PawnOnItemLost(PawnLastCursorItemLink) end

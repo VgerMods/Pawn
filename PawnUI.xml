@@ -1631,6 +1631,7 @@
 				self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 				self:RegisterEvent("ITEM_LOCKED")
 				self:RegisterEvent("GROUP_ROSTER_UPDATE")
+				self:RegisterEvent("MERCHANT_UPDATE")
 				-- These events don't exist on Classic versions.
 				if VgerCore.SpecsExist then
 					self:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
