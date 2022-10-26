@@ -5771,7 +5771,11 @@ end
 --   true: This item is indeed an upgrade for something.
 --   false: This item is not an upgrade.
 --   nil: We're not sure yet.
-function PawnShouldItemLinkHaveUpgradeArrow(ItemLink, CheckLevel)
+function PawnShouldItemLinkHaveUpgradeArrow(ItemLink, CheckLevel, EvenOnClassic)
+	-- TEMPORARY HACK: If EvenOnClassic=true wasn't passed in and this is a Classic version, just return false.
+	-- This intentionally breaks integration with bag addons for now to resolve performance issues.
+	if (not EvenOnClassic) and (not VgerCore.IsMainline) then return false end
+
 	if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
 
 	--if PawnOptions.DebugBagArrows then VgerCore.Message("Checking upgrade information for " .. tostring(ItemLink)) end
