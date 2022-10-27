@@ -394,6 +394,11 @@ function PawnInitialize()
 		ArkInventoryRules.Register(arkInventoryModule, "PAWNNOTUPGRADE", ArkInventoryRulePawnNotUpgrade)
 	end
 
+	-- AceConfigDialog compatibility
+	if AceConfigDialogTooltip then
+		VgerCore.HookInsecureFunction(AceConfigDialogTooltip, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("AceConfigDialogTooltip", "SetHyperlink", ItemLink, ...) end)
+	end
+
 	-- In-bag upgrade icons
 	if VgerCore.IsMainline then
 		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
