@@ -1712,8 +1712,9 @@
 				<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="40" y="-155" /></Offset></Anchor></Anchors>
 				<Scripts>
 					<OnClick>
-						InterfaceOptionsFrameOkay_OnClick()
-						HideUIPanel(GameMenuFrame)
+						if InterfaceOptionsFrameOkay_OnClick then InterfaceOptionsFrameOkay_OnClick() end
+						if GameMenuFrame then HideUIPanel(GameMenuFrame) end
+						if SettingsPanel then HideUIPanel(SettingsPanel) end
 						PawnUIShow()
 					</OnClick>
 				</Scripts>
