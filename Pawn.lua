@@ -327,28 +327,43 @@ function PawnInitialize()
 	hooksecurefunc("LootWonAlertFrame_SetUp", PawnUI_LootWonAlertFrame_SetUp)
 
 	-- The "currently equipped" tooltips (two, in case of rings, trinkets, and dual wielding)
-	hooksecurefunc(ShoppingTooltip1, "SetCompareItem",
-		function(self, ...)
-			local _, ItemLink1 = ShoppingTooltip1:GetItem()
-			PawnUpdateTooltip("ShoppingTooltip1", "SetCompareItem", ItemLink1, ...)
-			PawnAttachIconToTooltip(ShoppingTooltip1, true)
-			local _, ItemLink2 = ShoppingTooltip2:GetItem()
-			if ItemLink2 and ShoppingTooltip2:IsShown() then
-				PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink2, ...)
-				PawnAttachIconToTooltip(ShoppingTooltip2, true)
-			end
+	if ShoppingTooltip1.SetCompareItem then
+		hooksecurefunc(ShoppingTooltip1, "SetCompareItem",
+			function(self, ...)
+				local _, ItemLink1 = ShoppingTooltip1:GetItem()
+				PawnUpdateTooltip("ShoppingTooltip1", "SetCompareItem", ItemLink1, ...)
+				PawnAttachIconToTooltip(ShoppingTooltip1, true)
+				local _, ItemLink2 = ShoppingTooltip2:GetItem()
+				if ItemLink2 and ShoppingTooltip2:IsShown() then
+					PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink2, ...)
+					PawnAttachIconToTooltip(ShoppingTooltip2, true)
+				end
+			end)
+		hooksecurefunc(ItemRefShoppingTooltip1, "SetCompareItem",
+			function(self, ...)
+				local _, ItemLink1 = ItemRefShoppingTooltip1:GetItem()
+				PawnUpdateTooltip("ItemRefShoppingTooltip1", "SetCompareItem", ItemLink1, ...)
+				PawnAttachIconToTooltip(ItemRefShoppingTooltip1, true)
+				local _, ItemLink2 = ItemRefShoppingTooltip2:GetItem()
+				if ItemLink2 and ItemRefShoppingTooltip2:IsShown() then
+					PawnUpdateTooltip("ItemRefShoppingTooltip2", "SetHyperlink", ItemLink2, ...)
+					PawnAttachIconToTooltip(ItemRefShoppingTooltip2, true)
+				end
+			end)
+	end
+
+	-- Dragonflight replaces SetCompareItem with ProcessInfo. (ProcessInfo is now used internally by lots of
+	-- methods, but only in Dragonflight.)
+	if ShoppingTooltip1.ProcessInfo then
+		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function(self)
+			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
+			if ItemLink then PawnUpdateTooltip("ShoppingTooltip1", "SetHyperlink", ItemLink) end
 		end)
-	hooksecurefunc(ItemRefShoppingTooltip1, "SetCompareItem",
-		function(self, ...)
-			local _, ItemLink1 = ItemRefShoppingTooltip1:GetItem()
-			PawnUpdateTooltip("ItemRefShoppingTooltip1", "SetCompareItem", ItemLink1, ...)
-			PawnAttachIconToTooltip(ItemRefShoppingTooltip1, true)
-			local _, ItemLink2 = ItemRefShoppingTooltip2:GetItem()
-			if ItemLink2 and ItemRefShoppingTooltip2:IsShown() then
-				PawnUpdateTooltip("ItemRefShoppingTooltip2", "SetHyperlink", ItemLink2, ...)
-				PawnAttachIconToTooltip(ItemRefShoppingTooltip2, true)
-			end
+		hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function(self)
+			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip2)
+			if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
 		end)
+	end
 
 	-- MultiTips compatibility
 	if MultiTips then
@@ -2432,7 +2447,12 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	end
 
 	-- Done!
-	local _, PrettyLink = Tooltip:GetItem()
+	local _, PrettyLink
+	if Tooltip.GetItem then
+		_, PrettyLink = Tooltip:GetItem()
+	elseif TooltipUtil then
+		_, PrettyLink = TooltipUtil.GetDisplayedItem(Tooltip)
+	end
 	if not HadUnknown then UnknownLines = nil end
 	return Stats, SocketBonusStats, UnknownLines, PrettyLink
 end
