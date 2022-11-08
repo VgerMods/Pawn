@@ -1,11 +1,11 @@
 ﻿<Bindings>
-	<Binding name="PAWN_TOGGLE_UI" header="PAWN">
+	<Binding name="PAWN_TOGGLE_UI" header="PAWN" category="ADDONS">
 		PawnUIShow()
 	</Binding>
-	<Binding name="PAWN_COMPARE_LEFT">
+	<Binding name="PAWN_COMPARE_LEFT" category="ADDONS">
 		PawnUI_SetCompareFromHover(1)
 	</Binding>
-	<Binding name="PAWN_COMPARE_RIGHT">
+	<Binding name="PAWN_COMPARE_RIGHT" category="ADDONS">
 		PawnUI_SetCompareFromHover(2)
 	</Binding>
 </Bindings>
