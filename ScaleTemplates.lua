@@ -619,7 +619,7 @@ PawnNewbieSpec =
 	2, -- Vengeance
 
 	[13] = -- Evoker
-	2, -- Devastation
+	1, -- Devastation
 }
 
 -- PawnNeverUsableStats: Master list of stats that are NEVER usable for each class, regardless of spec. 
