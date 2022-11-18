@@ -444,7 +444,7 @@ function PawnInitialize()
 	end
 
 	if ContainerFrameItemButtonMixin and ContainerFrameItemButtonMixin.UpdateItemUpgradeIcon then
-		-- Dragonflight onward
+		-- 10.0.0 only - this code was removed from the game in 10.0.2
 
 		-- First, hook ContainerFrameItemButtonMixin to affect all future bag frames.
 		hooksecurefunc(ContainerFrameItemButtonMixin, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
