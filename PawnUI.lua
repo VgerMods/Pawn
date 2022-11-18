@@ -1678,7 +1678,8 @@ function PawnUICompareItemShortcut_TooltipOn(self)
 	local Item = PawnUIShortcutItems[ShortcutIndex]
 	if Item then
 		GameTooltip:SetOwner(getglobal("PawnUICompareItemShortcut" .. ShortcutIndex), "ANCHOR_TOPLEFT")
-		GameTooltip:SetHyperlink(PawnUnenchantItemLink(Item.Link, true))
+		local ItemLink = PawnUnenchantItemLink(Item.Link, true)
+		GameTooltip:SetHyperlink(ItemLink)
 	end
 end
 
