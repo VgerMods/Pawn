@@ -420,7 +420,6 @@ function PawnInitialize()
 		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
 				local _, Count, _, _, _, _, ItemLink = C_Container.GetContainerItemInfo(bagID, slot)
-				VgerCore.Message(tostring(Count) .. " " .. tostring(ItemLink))
 				if not Count then return false end -- If the stack count is 0, it's clearly not an upgrade
 				if not ItemLink then return nil end -- If we didn't get an item link, but there's an item there, try again later
 				return PawnShouldItemLinkHaveUpgradeArrow(ItemLink, true) -- true means to check player level
