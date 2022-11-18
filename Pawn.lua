@@ -420,7 +420,7 @@ function PawnInitialize()
 		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
 			if PawnCommon.ShowBagUpgradeAdvisor then
 				local ItemInfo = C_Container.GetContainerItemInfo(bagID, slot)
-				if not ItemInfo.stackCount then return false end -- If the stack count is 0, it's clearly not an upgrade
+				if not ItemInfo or not ItemInfo.stackCount then return false end -- If the stack count is 0, it's clearly not an upgrade
 				if not ItemInfo.hyperlink then return nil end -- If we didn't get an item link, but there's an item there, try again later
 				return PawnShouldItemLinkHaveUpgradeArrow(ItemInfo.hyperlink, true) -- true means to check player level
 			else
