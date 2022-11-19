@@ -424,8 +424,13 @@ function PawnInitialize()
 				if not ItemInfo.hyperlink then return nil end -- If we didn't get an item link, but there's an item there, try again later
 				return PawnShouldItemLinkHaveUpgradeArrow(ItemInfo.hyperlink, true) -- true means to check player level
 			else
-				---@diagnostic disable-next-line: redundant-parameter
-				return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
+				if PawnOriginalIsContainerItemAnUpgrade then
+					---@diagnostic disable-next-line: redundant-parameter
+					return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
+				else
+					-- If Pawn's bag advisor is off, AND the game's IsContainerItemAnUpgrade is missing, nothing's an upgrade.
+					return false
+				end
 			end
 		end
 		PawnUpdateItemUpgradeIcon = function(self)
