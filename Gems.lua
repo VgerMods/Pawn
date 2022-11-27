@@ -329,6 +329,6 @@ PawnMetaGemQualityLevels =
 	{0, {} }, -- There are no meta gems anymore.
 }
 
-PawnMinimumItemLevelToConsiderGems = 144 -- Sockets on items below this ilvl are ignored by default
+PawnMinimumItemLevelToConsiderGems = 315 -- Sockets on items below this ilvl are ignored by default
 
 end -- if VgerCore.IsMainline
