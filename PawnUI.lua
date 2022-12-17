@@ -1992,7 +1992,7 @@ function PawnUIFrame_ShowBagUpgradeAdvisorCheck_OnClick()
 			if BagFrame.UpdateItemUpgradeIcons then
 				-- Dragonflight onward
 				BagFrame:UpdateItemUpgradeIcons()
-			else
+			elseif ContainerFrame_UpdateItemUpgradeIcons then
 				-- Legion through Shadowlands
 				ContainerFrame_UpdateItemUpgradeIcons(BagFrame)
 			end
