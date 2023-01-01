@@ -8,7 +8,7 @@
 
 local ScaleProviderName = "MrRobot"
 
-PawnMrRobotLastUpdatedVersion = 2.0713
+PawnMrRobotLastUpdatedVersion = 2.0714
 
 
 function PawnMrRobotScaleProvider_AddScales()

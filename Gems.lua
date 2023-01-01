@@ -255,45 +255,45 @@ local PawnGemData16 =
 }
 
 
-local PawnGemData42 =
+local PawnGemData52 =
 {
 
 -- Requires ilvl 200
 -- These are the tier-3 quality (ilvl 415) versions of the gems
-{ ID = 192902, R = true, Y = true, B = true, Stats = { CritRating = 21, HasteRating = 21 } }, -- Crafty Queen's Ruby
-{ ID = 192905, R = true, Y = true, B = true, Stats = { Versatility = 21, MasteryRating = 21 } }, -- Zen Mystic Sapphire
-{ ID = 192908, R = true, Y = true, B = true, Stats = { HasteRating = 21, Versatility = 21 } }, -- Energized Vibrant Emerald
-{ ID = 192912, R = true, Y = true, B = true, Stats = { MasteryRating = 21, CritRating = 21 } }, -- Sensei's Sundered Onyx
-{ ID = 192916, R = true, Y = true, B = true, Stats = { Stamina = 26 } }, -- Solid Eternity Amber
+{ ID = 192902, R = true, Y = true, B = true, Stats = { CritRating = 26, HasteRating = 26 } }, -- Crafty Queen's Ruby
+{ ID = 192905, R = true, Y = true, B = true, Stats = { Versatility = 26, MasteryRating = 26 } }, -- Zen Mystic Sapphire
+{ ID = 192908, R = true, Y = true, B = true, Stats = { HasteRating = 26, Versatility = 26 } }, -- Energized Vibrant Emerald
+{ ID = 192912, R = true, Y = true, B = true, Stats = { MasteryRating = 26, CritRating = 26 } }, -- Sensei's Sundered Onyx
+{ ID = 192916, R = true, Y = true, B = true, Stats = { Stamina = 75 } }, -- Solid Eternity Amber
 
 }
 
 
-local PawnGemData82 =
+local PawnGemData103 =
 {
 
 -- Requires ilvl 200
 -- These are the tier-3 quality (ilvl 415) versions of the gems
-{ ID = 192919, R = true, Y = true, B = true, Stats = { CritRating = 56, HasteRating = 26 } }, -- Crafty Alexstraszite
-{ ID = 192922, R = true, Y = true, B = true, Stats = { CritRating = 56, MasteryRating = 26 } }, -- Sensei's Alexstraszite
-{ ID = 192925, R = true, Y = true, B = true, Stats = { CritRating = 56, Versatility = 26 } }, -- Radiant Alexstraszite
-{ ID = 192928, R = true, Y = true, B = true, Stats = { CritRating = 70 } }, -- Deadly Alexstraszite
-{ ID = 192932, R = true, Y = true, B = true, Stats = { Versatility = 56, CritRating = 26 } }, -- Radiant Malygite
-{ ID = 192935, R = true, Y = true, B = true, Stats = { Versatility = 56, HasteRating = 26 } }, -- Energized Malygite
-{ ID = 192938, R = true, Y = true, B = true, Stats = { Versatility = 56, MasteryRating = 26 } }, -- Zen Malygite
-{ ID = 192942, R = true, Y = true, B = true, Stats = { Versatility = 70 } }, -- Stormy Malygite
-{ ID = 192945, R = true, Y = true, B = true, Stats = { HasteRating = 56, CritRating = 26 } }, -- Crafty Ysemerald
-{ ID = 192948, R = true, Y = true, B = true, Stats = { HasteRating = 56, MasteryRating = 26 } }, -- Keen Ysemerald
-{ ID = 192952, R = true, Y = true, B = true, Stats = { HasteRating = 56, Versatility = 26 } }, -- Energized Ysemerald
-{ ID = 192955, R = true, Y = true, B = true, Stats = { HasteRating = 70 } }, -- Quick Ysemerald
-{ ID = 192958, R = true, Y = true, B = true, Stats = { MasteryRating = 56, CritRating = 26 } }, -- Sensei's Neltharite
-{ ID = 192961, R = true, Y = true, B = true, Stats = { MasteryRating = 56, HasteRating = 26 } }, -- Keen Neltharite
-{ ID = 192964, R = true, Y = true, B = true, Stats = { MasteryRating = 56, Versatility = 26 } }, -- Zen Neltharite
-{ ID = 192967, R = true, Y = true, B = true, Stats = { MasteryRating = 70 } }, -- Fractured Neltharite
-{ ID = 192970, R = true, Y = true, B = true, Stats = { Stamina = 56, CritRating = 26 } }, -- Jagged Nozdorite
-{ ID = 192973, R = true, Y = true, B = true, Stats = { Stamina = 56, HasteRating = 26 } }, -- Forceful Nozdorite
-{ ID = 192976, R = true, Y = true, B = true, Stats = { Stamina = 56, MasteryRating = 26 } }, -- Puissant Nozdorite
-{ ID = 192979, R = true, Y = true, B = true, Stats = { Stamina = 56, Versatility = 26 } }, -- Steady Nozdorite
+{ ID = 192919, R = true, Y = true, B = true, Stats = { CritRating = 70, HasteRating = 33 } }, -- Crafty Alexstraszite
+{ ID = 192922, R = true, Y = true, B = true, Stats = { CritRating = 70, MasteryRating = 33 } }, -- Sensei's Alexstraszite
+{ ID = 192925, R = true, Y = true, B = true, Stats = { CritRating = 70, Versatility = 33 } }, -- Radiant Alexstraszite
+{ ID = 192928, R = true, Y = true, B = true, Stats = { CritRating = 88 } }, -- Deadly Alexstraszite
+{ ID = 192932, R = true, Y = true, B = true, Stats = { Versatility = 70, CritRating = 33 } }, -- Radiant Malygite
+{ ID = 192935, R = true, Y = true, B = true, Stats = { Versatility = 70, HasteRating = 33 } }, -- Energized Malygite
+{ ID = 192938, R = true, Y = true, B = true, Stats = { Versatility = 70, MasteryRating = 33 } }, -- Zen Malygite
+{ ID = 192942, R = true, Y = true, B = true, Stats = { Versatility = 88 } }, -- Stormy Malygite
+{ ID = 192945, R = true, Y = true, B = true, Stats = { HasteRating = 70, CritRating = 33 } }, -- Crafty Ysemerald
+{ ID = 192948, R = true, Y = true, B = true, Stats = { HasteRating = 70, MasteryRating = 33 } }, -- Keen Ysemerald
+{ ID = 192952, R = true, Y = true, B = true, Stats = { HasteRating = 70, Versatility = 33 } }, -- Energized Ysemerald
+{ ID = 192955, R = true, Y = true, B = true, Stats = { HasteRating = 88 } }, -- Quick Ysemerald
+{ ID = 192958, R = true, Y = true, B = true, Stats = { MasteryRating = 70, CritRating = 33 } }, -- Sensei's Neltharite
+{ ID = 192961, R = true, Y = true, B = true, Stats = { MasteryRating = 70, HasteRating = 33 } }, -- Keen Neltharite
+{ ID = 192964, R = true, Y = true, B = true, Stats = { MasteryRating = 70, Versatility = 33 } }, -- Zen Neltharite
+{ ID = 192967, R = true, Y = true, B = true, Stats = { MasteryRating = 88 } }, -- Fractured Neltharite
+{ ID = 192970, R = true, Y = true, B = true, Stats = { Stamina = 102, CritRating = 33 } }, -- Jagged Nozdorite
+{ ID = 192973, R = true, Y = true, B = true, Stats = { Stamina = 102, HasteRating = 33 } }, -- Forceful Nozdorite
+{ ID = 192976, R = true, Y = true, B = true, Stats = { Stamina = 102, MasteryRating = 33 } }, -- Puissant Nozdorite
+{ ID = 192979, R = true, Y = true, B = true, Stats = { Stamina = 102, Versatility = 33 } }, -- Steady Nozdorite
 
 
 }
@@ -313,8 +313,8 @@ local PawnGemData82 =
 
 PawnGemQualityLevels =
 {
-	{ 398, PawnGemData82 }, -- Vault of the Incarnates
-	{ 315, PawnGemData42 }, -- Mythic Fated Shadowlands epics are 311; tier-1 green Dragonflight gems are 385
+	{ 398, PawnGemData103 }, -- Vault of the Incarnates
+	{ 315, PawnGemData52 }, -- Mythic Fated Shadowlands epics are 311; tier-1 green Dragonflight gems are 385
 	{ 175, PawnGemData16 }, -- Rank 1 crafted Shadowlands legendaries (177 is rank 4 covenant armor)
 	{ 144, PawnGemData12 }, -- Mythic Ny'alotha is 140
 	{ 115, PawnGemData7 }, -- Azshara's Eternal Palace heroic
