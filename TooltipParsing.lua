@@ -354,6 +354,7 @@ PawnRegexes =
 	{'^"'}, -- Flavor text
 	{PawnGameConstantIgnoredPlaceholder(ITEM_MIN_LEVEL)}, -- "Requires Level XX"... but "Requires level XX to YY" we DO care about.
 	{PawnGameConstantIgnoredPlaceholder(ITEM_REQ_SKILL)}, -- "Requires SKILL (XX)"
+	{PROFESSIONS_CRAFTING_QUALITY and PawnGameConstantIgnoredPlaceholder(PROFESSIONS_CRAFTING_QUALITY) or "^UNUSED$"}, -- "Quality: <icon>"
 	{L.Requires2}, -- unused in English
 }
 
