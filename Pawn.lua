@@ -2894,101 +2894,62 @@ function PawnGetGemListString(ScaleName, ListAll, ItemLevel, Color)
 	return "?", true
 end
 
--- Returns the type of hyperlink passed in, or nil if it's not a hyperlink.
--- Possible values include: item, enchant, quest, spell
-function PawnGetHyperlinkType(Hyperlink)
+-- If the string is a clickable hyperlink, return the actual item: or other link target from it.
+function PawnGetHyperlinkTarget(Hyperlink)
 	-- First, try colored links.
-	local _, _, LinkType = strfind(Hyperlink, "^|c%x%x%x%x%x%x%x%x|H(.-):")
-	if not LinkType then
-		-- Then, try links prepended with |H.  (Outfitter does this.)
-		_, _, LinkType = strfind(Hyperlink, "^|H(.-):")
+	local _, _, Target = strfind(Hyperlink, "^|c%x%x%x%x%x%x%x%x|H(.-)|")
+	if not Target then
+		-- Then, try links prepended with |H but no color.  (Outfitter does this.)
+		_, _, Target = strfind(Hyperlink, "^|H(.-)|")
 	end
-	if not LinkType then
-		-- Then, try raw links.
-		_, _, LinkType = strfind(Hyperlink, "^(.-):")
-	end
-	return LinkType
+	-- If it's a raw link, or not a link at all, just return the same string.
+	if not Target then Target = Hyperlink end
+	return Target
 end
 
--- If the item link is of the clickable form, strip off the initial hyperlink portion.
-function PawnStripLeftOfItemLink(ItemLink)
-	local _, _, InnerLink = strfind(ItemLink, "^|%x+|H(.+)")
-	if InnerLink then return InnerLink else return ItemLink end
+-- Returns the type of hyperlink passed in, or nil if it's not a hyperlink.
+-- Possible values include: "item", "enchant", "quest", "spell", and many more.
+function PawnGetHyperlinkType(Hyperlink)
+	local _, _, LinkType = strfind(PawnGetHyperlinkTarget(Hyperlink), "^(.-):")
+	return LinkType
 end
 
 -- Extracts the item ID from an ItemLink string and returns it, or nil if unsuccessful.
 function PawnGetItemIDFromLink(ItemLink)
-	local Pos, _, ItemID = strfind(PawnStripLeftOfItemLink(ItemLink), "^item:(%-?%d+):?")
+	local Pos, _, ItemID = strfind(PawnGetHyperlinkTarget(ItemLink), "^item:(%-?%d+):?")
 	if Pos then return tonumber(ItemID) else return nil end
-end
-
--- If the upgrade level passed in is upgradeable with valor, return the new upgrade level, otherwise return nil.
-local function PawnDoValorUpgrade(UpgradeLevel)
-	if UpgradeLevel1 == "529" or UpgradeLevel1 == "530" then
-		-- Note: This only covers Warlords of Draenor upgradeable items, not legacy items, but realistically you're probably
-		-- not ever going to want to upgrade those.  (If it ever becomes useful, it sounds like LibItemUpgradeInfo handles all of the edge cases.)
-		return "531"
-	else
-		return nil
-	end
 end
 
 -- Returns a new item link that represents an unenchanted version of the original item link.
 -- Return values:
---		ItemLink - The unenchanted item link, or nil if unsuccessful or the item is not unenchanted.
---		WasUpgraded - True if the item was upgraded while being "unenchanted."  (Always false if "ignore valor and baleful upgrades" is off.)
--- (But if EvenIfNotEnchanted is true, the item link will be processed even if the item wasn't enchanted.)
+--		ItemLink - The unenchanted item link, or nil if unsuccessful or the item is not unenchanted and not EvenIfNotEnchanted.
 function PawnUnenchantItemLink(ItemLink, EvenIfNotEnchanted)
-	local TrimmedItemLink = PawnStripLeftOfItemLink(ItemLink)
-	local Pos, _, ItemID, EnchantID, GemID1, GemID2, GemID3, GemID4, SuffixID, MoreInfo, ViewAtLevel, SpecializationID, UpgradeLevel1, Difficulty, NumBonusIDs, BonusID1, BonusID2, BonusID3, BonusID4, BonusID5, BonusID6, BonusID7, BonusID8, BonusID9, BonusID10, BonusID11, BonusID12 = strfind(TrimmedItemLink, "^item:(%-?%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*)")
-	-- Note: After the specified number of bonus IDs would be UpgradeLevel2, which could be the level at which the item was acquired for timewarped items, or
-	-- the Valor upgrade level.
-	-- Note: This code is gross and you should be ashamed.
+	-- Item link format
+	-- item:ItemID:EnchantID:GemID1:GemID2:GemID3:GemID4:SuffixID:MoreInfo:ViewAtLevel:SpecializationID:UpgradeLevel1:Difficulty:NumBonusIDs:BonusID1:BonusID2:[...]:BonusIDn:UpgradeLevel2:[...]
+	-- All portions after the initial item ID are optional, and all trailing colons are optional.
+	-- "Unenchanting" an item link involves removing the enchantment and gem IDs and leaving everything else intact.
+	local Target = PawnGetHyperlinkTarget(ItemLink)
+	local Pos, _, ItemID, EnchantID, GemID1, GemID2, GemID3, GemID4, EverythingElse = strfind(Target, "^item:(%-?%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(.*)")
 
-	if Pos then
-		-- If this is a valor-upgradeable item that isn't fully upgraded, for purposes of calculation we always assume a fully-upgraded item is the "base."
-		-- The upgrade value will always come after the list of bonus IDs, as UpgradeLevel2.
-		NumBonusIDs = tonumber(NumBonusIDs) or 0
-		VgerCore.Assert(NumBonusIDs <= 12, "Pawn didn't expect to find " .. tostring(NumBonusIDs) .. " bonus IDs on that complicated-ass item. Item stats may not be correct.")
-		local WasUpgraded = false -- This feature was removed in Pawn 2.1.4.
+	-- If this isn't in the correct item link format, we can exit now. This is a normal case: for example, caged battle pets appear in inventory but aren't items.
+	if not Pos then return nil end
 
-		if
-			EvenIfNotEnchanted or
-			EnchantID ~= "0" or EnchantID == "" or EnchantID == nil or
-			GemID1 ~= "0" or GemID1 == "" or GemID1 == nil or
-			GemID2 ~= "0" or GemID2 == "" or GemID2 == nil or
-			GemID3 ~= "0" or GemID3 == "" or GemID3 == nil or
-			GemID4 ~= "0" or GemID4 == "" or GemID4 == nil or
-			WasUpgraded
-		then
-			-- This item is enchanted.  Return a new link.
-			if SuffixID == nil or SuffixID == "" then SuffixID = "0" end
-			if MoreInfo == nil or MoreInfo == "" then MoreInfo = "0" end
-			if SpecializationID == nil or SpecializationID == "" then SpecializationID = "0" end
-			if UpgradeLevel1 == nil or UpgradeLevel1 == "" then UpgradeLevel1 = "0" end
-			if Difficulty == nil or Difficulty == "" then Difficulty = "0" end
-			if NumBonusIDs == nil or NumBonusIDs == "" then NumBonusIDs = "0" end
-			if BonusID1 == nil or BonusID1 == "" then BonusID1 = "0" end
-			if BonusID2 == nil or BonusID2 == "" then BonusID2 = "0" end
-			if BonusID3 == nil or BonusID3 == "" then BonusID3 = "0" end
-			if BonusID4 == nil or BonusID4 == "" then BonusID4 = "0" end
-			if BonusID5 == nil or BonusID5 == "" then BonusID5 = "0" end
-			if BonusID6 == nil or BonusID6 == "" then BonusID6 = "0" end
-			if BonusID7 == nil or BonusID7 == "" then BonusID7 = "0" end
-			if BonusID8 == nil or BonusID8 == "" then BonusID8 = "0" end
-			if BonusID9 == nil or BonusID9 == "" then BonusID9 = "0" end
-			if BonusID10 == nil or BonusID10 == "" then BonusID10 = "0" end
-			if BonusID11 == nil or BonusID11 == "" then BonusID11 = "0" end
-			if BonusID12 == nil or BonusID12 == "" then BonusID12 = "0" end
-			return "item:" .. ItemID .. ":0:0:0:0:0:" .. SuffixID .. ":" .. MoreInfo .. ":" .. 0 .. ":" .. SpecializationID .. ":" .. UpgradeLevel1 .. ":" .. Difficulty .. ":" .. NumBonusIDs .. ":" .. BonusID1 .. ":" .. BonusID2 .. ":" .. BonusID3 .. ":" .. BonusID4 .. ":" .. BonusID5 .. ":" .. BonusID6 .. ":" .. BonusID7 .. ":" .. BonusID8 .. ":" .. BonusID9 .. ":" .. BonusID10 .. ":" .. BonusID11 .. ":" .. BonusID12, WasUpgraded
+	if
+		EvenIfNotEnchanted or
+		(EnchantID ~= "0" and EnchantID ~= "" and EnchantID ~= nil) or
+		(GemID1 ~= "0" and GemID1 ~= "" and GemID1 ~= nil) or
+		(GemID2 ~= "0" and GemID2 ~= "" and GemID2 ~= nil) or
+		(GemID3 ~= "0" and GemID3 ~= "" and GemID3 ~= nil) or
+		(GemID4 ~= "0" and GemID4 ~= "" and GemID4 ~= nil)
+	then
+		-- This item is enchanted or gemmed, so return a new link.
+		if EverythingElse then
+			return "item:" .. ItemID .. "::::::" .. EverythingElse
 		else
-			-- This item is not enchanted.  Return nil.
-			return nil
+			return "item:" .. ItemID
 		end
 	else
-		-- We couldn't parse this item link.  Return nil.
-		-- This is a normal case—for example, battle pet item links.
-		--VgerCore.Fail("Could not parse the item link: " .. PawnEscapeString(ItemLink))
+		-- This item is already unenchanted, so just return nil.
 		return nil
 	end
 end
