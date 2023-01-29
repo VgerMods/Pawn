@@ -263,8 +263,8 @@ function PawnInitialize()
 	if GameTooltip.SetWeeklyReward then
 		hooksecurefunc(GameTooltip, "SetWeeklyReward", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetWeeklyReward", ...) end)
 	end
-	if C_ItemInteraction and C_ItemInteraction.SetItemConversionOutputTooltip then
-		hooksecurefunc(C_ItemInteraction, "SetItemConversionOutputTooltip", function(self, ...) PawnUpdateTooltip("GameTooltip", "__ItemInteraction_SetItemConversionOutputTooltip_ignored", ...) end)
+	if GameTooltip.SetItemInteractionItem then
+		hooksecurefunc(GameTooltip, "SetItemInteractionItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetItemInteractionItem", ...) end)
 	end
 	hooksecurefunc(GameTooltip, "Hide",
 		function(self, ...)
