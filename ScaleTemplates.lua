@@ -7,9 +7,6 @@
 ------------------------------------------------------------
 
 
--- Test code for getting spec IDs matched up:
---/script local Index; for Index = 1, GetNumSpecializations() do local ID, Name = GetSpecializationInfo(Index) VgerCore.Message("(" .. Index .. ") Spec ID " .. ID .. " is " .. Name) end
-
 -- Returns the template from PawnScaleTemplates for a given class ID and spec ID.
 function PawnFindScaleTemplate(ClassID, SpecID)
 	local _, Template
@@ -461,7 +458,7 @@ PawnScaleTemplates =
 	["Role"] = "DAMAGER",
 	["PrimaryStat"] = "Agility",
 	["HideUpgrades"] = 2, -- Hide 2H upgrades
-	["UnusableStats"] = { "IsShield", "IsFrill" }
+	["UnusableStats"] = { "IsDagger", "IsShield", "IsFrill" }
 },
 
 {
