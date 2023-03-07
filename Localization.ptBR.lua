@@ -264,7 +264,7 @@ Para mais informações sobre personalizar o Pawn, favor veja o arquivo de ajuda
 		["Armor2"] = "^%+?# de Armadura$",
 		["ArmorPenetration"] = "^Equipado: Seus ataques ignoram # da Armadura do adversário%.$",
 		["ArmorPenetrationRating"] = "^Equipado: Aumenta em # a taxa de penetração em armadura%.$",
-		["ArmorPenetrationRating2"] = "^UNUSED$",
+		["ArmorPenetrationRating2"] = "^Equipado: Aumenta em # a penetração em armaduras%.$",
 		["ArmorPenetrationShort"] = "^%+?# Taxa de Penetração em Armadura$",
 		["Avoidance"] = "^%+# Evasiva$",
 		["Axe"] = "^Machado$",

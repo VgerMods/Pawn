@@ -286,7 +286,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["AllStats"] = "^%+?# todas las estadísticas$",
 		["Ap"] = "^%+?# [Pp]oder de ataque$",
 		["Ap2"] = "^Equipar: Aumenta # p%. el poder de ataque%.$",
-		["Ap3"] = "^UNUSED$",
+		["Ap3"] = "^Equipar: Aumenta el poder de ataque # p%.$",
 		["ArcaneResist"] = "^%+?# resistencia a Arcano$",
 		["ArcaneSpellDamage"] = "^%+# daño con hechizos Arcano$",
 		["ArcaneSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos Arcanos%.$",
@@ -295,7 +295,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["Armor2"] = "^UNUSED$",
 		["ArmorPenetration"] = "^Equipar: Tus ataques ignoran # p%. de la armadura de tu oponente%.$",
 		["ArmorPenetrationRating"] = "^Equipar: Aumenta el índice de penetración de armadura # p%.$",
-		["ArmorPenetrationRating2"] = "^UNUSED$",
+		["ArmorPenetrationRating2"] = "^Equipar: Aumenta # p%. la penetración de armadura%.$",
 		["ArmorPenetrationShort"] = "^%+?# índice de penetración de armadura$",
 		["Avoidance"] = "^%+# eludir$",
 		["Axe"] = "^Hacha$",
@@ -922,6 +922,7 @@ if GetLocale() == "esES" then
 
 		local TooltipParsing_BurningCrusade =
 		{
+			["ArmorPenetrationRating2"] = "^Equipar: Aumenta la penetración de armadura # p%.$",
 			["SpellDamage2"] = "^Equipar: Aumenta el daño y la sanación de los hechizos mágicos y los efectos hasta en # p%.$",
 			["ArcaneSpellDamage"] = "^%+?# daño con hechizos Arcano$",
 			["FireSpellDamage"] = "^%+?# daño con hechizos de Fuego$",

@@ -698,7 +698,7 @@ if VgerCore.IsClassic then
 	PawnLocal.ThousandsSeparator = "NBSP"
 	PawnLocal.DecimalSeparator = "."
 elseif VgerCore.IsWrath then
-	PawnLocal.ThousandsSeparator = "NBSP"
+	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 end
 
