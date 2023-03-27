@@ -28,6 +28,7 @@ GemsClassic.lua
 GemsBurningCrusade.lua
 GemsWrath.lua
 ScaleTemplates.lua
+ItemIDs.lua
 Pawn.lua
 PawnUI.lua
 PawnUI.xml
