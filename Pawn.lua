@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.0719
+PawnVersion = 2.0800
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.17
@@ -322,7 +322,11 @@ function PawnInitialize()
 	GroupLootFrame4:HookScript("OnShow", PawnUI_GroupLootFrame_OnShow)
 
 	-- The loot history window
-	hooksecurefunc("LootHistoryFrame_UpdateItemFrame", PawnUI_LootHistoryFrame_UpdateItemFrame)
+	-- (This was reimplemented as GroupLootHistoryFrame + LootHistoryElementMixin in 10.1.0. It's more challenging to
+	-- override than it was before, and given that I haven't even used the loot history window in like a decade... probably nbd.)
+	if LootHistoryFrame then
+		hooksecurefunc("LootHistoryFrame_UpdateItemFrame", PawnUI_LootHistoryFrame_UpdateItemFrame)
+	end
 
 	-- The loot won window
 	hooksecurefunc("LootWonAlertFrame_SetUp", PawnUI_LootWonAlertFrame_SetUp)

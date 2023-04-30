@@ -17,6 +17,157 @@
 	For recent version history, see the <a href="Readme.htm">Pawn readme</a>. 
 	(I got tired of the version history section of the <a href="Readme.htm">
 	readme</a> being longer than the rest of it, so I moved parts here.)</p>
+
+<h3>Version 2.7.18</h3>
+<ul>
+	<li>Dragonflight: When you have the Onyx Annulet (the Forbidden Reach ring with primordial sockets) equipped, Pawn will ignore that ring for the purposes of showing you upgrades.</li>
+</ul>
+<h3>Version 2.7.17</h3>
+<ul>
+	<li>Dragonflight: Enhancement shamans will no longer see daggers as upgrades.</li>
+	<li>Wrath of the Lich King Classic: Added support for additional items with attack power and armor penetration rating in French, Latin American Spanish, European Spanish, Portuguese, Korean, Simplified Chinese, and Traditional Chinese. (Those items already worked in other languages.)</li>
+</ul>
+<h3>Version 2.7.16</h3>
+<ul>
+	<li>Dragonflight: Pawn will now show you upgrade details when using the Revival Catalyst at Tyrhold.</li>
+</ul>
+<h3>Version 2.7.15</h3>
+<ul>
+	<li>Fixed a bug where Pawn was undervaluing certain crafted items with two random stats.</li>
+</ul>
+<h3>Version 2.7.14</h3>
+<ul>
+	<li>Dragonflight: Added support for loot in the the new Dragonflight Adventure Guide like in previous versions of the game. (Item tooltips will get upgrade arrows and so on, but I haven't added green arrows to the item icons themselves yet.)</li>
+	<li>Dragonflight: Updated Pawn's database of gem stats to account for changes in 10.0.2. Any Dragonflight item with a socket will now be considered a couple of percentage points better than before.</li>
+	<li>Dragonflight: Crafted items with a Quality level on the tooltip will no longer cause Pawn's Compare tab to say that the item has "special effects."</li>
+	<li>Dragonflight: Fixed a bug where Pawn would cause a Lua error when turning the "show bag upgrade advisor" option on or off after WoW patch 10.0.2.</li>
+</ul>
+<h3>Version 2.7.13</h3>
+<ul>
+	<li>Dragonflight: Pawn will no longer suggest socketing gems into items from 
+	the Shadowlands, unless you turn off the "Ignore sockets on low-level items" 
+	option. Onto the Dragon Isles!</li>
+</ul>
+<h3>Version 2.7.12</h3>
+<ul>
+	<li>Dragonflight: Fixed another error that could occur in 10.0.2 when using 
+	Pawn-compatible bag addons while Pawn's bag advisor is OFF. (When that 
+	option is off, and a bag addon asks Pawn for help finding upgrades, Pawn 
+	just asks the game what it would have done. But the game removed its bag 
+	upgrade code in 10.0.2 so Pawn was freaking out.)</li>
+</ul>
+<h3>Version 2.7.11</h3>
+<ul>
+	<li>Dragonflight: Yet another change to work with Pawn-compatible bag addons 
+	(thanks Merathilis!).</li>
+</ul>
+<h3>Version 2.7.10</h3>
+<ul>
+	<li>Dragonflight: Additional fixes for Pawn-compatible bag addons (thanks 
+	Caedis!).</li>
+	<li>Dragonflight: Fixed a bug I introduced in 2.7.9 that would cause your 
+	chat window to be filled with messages like "nil nil" if you were using a 
+	Pawn-compatible bag addon.</li>
+	<li>Dragonflight: Fixed a problem that was preventing the "Equipped" 
+	shortcut buttons on Pawn's Compare tab from working after 10.0.2.</li>
+</ul>
+<h3>Version 2.7.9</h3>
+<ul>
+	<li>Dragonflight: <strong>In 10.0.2, Blizzard deleted the code for the 
+	game's built-in bag arrows. For now, green arrows in your bags won't work 
+	unless you have a Pawn-compatible bag addon installed.</strong> You can 
+	still see upgrade advice when you hover over the item, just not on the 
+	item's icon itself.
+	<ul>
+		<li>This version includes an update so that Pawn-compatible bag addons 
+		will work again.</li>
+		<li>I'm as confused as you are.</li>
+	</ul>
+	</li>
+	<li>Dragonflight: Evokers in the starting zone who haven't chosen a spec will now see Devastation 
+	advice when in Automatic mode instead of Preservation. (It doesn't really 
+	matter right now because both of those scales are placeholders for the time 
+	being.)</li>
+</ul>
+<h3>Version 2.7.8</h3>
+<ul>
+	<li>Dragonflight: Pawn's keybindings will now once again show up in the 
+	keybindings list without having to search for them by name.</li>
+	<li>Dragonflight: Pawn now knows about the new gems from the Dragon Isles, 
+	but it won't suggest them until you start getting gear from there.</li>
+	<li>Wrath of the Lich King Classic and Burning Crusade Classic: Fixed an 
+	error that would occur when socketing an item when using a custom scale for 
+	which there are three or more colored gems that have exactly the same value.</li>
+</ul>
+<h3>Version 2.7.7</h3>
+<ul>
+	<li>Dragonflight: Updated to work with changes made to the game's comparison 
+	tooltips on the 10.0.2 PTR and beta.</li>
+	<li>Dragonflight: Fixed the error that would occur when clicking the Pawn 
+	button in the Interface Options window.</li>
+	<li>Adds support for a future version of Ace3's configuration window.</li>
+</ul>
+<h3>Version 2.7.6</h3>
+<ul>
+	<li>All Classic versions: Pawn will not provide upgrade information to bag 
+	addons for now, to resolve some extreme performance issues that some players 
+	are having. (I hope to let bag addons on Classic versions add green arrows 
+	like you get on modern WoW again in the future!)</li>
+</ul>
+<h3>Version 2.7.5</h3>
+<ul>
+	<li>German Wrath of the Lich King Classic: Added support for additional 
+	items with armor penetration rating.</li>
+</ul>
+<h3>Version 2.7.4</h3>
+<ul>
+	<li>Dragonflight: The bag upgrade advisor (Pawn taking over the green arrows 
+	in your bags) now works with all styles of bags.</li>
+	<li>Dragonflight: Fixed a problem where sometimes you couldn't right-click 
+	on items in your bags to use them.</li>
+</ul>
+<h3>Version 2.7.3</h3>
+<ul>
+	<li>Fixed a harmless error that could occur when selling certain unusual 
+	types of items, such as caged battle pets.</li>
+	<li>Burning Crusade and Wrath of the Lich King Classic: Fixed a problem 
+	where socket bonuses were sometimes being ignored in the advice given by the 
+	socketing advisor. (The item's values and upgrade %s were, however, not 
+	affected—just the shift-right-click window.)</li>
+	<li>Dragonflight: Pawn now annotates the tooltip when hovering over the item 
+	to be crafted in the professions UI, so you'll see upgrade information (and 
+	item scores if enabled) when you hover.</li>
+	<li>Russian Wrath of the Lich King Classic: Added support for additional 
+	items with armor penetration rating.</li>
+</ul>
+<h3>Version 2.7.2</h3>
+<ul>
+	<li>Dragonflight: The bag upgrade advisor (Pawn taking over the green arrows 
+	in your bags) now works with the classic (non-combined) bags in WoW 10.0. 
+	(Thanks Triadian!)</li>
+	<li>Simplified Chinese Wrath of the Lich King Classic: Added support for 
+	additional items with parry rating.</li>
+</ul>
+<h3>Version 2.7.1</h3>
+<ul>
+	<li>Dragonflight: Fixed a problem where Pawn would display an error when 
+	evaluating armor for evokers.</li>
+</ul>
+<h3>Version 2.7</h3>
+<ul>
+	<li>Dragonflight: Pawn now works on the Dragonflight beta and the WoW 10.0 
+	PTR. Stat weights for evokers are placeholders.</li>
+	<li>Shadowlands and Dragonflight: Fixed a problem where new characters 
+	(before level 10) could show item advice for blood death knights or another 
+	seemingly random spec when in Automatic mode.</li>
+	<li>Wrath of the Lich King Classic: Northrend awaits! Pawn will no longer 
+	suggest that you put gems in your Burning Crusade items, unless you've 
+	turned off the "Ignore sockets on low-level items" option that's on by 
+	default. With the option on, Pawn will start suggesting you socket gems 
+	again when you start getting level 187 gear (about level 78).</li>
+	<li>English Classic versions: Added support for a few items that add armor 
+	penetration rating in an unusual way.</li>
+</ul>
 <h3>Version 2.6.7</h3>
 <ul>
 	<li>Wrath of the Lich King Classic: The individual schools of spell damage 
