@@ -2065,7 +2065,7 @@ end
 ------------------------------------------------------------
 
 function PawnUIAboutTabPage_OnShow()
-	local Version = GetAddOnMetadata("Pawn", "Version")
+	local Version = (C_AddOns and C_AddOns.GetAddOnMetadata or GetAddOnMetadata)("Pawn", "Version")
 	if Version then
 		PawnUIFrame_AboutVersionLabel:SetText(format(PawnUIFrame_AboutVersionLabel_Text, Version))
 	end
@@ -2461,11 +2461,6 @@ function PawnInterfaceOptionsFrame_OnLoad()
 	-- Register the Interface Options page.
 	PawnInterfaceOptionsFrame.name = "Pawn"
 	InterfaceOptions_AddCategory(PawnInterfaceOptionsFrame)
-	-- Update the version display.
-	local Version = GetAddOnMetadata("Pawn", "Version")
-	if Version then
-		PawnInterfaceOptionsFrame_AboutVersionLabel:SetText(format(PawnUIFrame_AboutVersionLabel_Text, Version))
-	end
 end
 
 ------------------------------------------------------------
