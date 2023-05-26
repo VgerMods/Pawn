@@ -3056,7 +3056,7 @@ local SpecNameToIDMap =
 	[10] = { BREWMASTER = 1, MISTWEAVER = 2, WINDWALKER = 3 },
 	[11] = { BALANCE = 1, FERAL = 2, GUARDIAN = 3, RESTORATION = 4 },
 	[12] = { HAVOC = 1, VENGEANCE = 2 },
-	[13] = { DEVASTATION = 1, PRESERVATION = 2}
+	[13] = { DEVASTATION = 1, PRESERVATION = 2, AUGMENTATION = 3 },
 }
 local ClassIDToEnglishNameMap =
 {
@@ -3076,7 +3076,7 @@ local SpecIDToEnglishNameMap =
 	[10] = { [1] = "Brewmaster", [2] = "Mistweaver", [3] = "Windwalker" },
 	[11] = { [1] = "Balance", [2] = "Feral", [3] = "Guardian", [4] = "Restoration" },
 	[12] = { [1] = "Havoc", [2] = "Vengeance" },
-	[13] = { [1] = "Devastation", [2] = "Preservation" },
+	[13] = { [1] = "Devastation", [2] = "Preservation", [3] = "Augmentation" },
 }
 
 -- Returns a class ID number (1-12) from the string passed in, or nil if the string isn't a class name.

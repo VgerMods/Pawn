@@ -79,6 +79,16 @@ PawnAddPluginScaleFromTemplate(
 
 if VgerCore.EvokersExist then
 
+	-- Augmentation spec wasn't added until 10.1.5.
+	if select(4, GetBuildInfo()) >= 100105 then
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			13, -- Evoker
+			3, -- Augmentation
+			{ }
+		)
+	end
+
 	PawnAddPluginScaleFromTemplate(
 		ScaleProviderName,
 		13, -- Evoker

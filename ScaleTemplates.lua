@@ -277,6 +277,14 @@ PawnScaleTemplates =
 
 {
 	["ClassID"] = 13, -- Evoker
+	["SpecID"] = 3, -- Augmentation
+	["Role"] = "DAMAGER",
+	["PrimaryStat"] = "Intellect",
+	["UnusableStats"] = {}
+},
+
+{
+	["ClassID"] = 13, -- Evoker
 	["SpecID"] = 1, -- Devastation
 	["Role"] = "DAMAGER",
 	["PrimaryStat"] = "Intellect",
