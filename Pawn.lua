@@ -1,4 +1,4 @@
-﻿-- Pawn by Vger-Azjol-Nerub
+-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2023 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
@@ -14,6 +14,7 @@ local PawnVgerCoreVersionRequired = 1.17
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
+local PawnInfinity = 1.79769313E308
 
 -- Set to true once initialization completes
 local PawnIsInitialized
@@ -3591,14 +3592,14 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 						else
 							if Item1 then
 								if PawnNeverShowUpgradesFor[Item1.ID] then
-									Value1 = 1/0
+									Value1 = PawnInfinity
 								else
 									_, Value1 = PawnGetSingleValueFromItem(Item1, ScaleName)
 								end
 							end
 							if Item2 then
 								if PawnNeverShowUpgradesFor[Item2.ID] then
-									Value2 = 1/0
+									Value2 = PawnInfinity
 								else
 									_, Value2 = PawnGetSingleValueFromItem(Item2, ScaleName)
 								end
