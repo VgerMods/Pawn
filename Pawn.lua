@@ -1,4 +1,4 @@
--- Pawn by Vger-Azjol-Nerub
+﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2023 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
@@ -360,6 +360,13 @@ function PawnInitialize()
 
 	-- Dragonflight replaces SetCompareItem with ProcessInfo. (ProcessInfo is now used internally by lots of
 	-- methods, but only in Dragonflight.)
+	
+	-- Dragonflight 10.1.0 has a bug (fixed in 10.1.5) where the underlying tooltip data for the "currently equipped" tooltips gets "stuck" on
+	-- past items that were shown in that tooltip and stops updating as new items are displayed. When running on those builds, disable annotating
+	-- comparison tooltips.
+	local PawnIsDragonflightWithBrokenCompareTooltips = VgerCore.IsDragonflight and select(4, GetBuildInfo()) < 100105
+	if not PawnIsDragonflightWithBrokenCompareTooltips then
+
 	if ShoppingTooltip1.ProcessInfo then
 		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function(self)
 			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
@@ -370,6 +377,8 @@ function PawnInitialize()
 			if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
 		end)
 	end
+
+	end -- end of PawnIsDragonflightWithBrokenCompareTooltips hack
 
 	-- MultiTips compatibility
 	if MultiTips then
