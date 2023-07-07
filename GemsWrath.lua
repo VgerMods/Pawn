@@ -722,7 +722,7 @@ PawnMetaGemData80Rare =
 
 PawnGemQualityLevels =
 {
-	-- { 245, PawnGemData80Epic }, -- Trial of the Crusader 25 normal (PHASE 3)
+	{ 245, PawnGemData80Epic }, -- Trial of the Crusader 25 normal (PHASE 3)
 	{ 200, PawnGemData80Rare }, -- Heroic dungeons and Naxx 10
 	{ 165, PawnGemData80Uncommon }, -- Higher than any TBC gear
 	{ 151, PawnGemData70Epic }, -- Tier 6 (T4 / Karazhan is 115; T5 is 133; T6 is 151; Sunwell is 154)
