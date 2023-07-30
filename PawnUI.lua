@@ -2287,7 +2287,7 @@ function PawnUI_LootHistoryFrame_UpdateItemFrame(self, ItemFrame, ...)
 	if ItemLink == nil then return end
 
 	-- Is this item an upgrade?
-	local IsUpgrade = PawnCommon.ShowLootUpgradeAdvisor and PawnShouldItemLinkHaveUpgradeArrow(ItemLink, false, true)
+	local IsUpgrade = PawnCommon.ShowLootUpgradeAdvisor and PawnShouldItemLinkHaveUpgradeArrowUnbudgeted(ItemLink, false)
 	if IsUpgrade then
 		-- If the arrow hasn't already been created, create it.
 		if not ItemFrame.PawnLootAdvisorArrow then
@@ -2311,7 +2311,7 @@ function PawnUI_LootWonAlertFrame_SetUp(self, ItemLink, ...)
 
 	-- Is this item an upgrade?
 	if ItemLink == nil then return end
-	local IsUpgrade = PawnCommon.ShowLootUpgradeAdvisor and PawnShouldItemLinkHaveUpgradeArrow(ItemLink, false, true)
+	local IsUpgrade = PawnCommon.ShowLootUpgradeAdvisor and PawnShouldItemLinkHaveUpgradeArrowUnbudgeted(ItemLink, false)
 
 	if IsUpgrade then
 		-- If the arrow hasn't already been created, create it.
