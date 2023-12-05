@@ -250,6 +250,9 @@ function PawnInitialize()
 				PawnUpdateTooltip("GameTooltip", "SetHyperlink", ItemLink)
 			end)
 	end
+	if GameTooltip.SetTradeSkillItem then
+		hooksecurefunc(GameTooltip, "SetTradeSkillItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetTradeSkillItem", ...) end)
+	end
 	hooksecurefunc(GameTooltip, "SetTradeTargetItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetTradeTargetItem", ...) end)
 	if GameTooltip.SetVoidItem then
 		hooksecurefunc(GameTooltip, "SetVoidItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetVoidItem", ...) end)
