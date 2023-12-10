@@ -8,9 +8,9 @@ on:
         required: true
 
 env:
-  CLASSIC_VERSION: 11403
+  CLASSIC_VERSION: 11500
   BURNING_CRUSADE_VERSION: 20504
-  WRATH_VERSION: 30402
+  WRATH_VERSION: 30403
 
 jobs:
   package:
