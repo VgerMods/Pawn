@@ -117,7 +117,7 @@ local PawnGemData70Uncommon =
 -- Purple gems
 ------------------------------------------------------------
 
-{ ID = 23100, R = true, B = true, Stats = { Strength = 3, Stamina = 4 } }, -- Sovereign Shadow Draenite
+{ ID = 23111, R = true, B = true, Stats = { Strength = 3, Stamina = 4 } }, -- Sovereign Shadow Draenite
 { ID = 23108, R = true, B = true, Stats = { SpellDamage = 4, Stamina = 4 } }, -- Glowing Shadow Draenite
 { ID = 23109, R = true, B = true, Stats = { Healing = 7, SpellDamage = 3, Mp5 = 1 } }, -- Royal Shadow Draenite
 { ID = 23110, R = true, B = true, Stats = { Agility = 3, Stamina = 4 } }, -- Shifting Shadow Draenite
