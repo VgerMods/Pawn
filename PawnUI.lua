@@ -807,7 +807,6 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 		end
 		local WeaponSet = PawnGetWeaponSetForStat(ThisStat)
 		if WeaponSet then PawnUIFrame_NoUpgradesCheck:SetChecked(not PawnGetShowUpgradesForWeapons(PawnUICurrentScale, WeaponSet)) end
-		PawnUIFrame_FollowSpecializationCheck:SetChecked(PawnGetUpgradesFollowSpecialization(PawnUICurrentScale))
 		if WeaponSet == 1 then
 			PawnUIFrame_NoUpgradesCheck_Label:SetText(PawnLocal.UI.ValuesDoNotShowUpgradesFor1H)
 		elseif WeaponSet == 2 then
@@ -818,11 +817,6 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 		else
 			PawnUIFrame_NoUpgradesCheck:Show()
 		end
-		if (PawnArmorSpecializationLevel ~= nil) and (ThisStat == "IsCloth" or ThisStat == "IsLeather" or ThisStat == "IsMail" or ThisStat == "IsPlate") then
-			PawnUIFrame_FollowSpecializationCheck:Show()
-		else
-			PawnUIFrame_FollowSpecializationCheck:Hide()
-		end
 	elseif PawnUICurrentScale == PawnLocal.NoScale then
 		-- They don't have any scales.
 		PawnUIFrame_DescriptionLabel:SetText(PawnLocal.NoScalesDescription)
@@ -832,7 +826,6 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 		PawnUIFrame_ClearValueButton:Hide()
 		PawnUIFrame_IgnoreStatCheck:Hide()
 		PawnUIFrame_NoUpgradesCheck:Hide()
-		PawnUIFrame_FollowSpecializationCheck:Hide()
 	else
 		-- They haven't selected a stat.
 		PawnUIFrame_DescriptionLabel:SetText(PawnLocal.NoStatDescription)
@@ -842,7 +835,6 @@ function PawnUIFrame_StatsList_SelectStat(Index)
 		PawnUIFrame_ClearValueButton:Hide()
 		PawnUIFrame_IgnoreStatCheck:Hide()
 		PawnUIFrame_NoUpgradesCheck:Hide()
-		PawnUIFrame_FollowSpecializationCheck:Hide()
 	end
 
 end
@@ -872,10 +864,6 @@ function PawnUIFrame_NoUpgradesCheck_OnClick()
 	if not WeaponSet then VgerCore.Fail("Couldn't find the weapon set to enable or disable.") return end
 
 	PawnSetShowUpgradesForWeapons(PawnUICurrentScale, WeaponSet, not PawnUIFrame_NoUpgradesCheck:GetChecked())
-end
-
-function PawnUIFrame_FollowSpecializationCheck_OnClick()
-	PawnSetUpgradesFollowSpecialization(PawnUICurrentScale, PawnUIFrame_FollowSpecializationCheck:GetChecked())
 end
 
 function PawnUIFrame_StatValueBox_OnTextChanged()

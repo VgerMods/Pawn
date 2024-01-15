@@ -820,7 +820,6 @@ end
 function PawnGetEmptyScale()
 	return
 	{
-		["UpgradesFollowSpecialization"] = (PawnArmorSpecializationLevel ~= nil),
 		["PerCharacterOptions"] = { },
 		["Values"] = { },
 	}
@@ -843,7 +842,6 @@ function PawnGetDefaultScale(ClassID, SpecID, NoStats)
 	{
 		["ClassID"] = ClassID,
 		["SpecID"] = SpecID,
-		["UpgradesFollowSpecialization"] = (PawnArmorSpecializationLevel ~= nil),
 		["PerCharacterOptions"] = { },
 		["Values"] = ScaleValues,
 	}
@@ -3132,8 +3130,8 @@ function PawnCorrectScaleErrors(ScaleName)
 		ThisScaleOptions.Values = ThisScale
 	end
 
-	-- Pawn 1.5.5 adds an option to follow armor specialization when upgrading.
-	if ThisScaleOptions.UpgradesFollowSpecialization == nil then ThisScaleOptions.UpgradesFollowSpecialization = (PawnArmorSpecializationLevel ~= nil) end
+	-- Pawn 1.5.5 had an option to follow armor specialization when upgrading but it's since been removed.
+	ThisScaleOptions.UpgradesFollowSpecialization = nil
 
 	-- Pawn 1.3 adds per-character options to each scale.
 	if ThisScaleOptions.PerCharacterOptions == nil then ThisScaleOptions.PerCharacterOptions = {} end
@@ -3531,7 +3529,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 			if PawnIsScaleVisible(ScaleName) and not
 				(Scale.DoNotShow1HUpgrades and (InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPONOFFHAND" or InvType == "INVTYPE_SHIELD" or InvType == "INVTYPE_HOLDABLE")) and not
 				(Scale.DoNotShow2HUpgrades and InvType == "INVTYPE_2HWEAPON") and
-				((PawnArmorSpecializationLevel == nil) or (not Scale.UpgradesFollowSpecialization) or PawnIsArmorBestTypeForPlayer(Item))
+				(PawnIsArmorBestTypeForPlayer(Item))
 			then
 				-- Find the best item for that slot.  Or, if a second-best item is available, compare versus that.
 				local CharacterOptions = Scale.PerCharacterOptions[PawnPlayerFullName]
@@ -4233,7 +4231,7 @@ function PawnIsArmorBestTypeForPlayer(Item)
 			return true
 		end
 	end
-	VgerCore.Fail("PawnIsArmorBestTypeForPlayer didn't know how to handle this item.")
+	VgerCore.Fail("Tell Vger that PawnIsArmorBestTypeForPlayer needs to be updated for " .. tostring(Class) .. ".")
 end
 
 -- Appends the strings in a table together with commas and a conjunction ("or ") as appropriate.  The conjunction can be nil, but if it isn't, it should end in a space.
@@ -5405,36 +5403,11 @@ function PawnSetShowUpgradesForWeapons(ScaleName, WeaponSet, ShowUpgrades)
 	PawnResetTooltips()
 end
 
--- Gets whether only the current player's best armor type is shown for upgrades after level 50.
 function PawnGetUpgradesFollowSpecialization(ScaleName)
-	if not PawnIsInitialized then VgerCore.Fail("Can't get armor upgrade settings until Pawn is initialized") return end
-
-	local Scale = PawnCommon.Scales[ScaleName]
-	if (not ScaleName) or (ScaleName == "") or not Scale then
-		VgerCore.Fail("ScaleName must be the name of an existing scale, and is case-sensitive.")
-		return nil
-	end
-
-	return Scale.UpgradesFollowSpecialization
+	return true
 end
 
--- Sets whether only the current player's best armor type is shown for upgrades after level 50.
 function PawnSetUpgradesFollowSpecialization(ScaleName, FollowSpecialization)
-	if not PawnIsInitialized then VgerCore.Fail("Can't change armor upgrade settings until Pawn is initialized") return end
-
-	local Scale = PawnCommon.Scales[ScaleName]
-	if (not ScaleName) or (ScaleName == "") or not Scale then
-		VgerCore.Fail("ScaleName must be the name of an existing scale, and is case-sensitive.")
-		return nil
-	end
-
-	if FollowSpecialization then
-		Scale.UpgradesFollowSpecialization = true
-	else
-		Scale.UpgradesFollowSpecialization = false
-	end
-	PawnInvalidateBestItemsForScale(ScaleName)
-	PawnResetTooltips()
 end
 
 -- Sets whether the upgrade tracking feature is enabled for this character.

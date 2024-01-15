@@ -26,7 +26,7 @@ local IsMainline = VgerCore.IsMainline
 if IsMainline then
 	-- From Legion onward, there's no minimum level for wearing your class's best armor.
 	PawnBestArmorMinimumLevel = 0
-	-- From Cataclysm onward, armor specializations heavily penalize using the wrong armor type starting at level 50, changed to 27 in Shadowlands. https://wowhead.com/spell=86538/mail-specialization
+	-- From Cataclysm onward, armor specializations heavily penalize using the wrong armor type starting at level 50, changed to 27 in Shadowlands. https://wowpedia.fandom.com/wiki/Armor_Skills
 	PawnArmorSpecializationLevel = 27
 else
 	-- In Classic, the best armor for mail and plate classes wasn't available until level 40.

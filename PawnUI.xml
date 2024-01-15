@@ -956,14 +956,6 @@
 						<Scripts><OnClick function="PawnUIFrame_NoUpgradesCheck_OnClick" /></Scripts>
 					</CheckButton>
 
-					<CheckButton name="PawnUIFrame_FollowSpecializationCheck" inherits="PawnUICheckboxTemplate" hidden="true">
-						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="325" y="-315" /></Offset></Anchor></Anchors>
-						<Layers><Layer level="ARTWORK">
-							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" text="PawnUIFrame_FollowSpecializationCheck_Text" />
-						</Layer></Layers>
-						<Scripts><OnClick function="PawnUIFrame_FollowSpecializationCheck_OnClick" /></Scripts>
-					</CheckButton>
-
 					<CheckButton name="PawnUIFrame_NormalizeValuesCheck" inherits="PawnUICheckboxTemplate">
 						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="30" y="-430" /></Offset></Anchor></Anchors>
 						<Layers><Layer level="ARTWORK">
