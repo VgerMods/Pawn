@@ -914,14 +914,24 @@ function PawnUIFrame_GetCurrentScaleColor()
 end
 
 function PawnUIFrame_ScaleColorSwatch_OnClick()
-	-- Get the color of the current scale.
-	local r, g, b = PawnUIFrame_GetCurrentScaleColor()
-	ColorPickerFrame.func = PawnUIFrame_ScaleColorSwatch_OnChange
-	ColorPickerFrame.cancelFunc = PawnUIFrame_ScaleColorSwatch_OnCancel
-	ColorPickerFrame.previousValues = { r, g, b }
-	ColorPickerFrame.hasOpacity = false
-	ColorPickerFrame:SetColorRGB(r, g, b)
-	ShowUIPanel(ColorPickerFrame)
+	local info = {}
+	info.swatchFunc = PawnUIFrame_ScaleColorSwatch_OnChange
+	info.hasOpacity = false
+	info.r, info.g, info.b = PawnUIFrame_GetCurrentScaleColor()
+	info.cancelFunc = PawnUIFrame_ScaleColorSwatch_OnCancel
+
+	 if ColorPickerFrame.SetupColorPickerAndShow then
+		-- Dragonflight 10.2.5 and later
+		ColorPickerFrame:SetupColorPickerAndShow(info)
+	 else
+		-- Classic
+		ColorPickerFrame.func = info.swatchFunc
+		ColorPickerFrame.cancelFunc = info.cancelFunc
+		ColorPickerFrame.previousValues = { r  = info.r, g = info.g, b = info.b }
+		ColorPickerFrame.hasOpacity = info.hasOpacity
+		ColorPickerFrame:SetColorRGB(info.r, info.g, info.b)
+		ShowUIPanel(ColorPickerFrame)
+	 end
 end
 
 function PawnUIFrame_ScaleColorSwatch_OnChange()
@@ -929,9 +939,15 @@ function PawnUIFrame_ScaleColorSwatch_OnChange()
 	PawnUIFrame_ScaleColorSwatch_SetColor(r, g, b)
 end
 
-function PawnUIFrame_ScaleColorSwatch_OnCancel(rgb)
-	---@diagnostic disable-next-line: deprecated
-	local r, g, b = unpack(rgb)
+function PawnUIFrame_ScaleColorSwatch_OnCancel()
+	local r, g, b
+	if ColorPickerFrame.GetPreviousValues then
+		-- Dragonflight 10.2.5 and later
+		r, g, b = ColorPickerFrame:GetPreviousValues()
+	else
+		-- Classic
+		r, g, b = ColorPicker_GetPreviousValues()
+	end
 	PawnUIFrame_ScaleColorSwatch_SetColor(r, g, b)
 end
 
