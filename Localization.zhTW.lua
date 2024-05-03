@@ -755,7 +755,7 @@ if VgerCore.IsClassic then
 	end
 end
 
-if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 	local TooltipParsing_BurningCrusade =
 	{
@@ -784,7 +784,7 @@ if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 	end
 end
 
-if VgerCore.IsWrath then
+if VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 	local TooltipParsing_Wrath =
 	{

@@ -66,9 +66,9 @@ local PawnUIFrameNeedsScaleSelector = { true, true, true, true, false, false, fa
 function PawnUI_InventoryPawnButton_Move()
 	if PawnCommon.ButtonPosition == PawnButtonPositionRight then
 		PawnUI_InventoryPawnButton:ClearAllPoints()
-		if PaperDollFrame.ExpandButton then
+		if VgerCore.IsCataclysm or PaperDollFrame.ExpandButton then
 			-- DejaCharacterStats compatibility
-			PawnUI_InventoryPawnButton:SetPoint("TOPRIGHT", "CharacterTrinket1Slot", "BOTTOMRIGHT", -31, -8)
+			PawnUI_InventoryPawnButton:SetPoint("TOPRIGHT", "CharacterTrinket1Slot", "BOTTOMRIGHT", -25, -8)
 		else
 			PawnUI_InventoryPawnButton:SetPoint("TOPRIGHT", "CharacterTrinket1Slot", "BOTTOMRIGHT", -1, -8)
 		end
@@ -1455,7 +1455,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 
 	-- Hack for WoW Classic: after a moment, refresh the whole thing, because we might have gotten
 	-- incomplete data from the tooltip the first time.
-	if not IsAutomatedRefresh and (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) then
+	if not IsAutomatedRefresh and (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		local AutomatedRefresh = function()
 			if PawnUIComparisonItems[1] then PawnUIComparisonItems[1] = PawnGetItemData(PawnUIComparisonItems[1].Link) end
 			if PawnUIComparisonItems[2] then PawnUIComparisonItems[2] = PawnGetItemData(PawnUIComparisonItems[2].Link) end

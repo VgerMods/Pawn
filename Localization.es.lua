@@ -819,7 +819,7 @@ if GetLocale() == "esES" then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 
-	if VgerCore.IsWrath then
+	if VgerCore.IsWrath or VgerCore.IsCataclysm then
 		-- Wrath Classic on esES has an incorrect LARGE_NUMBER_SEPERATOR.
 		PawnLocal.ThousandsSeparator = ","
 	end
@@ -871,7 +871,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 		local TooltipParsing_Classic =
 		{
@@ -920,7 +920,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 		local TooltipParsing_BurningCrusade =
 		{
@@ -940,7 +940,7 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsMainline or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsMainline or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 
@@ -949,7 +949,7 @@ elseif GetLocale() == "esMX" then
 	PawnLocal.ThousandsSeparator = ","
 	PawnLocal.DecimalSeparator = "."
 
-	if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 end

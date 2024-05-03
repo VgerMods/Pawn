@@ -9,7 +9,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0607
+PawnClassicLastUpdatedVersion = 2.0900
 
 
 function PawnClassicScaleProvider_AddScales()
@@ -317,7 +317,7 @@ function PawnClassicScaleProvider_AddScales()
 			Stamina=1, Health=0.09, Hp5=2, Armor=0.02, DefenseRating=DefenseRatingPer*0.81, DodgeRating=DodgeRatingPer*0.7, ParryRating=ParryRatingPer*0.58, BlockRating=BlockRatingPer*0.59, BlockValue=0.35, ResilienceRating=0.2, AllResist=1, FireResist=0.2, FrostResist=0.2, ArcaneResist=0.2, ShadowResist=0.2, NatureResist=0.2, MetaSocketEffect=36, }
 		)
 
-	elseif VgerCore.IsWrath then ------------------------------------------------------------
+	elseif VgerCore.IsWrath or VgerCore.IsCataclysm then ------------------------------------------------------------
 
 		local Scale
 
@@ -687,7 +687,7 @@ end -- PawnClassicScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 	-- Scales for all versions of WoW Classic are in this file.
 	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.StarterProvider, PawnClassicScaleProvider_AddScales)
 else

@@ -11,7 +11,7 @@
 function PawnFindScaleTemplate(ClassID, SpecID)
 	local _, Template
 
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 		for _, Template in pairs(PawnScaleTemplatesClassic) do
 			if Template.ClassID == ClassID then return Template end
 		end
@@ -31,7 +31,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 	if NoStats then
 		ScaleValues = {}
 	else
-		if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+		if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 			ScaleValues =
 			{
 				["Stamina"] = 0.01,
@@ -142,7 +142,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 			end
 
 			-- Wrath merged some stats together.
-			if VgerCore.IsWrath then
+			if VgerCore.IsWrath or VgerCore.IsCataclysm then
 				ScaleValues.SpellCritRating = nil
 				ScaleValues.SpellHitRating = nil
 				ScaleValues.SpellHasteRating = nil
@@ -182,7 +182,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 		for _, StatName in pairs(Template.UnusableStats) do
 			ScaleValues[StatName] = PawnIgnoreStatValue
 
-			if (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) and StatName == "IsShield" then
+			if (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) and StatName == "IsShield" then
 				ScaleValues.BlockRating = nil
 				ScaleValues.BlockValue = nil
 			end

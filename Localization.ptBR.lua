@@ -774,7 +774,7 @@ PawnLocal.Specs =
 
 -- Special case: wands actually use different text on live versus classic.
 -- So, patch things up here.
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 	local TooltipParsing_Classic =
 	{

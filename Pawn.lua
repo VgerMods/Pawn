@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.0812
+PawnVersion = 2.0900
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.17
@@ -736,7 +736,7 @@ function PawnInitializeOptions()
 		if FrostDK then FrostDK.DoNotShow2HUpgrades = false end
 	end
 	if ((VgerCore.IsMainline) and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
-		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
+		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
 		-- If the Ask Mr. Robot scales have been updated since the last time they used Pawn, re-scan gear.
 		PawnInvalidateBestItems()
 	end
@@ -3180,7 +3180,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	end
 
 	-- Spell power appeared in Wrath but disappeared again later.
-	if not VgerCore.IsWrath then
+	if not VgerCore.IsWrath or VgerCore.IsCataclysm then
 		ThisScale.SpellPower = nil
 	end
 
@@ -3201,7 +3201,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.DominationSocket = nil
 
 	-- Wrath Classic merges SpellDamage and Healing into SpellPower, and melee and spell ratings.
-	if VgerCore.IsWrath then
+	if VgerCore.IsWrath or VgerCore.IsCataclysm then
 		PawnCombineStats(ThisScale, "SpellPower", "SpellDamage")
 		PawnCombineStats(ThisScale, "SpellPower", "Healing")
 		PawnCombineStats(ThisScale, "HitRating", "SpellHitRating")
@@ -5672,7 +5672,7 @@ end
 -- Wraps the GetSpecializationInfoForClassID function so that it can be called on WoW Classic.
 -- On WoW Classic, this only returns: _, LocalizedSpecName, _, IconID, Role
 function PawnGetSpecializationInfoForClassID(ClassID, SpecID)
-	if GetSpecializationInfoForClassID then return GetSpecializationInfoForClassID(ClassID, SpecID) end
+	if VgerCore.IsMainline then return GetSpecializationInfoForClassID(ClassID, SpecID) end
 
 	local SpecInfo = PawnLocal.Specs[ClassID][SpecID]
 	-- The second-to-last parameter should be SpecInfo.Icon, but many of the icons used in BfA aren't valid on Classic.

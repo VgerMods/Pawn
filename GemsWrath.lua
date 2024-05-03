@@ -7,7 +7,7 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsWrath then
+if VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 
 --========================================

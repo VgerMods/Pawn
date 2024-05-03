@@ -694,15 +694,15 @@ Cette commande ne peut etre défaite!]=],
 -- Special case: wands actually use different text on live versus classic.
 -- So, patch things up here.
 
-if VgerCore.IsClassic then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	PawnLocal.ThousandsSeparator = "NBSP"
 	PawnLocal.DecimalSeparator = "."
-elseif VgerCore.IsWrath then
+elseif VgerCore.IsWrath or VgerCore.IsCataclysm then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 end
 
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 	local TooltipParsing_Classic =
 	{
 		["WeaponDamageArcane"] = "^Dégâts %(Arcanes%) : # %- #$",
@@ -725,7 +725,7 @@ if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 	end
 end
 
-if VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 
 	local TooltipParsing_BurningCrusade =
 	{

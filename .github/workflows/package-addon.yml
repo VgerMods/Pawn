@@ -11,6 +11,7 @@ env:
   CLASSIC_VERSION: 11501
   BURNING_CRUSADE_VERSION: 20504
   WRATH_VERSION: 30403
+  CATACLYSM_VERSION: 40400
 
 jobs:
   package:
@@ -70,6 +71,16 @@ jobs:
         zip -9 -r ${{steps.init.outputs.tag_name}}-Wrath.zip ${{steps.init.outputs.addon_name}}
         cd ..
 
+    - name: Replace TOC version for Cataclysm
+      run: |
+        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.CATACLYSM_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+
+    - name: Create Cataclysm zip
+      run: |
+        cd .releases
+        zip -9 -r ${{steps.init.outputs.tag_name}}-Cataclysm.zip ${{steps.init.outputs.addon_name}}
+        cd ..
+
     - name: Tag this version
       id: create_release
       uses: actions/create-release@v1
@@ -121,3 +132,14 @@ jobs:
         asset_path: .releases/${{steps.init.outputs.tag_name}}-Wrath.zip
         asset_name: ${{steps.init.outputs.tag_name}}-Wrath.zip
         asset_content_type: application/zip
+
+    - name: Add Cataclysm zip to release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .releases/${{steps.init.outputs.tag_name}}-Cataclysm.zip
+        asset_name: ${{steps.init.outputs.tag_name}}-Cataclysm.zip
+        asset_content_type: application/zip
+  
