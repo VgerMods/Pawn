@@ -7,10 +7,10 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.0900
+PawnVersion = 2.0901
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.17
+local PawnVgerCoreVersionRequired = 1.18
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
