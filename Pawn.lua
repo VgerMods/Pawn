@@ -3171,16 +3171,16 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.Multistrike = nil
 
 	-- These were introduced in Classic versions.
-	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath) then
+	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.SpellPenetration = nil
 	end
-	if not (VgerCore.IsBurningCrusade or VgerCore.IsWrath) then
+	if not (VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.ExpertiseRating = nil
 		ThisScale.ResilienceRating = nil
 	end
 
 	-- Spell power appeared in Wrath but disappeared again later.
-	if not VgerCore.IsWrath or VgerCore.IsCataclysm then
+	if not (VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.SpellPower = nil
 	end
 
