@@ -27,6 +27,7 @@ Gems.lua
 GemsClassic.lua
 GemsBurningCrusade.lua
 GemsWrath.lua
+GemsCataclysm.lua
 ScaleTemplates.lua
 ItemIDs.lua
 Pawn.lua

@@ -9,7 +9,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0900
+PawnClassicLastUpdatedVersion = 2.0901
 
 
 function PawnClassicScaleProvider_AddScales()
