@@ -508,7 +508,7 @@ function PawnInitialize()
 		-- The separator strings are completely wrong on French WoW Classic.  :(
 		if (LARGE_NUMBER_SEPERATOR and PawnLocal.ThousandsSeparator ~= LARGE_NUMBER_SEPERATOR) or
 		(DECIMAL_SEPERATOR and PawnLocal.DecimalSeparator ~= DECIMAL_SEPERATOR) then
-			VgerCore.Fail("Pawn may provide incorrect advice due to a potential addon conflict: Pawn is not compatible with Combat Numbers Separator, Titan Panel Artifact Power, or other addons that change the way that numbers appear. Or, if you're seeing this right after a patch, please let Vger know which language you're playing in.")
+			VgerCore.Fail("Pawn may provide incorrect advice due to a potential addon conflict: Pawn is not compatible with Combat Numbers Separator, Titan Panel Artifact Power, or other addons that change the way that numbers appear. Or, if you're seeing this right after a patch, please let Vger know you're seeing it on WoW " .. GetLocale() .. " " .. GetBuildInfo() .. ".")
 		end
 	end
 
@@ -1784,7 +1784,7 @@ function PawnSetTooltipBorderColor(Tooltip, r, g, b, a)
 		Tooltip.NineSlice.LeftEdge:SetVertexColor(r, g, b, a)
 		Tooltip.NineSlice.RightEdge:SetVertexColor(r, g, b, a)
 	else
-		VgerCore.Fail("Pawn doesn't know how to change tooltip border colors in this version of WoW.")
+		VgerCore.Fail("Pawn doesn't know how to change tooltip border colors in this version of WoW (" .. GetLocale() .. " " .. GetBuildInfo() .. ").")
 	end
 end
 
@@ -2358,7 +2358,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			if Stats["MinDamage"] then WeaponStats = WeaponStats + 1 end
 			if Stats["MaxDamage"] then WeaponStats = WeaponStats + 1 end
 			if Stats["Speed"] then WeaponStats = WeaponStats + 1 end
-			VgerCore.Assert(WeaponStats == 0 or WeaponStats == 3, "Pawn couldn't read speed and damage stats from " .. ItemName .. "; translation problem?")
+			VgerCore.Assert(WeaponStats == 0 or WeaponStats == 3, "Pawn couldn't read speed and damage stats from " .. ItemName .. " (" .. GetLocale() .. " " .. GetBuildInfo() .. ") and needs an update.")
 		end
 	end
 
@@ -2413,7 +2413,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	end
 
 	if Stats["IsMelee"] and Stats["IsRanged"] then
-		VgerCore.Fail("Weapon that is both melee and ranged was converted to both Melee* and Ranged* stats")
+		VgerCore.Fail("Pawn determined that " .. ItemName .. " is both a melee and a ranged weapon (" .. GetLocale() .. " " .. GetBuildInfo() .. ").")
 	end
 
 	if Stats["IsMelee"] then
@@ -2519,7 +2519,7 @@ function PawnLookForSingleStat(RegexTable, Stats, ThisString, DebugMessages)
 				end
 				local ExtractedValue = Matches[MatchIndex]
 				if not ExtractedValue then
-					VgerCore.Fail("Didn't extract a value for " .. Stat .. ".  Is the translation missing a capture (#)?")
+					VgerCore.Fail("Didn't extract a value for " .. Stat .. ".  Is the translation missing a # (" .. GetLocale() .. " " .. GetBuildInfo() .. ")?")
 					ExtractedValue = 0
 				end
 				if Stat ~= "Speed" and (PawnLocal.ThousandsSeparator ~= "" or (PawnLocal.ThousandsSeparator == PawnLocal.DecimalSeparator)) then
@@ -2826,7 +2826,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 		else
 			-- This error case is acceptable if we're calculating data FOR the gems themselves.  (In that case, normalization will be off.)
 			-- If it happens at any other time, we'd want to know about it.
-			VgerCore.Assert(NoNormalization, "Item value calculation will be incomplete because we don't have best gem data and thus can't calculate values for sockets.")
+			VgerCore.Assert(NoNormalization, "Item value calculation will be incomplete because we don't have best gem data and thus can't calculate values for sockets. /console scriptErrors 1 can help discover why.")
 		end
 	end
 
