@@ -138,6 +138,10 @@ PawnRegexes =
 	{PawnGameConstant(INVTYPE_LEGS)}, -- Legs
 	{PawnGameConstant(INVTYPE_FINGER)}, -- Finger
 	{PawnGameConstant(INVTYPE_TRINKET)}, -- Trinket
+	{PawnGameConstant(MAJOR_GLYPH)}, -- Major Glyph
+	{PawnGameConstant(MINOR_GLYPH)}, -- Minor Glyph
+	{PawnGameConstant(PRIME_GLYPH)}, -- Prime Glyph
+	{PawnGameConstant(REFORGED or "UNUSED")}, -- Reforged
 	{PawnGameConstant(MOUNT)}, -- Cenarion War Hippogryph
 	{PawnGameConstantIgnoredPlaceholder(ITEM_CLASSES_ALLOWED)}, -- Classes:
 	{PawnGameConstantIgnoredPlaceholder(ITEM_RACES_ALLOWED)}, -- Races:

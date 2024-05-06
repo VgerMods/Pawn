@@ -372,6 +372,8 @@ Every item in World of Warcraft has an ID number associated with it.  This infor
 		["OptionsResetUpgradesTooltip"] = [=[Pawn will forget what it knows about the best items you've ever equipped and re-scan your gear in order to provide more up-to-date upgrade information in the future.
 
 Use this feature if you find that Pawn is making poor upgrade suggestions as a result of items that you've vendored, destroyed, or otherwise do not use anymore.  This will affect all of your characters that use Pawn.]=],
+		["OptionsReforgingAdvisor"] = "Отображать советы по перековке",
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
 		["OptionsShowItemLevelUpgrades"] = "Показывать улучшения уровня предмета",
 		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn будет показывать улучшения по уровню предмета наряду с улучшением по характеристикам.",
 		["OptionsShowRelicUpgrades"] = "Отображать улучшения для реликвий",
@@ -414,6 +416,10 @@ If unchecked, equipping a two-handed weapon will prevent Pawn from showing you u
 		["OptionsUpgradeTrackingOn"] = "Анализировать для каждой шкалы (продвинутые)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(Для продвинутых пользователей) Pawn будет пробывать анализировать улучшения для вещей, независимо по каждой включенной шкале.",
 		["OptionsWelcome"] = "Настройте Pawn на свой вкус.  Изменения применятся незамедлительно.",
+		["ReforgeTitle"] = "Рекомендации Pawn по перековке:",
+		["ReforgeInstructionsNoReforge"] = "Не перековано",
+		["ReforgeInstructions"] = "Перековано %s в %s",
+		["ReforgeCappedStatWarning"] = "Используйте с осторожностью когда перековываете меткость или мастерство. Не допускайте увеличение шанса промаха больше 0%.",
 		["ScaleAutoOff"] = "Вручную",
 		["ScaleAutoOff2"] = "Управлять вручную",
 		["ScaleAutoOffTooltip"] = "Pawn позволит вам вручную управлять шкалами для вычислений, допускающий включить больше одной шкалы единовременно, добавлять пользовательские шкалы и более.",

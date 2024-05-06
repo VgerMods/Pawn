@@ -374,6 +374,8 @@ Ogni oggetto in World of Warcraft ha un numero ID associato ad esso. Questa info
 		["OptionsResetUpgradesTooltip"] = [=[Pawn dimenticherà ciò che sa sui migliori oggetti che tu abbia mai equipaggiato, e scansionerà nuovamente il tuo equipaggiamento per fornire informazioni maggiormente aggiornate in futuro.
 
 Usa questa funzionalità se pensi che Pawn stia fornendo degli scarsi suggerimenti di miglioramento come risultato di un oggetto che hai venduto, distrutto o che non usi più. Questo avrà effetto su tutti i tuoi personaggi che usano Pawn.]=],
+		["OptionsReforgingAdvisor"] = "Show reforging advisor",
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
 		["OptionsShowItemLevelUpgrades"] = "Mostra miglioramenti del livello dell'oggetto",
 		["OptionsShowItemLevelUpgradesTooltip"] = "In aggiunta ai normali miglioramenti, Pawn mostrerà gli oggetti che hanno un livello dell'oggetto più alto di quello precedentemente equipaggiato.",
 		["OptionsShowRelicUpgrades"] = "Mostra i miglioramenti delle reliquie",
@@ -416,6 +418,10 @@ Se disattivata, equipaggiando un'arma a 2 mani impedirà a Pawn di mostrare i mi
 		["OptionsUpgradeTrackingOn"] = "Traccia per ogni formula (opzione avanzata)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(Per gli utenti avanzati) Pawn cercherà di tener traccia degli oggetti migliori che hai equipaggiato, separatamente per ogni formula che hai abilitato, e ti mostrerà gli oggetti che sono un miglioramento paragonati a questi.",
 		["OptionsWelcome"] = "Configura Pawn nella maniera che più ti aggrada. I cambiamenti avranno effetto immediatamente.",
+		["ReforgeTitle"] = "Pawn:",
+		["ReforgeInstructionsNoReforge"] = "Do not reforge",
+		["ReforgeInstructions"] = "%s -> %s",
+		["ReforgeCappedStatWarning"] = "Use care when reforging Hit or Expertise, and don't reforge stats you need.",
 		["ScaleAutoOff"] = "Manuale",
 		["ScaleAutoOff2"] = "Lasciami gestire le formule.",
 		["ScaleAutoOffTooltip"] = "Pawn ti lascierà scegliere manualmente quale formula usare per i suoi calcoli, permettendoti di abilitare più di una formula alla volta, aggiungere formule custom, e molto altro.",

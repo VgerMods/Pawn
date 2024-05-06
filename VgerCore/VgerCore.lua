@@ -2,7 +2,7 @@
 -- www.vgermods.com
 -- © 2006-2024 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.18 -- IsCataclysm
+-- Version 1.0.18 -- IsCataclysm, ReforgingExists
 local VgerCoreThisVersion = 1.18
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
@@ -36,6 +36,7 @@ VgerCore.SpecsExist = VgerCore.IsMainline
 VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm
 VgerCore.ArtifactsExist = VgerCore.IsMainline
 VgerCore.EquipmentSetsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMainline
+VgerCore.ReforgingExists = VgerCore.IsCataclysm
 
 -- Common colors
 VgerCore.Color = {}

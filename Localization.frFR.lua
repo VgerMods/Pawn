@@ -368,6 +368,10 @@ Chaque objet dans World of Warcraft a un numéro d'ID qui lui est associé. Cett
 		["OptionsResetUpgradesTooltip"] = [=[Pawn oubliera ce qu'il connait sur les objets que vous avez jamais équipés et il scannera à nouveau votre équipement afin de vous fournir des informations plus récentes sur les mises à jour.
 
 Utilisez cette option si vous pensez que Pawn fait de mauvaises suggestions de mise à jour à cause d'objets que vous avez vendus, détruits ou que vous n'utilisez plus. Cela affectera tous vos personnages qui utilisent Pawn.]=],
+		--[[Translation missing --]]
+		["OptionsReforgingAdvisor"] = "Show reforging advisor",
+		--[[Translation missing --]]
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
 		["OptionsShowItemLevelUpgrades"] = "Afficher les augmentations de niveaux d'objets",
 		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn vous montrera des objets d'un niveau plus élevé que celui que vous avez précédemment équipé dans cet emplacement, en plus des améliorations normales.",
 		["OptionsShowRelicUpgrades"] = "Montrer les améliorations apportées aux reliques.",
@@ -408,6 +412,14 @@ Si cela n'est pas vérifié, le fait d'équiper une arme à deux mains empêcher
 		["OptionsUpgradeTrackingOn"] = "Recherche le meilleur pour chaque échelle (avancés)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(Pour les utilisateurs avancés) Pawn essayera de rechercher les meilleures pièces dont vous êtes équipés, indépendamment de chaque niveau que vous avez validés, et vous affichera les pièces qui vous permettent des améliorations comparées à celles équipées.",
 		["OptionsWelcome"] = "Configurez Pawn comme vous le souhaitez. Les changements prendront effet immédiatement.",
+		--[[Translation missing --]]
+		["ReforgeTitle"] = "Pawn:",
+		--[[Translation missing --]]
+		["ReforgeInstructionsNoReforge"] = "Do not reforge",
+		--[[Translation missing --]]
+		["ReforgeInstructions"] = "%s -> %s",
+		--[[Translation missing --]]
+		["ReforgeCappedStatWarning"] = "Use care when reforging Hit or Expertise, and don't reforge stats you need.",
 		["ScaleAutoOff"] = "Manuel",
 		["ScaleAutoOff2"] = "Gestion manuelle des échelles",
 		["ScaleAutoOffTooltip"] = "Pawn vous laissera choisir manuellement  quelle échelle utiliser pour ses calculs, vous permettant de valider plus d'une échelle à la fois, d'ajouter des échelles personnelles, et plus.",

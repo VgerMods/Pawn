@@ -1386,7 +1386,22 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 		PawnUI_AddComparisonStatLineNumbers(PawnLocal.ItemLevelTooltipLine, Level1, Level2, false) -- hide differential
 	end
 
-	-- Add asterisk indicator.
+	-- Add reforge potential.
+	local ReforgePotential1 = PawnFindOptimalReforging(Item1, PawnUICurrentScale, true)
+	if ReforgePotential1 and ReforgePotential1 <= 0 then ReforgePotential1 = nil end
+	local ReforgePotential2 = PawnFindOptimalReforging(Item2, PawnUICurrentScale, true)
+	if ReforgePotential2 and ReforgePotential2 <= 0 then ReforgePotential2 = nil end
+	if ReforgePotential1 or ReforgePotential2 then
+		if ReforgePotential1 then ReforgePotential1 = format("+%.1f", ReforgePotential1) end
+		if ReforgePotential2 then ReforgePotential2 = format("+%.1f", ReforgePotential2) end
+		if LastFoundHeader then
+			PawnUI_AddComparisonHeaderLine(LastFoundHeader)
+			LastFoundHeader = nil
+		end
+		PawnUI_AddComparisonStatLineStrings(REFORGED, ReforgePotential1, ReforgePotential2)
+	end
+
+	-- Add special effects ("asterisk") indicator.
 	local Asterisk1, Asterisk2
 	if Item1.UnknownLines then Asterisk1 = YES end
 	if Item2.UnknownLines then Asterisk2 = YES end
@@ -1931,6 +1946,11 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_ShowLootUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowLootUpgradeAdvisor)
 	PawnUIFrame_ShowQuestUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowQuestUpgradeAdvisor)
 	PawnUIFrame_ShowSocketingAdvisorCheck:SetChecked(PawnCommon.ShowSocketingAdvisor)
+	if not VgerCore.ReforgingExists then
+		PawnUIFrame_ShowReforgingAdvisorCheck:Hide()
+	else
+		PawnUIFrame_ShowReforgingAdvisorCheck:SetChecked(PawnCommon.ShowReforgingAdvisor)
+	end
 	PawnUIFrame_ShowItemLevelUpgradesCheck:SetChecked(PawnCommon.ShowItemLevelUpgrades)
 
 	-- Other options
@@ -2027,6 +2047,10 @@ end
 
 function PawnUIFrame_ShowSocketingAdvisorCheck_OnClick()
 	PawnCommon.ShowSocketingAdvisor = PawnUIFrame_ShowSocketingAdvisorCheck:GetChecked()
+end
+
+function PawnUIFrame_ShowReforgingAdvisorCheck_OnClick()
+	PawnCommon.ShowReforgingAdvisor = PawnUIFrame_ShowReforgingAdvisorCheck:GetChecked() ~= nil
 end
 
 function PawnUIFrame_ShowItemLevelUpgradesCheck_OnClick()
@@ -2172,6 +2196,96 @@ function PawnUI_OnSocketUpdate()
 
 	-- Show our annotations tooltip.
 	PawnSocketingTooltip:Show()
+end
+
+------------------------------------------------------------
+-- Reforging Advisor
+------------------------------------------------------------
+
+function PawnUI_ReforgingAdvisor_Initialize()
+	hooksecurefunc("ReforgingFrame_Update", PawnUI_OnReforgingUpdate)
+end
+
+function PawnUI_OnReforgingUpdate()
+	-- Hide the existing reforging tooltip if there is one.
+	if PawnReforgingTooltip then PawnReforgingTooltip:Hide() end
+
+	if not PawnCommon.ShowReforgingAdvisor then return end
+
+	-- Find out what item it is.
+	local Tooltip = _G[PawnPrivateTooltipName]
+	Tooltip:ClearLines()
+	Tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+	Tooltip:SetReforgeItem()
+	local _, ItemLink = Tooltip:GetItem()
+	if not ItemLink then return end
+
+	local Item = PawnGetItemData(ItemLink)
+	if not Item or not Item.Values then
+		VgerCore.Fail("Failed to update the reforging UI because we didn't know what item was in it.")
+		return
+	end
+	if not Item.UnenchantedStats then return end -- Can't do anything interesting if we couldn't get unenchanted item data
+	local IsUpgradeNotTracked = (Item.InvType == "INVTYPE_TRINKET") -- Don't grey out reforge instructions for trinkets
+	local UpgradeInfo, BestItemFor, SecondBestItemFor = PawnIsItemAnUpgrade(Item)
+
+	-- Now, find out what to do for each scale.
+	local ScaleName
+	local InstructionsList = { }
+	local SuggestedAnyCappedStats
+	for ScaleName, _ in pairs(PawnCommon.Scales) do
+		if PawnIsScaleVisible(ScaleName) then
+			local StatDelta, Instructions, SuggestedCappedStat = PawnFindOptimalReforging(Item, ScaleName)
+			if StatDelta == nil then
+				-- This item can't be reforged.
+				return
+			end
+			SuggestedAnyCappedStats = SuggestedAnyCappedStats or SuggestedCappedStat
+			local TextColor = PawnGetScaleColor(ScaleName)
+			local LocalizedName = PawnGetScaleLocalizedName(ScaleName)
+			local Color = ""
+			if IsUpgradeNotTracked then
+				-- We don't track upgrades for this type of item, so don't grey it out.
+			elseif (BestItemFor and BestItemFor[ScaleName]) or (SecondBestItemFor and SecondBestItemFor[ScaleName]) then
+				-- This is one of our best items for this scale.
+			elseif UpgradeInfo then
+				-- Is this an upgrade for this scale?
+				local WasUpgrade = nil
+				local UpgradeData
+				for _, UpgradeData in pairs(UpgradeInfo) do
+					if UpgradeData[1] == ScaleName then
+						WasUpgrade = true
+						break
+					end
+				end
+				if not WasUpgrade then Color = VgerCore.Color.Grey end
+			else
+				-- This item isn't good for this scale, so grey out the instructions.
+				Color = VgerCore.Color.Grey
+			end
+
+			tinsert(InstructionsList, format("%s%s:|r  %s%s", TextColor, LocalizedName, Color, Instructions))
+		end
+	end
+	sort(InstructionsList, PawnColoredStringCompare)
+
+	-- Add the annotation lines to the tooltip.
+	if not PawnReforgingTooltip then CreateFrame("GameTooltip", "PawnReforgingTooltip", ReforgingFrame, "PawnUI_HintTooltip_PointsUp") end
+	PawnReforgingTooltip:SetOwner(ReforgingFrame, "ANCHOR_NONE")
+	PawnReforgingTooltip:SetPoint("TOPLEFT", ReforgingFrame, "BOTTOMLEFT", 12, -12)
+	PawnReforgingTooltip:SetText(PawnLocal.UI.ReforgeTitle, 1, 1, 1)
+
+	local Instructions
+	for _, Instructions in pairs(InstructionsList) do
+		PawnReforgingTooltip:AddLine(Instructions, 1, 1, 1)
+	end
+
+	if SuggestedAnyCappedStats then
+		PawnReforgingTooltip:AddLine(PawnLocal.ReforgeCappedStatWarning, VgerCore.Color.BlueR, VgerCore.Color.BlueG, VgerCore.Color.BlueB)
+	end
+
+	-- Show our annotations tooltip.
+	PawnReforgingTooltip:Show()
 end
 
 ------------------------------------------------------------

@@ -1489,6 +1489,14 @@
 						<Scripts><OnClick function="PawnUIFrame_ShowSocketingAdvisorCheck_OnClick" /></Scripts>
 					</CheckButton>
 					
+					<CheckButton name="PawnUIFrame_ShowReforgingAdvisorCheck" inherits="PawnUICheckboxTemplate">
+						<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="300" y="-185" /></Offset></Anchor></Anchors>
+						<Layers><Layer level="ARTWORK">
+							<FontString name="$parent_Label" inherits="PawnUICheckboxLabelTemplate" text="PawnUIFrame_ShowReforgingAdvisorCheck_Text" />
+						</Layer></Layers>
+						<Scripts><OnClick function="PawnUIFrame_ShowReforgingAdvisorCheck_OnClick" /></Scripts>
+					</CheckButton>
+					
 					<!-- Other options -->
 					
 					<CheckButton name="PawnUIFrame_DebugCheck" inherits="PawnUICheckboxTemplate">

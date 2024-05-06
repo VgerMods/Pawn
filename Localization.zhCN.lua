@@ -375,6 +375,8 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["OptionsResetUpgradesTooltip"] = [=[Pawn会清除本身记录的曾经见装备过的最好的装备（哪怕在背包里、银行里甚至摧毁贩卖了），所有评分从你角色现在已装备的为标准来比较。
 
 当你因某种原因某件装备丢失或者不再使用的时候，插件默认还是以那件装备计算，引起的不便。或者装备数据紊乱的时候，可以使用此功能。]=],
+		["OptionsReforgingAdvisor"] = "显示重铸建议",
+		["OptionsReforgingAdvisorTooltip"] = "当访问重铸商时候，将显示一个弹出的统计框，提示重铸的建议。",
 		["OptionsShowItemLevelUpgrades"] = "显示装等的提升",
 		["OptionsShowItemLevelUpgradesTooltip"] = "根据插件记录，如果同部位[未穿戴过]的装备装等高于[已装备过]的（非正在装备），Pawn将提示关于这单个部位装等的提升。",
 		["OptionsShowRelicUpgrades"] = "显示神器圣物的提升",
@@ -417,6 +419,10 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["OptionsUpgradeTrackingOn"] = "高级模式",
 		["OptionsUpgradeTrackingOnTooltip"] = "Pawn会针对每个装备的部位，记录过你所穿过的评分最高的装备，每次对比均会与这件记录的装备对比，这件装备可以在背包里仓库里，而并非一定是你现在角色装备的那件。",
 		["OptionsWelcome"] = "按照你的偏好配置 Pawn.  更改会马上生效.",
+		["ReforgeTitle"] = "Pawn 重铸建议:",
+		["ReforgeInstructionsNoReforge"] = "不要重铸",
+		["ReforgeInstructions"] = "重铸 %s 为 %s",
+		["ReforgeCappedStatWarning"] = "当您要重铸掉命中或校准属性时，请务必注意保证您的未命中概率不会超过0%。",
 		["ScaleAutoOff"] = "自定义",
 		["ScaleAutoOff2"] = "自由设定属性权重。",
 		["ScaleAutoOffTooltip"] = "你可以自由设定属性权重的评分标准，或者一种专精几种评分标准，甚至直接关闭某项专精的评分。",
@@ -612,6 +618,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^装备： ?提高自然法术和效果所造成的伤害，最多#点。$",
 	["NatureSpellDamage3"] = "^%+# ?自然伤害$",
 	["NormalizationEnchant"] = "^附魔： ?(.*)$",
+	["NormalizationReforge"] = "^(.*)%（由(.*)重铸而来%）$",
 	["Parry"] = "^%+?# 招架$",
 	["Parry2"] = "^UNUSED$",
 	["ParryPercent"] = "^装备： 使你招架攻击的几率提高#%%。$",

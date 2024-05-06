@@ -413,6 +413,10 @@ Todo objeto en World of Warcraft tiene un número de ID asociado.  Normalmente �
 
 Usa ésta característica si crees que Pawn está haciendo malas sugerencias de mejora como resultado de objetos que has vendido, destruido, o que de otra forma ya no usas.  Ésto afectará a todos tus personajes que usen Pawn.]=],
 		--[[Translation missing --]]
+		["OptionsReforgingAdvisor"] = "Show reforging advisor",
+		--[[Translation missing --]]
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
+		--[[Translation missing --]]
 		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
 		--[[Translation missing --]]
 		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
@@ -459,6 +463,10 @@ Si está deseleccionado, equipar un arma de dos manos evitará que Pawn te muest
 		["OptionsUpgradeTrackingOn"] = "Rastrear para cada escala (avanzado)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(Para usuarios avanzados.) Pawn tratara de rastrear el mejor equipamiento que te hayas equipado, independientemente de cada escala que hayas habilitado, y te mostrara el equipamiento que sea una mejora respecto a estos.",
 		["OptionsWelcome"] = "Configura Pawn a tu gusto.  Los cambios se mostrarán de forma inmediata.",
+		["ReforgeTitle"] = "Pawn:",
+		["ReforgeInstructionsNoReforge"] = "Do not reforge",
+		["ReforgeInstructions"] = "%s -> %s",
+		["ReforgeCappedStatWarning"] = "Use care when reforging Hit or Expertise, and don't reforge stats you need.",
 		["ScaleAutoOff"] = "Manual",
 		["ScaleAutoOff2"] = "Permitirme manejar las escalas",
 		["ScaleAutoOffTooltip"] = "Pawn te permitira elegir manualmente que escalas usar para sus calculos, haciendo posible activar mas de una escala cada vez, añadir escalas personalizadas, y mas.",

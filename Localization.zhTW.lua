@@ -388,6 +388,8 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 若你發現 Pawn 基於你已賣出、摧毀，或早已不用的裝備，而頻頻作出欠佳的升級建議，請使用此功能。
 
 這會影響到你所有使用 Pawn 的角色]=],
+		["OptionsReforgingAdvisor"] = "顯示重鑄建議",
+		["OptionsReforgingAdvisorTooltip"] = "当访问重铸商时候，将显示一个弹出的统计框，提示重铸的建议。",
 		["OptionsShowItemLevelUpgrades"] = "顯示物品等級提升",
 		["OptionsShowItemLevelUpgradesTooltip"] = "除了正常提升之外，Pawn將向您顯示高於您之前在該部位中裝備的物品等級。",
 		["OptionsShowRelicUpgrades"] = "顯示聖物升級",
@@ -435,6 +437,10 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 		["OptionsUpgradeTrackingOn"] = "追蹤每個紀錄(進階)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(給進階使用者)Pawn會針對每個裝備的部位，記錄過你所穿過的評分最高的裝備，每次對比均會與這件記錄的裝備對比，這件裝備可以在背包裡倉庫裡，而並非一定是你現在角色裝備的那件。",
 		["OptionsWelcome"] = "按照你的偏好設定 Pawn. 更動會馬上生效.",
+		["ReforgeTitle"] = "Pawn 重鑄建議:",
+		["ReforgeInstructionsNoReforge"] = "不要重鑄",
+		["ReforgeInstructions"] = "重鑄 %s 到 %s",
+		["ReforgeCappedStatWarning"] = "當重鑄命中或者熟練時請小心使用！不要讓你的未擊中的幾率高過0%。",
 		["ScaleAutoOff"] = "自定義",
 		["ScaleAutoOff2"] = "自由設定屬性權重。",
 		["ScaleAutoOffTooltip"] = "你可以自由設定屬性權重的評分標準，或者一種專精幾種評分標準，甚至直接關閉某項專精的評分。",

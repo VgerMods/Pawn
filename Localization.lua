@@ -374,6 +374,8 @@ Every item in World of Warcraft has an ID number associated with it.  This infor
 		["OptionsResetUpgradesTooltip"] = [=[Pawn will forget what it knows about the best items you've ever equipped and re-scan your gear in order to provide more up-to-date upgrade information in the future.
 
 Use this feature if you find that Pawn is making poor upgrade suggestions as a result of items that you've vendored, destroyed, or otherwise do not use anymore.  This will affect all of your characters that use Pawn.]=],
+		["OptionsReforgingAdvisor"] = "Show reforging advisor",
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
 		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
 		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
 		["OptionsShowRelicUpgrades"] = "Show relic upgrades",
@@ -416,6 +418,10 @@ If unchecked, equipping a two-handed weapon will prevent Pawn from showing you u
 		["OptionsUpgradeTrackingOn"] = "Track for each scale (advanced)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(For advanced users.)  Pawn will try to track the best items that you've equipped, independently for each scale that you have enabled, and show you items that are an upgrade compared to those.",
 		["OptionsWelcome"] = "Configure Pawn the way you like it.  Changes will take effect immediately.",
+		["ReforgeTitle"] = "Pawn Reforging Advisor suggests:",
+		["ReforgeInstructionsNoReforge"] = "Do not reforge",
+		["ReforgeInstructions"] = "Reforge %s into %s",
+		["ReforgeCappedStatWarning"] = "Use care when reforging Hit or Expertise, and don't reforge stats you need.",
 		["ScaleAutoOff"] = "Manual",
 		["ScaleAutoOff2"] = "Let me manage scales.",
 		["ScaleAutoOffTooltip"] = "Pawn will let you manually choose which scales to use for its calculations, allowing you to enable more than one scale at a time, add custom scales, and more.",
@@ -615,6 +621,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^Equip: Increases damage done by Nature spells and effects by up to #%.$",
 	["NatureSpellDamage3"] = "^%+# Nature Damage$",
 	["NormalizationEnchant"] = "^Enchanted: (.*)$",
+	["NormalizationReforge"] = "",
 	["Parry"] = "^%+?# Parry$",
 	["Parry2"] = "^UNUSED$",
 	["ParryPercent"] = "^Equip: Increases your chance to parry an attack by #%%%.$",

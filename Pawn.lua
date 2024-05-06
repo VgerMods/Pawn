@@ -114,6 +114,19 @@ local PawnItemEquipLocToSlot2 =
 	INVTYPE_WEAPON = 17,
 }
 
+local PawnReforgeableStats = { "CritRating", "DodgeRating", "ExpertiseRating", "HasteRating", "HitRating", "MasteryRating", "ParryRating", "Spirit" }
+local PawnStatFriendlyNames = -- Currently only contains stat names used for reforging.
+{
+	["CritRating"] = ITEM_MOD_CRIT_RATING_SHORT,
+	["DodgeRating"] = ITEM_MOD_DODGE_RATING_SHORT,
+	["ExpertiseRating"] = ITEM_MOD_EXPERTISE_RATING_SHORT,
+	["HasteRating"] = ITEM_MOD_HASTE_RATING_SHORT,
+	["HitRating"] = ITEM_MOD_HIT_RATING_SHORT,
+	["MasteryRating"] = ITEM_MOD_MASTERY_RATING_SHORT,
+	["ParryRating"] = ITEM_MOD_PARRY_RATING_SHORT,
+	["Spirit"] = ITEM_MOD_SPIRIT_SHORT,
+}
+
 -- Don't taint the global variable "_".
 local _
 
@@ -494,6 +507,7 @@ function PawnInitialize()
 	if IsAddOnLoaded("Blizzard_EncounterJournal") then PawnOnAddonLoaded("Blizzard_EncounterJournal") end
 	if IsAddOnLoaded("Blizzard_InspectUI") then PawnOnAddonLoaded("Blizzard_InspectUI") end
 	if IsAddOnLoaded("Blizzard_ItemSocketingUI") then PawnOnAddonLoaded("Blizzard_ItemSocketingUI") end
+	if IsAddOnLoaded("Blizzard_ReforgingUI") then PawnOnAddonLoaded("Blizzard_ReforgingUI") end
 
 	-- Now, load any plugins that are ready to be loaded.
 	PawnInitializePlugins()
@@ -556,6 +570,9 @@ function PawnOnAddonLoaded(AddonName)
 	elseif AddonName == "Blizzard_ItemSocketingUI" then
 		-- After the socketing UI is loaded, it gets a Pawn button too.
 		PawnUI_SocketingPawnButton_Attach()
+	elseif AddonName == "Blizzard_ReforgingUI" then
+		-- After the reforging UI is loaded, it gets the Pawn Reforging Advisor.
+		PawnUI_ReforgingAdvisor_Initialize()
 	elseif AddonName == "Blizzard_ArtifactUI" then
 		-- After the artifact UI is loaded, watch the relic sockets.
 		PawnUI_HookArtifactUI()
@@ -670,9 +687,6 @@ function PawnInitializeOptions()
 		PawnRecalculateScaleTotal(ScaleName) -- removes information from the cache
 	end
 
-	-- Some features were deleted in WoW 6.0.
-	PawnCommon.ShowReforgingAdvisor = nil
-
 	-- And some more in WoW 7.1.
 	PawnCommon.IgnoreItemUpgrades = nil
 
@@ -734,6 +748,10 @@ function PawnInitializeOptions()
 		-- Clear it this one time; people can go back to hiding them if they want.
 		local FrostDK = PawnCommon.Scales["\"MrRobot\":DEATHKNIGHT2"]
 		if FrostDK then FrostDK.DoNotShow2HUpgrades = false end
+	end
+	if (VgerCore.ReforgingExists and PawnCommon.LastVersion < 2.0902) then
+		-- Enable the reforging advisor by default on Cataclysm Classic.
+		PawnCommon.ShowReforgingAdvisor = true
 	end
 	if ((VgerCore.IsMainline) and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
 		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
@@ -2669,11 +2687,12 @@ end
 --		ScaleName: The scale to use.
 --		DebugMessages: If true, debug messages will be shown if appropriate.
 --		NoNormalization: If true, the user's normalization factor will be ignored.
+--		NoReforging: If true, reforging calculations will be skipped.
 --	Returns: Value, TotalSocketValue
 --		Value: The numeric value of an item based on the given scale values.  (example: 21.75)
 --		TotalSocketValue: The total value of the sockets and socket bonus if applicable. (This is already factored into the total value.)
 --		SocketBonusValue: The total value of the socket bonus, IF it's worthwhile. (This is already factored into the previous two values.)
-function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages, NoNormalization)
+function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages, NoNormalization, NoReforging)
 	-- If either the item or scale is empty, exit now.
 	if (not Item) or (not ScaleName) then return end
 	local ScaleOptions = PawnCommon.Scales[ScaleName]
@@ -2835,6 +2854,17 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 		if ScaleOptions.NormalizationFactor and ScaleOptions.NormalizationFactor > 0 then
 			if DebugMessages then PawnDebugMessage(format(PawnLocal.NormalizationMessage, PawnScaleTotals[ScaleName])) end
 			Total = ScaleOptions.NormalizationFactor * Total / PawnScaleTotals[ScaleName]
+		end
+	end
+
+	-- Decide if the item should be reforged.
+	if VgerCore.ReforgingExists then
+		if (not IsUnusable) and (not NoReforging) and (ItemLevel and ItemLevel >= 200) then
+			local ReforgePotential = PawnFindOptimalReforgingCore(ScaleName, ScaleOptions, ScaleValues, Item, true)
+			if ReforgePotential and ReforgePotential > 0 then
+				if DebugMessages then PawnDebugMessage(format("   ---- Reforge item to gain +%g", ReforgePotential)) end
+				Total = Total + ReforgePotential
+			end
 		end
 	end
 
@@ -4232,6 +4262,123 @@ function PawnIsArmorBestTypeForPlayer(Item)
 		end
 	end
 	VgerCore.Fail("Tell Vger that PawnIsArmorBestTypeForPlayer needs to be updated for " .. tostring(Class) .. ".")
+end
+
+-- Determines how best to reforge an item to maximize its value for a particular scale.
+-- Parameters: Item, ScaleName, NoInstructions
+--	Item: The item data table to reforge.
+--	ScaleName: The name of the scale to use.
+--	NoInstructions: If true, only the ValueDelta will be calculated and returned.
+-- Returns: ValueDelta, ReforgeString, SuggestedCappedStat
+--	ValueDelta: The increase in the item's value if this reforge is performed.
+--	ReforgeString: A localized string that explains how to reforge the item, such as "25 Critical Strike Rating into Haste Rating".
+--	SuggestedCappedStat: If one of the suggested reforgings was from a capped stat (Hit or Expertise), true, otherwise, false.
+-- If it's impossible to reforge the item, nil is returned.  (This would be the case regardless of the scale passed in, so there's no need to call this
+-- again for the same item and a different scale.)  If it's possible to reforge an item but unwise, the delta will be 0 and the reforge
+-- string will be a localized string containing an explanation.
+function PawnFindOptimalReforging(Item, ScaleName, NoInstructions)
+	if not VgerCore.ReforgingExists then return end
+	-- Items below level 200 can't be reforged.
+	if not Item.Level or Item.Level < 200 then return end
+	local InvType = Item.InvType
+	if InvType == "nil" or InvType == "" or InvType == "INVTYPE_TABARD" or InvType == "INVTYPE_BAG" then return end
+
+	local Scale = PawnCommon.Scales[ScaleName]
+	local Values = Scale.Values
+	local Stats = Item.UnenchantedStats
+	if not Stats then return end
+
+	return PawnFindOptimalReforgingCore(ScaleName, Scale, Values, Stats, NoInstructions)
+end
+
+-- Core functionality of PawnFindOptimalReforging that can be used without an Item table constructed.
+-- PawnGetItemValue also uses this.
+function PawnFindOptimalReforgingCore(ScaleName, Scale, Values, Stats, NoInstructions)
+	-- Find the stat to reforge TO.
+	local ReforgeTo
+	if not NoInstructions then ReforgeTo = { } end
+	local BestValue = 0
+	local Stat, _
+	for _, Stat in pairs(PawnReforgeableStats) do
+		if not Stats[Stat] then
+			local Value = Values[Stat]
+			-- The item doesn't already have this stat.
+			if Value and Value > BestValue then
+				-- This is the best reforgeable stat so far.
+				if not NoInstructions then
+					wipe(ReforgeTo)
+					tinsert(ReforgeTo, PawnStatFriendlyNames[Stat])
+				end
+				BestValue = Value
+			elseif Value == BestValue then
+				-- This stat ties the current best value, so add it to the list.
+				if not NoInstructions then
+					tinsert(ReforgeTo, PawnStatFriendlyNames[Stat])
+				end
+			end
+		end
+	end
+	if BestValue == 0 or (ReforgeTo and #ReforgeTo == #PawnReforgeableStats) then
+		if not NoInstructions then
+			return 0, PawnLocal.UI.ReforgeInstructionsNoReforge, false
+		else
+			return 0
+		end
+	end
+	
+	-- Now, find the stat to reforge FROM.
+	local ReforgeFrom = { }	
+	local BestReforgeDelta = 0
+	local SuggestedCappedStat = false
+	for _, Stat in pairs(PawnReforgeableStats) do
+		local Value = Values[Stat]
+		if not Value or Value < 0 then Value = 0 end -- This would be a great: reforging away a stat with no value at all!
+		local Quantity = Stats[Stat]
+		if Quantity and Value < BestValue then
+			local Quantity = Stats[Stat]
+			if Quantity then
+				local ReforgeQuantity = floor(Quantity * .4)
+				if ReforgeQuantity > 0 then
+					local StatDelta = ReforgeQuantity * (BestValue - Value)
+					if StatDelta > BestReforgeDelta then
+						-- This is the stat with the best reforge potential so far.
+						if not NoInstructions then
+							SuggestedCappedStat = (Stat == "HitRating" or Stat == "ExpertiseRating")
+							wipe(ReforgeFrom)
+							tinsert(ReforgeFrom, format("%d %s", ReforgeQuantity, PawnStatFriendlyNames[Stat]))
+						end
+						BestReforgeDelta = StatDelta
+					elseif StatDelta == BestReforgeDelta then
+						-- This stat has the same reforge potential as the best so far.
+						if not NoInstructions then
+							SuggestedCappedStat = SuggestedCappedStat or (Stat == "HitRating" or Stat == "ExpertiseRating")
+							tinsert(ReforgeFrom, format("%d %s", ReforgeQuantity, PawnStatFriendlyNames[Stat]))
+						end
+					end
+				end
+			end
+		end
+	end
+	if BestReforgeDelta == 0 then
+		if not NoInstructions then
+			return 0, PawnLocal.UI.ReforgeInstructionsNoReforge, false
+		else
+			return 0
+		end
+	end
+
+	-- Apply the scale's normalization factor if present.
+	if Scale.NormalizationFactor and Scale.NormalizationFactor > 0 and PawnScaleTotals[ScaleName] then
+		BestReforgeDelta = Scale.NormalizationFactor * BestReforgeDelta / PawnScaleTotals[ScaleName]
+	end
+
+	-- Finally, turn it all into a nice localized string.
+	local ReforgeString
+	if not NoInstructions then
+		ReforgeString = format(PawnLocal.UI.ReforgeInstructions, PawnConcatenateWithConjunction(ReforgeFrom, PawnLocal.Or), PawnConcatenateWithConjunction(ReforgeTo, PawnLocal.Or))
+	end
+
+	return BestReforgeDelta, ReforgeString, SuggestedCappedStat
 end
 
 -- Appends the strings in a table together with commas and a conjunction ("or ") as appropriate.  The conjunction can be nil, but if it isn't, it should end in a space.

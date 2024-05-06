@@ -376,6 +376,10 @@ Todos os itens no World of Warcraft possui um número de ID associado a ele. Ess
 
 Use essa funcionalidade se você perceber que o Pawn está sugerindo melhorias incorretas como resultado de itens que você vendeu, destruiu ou não utiliza mais. Isso vai afetar todos os seus personagens que usam o Pawn.]=],
 		--[[Translation missing --]]
+		["OptionsReforgingAdvisor"] = "Show reforging advisor",
+		--[[Translation missing --]]
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
+		--[[Translation missing --]]
 		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
 		--[[Translation missing --]]
 		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
@@ -419,6 +423,14 @@ Se não estiver marcada, equipar uma arma de duas mãos vai evitar que o Pawn mo
 		["OptionsUpgradeTrackingOn"] = "Monitorar para cada escala (avançado)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(Para usuários avançados) O Pawn tentará monitorar os melhores itens que você tem equipado, independente para cada escala que você tiver ativado, e lhe mostra itens que são uma melhoria comparado com eles.",
 		["OptionsWelcome"] = "Configure o Pawn do jeito que desejar. Mudanças terão efeito imediatamente.",
+		--[[Translation missing --]]
+		["ReforgeTitle"] = "Pawn:",
+		--[[Translation missing --]]
+		["ReforgeInstructionsNoReforge"] = "Do not reforge",
+		--[[Translation missing --]]
+		["ReforgeInstructions"] = "%s -> %s",
+		--[[Translation missing --]]
+		["ReforgeCappedStatWarning"] = "Use care when reforging Hit or Expertise, and don't reforge stats you need.",
 		["ScaleAutoOff"] = "Manual",
 		["ScaleAutoOff2"] = "Deixe-me gerenciar as escalas.",
 		["ScaleAutoOffTooltip"] = "O Pawn vai permitir que você escolha manualmente quais escalas usar para os seus cálculos, permitindo que você ative mais de uma escala por vez, adicione escalas customizadas, e mais.",

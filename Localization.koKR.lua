@@ -375,6 +375,10 @@ Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help �
 
 Pawn이 상점에 판매했거나, 파괴했거나, 다른 방법으로 더이상 사용하지 않는 아이템을 향상 아이템으로 추천한다면 이 기능을 사용하세요. Pawn을 사용하는 모든 캐릭터에 영향을 미칩니다.]=],
 		--[[Translation missing --]]
+		["OptionsReforgingAdvisor"] = "Show reforging advisor",
+		--[[Translation missing --]]
+		["OptionsReforgingAdvisorTooltip"] = "When visiting an arcane reforger, Pawn will show you how to maximize the item's power.",
+		--[[Translation missing --]]
 		["OptionsShowItemLevelUpgrades"] = "Show item level upgrades",
 		--[[Translation missing --]]
 		["OptionsShowItemLevelUpgradesTooltip"] = "Pawn will show you items that are of a higher item level than what you've previously equipped in that slot in addition to normal upgrades.",
@@ -418,6 +422,14 @@ Pawn이 상점에 판매했거나, 파괴했거나, 다른 방법으로 더이�
 		["OptionsUpgradeTrackingOn"] = "각 능력치 비율 별 추적 (고급)",
 		["OptionsUpgradeTrackingOnTooltip"] = "(고급 사용자용)  Pawn은 활성화 된 능력치 비율 별로 최상급의 아이템을 추적하며, 그것들과 비교하여 향상되는 아이템들을 보여줍니다.",
 		["OptionsWelcome"] = "원하는 대로 Pawn을 설정하세요. 변경 내용은 즉시 적용됩니다.",
+		--[[Translation missing --]]
+		["ReforgeTitle"] = "Pawn:",
+		--[[Translation missing --]]
+		["ReforgeInstructionsNoReforge"] = "Do not reforge",
+		--[[Translation missing --]]
+		["ReforgeInstructions"] = "%s -> %s",
+		--[[Translation missing --]]
+		["ReforgeCappedStatWarning"] = "Use care when reforging Hit or Expertise, and don't reforge stats you need.",
 		["ScaleAutoOff"] = "수동",
 		["ScaleAutoOff2"] = "능력치 비율을 스스로 관리합니다.",
 		["ScaleAutoOffTooltip"] = "계산에 사용할 능력치 비율을 선택하고, 동시에 하나 이상의 능력치 비율을 활성화 할 수 있게하며, 사용자 설정 능력치 비율을 추가할 수 있게 합니다.",
