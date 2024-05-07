@@ -3931,6 +3931,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 				if Location and Location > 1 then
 					-- Getting the item link for an equipment set item is a pain in the ass...
 					local ItemLink
+					-- PROBLEM: *** EquipmentManager_UnpackLocation in Cataclysm Classic removes IsInVoidStorage from the return values, shifting everything over.
 					local IsOnPlayer, IsInBank, IsInBags, IsInVoidStorage, Slot, Bag, Tab, VoidSlot = EquipmentManager_UnpackLocation(Location)
 					if IsInVoidStorage then
 						-- The item link for this item should be GetVoidItemHyperlinkString(VoidSlot), but we'll never get here; location will
