@@ -518,7 +518,7 @@ function PawnInitialize()
 	end
 
 	-- Warn them if Pawn might be broken due to changing the thousands or decimal separator.
-	if GetLocale() ~= "frFR" or not VgerCore.IsClassic then
+	if not (GetLocale() == "frFR" and not VgerCore.IsMainline) then
 		-- The separator strings are completely wrong on French WoW Classic.  :(
 		if (LARGE_NUMBER_SEPERATOR and PawnLocal.ThousandsSeparator ~= LARGE_NUMBER_SEPERATOR) or
 		(DECIMAL_SEPERATOR and PawnLocal.DecimalSeparator ~= DECIMAL_SEPERATOR) then
