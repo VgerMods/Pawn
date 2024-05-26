@@ -1671,8 +1671,8 @@ function PawnGetSingleValueFromItem(Item, ScaleName)
 
 	-- If this scale isn't enabled, just calculate it as a one-off.
 	local Value, UnenchantedValue
-	Value = PawnGetItemValue(Item.Stats, Item.Level, Item.SocketBonusStats, ScaleName, false, false)
-	UnenchantedValue = PawnGetItemValue(Item.UnenchantedStats, Item.Level, Item.UnenchantedSocketBonusStats, ScaleName, false, false)
+	Value = PawnGetItemValue(Item.Stats, Item.Level, Item.SocketBonusStats, ScaleName, false, false, true)
+	UnenchantedValue = PawnGetItemValue(Item.UnenchantedStats, Item.Level, Item.UnenchantedSocketBonusStats, ScaleName, false, false, false)
 	return Value, UnenchantedValue
 end
 
@@ -1839,7 +1839,7 @@ end
 -- 	UnenchantedItem: A table of unenchanted item values in the format returned by GetStatsFromTooltip.
 -- 	UnenchantedItemSocketBonus: A table of unenchanted item socket bonuses in the format returned by GetStatsFromTooltip.
 --	DebugMessages: If true, debug messages will be printed.
---	NoNormalization: If true, the user's normalization factor will be ignored.
+--	NoNormalization: If true, the user's normalization factor and reforging will be ignored.
 -- Return value: ItemValues
 -- 	ItemValues: A sorted table of scale values in the following format: { {"Scale 1", 100, 90, ...}, {"\"Provider\":Scale2", 200, 175, ...} }.
 --	Values for scales that are not currently enabled are not included.
@@ -1855,14 +1855,14 @@ function PawnGetAllItemValues(Item, ItemLevel, SocketBonus, UnenchantedItem, Une
 			local Value
 			local UnenchantedValue
 			if UnenchantedItem then
-				UnenchantedValue = PawnGetItemValue(UnenchantedItem, ItemLevel, UnenchantedItemSocketBonus, ScaleName, ShowScale and DebugMessages, NoNormalization)
+				UnenchantedValue = PawnGetItemValue(UnenchantedItem, ItemLevel, UnenchantedItemSocketBonus, ScaleName, ShowScale and DebugMessages, NoNormalization, NoNormalization)
 			end
 			if Item then
 				if ShowScale and DebugMessages and PawnCommon.ShowEnchanted then
 					PawnDebugMessage(" ")
 					PawnDebugMessage(PawnLocal.EnchantedStatsHeader)
 				end
-				Value = PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, ShowScale and DebugMessages and PawnCommon.ShowEnchanted, NoNormalization)
+				Value = PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, ShowScale and DebugMessages and PawnCommon.ShowEnchanted, NoNormalization, true)
 			end
 
 			-- Add these values to the table.
@@ -3474,7 +3474,7 @@ function PawnFindBestGems(ScaleName, GemTable, RedOnly, YellowOnly, BlueOnly)
 		ThisGem = PawnGetGemData(GemData)
 		if ThisGem then
 			if ((not RedOnly) or GemData.R) and ((not YellowOnly) or GemData.Y) and ((not BlueOnly) or GemData.B) then
-				local ThisValue = PawnGetItemValue(ThisGem.UnenchantedStats, ThisGem.Level, nil, ScaleName, false, true)
+				local ThisValue = PawnGetItemValue(ThisGem.UnenchantedStats, ThisGem.Level, nil, ScaleName, false, true, true)
 				if ThisValue and ThisValue > BestScore then
 					-- This gem is better than any we've found so far.
 					BestScore = ThisValue
