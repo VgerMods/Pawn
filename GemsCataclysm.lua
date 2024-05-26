@@ -994,6 +994,11 @@ PawnMetaGemQualityLevels =
 	{ 0, PawnMetaGemData70Rare },
 }
 
+PawnCogwheelQualityLevels =
+{
+	{ 0, PawnCogwheelData85Rare },
+}
+
 PawnMinimumItemLevelToConsiderGems = 187 -- 187 during pre-patch; 315 at launch
 
 end -- if VgerCore.IsCataclysm

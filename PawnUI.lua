@@ -1344,6 +1344,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	AddSockets("YellowSocket", YELLOW_GEM)
 	AddSockets("BlueSocket", BLUE_GEM)
 	AddSockets("MetaSocket", META_GEM)
+	AddSockets("CogwheelSocket", EMPTY_SOCKET_COGWHEEL)
 
 	local _, TotalSocketValue1, SocketBonusValue1 = PawnGetItemValue(ItemStats1, Item1.Level, ItemSocketBonusStats1, PawnUICurrentScale, false, true)
 	local _, TotalSocketValue2, SocketBonusValue2 = PawnGetItemValue(ItemStats2, Item2.Level, ItemSocketBonusStats2, PawnUICurrentScale, false, true)
@@ -2132,6 +2133,7 @@ function PawnUI_OnSocketUpdate()
 		+ (ItemStats.RedSocket or 0)
 		+ (ItemStats.YellowSocket or 0)
 		+ (ItemStats.BlueSocket or 0)
+		+ (ItemStats.CogwheelSocket or 0)
 	-- We intentionally ignore meta sockets, because meta gems should be selected for their non-stat effects.
 	-- If there are no supported gems in the item, don't add our advisor tooltip to the window.
 	if SocketCount == 0 then return end

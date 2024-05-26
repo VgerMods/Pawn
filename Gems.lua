@@ -324,10 +324,8 @@ PawnGemQualityLevels =
 	{ 0, PawnGemData1 },
 }
 
-PawnMetaGemQualityLevels =
-{
-	{0, {} }, -- There are no meta gems anymore.
-}
+PawnMetaGemQualityLevels = {}
+PawnCogwheelQualityLevels = {}
 
 PawnMinimumItemLevelToConsiderGems = 315 -- Sockets on items below this ilvl are ignored by default
 

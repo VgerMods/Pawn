@@ -737,6 +737,8 @@ PawnMetaGemQualityLevels =
 	{ 0, PawnMetaGemData70Rare },
 }
 
+PawnCogwheelQualityLevels = {}
+
 PawnMinimumItemLevelToConsiderGems = 187
 
 end -- if VgerCore.IsWrath

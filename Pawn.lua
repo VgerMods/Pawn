@@ -1106,10 +1106,13 @@ function PawnClearCacheValuesOnly()
 	end
 	-- Then, the gem caches.  For each gem meta-table, look at the gem table (which is in
 	-- column 3) and then clear out that table's item data cache.
-	local GemQualityData, GemData
-	for _, GemQualityData in pairs(PawnGemQualityLevels) do
-		for _, GemData in pairs(GemQualityData[2]) do
-			GemData.Item = nil
+	local GemCaches = { PawnGemQualityLevels, PawnMetaGemQualityLevels, PawnCogwheelQualityLevels }
+	local GemCache, GemQualityData, GemData
+	for _, GemCache in pairs(GemCaches) do
+		for _, GemQualityData in pairs(GemCache) do
+			for _, GemData in pairs(GemQualityData[2]) do
+				GemData.Item = nil
+			end
 		end
 	end
 	-- Then, the Compare tab's cache.
@@ -1190,7 +1193,10 @@ function PawnRecalculateScaleTotal(ScaleName)
 			["BlueSocket"] = { },
 			["BlueSocketValue"] = { },
 			["MetaSocket"] = { },
-			["MetaSocketValue"] = { },		}
+			["MetaSocketValue"] = { },
+			["CogwheelSocket"] = { },
+			["CogwheelSocketValue"] = { },
+		}
 	end
 	local ThisScaleBestGems = PawnScaleBestGems[ScaleName]
 
@@ -1240,6 +1246,24 @@ function PawnRecalculateScaleTotal(ScaleName)
 			local BestMeta
 			BestMeta, ThisScaleBestGems.MetaSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
 			ThisScaleBestGems.MetaSocketValue[ItemLevel] = BestMeta
+		end
+	end
+
+	-- Now cogwheels.
+	if VgerCore.IsCataclysm then -- or Pandaria
+		for _, QualityLevelData in pairs(PawnCogwheelQualityLevels) do
+			local ItemLevel = QualityLevelData[1]
+			local GemData = QualityLevelData[2]
+
+			if PawnCommon.Debug then
+				VgerCore.Message("")
+				VgerCore.Message("COGWHEELS FOR ITEM LEVEL " .. tostring(ItemLevel))
+				VgerCore.Message("")
+			end
+
+			local BestCogwheel
+			BestCogwheel, ThisScaleBestGems.CogwheelSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
+			ThisScaleBestGems.CogwheelSocketValue[ItemLevel] = BestCogwheel
 		end
 	end
 
@@ -1447,6 +1471,7 @@ function PawnGetItemData(ItemLink)
 				Item.Stats.MetaSocket = nil
 				Item.Stats.MetaSocketEffect = nil
 			end
+			Item.Stats.CogwheelSocket = nil
 		end
 
 		-- If the item doesn't have any stats, don't cache it.  This is done to work around a problem a few people were seeing where
@@ -2469,7 +2494,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			SocketBonusStats = {}
 		else
 			-- If the socket bonus is not valid, then we need to check for sockets.
-			if Stats["PrismaticSocket"] or Stats["RedSocket"] or Stats["YellowSocket"] or Stats["BlueSocket"] or Stats["MetaSocket"] then
+			if Stats["PrismaticSocket"] or Stats["RedSocket"] or Stats["YellowSocket"] or Stats["BlueSocket"] or Stats["MetaSocket"] or Stats["CogwheelSocket"] then
 				-- There are sockets left, so the player could still meet the requirements.
 				PawnDebugMessage("   (Socket bonus requirements could potentially be met)")
 			else
@@ -2739,7 +2764,8 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			Stat ~= "YellowSocket" and
 			Stat ~= "BlueSocket" and
 			Stat ~= "MetaSocket" and
-			Stat ~= "MetaSocketEffect"
+			Stat ~= "MetaSocketEffect" and
+			Stat ~= "CogwheelSocket"
 		then
 			if ThisValue then
 				-- This stat has a value; add it to the running total.
@@ -2774,11 +2800,13 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				Item.YellowSocket or
 				Item.BlueSocket or
 				Item.MetaSocket or
-				Item.MetaSocketEffect
+				Item.MetaSocketEffect or
+				Item.CogwheelSocket
 			) then
 
 				local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
 				local MetaGemQualityLevel = PawnGetGemQualityForItem(PawnMetaGemQualityLevels, ItemLevel)
+				local CogwheelQualityLevel = PawnGetGemQualityForItem(PawnCogwheelQualityLevels, ItemLevel)
 
 				local SocketValue = function(Stat, QualityLevel)
 					local Quantity = Item[Stat]
@@ -2839,6 +2867,17 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 					end
 				end
 
+				-- In Cataclysm there are also cogwheels for engineer helms. Sigh.
+				ThisValue = ScaleValues.CogwheelSocket
+				if ThisValue then
+					Stat = "CogwheelSocket"
+					Quantity = Item[Stat]
+					if Quantity then
+						TotalSocketValue = TotalSocketValue + Quantity * ThisValue
+						if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
+					end
+				end
+
 				Total = Total + TotalSocketValue
 			end -- if ShouldIncludeSockets
 
@@ -2877,7 +2916,7 @@ end
 --		GemListString: A string description of the best gems to use.
 --		IsVague: true if the returned string is not particularly specific.
 function PawnGetGemListString(ScaleName, ListAll, ItemLevel, Color)
-	Socket = Socket or "Prismatic"
+	Color = Color or "Prismatic"
 	local Gems = PawnScaleBestGems[ScaleName]
 	if Gems and Gems[Color .. "Socket"] then
 		local GemQuality = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
