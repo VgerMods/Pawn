@@ -2867,7 +2867,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 					end
 				end
 
-				-- In Cataclysm there are also cogwheels for engineer helms. Sigh.
+				-- In Cataclysm there are also cogwheels for engineering goggles. Sigh.
 				ThisValue = ScaleValues.CogwheelSocket
 				if ThisValue then
 					Stat = "CogwheelSocket"
