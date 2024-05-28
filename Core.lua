@@ -28,6 +28,9 @@ if IsMainline then
 	PawnBestArmorMinimumLevel = 0
 	-- From Cataclysm onward, armor specializations heavily penalize using the wrong armor type starting at level 50, changed to 27 in Shadowlands. https://wowpedia.fandom.com/wiki/Armor_Skills
 	PawnArmorSpecializationLevel = 27
+elseif VgerCore.IsCataclysm then
+	PawnBestArmorMinimumLevel = 40
+	PawnArmorSpecializationLevel = 50
 else
 	-- In Classic, the best armor for mail and plate classes wasn't available until level 40.
 	PawnBestArmorMinimumLevel = 40
