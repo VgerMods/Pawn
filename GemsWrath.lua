@@ -737,7 +737,7 @@ PawnMetaGemQualityLevels =
 	{ 0, PawnMetaGemData70Rare },
 }
 
-PawnCogwheelQualityLevels = {}
+PawnCogwheelQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 187
 

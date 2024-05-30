@@ -2809,6 +2809,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				local CogwheelQualityLevel = PawnGetGemQualityForItem(PawnCogwheelQualityLevels, ItemLevel)
 
 				local SocketValue = function(Stat, QualityLevel)
+					if QualityLevel == nil then return 0 end
 					local Quantity = Item[Stat]
 					if Quantity then
 						local ThisValue = ThisScaleBestGems[Stat .. "Value"][QualityLevel]
@@ -2868,15 +2869,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				end
 
 				-- In Cataclysm there are also cogwheels for engineering goggles. Sigh.
-				ThisValue = ScaleValues.CogwheelSocket
-				if ThisValue then
-					Stat = "CogwheelSocket"
-					Quantity = Item[Stat]
-					if Quantity then
-						TotalSocketValue = TotalSocketValue + Quantity * ThisValue
-						if DebugMessages then PawnDebugMessage(format(PawnLocal.ValueCalculationMessage, Quantity, Stat, ThisValue, Quantity * ThisValue)) end
-					end
-				end
+				TotalSocketValue = TotalSocketValue + SocketValue("CogwheelSocket", CogwheelQualityLevel)
 
 				Total = Total + TotalSocketValue
 			end -- if ShouldIncludeSockets
@@ -3425,7 +3418,9 @@ end
 
 -- Given a particular item level and a list of gem tables, return the appropriate gem quality level for an item of the given level.
 -- If ItemLevel is nil, then the highest gem quality is assumed.
+-- Will return nil when there are no known gems of that type at all.
 function PawnGetGemQualityForItem(GemQualityLevels, ItemLevel)
+	if not GemQualityLevels or #GemQualityLevels == 0 then return nil end
 	if not ItemLevel then return GemQualityLevels[1][1] end
 
 	local _, GemQualityData, GemLevel
@@ -3433,7 +3428,7 @@ function PawnGetGemQualityForItem(GemQualityLevels, ItemLevel)
 		GemLevel = GemQualityData[1]
 		if ItemLevel >= GemLevel then return GemLevel end
 	end
-	VgerCore.Fail("Couldn't find an appropriate gem quality level for an item of level " .. tostring(ItemLevel) .. " in the specified item table.")
+	VgerCore.Fail("Pawn couldn't find the right gems to use for an item of level " .. tostring(ItemLevel) .. " (WoW " .. GetBuildInfo() .. ").")
 	return GemLevel
 end
 
