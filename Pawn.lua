@@ -1200,34 +1200,36 @@ function PawnRecalculateScaleTotal(ScaleName)
 	end
 	local ThisScaleBestGems = PawnScaleBestGems[ScaleName]
 
-	local QualityLevelData
-	for _, QualityLevelData in pairs(PawnGemQualityLevels) do
-		local ItemLevel = QualityLevelData[1]
-		local GemData = QualityLevelData[2]
+	if PawnGemQualityLevels then
+		local QualityLevelData
+		for _, QualityLevelData in pairs(PawnGemQualityLevels) do
+			local ItemLevel = QualityLevelData[1]
+			local GemData = QualityLevelData[2]
 
-		if PawnCommon.Debug then
-			VgerCore.Message("")
-			VgerCore.Message("GEMS FOR ITEM LEVEL " .. tostring(ItemLevel))
-			VgerCore.Message("")
-		end
+			if PawnCommon.Debug then
+				VgerCore.Message("")
+				VgerCore.Message("GEMS FOR ITEM LEVEL " .. tostring(ItemLevel))
+				VgerCore.Message("")
+			end
 
-		local BestPrismatic
-		BestPrismatic, ThisScaleBestGems.PrismaticSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
-		ThisScaleBestGems.PrismaticSocketValue[ItemLevel] = BestPrismatic
+			local BestPrismatic
+			BestPrismatic, ThisScaleBestGems.PrismaticSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
+			ThisScaleBestGems.PrismaticSocketValue[ItemLevel] = BestPrismatic
 
-		-- Classic Era and the retail realms don't have colored sockets, so don't bother trying to calculate for those.
-		if not VgerCore.IsClassic and not VgerCore.IsMainline then
-			local BestRed
-			BestRed, ThisScaleBestGems.RedSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, true, false, false)
-			ThisScaleBestGems.RedSocketValue[ItemLevel] = BestRed
+			-- Classic Era and the retail realms don't have colored sockets, so don't bother trying to calculate for those.
+			if not VgerCore.IsClassic and not VgerCore.IsMainline then
+				local BestRed
+				BestRed, ThisScaleBestGems.RedSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, true, false, false)
+				ThisScaleBestGems.RedSocketValue[ItemLevel] = BestRed
 
-			local BestYellow
-			BestYellow, ThisScaleBestGems.YellowSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, true, false)
-			ThisScaleBestGems.YellowSocketValue[ItemLevel] = BestYellow
+				local BestYellow
+				BestYellow, ThisScaleBestGems.YellowSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, true, false)
+				ThisScaleBestGems.YellowSocketValue[ItemLevel] = BestYellow
 
-			local BestBlue
-			BestBlue, ThisScaleBestGems.BlueSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, false, true)
-			ThisScaleBestGems.BlueSocketValue[ItemLevel] = BestBlue
+				local BestBlue
+				BestBlue, ThisScaleBestGems.BlueSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, false, false, true)
+				ThisScaleBestGems.BlueSocketValue[ItemLevel] = BestBlue
+			end
 		end
 	end
 
