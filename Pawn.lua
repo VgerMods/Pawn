@@ -5849,9 +5849,11 @@ function PawnGetClassInfo(ClassID)
 end
 
 if not VgerCore.SpecsExist then
-	-- Classic doesn't have a Guardian spec for druids, so rename.
-	PawnLocal.Specs[11][3].Name = PawnLocal.Specs[11][2].Name .. " (" .. TANK .. ")"
-	PawnLocal.Specs[11][2].Name = PawnLocal.Specs[11][2].Name .. " (" .. DAMAGER .. ")"
+	-- Classic doesn't have a Guardian spec for druids before Cataclysm, so rename.
+	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+		PawnLocal.Specs[11][3].Name = PawnLocal.Specs[11][2].Name .. " (" .. TANK .. ")"
+		PawnLocal.Specs[11][2].Name = PawnLocal.Specs[11][2].Name .. " (" .. DAMAGER .. ")"
+	end
 	-- And, back then, Outlaw was called Combat.
 	PawnLocal.Specs[4][2].Name = COMBAT
 end

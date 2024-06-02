@@ -251,7 +251,7 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 	},
 	["UI"] = {
 		["AboutHeader"] = "About Pawn",
-		["AboutMrRobot"] = "Default stat weights are provided by the generous Mr. Robot.  They’re a great starting point for characters with typical talents and artifact traits in typical fights.  You can get more accurate, customized stat weights for your character using the Ask Mr. Robot simulator at askmrrobot.com.",
+		["AboutMrRobot"] = "Default stat weights are provided by the generous Mr. Robot.  They’re a great starting point for characters with typical talents and gear in typical fights.  You can get more accurate, customized stat weights for your character using the Ask Mr. Robot simulator at askmrrobot.com.",
 		["AboutReadme"] = "New to Pawn?  See the getting started tab for a basic introduction.",
 		["AboutTab"] = "About",
 		["AboutTranslation"] = "Official English version",

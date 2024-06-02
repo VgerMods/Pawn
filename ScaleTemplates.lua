@@ -85,7 +85,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				["NatureSpellDamage"] = 0.7,
 				["ArcaneSpellDamage"] = 0.7,
 				["FrostSpellDamage"] = 0.7,
-				["HolySpellDamage"] = 0.7,	
+				["HolySpellDamage"] = 0.7,
 
 				["Dps"] = 3.4,
 			}
@@ -149,6 +149,13 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				ScaleValues.SpellPower = ScaleValues.SpellDamage
 				ScaleValues.SpellDamage = nil
 				ScaleValues.Healing = nil
+			end
+
+			-- Cataclysm removed a few more things.
+			if VgerCore.IsCataclysm then
+				ScaleValues.DefenseRating = nil
+				ScaleValues.BlockValue = nil
+				ScaleValues.HolySpellDamage = nil
 			end
 		else
 			ScaleValues =
