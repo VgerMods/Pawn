@@ -35,6 +35,8 @@ local PawnUITotalGemLines = 0
 -- Index n is the quest advisor overlay image for the reward with index n
 local PawnQuestAdvisorOverlays = {}
 
+local StandardGemsUnavailable = VgerCore.IsClassic or (PlayerGetTimerunningSeasonID and PlayerGetTimerunningSeasonID())
+
 -- Don't taint the global variable "_".
 local _
 
@@ -182,6 +184,8 @@ function PawnUI_InspectPawnButton_Attach()
 end
 
 function PawnUI_SocketingPawnButton_Attach()
+	if StandardGemsUnavailable then return end
+
 	-- Attach the socketing button.
 	VgerCore.Assert(ItemSocketingFrame ~= nil, "ItemSocketingFrame should be loaded by now!")
 	CreateFrame("Button", "PawnUI_SocketingPawnButton", ItemSocketingFrame, "PawnUI_SocketingPawnButtonTemplate")
@@ -2115,7 +2119,7 @@ end
 
 function PawnUI_OnSocketUpdate()
 	if PawnSocketingTooltip then PawnSocketingTooltip:Hide() end
-	if not PawnCommon.ShowSocketingAdvisor then return end
+	if StandardGemsUnavailable then return end
 
 	-- Find out what item it is.
 	local _, ItemLink = ItemSocketingDescription:GetItem()
@@ -2718,8 +2722,9 @@ function PawnUI_EnsureLoaded()
 		PawnUIOpenedYet = true
 		PawnUIFrame_ScaleSelector_Refresh()
 		PawnUIFrame_ShowScaleCheck_Label:SetText(format(PawnUIFrame_ShowScaleCheck_Label_Text, UnitName("player")))
-		if VgerCore.IsClassic then
+		if StandardGemsUnavailable then
 			-- WoW Classic Era doesn't have gems.
+			-- Timerunning season 1 (Mists of Pandaria Remix) didn't use standard gems, though future seasons may.
 			PawnUIFrameTab4:Hide()
 			PawnUIFrame_IgnoreGemsWhileLevelingCheck:Hide()
 			PawnUIFrame_ShowSocketingAdvisorCheck:Hide()
