@@ -185,6 +185,7 @@ function PawnUI_InspectPawnButton_Attach()
 end
 
 function PawnUI_SocketingPawnButton_Attach()
+	PawnUI_EnsureLoaded()
 	if StandardGemsUnavailable then return end
 
 	-- Attach the socketing button.
@@ -2124,6 +2125,7 @@ end
 
 function PawnUI_OnSocketUpdate()
 	if PawnSocketingTooltip then PawnSocketingTooltip:Hide() end
+	PawnUI_EnsureLoaded()
 	if StandardGemsUnavailable then return end
 
 	-- Find out what item it is.
