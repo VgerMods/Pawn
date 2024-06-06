@@ -2,8 +2,8 @@
 -- www.vgermods.com
 -- © 2006-2024 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.18 -- IsCataclysm, ReforgingExists
-local VgerCoreThisVersion = 1.18
+-- Version 1.0.19 -- IsWarWithin
+local VgerCoreThisVersion = 1.19
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -25,6 +25,7 @@ VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASS
 VgerCore.IsWrath = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_WRATH_OF_THE_LICH_KING and LE_EXPANSION_LEVEL_CURRENT >= LE_EXPANSION_WRATH_OF_THE_LICH_KING) or (WOW_PROJECT_WRATH_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC) -- includes pre-patch
 VgerCore.IsCataclysm = (WOW_PROJECT_CATACLYSM_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC) -- includes pre-patch
 VgerCore.IsMainline = BuildNumber >= 90000
+VgerCore.IsWarWithin = VgerCore.IsMainline and BuildNumber >= 110000
 VgerCore.IsDragonflight = VgerCore.IsMainline and BuildNumber >= 100000
 VgerCore.IsShadowlands = VgerCore.IsMainline and BuildNumber >= 90000
 

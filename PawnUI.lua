@@ -150,7 +150,7 @@ function PawnUI_SocketingPawnButton_OnClick(this)
 	-- Set the suggested gem quality level to the level of the current item so relevant gems will be displayed.
 	local ItemLevel
 	local _, ItemLink = ItemSocketingDescription:GetItem()
-	_, _, _, ItemLevel = GetItemInfo(ItemLink)
+	_, _, _, ItemLevel = C_Item.GetItemInfo(ItemLink)
 	PawnUI_SetGemQualityLevel(ItemLevel)
 	-- Show the Gems tab.
 	PawnUIShowTab(PawnUIGemsTabPage, true)
@@ -1022,7 +1022,7 @@ function PawnUI_CompareTab_Refresh()
 	-- Then, update the best in slot shortcuts.
 	local Item = PawnUIComparisonItems[2]
 	local ItemEquipLoc, _
-	if Item then _, _, _, _, _, _, _, _, ItemEquipLoc = GetItemInfo(Item.Link) end
+	if Item then _, _, _, _, _, _, _, _, ItemEquipLoc = C_Item.GetItemInfo(Item.Link) end
 	PawnUI_SetShortcutBestItem(3, ItemEquipLoc)
 	PawnUI_SetShortcutBestItem(4, ItemEquipLoc)
 end
@@ -1072,7 +1072,7 @@ function PawnUI_SetCompareItem(Index, ItemLink)
 	local ItemName, ItemRarity, ItemEquipLoc, ItemTexture, _
 	local SlotID1, SlotID2
 	if ItemLink then
-		ItemName, _, ItemRarity, _, _, _, _, _, ItemEquipLoc, ItemTexture = GetItemInfo(ItemLink)
+		ItemName, _, ItemRarity, _, _, _, _, _, ItemEquipLoc, ItemTexture = C_Item.GetItemInfo(ItemLink)
 		SlotID1, SlotID2 = PawnGetSlotsForItemType(ItemEquipLoc)
 	else
 		ItemName = PawnUIFrame_VersusHeader_NoItem
@@ -1098,7 +1098,7 @@ function PawnUI_SetCompareItem(Index, ItemLink)
 		local OtherIndex
 		if Index == 1 then OtherIndex = 2 else OtherIndex = 1 end
 		if PawnUIComparisonItems[OtherIndex] then
-			_, _, _, _, _, _, _, _, OtherItemEquipLoc = GetItemInfo(PawnUIComparisonItems[OtherIndex].Link)
+			_, _, _, _, _, _, _, _, OtherItemEquipLoc = C_Item.GetItemInfo(PawnUIComparisonItems[OtherIndex].Link)
 			local OtherSlotID1, OtherSlotID2 = PawnGetSlotsForItemType(OtherItemEquipLoc)
 			if not (
 				(SlotID1 == nil and SlotID2 == nil and OtherSlotID1 == nil and OtherSlotID2 == nil) or
@@ -1220,7 +1220,7 @@ function PawnUI_SetShortcutButtonItem(ShortcutIndex)
 	local Item = PawnUIShortcutItems[ShortcutIndex]
 	if Item then
 		local Texture = getglobal(ButtonName .. "NormalTexture")
-		local _, _, _, _, _, _, _, _, _, ItemTexture = GetItemInfo(Item.Link)
+		local _, _, _, _, _, _, _, _, _, ItemTexture = C_Item.GetItemInfo(Item.Link)
 		Texture:SetTexture(ItemTexture)
 		ShortcutButton:Show()
 	else
@@ -2103,7 +2103,7 @@ end
 ------------------------------------------------------------
 
 function PawnUIAboutTabPage_OnShow()
-	local Version = (C_AddOns and C_AddOns.GetAddOnMetadata or GetAddOnMetadata)("Pawn", "Version")
+	local Version = C_AddOns.GetAddOnMetadata("Pawn", "Version")
 	if Version then
 		PawnUIFrame_AboutVersionLabel:SetText(format(PawnUIFrame_AboutVersionLabel_Text, Version))
 	end
@@ -2363,10 +2363,10 @@ function PawnUI_GroupLootFrame_OnShow(self)
 								ThisText = format(PawnLocal.TooltipUpgradeAnnotation, format("|n%s%s:", PawnGetScaleColor(ScaleName), ThisUpgradeData.LocalizedScaleName), ThisUpgradeData.PercentUpgrade * 100, SetAnnotation)
 							end
 							if ShowOldItems and ThisUpgradeData.ExistingItemLink then
-								local ExistingItemName, _, Quality = GetItemInfo(ThisUpgradeData.ExistingItemLink)
+								local ExistingItemName, _, Quality = C_Item.GetItemInfo(ThisUpgradeData.ExistingItemLink)
 								if ExistingItemName then
 									-- It's possible (though rare) that the existing item isn't in the user's cache, so we can't get its quality color.  In that case, don't display it in the tooltip.
-									local _, _, _, QualityColor =  GetItemQualityColor(Quality)
+									local _, _, _, QualityColor =  C_Item.GetItemQualityColor(Quality)
 									ThisText = format(PawnLocal.TooltipVersusLine, ThisText, QualityColor, ExistingItemName)
 								end
 							end
@@ -2592,9 +2592,11 @@ end
 ------------------------------------------------------------
 
 function PawnInterfaceOptionsFrame_OnLoad()
-	-- Register the Interface Options page.
-	PawnInterfaceOptionsFrame.name = "Pawn"
-	InterfaceOptions_AddCategory(PawnInterfaceOptionsFrame)
+	if InterfaceOptions_AddCategory then
+		-- Register the Interface Options page. This no longer exists in The War Within / 11.0.
+		PawnInterfaceOptionsFrame.name = "Pawn"
+		InterfaceOptions_AddCategory(PawnInterfaceOptionsFrame)
+	end
 end
 
 ------------------------------------------------------------
