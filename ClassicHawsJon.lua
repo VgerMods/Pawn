@@ -11,7 +11,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0906
+PawnClassicLastUpdatedVersion = 2.0908
 
 
 function PawnClassicScaleProvider_AddScales()
@@ -762,7 +762,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			2, -- Paladin
 			3, -- Retribution
-			{ Strength=2.53, Agility=1.13, Intellect=0.15, Stamina=0.01, Spirit=0, HitRating=1.96, CritRating=1.16, HasteRating=1.44, MasteryRating=1, Expertise=0, SpellPenetration=0, Ap=1, Rap=0, SpellPower=0.32, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0.05, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, ExpertiseRating=1.8, MainHandDps=7.33, }
+			{ Strength=2.9436, Agility=0, Intellect=0, Stamina=0.01, Spirit=0, HitRating=3.2672, CritRating=1.3908, HasteRating=1.0356, MasteryRating=1.5395, Expertise=0, SpellPenetration=0, Ap=1, Rap=0, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, ExpertiseRating=2.5455, MainHandDps=7.33, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
