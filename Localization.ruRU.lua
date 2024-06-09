@@ -570,7 +570,7 @@ PawnLocal.TooltipParsing = {
 	["Haste2"] = "^%+?# к показателю скорости$",
 	["HasteRating"] = "^Если на персонаже: Повышает рейтинг скорости боя на #%.$",
 	["HasteRating2"] = "^UNUSED$",
-	["HasteRatingShort"] = "^%+?# к рейтинг скорости$",
+	["HasteRatingShort"] = "^%+?# к рейтингу? скорости$",
 	["HaventCollectedAppearance"] = "^У вас еще нет такой модели.$",
 	["Healing"] = "^%+# к исцеляющим заклинаниям$",
 	["Healing2"] = "^Если на персонаже: Усиливает исцеление от заклинаний и эффектов максимум на # ед%.$",
@@ -777,6 +777,10 @@ PawnLocal.Specs =
 if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 	PawnLocal.DecimalSeparator = ","
 	PawnLocal.ThousandsSeparator = ","
+end
+
+if VgerCore.IsCataclysm then
+	PawnLocal.TooltipParsing.Mastery = "^%+?# Искусность$"
 end
 
 end
