@@ -1622,7 +1622,8 @@ function PawnUIGetAllTextForItem(Item)
 			end
 		end
 	end
-	AllText = AllText .. "\n" .. GetLocale() .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(ItemLink, false)
+
+	AllText = AllText .. "\n" .. GetBuildInfo() .. " " .. GetLocale() .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(ItemLink, false)
 
 	local ItemName
 	if Item then
