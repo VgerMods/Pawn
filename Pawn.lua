@@ -2387,6 +2387,15 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 		Stats["IsRanged"] = 1
 	end
 
+	if VgerCore.IsCataclysm then
+		if Stats["Rap"] then
+			-- In Cataclysm, ranged attack power is essentially gone, though it still appears on a few items like Rhok'delar (18713) and some PVP weapons.
+			-- Treat all types of attack power the same until Legion, when attack power was removed entirely.
+			PawnAddStatToTable(Stats, "Ap", Stats["Rap"])
+			Stats["Rap"] = nil
+		end
+	end
+
 	if Stats["IsMainHand"] or Stats["IsOneHand"] or Stats["IsOffHand"] or Stats["IsTwoHand"] or Stats["IsRanged"] then
 		-- Only perform this conversion if this is an actual weapon.  This works around a problem that occurs when you
 		-- enchant your ring with weapon damage and then Pawn would try to calculate DPS for your ring with no Min/MaxDamage.
@@ -3271,6 +3280,11 @@ function PawnCorrectScaleErrors(ScaleName)
 		PawnCombineStats(ThisScale, "HitRating", "SpellHitRating")
 		PawnCombineStats(ThisScale, "CritRating", "SpellCritRating")
 		PawnCombineStats(ThisScale, "HasteRating", "SpellHasteRating")
+	end
+
+	-- Cataclysm effectively eliminates ranged attack power and we consider them merged.
+	if VgerCore.IsCataclysm then
+		PawnCombineStats(ThisScale, "Ap", "Rap")
 	end
 end
 

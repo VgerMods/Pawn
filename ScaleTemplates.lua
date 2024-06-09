@@ -156,6 +156,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				ScaleValues.DefenseRating = nil
 				ScaleValues.BlockValue = nil
 				ScaleValues.HolySpellDamage = nil
+				ScaleValues.Rap = nil
 			end
 		else
 			ScaleValues =
