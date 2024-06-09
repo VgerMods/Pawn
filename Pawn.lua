@@ -3341,7 +3341,7 @@ function PawnAttachIconToTooltip(Tooltip, AttachAbove, ItemLink)
 			_, ItemLink = Tooltip:GetItem()
 		end
 		if ItemLink then
-			TextureName = C_Item.GetItemIcon(ItemLink)
+			TextureName = C_Item.GetItemIconByID(ItemLink)
 		end
 	end
 
