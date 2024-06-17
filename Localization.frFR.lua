@@ -710,9 +710,12 @@ PawnLocal.TooltipParsing = {
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	PawnLocal.ThousandsSeparator = "NBSP"
 	PawnLocal.DecimalSeparator = "."
-elseif VgerCore.IsWrath or VgerCore.IsCataclysm then
+elseif VgerCore.IsWrath then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
+elseif VgerCore.IsCataclysm then
+	PawnLocal.ThousandsSeparator = "-"
+	PawnLocal.DecimalSeparator = "."
 end
 
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then

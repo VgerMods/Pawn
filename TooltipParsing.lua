@@ -11,8 +11,14 @@ local L = PawnLocal.TooltipParsing
 
 if PawnLocal.ThousandsSeparator == "NBSP" then PawnLocal.ThousandsSeparator = "\194\160" end
 local Key, Value
+local NumberExpandedPattern = "(-?[%%d%%., ]+)"
+if LARGE_NUMBER_SEPERATOR == "-" then
+	-- French Cataclysm Classic uses a hyphen as the thousands separator, which is insane. We only include that as a valid component
+	-- of a number in this specific case to limit the risk to other versions.
+	NumberExpandedPattern = "(-?[%%d%%., %-]+)"
+end
 for Key, Value in pairs(L) do
-	L[Key] = gsub(Value, "#", "(-?[%%d%%., ]+)")
+	L[Key] = gsub(Value, "#", NumberExpandedPattern)
 end
 
 ------------------------------------------------------------

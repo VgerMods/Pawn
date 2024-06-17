@@ -2592,7 +2592,7 @@ function PawnLookForSingleStat(RegexTable, Stats, ThisString, DebugMessages)
 					-- in English format only.
 					ExtractedValue = gsub(ExtractedValue, PawnLocal.DecimalSeparator, ".")
 				end
-				if Stat == "Speed" and VgerCore.IsClassic and GetLocale() == "frFR" then
+				if Stat == "Speed" then
 					-- In French WoW Classic, the weapon speed value uses a comma for the decimal even though everything else uses a period.
 					-- UGH BLIZZARD WHY MUST YOU DO THIS TO ME
 					ExtractedValue = gsub(ExtractedValue, ",", ".")
