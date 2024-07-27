@@ -11,7 +11,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.0913
+PawnClassicLastUpdatedVersion = 2.0914
 
 
 function PawnClassicScaleProvider_AddScales()
@@ -734,7 +734,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			8, -- Mage
 			2, -- Fire
-			{ Strength=0, Agility=0, Intellect=1.33, Stamina=0.01, Spirit=0, HitRating=1.09, CritRating=0.61, HasteRating=0.69, MasteryRating=0.46, ExpertiseRating=0, SpellPenetration=0, Ap=0, SpellPower=1, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, OneHandDps=0, }
+			{ Strength=0, Agility=0, Intellect=1.33, Stamina=0.01, Spirit=0, HitRating=1.09, CritRating=0.62, HasteRating=0.82, MasteryRating=0.46, ExpertiseRating=0, SpellPenetration=0, Ap=0, SpellPower=1, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, OneHandDps=0, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
@@ -818,7 +818,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			7, -- Shaman
 			2, -- Enhancement
-			{ Strength=1.1, Agility=1.59, Intellect=1.48, Stamina=0.01, Spirit=0, HitRating=1.38, CritRating=0.91, HasteRating=1.61, MasteryRating=1, ExpertiseRating=0, SpellPenetration=0, Ap=1, SpellPower=1.13, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=5.21, OffHandDps=2.21, OneHandDps=5.21, }
+			{ Strength=0, Agility=2.47, Intellect=0.07, Stamina=0.01, Spirit=0, HitRating=0.89, CritRating=0.58, HasteRating=0.44, MasteryRating=1.21, ExpertiseRating=1.3, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=3.05, OffHandDps=2.56, OneHandDps=3.05, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
@@ -860,7 +860,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			1, -- Warrior
 			2, -- Fury
-			{ Strength=2.21, Agility=1.23, Intellect=0, Stamina=0.01, Spirit=0, HitRating=2.61, CritRating=1.59, HasteRating=1.07, MasteryRating=1.22, ExpertiseRating=1.78, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=3.34, OffHandDps=1.77, OneHandDps=3.34, }
+			{ Strength=2.2, Agility=1.13, Intellect=0, Stamina=0.01, Spirit=0, HitRating=2.36, CritRating=1.46, HasteRating=1.06, MasteryRating=0.93, ExpertiseRating=1.51, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=3.17, OffHandDps=1.64, OneHandDps=3.17, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
