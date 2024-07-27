@@ -108,6 +108,7 @@ local PawnStatsUnfiltered =
 	{L.WeaponType1HMace, "IsMace", L.WeaponType1HMaceInfo, PawnStatItemType},
 	{L.WeaponType2HMace, "Is2HMace", L.WeaponType2HMaceInfo, PawnStatItemType},
 	{L.WeaponTypePolearm, "IsPolearm", L.WeaponTypePolearmInfo, PawnStatItemType},
+	{INVTYPE_RELIC, "IsRelic", L.WeaponTypeRelicInfo, PawnStatItemType, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true }},
 	{L.WeaponTypeStaff, "IsStaff", L.WeaponTypeStaffInfo, PawnStatItemType},
 	{L.WeaponType1HSword, "IsSword", L.WeaponType1HSwordInfo, PawnStatItemType},
 	{L.WeaponType2HSword, "Is2HSword", L.WeaponType2HSwordInfo, PawnStatItemType},

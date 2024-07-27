@@ -144,6 +144,7 @@ PawnRegexes =
 	{PawnGameConstant(INVTYPE_LEGS)}, -- Legs
 	{PawnGameConstant(INVTYPE_FINGER)}, -- Finger
 	{PawnGameConstant(INVTYPE_TRINKET)}, -- Trinket
+	{PawnGameConstant(INVTYPE_RELIC or "UNUSED")}, -- Relic
 	{PawnGameConstant(MAJOR_GLYPH)}, -- Major Glyph
 	{PawnGameConstant(MINOR_GLYPH)}, -- Minor Glyph
 	{PawnGameConstant(PRIME_GLYPH)}, -- Prime Glyph
@@ -385,6 +386,7 @@ PawnRightHandRegexes =
 	{L.Gun, "IsGun", 1, PawnMultipleStatsFixed},
 	{L.Mace, "IsMace", 1, PawnMultipleStatsFixed},
 	{L.Polearm, "IsPolearm", 1, PawnMultipleStatsFixed},
+	{INVTYPE_RELIC, "IsRelic", 1, PawnMultipleStatsFixed},
 	{L.Staff, "IsStaff", 1, PawnMultipleStatsFixed},
 	{L.Sword, "IsSword", 1, PawnMultipleStatsFixed},
 	{L.Warglaives, "IsWarglaive", 1, PawnMultipleStatsFixed},

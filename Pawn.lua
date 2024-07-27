@@ -717,11 +717,11 @@ function PawnInitializeOptions()
 		end
 	end
 	if PawnOptions.LastVersion < 2.0219 then
-		-- The item squish happened in WoW 8.0, so relic item levels changed.
+		-- The item squish happened in WoW 8.0, so artifact relic item levels changed.
 		PawnOptions.Artifacts = nil
 	end
 	if PawnOptions.LastVersion < 2.0227 then
-		-- The relic advisor is off by default as of 2.2.27.
+		-- The artifact relic advisor is off by default as of 2.2.27.
 		PawnCommon.ShowRelicUpgrades = false
 	end
 	if PawnCommon.LastVersion < 2.0232 then
@@ -933,7 +933,7 @@ function PawnIsItemDefinitivelyAnUpgrade(ItemLink, CheckLevel)
 		-- If upgrade info was returned, it's an upgrade OR if there is an item level increase, it's an upgrade
 		return UpgradeInfo ~= nil or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease ~= nil)
 	elseif PawnCommon.ShowRelicUpgrades and PawnCanItemBeArtifactUpgrade(ItemLink) then
-		-- If there is relic upgrade information, it's an upgrade.
+		-- If there is artifact relic upgrade information, it's an upgrade.
 		return PawnGetRelicUpgradeInfo(ItemLink) ~= nil
 	else
 		-- If the item can't have stats, it isn't gear (probably), so we don't care.
@@ -1705,11 +1705,11 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 		VgerCore.Message("[" .. TooltipUpdateCounter .. "] Updating " .. TooltipName .. " (" .. Tooltip:NumLines() .. " lines): " .. (ItemLink or "(no item link)"))
 	end
 
-	-- Then get the item or relic data.
+	-- Then get the item or artifact relic data.
 	local Item, IsRelic
 	if ItemLink then
 		if PawnCanItemBeArtifactUpgrade(ItemLink) then
-			-- This is a relic item, so we just get upgrade info directly.
+			-- This is a artifact relic item, so we just get upgrade info directly.
 			IsRelic = true
 		else
 			-- This is the normal case: a normal item for which we have an item link.
@@ -1733,7 +1733,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 			PawnLastHoveredItem = Item.Link
 		end
 	elseif IsRelic then
-		-- If this is a relic, we use a special relic-only codepath for this.
+		-- If this is an artifact relic, we use a special relic-only codepath for this.
 		if not PawnIsHoveringSocketedRelic then
 			if PawnCommon.ShowRelicUpgrades then UpgradeInfo = PawnGetRelicUpgradeInfo(ItemLink) end
 		end
@@ -1782,7 +1782,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 
 		TooltipWasUpdated = true
 	elseif IsRelic then
-		-- Add relic upgrade info to the tooltip.
+		-- Add artifact relic upgrade info to the tooltip.
 		PawnAddRelicUpgradesToTooltip(TooltipName, UpgradeInfo)
 		TooltipWasUpdated = true
 	end
@@ -3242,13 +3242,13 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.Mana = nil
 	ThisScale.Health = nil
 	ThisScale.BaseArmor = nil
-	ThisScale.IsRelic = nil
 	ThisScale.BonusArmor = nil
 	ThisScale.Multistrike = nil
 
 	-- These were introduced in Classic versions.
 	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.SpellPenetration = nil
+		ThisScale.IsRelic = nil
 	end
 	if not (VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.ExpertiseRating = nil
