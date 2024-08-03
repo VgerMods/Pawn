@@ -269,7 +269,7 @@ local PawnGemData52 =
 }
 
 
-local PawnGemData103 =
+local PawnGemData102 =
 {
 
 -- Requires ilvl 200
@@ -295,6 +295,35 @@ local PawnGemData103 =
 { ID = 192976, R = true, Y = true, B = true, Stats = { Stamina = 102, MasteryRating = 33 } }, -- Puissant Nozdorite
 { ID = 192979, R = true, Y = true, B = true, Stats = { Stamina = 102, Versatility = 33 } }, -- Steady Nozdorite
 
+}
+
+
+local PawnGemData1914 =
+{
+
+-- Requires ilvl 200
+-- These are the tier-3 quality (ilvl 577) versions of the gems
+{ ID = 213455, R = true, Y = true, B = true, Stats = { CritRating = 1608, HasteRating = 1072 } }, -- Quick Ruby
+{ ID = 213458, R = true, Y = true, B = true, Stats = { CritRating = 1608, MasteryRating = 1072 } }, -- Masterful Ruby
+{ ID = 213461, R = true, Y = true, B = true, Stats = { CritRating = 1608, Versatility = 1072 } }, -- Versatile Ruby
+{ ID = 213464, R = true, Y = true, B = true, Stats = { CritRating = 1914 } }, -- Deadly Ruby
+{ ID = 213467, R = true, Y = true, B = true, Stats = { Versatility = 1608, CritRating = 1072 } }, -- Deadly Sapphire
+{ ID = 213470, R = true, Y = true, B = true, Stats = { Versatility = 1608, HasteRating = 1072 } }, -- Quick Sapphire
+{ ID = 213473, R = true, Y = true, B = true, Stats = { Versatility = 1608, MasteryRating = 1072 } }, -- Masterful Sapphire
+{ ID = 213476, R = true, Y = true, B = true, Stats = { Versatility = 1914 } }, -- Versatile Sapphire
+{ ID = 213479, R = true, Y = true, B = true, Stats = { HasteRating = 1608, CritRating = 1072 } }, -- Deadly Emerald
+{ ID = 213482, R = true, Y = true, B = true, Stats = { HasteRating = 1608, MasteryRating = 1072 } }, -- Masterful Emerald
+{ ID = 213485, R = true, Y = true, B = true, Stats = { HasteRating = 1608, Versatility = 1072 } }, -- Versatile Emerald
+{ ID = 213488, R = true, Y = true, B = true, Stats = { HasteRating = 1914 } }, -- Quick Emerald
+{ ID = 213491, R = true, Y = true, B = true, Stats = { MasteryRating = 1608, CritRating = 1072 } }, -- Deadly Onyx
+{ ID = 213494, R = true, Y = true, B = true, Stats = { MasteryRating = 1608, HasteRating = 1072 } }, -- Quick Onyx
+{ ID = 213497, R = true, Y = true, B = true, Stats = { MasteryRating = 1608, Versatility = 1072 } }, -- Versatile Onyx
+{ ID = 213500, R = true, Y = true, B = true, Stats = { MasteryRating = 1914 } }, -- Masterful Onyx
+{ ID = 213503, R = true, Y = true, B = true, Stats = { Stamina = 1608, CritRating = 1072 } }, -- Deadly Amber
+{ ID = 213506, R = true, Y = true, B = true, Stats = { Stamina = 1608, HasteRating = 1072 } }, -- Quick Amber
+{ ID = 213509, R = true, Y = true, B = true, Stats = { Stamina = 1608, MasteryRating = 1072 } }, -- Masterful Amber
+{ ID = 213512, R = true, Y = true, B = true, Stats = { Stamina = 1608, Versatility = 1072 } }, -- Versatile Amber
+{ ID = 213517, R = true, Y = true, B = true, Stats = { Stamina = 1914 } }, -- Solid Amber
 
 }
 
@@ -313,7 +342,8 @@ local PawnGemData103 =
 
 PawnGemQualityLevels =
 {
-	{ 398, PawnGemData103 }, -- Vault of the Incarnates
+	{ 571, PawnGemData1914 }, -- The War Within tier gear
+	{ 398, PawnGemData102 }, -- Vault of the Incarnates
 	{ 315, PawnGemData52 }, -- Mythic Fated Shadowlands epics are 311; tier-1 green Dragonflight gems are 385
 	{ 175, PawnGemData16 }, -- Rank 1 crafted Shadowlands legendaries (177 is rank 4 covenant armor)
 	{ 144, PawnGemData12 }, -- Mythic Ny'alotha is 140
