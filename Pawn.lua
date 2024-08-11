@@ -4846,6 +4846,16 @@ function PawnIsItemAnItemLevelUpgrade(Item)
 	if not Item.CanEquip then return end
 
 	local Slot1, Slot2 = PawnGetSlotsForItemType(Item.InvType)
+
+	-- VgerCore.Message("Checking for item level upgrade:")
+	-- VgerCore.Message("  " .. tostring(Item.Link) .. " (" .. tostring(Item.Level) .. ") from:")
+	-- if Slot1 and PawnOptions.ItemLevels[Slot1] then
+	-- 	VgerCore.Message("  " .. tostring(PawnOptions.ItemLevels[Slot1].Link) .. " (" .. tostring(PawnOptions.ItemLevels[Slot1].Level) .. ")")
+	-- end
+	-- if Slot2 and PawnOptions.ItemLevels[Slot2] then
+	-- 	VgerCore.Message("  " .. tostring(PawnOptions.ItemLevels[Slot2].Link) .. " (" .. tostring(PawnOptions.ItemLevels[Slot2].Level) .. ")")
+	-- end
+
 	if (Slot1 and PawnOptions.ItemLevels[Slot1] and Item.Link == PawnOptions.ItemLevels[Slot1].Link) or (Slot2 and PawnOptions.ItemLevels[Slot2] and Item.Link == PawnOptions.ItemLevels[Slot2].Link) then
 		-- If the item is already one of your best, it can't be an upgrade.
 		return
