@@ -93,10 +93,8 @@ PawnLocal =
 		["CritInfo"] = "爆击等级，影响近战、远程和法术的爆击几率。(在经典旧世中, 仅对物理攻击生效。)",
 		["DefenseInfo"] = "防御技能: 减少被首领攻击命中的几率。",
 		["DodgeInfo"] = "闪避: 增加完全闪避攻击的几率。",
-		["DominationSocketInfo"] = "平均统治碎片的套接字值。",
 		["DpsInfo"] = "武器的每秒伤害。(如果你想要给不同类型的武器估分，前往 \"特殊武器属性\" 部分。)",
-		--[[Translation missing --]]
-		["ExpertiseInfo"] = "Expertise. Negates your enemy's chances to dodge and parry.",
+		["ExpertiseInfo"] = "精准: 使敌人失去躲闪和招架的机会。",
 		["FeralApInfo"] = "野性攻击强度: 增加德鲁伊在野性形态下的攻击伤害 (不包含力量和敏捷的加成)。",
 		["FireResistInfo"] = "火焰抗性: 减少受到的火焰伤害。",
 		["FireSpellDamage"] = "火焰法术伤害",
@@ -132,8 +130,7 @@ PawnLocal =
 		["Plate"] = "板甲",
 		["PlateInfo"] = "物品类型为板甲。",
 		["RapInfo"] = "远程攻击强度: 增加远程攻击所造成的伤害 (不包含敏捷的加成)。",
-		--[[Translation missing --]]
-		["ResilienceInfo"] = "Resilience. Reduces the chance that you'll be critically hit, and decreases the damage of critical hits that you do take.",
+		["ResilienceInfo"] = "韧性: 降低你受到爆击的几率，并降低受到的爆击伤害。",
 		["ShadowResistInfo"] = "暗影抗性: 减少受到的暗影伤害。",
 		["ShadowSpellDamage"] = "暗影法术伤害",
 		["ShadowSpellDamageInfo"] = "暗影法术伤害: 增加释放暗影法术所造成的伤害。",
@@ -150,13 +147,12 @@ PawnLocal =
 		["SpellDamage"] = "法术伤害",
 		["SpellDamageInfo"] = "法术伤害: 增加释放法术所造成的伤害。",
 		["SpellHitInfo"] = "法术命中: 增加法术攻击命中目标的几率 (对于首领而言尤为重要)。",
-		--[[Translation missing --]]
-		["SpellPenetrationInfo"] = "Spell Penetration. Negates an enemy's resistances to your spells.",
-		["SpellPowerInfo"] = "",
-		["SpiritInfo"] = "精神 - 影响非战斗状态下生命和法力的恢复速度 (在战斗状态下, 仅影响法力的恢复速度).",
-		["StaminaInfo"] = "耐力，增加你的生命值上限。",
-		["StrengthInfo"] = "力量，为力量型职业增加攻击强度。",
-		["VersatilityInfo"] = "全能，造成的伤害和治疗提高效果，并降低收到的伤害。",
+		["SpellPenetrationInfo"] = "法术穿透: 消除敌人对你的法术的抵抗力。",
+		["SpellPowerInfo"] = "法术强度: 增加法术造成的伤害和治疗效果。",
+		["SpiritInfo"] = "精神: 影响非战斗状态下生命和法力的恢复速度 (在战斗状态下, 仅影响法力的恢复速度).",
+		["StaminaInfo"] = "耐力: 增加你的生命值上限。",
+		["StrengthInfo"] = "力量: 为力量型职业增加攻击强度。",
+		["VersatilityInfo"] = "全能: 造成的伤害和治疗提高效果，并降低收到的伤害。",
 		["WeaponMainHandDps"] = "主手:每秒伤害",
 		["WeaponMainHandDpsInfo"] = "主手武器每秒伤害。",
 		["WeaponMainHandMaxDamage"] = "主手:伤害上限",
@@ -253,7 +249,7 @@ PawnLocal =
 		["AboutMrRobot"] = "现在Pawn插件的属性权重标准是参考了Ask Mr. Robot网站提供的标准属性权重，这个网站提供了根据你角色的天赋和现有装备计算如何提升和现阶段的属性权重。有兴趣可以去askmrrobot.com尝试使用。（译者注，似乎不支持国服，尝试国服角色总是报错）",
 		["AboutReadme"] = "新手？看看“准备开始”标签。",
 		["AboutTab"] = "关于",
-		["AboutTranslation"] = "汉化: 五十五颗土豆#5630; 狼狼#5790",
+		["AboutTranslation"] = "汉化: 五十五颗土豆#5630; 狼狼#5790; LvWind",
 		["AboutVersion"] = "版本 %s",
 		["AboutWebsite"] = [=[想要更多作者Vger的插件，请访问vgermods.com。
 
@@ -311,23 +307,23 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
  •  试着查找互联网上其他人推荐的属性权重评分标准。
  •  查看自述文件，以了解更多关于Pawn的高级功能。]=],
 		["InterfaceOptionsBody"] = "点击 Pawn 按钮到达此处。  你也可从插件页面打开 Pawn ，或者为它绑定一个按键。",
-		["InterfaceOptionsWelcome"] = "Pawn 设置位于 Pawn 介面处.",
-		["InventoryButtonTooltip"] = "点击显示Pawn介面.",
+		["InterfaceOptionsWelcome"] = "在 Pawn 界面中可以找到 Pawn 设置。",
+		["InventoryButtonTooltip"] = "点击显示Pawn界面.",
 		["InventoryButtonTotalsHeader"] = "所有已装备物品之总计:",
 		["KeyBindingCompareItemLeft"] = "比较物品 (左)",
 		["KeyBindingCompareItemRight"] = "比较物品 (右)",
-		["KeyBindingShowUI"] = "显示 Pawn 介面",
+		["KeyBindingShowUI"] = "显示 Pawn 界面",
 		["OptionsAdvisorHeader"] = "建议选项",
 		["OptionsAlignRight"] = "排列数值到提示栏右边.",
 		["OptionsAlignRightTooltip"] = "让数值靠最右边显示，而不是放在属性权重项目名称的后面。",
 		["OptionsBagUpgradeAdvisor"] = "显示背包提升建议",
-		["OptionsBagUpgradeAdvisorTooltip"] = [=[启用此选项后，Pawn会标记显示背包里有属性提升的装备。
+		["OptionsBagUpgradeAdvisorTooltip"] = [=[启用此选项后，Pawn 会标记显示背包里有属性提升的装备。
 
-如果启用，对应你当前选择的专精属性权重下，Pawn将扫描你背包里对你有属性提升的装备并作出绿色箭头的标记。
+如果启用，对应你当前选择的专精属性权重下，Pawn 将扫描你背包里对你有属性提升的装备并作出绿色箭头的标记。
 
-如果未启用，游戏将会显示内置的装等提升，Pawn仍然会扫描装备的属性提升但不提示也不会影响游戏内置功能的正常工作。
+如果未启用，游戏将会显示内置的装等提升，Pawn 仍然会扫描装备的属性提升但不提示也不会影响游戏内置功能的正常工作。
 
-译者注：7.1新功能，默认背包支持，但部分背包插件可能不兼容，并不会有提示。]=],
+译者注：默认背包支持，但部分背包插件可能不兼容，并不会有提示。]=],
 		["OptionsBlankLine"] = "数值前加一个空白行",
 		["OptionsBlankLineTooltip"] = "在Pawn的数据信息之前加一个空格，让显示更清爽。",
 		["OptionsButtonHidden"] = "隐藏",
@@ -371,12 +367,12 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["OptionsOtherHeader"] = "其它选项",
 		["OptionsQuestUpgradeAdvisor"] = "显示任务奖励属性权重提升建议",
 		["OptionsQuestUpgradeAdvisorTooltip"] = "在你交任务有奖励选择的时候，在最有用装备上显示对你属性权重提升的标志，如果没有能提升的装备，那么会在卖商店最值钱的装备上显示一个金币图案。",
+		["OptionsReforgingAdvisor"] = "显示重铸建议",
+		["OptionsReforgingAdvisorTooltip"] = "当拜访一位奥术重铸师时，Pawn 显示一个弹出的统计框，提示重铸的建议。",
 		["OptionsResetUpgrades"] = "重新扫描装备",
 		["OptionsResetUpgradesTooltip"] = [=[Pawn会清除本身记录的曾经见装备过的最好的装备（哪怕在背包里、银行里甚至摧毁贩卖了），所有评分从你角色现在已装备的为标准来比较。
 
 当你因某种原因某件装备丢失或者不再使用的时候，插件默认还是以那件装备计算，引起的不便。或者装备数据紊乱的时候，可以使用此功能。]=],
-		["OptionsReforgingAdvisor"] = "显示重铸建议",
-		["OptionsReforgingAdvisorTooltip"] = "当访问重铸商时候，将显示一个弹出的统计框，提示重铸的建议。",
 		["OptionsShowItemLevelUpgrades"] = "显示装等的提升",
 		["OptionsShowItemLevelUpgradesTooltip"] = "根据插件记录，如果同部位[未穿戴过]的装备装等高于[已装备过]的（非正在装备），Pawn将提示关于这单个部位装等的提升。",
 		["OptionsShowRelicUpgrades"] = "显示神器圣物的提升",
@@ -419,10 +415,10 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["OptionsUpgradeTrackingOn"] = "高级模式",
 		["OptionsUpgradeTrackingOnTooltip"] = "Pawn会针对每个装备的部位，记录过你所穿过的评分最高的装备，每次对比均会与这件记录的装备对比，这件装备可以在背包里仓库里，而并非一定是你现在角色装备的那件。",
 		["OptionsWelcome"] = "按照你的偏好配置 Pawn.  更改会马上生效.",
-		["ReforgeTitle"] = "Pawn 重铸建议:",
+		["ReforgeCappedStatWarning"] = "重铸命中或精准时要小心，不要重铸掉你需要的最低数据。",
+		["ReforgeInstructions"] = "将 %s 重铸为 %s",
 		["ReforgeInstructionsNoReforge"] = "不要重铸",
-		["ReforgeInstructions"] = "重铸 %s 为 %s",
-		["ReforgeCappedStatWarning"] = "当您要重铸掉命中或校准属性时，请务必注意保证您的未命中概率不会超过0%。",
+		["ReforgeTitle"] = "Pawn 重铸建议:",
 		["ScaleAutoOff"] = "自定义",
 		["ScaleAutoOff2"] = "自由设定属性权重。",
 		["ScaleAutoOffTooltip"] = "你可以自由设定属性权重的评分标准，或者一种专精几种评分标准，甚至直接关闭某项专精的评分。",
@@ -452,7 +448,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["ScaleRename"] = "重命名",
 		["ScaleRenameTooltip"] = "为这个属性权重重命名.",
 		["ScaleSelectorHeader"] = "选择一个属性权重:",
-		["ScaleSelectorNoneWarning"] = "至少选择一项。",
+		["ScaleSelectorNoneWarning"] = "Shift+点击选择至少一项。",
 		["ScaleSelectorShowingSuggestionsFor"] = "当前属性权重的专精",
 		["ScaleSelectorShowScale"] = "在提示栏中显示属性权重",
 		["ScaleSelectorShowScaleTooltip"] = "当这个选项被选中时，此属性权重将显示在此角色的物品工具提示上。每个属性权重可以显示在一个角色，多个角色，或干脆不显示。",
@@ -468,6 +464,8 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 		["ValuesDoNotShowUpgradesFor1H"] = "请不要显示单手装备的提升",
 		["ValuesDoNotShowUpgradesFor2H"] = "请不要显示双手装备的提升",
 		["ValuesDoNotShowUpgradesTooltip"] = "启用该选项来隐藏此类型装备的提升。比如，虽然坦骑可以用双手武器，但是对坦骑设定来说一件双手武器从来都不是一个\"提升\"，因此Pawn将不会为它们显示提升信息。同样，惩戒骑可以使用单手武器，但它们从不是一个提升。",
+		["ValuesFollowSpecialization"] = "只有显示%d等以后我最佳护甲类型的提升",
+		["ValuesFollowSpecializationTooltip"] = "启用该选项来隐藏%d等以后非职业专精的护甲类型。比如，神圣圣骑士在%d等学到了鎧甲专精, 当只装备鎧甲时增加智力5%%。当此选项选择时Pawn将不会考虑布、皮及锁甲对%d+神圣圣骑士的提升",
 		["ValuesHeader"] = "调整 %s 分值",
 		["ValuesIgnoreItemType"] = "这些物品不可用",
 		["ValuesIgnoreStat"] = "带此属性的物品没有用处。",
