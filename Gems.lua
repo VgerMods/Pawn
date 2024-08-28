@@ -298,32 +298,32 @@ local PawnGemData102 =
 }
 
 
-local PawnGemData1914 =
+local PawnGemData196 =
 {
 
 -- Requires ilvl 200
 -- These are the tier-3 quality (ilvl 577) versions of the gems
-{ ID = 213455, R = true, Y = true, B = true, Stats = { CritRating = 1608, HasteRating = 1072 } }, -- Quick Ruby
-{ ID = 213458, R = true, Y = true, B = true, Stats = { CritRating = 1608, MasteryRating = 1072 } }, -- Masterful Ruby
-{ ID = 213461, R = true, Y = true, B = true, Stats = { CritRating = 1608, Versatility = 1072 } }, -- Versatile Ruby
-{ ID = 213464, R = true, Y = true, B = true, Stats = { CritRating = 1914 } }, -- Deadly Ruby
-{ ID = 213467, R = true, Y = true, B = true, Stats = { Versatility = 1608, CritRating = 1072 } }, -- Deadly Sapphire
-{ ID = 213470, R = true, Y = true, B = true, Stats = { Versatility = 1608, HasteRating = 1072 } }, -- Quick Sapphire
-{ ID = 213473, R = true, Y = true, B = true, Stats = { Versatility = 1608, MasteryRating = 1072 } }, -- Masterful Sapphire
-{ ID = 213476, R = true, Y = true, B = true, Stats = { Versatility = 1914 } }, -- Versatile Sapphire
-{ ID = 213479, R = true, Y = true, B = true, Stats = { HasteRating = 1608, CritRating = 1072 } }, -- Deadly Emerald
-{ ID = 213482, R = true, Y = true, B = true, Stats = { HasteRating = 1608, MasteryRating = 1072 } }, -- Masterful Emerald
-{ ID = 213485, R = true, Y = true, B = true, Stats = { HasteRating = 1608, Versatility = 1072 } }, -- Versatile Emerald
-{ ID = 213488, R = true, Y = true, B = true, Stats = { HasteRating = 1914 } }, -- Quick Emerald
-{ ID = 213491, R = true, Y = true, B = true, Stats = { MasteryRating = 1608, CritRating = 1072 } }, -- Deadly Onyx
-{ ID = 213494, R = true, Y = true, B = true, Stats = { MasteryRating = 1608, HasteRating = 1072 } }, -- Quick Onyx
-{ ID = 213497, R = true, Y = true, B = true, Stats = { MasteryRating = 1608, Versatility = 1072 } }, -- Versatile Onyx
-{ ID = 213500, R = true, Y = true, B = true, Stats = { MasteryRating = 1914 } }, -- Masterful Onyx
-{ ID = 213503, R = true, Y = true, B = true, Stats = { Stamina = 1608, CritRating = 1072 } }, -- Deadly Amber
-{ ID = 213506, R = true, Y = true, B = true, Stats = { Stamina = 1608, HasteRating = 1072 } }, -- Quick Amber
-{ ID = 213509, R = true, Y = true, B = true, Stats = { Stamina = 1608, MasteryRating = 1072 } }, -- Masterful Amber
-{ ID = 213512, R = true, Y = true, B = true, Stats = { Stamina = 1608, Versatility = 1072 } }, -- Versatile Amber
-{ ID = 213517, R = true, Y = true, B = true, Stats = { Stamina = 1914 } }, -- Solid Amber
+{ ID = 213455, R = true, Y = true, B = true, Stats = { CritRating = 147, HasteRating = 49 } }, -- Quick Ruby
+{ ID = 213458, R = true, Y = true, B = true, Stats = { CritRating = 147, MasteryRating = 49 } }, -- Masterful Ruby
+{ ID = 213461, R = true, Y = true, B = true, Stats = { CritRating = 147, Versatility = 49 } }, -- Versatile Ruby
+{ ID = 213464, R = true, Y = true, B = true, Stats = { CritRating = 176 } }, -- Deadly Ruby
+{ ID = 213467, R = true, Y = true, B = true, Stats = { Versatility = 147, CritRating = 49 } }, -- Deadly Sapphire
+{ ID = 213470, R = true, Y = true, B = true, Stats = { Versatility = 147, HasteRating = 49 } }, -- Quick Sapphire
+{ ID = 213473, R = true, Y = true, B = true, Stats = { Versatility = 147, MasteryRating = 49 } }, -- Masterful Sapphire
+{ ID = 213476, R = true, Y = true, B = true, Stats = { Versatility = 176 } }, -- Versatile Sapphire
+{ ID = 213479, R = true, Y = true, B = true, Stats = { HasteRating = 147, CritRating = 49 } }, -- Deadly Emerald
+{ ID = 213482, R = true, Y = true, B = true, Stats = { HasteRating = 147, MasteryRating = 49 } }, -- Masterful Emerald
+{ ID = 213485, R = true, Y = true, B = true, Stats = { HasteRating = 147, Versatility = 49 } }, -- Versatile Emerald
+{ ID = 213488, R = true, Y = true, B = true, Stats = { HasteRating = 176 } }, -- Quick Emerald
+{ ID = 213491, R = true, Y = true, B = true, Stats = { MasteryRating = 147, CritRating = 49 } }, -- Deadly Onyx
+{ ID = 213494, R = true, Y = true, B = true, Stats = { MasteryRating = 147, HasteRating = 49 } }, -- Quick Onyx
+{ ID = 213497, R = true, Y = true, B = true, Stats = { MasteryRating = 147, Versatility = 49 } }, -- Versatile Onyx
+{ ID = 213500, R = true, Y = true, B = true, Stats = { MasteryRating = 176 } }, -- Masterful Onyx
+{ ID = 213503, R = true, Y = true, B = true, Stats = { Stamina = 147, CritRating = 49 } }, -- Deadly Amber
+{ ID = 213506, R = true, Y = true, B = true, Stats = { Stamina = 147, HasteRating = 49 } }, -- Quick Amber
+{ ID = 213509, R = true, Y = true, B = true, Stats = { Stamina = 147, MasteryRating = 49 } }, -- Masterful Amber
+{ ID = 213512, R = true, Y = true, B = true, Stats = { Stamina = 147, Versatility = 49 } }, -- Versatile Amber
+{ ID = 213517, R = true, Y = true, B = true, Stats = { Stamina = 275 } }, -- Solid Amber
 
 }
 
@@ -342,7 +342,7 @@ local PawnGemData1914 =
 
 PawnGemQualityLevels =
 {
-	{ 571, PawnGemData1914 }, -- The War Within tier gear
+	{ 584, PawnGemData196 }, -- The War Within raid finder (593 for mythic dungeons)
 	{ 398, PawnGemData102 }, -- Vault of the Incarnates
 	{ 315, PawnGemData52 }, -- Mythic Fated Shadowlands epics are 311; tier-1 green Dragonflight gems are 385
 	{ 175, PawnGemData16 }, -- Rank 1 crafted Shadowlands legendaries (177 is rank 4 covenant armor)
@@ -357,6 +357,6 @@ PawnGemQualityLevels =
 PawnMetaGemQualityLevels = nil
 PawnCogwheelQualityLevels = nil
 
-PawnMinimumItemLevelToConsiderGems = 315 -- Sockets on items below this ilvl are ignored by default
+PawnMinimumItemLevelToConsiderGems = 571 -- Sockets on items below this ilvl are ignored by default
 
 end -- if VgerCore.IsMainline
