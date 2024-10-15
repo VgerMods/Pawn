@@ -11,7 +11,7 @@
 
 local ScaleProviderName = "Classic"
 
-PawnClassicLastUpdatedVersion = 2.1002
+PawnClassicLastUpdatedVersion = 2.1003
 
 
 function PawnClassicScaleProvider_AddScales()
@@ -692,7 +692,7 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			11, -- Druid
 			3, -- Guardian
-			{ Strength=0.11, Agility=1, Intellect=0, Stamina=0.99, Spirit=0, Armor=0.23, HitRating=0.27, CritRating=0.11, HasteRating=0, MasteryRating=0.35, ExpertiseRating=0.15, SpellPenetration=0, Ap=0.1, SpellPower=0, DodgeRating=0.97, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=0, OneHandDps=0, }
+			{ Strength=0.1, Agility=1, Intellect=0, Stamina=1.18, Spirit=0, Armor=0.33, HitRating=0.23, CritRating=0.41, HasteRating=0.06, MasteryRating=0.31, ExpertiseRating=0.46, SpellPenetration=0, Ap=0.09, SpellPower=0, DodgeRating=0.69, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=0, OneHandDps=0, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
@@ -706,14 +706,14 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			3, -- Hunter
 			1, -- Beast Mastery
-			{ Strength=0, Agility=2.65, Intellect=0, Stamina=0.5, Spirit=0, Armor=0.005, HitRating=2.12, CritRating=1.19, HasteRating=0.97, MasteryRating=0.55, ExpertiseRating=0, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, RangedDps=6.32, OneHandDps=0, }
+			{ Strength=0, Agility=2.65, Intellect=0, Stamina=0.01, Spirit=0, Armor=0.005, HitRating=2.12, CritRating=1.19, HasteRating=0.97, MasteryRating=0.55, ExpertiseRating=0, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, RangedDps=6.32, OneHandDps=0, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
 			3, -- Hunter
 			2, -- Marksmanship
-			{ Strength=0, Agility=3.05, Intellect=0, Stamina=0.5, Spirit=0, Armor=0.005, HitRating=2.25, CritRating=1.39, HasteRating=1.33, MasteryRating=1.15, ExpertiseRating=0, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, RangedDps=6.32, OneHandDps=0, }
+			{ Strength=0, Agility=3.05, Intellect=0, Stamina=0.01, Spirit=0, Armor=0.005, HitRating=2.25, CritRating=1.39, HasteRating=1.33, MasteryRating=1.15, ExpertiseRating=0, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, RangedDps=6.32, OneHandDps=0, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
@@ -790,14 +790,14 @@ function PawnClassicScaleProvider_AddScales()
 			ScaleProviderName,
 			4, -- Rogue
 			1, -- Assassination
-			{ Strength=1.05, Agility=2.71, Intellect=0, Stamina=0.01, Spirit=0, Armor=0.005, HitRating=2.62, CritRating=1.18, HasteRating=1.2, MasteryRating=1.32, ExpertiseRating=1.22, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=3, OffHandDps=0.97, OneHandDps=3, }
+			{ Strength=1.05, Agility=2.64, Intellect=0, Stamina=0.01, Spirit=0, Armor=0.005, HitRating=2.62, CritRating=1.18, HasteRating=1.27, MasteryRating=1.35, ExpertiseRating=1.2, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=3, OffHandDps=0.97, OneHandDps=3, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
 			4, -- Rogue
 			2, -- Combat
-			{ Strength=1.05, Agility=2.85, Intellect=0, Stamina=0.01, Spirit=0, Armor=0.005, HitRating=2.21, CritRating=1.2, HasteRating=1.4, MasteryRating=1.38, ExpertiseRating=1.74, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=4.18, OffHandDps=1.4, OneHandDps=4.18, }
+			{ Strength=1.05, Agility=2.85, Intellect=0, Stamina=0.01, Spirit=0, Armor=0.005, HitRating=2.21, CritRating=0.9, HasteRating=1.36, MasteryRating=1.33, ExpertiseRating=1.74, SpellPenetration=0, Ap=1, SpellPower=0, DodgeRating=0, ParryRating=0, BlockRating=0, ResilienceRating=0, Mp5=0, Hp5=0, ArcaneResist=0, FireResist=0, ShadowResist=0, NatureResist=0, FrostResist=0, FireSpellDamage=0, ShadowSpellDamage=0, NatureSpellDamage=0, ArcaneSpellDamage=0, FrostSpellDamage=0, Dps=0, MetaSocketEffect=72, MainHandDps=4.31, OffHandDps=1.32, OneHandDps=4.31, }
 		)
 
 		PawnAddPluginScaleFromTemplate(
