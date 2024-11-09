@@ -779,10 +779,6 @@ if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 	PawnLocal.ThousandsSeparator = ","
 end
 
-if VgerCore.IsCataclysm then
-	PawnLocal.TooltipParsing.Mastery = "^%+?# Искусность$"
-end
-
 end
 
 if GetLocale() == "ruRU" then
