@@ -27,7 +27,7 @@ PawnPrivateTooltipName = "PawnPrivateTooltip1"
 --	(See PawnGetEmptyCachedItem.)
 --	An entry in the Values table is an ordered array in the following format:
 --	{ ScaleName, Value, UnenchantedValue }
-local PawnItemCache = nil
+local PawnItemCache
 local PawnItemCacheMaxSize = 200 -- thanks to bag arrows, this should be greater than the number of possible inventory slots
 
 local PawnScaleTotals = { }
@@ -45,15 +45,13 @@ PawnScaleBestGems = { }
 PawnPlayerFullName = nil
 
 -- Formatting
-local PawnEnchantedAnnotationFormat = nil
-local PawnUnenchantedAnnotationFormat = nil
-local PawnNoValueAnnotationFormat = nil
+local PawnEnchantedAnnotationFormat, PawnUnenchantedAnnotationFormat, PawnNoValueAnnotationFormat
 
 -- Plugin scale providers
 
 -- PawnScaleProviders["Wowhead"] = { ["Name"] = "Wowhead scales", ["Function"] = <function> }
 PawnScaleProviders = { }
-local PawnScaleProvidersInitialized = nil
+local PawnScaleProvidersInitialized
 
 -- "Constants"
 local PawnCurrentScaleVersion = 1
@@ -175,7 +173,6 @@ function PawnInitialize()
 	-- Check the user's current locale, and show a message if it isn't the right one for this version of Pawn.
 	local CurrentLocale = GetLocale()
 	local CurrentLocaleIsSupported
-	local SupportedLocale
 	local LanguageList = PawnLocalizedLanguages
 	for _, SupportedLocale in pairs(LanguageList) do
 		if CurrentLocale == SupportedLocale then
@@ -483,7 +480,7 @@ function PawnInitialize()
 		for i = 1, NUM_TOTAL_BAG_FRAMES do
 			local Bag = _G["ContainerFrame" .. i]
 			if Bag.Items then
-				for j, Button in Bag:EnumerateItems() do
+				for _, Button in Bag:EnumerateItems() do
 					hooksecurefunc(Button, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
 				end
 			end
@@ -550,7 +547,6 @@ function PawnOnLogout()
 		-- The user has disabled all upgrade options, so clear out all upgrade information.
 		PawnInvalidateBestItems()
 	else
-		local Scale, _
 		for _, Scale in pairs(PawnCommon.Scales) do
 			local CharacterOptions = Scale.PerCharacterOptions[PawnPlayerFullName]
 			if CharacterOptions and not CharacterOptions.Visible then
@@ -636,7 +632,6 @@ function PawnInitializeOptions()
 	if PawnCommon.ShowSocketingAdvisor == nil then PawnCommon.ShowSocketingAdvisor = true end
 
 	-- Now, migrate all scales from this character over to PawnCommon.
-	local ScaleName, Scale
 	if not PawnCommon.Scales then PawnCommon.Scales = {} end
 	if PawnOptions.Scales then
 		-- Looks like there's one or more scales on this character that need to be migrated.
@@ -974,7 +969,7 @@ function PawnCommand(Command)
 		end
 		ItemRefTooltip:Show()
 	elseif strsub(Command, 1, 7) == "compare" then
-		local CompareIndex, ItemLink1, ItemLink2
+		local ItemLink1, ItemLink2
 		if strsub(Command, 9, 13) == "left " then
 			local SplitIndex = strfind(Command, " right ", 13, true)
 			if SplitIndex and SplitIndex + 7 < strlen(Command) then
@@ -1100,7 +1095,6 @@ end
 
 -- Clears only the calculated values for items in the cache, retaining things like stats.
 function PawnClearCacheValuesOnly()
-	local CachedItem, _
 	-- First, the main item cache.
 	if PawnItemCache then
 		for _, CachedItem in pairs(PawnItemCache) do
@@ -1110,7 +1104,6 @@ function PawnClearCacheValuesOnly()
 	-- Then, the gem caches.  For each gem meta-table, look at the gem table (which is in
 	-- column 3) and then clear out that table's item data cache.
 	local GemCaches = { PawnGemQualityLevels, PawnMetaGemQualityLevels, PawnCogwheelQualityLevels }
-	local GemCache, GemQualityData, GemData
 	for _, GemCache in pairs(GemCaches) do
 		for _, GemQualityData in pairs(GemCache) do
 			for _, GemData in pairs(GemQualityData[2]) do
@@ -1204,7 +1197,6 @@ function PawnRecalculateScaleTotal(ScaleName)
 	local ThisScaleBestGems = PawnScaleBestGems[ScaleName]
 
 	if PawnGemQualityLevels then
-		local QualityLevelData
 		for _, QualityLevelData in pairs(PawnGemQualityLevels) do
 			local ItemLevel = QualityLevelData[1]
 			local GemData = QualityLevelData[2]
@@ -1439,7 +1431,6 @@ function PawnGetItemData(ItemLink)
 			-- (Don't just copy the reference, because then changes to one stat table would also
 			-- change the other!)
 			local TableCopy = {}
-			local StatName
 			if Item.Stats then
 				for StatName, Value in pairs(Item.Stats) do
 					TableCopy[StatName] = Value
@@ -1506,7 +1497,6 @@ function PawnGetItemData(ItemLink)
 
 		-- Determine if this item could ever be equipped by this class.
 		Item.CanEquip = true
-		local StatName
 		local _, _, ClassID = UnitClass("player")
 		for _, StatName in pairs(PawnNeverUsableStats[ClassID]) do
 			if Item.Stats[StatName] then
@@ -1721,7 +1711,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- If there's no item data, then something failed, so we can't update this tooltip, except to show item IDs.
-	local TooltipWasUpdated, UpgradeInfo, ItemLevelIncrease, BestItemFor, SecondBestItemFor, NeedsEnhancements
+	local UpgradeInfo, ItemLevelIncrease, BestItemFor, SecondBestItemFor, NeedsEnhancements
 
 	if Item then
 		-- If this is a regular item, do the regular calculations to see if it's an upgrade.
@@ -1747,7 +1737,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 		Tooltip:AddLine(" ")
 	end
 
-	local Annotated, TooltipWasUpdated
+	local TooltipWasUpdated
 
 	if Item then
 		-- Add the scale values and upgrade info to the tooltip.
@@ -1761,7 +1751,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 		-- Add the item level info to the tooltip.
 		if ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades then
 			-- Find which line of the tooltip (2-4) contains the text "Item Level" and annotate that.
-			local i, AnnotatedItemLevel
+			local AnnotatedItemLevel
 			for i = 2, 5 do
 				local LeftLine = _G[TooltipName .. "TextLeft" .. i]
 				if LeftLine then
@@ -1850,7 +1840,7 @@ end
 --	Values for scales that are not currently enabled are not included.
 function PawnGetAllItemValues(Item, ItemLevel, SocketBonus, UnenchantedItem, UnenchantedItemSocketBonus, DebugMessages, NoNormalization)
 	local ItemValues = {}
-	for ScaleName, Scale in pairs(PawnCommon.Scales) do
+	for ScaleName, _ in pairs(PawnCommon.Scales) do
 		local ShowScale = PawnIsScaleVisible(ScaleName)
 		if ShowScale then -- Skip all disabled scales.  PawnGetSingleValueFromItem will calculate them on-demand if necessary.
 			if ShowScale and DebugMessages then
@@ -1903,7 +1893,6 @@ function PawnAddValuesToTooltip(Tooltip, ItemValues, UpgradeInfo, BestItemFor, S
 
 	-- Loop through all of the item value subtables.
 	local _, _, ClassID = UnitClass("player")
-	local Entry, _
 	for _, Entry in pairs(ItemValues) do
 		local ScaleName, Value, UnenchantedValue, LocalizedName = Entry[1], Entry[2], Entry[3], Entry[4]
 		local Scale = PawnCommon.Scales[ScaleName]
@@ -1927,7 +1916,7 @@ function PawnAddValuesToTooltip(Tooltip, ItemValues, UpgradeInfo, BestItemFor, S
 				LocalizedName = "|T" .. Scale.IconTexturePath .. ":0|t " .. LocalizedName
 			end
 
-			local TooltipText = nil
+			local TooltipText
 			local TextColor = PawnGetScaleColor(ScaleName)
 			local UnenchantedTextColor = PawnGetScaleColor(ScaleName, true)
 
@@ -1943,7 +1932,6 @@ function PawnAddValuesToTooltip(Tooltip, ItemValues, UpgradeInfo, BestItemFor, S
 
 			-- Add info to the tooltip if this item is an upgrade or best-in-slot.
 			if TooltipText then
-				local ThisUpgrade, _
 				WasUpgradeOrBest = false
 				if UpgradeInfo then
 					for _, ThisUpgrade in pairs(UpgradeInfo) do
@@ -2010,8 +1998,6 @@ end
 function PawnGetInventoryItemValues(UnitName)
 	local Total = {}
 	local TotalItemLevel = 0
-	local SlotStats
-	local Slot
 	local _
 	local MainHandArtifactLevel
 	for Slot = 1, 18 do
@@ -2090,7 +2076,6 @@ end
 function PawnFixStupidTooltipFormatting(TooltipName)
 	local Tooltip = _G[TooltipName]
 	if not Tooltip then return end
-	local i
 	for i = 1, Tooltip:NumLines() do
 		local LeftLine = _G[TooltipName .. "TextLeft" .. i]
 		local Text = LeftLine:GetText()
@@ -2235,7 +2220,6 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			IsKillLine = true
 		end
 		if not IsKillLine then
-			local ThisKillLine
 			for _, ThisKillLine in pairs(PawnKillLines) do
 				if strfind(LeftLineText, ThisKillLine) then
 					-- This is a known ignored kill line; stop now.
@@ -2306,7 +2290,6 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 
 				-- First, check to see if it starts with any of the ignore prefixes, such as "Use:".
 				local IgnoreLine = false
-				local ThisPrefix
 				for _, ThisPrefix in pairs(PawnSeparatorIgnorePrefixes) do
 					if strfind(CurrentParseText, ThisPrefix, 1, true) == 1 then
 						-- We know that this line doesn't contain a complex stat, so ignore it.
@@ -2325,11 +2308,10 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 
 					local Pos = 1
 					local NextPos = 0
-					local InnerStatLine = nil
-					local InnerUnderstood = nil
+					local InnerStatLine
+					local InnerUnderstood
 
 					while Pos < strlen(CurrentParseText) do
-						local ThisSeparator
 						for _, ThisSeparator in pairs(PawnSeparators) do
 							NextPos = strfind(CurrentParseText, ThisSeparator, Pos, false)
 							if NextPos then
@@ -2543,11 +2525,11 @@ function PawnLookForSingleStat(RegexTable, Stats, ThisString, DebugMessages)
 	-- First, perform a series of normalizations on the string.  For example, "Stamina +5" should
 	-- be converted to "+5 Stamina" so we don't need two strings for everything.
 	ThisString = strtrim(ThisString)
-	local Entry, Count
+	local Count
 	for _, Entry in pairs(PawnNormalizationRegexes) do
 		---@diagnostic disable-next-line: deprecated
 		local Regex, Replacement = unpack(Entry)
-		local OldString = ThisString
+		-- local OldString = ThisString
 		ThisString, Count = gsub(ThisString, Regex, Replacement, 1)
 		--if Count > 0 then PawnDebugMessage("Normalized string using \"" .. PawnEscapeString(Regex) .. "\" -- was " .. PawnEscapeString(OldString) .. " and is now " .. PawnEscapeString(ThisString)) end
 	end
@@ -2708,11 +2690,10 @@ end
 --		Returns {}, {} if the string was ignored.
 function PawnFindStringInRegexTable(String, RegexTable)
 	if (String == nil) or (String == "") or (String == " ") then return {}, {} end
-	local Entry
 	for _, Entry in pairs(RegexTable) do
 		LastRegex = Entry[1]
 		LastStat = Entry[2]
-		local StartPos, EndPos, m1, m2, m3, m4, m5 = strfind(String, LastRegex)
+		local StartPos, _, m1, m2, m3, m4, m5 = strfind(String, LastRegex)
 		if StartPos then return Entry, { m1, m2, m3, m4, m5 } end
 	end
 	return nil, nil
@@ -2745,7 +2726,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 	local ProperSocketValue = 0
 	local SocketBonusValue = 0
 	local IsUnusable
-	local ThisValue, Stat, Quantity
+	local ThisValue
 	for Stat, Quantity in pairs(Item) do
 		ThisValue = ScaleValues[Stat]
 		if VgerCore.IsMainline then
@@ -2930,7 +2911,7 @@ function PawnGetGemListString(ScaleName, ListAll, ItemLevel, Color)
 		local GemTable = Gems[Color .. "Socket"][GemQuality]
 
 		if ListAll or (Color == "Prismatic" and #GemTable > 2) then
-			local _, GemInfo, GemList
+			local GemList
 			local Separator
 			if ListAll then Separator = "\n" else Separator = ", " end
 			for _, GemInfo in pairs(GemTable) do
@@ -3093,7 +3074,7 @@ function PawnParseScaleTag(ScaleTag)
 	local Values = {}
 	local SpecID
 	local function SplitStatValuePair(Pair)
-		local Pos, _, Stat, Value = strfind(Pair, "^%s*([%a%d]+)%s*=%s*(%-?[%d%.a-zA-Z]+)%s*,$")
+		local Pos2, _, Stat, Value = strfind(Pair, "^%s*([%a%d]+)%s*=%s*(%-?[%d%.a-zA-Z]+)%s*,$")
 		if Stat == "Class" then
 			Value = PawnGetClassIDFromName(Value)
 		elseif Stat == "Spec" then
@@ -3103,7 +3084,7 @@ function PawnParseScaleTag(ScaleTag)
 		else
 			Value = tonumber(Value)
 		end
-		if Pos and Stat and (Stat ~= "") and Value then
+		if Pos2 and Stat and (Stat ~= "") and Value then
 			Values[Stat] = Value
 		end
 	end
@@ -3442,7 +3423,7 @@ function PawnGetGemQualityForItem(GemQualityLevels, ItemLevel)
 	if not GemQualityLevels or #GemQualityLevels == 0 then return nil end
 	if not ItemLevel then return GemQualityLevels[1][1] end
 
-	local _, GemQualityData, GemLevel
+	local GemLevel
 	for _, GemQualityData in pairs(GemQualityLevels) do
 		GemLevel = GemQualityData[1]
 		if ItemLevel >= GemLevel then return GemLevel end
@@ -3483,7 +3464,7 @@ function PawnFindBestGems(ScaleName, GemTable, RedOnly, YellowOnly, BlueOnly)
 	local BestItems = { }
 
 	-- Go through the list of gems, checking each item that matches one of the find criteria.
-	local GemData, ThisGem, _
+	local ThisGem
 	for _, GemData in pairs(GemTable) do
 		ThisGem = PawnGetGemData(GemData)
 		if ThisGem then
@@ -3604,7 +3585,6 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 
 	local _
 	local UpgradeTable, BestItemTable, SecondBestItemTable
-	local ScaleName, Scale
 	if not SkipScoreBasedUpgrades then
 		for ScaleName, Scale in pairs(PawnCommon.Scales) do
 			InvType = Item.InvType -- need to reset this here since it gets nil'ed out in the coming while loop
@@ -3626,7 +3606,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 					PawnFindBestItems(ScaleName)
 				end
 
-				local InvType2 = nil
+				local InvType2
 				local TwoSlotsForThisItemType = (InvType == "INVTYPE_FINGER")
 				if InvType == "INVTYPE_WEAPON" then
 					-- Check one-handed weapons against both the main hand and off hand, and report the best upgrade.
@@ -3650,11 +3630,11 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 				-- 2) The current best MH weapon is a one-hander
 				-- 3) The new MH weapon is better than the old OH weapon
 				-- But, it's not clear how best to present this to the user, so this case (and the vice-versa case) is ignored for now.
-				local ThisValue = nil
-				local NewTableEntry = nil
+				local ThisValue
+				local NewTableEntry
 
 				while InvType do
-					local BestData = nil
+					local BestData
 					if PawnOptions.UpgradeTracking and not CompareUsingItemLevelOnly then
 						BestData = CharacterOptions.BestItems[InvType]
 					else
@@ -3708,7 +3688,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 					if BestData then
 						local BestValue = BestData[4] or BestData[1]
 						local BestItem = BestData[5] or BestData[2]
-						local BestMaxHeirloomLevel = BestData[6] or BestData[3]
+						-- local BestMaxHeirloomLevel = BestData[6] or BestData[3]
 						if BestValue then
 							-- Don't bother looking for this item's value if we don't have a best item for this slot.
 							if not ThisValue then
@@ -3822,7 +3802,6 @@ end
 
 -- Invalidates all lists of best items for all characters and scales.
 function PawnInvalidateBestItems()
-	local ScaleName
 	for ScaleName, _ in pairs(PawnCommon.Scales) do
 		PawnInvalidateBestItemsForScale(ScaleName)
 	end
@@ -3835,19 +3814,16 @@ function PawnInvalidateBestItemsForScale(ScaleName)
 		VgerCore.Fail("PawnInvalidateBestItemsForScale: ScaleName must be the name of an existing scale.")
 		return
 	end
-	local CharacterName, CharacterOptions
-	for CharacterName, CharacterOptions in pairs(Scale.PerCharacterOptions) do
+	for _, CharacterOptions in pairs(Scale.PerCharacterOptions) do
 		CharacterOptions.BestItems = nil
 	end
 end
 
 -- Checks the player's equipped items for any new upgrades to his or her item sets.
 function PawnCheckInventoryForUpgrades()
-	local ScaleName
 	for ScaleName, _ in pairs(PawnCommon.Scales) do
 		PawnFindBestItems(ScaleName, true)
 	end
-	local Slot
 	for Slot = 1, 18 do
 		PawnAddItemToLevelTracker(PawnGetItemDataForInventorySlot(Slot))
 	end
@@ -3963,7 +3939,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 	-- (end of CheckItem)
 
 	-- Obviously, check the player's currently equipped gear.
-	local Slot, PreviousItemLink
+	local PreviousItemLink
 	for Slot = 1, 18 do if Slot ~= 4 and Slot ~= 13 and Slot ~= 14 then -- Skip slots 0 (ammo), 4 (shirt), 13-14 (trinkets), and 19 (tabard)
 		local Item = PawnGetItemDataForInventorySlot(Slot, true, "player")
 		if Item then
@@ -3974,7 +3950,6 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 
 	-- Now, scan all of the items in the player's equipment sets.
 	if not InventoryOnly and VgerCore.EquipmentSetsExist then
-		local _, i
 		for _, i in pairs(C_EquipmentSet.GetEquipmentSetIDs()) do
 			local _, _, EquipmentSetID = C_EquipmentSet.GetEquipmentSetInfo(i)
 			local ItemLocations = C_EquipmentSet.GetItemLocations(EquipmentSetID)
@@ -4168,14 +4143,13 @@ function PawnOnItemLost(ItemLink)
 		-- A ranged weapon could be one-handed (wands) or two-handed (everything else) but it always goes in the main hand.
 		InvType = "INVTYPE_WEAPONMAINHAND"
 	end
-	local InvType2 = nil
+	local InvType2
 	if InvType == "INVTYPE_WEAPON" then
 		InvType = "INVTYPE_WEAPONMAINHAND"
 		InvType2 = "INVTYPE_WEAPONOFFHAND"
 	end
 
-	local ScaleName, Scale
-	for ScaleName, Scale in pairs(PawnCommon.Scales) do
+	for _, Scale in pairs(PawnCommon.Scales) do
 		local CharacterOptions = Scale.PerCharacterOptions[PawnPlayerFullName]
 		if CharacterOptions then
 			local BestItems = CharacterOptions.BestItems
@@ -4241,7 +4215,6 @@ end
 --	List: The same table passed in, with one additional field added: { ..., Result }
 --		Result: "upgrade" if the item is an upgrade, "vendor" if the item is the most valuable choice, "trinket" if the item is a trinket or relic, or nil if none of the above.
 function PawnFindInterestingItems(List)
-	local Info, _
 	local HighestValue, HighestValueInfo = 0, nil
 	local DoNotVendor
 
@@ -4357,7 +4330,6 @@ function PawnFindOptimalReforgingCore(ScaleName, Scale, Values, Stats, NoInstruc
 	local ReforgeTo
 	if not NoInstructions then ReforgeTo = { } end
 	local BestValue = 0
-	local Stat, _
 	for _, Stat in pairs(PawnReforgeableStats) do
 		if not Stats[Stat] then
 			local Value = Values[Stat]
@@ -4394,7 +4366,6 @@ function PawnFindOptimalReforgingCore(ScaleName, Scale, Values, Stats, NoInstruc
 		if not Value or Value < 0 then Value = 0 end -- This would be a great: reforging away a stat with no value at all!
 		local Quantity = Stats[Stat]
 		if Quantity and Value < BestValue then
-			local Quantity = Stats[Stat]
 			if Quantity then
 				local ReforgeQuantity = floor(Quantity * .4)
 				if ReforgeQuantity > 0 then
@@ -4453,7 +4424,6 @@ function PawnConcatenateWithConjunction(Table, Conjunction)
 	else
 		local Concatenated = ""
 		local Index = 1
-		local Item, _
 		for _, Item in ipairs(Table) do
 			if Index == Size then
 				Concatenated = Concatenated .. Conjunction .. Item
@@ -4504,7 +4474,7 @@ function PawnOnSpecChanged()
 	-- of them in the UI.
 	-- Right now, we only take scales from a provider into account, because some code assumes that only one
 	-- scale can ever be enabled in Automatic mode.
-	local ScaleName, Scale, LastEnabledScaleName, MadeChanges
+	local LastEnabledScaleName, MadeChanges
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		local IsVisible = PawnIsScaleVisible(ScaleName)
 		if Scale.ClassID == ClassID and Scale.SpecID == SpecID and Scale.Provider ~= nil then
@@ -4533,7 +4503,6 @@ end
 
 function PawnEnableAllScalesForClass()
 	local _, _, ClassID = UnitClass("player")
-	local ScaleName, Scale, LastEnabledScaleName
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		PawnSetScaleVisible(ScaleName, Scale.ClassID == ClassID)
 	end
@@ -4545,7 +4514,6 @@ end
 function PawnFindScaleForSpec(ClassID, SpecID)
 	if not ClassID then return nil end
 
-	local ScaleName, Scale
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		if Scale.ClassID == ClassID and (SpecID == nil or Scale.SpecID == SpecID) and Scale.Provider then return ScaleName end
 	end
@@ -4580,7 +4548,6 @@ function PawnOnArtifactUpdated(NewItem)
 	ThisArtifact.Name = ArtifactName
 
 	local NumRelicSlots = C_ArtifactUI.GetNumRelicSlots() or 0
-	local RelicIndex
 	for RelicIndex = 1, NumRelicSlots do
 		local _, _, _, ThisRelicItemLink = C_ArtifactUI.GetRelicInfo(RelicIndex)
 		local LockedReason = C_ArtifactUI.GetRelicLockedReason(RelicIndex)
@@ -4645,7 +4612,6 @@ end
 
 function PawnGetItemLinkParts(ItemLink, ReusableTable)
    local Parts = ReusableTable or {}
-   local Match
    for Match in gmatch(ItemLink, ":(%-?%d*)") do
 	  if strlen(Match) == 0 then
 		 tinsert(Parts, 0)
@@ -4663,8 +4629,7 @@ end
 function PawnPrintArtifactDebugInfo()
 	VgerCore.Message(" ")
 	VgerCore.Message("Pawn knows about these artifacts:")
-	local ArtifactItemID, Artifact, UpgradeInfo
-	for ArtifactItemID, Artifact in pairs(PawnOptions.Artifacts) do
+	for _, Artifact in pairs(PawnOptions.Artifacts) do
 		VgerCore.Message(ITEM_QUALITY_COLORS[LE_ITEM_QUALITY_ARTIFACT].hex .. Artifact.Name .. "|r:")
 		for RelicIndex = 1, 3 do
 			local ThisRelic = Artifact.Relics[RelicIndex]
@@ -4691,10 +4656,9 @@ function PawnGetRelicUpgradeInfo(RelicItemLink)
 	local RelicItemLevel = PawnGetItemLevelIncreaseProvidedByRelic(RelicItemLink)
 	if not RelicItemLevel then return end
 
-	local ArtifactItemID, Artifact, UpgradeInfo
-	for ArtifactItemID, Artifact in pairs(PawnOptions.Artifacts) do
+	local UpgradeInfo
+	for _, Artifact in pairs(PawnOptions.Artifacts) do
 		local BestRelicItemLevelUpgrade = 0
-		local RelicIndex, SlottedRelic
 		for RelicIndex, SlottedRelic in pairs(Artifact.Relics) do
 			--VgerCore.Message(Artifact.Name .. " slot " .. RelicIndex .. ": " .. SlottedRelic.Type .. " +" .. tostring(SlottedRelic.ItemLevel))
 			if RelicType == SlottedRelic.Type then
@@ -4721,7 +4685,6 @@ function PawnAddRelicUpgradesToTooltip(TooltipName, UpgradeInfo)
 		return
 	end
 
-	local i
 	local Lines = Tooltip:NumLines()
 	for i = 1, Lines do
 		local LeftLine = _G[TooltipName .. "TextLeft" .. i]
@@ -4831,7 +4794,6 @@ end
 function PawnShowSlotDebugInfo()
 	if not PawnOptions.ItemLevels then return end
 	local BestItemsDebugInfo = "Best items: "
-	local Slot
 	for Slot = 1, 18 do
 		if PawnOptions.ItemLevels[Slot] then
 			BestItemsDebugInfo = BestItemsDebugInfo .. tostring(PawnOptions.ItemLevels[Slot].Link) .. "=" .. PawnOptions.ItemLevels[Slot].Level .. " "
@@ -4873,7 +4835,6 @@ function PawnIsPlayingWith(TargetName, TargetRealm)
 	local IsOnTargetRealm = GetRealmName() == TargetRealm
 
 	-- Look through the current group roster for the target.
-	local _, i
 	if IsInRaid() then
 	   local TargetNameAndRealm = IsOnTargetRealm and TargetName or (TargetName .. "-" .. TargetRealm)
 	   for i = 1, GetNumGroupMembers() do
@@ -4949,7 +4910,6 @@ end
 function PawnResetScalesCore(ResetCustomScales, ResetProviderScales)
 	if not PawnIsInitialized then VgerCore.Fail("Can't reset scales until Pawn is initialized") return end
 
-	local ScaleName, Scale, _
 	local ScalesToRemove = {}
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		if (ResetProviderScales and Scale.Provider) or (ResetCustomScales and ScaleProvider == nil) then tinsert(ScalesToRemove, ScaleName) end
@@ -5171,7 +5131,6 @@ end
 -- Returns the number of visible scales for the current character.
 function PawnGetVisibleScaleCount()
 	local Count = 0
-	local ScaleName, Scale
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		if PawnIsScaleVisible(ScaleName) and ((not Scale.Provider) or (Scale.ProviderActive)) then
 			Count = Count + 1
@@ -5188,7 +5147,6 @@ function PawnGetAllScales()
 	if not PawnIsInitialized then VgerCore.Fail("Can't get scale list until Pawn is initialized") return end
 
 	local TableCopy = {}
-	local ScaleName, Scale
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		if (not Scale.Provider) or (Scale.ProviderActive) then
 			-- Don't include scales from a provider that isn't active any longer.  (Abandoned provider scales)
@@ -5211,7 +5169,6 @@ function PawnGetAllScalesEx()
 	if not PawnIsInitialized then VgerCore.Fail("Can't get scale list until Pawn is initialized") return end
 
 	local TableCopy = {}
-	local ScaleName, Scale
 	local ActiveScalesHeader = format(PawnLocal.VisibleScalesHeader, UnitName("player"))
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		local IsVisible = PawnIsScaleVisible(ScaleName)
@@ -5319,7 +5276,6 @@ function PawnGetScaleTag(ScaleName)
 		AddComma = true
 		TemplateStats = PawnGetStatValuesForTemplate(PawnFindScaleTemplate(Scale.ClassID, Scale.SpecID), true)
 	end
-	local IncludeThis
 	for StatName, Value in pairs(Scale.Values) do
 		local IncludeThis = (Value and Value ~= 0)
 		if IncludeThis and TemplateStats and Value == TemplateStats[StatName] then
@@ -5403,7 +5359,6 @@ function PawnImportScale(ScaleTag, Overwrite)
 	NewScale.Role = Role
 
 	-- Merge the scale tag's stats into the template's (or the existing scale's) stats.
-	local StatName, Value
 	for StatName, Value in pairs(Values) do
 		NewScale.Values[StatName] = Value
 	end
@@ -5433,7 +5388,6 @@ function PawnSetAllScaleProviderScalesVisible(ProviderInternalName, Visible)
 	local ScaleNamePrefix = PawnGetProviderScaleName(ProviderInternalName, "")
 
 	-- Loop through all scales and turn them on or off.
-	local ScaleName, Scale
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		if strfind(ScaleName, ScaleNamePrefix, 1, true) == 1 then
 			if Scale.PerCharacterOptions == nil then Scale.PerCharacterOptions = {} end
@@ -5610,13 +5564,6 @@ function PawnSetShowUpgradesForWeapons(ScaleName, WeaponSet, ShowUpgrades)
 	PawnResetTooltips()
 end
 
-function PawnGetUpgradesFollowSpecialization(ScaleName)
-	return true
-end
-
-function PawnSetUpgradesFollowSpecialization(ScaleName, FollowSpecialization)
-end
-
 -- Sets whether the upgrade tracking feature is enabled for this character.
 function PawnSetUpgradeTracking(Enabled)
 	if PawnOptions.UpgradeTracking == Enabled then return end
@@ -5649,8 +5596,7 @@ end
 -- Uninitialize the plugin infrastructure and clean up our stale data.  We'll do this upon logging out or reloading the UI.
 function PawnUnitializePlugins()
 	-- Remove values from all read-only scales from providers so they don't get serialized to SavedVariables unnecessarily.
-	local ScaleName, Scale
-	for ScaleName, Scale in pairs(PawnCommon.Scales) do
+	for _, Scale in pairs(PawnCommon.Scales) do
 		if Scale.Provider then
 			Scale.ProviderActive = nil
 			Scale.Values = nil
@@ -5671,7 +5617,6 @@ function PawnInitializePlugins()
 
 	-- Go through the list of scale providers and call their initialization function.  They'll create all of their
 	-- scales as necessary.
-	local Provider, _
 	for _, Provider in pairs(PawnScaleProviders) do
 		if Provider.Function then
 			-- After we call each provider's initialization function, empty it out so that function can be
@@ -5795,8 +5740,7 @@ function PawnAddPluginScaleFromTemplate(ProviderInternalName, ClassID, SpecID, S
 	-- Build up the values table.
 	local ScaleValues = PawnGetStatValuesForTemplate(Template)
 	if Stats then
-		local StatName, Value
-		for StatName, Value in pairs(Stats) do
+		for StatName, _ in pairs(Stats) do
 			ScaleValues[StatName] = Stats[StatName]
 		end
 	end
@@ -6009,10 +5953,9 @@ function PawnShouldItemLinkHaveUpgradeArrowUnbudgeted(ItemLink, CheckLevel)
 		local Item = PawnGetItemData(ItemLink)
 		if Item == nil or Item.Link == nil then return nil end -- If we don't have stats for the item yet, ask again later.
 		if PawnOptions.DebugBagArrows then
-			local UpgradeInfo, ItemLevelIncrease, BestItemFor, SecondBestItemFor, NeedsEnhancements = PawnIsItemAnUpgrade(Item)
+			local UpgradeInfo, _, _, _, _ = PawnIsItemAnUpgrade(Item)
 			if UpgradeInfo ~= nil then
 				if PawnOptions.DebugBagArrows then VgerCore.Message("Found upgrade for " .. ItemLink) end
-				local i
 				for i = 1, #UpgradeInfo do
 					local u = UpgradeInfo[i]
 					if PawnOptions.DebugBagArrows then VgerCore.Message("  " .. u.LocalizedScaleName .. ": +" .. u.PercentUpgrade .. "% vs. " .. tostring(u.ExistingItemLink)) end
@@ -6043,7 +5986,6 @@ PawnShouldItemLinkHaveUpgradeArrow = BudgetThrottle(PawnShouldItemLinkHaveUpgrad
 -- Clears the best item level data for this character only.
 function PawnClearBestItemLevelData()
 	PawnOptions.ItemLevels = nil
-	local Slot
 	for Slot = 1, 18 do
 		PawnAddItemToLevelTracker(PawnGetItemDataForInventorySlot(Slot))
 	end
