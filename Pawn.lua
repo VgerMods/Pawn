@@ -218,70 +218,70 @@ function PawnInitialize()
 	if not VgerCore.IsMainline then
 		-- SetAuctionItem was removed in 8.3.0 but is still there on Classic.  The (incorrect) way that BankItems hooks this function
 		-- causes the detection to fail, so just directly check the version.
-		hooksecurefunc(GameTooltip, "SetAuctionItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionItem", ...) end)
-		hooksecurefunc(GameTooltip, "SetAuctionSellItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionSellItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetAuctionItem", function(_, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetAuctionSellItem", function(_, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionSellItem", ...) end)
 	end
 	if VgerCore.IsMainline then
-		hooksecurefunc(GameTooltip, "SetItemKey", function(self, ItemID, ItemLevel, Suffix, ...) PawnUpdateTooltip("GameTooltip", "SetItemKey", ItemID, ItemLevel, Suffix, ...) end)
+		hooksecurefunc(GameTooltip, "SetItemKey", function(_, ItemID, ItemLevel, Suffix, ...) PawnUpdateTooltip("GameTooltip", "SetItemKey", ItemID, ItemLevel, Suffix, ...) end)
 	end
-	hooksecurefunc(GameTooltip, "SetBagItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetBagItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetBuybackItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetBuybackItem", ...) end)
+	hooksecurefunc(GameTooltip, "SetBagItem", function() PawnUpdateTooltip("GameTooltip", "SetBagItem") end)
+	hooksecurefunc(GameTooltip, "SetBuybackItem", function() PawnUpdateTooltip("GameTooltip", "SetBuybackItem") end)
 	if GameTooltip.SetExistingSocketGem then
 		-- Gems don't exist in WoW Classic.
-		hooksecurefunc(GameTooltip, "SetExistingSocketGem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetExistingSocketGem", ...) end)
+		hooksecurefunc(GameTooltip, "SetExistingSocketGem", function() PawnUpdateTooltip("GameTooltip", "SetExistingSocketGem") end)
 	end
 	if GameTooltip.SetGuildBankItem then
 		-- Guild banks don't exist in WoW Classic.
-		hooksecurefunc(GameTooltip, "SetGuildBankItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetGuildBankItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetGuildBankItem", function() PawnUpdateTooltip("GameTooltip", "SetGuildBankItem") end)
 	end
 	if GameTooltip.SetHeirloomByItemID then
 		-- ...and neither do heirlooms.
-		hooksecurefunc(GameTooltip, "SetHeirloomByItemID", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetHeirloomByItemID", ...) end)
+		hooksecurefunc(GameTooltip, "SetHeirloomByItemID", function() PawnUpdateTooltip("GameTooltip", "SetHeirloomByItemID") end)
 	end
-	hooksecurefunc(GameTooltip, "SetHyperlink", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetHyperlink", ...) end)
-	hooksecurefunc(GameTooltip, "SetInboxItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetInboxItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetInventoryItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetInventoryItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetItemByID", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetItemByID", ...) end)
-	hooksecurefunc(GameTooltip, "SetLootItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetLootItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetLootRollItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetLootRollItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetMerchantItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetMerchantItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetQuestItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetQuestItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetQuestLogItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetQuestLogItem", ...) end)
-	hooksecurefunc(GameTooltip, "SetSendMailItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetSendMailItem", ...) end)
+	hooksecurefunc(GameTooltip, "SetHyperlink", function(_, ...) PawnUpdateTooltip("GameTooltip", "SetHyperlink", ...) end)
+	hooksecurefunc(GameTooltip, "SetInboxItem", function() PawnUpdateTooltip("GameTooltip", "SetInboxItem") end)
+	hooksecurefunc(GameTooltip, "SetInventoryItem", function() PawnUpdateTooltip("GameTooltip", "SetInventoryItem") end)
+	hooksecurefunc(GameTooltip, "SetItemByID", function() PawnUpdateTooltip("GameTooltip", "SetItemByID") end)
+	hooksecurefunc(GameTooltip, "SetLootItem", function() PawnUpdateTooltip("GameTooltip", "SetLootItem") end)
+	hooksecurefunc(GameTooltip, "SetLootRollItem", function() PawnUpdateTooltip("GameTooltip", "SetLootRollItem") end)
+	hooksecurefunc(GameTooltip, "SetMerchantItem", function() PawnUpdateTooltip("GameTooltip", "SetMerchantItem") end)
+	hooksecurefunc(GameTooltip, "SetQuestItem", function() PawnUpdateTooltip("GameTooltip", "SetQuestItem") end)
+	hooksecurefunc(GameTooltip, "SetQuestLogItem", function() PawnUpdateTooltip("GameTooltip", "SetQuestLogItem") end)
+	hooksecurefunc(GameTooltip, "SetSendMailItem", function() PawnUpdateTooltip("GameTooltip", "SetSendMailItem") end)
 	if GameTooltip.SetSocketGem then
 		-- Gems don't exist in Classic.
-		hooksecurefunc(GameTooltip, "SetSocketGem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetSocketGem", ...) end)
+		hooksecurefunc(GameTooltip, "SetSocketGem", function() PawnUpdateTooltip("GameTooltip", "SetSocketGem") end)
 	end
-	hooksecurefunc(GameTooltip, "SetTradePlayerItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetTradePlayerItem", ...) end)
+	hooksecurefunc(GameTooltip, "SetTradePlayerItem", function() PawnUpdateTooltip("GameTooltip", "SetTradePlayerItem") end)
 	if GameTooltip.SetRecipeResultItem then
 		hooksecurefunc(GameTooltip, "SetRecipeResultItem",
-			function(self, ...)
-				local ItemLink = C_TradeSkillUI.GetRecipeItemLink(...)
+			function(_, RecipeId)
+				local ItemLink = C_TradeSkillUI.GetRecipeItemLink(RecipeId)
 				PawnUpdateTooltip("GameTooltip", "SetHyperlink", ItemLink)
 			end)
 	end
 	if GameTooltip.SetTradeSkillItem then
-		hooksecurefunc(GameTooltip, "SetTradeSkillItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetTradeSkillItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetTradeSkillItem", function() PawnUpdateTooltip("GameTooltip", "SetTradeSkillItem") end)
 	end
-	hooksecurefunc(GameTooltip, "SetTradeTargetItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetTradeTargetItem", ...) end)
+	hooksecurefunc(GameTooltip, "SetTradeTargetItem", function() PawnUpdateTooltip("GameTooltip", "SetTradeTargetItem") end)
 	if GameTooltip.SetVoidItem then
-		hooksecurefunc(GameTooltip, "SetVoidItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetVoidItem", ...) end)
-		hooksecurefunc(GameTooltip, "SetVoidDepositItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetVoidDepositItem", ...) end)
-		hooksecurefunc(GameTooltip, "SetVoidWithdrawalItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetVoidWithdrawalItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetVoidItem", function() PawnUpdateTooltip("GameTooltip", "SetVoidItem") end)
+		hooksecurefunc(GameTooltip, "SetVoidDepositItem", function() PawnUpdateTooltip("GameTooltip", "SetVoidDepositItem") end)
+		hooksecurefunc(GameTooltip, "SetVoidWithdrawalItem", function() PawnUpdateTooltip("GameTooltip", "SetVoidWithdrawalItem") end)
 	end
 	hooksecurefunc(GameTooltip, "SetTrainerService",
-		function(self, Index)
+		function(_, Index)
 			local ItemLink = GetTrainerServiceItemLink(Index)
 			if ItemLink then PawnUpdateTooltip("GameTooltip", "SetHyperlink", ItemLink) end
 		end)
 	if GameTooltip.SetWeeklyReward then
-		hooksecurefunc(GameTooltip, "SetWeeklyReward", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetWeeklyReward", ...) end)
+		hooksecurefunc(GameTooltip, "SetWeeklyReward", function() PawnUpdateTooltip("GameTooltip", "SetWeeklyReward") end)
 	end
 	if GameTooltip.SetItemInteractionItem then
-		hooksecurefunc(GameTooltip, "SetItemInteractionItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "SetItemInteractionItem", ...) end)
+		hooksecurefunc(GameTooltip, "SetItemInteractionItem", function() PawnUpdateTooltip("GameTooltip", "SetItemInteractionItem") end)
 	end
 	hooksecurefunc(GameTooltip, "Hide",
-		function(self, ...)
+		function()
 			PawnLastHoveredItem = nil
 			-- Hacky fix to prevent the green tooltip border from "leaking" if the next thing that is hovered over is not an item.
 			-- (Without this, hovering over an upgrade item and then a spell button would still get you a green border.)
@@ -302,7 +302,7 @@ function PawnInitialize()
 
 	-- The item link tooltip (only hook it if it's an actual item)
 	hooksecurefunc(ItemRefTooltip, "SetHyperlink",
-		function(self, ItemLink, ...)
+		function(_, ItemLink, ...)
 			-- Attach an icon to the tooltip first so that an existing icon can be hidden if the new hyperlink doesn't have one.
 			PawnAttachIconToTooltip(ItemRefTooltip, false, ItemLink)
 			if PawnGetHyperlinkType(ItemLink) ~= "item" then return end
@@ -311,7 +311,7 @@ function PawnInitialize()
 	ItemRefTooltip:HookScript("OnEnter", function() local _; _, PawnLastHoveredItem = ItemRefTooltip:GetItem() end)
 	ItemRefTooltip:HookScript("OnLeave", function() PawnLastHoveredItem = nil end)
 	ItemRefTooltip:HookScript("OnMouseUp",
-		function(object, button)
+		function(_, button)
 			if button == "RightButton" then
 				local _, ItemLink = ItemRefTooltip:GetItem()
 				if ItemLink then PawnUI_SetCompareItemAndShow(2, ItemLink) end
@@ -351,24 +351,24 @@ function PawnInitialize()
 	-- The "currently equipped" tooltips (two, in case of rings, trinkets, and dual wielding)
 	if ShoppingTooltip1.SetCompareItem then
 		hooksecurefunc(ShoppingTooltip1, "SetCompareItem",
-			function(self, ...)
+			function()
 				local _, ItemLink1 = ShoppingTooltip1:GetItem()
-				PawnUpdateTooltip("ShoppingTooltip1", "SetCompareItem", ItemLink1, ...)
+				PawnUpdateTooltip("ShoppingTooltip1", "SetCompareItem", ItemLink1)
 				PawnAttachIconToTooltip(ShoppingTooltip1, true)
 				local _, ItemLink2 = ShoppingTooltip2:GetItem()
 				if ItemLink2 and ShoppingTooltip2:IsShown() then
-					PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink2, ...)
+					PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink2)
 					PawnAttachIconToTooltip(ShoppingTooltip2, true)
 				end
 			end)
 		hooksecurefunc(ItemRefShoppingTooltip1, "SetCompareItem",
-			function(self, ...)
+			function()
 				local _, ItemLink1 = ItemRefShoppingTooltip1:GetItem()
-				PawnUpdateTooltip("ItemRefShoppingTooltip1", "SetCompareItem", ItemLink1, ...)
+				PawnUpdateTooltip("ItemRefShoppingTooltip1", "SetCompareItem", ItemLink1)
 				PawnAttachIconToTooltip(ItemRefShoppingTooltip1, true)
 				local _, ItemLink2 = ItemRefShoppingTooltip2:GetItem()
 				if ItemLink2 and ItemRefShoppingTooltip2:IsShown() then
-					PawnUpdateTooltip("ItemRefShoppingTooltip2", "SetHyperlink", ItemLink2, ...)
+					PawnUpdateTooltip("ItemRefShoppingTooltip2", "SetHyperlink", ItemLink2)
 					PawnAttachIconToTooltip(ItemRefShoppingTooltip2, true)
 				end
 			end)
@@ -378,11 +378,11 @@ function PawnInitialize()
 	-- methods, but only in Dragonflight.)
 
 	if ShoppingTooltip1.ProcessInfo then
-		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function(self)
+		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function()
 			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
 			if ItemLink then PawnUpdateTooltip("ShoppingTooltip1", "SetHyperlink", ItemLink) end
 		end)
-		hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function(self)
+		hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function()
 			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip2)
 			if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
 		end)
@@ -390,33 +390,33 @@ function PawnInitialize()
 
 	-- MultiTips compatibility
 	if MultiTips then
-		VgerCore.HookInsecureFunction(ItemRefTooltip2, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("ItemRefTooltip2", "SetHyperlink", ItemLink, ...) PawnAttachIconToTooltip(ItemRefTooltip2, false, ItemLink) end)
-		VgerCore.HookInsecureFunction(ItemRefTooltip3, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("ItemRefTooltip3", "SetHyperlink", ItemLink, ...) PawnAttachIconToTooltip(ItemRefTooltip3, false, ItemLink) end)
-		VgerCore.HookInsecureFunction(ItemRefTooltip4, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("ItemRefTooltip4", "SetHyperlink", ItemLink, ...) PawnAttachIconToTooltip(ItemRefTooltip4, false, ItemLink) end)
-		VgerCore.HookInsecureFunction(ItemRefTooltip5, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("ItemRefTooltip5", "SetHyperlink", ItemLink, ...) PawnAttachIconToTooltip(ItemRefTooltip5, false, ItemLink) end)
+		VgerCore.HookInsecureFunction(ItemRefTooltip2, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("ItemRefTooltip2", "SetHyperlink", ItemLink) PawnAttachIconToTooltip(ItemRefTooltip2, false, ItemLink) end)
+		VgerCore.HookInsecureFunction(ItemRefTooltip3, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("ItemRefTooltip3", "SetHyperlink", ItemLink) PawnAttachIconToTooltip(ItemRefTooltip3, false, ItemLink) end)
+		VgerCore.HookInsecureFunction(ItemRefTooltip4, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("ItemRefTooltip4", "SetHyperlink", ItemLink) PawnAttachIconToTooltip(ItemRefTooltip4, false, ItemLink) end)
+		VgerCore.HookInsecureFunction(ItemRefTooltip5, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("ItemRefTooltip5", "SetHyperlink", ItemLink) PawnAttachIconToTooltip(ItemRefTooltip5, false, ItemLink) end)
 	end
 
 	-- EquipCompare compatibility
 	if ComparisonTooltip1 then
-		if ComparisonTooltip1.SetHyperlinkCompareItem then VgerCore.HookInsecureFunction(ComparisonTooltip1, "SetHyperlinkCompareItem", function(self, ItemLink, ...) PawnUpdateTooltip("ComparisonTooltip1", "SetHyperlinkCompareItem", ItemLink, ...) PawnAttachIconToTooltip(ComparisonTooltip1, true) end) end
-		if ComparisonTooltip1.SetInventoryItem then VgerCore.HookInsecureFunction(ComparisonTooltip1, "SetInventoryItem", function(self, ...) PawnUpdateTooltip("ComparisonTooltip1", "SetInventoryItem", ...) PawnAttachIconToTooltip(ComparisonTooltip1, true) end) end -- EquipCompare with CharactersViewer
-		if ComparisonTooltip1.SetHyperlink then VgerCore.HookInsecureFunction(ComparisonTooltip1, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("ComparisonTooltip1", "SetHyperlink", ItemLink, ...) PawnAttachIconToTooltip(ComparisonTooltip1, true) end) end -- EquipCompare with Armory
+		if ComparisonTooltip1.SetHyperlinkCompareItem then VgerCore.HookInsecureFunction(ComparisonTooltip1, "SetHyperlinkCompareItem", function(_, ItemLink) PawnUpdateTooltip("ComparisonTooltip1", "SetHyperlinkCompareItem", ItemLink) PawnAttachIconToTooltip(ComparisonTooltip1, true) end) end
+		if ComparisonTooltip1.SetInventoryItem then VgerCore.HookInsecureFunction(ComparisonTooltip1, "SetInventoryItem", function() PawnUpdateTooltip("ComparisonTooltip1", "SetInventoryItem") PawnAttachIconToTooltip(ComparisonTooltip1, true) end) end -- EquipCompare with CharactersViewer
+		if ComparisonTooltip1.SetHyperlink then VgerCore.HookInsecureFunction(ComparisonTooltip1, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("ComparisonTooltip1", "SetHyperlink", ItemLink) PawnAttachIconToTooltip(ComparisonTooltip1, true) end) end -- EquipCompare with Armory
 	end
 	if ComparisonTooltip2 then
-		if ComparisonTooltip2.SetHyperlinkCompareItem then VgerCore.HookInsecureFunction(ComparisonTooltip2, "SetHyperlinkCompareItem", function(self, ItemLink, ...) PawnUpdateTooltip("ComparisonTooltip2", "SetHyperlinkCompareItem", ItemLink, ...) PawnAttachIconToTooltip(ComparisonTooltip2, true) end) end
-		if ComparisonTooltip2.SetInventoryItem then VgerCore.HookInsecureFunction(ComparisonTooltip2, "SetInventoryItem", function(self, ...) PawnUpdateTooltip("ComparisonTooltip2", "SetInventoryItem", ...) PawnAttachIconToTooltip(ComparisonTooltip2, true) end) end -- EquipCompare with CharactersViewer
-		if ComparisonTooltip2.SetHyperlink then VgerCore.HookInsecureFunction(ComparisonTooltip2, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("ComparisonTooltip2", "SetHyperlink", ItemLink, ...) PawnAttachIconToTooltip(ComparisonTooltip2, true) end) end -- EquipCompare with Armory
+		if ComparisonTooltip2.SetHyperlinkCompareItem then VgerCore.HookInsecureFunction(ComparisonTooltip2, "SetHyperlinkCompareItem", function(_, ItemLink) PawnUpdateTooltip("ComparisonTooltip2", "SetHyperlinkCompareItem", ItemLink) PawnAttachIconToTooltip(ComparisonTooltip2, true) end) end
+		if ComparisonTooltip2.SetInventoryItem then VgerCore.HookInsecureFunction(ComparisonTooltip2, "SetInventoryItem", function() PawnUpdateTooltip("ComparisonTooltip2", "SetInventoryItem") PawnAttachIconToTooltip(ComparisonTooltip2, true) end) end -- EquipCompare with CharactersViewer
+		if ComparisonTooltip2.SetHyperlink then VgerCore.HookInsecureFunction(ComparisonTooltip2, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("ComparisonTooltip2", "SetHyperlink", ItemLink) PawnAttachIconToTooltip(ComparisonTooltip2, true) end) end -- EquipCompare with Armory
 	end
 
 	-- Outfitter compatibility
 	if Outfitter and Outfitter._ExtendedCompareTooltip then
-		VgerCore.HookInsecureFunction(Outfitter._ExtendedCompareTooltip, "AddShoppingLink", function(self, pTitle, pName, pLink, ...) PawnUpdateTooltip("OutfitterCompareTooltip" .. self.NumTooltipsShown, "SetHyperlink", pLink) end)
+		VgerCore.HookInsecureFunction(Outfitter._ExtendedCompareTooltip, "AddShoppingLink", function(self, _, _, pLink, ...) PawnUpdateTooltip("OutfitterCompareTooltip" .. self.NumTooltipsShown, "SetHyperlink", pLink) end)
 	end
 
 	-- AtlasLoot Enhanced compatibility
 	if AtlasLootTooltip then
-		VgerCore.HookInsecureFunction(AtlasLootTooltip, "SetHyperlink", function(self, ...) PawnUpdateTooltip("AtlasLootTooltip", "SetHyperlink", ...) end)
-		VgerCore.HookInsecureFunction(AtlasLootTooltip, "SetItemByID", function(self, ...) PawnUpdateTooltip("AtlasLootTooltip", "SetItemByID", ...) end)
+		VgerCore.HookInsecureFunction(AtlasLootTooltip, "SetHyperlink", function(_, ...) PawnUpdateTooltip("AtlasLootTooltip", "SetHyperlink", ...) end)
+		VgerCore.HookInsecureFunction(AtlasLootTooltip, "SetItemByID", function() PawnUpdateTooltip("AtlasLootTooltip", "SetItemByID") end)
 	end
 
 	-- LinkWrangler compatibility -- hook the Link Wrangler item link tooltips.
@@ -434,7 +434,7 @@ function PawnInitialize()
 
 	-- AceConfigDialog compatibility
 	if AceConfigDialogTooltip then
-		VgerCore.HookInsecureFunction(AceConfigDialogTooltip, "SetHyperlink", function(self, ItemLink, ...) PawnUpdateTooltip("AceConfigDialogTooltip", "SetHyperlink", ItemLink, ...) end)
+		VgerCore.HookInsecureFunction(AceConfigDialogTooltip, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("AceConfigDialogTooltip", "SetHyperlink", ItemLink) end)
 	end
 
 	-- In-bag upgrade icons
@@ -496,7 +496,7 @@ function PawnInitialize()
 
 	-- Dragonflight professions UI
 	if C_TradeSkillUI and C_TradeSkillUI.SetTooltipRecipeResultItem then
-		hooksecurefunc(C_TradeSkillUI, "SetTooltipRecipeResultItem", function(self, ...) PawnUpdateTooltip("GameTooltip", "C_TradeSkillUI.SetTooltipRecipeResultItem") end)
+		hooksecurefunc(C_TradeSkillUI, "SetTooltipRecipeResultItem", function() PawnUpdateTooltip("GameTooltip", "C_TradeSkillUI.SetTooltipRecipeResultItem") end)
 	end
 
 	-- We're now effectively initialized.  Just the last steps of scale initialization remain.
