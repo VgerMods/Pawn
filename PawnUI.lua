@@ -163,7 +163,7 @@ function PawnUI_AddInventoryTotalsToTooltip(Tooltip, Unit)
 		if Count and Count > 0 then
 			Tooltip:AddLine(" ")
 			Tooltip:AddLine(PawnLocal.UI.InventoryButtonTotalsHeader, 1, 1, 1, 1)
-			PawnAddValuesToTooltip(Tooltip, ItemValues, nil, nil, nil, nil, nil, true)
+			PawnAddValuesToTooltip(Tooltip, ItemValues, nil, nil, nil, nil, true)
 		end
 	end
 	-- Add average item level information to the inspect window.  (It's not necessary for the current player's
