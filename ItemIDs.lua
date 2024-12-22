@@ -12,4 +12,6 @@ PawnNeverShowUpgradesFor =
 {
 	-- Onyx Annulet (Dragonflight)
 	[203460] = true,
+	-- Cyrce's Circlet (The War Within)
+	[228411] = true,
 }
