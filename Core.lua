@@ -73,7 +73,9 @@ end
 
 -- Turns a game constant with "%d" placeholders into a pattern that can be used to match that string.
 function PawnGameConstantIgnoredNumberPlaceholder(Text)
-	return gsub(PawnGameConstant(Text), "%%%%d", "%%d+")
+	-- gsub may return second result - amount of substitutions. Just ignore it.
+	local value, _ = gsub(PawnGameConstant(Text), "%%%%d", "%%d+")
+	return value
 end
 
 -- Escapes a string so that it can be more easily printed.
