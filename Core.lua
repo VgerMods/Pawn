@@ -47,6 +47,8 @@ PawnLocalizedLanguages = { "deDE", "enUS", "enGB", "esES", "esMX", "frFR", "itIT
 -- NOTE: These functions are not super-flexible for general purpose; they don't properly handle all sorts of Lua pattern matching syntax
 -- that could be in strings, like "." and so on.  But they've been sufficient so far.
 
+-- Extra parentheses around gsub drops all of gsub's return values after the first.
+
 -- Turns a game constant into a regular expression.
 function PawnGameConstant(Text)
 	return "^" .. PawnGameConstantUnwrapped(Text) .. "$"
@@ -56,9 +58,7 @@ end
 function PawnGameConstantUnwrapped(Text)
 	-- Some of these constants don't exist on Classic versions, so skip them: but not on live, where we would want this to error out.
 	if Text == nil and not IsMainline then return "^UNUSED$" end
-
-	local Ret1 = gsub(Text, "%%", "%%%%")
-	return gsub(Ret1, "%-", "%%-")
+	return (gsub((gsub(Text, "%%", "%%%%")), "%-", "%%-"))
 end
 
 -- Turns a game constant with one "%s" placeholder into a pattern that can be used to match that string.
@@ -73,12 +73,10 @@ end
 
 -- Turns a game constant with "%d" placeholders into a pattern that can be used to match that string.
 function PawnGameConstantIgnoredNumberPlaceholder(Text)
-	-- gsub may return second result - amount of substitutions. Just ignore it.
-	local value, _ = gsub(PawnGameConstant(Text), "%%%%d", "%%d+")
-	return value
+	return (gsub(PawnGameConstant(Text), "%%%%d", "%%d+"))
 end
 
 -- Escapes a string so that it can be more easily printed.
 function PawnEscapeString(String)
-	return gsub(gsub(gsub(String, "\r", "\\r"), "\n", "\\n"), "|", "||")
+	return (gsub((gsub((gsub(String, "\r", "\\r")), "\n", "\\n")), "|", "||"))
 end
