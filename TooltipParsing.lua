@@ -255,6 +255,7 @@ PawnRegexes =
 	{L.SpellHitRatingShort, "SpellHitRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=31861/great-dawnstone
 	{L.ExpertiseRating, "ExpertiseRating"}, -- Burning Crusade, /pawn compare 19351
 	{L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, Precise Bloodstone
+	{L.ExpertiseClassic, "ExpertiseRating"}, -- Classic SoD, /pawn compare 236019
 	{L.ArmorPenetration, "ArmorPenetration"},
 	{L.ArmorPenetrationRating, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 34703
 	{L.ArmorPenetrationRating2, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 41592 or 42642 or 44303 depending on locale
@@ -270,8 +271,10 @@ PawnRegexes =
 	{L.HasteRating, "HasteRating"}, -- Burning Crusade, /pawn compare 32570
 	{L.HasteRating2, "HasteRating"}, -- Burning Crusade esES, /pawn compare 32570
 	{L.HasteRatingShort, "HasteRating"}, -- Wrath, Quick Sun Crystal / Burning Crusade, random-stat items only
+	{L.HasteClassic, "HasteRating"}, -- Classic SoD, /pawn compare 236019
 	{L.SpellHasteRating, "SpellHasteRating"}, -- /pawn compare 34360
 	{L.SpellHasteRatingShort, "SpellHasteRating"}, -- https://tbc.wowhead.com/item=35315/quick-dawnstone
+	{L.SpellHasteClassic, "SpellHasteRating"}, -- Classic SoD, /pawn compare 236062
 	{L.SpellPenetration, "SpellPenetration"}, -- Burning Crusade, /pawn compare 21563
 	{L.SpellPenetrationClassic, "SpellPenetration"}, -- Classic (pre-TBC), /pawn compare 21338
 	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, https://tbc.wowhead.com/item=24039/stormy-star-of-elune

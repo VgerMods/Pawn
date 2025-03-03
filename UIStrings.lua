@@ -44,10 +44,10 @@ local PawnStatsUnfiltered =
 	{ITEM_MOD_HIT_SPELL_RATING_SHORT, "SpellHitRating", L.SpellHitInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
 	{L.Crit, "CritRating", L.CritInfo},
 	{ITEM_MOD_CRIT_SPELL_RATING_SHORT, "SpellCritRating", L.SpellCritInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
-	{STAT_HASTE, "HasteRating", L.HasteInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true, PawnStatMainline = true }},
-	{ITEM_MOD_HASTE_SPELL_RATING_SHORT or (STAT_HASTE .. " (" .. PLAYERSTAT_SPELL_COMBAT .. ")"), "SpellHasteRating", L.HasteInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true }},
+	{STAT_HASTE, "HasteRating", L.HasteInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true, PawnStatMainline = true }}, -- Classic is SoD only
+	{ITEM_MOD_HASTE_SPELL_RATING_SHORT or (STAT_HASTE .. " (" .. PLAYERSTAT_SPELL_COMBAT .. ")"), "SpellHasteRating", L.HasteInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }}, -- Classic is SoD only
 	{ITEM_MOD_ARMOR_PENETRATION_RATING_SHORT, "ArmorPenetration", L.ArmorPenetrationInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true }},
-	{ITEM_MOD_EXPERTISE_RATING_SHORT, "ExpertiseRating", L.ExpertiseInfo, PawnStatNormal, nil, { PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true }},
+	{ITEM_MOD_EXPERTISE_RATING_SHORT, "ExpertiseRating", L.ExpertiseInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true }}, -- Classic is SoD only
 	{ITEM_MOD_SPELL_PENETRATION_SHORT, "SpellPenetration", L.SpellPenetrationInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true }},
 	{STAT_MASTERY, "MasteryRating", L.MasteryInfo, PawnStatNormal, nil, { PawnStatCataclysm = true, PawnStatMainline = true }},
 	{STAT_VERSATILITY, "Versatility", L.VersatilityInfo, PawnStatNormal, nil, { PawnStatMainline = true }},
