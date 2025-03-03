@@ -1609,14 +1609,13 @@ function PawnUIGetAllTextForItem(Item)
 	Tooltip:SetHyperlink(ItemLink)
 
 	local NumLines = Tooltip:NumLines()
-	local i
 	local AllText = ""
 	for i = 1, NumLines do
 		local LeftLine = _G[PawnPrivateTooltipName .. "TextLeft" .. i]
-		AllText = AllText .. LeftLine:GetText() .. "\n"
+		AllText = AllText .. PawnEscapeString(LeftLine:GetText() or "") .. "\n"
 		local RightLine = _G[PawnPrivateTooltipName .. "TextRight" .. i]
 		if RightLine then
-			local RightText = RightLine:GetText()
+			local RightText = PawnEscapeString(RightLine:GetText() or "")
 			if RightText and RightText ~= "" then
 				AllText = AllText .. "    " .. RightText .. "\n"
 			end
