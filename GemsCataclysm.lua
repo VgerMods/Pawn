@@ -40,7 +40,7 @@ local PawnGemData60Common =
 
 { ID = 28463, B = true, Stats = { Stamina = 6 } }, -- Solid Zircon
 { ID = 28464, B = true, Stats = { Spirit = 4 } }, -- Sparkling Zircon
-{ ID = 28468, Y = true, Stats = { HitRating = 4 } }, -- Rigid Zircon
+{ ID = 28468, B = true, Stats = { HitRating = 4 } }, -- Rigid Zircon
 
 
 }
