@@ -717,8 +717,8 @@ elseif VgerCore.IsWrath then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 elseif VgerCore.IsCataclysm then
-	PawnLocal.ThousandsSeparator = "-"
-	PawnLocal.DecimalSeparator = "."
+	PawnLocal.ThousandsSeparator = " "
+	PawnLocal.DecimalSeparator = ","
 end
 
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
