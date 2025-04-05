@@ -2211,6 +2211,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 		-- Look for this line in the "kill lines" list.  If it's there, we're done.
 		local IsKillLine = false
 		-- Dirty, dirty hack for artifacts: check the color of the text; if it's artifact gold and it's not at the beginning of the tooltip, then treat it as a kill line.
+		-- REVIEW: This might not work anymore as of WoW 11.5.0 after the addition of custom item quality colors.
 		if i > ItemNameLineNumber + 2 and strfind(LeftLineText, "|cFFE6CC80", 1, true) == 1 then
 			IsKillLine = true
 		end
@@ -2957,6 +2958,10 @@ end
 function PawnGetHyperlinkTarget(Hyperlink)
 	-- First, try colored links.
 	local _, _, Target = strfind(Hyperlink, "^|c%x%x%x%x%x%x%x%x|H(.-)|")
+	if not Target then
+		-- Try custom item color links (new in WoW 11.5.0).
+		_, _, Target = strfind(Hyperlink, "^|cn[^:]+:|H(.-)|")
+	end
 	if not Target then
 		-- Then, try links prepended with |H but no color.  (Outfitter does this.)
 		_, _, Target = strfind(Hyperlink, "^|H(.-)|")

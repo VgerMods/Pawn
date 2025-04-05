@@ -1622,7 +1622,12 @@ function PawnUIGetAllTextForItem(Item)
 		end
 	end
 
-	AllText = AllText .. "\n" .. GetBuildInfo() .. " " .. GetLocale() .. "\n/pawn compare " .. PawnGetItemIDsForDisplay(ItemLink, false)
+	local DisplayIDs = PawnGetItemIDsForDisplay(ItemLink, false)
+	if DisplayIDs then
+		AllText = AllText .. "\n" .. GetBuildInfo() .. " " .. GetLocale() .. "\n/pawn compare " .. DisplayIDs
+	else
+		VgerCore.Fail("Failed to find the item IDs in " .. PawnEscapeString(ItemLink))
+	end
 
 	local ItemName
 	if Item then
@@ -2311,13 +2316,15 @@ end
 function PawnUI_LootUpgradeAdvisor_OnLoad(self)
 	self:SetFrameLevel(self:GetParent():GetFrameLevel() + 8)
 
+	-- WoW 11.5.0 changed the capitalization of Arrow and Glow so we have to be able to handle both
+	local Arrow = self.arrow.Arrow or self.arrow.arrow or _G[self.arrow:GetName() .. "Arrow"]
+	local Glow = self.arrow.Glow or self.arrow.glow or _G[self.arrow:GetName() .. "Glow"]
+
 	self.arrow:SetSize(21, 53)
-	self.arrow.arrow = _G[self.arrow:GetName() .. "Arrow"]
-	self.arrow.glow = _G[self.arrow:GetName() .. "Glow"]
-	self.arrow.arrow:SetAllPoints(true)
-	self.arrow.glow:SetAllPoints(true)
-	self.arrow.arrow:SetTexCoord(0.78515625, 0.58789063, 0.99218750, 0.58789063, 0.78515625, 0.54687500, 0.99218750, 0.54687500)
-	self.arrow.glow:SetTexCoord(0.40625000, 0.82812500, 0.66015625, 0.82812500, 0.40625000, 0.77343750, 0.66015625, 0.77343750)
+	Arrow:SetAllPoints(true)
+	Glow:SetAllPoints(true)
+	Arrow:SetTexCoord(0.78515625, 0.58789063, 0.99218750, 0.58789063, 0.78515625, 0.54687500, 0.99218750, 0.54687500)
+	Glow:SetTexCoord(0.40625000, 0.82812500, 0.66015625, 0.82812500, 0.40625000, 0.77343750, 0.66015625, 0.77343750)
 end
 
 function PawnUI_GroupLootFrame_OnShow(self)
