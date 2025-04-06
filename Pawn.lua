@@ -3020,10 +3020,13 @@ end
 
 -- Returns a nice-looking string that shows the item IDs for an item, its enchantments, and its gems.
 function PawnGetItemIDsForDisplay(ItemLink, Formatted)
-	local Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|%x+|Hitem:(%-?%d+)([^|]+)|")
+	local Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|cn[^:]+:|Hitem:(%-?%d+)([^|]+)|")
+	if not Pos then
+		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^|%x+|Hitem:(%-?%d+)([^|]+)|")
 	if not Pos then
 		Pos, _, ItemID, MoreInfo = strfind(ItemLink, "^item:(%-?%d+)(:?.*)")
 		if not Pos then return end
+		end
 	end
 
 	if MoreInfo then
