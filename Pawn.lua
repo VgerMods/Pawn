@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1013
+PawnVersion = 2.1014
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.18
