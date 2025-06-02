@@ -17,9 +17,9 @@ local L
 -- For conciseness
 L = PawnLocal.Stats
 
-local PawnStatNormal = 1
-local PawnStatUnignorable = 2
-local PawnStatItemType = 3
+PawnStatNormal = 1
+PawnStatUnignorable = 2
+PawnStatItemType = 3
 
 -- The master list of all stats that Pawn supports.
 -- First column is the friendly translated name of the stat.
