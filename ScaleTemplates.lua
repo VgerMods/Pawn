@@ -515,7 +515,7 @@ PawnScaleTemplates =
 	["Role"] = "DAMAGER",
 	["PrimaryStat"] = "Strength",
 	["HideUpgrades"] = 1, -- Hide 1H upgrades
-	["UnusableStats"] = { "IsFrill", "IsBow", "IsCrossbow", "IsGun" }
+	["UnusableStats"] = { "IsFrill", "IsBow", "IsCrossbow", "IsGun", "IsOffHand" }
 },
 
 {
