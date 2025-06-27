@@ -2116,7 +2116,9 @@ function PawnUIAboutTabPage_OnShow()
 		-- WoW Classic doesn't use the Mr. Robot scales, so hide that logo and information.
 		PawnUIFrame_MrRobotLogo:Hide()
 		PawnUIFrame_MrRobotLabel:SetPoint("TOPLEFT", 25, -210)
-		if VgerCore.IsCataclysm or VgerCore.IsMists then
+		if VgerCore.IsMists then
+			PawnUIFrame_MrRobotLabel:SetText("Special thanks to Wowhead for providing the stat weights used in the starter scales.")
+		elseif VgerCore.IsCataclysm then
 			PawnUIFrame_MrRobotLabel:SetText("Default stat weights are based on the work of the WoWSims team. You can get more accurate, customized stat weights for your character by using the simulator at wowsims.github.io.")
 		else
 			PawnUIFrame_MrRobotLabel:SetText("Special thanks to HawsJon for collecting the stat weights used in the starter scales.")
