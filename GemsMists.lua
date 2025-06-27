@@ -3,11 +3,11 @@
 -- © 2006-2025 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
 --
--- Gem information (Cataclysm Classic)
+-- Gem information (Mists of Pandaria Classic)
 ------------------------------------------------------------
 
 
-if VgerCore.IsCataclysm then
+if VgerCore.IsMists then
 
 
 --========================================
@@ -971,10 +971,312 @@ PawnMetaGemData85Rare =
 
 
 --========================================
+-- Colored level 90 uncommon-quality gems
+--========================================
+local PawnGemData90Uncommon =
+{
+
+
+------------------------------------------------------------
+-- Red gems
+------------------------------------------------------------
+
+{ ID = 76560, R = true, Stats = { Agility = 120 } }, -- Delicate Pandarian Garnet
+{ ID = 76561, R = true, Stats = { ExpertiseRating = 240 } }, -- Precise Pandarian Garnet
+{ ID = 76562, R = true, Stats = { Intellect = 120 } }, -- Brilliant Pandarian Garnet
+{ ID = 76563, R = true, Stats = { ParryRating = 240 } }, -- Flashing Pandarian Garnet
+{ ID = 76564, R = true, Stats = { Strength = 120 } }, -- Bold Pandarian Garnet
+
+
+------------------------------------------------------------
+-- Orange gems
+------------------------------------------------------------
+
+{ ID = 76526, R = true, Y = true, Stats = { CritRating = 120, Agility = 60 } }, -- Deadly Tiger Opal
+{ ID = 76527, R = true, Y = true, Stats = { ExpertiseRating = 120, CritRating = 120 } }, -- Crafty Tiger Opal
+{ ID = 76528, R = true, Y = true, Stats = { Intellect = 60, CritRating = 120 } }, -- Potent Tiger Opal
+{ ID = 76529, R = true, Y = true, Stats = { Strength = 60, CritRating = 120 } }, -- Inscribed Tiger Opal
+{ ID = 76530, R = true, Y = true, Stats = { DodgeRating = 120, Agility = 60 } }, -- Polished Tiger Opal
+{ ID = 76531, R = true, Y = true, Stats = { ExpertiseRating = 120, DodgeRating = 120 } }, -- Resolute Tiger Opal
+{ ID = 76532, R = true, Y = true, Stats = { DodgeRating = 120, ParryRating = 120 } }, -- Stalwart Tiger Opal
+{ ID = 76533, R = true, Y = true, Stats = { Strength = 60, DodgeRating = 120 } }, -- Champion's Tiger Opal
+{ ID = 76534, R = true, Y = true, Stats = { HasteRating = 120, Agility = 60 } }, -- Deft Tiger Opal
+{ ID = 76535, R = true, Y = true, Stats = { ExpertiseRating = 120, HasteRating = 120 } }, -- Wicked Tiger Opal
+{ ID = 76536, R = true, Y = true, Stats = { Intellect = 60, HasteRating = 120 } }, -- Reckless Tiger Opal
+{ ID = 76537, R = true, Y = true, Stats = { Strength = 60, HasteRating = 120 } }, -- Fierce Tiger Opal
+{ ID = 76538, R = true, Y = true, Stats = { MasteryRating = 120, Agility = 60 } }, -- Adept Tiger Opal
+{ ID = 76539, R = true, Y = true, Stats = { ExpertiseRating = 120, MasteryRating = 120 } }, -- Keen Tiger Opal
+{ ID = 76540, R = true, Y = true, Stats = { Intellect = 60, MasteryRating = 120 } }, -- Artful Tiger Opal
+{ ID = 76541, R = true, Y = true, Stats = { MasteryRating = 120, ParryRating = 120 } }, -- Fine Tiger Opal
+{ ID = 76542, R = true, Y = true, Stats = { Strength = 60, MasteryRating = 120 } }, -- Skillful Tiger Opal
+{ ID = 76543, R = true, Y = true, Stats = { ResilienceRating = 60, Agility = 60 } }, -- Lucent Tiger Opal
+{ ID = 76544, R = true, Y = true, Stats = { ExpertiseRating = 120, ResilienceRating = 60 } }, -- Tenuous Tiger Opal
+{ ID = 76545, R = true, Y = true, Stats = { Intellect = 60, ResilienceRating = 60 } }, -- Willful Tiger Opal
+{ ID = 76546, R = true, Y = true, Stats = { ResilienceRating = 60, ParryRating = 120 } }, -- Splendid Tiger Opal
+{ ID = 76547, R = true, Y = true, Stats = { Strength = 60, ResilienceRating = 60 } }, -- Resplendent Tiger Opal
+
+
+------------------------------------------------------------
+-- Yellow gems
+------------------------------------------------------------
+
+{ ID = 76565, Y = true, Stats = { CritRating = 240 } }, -- Smooth Sunstone
+{ ID = 76566, Y = true, Stats = { DodgeRating = 240 } }, -- Subtle Sunstone
+{ ID = 76567, Y = true, Stats = { HasteRating = 240 } }, -- Quick Sunstone
+{ ID = 76568, Y = true, Stats = { MasteryRating = 240 } }, -- Fractured Sunstone
+{ ID = 76569, Y = true, Stats = { ResilienceRating = 120 } }, -- Mystic Sunstone
+
+
+------------------------------------------------------------
+-- Green gems
+------------------------------------------------------------
+
+{ ID = 76507, Y = true, B = true, Stats = { Spirit = 120, CritRating = 120 } }, -- Misty Alexandrite
+{ ID = 76508, Y = true, B = true, Stats = { CritRating = 120, HitRating = 120 } }, -- Piercing Alexandrite
+{ ID = 76509, Y = true, B = true, Stats = { HasteRating = 120, HitRating = 120 } }, -- Lightning Alexandrite
+{ ID = 76510, Y = true, B = true, Stats = { HitRating = 120, MasteryRating = 120 } }, -- Sensei's Alexandrite
+{ ID = 76511, Y = true, B = true, Stats = { SpellPenetration = 60, MasteryRating = 120 } }, -- Effulgent Alexandrite
+{ ID = 76512, Y = true, B = true, Stats = { Spirit = 120, MasteryRating = 120 } }, -- Zen Alexandrite
+{ ID = 76513, Y = true, B = true, Stats = { HitRating = 120, ResilienceRating = 60 } }, -- Balanced Alexandrite
+{ ID = 76514, Y = true, B = true, Stats = { SpellPenetration = 60, ResilienceRating = 60 } }, -- Vivid Alexandrite
+{ ID = 76515, Y = true, B = true, Stats = { Spirit = 120, ResilienceRating = 60 } }, -- Turbid Alexandrite
+{ ID = 76517, Y = true, B = true, Stats = { CritRating = 120, SpellPenetration = 60 } }, -- Radiant Alexandrite
+{ ID = 76518, Y = true, B = true, Stats = { HasteRating = 120, SpellPenetration = 60 } }, -- Shattered Alexandrite
+{ ID = 76519, Y = true, B = true, Stats = { HasteRating = 120, Spirit = 120 } }, -- Energized Alexandrite
+{ ID = 76520, Y = true, B = true, Stats = { CritRating = 120, Stamina = 90 } }, -- Jagged Alexandrite
+{ ID = 76521, Y = true, B = true, Stats = { DodgeRating = 120, Stamina = 90 } }, -- Regal Alexandrite
+{ ID = 76522, Y = true, B = true, Stats = { HasteRating = 120, Stamina = 90 } }, -- Forceful Alexandrite
+{ ID = 76523, Y = true, B = true, Stats = { HitRating = 120, Stamina = 90 } }, -- Nimble Alexandrite
+{ ID = 76524, Y = true, B = true, Stats = { Stamina = 90, MasteryRating = 120 } }, -- Puissant Alexandrite
+{ ID = 76525, Y = true, B = true, Stats = { Stamina = 90, ResilienceRating = 60 } }, -- Steady Alexandrite
+
+
+------------------------------------------------------------
+-- Blue gems
+------------------------------------------------------------
+
+{ ID = 76502, B = true, Stats = { HitRating = 240 } }, -- Rigid Lapis Lazuli
+{ ID = 76504, B = true, Stats = { SpellPenetration = 120 } }, -- Stormy Lapis Lazuli
+{ ID = 76505, B = true, Stats = { Spirit = 240 } }, -- Sparkling Lapis Lazuli
+{ ID = 76506, B = true, Stats = { Stamina = 180 } }, -- Solid Lapis Lazuli
+
+
+------------------------------------------------------------
+-- Purple gems
+------------------------------------------------------------
+
+{ ID = 76548, R = true, B = true, Stats = { HitRating = 120, Agility = 60 } }, -- Glinting Roguestone
+{ ID = 76549, R = true, B = true, Stats = { ExpertiseRating = 120, HitRating = 120 } }, -- Accurate Roguestone
+{ ID = 76550, R = true, B = true, Stats = { Intellect = 60, HitRating = 120 } }, -- Veiled Roguestone
+{ ID = 76551, R = true, B = true, Stats = { HitRating = 120, ParryRating = 120 } }, -- Retaliating Roguestone
+{ ID = 76552, R = true, B = true, Stats = { Strength = 60, HitRating = 120 } }, -- Etched Roguestone
+{ ID = 76553, R = true, B = true, Stats = { Intellect = 60, SpellPenetration = 60 } }, -- Mysterious Roguestone
+{ ID = 76554, R = true, B = true, Stats = { Intellect = 60, Spirit = 120 } }, -- Purified Roguestone
+{ ID = 76555, R = true, B = true, Stats = { Stamina = 90, Agility = 60 } }, -- Shifting Roguestone
+{ ID = 76556, R = true, B = true, Stats = { ExpertiseRating = 120, Stamina = 90 } }, -- Guardian's Roguestone
+{ ID = 76557, R = true, B = true, Stats = { Intellect = 60, Stamina = 90 } }, -- Timeless Roguestone
+{ ID = 76558, R = true, B = true, Stats = { Stamina = 90, ParryRating = 120 } }, -- Defender's Roguestone
+{ ID = 76559, R = true, B = true, Stats = { Strength = 60, Stamina = 90 } }, -- Sovereign Roguestone
+{ ID = 89675, R = true, B = true, Stats = { Strength = 60, SpellPenetration = 60 } }, -- Tense Roguestone
+{ ID = 89678, R = true, B = true, Stats = { Agility = 60, SpellPenetration = 60 } }, -- Assassin's Roguestone
+
+
+}
+
+
+--========================================
+-- Colored level 90 rare-quality gems
+--========================================
+local PawnGemData90Rare =
+{
+
+
+------------------------------------------------------------
+-- Red gems
+------------------------------------------------------------
+
+{ ID = 76692, R = true, Stats = { Agility = 160 } }, -- Delicate Primordial Ruby
+{ ID = 76693, R = true, Stats = { ExpertiseRating = 320 } }, -- Precise Primordial Ruby
+{ ID = 76694, R = true, Stats = { Intellect = 160 } }, -- Brilliant Primordial Ruby
+{ ID = 76695, R = true, Stats = { ParryRating = 320 } }, -- Flashing Primordial Ruby
+{ ID = 76696, R = true, Stats = { Strength = 160 } }, -- Bold Primordial Ruby
+
+
+------------------------------------------------------------
+-- Orange gems
+------------------------------------------------------------
+
+{ ID = 76658, R = true, Y = true, Stats = { CritRating = 160, Agility = 80 } }, -- Deadly Vermilion Onyx
+{ ID = 76659, R = true, Y = true, Stats = { ExpertiseRating = 160, CritRating = 160 } }, -- Crafty Vermilion Onyx
+{ ID = 76660, R = true, Y = true, Stats = { Intellect = 80, CritRating = 160 } }, -- Potent Vermilion Onyx
+{ ID = 76661, R = true, Y = true, Stats = { Strength = 80, CritRating = 160 } }, -- Inscribed Vermilion Onyx
+{ ID = 76662, R = true, Y = true, Stats = { DodgeRating = 160, Agility = 80 } }, -- Polished Vermilion Onyx
+{ ID = 76663, R = true, Y = true, Stats = { ExpertiseRating = 160, DodgeRating = 160 } }, -- Resolute Vermilion Onyx
+{ ID = 76664, R = true, Y = true, Stats = { DodgeRating = 160, ParryRating = 160 } }, -- Stalwart Vermilion Onyx
+{ ID = 76665, R = true, Y = true, Stats = { Strength = 80, DodgeRating = 160 } }, -- Champion's Vermilion Onyx
+{ ID = 76666, R = true, Y = true, Stats = { HasteRating = 160, Agility = 80 } }, -- Deft Vermilion Onyx
+{ ID = 76667, R = true, Y = true, Stats = { ExpertiseRating = 160, HasteRating = 160 } }, -- Wicked Vermilion Onyx
+{ ID = 76668, R = true, Y = true, Stats = { Intellect = 80, HasteRating = 160 } }, -- Reckless Vermilion Onyx
+{ ID = 76669, R = true, Y = true, Stats = { Strength = 80, HasteRating = 160 } }, -- Fierce Vermilion Onyx
+{ ID = 76670, R = true, Y = true, Stats = { MasteryRating = 160, Agility = 80 } }, -- Adept Vermilion Onyx
+{ ID = 76671, R = true, Y = true, Stats = { ExpertiseRating = 160, MasteryRating = 160 } }, -- Keen Vermilion Onyx
+{ ID = 76672, R = true, Y = true, Stats = { Intellect = 80, MasteryRating = 160 } }, -- Artful Vermilion Onyx
+{ ID = 76673, R = true, Y = true, Stats = { MasteryRating = 160, ParryRating = 160 } }, -- Fine Vermilion Onyx
+{ ID = 76674, R = true, Y = true, Stats = { Strength = 80, MasteryRating = 160 } }, -- Skillful Vermilion Onyx
+{ ID = 76675, R = true, Y = true, Stats = { ResilienceRating = 80, Agility = 80 } }, -- Lucent Vermilion Onyx
+{ ID = 76676, R = true, Y = true, Stats = { ExpertiseRating = 160, ResilienceRating = 80 } }, -- Tenuous Vermilion Onyx
+{ ID = 76677, R = true, Y = true, Stats = { Intellect = 80, ResilienceRating = 80 } }, -- Willful Vermilion Onyx
+{ ID = 76678, R = true, Y = true, Stats = { ResilienceRating = 80, ParryRating = 160 } }, -- Splendid Vermilion Onyx
+{ ID = 76679, R = true, Y = true, Stats = { Strength = 80, ResilienceRating = 80 } }, -- Resplendent Vermilion Onyx
+
+
+------------------------------------------------------------
+-- Yellow gems
+------------------------------------------------------------
+
+{ ID = 76697, Y = true, Stats = { CritRating = 320 } }, -- Smooth Sun's Radiance
+{ ID = 76698, Y = true, Stats = { DodgeRating = 320 } }, -- Subtle Sun's Radiance
+{ ID = 76699, Y = true, Stats = { HasteRating = 320 } }, -- Quick Sun's Radiance
+{ ID = 76700, Y = true, Stats = { MasteryRating = 320 } }, -- Fractured Sun's Radiance
+{ ID = 76701, Y = true, Stats = { ResilienceRating = 160 } }, -- Mystic Sun's Radiance
+
+
+------------------------------------------------------------
+-- Green gems
+------------------------------------------------------------
+
+{ ID = 76640, Y = true, B = true, Stats = { Spirit = 160, CritRating = 160 } }, -- Misty Wild Jade
+{ ID = 76641, Y = true, B = true, Stats = { CritRating = 160, HitRating = 160 } }, -- Piercing Wild Jade
+{ ID = 76642, Y = true, B = true, Stats = { HasteRating = 160, HitRating = 160 } }, -- Lightning Wild Jade
+{ ID = 76643, Y = true, B = true, Stats = { HitRating = 160, MasteryRating = 160 } }, -- Sensei's Wild Jade
+{ ID = 76644, Y = true, B = true, Stats = { SpellPenetration = 80, MasteryRating = 160 } }, -- Effulgent Wild Jade
+{ ID = 76645, Y = true, B = true, Stats = { Spirit = 160, MasteryRating = 160 } }, -- Zen Wild Jade
+{ ID = 76646, Y = true, B = true, Stats = { HitRating = 160, ResilienceRating = 80 } }, -- Balanced Wild Jade
+{ ID = 76647, Y = true, B = true, Stats = { SpellPenetration = 80, ResilienceRating = 80 } }, -- Vivid Wild Jade
+{ ID = 76648, Y = true, B = true, Stats = { Spirit = 160, ResilienceRating = 80 } }, -- Turbid Wild Jade
+{ ID = 76649, Y = true, B = true, Stats = { CritRating = 160, SpellPenetration = 80 } }, -- Radiant Wild Jade
+{ ID = 76650, Y = true, B = true, Stats = { HasteRating = 160, SpellPenetration = 80 } }, -- Shattered Wild Jade
+{ ID = 76651, Y = true, B = true, Stats = { HasteRating = 160, Spirit = 160 } }, -- Energized Wild Jade
+{ ID = 76652, Y = true, B = true, Stats = { CritRating = 160, Stamina = 120 } }, -- Jagged Wild Jade
+{ ID = 76653, Y = true, B = true, Stats = { DodgeRating = 160, Stamina = 120 } }, -- Regal Wild Jade
+{ ID = 76654, Y = true, B = true, Stats = { HasteRating = 160, Stamina = 120 } }, -- Forceful Wild Jade
+{ ID = 76655, Y = true, B = true, Stats = { HitRating = 160, Stamina = 120 } }, -- Nimble Wild Jade
+{ ID = 76656, Y = true, B = true, Stats = { Stamina = 120, MasteryRating = 160 } }, -- Puissant Wild Jade
+{ ID = 76657, Y = true, B = true, Stats = { Stamina = 120, ResilienceRating = 80 } }, -- Steady Wild Jade
+
+
+------------------------------------------------------------
+-- Blue gems
+------------------------------------------------------------
+
+{ ID = 76636, B = true, Stats = { HitRating = 320 } }, -- Rigid River's Heart
+{ ID = 76637, B = true, Stats = { SpellPenetration = 160 } }, -- Stormy River's Heart
+{ ID = 76638, B = true, Stats = { Spirit = 320 } }, -- Sparkling River's Heart
+{ ID = 76639, B = true, Stats = { Stamina = 240 } }, -- Solid River's Heart
+
+
+------------------------------------------------------------
+-- Purple gems
+------------------------------------------------------------
+
+{ ID = 76680, R = true, B = true, Stats = { HitRating = 160, Agility = 80 } }, -- Glinting Imperial Amethyst
+{ ID = 76681, R = true, B = true, Stats = { ExpertiseRating = 160, HitRating = 160 } }, -- Accurate Imperial Amethyst
+{ ID = 76682, R = true, B = true, Stats = { Intellect = 80, HitRating = 160 } }, -- Veiled Imperial Amethyst
+{ ID = 76683, R = true, B = true, Stats = { HitRating = 160, ParryRating = 160 } }, -- Retaliating Imperial Amethyst
+{ ID = 76684, R = true, B = true, Stats = { Strength = 80, HitRating = 160 } }, -- Etched Imperial Amethyst
+{ ID = 76685, R = true, B = true, Stats = { Intellect = 80, SpellPenetration = 80 } }, -- Mysterious Imperial Amethyst
+{ ID = 76686, R = true, B = true, Stats = { Intellect = 80, Spirit = 160 } }, -- Purified Imperial Amethyst
+{ ID = 76687, R = true, B = true, Stats = { Stamina = 120, Agility = 80 } }, -- Shifting Imperial Amethyst
+{ ID = 76688, R = true, B = true, Stats = { ExpertiseRating = 160, Stamina = 120 } }, -- Guardian's Imperial Amethyst
+{ ID = 76689, R = true, B = true, Stats = { Intellect = 80, Stamina = 120 } }, -- Timeless Imperial Amethyst
+{ ID = 76690, R = true, B = true, Stats = { Stamina = 120, ParryRating = 160 } }, -- Defender's Imperial Amethyst
+{ ID = 76691, R = true, B = true, Stats = { Strength = 80, Stamina = 120 } }, -- Sovereign Imperial Amethyst
+{ ID = 89674, R = true, B = true, Stats = { Strength = 80, SpellPenetration = 80 } }, -- Tense Imperial Amethyst
+
+
+}
+
+
+--========================================
+-- Level 90 rare-quality cogwheels
+--========================================
+local PawnCogwheelData90Rare =
+{
+
+
+------------------------------------------------------------
+-- Cogwheels
+------------------------------------------------------------
+
+{ ID = 77540, Stats = { DodgeRating = 567 } }, -- Subtle Tinker's Gear
+{ ID = 77541, Stats = { CritRating = 567 } }, -- Smooth Tinker's Gear
+{ ID = 77542, Stats = { HasteRating = 567 } }, -- Quick Tinker's Gear
+{ ID = 77543, Stats = { ExpertiseRating = 567 } }, -- Precise Tinker's Gear
+{ ID = 77544, Stats = { ParryRating = 567 } }, -- Flashing Tinker's Gear
+{ ID = 77545, Stats = { HitRating = 567 } }, -- Rigid Tinker's Gear
+{ ID = 77546, Stats = { Spirit = 567 } }, -- Sparkling Tinker's Gear
+{ ID = 77547, Stats = { MasteryRating = 567 } }, -- Fractured Tinker's Gear
+
+
+}
+
+
+--========================================
+-- Level 90 legendary-quality crystals of fear
+--========================================
+local PawnCrystalOfFearData90Legendary =
+{
+
+
+------------------------------------------------------------
+-- Crystals of Fear
+------------------------------------------------------------
+
+{ ID = 89873, Stats = { Agility = 500 } }, -- Crystallized Dread
+{ ID = 89881, Stats = { Strength = 500 } }, -- Crystallized Terror
+{ ID = 89882, Stats = { Intellect = 500 } }, -- Crystallized Horror
+
+
+}
+
+
+--========================================
+-- Level 90 crafted meta gems
+--========================================
+local PawnMetaGemData90Rare =
+{
+
+
+------------------------------------------------------------
+-- Meta gems: Primal
+------------------------------------------------------------
+
+{ ID = 76879, Stats = { Intellect = 216, MetaSocketEffect = 1 } }, -- Ember Primal Diamond
+{ ID = 76884, Stats = { MetaSocketEffect = 1, Agility = 216 } }, -- Agile Primal Diamond
+{ ID = 76885, Stats = { Intellect = 216, MetaSocketEffect = 1 } }, -- Burning Primal Diamond
+{ ID = 76886, Stats = { Strength = 216, MetaSocketEffect = 1 } }, -- Reverberating Primal Diamond
+{ ID = 76887, Stats = { MetaSocketEffect = 1, MasteryRating = 432 } }, -- Fleet Primal Diamond
+{ ID = 76888, Stats = { Spirit = 432, MetaSocketEffect = 1 } }, -- Revitalizing Primal Diamond
+{ ID = 76890, Stats = { CritRating = 432, MetaSocketEffect = 1 } }, -- Destructive Primal Diamond
+{ ID = 76891, Stats = { Stamina = 324, MetaSocketEffect = 1 } }, -- Powerful Primal Diamond
+{ ID = 76892, Stats = { CritRating = 432, MetaSocketEffect = 1 } }, -- Enigmatic Primal Diamond
+{ ID = 76893, Stats = { CritRating = 432, MetaSocketEffect = 1 } }, -- Impassive Primal Diamond
+{ ID = 76894, Stats = { Intellect = 216, MetaSocketEffect = 1 } }, -- Forlorn Primal Diamond
+{ ID = 76895, Stats = { Stamina = 324, MetaSocketEffect = 1 } }, -- Austere Primal Diamond
+{ ID = 76896, Stats = { DodgeRating = 432, MetaSocketEffect = 1 } }, -- Eternal Primal Diamond
+{ ID = 76897, Stats = { Stamina = 324, MetaSocketEffect = 1 } }, -- Effulgent Primal Diamond
+
+
+}
+
+
+--========================================
 
 
 PawnGemQualityLevels =
 {
+	{ 463, PawnGemData90Rare }, -- Mists of Pandaria heroics
+	{ 417, PawnGemData90Uncommon }, -- Actual gem requirement
 	{ 397, PawnGemData85Epic }, -- Dragon Soul Normal gear
 	{ 346, PawnGemData85Rare }, -- Level 85 heroic gear
 	{ 315, PawnGemData85Uncommon }, -- Level 81 dungeons
@@ -989,6 +1291,7 @@ PawnGemQualityLevels =
 
 PawnMetaGemQualityLevels =
 {
+	{ 417, PawnMetaGemData90Rare },
 	{ 346, PawnMetaGemData85Rare },
 	{ 200, PawnMetaGemData80Rare },
 	{ 0, PawnMetaGemData70Rare },
@@ -996,9 +1299,15 @@ PawnMetaGemQualityLevels =
 
 PawnCogwheelQualityLevels =
 {
-	{ 0, PawnCogwheelData85Rare },
+	{ 417, PawnCogwheelData90Rare }, -- Actual gem requirement; Ghost Iron Dragonling is 450
+	{ 0, PawnCogwheelData85Rare }, -- Bio-Optic Killshades
 }
 
-PawnMinimumItemLevelToConsiderGems = 315 -- 187 during pre-patch; 315 at launch
+-- PawnCrystalOfFearQualityLevels =
+-- {
+-- 	{ 0, PawnCrystalOfFearData90Legendary }, -- Kri'tak
+-- }
 
-end -- if VgerCore.IsCataclysm
+PawnMinimumItemLevelToConsiderGems = 346 -- 346 during pre-patch; 417 at launch
+
+end -- if VgerCore.IsMists

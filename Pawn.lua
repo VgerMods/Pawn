@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1015
+PawnVersion = 2.1100
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.18
@@ -752,7 +752,7 @@ function PawnInitializeOptions()
 		PawnCommon.ShowReforgingAdvisor = true
 	end
 	if ((VgerCore.IsMainline) and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
-		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
+		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
 		-- If the Ask Mr. Robot scales have been updated since the last time they used Pawn, re-scan gear.
 		PawnInvalidateBestItems()
 	end
@@ -1243,7 +1243,7 @@ function PawnRecalculateScaleTotal(ScaleName)
 	end
 
 	-- Now cogwheels.
-	if VgerCore.IsCataclysm then -- or Pandaria
+	if VgerCore.IsCataclysm or VgerCore.IsMists then
 		for _, QualityLevelData in pairs(PawnCogwheelQualityLevels) do
 			local ItemLevel = QualityLevelData[1]
 			local GemData = QualityLevelData[2]
@@ -2368,7 +2368,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 		Stats["IsRanged"] = 1
 	end
 
-	if VgerCore.IsCataclysm then
+	if VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor then
 		if Stats["Rap"] then
 			-- In Cataclysm, ranged attack power is essentially gone, though it still appears on a few items like Rhok'delar (18713) and some PVP weapons.
 			-- Treat all types of attack power the same until Legion, when attack power was removed entirely.
@@ -3233,14 +3233,16 @@ function PawnCorrectScaleErrors(ScaleName)
 	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.SpellPenetration = nil
 		ThisScale.IsRelic = nil
-		ThisScale.ExpertiseRating = nil
 	end
-	if not (VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
+	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) then
+		ThisScale.ExpertiseRating = nil
+		ThisScale.HitRating = nil
+		ThisScale.SpellHitRating = nil
+	end
+	if not (VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) then
 		ThisScale.ResilienceRating = nil
 	end
-
-	-- Spell power appeared in Wrath but disappeared again later.
-	if not (VgerCore.IsWrath or VgerCore.IsCataclysm) then
+	if not (VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor) then
 		ThisScale.SpellPower = nil
 	end
 
@@ -3261,7 +3263,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.DominationSocket = nil
 
 	-- Wrath Classic merges SpellDamage and Healing into SpellPower, and melee and spell ratings.
-	if VgerCore.IsWrath or VgerCore.IsCataclysm then
+	if VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsMainline then
 		PawnCombineStats(ThisScale, "SpellPower", "SpellDamage")
 		PawnCombineStats(ThisScale, "SpellPower", "Healing")
 		PawnCombineStats(ThisScale, "HitRating", "SpellHitRating")
@@ -3270,7 +3272,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	end
 
 	-- Cataclysm effectively eliminates ranged attack power and we consider them merged.
-	if VgerCore.IsCataclysm then
+	if VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsMainline then
 		PawnCombineStats(ThisScale, "Ap", "Rap")
 	end
 end
@@ -3963,7 +3965,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 					-- Getting the item link for an equipment set item is a pain in the ass...
 					local ItemLink
 					local IsOnPlayer, IsInBank, IsInBags, IsInVoidStorage, SetSlot, Bag, Tab, VoidSlot
-					if VgerCore.IsCataclysm then
+					if VgerCore.IsCataclysm or VgerCore.IsMists then
 						-- EquipmentManager_UnpackLocation in Cataclysm Classic removes IsInVoidStorage from the return values, shifting everything over.
 						IsOnPlayer, IsInBank, IsInBags, SetSlot, Bag, Tab, VoidSlot = EquipmentManager_UnpackLocation(Location)
 					else
@@ -4467,9 +4469,9 @@ function PawnOnSpecChanged()
 	if not PawnOptions.AutoSelectScales then return end
 
 	local _, _, ClassID = UnitClass("player")
-	local SpecID = GetSpecialization()
+	local SpecID = GetSpecialization and GetSpecialization() or GetPrimaryTalentTree()
 	-- If the player hasn't chosen a spec yet, choose one for them.
-	if SpecID == 5 then
+	if SpecID == nil or SpecID == 5 then
 		SpecID = PawnNewbieSpec[ClassID]
 	end
 

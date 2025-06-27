@@ -69,7 +69,7 @@ local PawnUIFrameNeedsScaleSelector = { true, true, true, true, false, false, fa
 function PawnUI_InventoryPawnButton_Move()
 	if PawnCommon.ButtonPosition == PawnButtonPositionRight then
 		PawnUI_InventoryPawnButton:ClearAllPoints()
-		if VgerCore.IsCataclysm or PaperDollFrame.ExpandButton then
+		if VgerCore.IsCataclysm or VgerCore.IsMists or PaperDollFrame.ExpandButton then
 			-- DejaCharacterStats compatibility
 			PawnUI_InventoryPawnButton:SetPoint("TOPRIGHT", "CharacterTrinket1Slot", "BOTTOMRIGHT", -25, -8)
 		else
@@ -2116,7 +2116,7 @@ function PawnUIAboutTabPage_OnShow()
 		-- WoW Classic doesn't use the Mr. Robot scales, so hide that logo and information.
 		PawnUIFrame_MrRobotLogo:Hide()
 		PawnUIFrame_MrRobotLabel:SetPoint("TOPLEFT", 25, -210)
-		if VgerCore.IsCataclysm then
+		if VgerCore.IsCataclysm or VgerCore.IsMists then
 			PawnUIFrame_MrRobotLabel:SetText("Default stat weights are based on the work of the WoWSims team. You can get more accurate, customized stat weights for your character by using the simulator at wowsims.github.io.")
 		else
 			PawnUIFrame_MrRobotLabel:SetText("Special thanks to HawsJon for collecting the stat weights used in the starter scales.")

@@ -23,17 +23,20 @@ PawnMultipleStatsExtract = "_MultipleExtract"
 
 local IsMainline = VgerCore.IsMainline
 
-if IsMainline then
+if IsMainline or VgerCore.IsLegion or VgerCore.IsBattle then
 	-- From Legion onward, there's no minimum level for wearing your class's best armor.
 	PawnBestArmorMinimumLevel = 0
-	-- From Cataclysm onward, armor specializations heavily penalize using the wrong armor type starting at level 50, changed to 27 in Shadowlands. https://wowpedia.fandom.com/wiki/Armor_Skills
-	PawnArmorSpecializationLevel = 27
-elseif VgerCore.IsCataclysm then
-	PawnBestArmorMinimumLevel = 40
-	PawnArmorSpecializationLevel = 50
 else
 	-- In Classic, the best armor for mail and plate classes wasn't available until level 40.
 	PawnBestArmorMinimumLevel = 40
+end
+
+if IsMainline  then
+	-- From Cataclysm onward, armor specializations heavily penalize using the wrong armor type starting at level 50, changed to 27 in Shadowlands. https://wowpedia.fandom.com/wiki/Armor_Skills
+	PawnArmorSpecializationLevel = 27
+elseif VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsBattle then
+	PawnArmorSpecializationLevel = 50
+else
 	PawnArmorSpecializationLevel = nil
 end
 

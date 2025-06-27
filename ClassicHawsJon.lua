@@ -651,7 +651,7 @@ function PawnClassicScaleProvider_AddScales()
 			MetaSocketEffect=35, }
 		)
 
-	elseif VgerCore.IsCataclysm then ------------------------------------------------------------
+	elseif VgerCore.IsCataclysm or VgerCore.IsMists then ------------------------------------------------------------
 
 		PawnAddPluginScaleFromTemplate(
 			ScaleProviderName,
@@ -908,7 +908,7 @@ end -- PawnClassicScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 	-- Scales for all versions of WoW Classic are in this file.
 	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.StarterProvider, PawnClassicScaleProvider_AddScales)
 else
