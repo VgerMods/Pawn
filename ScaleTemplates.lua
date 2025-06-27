@@ -44,6 +44,7 @@ function PawnGetStatValuesForTemplate(Template, NoStats)
 				["SpellCritRating"] = 1,
 				["HasteRating"] = 1,
 				["SpellHasteRating"] = 1,
+				["MasteryRating"] = 1,
 				["ExpertiseRating"] = 1,
 				["SpellPenetration"] = 1,
 				-- ["AxeRating"] = 1,
@@ -558,6 +559,11 @@ PawnScaleTemplatesClassic =
 {
 	["ClassID"] = 8, -- Mage
 	["PrimaryStats"] = { "Strength", "Agility", "Intellect", "Spirit" }
+},
+
+{
+	["ClassID"] = 10, -- Monk
+	["PrimaryStats"] = { "Agility", "Intellect", "Spirit" }
 },
 
 {
