@@ -13,6 +13,7 @@ env:
   BURNING_CRUSADE_VERSION: 20504
   WRATH_VERSION: 30403
   CATACLYSM_VERSION: 40402
+  PANDARIA_VERSION: 50500
 
 jobs:
   package:
@@ -82,6 +83,16 @@ jobs:
         zip -9 -r ${{steps.init.outputs.tag_name}}-Cataclysm.zip ${{steps.init.outputs.addon_name}}
         cd ..
 
+    - name: Replace TOC version for Mists of Pandaria
+      run: |
+        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.PANDARIA_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+
+    - name: Create Mists of Pandaria zip
+      run: |
+        cd .releases
+        zip -9 -r ${{steps.init.outputs.tag_name}}-Pandaria.zip ${{steps.init.outputs.addon_name}}
+        cd ..
+
     - name: Tag this version
       id: create_release
       uses: actions/create-release@v1
@@ -143,4 +154,13 @@ jobs:
         asset_path: .releases/${{steps.init.outputs.tag_name}}-Cataclysm.zip
         asset_name: ${{steps.init.outputs.tag_name}}-Cataclysm.zip
         asset_content_type: application/zip
-  
+
+    - name: Add Mists of Pandaria zip to release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .releases/${{steps.init.outputs.tag_name}}-Pandaria.zip
+        asset_name: ${{steps.init.outputs.tag_name}}-Pandaria.zip
+        asset_content_type: application/zip
