@@ -675,7 +675,6 @@ function PawnInitializeOptions()
 	PawnCommon.ShowSpace = nil
 
 	-- Remove any stale scales from previous versions that might have accumulated.
-	-- the user might have accumulated.
 	local ScalesToDelete = { }
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
 		if Scale.Provider == "PawnPlaceholder" or Scale.Provider == "Starter" or Scale.Provider == "Wowhead" then tinsert(ScalesToDelete, ScaleName) end
@@ -684,9 +683,6 @@ function PawnInitializeOptions()
 		PawnCommon.Scales[ScaleName] = nil
 		PawnRecalculateScaleTotal(ScaleName) -- removes information from the cache
 	end
-
-	-- And some more in WoW 7.1.
-	PawnCommon.IgnoreItemUpgrades = nil
 
 	-- Any new stuff since the last version they used?
 	if not PawnCommon.LastVersion then PawnCommon.LastVersion = 0 end
@@ -698,10 +694,6 @@ function PawnInitializeOptions()
 	if PawnCommon.LastVersion < 2.0000 then
 		-- The new "show spec icons" option is enabled by default.
 		PawnCommon.ShowSpecIcons = true
-	end
-	if PawnOptions.LastVersion < 2.0000 then
-		-- When upgrading each character to 2.0, turn on the auto-scale option, but just once.
-		PawnOptions.AutoSelectScales = true
 	end
 	if PawnCommon.LastVersion < 2.0101 then
 		-- The new Bag Upgrade Advisor is on by default, but it's not supported in Classic.
@@ -759,8 +751,15 @@ function PawnInitializeOptions()
 	PawnCommon.LastVersion = PawnVersion
 	PawnOptions.LastVersion = PawnVersion
 
-	-- Pawn on WoW Classic doesn't have Automatic mode.
-	if not VgerCore.SpecsExist then
+	-- Pawn didn't have Automatic mode on Classic until Mists of Pandaria Classic.
+	if VgerCore.SpecsExist then
+		-- Turn Automatic mode on once per character, the first time after logging in on a version of the game that supports it.
+		if not PawnOptions.AutoSelectScalesEnabledOnce then
+			PawnOptions.AutoSelectScales = true
+			PawnOptions.AutoSelectScalesEnabledOnce = true
+			PawnOnSpecChanged()
+		end
+	else
 		PawnOptions.AutoSelectScales = false
 	end
 
@@ -5445,6 +5444,10 @@ end
 -- Enables or disables the auto-scale feature.
 function PawnSetAutoSelectScales(Enable)
 	VgerCore.Assert(Enable ~= nil, "Enable parameter must be true or false.")
+	if (Enable and not VgerCore.SpecsExist) then
+		VgerCore.Fail("Automatic mode can't be enabled in this version of the game.")
+		return
+	end
 	if PawnOptions.AutoSelectScales == Enable then return end
 
 	PawnOptions.AutoSelectScales = Enable
