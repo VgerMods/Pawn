@@ -280,6 +280,7 @@ PawnRegexes =
 	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, https://tbc.wowhead.com/item=24039/stormy-star-of-elune
 	{L.Mastery, "MasteryRating"}, -- Zen Dream Emerald
 	{L.Mastery2, "MasteryRating"}, -- unused in English
+	{L.Multistrike, "Multistrike"},
 	{L.Versatility, "Versatility"}, -- http://wod.wowhead.com/item=100945
 	{L.Leech, "Leech"}, -- http://wod.wowhead.com/item=100945
 	{L.Avoidance, "Avoidance"}, -- http://wod.wowhead.com/item=100945
