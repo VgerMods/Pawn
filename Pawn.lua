@@ -1470,6 +1470,12 @@ function PawnGetItemData(ItemLink)
 			Item.Stats.MetaSocketEffect = Item.UnenchantedStats.MetaSocketEffect
 		end
 
+		-- Items that can be upgraded with an Eye of the Black Prince get an extra prismatic socket.
+		-- We can't do this in the PawnGetStatsFromTooltip because we don't have an item ID there, and we need that to determine if the Eye can be used.
+		if VgerCore.IsMists and Item.UnenchantedStats and PawnWrathionUpgradeableItems[Item.ID] then
+			PawnAddStatToTable(Item.UnenchantedStats, "PrismaticSocket", 1)
+		end
+
 		-- Enchanted items should not get points for empty sockets, nor do they get socket bonuses if there are any empty sockets.
 		if Item.Stats and (Item.Stats.PrismaticSocket or Item.Stats.RedSocket or Item.Stats.YellowSocket or Item.Stats.BlueSocket or Item.Stats.MetaSocket) then
 			PawnDebugMessage("")

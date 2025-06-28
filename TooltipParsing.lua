@@ -264,7 +264,7 @@ PawnRegexes =
 	{L.Resilience2, "ResilienceRating"}, -- unused in English
 	{L.ResilienceRating, "ResilienceRating"}, -- /pawn compare 29181
 	{L.ResilienceRatingShort, "ResilienceRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24053/mystic-dawnstone
-	{L.PvPPower, "Stamina"}, -- Stormy Chalcedony
+	{L.PvPPower, "SpellPenetration"}, -- Stormy Chalcedony, /pawn tooltip 39932
 	{L.EnchantmentCounterweight, "HasteRating"}, -- won't work on classic since the live string includes the word "haste" and it's worded differently in classic
 	{L.Haste, "HasteRating"}, -- Leggings of the Betrayed
 	{L.Haste2, "HasteRating"}, -- unused in English
