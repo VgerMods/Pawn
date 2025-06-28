@@ -1351,6 +1351,7 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	AddSockets("BlueSocket", BLUE_GEM)
 	AddSockets("MetaSocket", META_GEM)
 	AddSockets("CogwheelSocket", EMPTY_SOCKET_COGWHEEL)
+	AddSockets("ShaTouchedSocket", EMPTY_SOCKET_HYDRAULIC)
 
 	local _, TotalSocketValue1, SocketBonusValue1 = PawnGetItemValue(ItemStats1, Item1.Level, ItemSocketBonusStats1, PawnUICurrentScale, false, true)
 	local _, TotalSocketValue2, SocketBonusValue2 = PawnGetItemValue(ItemStats2, Item2.Level, ItemSocketBonusStats2, PawnUICurrentScale, false, true)

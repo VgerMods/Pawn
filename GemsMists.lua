@@ -1303,10 +1303,10 @@ PawnCogwheelQualityLevels =
 	{ 0, PawnCogwheelData85Rare }, -- Bio-Optic Killshades
 }
 
--- PawnCrystalOfFearQualityLevels =
--- {
--- 	{ 0, PawnCrystalOfFearData90Legendary }, -- Kri'tak
--- }
+PawnCrystalOfFearQualityLevels =
+{
+	{ 0, PawnCrystalOfFearData90Legendary }, -- Kri'tak
+}
 
 PawnMinimumItemLevelToConsiderGems = 346 -- 346 during pre-patch; 417 at launch
 

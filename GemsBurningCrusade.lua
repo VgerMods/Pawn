@@ -337,6 +337,7 @@ PawnMetaGemQualityLevels =
 }
 
 PawnCogwheelQualityLevels = nil
+PawnCrystalOfFearQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 100
 

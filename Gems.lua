@@ -356,6 +356,7 @@ PawnGemQualityLevels =
 
 PawnMetaGemQualityLevels = nil
 PawnCogwheelQualityLevels = nil
+PawnCrystalOfFearQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 571 -- Sockets on items below this ilvl are ignored by default
 

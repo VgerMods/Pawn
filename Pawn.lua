@@ -1099,7 +1099,7 @@ function PawnClearCacheValuesOnly()
 	end
 	-- Then, the gem caches.  For each gem meta-table, look at the gem table (which is in
 	-- column 3) and then clear out that table's item data cache.
-	local GemCaches = { PawnGemQualityLevels, PawnMetaGemQualityLevels, PawnCogwheelQualityLevels }
+	local GemCaches = { PawnGemQualityLevels, PawnMetaGemQualityLevels, PawnCogwheelQualityLevels, PawnCrystalOfFearQualityLevels }
 	for _, GemCache in pairs(GemCaches) do
 		for _, GemQualityData in pairs(GemCache) do
 			for _, GemData in pairs(GemQualityData[2]) do
@@ -1188,6 +1188,8 @@ function PawnRecalculateScaleTotal(ScaleName)
 			["MetaSocketValue"] = { },
 			["CogwheelSocket"] = { },
 			["CogwheelSocketValue"] = { },
+			["ShaTouchedSocket"] = { },
+			["ShaTouchedSocketValue"] = { },
 		}
 	end
 	local ThisScaleBestGems = PawnScaleBestGems[ScaleName]
@@ -1257,6 +1259,24 @@ function PawnRecalculateScaleTotal(ScaleName)
 			local BestCogwheel
 			BestCogwheel, ThisScaleBestGems.CogwheelSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
 			ThisScaleBestGems.CogwheelSocketValue[ItemLevel] = BestCogwheel
+		end
+	end
+
+	-- Now crystals of fear.
+	if VgerCore.IsMists then
+		for _, QualityLevelData in pairs(PawnCrystalOfFearQualityLevels) do
+			local ItemLevel = QualityLevelData[1]
+			local GemData = QualityLevelData[2]
+
+			if PawnCommon.Debug then
+				VgerCore.Message("")
+				VgerCore.Message("CRYSTALS OF FEAR FOR ITEM LEVEL " .. tostring(ItemLevel))
+				VgerCore.Message("")
+			end
+
+			local BestShaTouched
+			BestShaTouched, ThisScaleBestGems.ShaTouchedSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
+			ThisScaleBestGems.ShaTouchedSocketValue[ItemLevel] = BestShaTouched
 		end
 	end
 
@@ -1464,6 +1484,7 @@ function PawnGetItemData(ItemLink)
 				Item.Stats.MetaSocketEffect = nil
 			end
 			Item.Stats.CogwheelSocket = nil
+			Item.Stats.ShaTouchedSocket = nil
 		end
 
 		-- If the item doesn't have any stats, don't cache it.  This is done to work around a problem a few people were seeing where
@@ -2486,7 +2507,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			SocketBonusStats = {}
 		else
 			-- If the socket bonus is not valid, then we need to check for sockets.
-			if Stats["PrismaticSocket"] or Stats["RedSocket"] or Stats["YellowSocket"] or Stats["BlueSocket"] or Stats["MetaSocket"] or Stats["CogwheelSocket"] then
+			if Stats["PrismaticSocket"] or Stats["RedSocket"] or Stats["YellowSocket"] or Stats["BlueSocket"] or Stats["MetaSocket"] or Stats["CogwheelSocket"] or Stats["ShaTouchedSocket"] then
 				-- There are sockets left, so the player could still meet the requirements.
 				PawnDebugMessage("   (Socket bonus requirements could potentially be met)")
 			else
@@ -2756,7 +2777,8 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 			Stat ~= "BlueSocket" and
 			Stat ~= "MetaSocket" and
 			Stat ~= "MetaSocketEffect" and
-			Stat ~= "CogwheelSocket"
+			Stat ~= "CogwheelSocket" and
+			Stat ~= "ShaTouchedSocket"
 		then
 			if ThisValue then
 				-- This stat has a value; add it to the running total.
@@ -2792,12 +2814,14 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 				Item.BlueSocket or
 				Item.MetaSocket or
 				Item.MetaSocketEffect or
-				Item.CogwheelSocket
+				Item.CogwheelSocket or
+				Item.ShaTouchedSocket
 			) then
 
 				local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, ItemLevel)
 				local MetaGemQualityLevel = PawnGetGemQualityForItem(PawnMetaGemQualityLevels, ItemLevel)
 				local CogwheelQualityLevel = PawnGetGemQualityForItem(PawnCogwheelQualityLevels, ItemLevel)
+				local CrystalOfFearQualityLevel = PawnGetGemQualityForItem(PawnCrystalOfFearQualityLevels, ItemLevel)
 
 				local SocketValue = function(Stat, QualityLevel)
 					if QualityLevel == nil then return 0 end
@@ -2861,6 +2885,9 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 
 				-- In Cataclysm there are also cogwheels for engineering goggles. Sigh.
 				TotalSocketValue = TotalSocketValue + SocketValue("CogwheelSocket", CogwheelQualityLevel)
+
+				-- Mists of Pandaria introduced the first expansion-specific socket type.
+				TotalSocketValue = TotalSocketValue + SocketValue("ShaTouchedSocket", CrystalOfFearQualityLevel)
 
 				Total = Total + TotalSocketValue
 			end -- if ShouldIncludeSockets
@@ -3219,6 +3246,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.YellowSocket = nil
 	ThisScale.BlueSocket = nil
 	ThisScale.CogwheelSocket = nil
+	ThisScale.ShaTouchedSocket = nil
 	ThisScale.ColorlessSocket = nil
 	ThisScale.MetaSocket = nil
 

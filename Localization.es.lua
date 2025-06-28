@@ -149,6 +149,8 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		--[[Translation missing --]]
 		["Mp5Info"] = "Mana regeneration per 5 seconds.  Affects your mana regeneration even when in combat.",
 		--[[Translation missing --]]
+		["MultistrikeInfo"] = "Multistrike. Increases the chance that your attacks and healing spells will hit your target two extra times at reduced potency.",
+		--[[Translation missing --]]
 		["NatureResistInfo"] = "Nature Resistance.  Reduces the damage taken from nature-based attacks.",
 		["NatureSpellDamage"] = "Daño de Naturaleza",
 		--[[Translation missing --]]
@@ -157,6 +159,7 @@ Para más información sobre como personalizar Pawn, por favor lee el archivo (R
 		["ParryInfo"] = "Parry.  Increases the chance that you'll parry enemy attacks.",
 		["Plate"] = "Placas",
 		["PlateInfo"] = "Puntos que asignar si el objeto es de Placas.",
+		["PvPPowerInfo"] = "PvP power. Causes your abilities to deal more damage to other players (but not creatures), and your healing spells to heal other players for more in some PvP situations.",
 		--[[Translation missing --]]
 		["RapInfo"] = "Ranged Attack Power.  Increases the damage of ranged physical attacks.  Does not include attack power gained from agility.",
 		--[[Translation missing --]]
