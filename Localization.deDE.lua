@@ -578,6 +578,7 @@ PawnLocal.TooltipParsing = {
 	["HitRating2"] = "^Anlegen: Erhöht Eure Trefferwertung um #%.$",
 	["HitRating3"] = "^UNUSED$",
 	["HitRatingShort"] = "^%+?# Trefferwertung$",
+	["HitRatingShorter"] = "^%+?# Trefferwert$",
 	["HolySpellDamage"] = "^%+# Heiligzauberschaden$",
 	["HolySpellDamage2"] = "^Anlegen: Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu #%.$",
 	["HolySpellDamage3"] = "^UNUSED$",

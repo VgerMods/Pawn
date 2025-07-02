@@ -602,6 +602,7 @@ PawnLocal.TooltipParsing = {
 	["HitRating2"] = "^UNUSED$",
 	["HitRating3"] = "^UNUSED$",
 	["HitRatingShort"] = "^적중도 %+#$",
+	["HitRatingShorter"] = "^적중 %+#$",
 	["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 	["HolySpellDamage2"] = "^착용 효과: 신성 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 	["HolySpellDamage3"] = "^UNUSED$",

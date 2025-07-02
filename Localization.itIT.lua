@@ -593,6 +593,7 @@ PawnLocal.TooltipParsing = {
 	["HitPercentCombined"] = "^UNUSED$",
 	["HitRating"] = "^UNUSED$",
 	["HitRatingShort"] = "^UNUSED$",
+	["HitRatingShorter"] = "^UNUSED$",
 	["HitRating2"] = "^UNUSED$",
 	["HitRating3"] = "^UNUSED$",
 	["HolySpellDamage"] = "^UNUSED$",

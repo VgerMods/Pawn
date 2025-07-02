@@ -587,6 +587,7 @@ PawnLocal.TooltipParsing = {
 	["HitRating2"] = "^Équipé : Augmente votre score de toucher de #%.$",
 	["HitRating3"] = "^UNUSED$",
 	["HitRatingShort"] = "^%+?# au score de toucher$",
+	["HitRatingShorter"] = "^%+?# Toucher$",
 	["HolySpellDamage"] = "^%+# aux dégâts des sorts du Sacré$",
 	["HolySpellDamage2"] = "^E?\195?\137?quipé : Augmente les dégâts infligés par les sorts et effets du Sacré de # au maximum%.$",
 	["HolySpellDamage3"] = "^E?\195?\137?quipé : Augmente de # au maximum les dégâts infligés par les sorts et effets du Sacré%.$",

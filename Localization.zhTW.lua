@@ -615,6 +615,7 @@ PawnLocal.TooltipParsing = {
 	["HitRating2"] = "^裝備: 使你的命中等級提高#點。$",
 	["HitRating3"] = "^UNUSED$",
 	["HitRatingShort"] = "^%+?#命中等級$",
+	["HitRatingShorter"] = "^%+?#命中$",
 	["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 	["HolySpellDamage2"] = "^裝備： 提高神聖法術和效果所造成的傷害，最多#點。$",
 	["HolySpellDamage3"] = "^裝備: 使神聖法術和效果所造成的傷害提高最多#點。$",

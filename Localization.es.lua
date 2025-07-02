@@ -617,13 +617,13 @@ PawnLocal.TooltipParsing = {
 	["FrostSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos de Escarcha%.$",
 	["FrostSpellDamage3"] = "^%+# daño de Escarcha$",
 	["Gun"] = "^Arma de fuego$",
-	["Haste"] = "^%+?# celeridad$",
+	["Haste"] = "^%+?# [cC]eleridad$",
 	["Haste2"] = "^UNUSED$",
 	["HasteClassic"] = "^Equipar: Aumenta un #%% tu velocidad de ataque%.$",
 	["HaventCollectedAppearance"] = "^No has conseguido esta apariencia%.$",
 	["HasteRating"] = "^Equipar: Aumenta # p%. la celeridad%.$",
 	["HasteRating2"] = "^Equipar: Mejora el índice de celeridad en # p%.$",
-	["HasteRatingShort"] = "^%+?# celeridad$",
+	["HasteRatingShort"] = "^UNUSED$",
 	["Healing"] = "^%+# de hechizos de sanación$",
 	["Healing2"] = "^Equipar: Aumenta hasta # p%. la sanación de los hechizos y efectos%.$",
 	["Healing3"] = "^%+# sanación$",
@@ -641,6 +641,7 @@ PawnLocal.TooltipParsing = {
 	["HitRating2"] = "^Equipar: Aumenta tu índice de golpe e?n? ?# p%.$",
 	["HitRating3"] = "^Equipar: Mejora el índice de golpe e?n? ?# p%.$",
 	["HitRatingShort"] = "^%+?# índice de golpe$",
+	["HitRatingShorter"] = "^%+?# Golpe$",
 	["HolySpellDamage"] = "^%+# daño con hechizos Sagrados$",
 	["HolySpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos Sagrados%.$",
 	["HolySpellDamage3"] = "^UNUSED$",
@@ -834,8 +835,8 @@ if GetLocale() == "esES" then
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 
-	if VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
-		-- Wrath Classic on esES has an incorrect LARGE_NUMBER_SEPERATOR.
+	if VgerCore.IsWrath or VgerCore.IsCataclysm then
+		-- Wrath and Cataclysm Classic on esES have an incorrect LARGE_NUMBER_SEPERATOR.
 		PawnLocal.ThousandsSeparator = ","
 	end
 

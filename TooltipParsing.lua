@@ -249,6 +249,7 @@ PawnRegexes =
 	{L.HitRating2, "HitRating"}, -- Burning Crusade, /pawn compare 18500
 	{L.HitRating3, "HitRating"}, -- Burning Crusade in Spanish, /pawn compare 32570
 	{L.HitRatingShort, "HitRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24051/rigid-dawnstone
+	{L.HitRatingShorter, "HitRating"}, -- Mists of Pandaria, /pawn compare 77108
 	{L.SpellHit, "SpellHitRating"}, -- /pawn compare 16795
 	{L.SpellHitRating, "SpellHitRating"}, -- Burning Crusade, /pawn compare 16795
 	{L.SpellHitRating2, "SpellHitRating"}, -- Burning Crusade, /pawn compare 24266

@@ -595,6 +595,7 @@ PawnLocal.TooltipParsing = {
 	["HitRating2"] = "^Equip: Increases your hit rating by #%.$",
 	["HitRating3"] = "^UNUSED$",
 	["HitRatingShort"] = "^%+?# Hit Rating$",
+	["HitRatingShorter"] = "^%+?# Hit$",
 	["HolySpellDamage"] = "^%+# Holy Spell Damage$",
 	["HolySpellDamage2"] = "^Equip: Increases damage done by Holy spells and effects by up to #%.$",
 	["HolySpellDamage3"] = "^Equip: Increases the damage done by Holy spells and effects by up to #%.$",
