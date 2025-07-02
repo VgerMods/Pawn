@@ -10,7 +10,7 @@
 PawnVersion = 2.1101
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.18
+local PawnVgerCoreVersionRequired = 1.20
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
