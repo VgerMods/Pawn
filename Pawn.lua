@@ -420,7 +420,7 @@ function PawnInitialize()
 	end
 
 	-- LinkWrangler compatibility -- hook the Link Wrangler item link tooltips.
-	if LinkWrangler then
+	if LinkWrangler and LinkWrangler.RegisterCallback then
 		LinkWrangler.RegisterCallback("Pawn", PawnLinkWranglerOnTooltip, "refresh")
 		LinkWrangler.RegisterCallback("Pawn", PawnLinkWranglerOnTooltip, "refreshcomp")
 	end
