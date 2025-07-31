@@ -557,6 +557,7 @@ PawnLocal.TooltipParsing = {
 	["ExpertiseClassic"] = "^Equip: Reduces the chance for your attacks to be dodged or parried by #%%%.$",
 	["ExpertiseRating"] = "^Equip: Increases your expertise rating by #%.$",
 	["ExpertiseRatingShort"] = "^%+?# Expertise Rating$",
+	["ExpertiseRatingShorter"] = "^%+?# Expertise$",
 	["FeralAp"] = "^Equip: %+# Attack Power in Cat, Bear, and Dire Bear forms only%.$",
 	["FeralApMoonkin"] = "^Equip: Increases attack power by # in Cat, Bear, Dire Bear, and Moonkin forms only%.$",
 	["FeralApWrath"] = "^Increases attack power by # in Cat, Bear, Dire Bear, and Moonkin forms only%.$",
