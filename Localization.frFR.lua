@@ -546,6 +546,7 @@ PawnLocal.TooltipParsing = {
 	["EnchantmentPyriumWeaponChain"] = "^Dragonne en pyrium$",
 	["EnchantmentTitaniumWeaponChain"] = "^Dragonne en titane$",
 	["Equip"] = "Équipé :",
+	["Expertise"] = "^%+?# Expertise$",
 	["ExpertiseClassic"] = "^Equipé : Réduit les chances que vos attaques soient esquivées ou parées de # %%%.$",
 	["ExpertiseRating"] = "^Équipé : Augmente de # le score d’expertise%.$",
 	["ExpertiseRatingShort"] = "^%+?# au score d'expertise$",

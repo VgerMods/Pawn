@@ -600,6 +600,7 @@ PawnLocal.TooltipParsing = {
 	["EnchantmentPyriumWeaponChain"] = "^Cadena de Pirium$",
 	["EnchantmentTitaniumWeaponChain"] = "^Cadena de Titanio$",
 	["Equip"] = "Equipar:",
+	["Expertise"] = "^%+?# [pP]ericia$",
 	["ExpertiseClassic"] = "^Equipar: Reduce un #%% la probabilidad de que esquiven o paren tus ataques%.$",
 	["ExpertiseRating"] = "^Equipar: Aumenta tu índice de pericia [ue]n # ?p?%.$",
 	["ExpertiseRatingShort"] = "^%+?# índice de pericia$",

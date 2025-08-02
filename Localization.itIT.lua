@@ -554,6 +554,7 @@ PawnLocal.TooltipParsing = {
 	["EnchantmentPyriumWeaponChain"] = "^Catena per [Aa]rma di [Pp]irio$",
 	["EnchantmentTitaniumWeaponChain"] = "^Catena per [Aa]rma di [Tt]itanio$",
 	["Equip"] = "Equipaggia:",
+	["Expertise"] = "^UNUSED$",
 	["ExpertiseClassic"] = "^UNUSED$",
 	["ExpertiseRating"] = "^UNUSED$",
 	["ExpertiseRatingShort"] = "^UNUSED$",

@@ -552,6 +552,7 @@ PawnLocal.TooltipParsing = {
 	["EnchantmentPyriumWeaponChain"] = "^Колчедановая цепь для оружия$",
 	["EnchantmentTitaniumWeaponChain"] = "^Титановая цепь для оружия$",
 	["Equip"] = "Если на персонаже:",
+	["Expertise"] = "^%+?# к мастерству$",
 	["ExpertiseClassic"] = "^Если на персонаже: Снижает вероятность того, что цель парирует ваши атаки или уклонится от них, на #%%%.$",
 	["ExpertiseRating"] = "^Если на персонаже: Повышает рейтинг мастерства на #%.$",
 	["ExpertiseRatingShort"] = "^%+?# к рейтингу мастерства$",

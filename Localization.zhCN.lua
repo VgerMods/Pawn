@@ -549,6 +549,7 @@ PawnLocal.TooltipParsing = {
 	["EnchantmentPyriumWeaponChain"] = "^燃钢武器链$",
 	["EnchantmentTitaniumWeaponChain"] = "^泰坦神铁武器链$",
 	["Equip"] = "装备：",
+	["Expertise"] = "^%+?# 精准$",
 	["ExpertiseClassic"] = "^装备： 使你的攻击被躲闪或招架的几率降低#%%。$",
 	["ExpertiseRating"] = "^装备： 使你的精准等级提高#点。$",
 	["ExpertiseRatingShort"] = "^%+?# 精准等级$",

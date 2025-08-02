@@ -254,6 +254,7 @@ PawnRegexes =
 	{L.SpellHitRating, "SpellHitRating"}, -- Burning Crusade, /pawn compare 16795
 	{L.SpellHitRating2, "SpellHitRating"}, -- Burning Crusade, /pawn compare 24266
 	{L.SpellHitRatingShort, "SpellHitRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=31861/great-dawnstone
+	{L.Expertise, "ExpertiseRating"}, -- Mists of Pandaria, /pawn compare 19351
 	{L.ExpertiseRating, "ExpertiseRating"}, -- Burning Crusade, /pawn compare 19351
 	{L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, Precise Bloodstone
 	{L.ExpertiseClassic, "ExpertiseRating"}, -- Classic SoD, /pawn compare 236019

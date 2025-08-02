@@ -563,6 +563,7 @@ PawnLocal.TooltipParsing = {
 	["EnchantmentPyriumWeaponChain"] = "^Corrente de Arma de Pírio$",
 	["EnchantmentTitaniumWeaponChain"] = "^Corrente de Arma de Titânico$",
 	["Equip"] = "Equipado:",
+	["Expertise"] = "^%+?# Aptidão$",
 	["ExpertiseClassic"] = "^Equipado: Reduz em #%% a chance de os seus ataques serem esquivados ou aparados%.$",
 	["ExpertiseRating"] = "^Equipado: Aumenta em # a taxa de aptidão%.$",
 	["ExpertiseRatingShort"] = "^%+?# Taxa de Aptidão$",
