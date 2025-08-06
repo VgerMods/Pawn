@@ -739,7 +739,7 @@ function PawnInitializeOptions()
 		local FrostDK = PawnCommon.Scales["\"MrRobot\":DEATHKNIGHT2"]
 		if FrostDK then FrostDK.DoNotShow2HUpgrades = false end
 	end
-	if (VgerCore.ReforgingExists and PawnCommon.LastVersion < 2.0902) then
+	if PawnCommon.LastVersion < 2.0902 and VgerCore.ReforgingExists then
 		-- Enable the reforging advisor by default on Cataclysm Classic.
 		PawnCommon.ShowReforgingAdvisor = true
 	end

@@ -1962,11 +1962,7 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_ShowLootUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowLootUpgradeAdvisor)
 	PawnUIFrame_ShowQuestUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowQuestUpgradeAdvisor)
 	PawnUIFrame_ShowSocketingAdvisorCheck:SetChecked(PawnCommon.ShowSocketingAdvisor)
-	if not VgerCore.ReforgingExists then
-		PawnUIFrame_ShowReforgingAdvisorCheck:Hide()
-	else
-		PawnUIFrame_ShowReforgingAdvisorCheck:SetChecked(PawnCommon.ShowReforgingAdvisor)
-	end
+	PawnUIFrame_ShowReforgingAdvisorCheck:SetChecked(PawnCommon.ShowReforgingAdvisor)
 	PawnUIFrame_ShowItemLevelUpgradesCheck:SetChecked(PawnCommon.ShowItemLevelUpgrades)
 
 	-- Other options
@@ -2066,7 +2062,7 @@ function PawnUIFrame_ShowSocketingAdvisorCheck_OnClick()
 end
 
 function PawnUIFrame_ShowReforgingAdvisorCheck_OnClick()
-	PawnCommon.ShowReforgingAdvisor = PawnUIFrame_ShowReforgingAdvisorCheck:GetChecked() ~= nil
+	PawnCommon.ShowReforgingAdvisor = PawnUIFrame_ShowReforgingAdvisorCheck:GetChecked()
 end
 
 function PawnUIFrame_ShowItemLevelUpgradesCheck_OnClick()
@@ -2135,6 +2131,7 @@ function PawnUI_OnSocketUpdate()
 	if PawnSocketingTooltip then PawnSocketingTooltip:Hide() end
 	PawnUI_EnsureLoaded()
 	if StandardGemsUnavailable then return end
+	if not PawnCommon.ShowSocketingAdvisor then return end
 
 	-- Find out what item it is.
 	local _, ItemLink = ItemSocketingDescription:GetItem()
@@ -2754,6 +2751,9 @@ function PawnUI_EnsureLoaded()
 		end
 		if not VgerCore.HasSpecs then
 			PawnUIFrame_ShowSpecIconsCheck:Hide()
+		end
+		if not VgerCore.ReforgingExists then
+			PawnUIFrame_ShowReforgingAdvisorCheck:Hide()
 		end
 		if not PawnCommon then
 			VgerCore.Fail("Pawn UI OnShow handler was called before PawnCommon was initialized.")

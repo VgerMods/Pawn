@@ -1,4 +1,4 @@
-﻿## Interface: 110107
+﻿## Interface: 110200
 ## Title: Pawn
 ## Version: 2.11.4
 ## Notes: Pawn helps you compare items and find upgrades.
