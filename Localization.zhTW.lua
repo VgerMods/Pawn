@@ -747,8 +747,8 @@ if VgerCore.IsClassic then
 	{
 		["Dps"] = "^%（每秒傷害#%）$",
 		["WeaponDamage"] = "^# %- #傷害$",
-		["WeaponDamageArcane"] = "^# %- #祕法傷害$",
-		["WeaponDamageArcaneExact"] = "^#祕法傷害$",
+		["WeaponDamageArcane"] = "^# %- #秘法傷害$", -- changed in 1.15.7
+		["WeaponDamageArcaneExact"] = "^#秘法傷害$",
 		["WeaponDamageEquip"] = "^裝備: %+?#武器傷害。$",
 		["WeaponDamageExact"] = "^#傷害$",
 		["WeaponDamageFire"] = "^# %- #火焰傷害$",
