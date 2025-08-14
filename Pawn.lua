@@ -527,9 +527,7 @@ function PawnInitialize()
 	end
 
 	-- If auto-spec is on, check their spec now in case they switched on a different PC.
-	if GetSpecialization then
-		PawnOnSpecChanged()
-	end
+	PawnOnSpecChanged()
 
 	-- Then, recalculate totals.
 	-- This must be done after checking for errors is completed on all scales because it can trigger other recalculations.
