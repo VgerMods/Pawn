@@ -2532,7 +2532,7 @@ function PawnUI_OnQuestInfo_ShowRewards()
 
 		if Item then
 			local _, _, _, _, Usable = GetRewardInfoFunction(i)
-			tinsert(QuestRewards, { ["Item"] = Item, ["RewardType"] = "reward", ["Usable"] = Usable, ["Index"] = i + RewardChoices })
+			tinsert(QuestRewards, { Item = Item, RewardType = "reward", Usable = Usable, Index = i + RewardChoices })
 		else
 			--VgerCore.Fail("Pawn can't display upgrade information because the server hasn't given us item stats for fixed rewards yet.")
 			-- TODO: Queue this up and retry these calculations later...
@@ -2547,7 +2547,7 @@ function PawnUI_OnQuestInfo_ShowRewards()
 
 		if Item then
 			local _, _, _, _, Usable = GetChoiceInfoFunction(i)
-			tinsert(QuestRewards, { ["Item"] = Item, ["RewardType"] = "choice", ["Usable"] = Usable, ["Index"] = i })
+			tinsert(QuestRewards, { Item = Item, RewardType = "choice", Usable = Usable, Index = i })
 		else
 			--VgerCore.Fail("Pawn can't display upgrade information because the server hasn't given us item stats for reward choices yet.")
 			-- TODO: Queue this up and retry these calculations later...
