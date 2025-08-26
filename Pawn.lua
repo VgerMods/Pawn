@@ -3749,7 +3749,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 								break
 							elseif TwoSlotsForThisItemType and BestData[4] == nil then
 								-- There's an empty slot for this item to go into.
-								NewTableEntry = { ["ScaleName"] = ScaleName, ["LocalizedScaleName"] = Scale.LocalizedName or ScaleName, ["PercentUpgrade"] = PawnBigUpgradeThreshold }
+								NewTableEntry = { ScaleName = ScaleName, LocalizedScaleName = Scale.LocalizedName or ScaleName, PercentUpgrade = PawnBigUpgradeThreshold }
 							elseif ThisValue > BestValue * 1.005 then
 								-- Hooray, it's an upgrade!  Add it to the table.
 								-- (Only count upgrades that are at least 0.5% better.)
@@ -3770,7 +3770,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 									end
 								else
 									if PercentUpgrade then
-										NewTableEntry = { ["ScaleName"] = ScaleName, ["LocalizedScaleName"] = Scale.LocalizedName or ScaleName, ["PercentUpgrade"] = PercentUpgrade, ["ExistingItemLink"] = BestItem }
+										NewTableEntry = { ScaleName = ScaleName, LocalizedScaleName = Scale.LocalizedName or ScaleName, PercentUpgrade = PercentUpgrade, ExistingItemLink = BestItem }
 									end
 								end
 							end
@@ -3780,7 +3780,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 						-- who don't have any helms or shoulders.
 						if not ThisValue then _, ThisValue = PawnGetSingleValueFromItem(Item, ScaleName) end
 						if ThisValue and ThisValue > 0 then
-							NewTableEntry = { ["ScaleName"] = ScaleName, ["LocalizedScaleName"] = Scale.LocalizedName or ScaleName, ["PercentUpgrade"] = PawnBigUpgradeThreshold }
+							NewTableEntry = { ScaleName = ScaleName, LocalizedScaleName = Scale.LocalizedName or ScaleName, PercentUpgrade = PawnBigUpgradeThreshold }
 						end
 					end
 
@@ -4577,7 +4577,7 @@ function PawnOnArtifactUpdated()
 	end
 	local ThisArtifact = Artifacts[ArtifactItemID]
 	if not ThisArtifact then
-		ThisArtifact = { ["Relics"] = {} }
+		ThisArtifact = { Relics = {} }
 		Artifacts[ArtifactItemID] = ThisArtifact
 	end
 
@@ -4710,7 +4710,7 @@ function PawnGetRelicUpgradeInfo(RelicItemLink)
 		if BestRelicItemLevelUpgrade > 0 then
 			-- Hooray! This relic is an item level upgrade.
 			if not UpgradeInfo then UpgradeInfo = {} end
-			UpgradeInfo[Artifact.Name] = { ["ItemLevelIncrease"] = BestRelicItemLevelUpgrade }
+			UpgradeInfo[Artifact.Name] = { ItemLevelIncrease = BestRelicItemLevelUpgrade }
 		end
 	end
 
@@ -4823,7 +4823,7 @@ function PawnAddItemToLevelTracker(Item)
 		elseif PutNewItemInSlot == Slot2 then
 			AlsoFitsIn = Slot1
 		end
-		PawnOptions.ItemLevels[PutNewItemInSlot] = { ["Link"] = Item.Link, ["ID"] = PawnGetItemIDFromLink(Item.Link), ["Level"] = Item.Level, ["AlsoFitsIn"] = AlsoFitsIn }
+		PawnOptions.ItemLevels[PutNewItemInSlot] = { Link = Item.Link, ID = PawnGetItemIDFromLink(Item.Link), Level = Item.Level, AlsoFitsIn = AlsoFitsIn }
 
 		if PawnCommon.ShowSlotDebugInfo then
 			PawnShowSlotDebugInfo()
@@ -5687,12 +5687,12 @@ function PawnAddPluginScaleProvider(ProviderInternalName, LocalizedName, Functio
 
 	if PawnScaleProvidersInitialized then
 		-- If we've already initialized scale providers, just do this one immediately.
-		PawnScaleProviders[ProviderInternalName] = { ["Name"] = LocalizedName }
+		PawnScaleProviders[ProviderInternalName] = { Name = LocalizedName }
 		Function()
 	else
 		-- Otherwise, we'll get to it later.
 		VgerCore.Assert(Function, "Scale provider \"" .. LocalizedName .. "\" was registered but won't initialize properly because no initialization function was specified.")
-		PawnScaleProviders[ProviderInternalName] = { ["Name"] = LocalizedName, ["Function"] = Function }
+		PawnScaleProviders[ProviderInternalName] = { Name = LocalizedName, Function = Function }
 	end
 end
 

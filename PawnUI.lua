@@ -2502,8 +2502,6 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	local SetQuestRewardFunctionName, GetRewardInfoFunction, GetChoiceInfoFunction
 	if QuestInfoFrame.questLog then
 		StaticRewards = GetNumQuestLogRewards()
-		-- Ignore this warning: it's incorrect; GetNumQuestLogChoices does indeed take two parameters.
-		---@diagnostic disable-next-line: redundant-parameter
 		RewardChoices = GetNumQuestLogChoices(QuestID, false)
 		SetQuestRewardFunctionName = "SetQuestLogItem"
 		GetRewardInfoFunction = GetQuestLogRewardInfo
@@ -2788,7 +2786,7 @@ function PawnUIFrame_TooltipOn(self)
 			GameTooltip:ClearLines()
 			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
 			GameTooltip:AddLine(Label, 1, 1, 1, 1)
-			GameTooltip:AddLine(TooltipText, nil, nil, nil, 1, 1)
+			GameTooltip:AddLine(TooltipText, nil, nil, nil, 1)
 			GameTooltip:Show()
 		end
 	end
