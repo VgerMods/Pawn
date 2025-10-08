@@ -2529,15 +2529,16 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		local ItemName, _, _, _, Usable, ItemID = GetRewardInfoFunction(i)
 		Tooltip[SetQuestRewardFunctionName](Tooltip, "reward", i)
 		local _, ItemLink = Tooltip:GetItem()
+		-- Workaround for bug in Mists of Pandaria Classic
 		if ItemName and ItemLink and ItemName ~= strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
 			VgerCore.Message("Pawn thinks static reward #" .. i .. " is:\n" .. tostring(ItemName) .. " " .. tostring(ItemID or "") .. "\n" .. tostring(ItemLink) .. " " .. PawnGetItemIDsForDisplay(ItemLink))
 			Tooltip:ClearLines()
 			Tooltip[SetQuestRewardFunctionName](Tooltip, "reward", i)
 			_, ItemLink = Tooltip:GetItem()
 			if ItemName == strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
-				VgerCore.Message(VgerCore.Color.Green .. "WRONG ITEM BUT CLEARLINES FIXED IT")
+				VgerCore.Message(VgerCore.Color.Green .. "WRONG ITEM but Pawn worked around the problem")
 			else
-				VgerCore.Message(VgerCore.Color.Salmon .. "WRONG ITEM")
+				VgerCore.Message(VgerCore.Color.Salmon .. "WRONG ITEM and unable to work around it")
 			end
 		end
 		local Item = PawnGetItemData(ItemLink)
@@ -2555,15 +2556,16 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		local ItemName, _, _, _, Usable, ItemID = GetChoiceInfoFunction(i)
 		Tooltip[SetQuestRewardFunctionName](Tooltip, "choice", i)
 		local _, ItemLink = Tooltip:GetItem()
+		-- Workaround for bug in Mists of Pandaria Classic
 		if ItemName and ItemLink and ItemName ~= strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
 			VgerCore.Message("Pawn thinks choice reward #" .. i .. " is:\n" .. tostring(ItemName) .. " " .. tostring(ItemID or "") .. "\n" .. tostring(ItemLink) .. " " .. PawnGetItemIDsForDisplay(ItemLink))
 			Tooltip:ClearLines()
 			Tooltip[SetQuestRewardFunctionName](Tooltip, "choice", i)
 			_, ItemLink = Tooltip:GetItem()
 			if ItemName == strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
-				VgerCore.Message(VgerCore.Color.Green .. "WRONG ITEM BUT CLEARLINES FIXED IT")
+				VgerCore.Message(VgerCore.Color.Green .. "WRONG ITEM but Pawn worked around the problem")
 			else
-				VgerCore.Message(VgerCore.Color.Salmon .. "WRONG ITEM")
+				VgerCore.Message(VgerCore.Color.Salmon .. "WRONG ITEM and unable to work around it")
 			end
 		end
 		local Item = PawnGetItemData(ItemLink)
