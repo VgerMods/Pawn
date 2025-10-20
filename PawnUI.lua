@@ -78,7 +78,12 @@ function PawnUI_InventoryPawnButton_Move()
 		PawnUI_InventoryPawnButton:Show()
 		if PawnUI_InspectPawnButton then
 			PawnUI_InspectPawnButton:ClearAllPoints()
-			PawnUI_InspectPawnButton:SetPoint("TOPRIGHT", "InspectTrinket1Slot", "BOTTOMRIGHT", -1, -8)
+			if VgerCore.IsMainline then
+				-- In The War Within, a Talents button was added where the Pawn button would normally be, so force Pawn to the left.
+				PawnUI_InspectPawnButton:SetPoint("TOPLEFT", "InspectWristSlot", "BOTTOMLEFT", 1, -8)
+			else
+				PawnUI_InspectPawnButton:SetPoint("TOPRIGHT", "InspectTrinket1Slot", "BOTTOMRIGHT", -1, -8)
+			end
 			PawnUI_InspectPawnButton:Show()
 		end
 		if PawnUI_SocketingPawnButton then
