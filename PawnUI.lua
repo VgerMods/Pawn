@@ -166,9 +166,9 @@ function PawnUI_AddInventoryTotalsToTooltip(Tooltip, Unit)
 			PawnAddValuesToTooltip(Tooltip, ItemValues, nil, nil, nil, nil, true)
 		end
 	end
-	-- Add average item level information to the inspect window.  (It's not necessary for the current player's
+	-- Add average item level information to the inspect window. (On Mainline it's not necessary for the current player's
 	-- character sheet because that's part of the default UI now.)
-	if AverageItemLevel and AverageItemLevel > 0 and Unit ~= "player" then
+	if AverageItemLevel and AverageItemLevel > 0 and (not VgerCore.IsMainline or Unit ~= "player") then
 		if PawnCommon.AlignNumbersRight then
 			Tooltip:AddDoubleLine(PawnLocal.AverageItemLevelIgnoringRarityTooltipLine,  AverageItemLevel, VgerCore.Color.OrangeR, VgerCore.Color.OrangeG, VgerCore.Color.OrangeB, VgerCore.Color.OrangeR, VgerCore.Color.OrangeG, VgerCore.Color.OrangeB)
 		else
