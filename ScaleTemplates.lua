@@ -251,6 +251,15 @@ PawnScaleTemplates =
 },
 
 {
+	["ClassID"] = 12, -- Demon Hunter
+	["SpecID"] = 3, -- Devourer
+	["Role"] = "DAMAGER",
+	["PrimaryStat"] = "Agility",
+	["HideUpgrades"] = 2, -- Hide 2H upgrades
+	["UnusableStats"] = { "IsFrill" }
+},
+
+{
 	["ClassID"] = 11, -- Druid
 	["SpecID"] = 1, -- Balance
 	["Role"] = "DAMAGER",

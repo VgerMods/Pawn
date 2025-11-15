@@ -781,6 +781,7 @@ PawnLocal.Specs =
     [12] = {
         { Name="Havoc", Icon=1247264, Role="DAMAGER" },
         { Name="Vengeance", Icon=1247265, Role="TANK" },
+		{ Name="Devourer", Icon=7455385, Role="DAMAGER" },
     },
 }
 

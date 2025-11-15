@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1110
+PawnVersion = 2.1200
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.20
@@ -3132,7 +3132,7 @@ local SpecNameToIDMap =
 	[9] = { AFFLICTION = 1, DEMONOLOGY = 2, DESTRUCTION = 3 },
 	[10] = { BREWMASTER = 1, MISTWEAVER = 2, WINDWALKER = 3 },
 	[11] = { BALANCE = 1, FERAL = 2, GUARDIAN = 3, RESTORATION = 4 },
-	[12] = { HAVOC = 1, VENGEANCE = 2 },
+	[12] = { HAVOC = 1, VENGEANCE = 2, DEVOURER = 3 },
 	[13] = { DEVASTATION = 1, PRESERVATION = 2, AUGMENTATION = 3 },
 }
 local ClassIDToEnglishNameMap =
@@ -3152,7 +3152,7 @@ local SpecIDToEnglishNameMap =
 	[9] = { [1] = "Affliction", [2] = "Demonology", [3] = "Destruction" },
 	[10] = { [1] = "Brewmaster", [2] = "Mistweaver", [3] = "Windwalker" },
 	[11] = { [1] = "Balance", [2] = "Feral", [3] = "Guardian", [4] = "Restoration" },
-	[12] = { [1] = "Havoc", [2] = "Vengeance" },
+	[12] = { [1] = "Havoc", [2] = "Vengeance", [3] = "Devourer" },
 	[13] = { [1] = "Devastation", [2] = "Preservation", [3] = "Augmentation" },
 }
 

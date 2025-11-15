@@ -51,6 +51,13 @@ PawnAddPluginScaleFromTemplate(
 
 PawnAddPluginScaleFromTemplate(
 	ScaleProviderName,
+	12, -- Demon Hunter
+	3, -- Devourer
+	{ }
+)
+
+PawnAddPluginScaleFromTemplate(
+	ScaleProviderName,
 	11, -- Druid
 	1, -- Balance
 	{ Intellect=10.66, CritRating=10.26, MasteryRating=9.81, HasteRating=9.50, Versatility=7.85, Avoidance=0.03, MovementSpeed=0.02, Indestructible=0.01, Leech=0.01 }
