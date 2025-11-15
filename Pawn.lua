@@ -156,6 +156,12 @@ function PawnOnEvent(Event, arg1, arg2, ...)
 	end
 end
 
+-- A wrapper for Tooltip:SetBackdropBorderColor that continues to work in WoW 9.1.5+.
+local function PawnSetTooltipBorderColor(Tooltip, r, g, b, a)
+	if a == nil then a = 1 end
+	Tooltip.NineSlice:SetBorderColor(r, g, b, a)
+end
+
 -- Initializes Pawn after all saved variables have been loaded.
 function PawnInitialize()
 	-- This only needs to happen once.  If it's ever triggered again for any reason, bail out now.
@@ -1821,28 +1827,6 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	if Item and PawnCommon.DebugDoubleTooltips and TooltipName == "GameTooltip" then
 		VgerCore.Message("===== Annotating " .. TooltipName .. " for " .. tostring(Item.Name) .. ": =====")
 		VgerCore.Message(debugstack(5))
-	end
-end
-
--- A wrapper for Tooltip:SetBackdropBorderColor that continues to work in WoW 9.1.5+.
-function PawnSetTooltipBorderColor(Tooltip, r, g, b, a)
-	if a == nil then a = 1 end
-	if Tooltip.SetBackdropBorderColor then
-		Tooltip:SetBackdropBorderColor(r, g, b, a)
-	elseif Tooltip.NineSlice.TopEdge then
-		-- Seems like this SHOULD work:
-		-- Tooltip.NineSlice:SetBorderColor(r, g, b, a)
-		-- ...but for some reason it doesn't (in the 9.1.5 PTR), so just do it manually for now.
-		Tooltip.NineSlice.TopLeftCorner:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.TopRightCorner:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.BottomLeftCorner:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.BottomRightCorner:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.TopEdge:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.BottomEdge:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.LeftEdge:SetVertexColor(r, g, b, a)
-		Tooltip.NineSlice.RightEdge:SetVertexColor(r, g, b, a)
-	else
-		VgerCore.Fail("Pawn doesn't know how to change tooltip border colors in this version of WoW (" .. GetLocale() .. " " .. GetBuildInfo() .. ").")
 	end
 end
 
