@@ -49,9 +49,13 @@ local PawnEnchantedAnnotationFormat, PawnUnenchantedAnnotationFormat, PawnNoValu
 
 -- Plugin scale providers
 
--- PawnScaleProviders["Wowhead"] = { ["Name"] = "Wowhead scales", ["Function"] = <function> }
+-- PawnScaleProviders["Wowhead"] = { Name = "Wowhead scales", Function = <function> }
 PawnScaleProviders = { }
 local PawnScaleProvidersInitialized
+
+-- Third-party tooltips
+-- PawnThirdPartyTooltips["MyTooltipAddon"] = { SetBackdropBorderColor = function(Tooltip, r, g, b, a) ... end }
+local PawnThirdPartyTooltips = { }
 
 -- "Constants"
 local PawnCurrentScaleVersion = 1
@@ -156,10 +160,20 @@ function PawnOnEvent(Event, arg1, arg2, ...)
 	end
 end
 
--- A wrapper for Tooltip:SetBackdropBorderColor that continues to work in WoW 9.1.5+.
+-- A wrapper for Tooltip:SetBackdropBorderColor that allows addon authors to easily override it.
 local function PawnSetTooltipBorderColor(Tooltip, r, g, b, a)
-	if a == nil then a = 1 end
-	Tooltip.NineSlice:SetBorderColor(r, g, b, a)
+	local Fallback = true
+	for _, Overrides in pairs(PawnThirdPartyTooltips) do
+		if Overrides.SetBackdropBorderColor then
+			Overrides.SetBackdropBorderColor(Tooltip, r, g, b, a)
+			Fallback = false
+		end
+	end
+
+	if Fallback then
+		if a == nil then a = 1 end
+		Tooltip.NineSlice:SetBorderColor(r, g, b, a)
+	end
 end
 
 -- Initializes Pawn after all saved variables have been loaded.
@@ -6017,6 +6031,25 @@ function PawnClearBestItemLevelData()
 	for Slot = 1, 18 do
 		PawnAddItemToLevelTracker(PawnGetItemDataForInventorySlot(Slot))
 	end
+end
+
+-- Tells Pawn about a third-party tooltip addon that needs to override some of the things that Pawn does.
+-- Example:
+-- 	PawnRegisterThirdPartyTooltip("MyTooltipAddon", {
+--		SetBackdropBorderColor = function(Tooltip, r, g, b, a) print("Replace this with code that changes your tooltip's border color") end,
+-- 	})
+function PawnRegisterThirdPartyTooltip(AddonName, Overrides)
+	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
+	if not Overrides or type(Overrides) ~= "table" then VgerCore.Fail("Overrides must be a table of override functions.") return end
+	if PawnThirdPartyTooltips[AddonName] then VgerCore.Fail("You can only register the third-party tooltip addon \"" .. tostring(AddonName) .. "\" once.") return end
+
+	PawnThirdPartyTooltips[AddonName] = Overrides
+end
+
+-- Not sure why you'd need this, but here's the opposite of PawnRegisterThirdPartyTooltip.
+function PawnUnregisterThirdPartyTooltip(AddonName)
+	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
+	PawnThirdPartyTooltips[AddonName] = nil
 end
 
 -- Shows or hides the Pawn UI.
