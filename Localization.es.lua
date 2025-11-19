@@ -767,69 +767,75 @@ PawnLocal.TooltipParsing = {
 
 PawnLocal.Specs =
 {
-	[1] = {
-		{ Name="Armas", Icon=132355, Role="DAMAGER" },
-		{ Name="Furia", Icon=132347, Role="DAMAGER" },
-		{ Name="Protección", Icon=132341, Role="TANK" },
-	},
-	[2] = {
-		{ Name="Sagrado", Icon=135920, Role="HEALER" },
-		{ Name="Protección", Icon=236264, Role="TANK" },
-		{ Name="Reprensión", Icon=135873, Role="DAMAGER" },
-	},
-	[3] = {
-		{ Name="Bestias", Icon=461112, Role="DAMAGER" },
-		{ Name="Puntería", Icon=236179, Role="DAMAGER" },
-		{ Name="Supervivencia", Icon=461113, Role="DAMAGER" },
-	},
-	[4] = {
-		{ Name="Asesinato", Icon=236270, Role="DAMAGER" },
-		{ Name="Forajido", Icon=236286, Role="DAMAGER" },
-		{ Name="Sutileza", Icon=132320, Role="DAMAGER" },
-	},
-	[5] = {
-		{ Name="Disciplina", Icon=135940, Role="HEALER" },
-		{ Name="Sagrado", Icon=237542, Role="HEALER" },
-		{ Name="Sombra", Icon=136207, Role="DAMAGER" },
-	},
-	[6] = {
-		{ Name="Sangre", Icon=135770, Role="TANK" },
-		{ Name="Escarcha", Icon=135773, Role="DAMAGER" },
-		{ Name="Profano", Icon=135775, Role="DAMAGER" },
-	},
-	[7] = {
-		{ Name="Elemental", Icon=136048, Role="DAMAGER" },
-		{ Name="Mejora", Icon=237581, Role="DAMAGER" },
-		{ Name="Restauración", Icon=136052, Role="HEALER" },
-	},
-	[8] = {
-		{ Name="Arcano", Icon=135932, Role="DAMAGER" },
-		{ Name="Fuego", Icon=135810, Role="DAMAGER" },
-		{ Name="Escarcha", Icon=135846, Role="DAMAGER" },
-	},
-	[9] = {
-		{ Name="Aflicción", Icon=136145, Role="DAMAGER" },
-		{ Name="Demonología", Icon=136172, Role="DAMAGER" },
-		{ Name="Destrucción", Icon=136186, Role="DAMAGER" },
-	},
-	[10] = {
-		{ Name="Maestro cervecero", Icon=608951, Role="TANK" },
-		{ Name="Tejedor de niebla", Icon=608952, Role="HEALER" },
-		{ Name="Viajero del viento", Icon=608953, Role="DAMAGER" },
-	},
-	[11] = {
-		{ Name="Equilibrio", Icon=136096, Role="DAMAGER" },
-		{ Name="Feral", Icon=132115, Role="DAMAGER" },
-		{ Name="Guardián", Icon=132276, Role="TANK" },
-		{ Name="Restauración", Icon=136041, Role="HEALER" },
-	},
-	[12] = {
-		{ Name="Devastación", Icon=1247264, Role="DAMAGER" },
-		{ Name="Venganza", Icon=1247265, Role="TANK" },
-	},
+    [1] = {
+        { Name="Armas", Icon=132355, Role="DAMAGER" },
+        { Name="Furia", Icon=132347, Role="DAMAGER" },
+        { Name="Protección", Icon=132341, Role="TANK" },
+    },
+    [2] = {
+        { Name="Sagrado", Icon=135920, Role="HEALER" },
+        { Name="Protección", Icon=236264, Role="TANK" },
+        { Name="Reprensión", Icon=135873, Role="DAMAGER" },
+    },
+    [3] = {
+        { Name="Bestias", Icon=461112, Role="DAMAGER" },
+        { Name="Puntería", Icon=236179, Role="DAMAGER" },
+        { Name="Supervivencia", Icon=461113, Role="DAMAGER" },
+    },
+    [4] = {
+        { Name="Asesinato", Icon=236270, Role="DAMAGER" },
+        { Name="Forajido", Icon=236286, Role="DAMAGER" },
+        { Name="Sutileza", Icon=132320, Role="DAMAGER" },
+    },
+    [5] = {
+        { Name="Disciplina", Icon=135940, Role="HEALER" },
+        { Name="Sagrado", Icon=237542, Role="HEALER" },
+        { Name="Sombra", Icon=136207, Role="DAMAGER" },
+    },
+    [6] = {
+        { Name="Sangre", Icon=135770, Role="TANK" },
+        { Name="Escarcha", Icon=135773, Role="DAMAGER" },
+        { Name="Profano", Icon=135775, Role="DAMAGER" },
+    },
+    [7] = {
+        { Name="Elemental", Icon=136048, Role="DAMAGER" },
+        { Name="Mejora", Icon=237581, Role="DAMAGER" },
+        { Name="Restauración", Icon=136052, Role="HEALER" },
+    },
+    [8] = {
+        { Name="Arcano", Icon=135932, Role="DAMAGER" },
+        { Name="Fuego", Icon=135810, Role="DAMAGER" },
+        { Name="Escarcha", Icon=135846, Role="DAMAGER" },
+    },
+    [9] = {
+        { Name="Aflicción", Icon=136145, Role="DAMAGER" },
+        { Name="Demonología", Icon=136172, Role="DAMAGER" },
+        { Name="Destrucción", Icon=136186, Role="DAMAGER" },
+    },
+    [10] = {
+        { Name="Maestro cervecero", Icon=608951, Role="TANK" },
+        { Name="Tejedor de niebla", Icon=608952, Role="HEALER" },
+        { Name="Viajero del viento", Icon=608953, Role="DAMAGER" },
+    },
+    [11] = {
+        { Name="Equilibrio", Icon=136096, Role="DAMAGER" },
+        { Name="Feral", Icon=132115, Role="DAMAGER" },
+        { Name="Guardián", Icon=132276, Role="TANK" },
+        { Name="Restauración", Icon=136041, Role="HEALER" },
+    },
+    [12] = {
+        { Name="Caos", Icon=1247264, Role="DAMAGER" },
+        { Name="Venganza", Icon=1247265, Role="TANK" },
+        { Name="Devoración", Icon=7455385, Role="DAMAGER" },
+    },
+    [13] = {
+        { Name="Devastación", Icon=4511811, Role="DAMAGER" },
+        { Name="Preservación", Icon=4511812, Role="HEALER" },
+        { Name="Aumento", Icon=5198700, Role="DAMAGER" },
+    },
 }
 
-end 
+end
 
 if GetLocale() == "esES" then
 	PawnUseThisLocalization()
