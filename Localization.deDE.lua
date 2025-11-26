@@ -561,7 +561,7 @@ PawnLocal.TooltipParsing = {
 	["HasteRating"] = "^Anlegen: Erhöht die Tempowertung um #%.$",
 	["HasteRating2"] = "^UNUSED$",
 	["HasteRatingShort"] = "^%+?# Tempowertung$",
-	["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt$",
+	["HaventCollectedAppearance"] = "^Ihr habt diese Vorlage noch nicht gesammelt%.?$",
 	["Healing"] = "^%+# Heilzauber$",
 	["Healing2"] = "^Anlegen: Erhöht durch Zauber und Effekte verursachte Heilung um bis zu #%.$",
 	["Healing3"] = "^%+# Heilung$",
@@ -704,10 +704,12 @@ PawnLocal.TooltipParsing = {
 
 -- Special case: weapon speed and Mail use different words on Classic.
 -- So, patch things up here.
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 	PawnLocal.Mail = "Schwere Rüstung"
 	PawnLocal.MailInfo = "Punkte, die zugewiesen werden sollen, wenn der Gegenstand Schwere Rüstung ist."
 	PawnLocal.TooltipParsing.Mail = "^Schwere Rüstung$"
+end
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 	PawnLocal.TooltipParsing.Speed = "^Tempo #$"
 end
 PawnLocal.Specs =
