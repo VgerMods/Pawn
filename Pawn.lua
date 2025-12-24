@@ -1537,11 +1537,13 @@ function PawnGetItemData(ItemLink)
 
 		-- Determine if this item could ever be equipped by this class.
 		Item.CanEquip = true
-		local _, _, ClassID = UnitClass("player")
-		for _, StatName in pairs(PawnNeverUsableStats[ClassID]) do
-			if Item.Stats[StatName] then
-				Item.CanEquip = false
-				break
+		if Item.Stats then
+			local _, _, ClassID = UnitClass("player")
+			for _, StatName in pairs(PawnNeverUsableStats[ClassID]) do
+				if Item.Stats[StatName] then
+					Item.CanEquip = false
+					break
+				end
 			end
 		end
 
