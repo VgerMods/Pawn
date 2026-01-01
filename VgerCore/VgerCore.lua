@@ -1,9 +1,9 @@
 ﻿-- VgerCore  by Vger-Azjol-Nerub
 -- www.vgermods.com
--- © 2006-2025 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
+-- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.20 -- IsMists
-local VgerCoreThisVersion = 1.20
+-- Version 1.0.21 -- IsMidnight
+local VgerCoreThisVersion = 1.21
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -32,6 +32,7 @@ VgerCore.IsMainline = BuildNumber >= 90000
 VgerCore.IsShadowlands = VgerCore.IsMainline and BuildNumber >= 90000
 VgerCore.IsDragonflight = VgerCore.IsMainline and BuildNumber >= 100000
 VgerCore.IsWarWithin = VgerCore.IsMainline and BuildNumber >= 110000
+VgerCore.IsMidnight = VgerCore.IsMainline and BuildNumber >= 120000
 
 VgerCore.DeathKnightsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsMainline
 VgerCore.MonksExist = VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsBattle or VgerCore.IsMainline
