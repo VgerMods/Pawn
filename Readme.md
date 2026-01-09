@@ -90,6 +90,9 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 * Classic Era: Pawn's bag upgrade advisor now works on Classic realms, but it's off by default. You can enable it on Pawn's Options tab.
 	* Since Classic Era doesn't have specs or Pawn's Automatic mode and instead has each scale for your class enabled by default, I was worried that the number of green arrows might be overwhelming when playing hybrid classes.
 * Pawn's UI is now a little more Midnighty.
+* Improved loading times and memory usage.
+* Fixed a problem where other addons using Pawn at unusual times could cause an error.
+* Improved how Pawn looks in your addons list.
 
 ### Older versions
 
