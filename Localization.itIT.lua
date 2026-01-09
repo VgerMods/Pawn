@@ -322,9 +322,7 @@ Quando ricevi ricompense da una missione o bottino da una spedizione che può es
 		["OptionsBagUpgradeAdvisor"] = "Mostra avviso di miglioramento nelle borse",
 		["OptionsBagUpgradeAdvisorTooltip"] = [=[Abilita questa opzione per far sì che Pawn possa applicare le freccie di miglioramento nelle borse.
 
-Se abilitata, Pawn cercherà i miglioramenti nelle tue borse e marcherà con una freccia verde gli oggetti che costituiscono un miglioramento per una qualsiasi delle tue formule attive.
-
-Se disabilitata, WoW marcherà gli oggetti di livello superiore a quelli che indossi attualmente. Pawn non interferirà con questa funzionalità integrata.]=],
+Se abilitata, Pawn cercherà i miglioramenti nelle tue borse e marcherà con una freccia verde gli oggetti che costituiscono un miglioramento per una qualsiasi delle tue formule attive.]=],
 		["OptionsBlankLine"] = "Aggiungi una riga vuota prima dei valori",
 		["OptionsBlankLineTooltip"] = "Mantieni la tooltip dei tuoi oggetti estremamente ordinata abilitando questa opzione. Essa aggiungerà una riga vuota prima dei valori di Pawn.",
 		["OptionsButtonHidden"] = "Nascondilo",
