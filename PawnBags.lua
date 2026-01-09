@@ -56,12 +56,9 @@ local function ContainerFrameItemButton_Update(self)
 	end
 
 	if IsUpgrade == nil then
-		self.UpgradeIcon:Hide()
-		if ItemInfo then
-			C_Timer.After(0, function()
-				ContainerFrameItemButton_Update(self)
-			end)
-		end
+		C_Timer.After(0, function()
+			ContainerFrameItemButton_Update(self)
+		end)
 	else
 		self.UpgradeIcon:SetShown(IsUpgrade)
 	end
@@ -86,9 +83,9 @@ end
 -- Clears out the cached upgrade information from all items on all bag frames.
 function PawnBags:RefreshAll()
 	PawnBagsRefreshCounter = PawnBagsRefreshCounter + 1
-	if ContainerFrameCombinedBags:IsShown() then ContainerFrameCombinedBags:UpdateItems() end
+	if ContainerFrameCombinedBags:IsShown() then ContainerFrameMixin_UpdateItems(ContainerFrameCombinedBags) end
 	for i = 1, NUM_TOTAL_BAG_FRAMES do
 		local Bag = _G["ContainerFrame" .. i]
-		if Bag:IsShown() then Bag:UpdateItems() end
+		if Bag:IsShown() then ContainerFrameMixin_UpdateItems(Bag) end
 	end
 end

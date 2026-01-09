@@ -1117,6 +1117,11 @@ function PawnResetTooltip(TooltipName)
 	return true
 end
 
+-- Invalidate the in-bag upgrade arrows.
+function PawnResetBags()
+	if PawnBags then PawnBags:RefreshAll() end
+end
+
 -- Recalculates the total value of all stats in a scale, as well as all of the best gems for that scale.
 function PawnRecalculateScaleTotal(ScaleName)
 	local _
@@ -4486,7 +4491,7 @@ function PawnOnSpecChanged()
 		-- Don't reset the UI if their spec didn't actually change—this notification can be a bit spammy.
 		PawnClearCache()
 		PawnInvalidateBestItems()
-		if PawnBags then PawnBags:RefreshAll() end
+		PawnResetBags()
 
 		PawnUICurrentScale = nil -- Let the refresh method re-set this
 		PawnUIFrame_ScaleSelector_Refresh()
@@ -5122,6 +5127,7 @@ function PawnSetStatValue(ScaleName, StatName, Value)
 	PawnRecalculateScaleTotal(ScaleName) -- also recalculates socket values
 	PawnInvalidateBestItemsForScale(ScaleName)
 	PawnResetTooltips()
+	PawnResetBags()
 	return true
 end
 
@@ -5364,6 +5370,7 @@ function PawnImportScale(ScaleTag, Overwrite)
 	PawnRecalculateScaleTotal(ScaleName)
 	if AlreadyExists then PawnInvalidateBestItemsForScale(ScaleName) end
 	PawnResetTooltips()
+	PawnResetBags()
 	return PawnImportScaleResultSuccess, ScaleName
 end
 
@@ -5393,6 +5400,7 @@ function PawnSetAllScaleProviderScalesVisible(ProviderInternalName, Visible)
 			PawnResetTooltips()
 		end
 	end
+	PawnResetBags()
 	return true
 end
 
@@ -5431,6 +5439,7 @@ function PawnSetScaleVisible(ScaleName, Visible)
 	if Scale.PerCharacterOptions[PawnPlayerFullName].Visible ~= Visible then
 		Scale.PerCharacterOptions[PawnPlayerFullName].Visible = Visible
 		PawnResetTooltips()
+		PawnResetBags()
 	end
 	return true
 end
@@ -5563,6 +5572,7 @@ function PawnSetShowUpgradesForWeapons(ScaleName, WeaponSet, ShowUpgrades)
 	end
 	PawnInvalidateBestItemsForScale(ScaleName)
 	PawnResetTooltips()
+	PawnResetBags()
 end
 
 -- Sets whether the upgrade tracking feature is enabled for this character.
@@ -5572,6 +5582,7 @@ function PawnSetUpgradeTracking(Enabled)
 	PawnOptions.UpgradeTracking = Enabled
 	PawnInvalidateBestItems()
 	PawnResetTooltips()
+	PawnResetBags()
 end
 
 -- Returns true if a scale is read-only.
