@@ -53,9 +53,15 @@ local PawnEnchantedAnnotationFormat, PawnUnenchantedAnnotationFormat, PawnNoValu
 PawnScaleProviders = { }
 local PawnScaleProvidersInitialized
 
+-- Third-party bags
+-- PawnThirdPartyBags["My Bag Addon"] = { }
+local PawnThirdPartyBags = { }
+local PawnHasAnyThirdPartyBags = false
+
 -- Third-party tooltips
--- PawnThirdPartyTooltips["MyTooltipAddon"] = { SetBackdropBorderColor = function(Tooltip, r, g, b, a) ... end }
+-- PawnThirdPartyTooltips["My Tooltip Addon"] = { SetBackdropBorderColor = function(Tooltip, r, g, b, a) ... end }
 local PawnThirdPartyTooltips = { }
+local PawnHasAnyThirdPartyTooltips
 
 -- "Constants"
 local PawnCurrentScaleVersion = 1
@@ -163,10 +169,12 @@ end
 -- A wrapper for Tooltip:SetBackdropBorderColor that allows addon authors to easily override it.
 local function PawnSetTooltipBorderColor(Tooltip, r, g, b, a)
 	local Fallback = true
-	for _, Overrides in pairs(PawnThirdPartyTooltips) do
-		if Overrides.SetBackdropBorderColor then
-			Overrides.SetBackdropBorderColor(Tooltip, r, g, b, a)
-			Fallback = false
+	if PawnHasAnyThirdPartyTooltips then
+		for _, Overrides in pairs(PawnThirdPartyTooltips) do
+			if Overrides.SetBackdropBorderColor then
+				Overrides.SetBackdropBorderColor(Tooltip, r, g, b, a)
+				Fallback = false
+			end
 		end
 	end
 
@@ -4478,6 +4486,7 @@ function PawnOnSpecChanged()
 		-- Don't reset the UI if their spec didn't actually change—this notification can be a bit spammy.
 		PawnClearCache()
 		PawnInvalidateBestItems()
+		if PawnBags then PawnBags:RefreshAll() end
 
 		PawnUICurrentScale = nil -- Let the refresh method re-set this
 		PawnUIFrame_ScaleSelector_Refresh()
@@ -5984,23 +5993,58 @@ function PawnClearBestItemLevelData()
 	end
 end
 
--- Tells Pawn about a third-party tooltip addon that needs to override some of the things that Pawn does.
+-- Tells Pawn about a third-party bag addon that needs to override some of the things that Pawn does.
 -- Example:
--- 	PawnRegisterThirdPartyTooltip("MyTooltipAddon", {
+-- 	PawnRegisterThirdPartyBag("My Bag Addon", {
+--		-- Just registering a bag addon causes Pawn's integration with the default bags to be disabled
+-- 	})
+function PawnRegisterThirdPartyBag(AddonName, Overrides)
+	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
+	if Overrides == nil then Overrides = {} end
+	if type(Overrides) ~= "table" then VgerCore.Fail("Overrides must be a table of override functions.") return end
+	if PawnThirdPartyBags[AddonName] then VgerCore.Fail("You can only register the third-party bag addon \"" .. tostring(AddonName) .. "\" once.") return end
+
+	PawnThirdPartyBags[AddonName] = Overrides
+	PawnHasAnyThirdPartyBags = true
+end
+
+-- Returns true if any third-party bag addon is registered.
+function PawnIsAThirdPartyBagRegistered()
+	return PawnHasAnyThirdPartyBags
+end
+
+-- Not sure why you'd need this, but here's the opposite of PawnRegisterThirdPartyBag.
+function PawnUnregisterThirdPartyBag(AddonName)
+	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
+	PawnThirdPartyBags[AddonName] = nil
+	PawnHasAnyThirdPartyBags = #PawnThirdPartyBags > 0
+end
+
+-- Tells Pawn about a third-party bag addon that needs to override some of the things that Pawn does.
+-- Example:
+-- 	PawnRegisterThirdPartyTooltip("My Tooltip Addon", {
 --		SetBackdropBorderColor = function(Tooltip, r, g, b, a) print("Replace this with code that changes your tooltip's border color") end,
 -- 	})
 function PawnRegisterThirdPartyTooltip(AddonName, Overrides)
 	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
-	if not Overrides or type(Overrides) ~= "table" then VgerCore.Fail("Overrides must be a table of override functions.") return end
+	if Overrides == nil then Overrides = {} end
+	if type(Overrides) ~= "table" then VgerCore.Fail("Overrides must be a table of override functions.") return end
 	if PawnThirdPartyTooltips[AddonName] then VgerCore.Fail("You can only register the third-party tooltip addon \"" .. tostring(AddonName) .. "\" once.") return end
 
 	PawnThirdPartyTooltips[AddonName] = Overrides
+	PawnHasAnyThirdPartyTooltips = true
+end
+
+-- Returns true if any third-party tooltip addon is registered.
+function PawnIsAThirdPartyTooltipRegistered()
+	return PawnHasAnyThirdPartyTooltips
 end
 
 -- Not sure why you'd need this, but here's the opposite of PawnRegisterThirdPartyTooltip.
 function PawnUnregisterThirdPartyTooltip(AddonName)
 	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
 	PawnThirdPartyTooltips[AddonName] = nil
+	PawnHasAnyThirdPartyTooltips = #PawnThirdPartyBags > 0
 end
 
 -- Shows or hides the Pawn UI.

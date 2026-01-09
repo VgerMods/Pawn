@@ -4,19 +4,22 @@
 -- See Readme.htm for more information.
 --
 -- Default bag integration
+--
+-- If you're the author of a bag addon and want to integrate with Pawn, reach out! The general steps are:
+-- 	1. For each item, call PawnShouldItemLinkHaveUpgradeArrow(link, true).
+-- 	2. If it returns nil, Pawn can't answer the question yet (or doing so would slow down the game), so check back soon on a timer.
+-- 	3. Otherwise, it will return true or false, so use that to show or hide the arrow.
+-- 	4. Call PawnRegisterThirdPartyTooltip("My addon name") to disable Pawn's integration with the default bags (for performance).
 ------------------------------------------------------------
 
 PawnBags = {}
-
 local _
+
+local PawnBagsRefreshCounter = 1
 
 local function ContainerFrameItemButton_Update(self)
 	if self.isExtended then return end
-
-	-- TODO: If they have any bag replacement addons, disable all of this.
-	-- You'll need to add a way to register bag replacement addons, like PawnRegisterThirdPartyTooltip.
-
-	-- TODO: Update PawnUIFrame_ShowBagUpgradeAdvisorCheck_OnClick in PawnUI.lua.
+	if PawnIsAThirdPartyBagRegistered() then return end
 
 	local ItemInfo
 	local IsUpgrade
@@ -25,25 +28,31 @@ local function ContainerFrameItemButton_Update(self)
 		if not ItemInfo or not ItemInfo.stackCount then
 			-- If the stack count is 0, it's clearly not an upgrade
 			IsUpgrade = false
+			self.PawnLastCheckedRefresh = nil
 			self.PawnLastCheckedItemLink = nil
 		elseif not ItemInfo.hyperlink then
 			-- If we didn't get an item link, but there's an item there, try again later
 			IsUpgrade = nil
+			self.PawnLastCheckedRefresh = nil
 			self.PawnLastCheckedItemLink = nil
 		else
-			-- If we've already checked this item in this slot, we can skip updates.
-			if self.PawnLastCheckedItemLink == ItemInfo.hyperlink then return end
+			-- If we've already checked this item in this slot, since the last refresh, we can skip updates.
+			if self.PawnLastCheckedRefresh == PawnBagsRefreshCounter and self.PawnLastCheckedItemLink == ItemInfo.hyperlink then return end
 
-			-- Otherwise, see what Pawn says.
+			-- Otherwise, see what Pawn says. This is throttled to return nil if asked too much in a single frame, so we'll set a retry timer later below.
 			IsUpgrade = PawnShouldItemLinkHaveUpgradeArrow(ItemInfo.hyperlink, true) -- true means to check player level
 			if IsUpgrade ~= nil then
+				self.PawnLastCheckedRefresh = PawnBagsRefreshCounter
 				self.PawnLastCheckedItemLink = ItemInfo.hyperlink
 			else
+				self.PawnLastCheckedRefresh = nil
 				self.PawnLastCheckedItemLink = nil
 			end
 		end
 	else
 		IsUpgrade = false
+		self.PawnLastCheckedRefresh = nil
+		self.PawnLastCheckedItemLink = nil
 	end
 
 	if IsUpgrade == nil then
@@ -65,12 +74,21 @@ local function ContainerFrameMixin_UpdateItems(self)
 end
 
 function PawnBags:Initialize()
-	-- Hook ContainerFrameMixin to affect all future bag frames.
 	hooksecurefunc(ContainerFrameMixin, "UpdateItems", ContainerFrameMixin_UpdateItems)
-	-- It's a Mixin, not a prototype, so changes are not retroactive to bags that have already been created. So update all of those too.
+	-- Hooking the mixin is not retroactive to bags that have already been created. So update all of those too.
 	hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", ContainerFrameMixin_UpdateItems)
 	for i = 1, NUM_TOTAL_BAG_FRAMES do
 		local Bag = _G["ContainerFrame" .. i]
 		hooksecurefunc(Bag, "UpdateItems", ContainerFrameMixin_UpdateItems)
+	end
+end
+
+-- Clears out the cached upgrade information from all items on all bag frames.
+function PawnBags:RefreshAll()
+	PawnBagsRefreshCounter = PawnBagsRefreshCounter + 1
+	if ContainerFrameCombinedBags:IsShown() then ContainerFrameCombinedBags:UpdateItems() end
+	for i = 1, NUM_TOTAL_BAG_FRAMES do
+		local Bag = _G["ContainerFrame" .. i]
+		if Bag:IsShown() then Bag:UpdateItems() end
 	end
 end

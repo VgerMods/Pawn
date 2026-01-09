@@ -2036,21 +2036,7 @@ end
 
 function PawnUIFrame_ShowBagUpgradeAdvisorCheck_OnClick()
 	PawnCommon.ShowBagUpgradeAdvisor = PawnUIFrame_ShowBagUpgradeAdvisorCheck:GetChecked()
-
-	-- When toggling this option, refresh all bags.
-	local BagIndex
-	for BagIndex = 1, NUM_CONTAINER_FRAMES, 1 do
-		local BagFrame = _G["ContainerFrame" .. BagIndex];
-		if BagFrame:IsShown() then
-			if BagFrame.UpdateItemUpgradeIcons then
-				-- Dragonflight onward
-				BagFrame:UpdateItemUpgradeIcons()
-			elseif ContainerFrame_UpdateItemUpgradeIcons then
-				-- Legion through Shadowlands
-				ContainerFrame_UpdateItemUpgradeIcons(BagFrame)
-			end
-		end
-	end
+	if PawnBags then PawnBags:RefreshAll() end
 end
 
 function PawnUIFrame_ShowLootUpgradeAdvisorCheck_OnClick()
@@ -2079,6 +2065,7 @@ function PawnUIFrame_IgnoreGemsWhileLevelingCheck_OnClick()
 	PawnClearCache()
 	PawnInvalidateBestItems()
 	PawnResetTooltips()
+	if PawnBags then PawnBags:RefreshAll() end
 end
 
 function PawnUIFrame_ResetUpgradesButton_OnClick()
@@ -2086,6 +2073,7 @@ function PawnUIFrame_ResetUpgradesButton_OnClick()
 	PawnInvalidateBestItems()
 	PawnResetTooltips()
 	PawnClearBestItemLevelData()
+	if PawnBags then PawnBags:RefreshAll() end
 end
 
 function PawnUIFrame_DebugCheck_OnClick()
