@@ -9,7 +9,7 @@
 -- 	1. For each item, call PawnShouldItemLinkHaveUpgradeArrow(link, true).
 -- 	2. If it returns nil, Pawn can't answer the question yet (or doing so would slow down the game), so check back soon on a timer.
 -- 	3. Otherwise, it will return true or false, so use that to show or hide the arrow.
--- 	4. Call PawnRegisterThirdPartyTooltip("My addon name") to disable Pawn's integration with the default bags (for performance).
+-- 	4. Call PawnRegisterThirdPartyBag("My addon name") to disable Pawn's integration with the default bags (for performance).
 ------------------------------------------------------------
 
 PawnBags = {}

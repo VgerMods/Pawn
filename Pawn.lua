@@ -669,14 +669,6 @@ function PawnInitializeOptions()
 		-- The new "show spec icons" option is enabled by default.
 		PawnCommon.ShowSpecIcons = true
 	end
-	if PawnCommon.LastVersion < 2.0101 then
-		-- The new Bag Upgrade Advisor is on by default, but it's not supported in Classic.
-		if VgerCore.IsMainline then
-			PawnCommon.ShowBagUpgradeAdvisor = true
-		else
-			PawnCommon.ShowBagUpgradeAdvisor = false
-		end
-	end
 	if PawnOptions.LastVersion < 2.0219 then
 		-- The item squish happened in WoW 8.0, so artifact relic item levels changed.
 		PawnOptions.Artifacts = nil
@@ -716,6 +708,12 @@ function PawnInitializeOptions()
 	if PawnCommon.LastVersion < 2.0902 and VgerCore.ReforgingExists then
 		-- Enable the reforging advisor by default on Cataclysm Classic.
 		PawnCommon.ShowReforgingAdvisor = true
+	end
+	if PawnCommon.LastVersion < 2.1300 then
+		-- The Bag Upgrade Advisor on by default now wherever Automatic mode is supported.
+		if VgerCore.SpecsExist then
+			PawnCommon.ShowBagUpgradeAdvisor = true
+		end
 	end
 	if ((VgerCore.IsMainline) and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
 		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
