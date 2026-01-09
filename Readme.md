@@ -50,7 +50,8 @@ Pawn has other options for players who want more math in their Warcraft: check o
 
 * [See all of my addons](https://www.vgermods.com)
 * You can reach me on [Facebook](https://www.facebook.com/vgermods)
-* Leave a message on [CurseForge](https://www.curseforge.com/wow/addons/pawn)
+* Leave a comment on [CurseForge](https://www.curseforge.com/wow/addons/pawn)
+* Email vger at vgermods.com
 
 ### Reporting issues
 
@@ -92,8 +93,9 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Older versions
 
-Older Pawn updates are documented in the [version history](Version%20history.htm) page.
+Older Pawn updates are documented in the [version history](Version%20history.md) page.
 
-## The fine print
+---
+by Vger-Azjol-Nerub—[www.vgermods.com](https://www.vgermods.com)
 
-© 2006-2026 Travis Spomer. This mod is released under the Creative Commons [Attribution-NonCommercial-NoDerivs 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0) license. In short, this means that you can use it, copy it, and share it, but you can't sell it or distribute your own altered versions without permission. By using the mod you agree to the terms of the license. For more information, click the link.
+© 2006-2026 Travis Spomer. This mod is released under the Creative Commons [Attribution-NonCommercial-NoDerivs 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0) license. By using the mod you agree to the terms of the license.
