@@ -17,9 +17,9 @@ local _
 
 local PawnBagsRefreshCounter = 1
 
-local function ContainerFrameItemButton_Update(self)
+local function UpdateItemButtonUpgradeIcon(self)
 	if self.isExtended then return end
-	if PawnIsAThirdPartyBagRegistered() then return end
+	if PawnIsAThirdPartyBagRegistered then return end
 
 	local ItemInfo
 	local IsUpgrade
@@ -57,35 +57,35 @@ local function ContainerFrameItemButton_Update(self)
 
 	if IsUpgrade == nil then
 		C_Timer.After(0, function()
-			ContainerFrameItemButton_Update(self)
+			UpdateItemButtonUpgradeIcon(self)
 		end)
 	else
 		self.UpgradeIcon:SetShown(IsUpgrade)
 	end
 end
 
-local function ContainerFrameMixin_UpdateItems(self)
+local function UpdateContainerFrameUpgradeIcons(self)
 	for _, ItemButton in self:EnumerateValidItems() do
-		ContainerFrameItemButton_Update(ItemButton)
+		UpdateItemButtonUpgradeIcon(ItemButton)
 	end
 end
 
 function PawnBags:Initialize()
-	hooksecurefunc(ContainerFrameMixin, "UpdateItems", ContainerFrameMixin_UpdateItems)
+	hooksecurefunc(ContainerFrameMixin, "UpdateItems", UpdateContainerFrameUpgradeIcons)
 	-- Hooking the mixin is not retroactive to bags that have already been created. So update all of those too.
-	hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", ContainerFrameMixin_UpdateItems)
+	hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", UpdateContainerFrameUpgradeIcons)
 	for i = 1, NUM_TOTAL_BAG_FRAMES do
 		local Bag = _G["ContainerFrame" .. i]
-		hooksecurefunc(Bag, "UpdateItems", ContainerFrameMixin_UpdateItems)
+		hooksecurefunc(Bag, "UpdateItems", UpdateContainerFrameUpgradeIcons)
 	end
 end
 
 -- Clears out the cached upgrade information from all items on all bag frames.
 function PawnBags:RefreshAll()
 	PawnBagsRefreshCounter = PawnBagsRefreshCounter + 1
-	if ContainerFrameCombinedBags:IsShown() then ContainerFrameMixin_UpdateItems(ContainerFrameCombinedBags) end
+	if ContainerFrameCombinedBags:IsShown() then UpdateContainerFrameUpgradeIcons(ContainerFrameCombinedBags) end
 	for i = 1, NUM_TOTAL_BAG_FRAMES do
 		local Bag = _G["ContainerFrame" .. i]
-		if Bag:IsShown() then ContainerFrameMixin_UpdateItems(Bag) end
+		if Bag:IsShown() then UpdateContainerFrameUpgradeIcons(Bag) end
 	end
 end
