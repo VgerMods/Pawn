@@ -457,61 +457,9 @@ function PawnInitialize()
 		VgerCore.HookInsecureFunction(AceConfigDialogTooltip, "SetHyperlink", function(_, ItemLink) PawnUpdateTooltip("AceConfigDialogTooltip", "SetHyperlink", ItemLink) end)
 	end
 
-	-- In-bag upgrade icons
-	if VgerCore.IsMainline then
-		PawnOriginalIsContainerItemAnUpgrade = IsContainerItemAnUpgrade
-		PawnIsContainerItemAnUpgrade = function(bagID, slot, ...)
-			if PawnCommon.ShowBagUpgradeAdvisor then
-				local ItemInfo = C_Container.GetContainerItemInfo(bagID, slot)
-				if not ItemInfo or not ItemInfo.stackCount then return false end -- If the stack count is 0, it's clearly not an upgrade
-				if not ItemInfo.hyperlink then return nil end -- If we didn't get an item link, but there's an item there, try again later
-				return PawnShouldItemLinkHaveUpgradeArrow(ItemInfo.hyperlink, true) -- true means to check player level
-			else
-				if PawnOriginalIsContainerItemAnUpgrade then
-					---@diagnostic disable-next-line: redundant-parameter
-					return PawnOriginalIsContainerItemAnUpgrade(bagID, slot, ...)
-				else
-					-- If Pawn's bag advisor is off, AND the game's IsContainerItemAnUpgrade is missing, nothing's an upgrade.
-					return false
-				end
-			end
-		end
-		PawnUpdateItemUpgradeIcon = function(self)
-			if self.isExtended then return end
-			local IsUpgrade = PawnIsContainerItemAnUpgrade(self.GetBagID and self:GetBagID() or self:GetParent():GetID(), self:GetID())
-
-			if IsUpgrade == nil then
-				self.UpgradeIcon:SetShown(false)
-				self:SetScript("OnUpdate", self.TryUpdateItemUpgradeIcon or ContainerFrameItemButton_TryUpdateItemUpgradeIcon)
-			else
-				self.UpgradeIcon:SetShown(IsUpgrade)
-				self:SetScript("OnUpdate", nil)
-			end
-		end
-	end
-
-	if ContainerFrameItemButtonMixin and ContainerFrameItemButtonMixin.UpdateItemUpgradeIcon then
-		-- 10.0.0 only - this code was removed from the game in 10.0.2
-
-		-- First, hook ContainerFrameItemButtonMixin to affect all future bag frames.
-		hooksecurefunc(ContainerFrameItemButtonMixin, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
-		-- Unfortunately, the Mixin is not a prototype so changes are not retroactive to bags that have already been created,
-		-- so now we need to update all of those.
-		for i = 1, NUM_TOTAL_BAG_FRAMES do
-			local Bag = _G["ContainerFrame" .. i]
-			if Bag.Items then
-				for _, Button in Bag:EnumerateItems() do
-					hooksecurefunc(Button, "UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
-				end
-			end
-		end
-	elseif ContainerFrame_UpdateItemUpgradeIcons then
-		-- Legion through Shadowlands
-
-		-- Changing IsContainerItemAnUpgrade now causes taint errors, and replacing this function with a copy of itself
-		-- works on its own, but breaks other addons that hook this function like CanIMogIt. So, our best option appears to
-		-- be to just let the default version run, and then change its results immediately after.
-		hooksecurefunc("ContainerFrameItemButton_UpdateItemUpgradeIcon", PawnUpdateItemUpgradeIcon)
+	-- Pawn bag upgrade advisor in-bag icons
+	if PawnBags then
+		PawnBags:Initialize()
 	end
 
 	-- Dragonflight professions UI
@@ -5995,7 +5943,8 @@ function PawnShouldItemLinkHaveUpgradeArrowUnbudgeted(ItemLink, CheckLevel)
 	if CheckLevel and UnitLevel("player") < MinLevel then return false end
 	if PawnCanItemHaveStats(ItemLink) then
 		local Item = PawnGetItemData(ItemLink)
-		if Item == nil or Item.Link == nil then return nil end -- If we don't have stats for the item yet, ask again later.
+		if not Item then return false end
+		if Item.Link == nil then return nil end -- If we don't have stats for the item yet, ask again later.
 		if PawnOptions.DebugBagArrows then
 			local UpgradeInfo, _, _, _, _ = PawnIsItemAnUpgrade(Item)
 			if UpgradeInfo ~= nil then
