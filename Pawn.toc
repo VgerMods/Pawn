@@ -6,35 +6,47 @@
 ## SavedVariables: PawnCommon
 ## SavedVariablesPerCharacter: PawnOptions, PawnMrRobotScaleProviderOptions, PawnClassicScaleProviderOptions
 ## AddonCompartmentFunc: PawnUIShow
+
 ## IconTexture: Interface\AddOns\Pawn\Textures\PawnIcon.tga
+## Category: Equipment
+## Category-deDE: Ausrüstung
+## Category-esES: Equipo
+## Category-esMX: Equipo
+## Category-frFR: Équipement
+## Category-itIT: Equipaggiamento
+## Category-koKR: 장비
+## Category-ptBR: Equipamento
+## Category-ruRU: Экипировка
+## Category-zhCN: 装备
+## Category-zhTW: 裝備
 
 ## X-Wago-ID: R4N2k46L
 
 VgerCore\VgerCore.lua
 
 Core.lua
-Localization.lua
-Localization.deDE.lua
-Localization.es.lua
-Localization.frFR.lua
-Localization.itIT.lua
-Localization.koKR.lua
-Localization.ptBR.lua
-Localization.ruRU.lua
-Localization.zhCN.lua
-Localization.zhTW.lua
+Localization.lua [AllowLoadTextLocale enUS]
+Localization.deDE.lua [AllowLoadTextLocale deDE]
+Localization.es.lua [AllowLoadTextLocale esES, esMX]
+Localization.frFR.lua [AllowLoadTextLocale frFR]
+Localization.itIT.lua [AllowLoadTextLocale itIT]
+Localization.koKR.lua [AllowLoadTextLocale koKR]
+Localization.ptBR.lua [AllowLoadTextLocale ptBR]
+Localization.ruRU.lua [AllowLoadTextLocale ruRU]
+Localization.zhCN.lua [AllowLoadTextLocale zhCN]
+Localization.zhTW.lua [AllowLoadTextLocale zhTW]
 UIStrings.lua
 TooltipParsing.lua
-Gems.lua
-GemsClassic.lua
-GemsBurningCrusade.lua
-GemsWrath.lua
-GemsCataclysm.lua
-GemsMists.lua
+Gems.lua [AllowLoadGameType mainline]
+GemsClassic.lua [AllowLoadGameType vanilla]
+GemsBurningCrusade.lua [AllowLoadGameType tbc]
+GemsWrath.lua [AllowLoadGameType wrath]
+GemsCataclysm.lua [AllowLoadGameType cata]
+GemsMists.lua [AllowLoadGameType mists]
 ScaleTemplates.lua
 ItemIDs.lua
 Pawn.lua
 PawnUI.lua
 PawnUI.xml
-AskMrRobot.lua
-ClassicHawsJon.lua
+AskMrRobot.lua [AllowLoadGameType mainline]
+ClassicHawsJon.lua [AllowLoadGameType classic]

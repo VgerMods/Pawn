@@ -7,9 +7,6 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsCataclysm then
-
-
 --========================================
 -- Colored level 60 common-quality vendor gems
 --========================================
@@ -1002,5 +999,3 @@ PawnCogwheelQualityLevels =
 PawnCrystalOfFearQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 315 -- 187 during pre-patch; 315 at launch
-
-end -- if VgerCore.IsCataclysm

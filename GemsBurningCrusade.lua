@@ -7,9 +7,6 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsBurningCrusade then
-
-
 --========================================
 -- Colored level 60 common-quality vendor gems
 --========================================
@@ -340,5 +337,3 @@ PawnCogwheelQualityLevels = nil
 PawnCrystalOfFearQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 100
-
-end -- if VgerCore.IsBurningCrusade

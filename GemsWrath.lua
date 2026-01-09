@@ -7,9 +7,6 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsWrath then
-
-
 --========================================
 -- Colored level 60 common-quality vendor gems
 --========================================
@@ -741,5 +738,3 @@ PawnCogwheelQualityLevels = nil
 PawnCrystalOfFearQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 187
-
-end -- if VgerCore.IsWrath

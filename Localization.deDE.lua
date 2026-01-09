@@ -8,7 +8,7 @@
 ------------------------------------------------------------
 
 local function PawnUseThisLocalization()
-PawnLocal = 
+PawnLocal =
 {
 	["AverageItemLevelIgnoringRarityTooltipLine"] = "Durchschnittliche Gegenstandsstufe",
 	["BaseValueWord"] = "Basis",
@@ -784,9 +784,6 @@ PawnLocal.Specs =
 
 end
 
-if GetLocale() == "deDE" then
-	PawnUseThisLocalization()
-end
-
--- After using this localization or deciding that we don't need it, remove it from memory.
+-- Initiate self-destruct sequence.
+PawnUseThisLocalization()
 PawnUseThisLocalization = nil

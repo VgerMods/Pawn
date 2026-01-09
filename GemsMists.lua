@@ -7,9 +7,6 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsMists then
-
-
 --========================================
 -- Colored level 60 common-quality vendor gems
 --========================================
@@ -1308,6 +1305,4 @@ PawnCrystalOfFearQualityLevels =
 	{ 0, PawnCrystalOfFearData90Legendary }, -- Kri'tak
 }
 
-PawnMinimumItemLevelToConsiderGems = 346 -- 346 during pre-patch; 417 at launch
-
-end -- if VgerCore.IsMists
+PawnMinimumItemLevelToConsiderGems = 417 -- 346 during pre-patch; 417 at launch

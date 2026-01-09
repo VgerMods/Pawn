@@ -837,8 +837,8 @@ PawnLocal.Specs =
 
 end
 
+PawnUseThisLocalization()
 if GetLocale() == "esES" then
-	PawnUseThisLocalization()
 	PawnLocal.ThousandsSeparator = ""
 	PawnLocal.DecimalSeparator = ","
 
@@ -980,5 +980,5 @@ elseif GetLocale() == "esMX" then
 	end
 end
 
--- After using this localization or deciding that we don't need it, remove it from memory.
+-- Initiate self-destruct sequence.
 PawnUseThisLocalization = nil

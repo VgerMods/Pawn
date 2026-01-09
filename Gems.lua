@@ -7,9 +7,6 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsMainline then
-
-
 -- Gem table row format:
 -- { ID, S, R, Y, B, [Item] }
 -- ID: The gem's item ID
@@ -359,5 +356,3 @@ PawnCogwheelQualityLevels = nil
 PawnCrystalOfFearQualityLevels = nil
 
 PawnMinimumItemLevelToConsiderGems = 571 -- Sockets on items below this ilvl are ignored by default
-
-end -- if VgerCore.IsMainline

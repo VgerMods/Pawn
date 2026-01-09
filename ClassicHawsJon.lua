@@ -1152,10 +1152,6 @@ end -- PawnClassicScaleProvider_AddScales
 
 ------------------------------------------------------------
 
-if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
-	-- Scales for all versions of WoW Classic are in this file.
-	PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.StarterProvider, PawnClassicScaleProvider_AddScales)
-else
-	-- We use Ask Mr. Robot spec-specific scales instead on mainline WoW.
-	PawnClassicScaleProvider_AddScales = nil
-end
+-- Initiate self-destruct sequence.
+PawnAddPluginScaleProvider(ScaleProviderName, PawnLocal.UI.StarterProvider, PawnClassicScaleProvider_AddScales)
+PawnClassicScaleProvider_AddScales = nil

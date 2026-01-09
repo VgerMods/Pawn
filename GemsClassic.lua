@@ -7,10 +7,8 @@
 ------------------------------------------------------------
 
 
-if VgerCore.IsClassic then
-	PawnGemQualityLevels = nil
-	PawnMetaGemQualityLevels = nil
-	PawnCogwheelQualityLevels = nil
-	PawnCrystalOfFearQualityLevels = nil
-	PawnMinimumItemLevelToConsiderGems = 10000
-end
+PawnGemQualityLevels = nil
+PawnMetaGemQualityLevels = nil
+PawnCogwheelQualityLevels = nil
+PawnCrystalOfFearQualityLevels = nil
+PawnMinimumItemLevelToConsiderGems = 10000

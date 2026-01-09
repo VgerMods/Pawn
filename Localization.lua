@@ -787,10 +787,6 @@ PawnLocal.Specs =
 
 end
 
-local Locale = GetLocale()
-if Locale ~= "deDE" and Locale ~= "esES" and Locale ~= "esMX" and Locale ~= "frFR" and Locale ~= "itIT" and Locale ~= "koKR" and Locale ~= "ptBR" and Locale ~= "ruRU" and Locale ~= "zhCN" and Locale ~= "zhTW" then
-	PawnUseThisLocalization()
-end
-
--- After using this localization or deciding that we don't need it, remove it from memory.
+-- Initiate self-destruct sequence.
+PawnUseThisLocalization()
 PawnUseThisLocalization = nil
