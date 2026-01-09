@@ -15,6 +15,7 @@
 PawnBags = {}
 local _
 
+local NumberOfContainerFrames = NUM_TOTAL_BAG_FRAMES or NUM_CONTAINER_FRAMES
 local PawnBagsRefreshCounter = 1
 
 local function UpdateItemButtonUpgradeIcon(self)
@@ -65,26 +66,40 @@ local function UpdateItemButtonUpgradeIcon(self)
 end
 
 local function UpdateContainerFrameUpgradeIcons(self)
-	for _, ItemButton in self:EnumerateValidItems() do
-		UpdateItemButtonUpgradeIcon(ItemButton)
+	if VgerCore.IsMainline then
+		for _, ItemButton in self:EnumerateValidItems() do
+			UpdateItemButtonUpgradeIcon(ItemButton)
+		end
+	else
+		local ItemButtonNamePrefix = self:GetName() .. "Item"
+		for i = 1, self.size, 1 do
+			local ItemButton = _G[ItemButtonNamePrefix .. i]
+			UpdateItemButtonUpgradeIcon(ItemButton)
+		end
 	end
 end
 
 function PawnBags:Initialize()
-	hooksecurefunc(ContainerFrameMixin, "UpdateItems", UpdateContainerFrameUpgradeIcons)
-	-- Hooking the mixin is not retroactive to bags that have already been created. So update all of those too.
-	hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", UpdateContainerFrameUpgradeIcons)
-	for i = 1, NUM_TOTAL_BAG_FRAMES do
-		local Bag = _G["ContainerFrame" .. i]
-		hooksecurefunc(Bag, "UpdateItems", UpdateContainerFrameUpgradeIcons)
+	if VgerCore.IsMainline then
+		hooksecurefunc(ContainerFrameMixin, "UpdateItems", UpdateContainerFrameUpgradeIcons)
+		-- Hooking the mixin is not retroactive to bags that have already been created. So update all of those too.
+		hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", UpdateContainerFrameUpgradeIcons)
+		for i = 1, NumberOfContainerFrames do
+			local Bag = _G["ContainerFrame" .. i]
+			hooksecurefunc(Bag, "UpdateItems", UpdateContainerFrameUpgradeIcons)
+		end
+	else
+		hooksecurefunc("ContainerFrame_Update", UpdateContainerFrameUpgradeIcons)
 	end
 end
 
 -- Clears out the cached upgrade information from all items on all bag frames.
 function PawnBags:RefreshAll()
 	PawnBagsRefreshCounter = PawnBagsRefreshCounter + 1
-	if ContainerFrameCombinedBags:IsShown() then UpdateContainerFrameUpgradeIcons(ContainerFrameCombinedBags) end
-	for i = 1, NUM_TOTAL_BAG_FRAMES do
+	if VgerCore.IsMainline then
+		if ContainerFrameCombinedBags:IsShown() then UpdateContainerFrameUpgradeIcons(ContainerFrameCombinedBags) end
+	end
+	for i = 1, NumberOfContainerFrames do
 		local Bag = _G["ContainerFrame" .. i]
 		if Bag:IsShown() then UpdateContainerFrameUpgradeIcons(Bag) end
 	end

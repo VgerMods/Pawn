@@ -1958,11 +1958,10 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_UpgradeTrackingList_UpdateSelection()
 
 	-- Advisor options
-	if not VgerCore.IsMainline then
-		-- The bag upgrade advisor isn't supported on Classic.
-		PawnUIFrame_ShowBagUpgradeAdvisorCheck:Hide()
-	else
+	if PawnBags then
 		PawnUIFrame_ShowBagUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowBagUpgradeAdvisor)
+	else
+		PawnUIFrame_ShowBagUpgradeAdvisorCheck:Hide()
 	end
 	PawnUIFrame_ShowLootUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowLootUpgradeAdvisor)
 	PawnUIFrame_ShowQuestUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowQuestUpgradeAdvisor)

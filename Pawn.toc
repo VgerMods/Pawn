@@ -46,7 +46,7 @@ GemsMists.lua [AllowLoadGameType mists]
 ScaleTemplates.lua
 ItemIDs.lua
 Pawn.lua
-PawnBags.lua [AllowLoadGameType mainline]
+PawnBags.lua
 PawnUI.lua
 PawnUI.xml
 AskMrRobot.lua [AllowLoadGameType mainline]
