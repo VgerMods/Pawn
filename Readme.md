@@ -65,10 +65,10 @@ If something doesn't seem to be working right, please send me a description of t
 If you Alt+LeftClick on an item popup (whisper the item to yourself), you'll get a little popup that lets you copy and paste text from the item. At the bottom of that text is a command like this:
 
 ```
-/pawn tooltip 12345:67...
+/pawn tooltip 12345:67::::0::89...
 ```
 
-If you copy and paste that for me, I can usually recreate the exact problem on my computer. That's the most helpful thing you can do for me it the problem is related to a specific item. Screenshots are always great too!
+If you copy and paste that for me, I can see the same item on my computer, and that's the most helpful thing you can do to help me track down the problem you're seeing. Screenshots are always great too!
 
 ### Incompatible addons
 
@@ -83,12 +83,12 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ## Updates
 
 ### Version 2.13.0
-#### Beta 1
 
 * The War Within and Midnight: Upgrade arrows in your bags are back! I've rebuilt the feature to work as it did back in Legion and Shadowlands.
 * Mists of Pandaria Classic: Pawn's bag upgrade advisor now works on Mists Classic! You'll now see green arrows over upgrades in your bags.
 * Classic Era: Pawn's bag upgrade advisor now works on Classic realms, but it's off by default. You can enable it on Pawn's Options tab.
 	* Since Classic Era doesn't have specs or Pawn's Automatic mode and instead has each scale for your class enabled by default, I was worried that the number of green arrows might be overwhelming when playing hybrid classes.
+	* Due to a bug in how World of Warcraft Classic handles item stats, there is a chance that this feature on Classic Era might occasionally miss new items. I haven't observed this happening, but let me know if you spot an upgrade that should have a green arrow but doesn't get one until you move it to a new slot.
 * Pawn's UI is now a little more Midnighty.
 * Improved loading times and memory usage.
 * Fixed a problem where other addons using Pawn at unusual times could cause an error.
@@ -96,9 +96,9 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Older versions
 
-Older Pawn updates are documented in the [version history](Version%20history.md) page.
+The [version history](Version%20history.md) documents older Pawn updates.
 
 ---
-by Vger-Azjol-Nerub—[www.vgermods.com](https://www.vgermods.com)
+by Vger-Azjol-Nerub—[vgermods.com](https://www.vgermods.com)
 
 © 2006-2026 Travis Spomer. This mod is released under the Creative Commons [Attribution-NonCommercial-NoDerivs 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0) license. By using the mod you agree to the terms of the license.
