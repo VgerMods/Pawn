@@ -2353,7 +2353,7 @@ Pawn 2.0 only works on World of Warcraft 7.0, the Legion prepatch.
 ### Version 0.4
 
 * Added scale tags! Scale tags are chunks of text that you can use to share Pawn scales with friends, guildmates, and others on forums, similar to how you can share talent specs today by passing around a link to the WoW talent calculator. You can copy a scale tag and then post it on your guild forums, and then another player can copy that tag and paste it into their game to automatically add your scale to their copy of Pawn, without logging out of the game or changing files in Notepad. To export a scale tag so you can share it with others, use the /pawn export command. To import someone else's scale tag and add it to your own scales, use the /pawn import command.
-* Added new slash commands: /pawn list, export, import, delete, and rename. See "Slash commands" in Readme.htm for more details.
+* Added new slash commands: /pawn list, export, import, delete, and rename.
 * Added support for weapon skill ratings (including unarmed and feral combat). (They have been added to the default Pawn scale, but if you care about weapon skill ratings you must add them to your custom scales manually.)
 * Fixed the /pawn resetscales command so that it would delete all of your scales before recreating the default one named Pawn value, as was intended.
 

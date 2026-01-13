@@ -1,7 +1,7 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
--- See Readme.htm for more information.
+-- See Readme.md for more information.
 
 --
 -- Russian resources
@@ -71,7 +71,7 @@ www.vgermods.com
 /pawn debug [ on | off ] -- писать информацию отладки в консоль
 /pawn backup -- сделать резервную копию всех ваших шкал
  
-For more information on customizing Pawn, please see the help file (Readme.htm) that comes with the mod.
+For more information on customizing Pawn, please see the help file (Readme.md) that comes with the mod.
 ]=],
 	["ValueCalculationMessage"] = "   %g %s x %g каждый = %g",
 	["VisibleScalesHeader"] = "Шкалы %s",

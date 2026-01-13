@@ -1,7 +1,7 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
--- See Readme.htm for more information.
+-- See Readme.md for more information.
 
 --
 -- Chinese (Traditional) resources
@@ -72,7 +72,7 @@ PawnLocal =
 /pawn debug [ on | off ] -- 在對話欄中顯示除錯訊息
 /pawn backup -- 備份您所有的權重設定
 
-若需要進一步說明，請參閱插件附帶的 Readme.htm]=],
+若需要進一步說明，請參閱插件附帶的 Readme.md]=],
 	["ValueCalculationMessage"] = "   %g %s x %g each = %g",
 	["VisibleScalesHeader"] = "%s的權重",
 	["Stats"] = {

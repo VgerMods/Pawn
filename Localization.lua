@@ -1,7 +1,7 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
--- See Readme.htm for more information.
+-- See Readme.md for more information.
 
 --
 -- English resources
@@ -74,7 +74,7 @@ www.vgermods.com
 /pawn backup -- backup all of your scales to scale tags
 /pawn compare [ left | right ] ItemID | ItemLink -- compare items
  
-For more information on customizing Pawn, please see the help file (Readme.htm) that comes with the mod.
+For more information on customizing Pawn, please see the help file (Readme.md) that comes with the mod.
 ]=],
 	["ValueCalculationMessage"] = "   %g %s x %g each = %g",
 	["VisibleScalesHeader"] = "%s's scales",

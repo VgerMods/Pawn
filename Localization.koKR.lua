@@ -1,7 +1,7 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
--- See Readme.htm for more information.
+-- See Readme.md for more information.
 
 --
 -- Korean resources
@@ -72,7 +72,7 @@ www.vgermods.com
 /pawn debug [ on | off ] -- 콘솔에 디버그 메시지 스팸
 /pawn backup -- 모든 능력치 비율 태그 백업
  
-Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help 파일 (Readme.htm) 를 참고하세요.]=],
+Pawn 사용자 설정의 더 자세한 정보는, 애드온에 포함된 help 파일 (Readme.md) 를 참고하세요.]=],
 	["ValueCalculationMessage"] = "   %g %s x %g each = %g",
 	["VisibleScalesHeader"] = "%s의 능력치 비율",
 	["Stats"] = {

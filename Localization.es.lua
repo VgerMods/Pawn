@@ -1,7 +1,7 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
--- See Readme.htm for more information.
+-- See Readme.md for more information.
 
 --
 -- Spanish (European and Latin American) resources
@@ -74,7 +74,7 @@ www.vgermods.com
 /pawn debug [ on | off ] -- Envía mensajes de depuracion a la consola
 /pawn backup -- Crea un backup de tus escalas
  
-Para más información sobre como personalizar Pawn, por favor lee el archivo (Readme.htm) que viene con el Addon.
+Para más información sobre como personalizar Pawn, por favor lee el archivo (Readme.md) que viene con el Addon.
 ]=],
 	["ValueCalculationMessage"] = "   %g %s x %g = %g",
 	["VisibleScalesHeader"] = "Escalas de %s",

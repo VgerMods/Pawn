@@ -1,7 +1,7 @@
 ﻿-- Pawn by Vger-Azjol-Nerub
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
--- See Readme.htm for more information.
+-- See Readme.md for more information.
 
 -- 
 -- Italian resources
@@ -71,7 +71,7 @@ www.vgermods.com
 /pawn debug [ on | off ] -- spamma messaggi di debug nella console
 /pawn backup -- fa il backup delle tue formule in etichette di formula
  
-Per maggiori informazioni su come personalizzare Pawn, per favore leggere il file (Readme.htm) inclusa con l'addon.
+Per maggiori informazioni su come personalizzare Pawn, per favore leggere il file (Readme.md) inclusa con l'addon.
 ]=],
 	["ValueCalculationMessage"] = "   %g %s x %g ognuno = %g",
 	["VisibleScalesHeader"] = "Formule di %s",
