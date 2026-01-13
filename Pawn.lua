@@ -54,7 +54,7 @@ PawnScaleProviders = { }
 local PawnScaleProvidersInitialized
 
 -- Third-party bags
--- PawnThirdPartyBags["My Bag Addon"] = { }
+-- PawnThirdPartyBags["My Bag Addon"] = { RefreshAll = function() ... end }
 local PawnThirdPartyBags = { }
 PawnIsAThirdPartyBagRegistered = false
 
@@ -1116,8 +1116,14 @@ function PawnResetTooltip(TooltipName)
 end
 
 -- Invalidate the in-bag upgrade arrows.
+-- If a third-party bag addon has been registered, it is notified that it should do the same.
 function PawnResetBags()
 	if PawnBags then PawnBags:RefreshAll() end
+	if PawnIsAThirdPartyBagRegistered then
+		for _, Overrides in pairs(PawnThirdPartyBags) do
+			if Overrides.RefreshAll then Overrides.RefreshAll() end
+		end
+	end
 end
 
 -- Recalculates the total value of all stats in a scale, as well as all of the best gems for that scale.

@@ -2056,6 +2056,7 @@ end
 
 function PawnUIFrame_ShowItemLevelUpgradesCheck_OnClick()
 	PawnCommon.ShowItemLevelUpgrades = PawnUIFrame_ShowItemLevelUpgradesCheck:GetChecked()
+	PawnResetBags()
 end
 
 function PawnUIFrame_IgnoreGemsWhileLevelingCheck_OnClick()
@@ -2063,7 +2064,7 @@ function PawnUIFrame_IgnoreGemsWhileLevelingCheck_OnClick()
 	PawnClearCache()
 	PawnInvalidateBestItems()
 	PawnResetTooltips()
-	if PawnBags then PawnBags:RefreshAll() end
+	PawnResetBags()
 end
 
 function PawnUIFrame_ResetUpgradesButton_OnClick()
@@ -2071,7 +2072,7 @@ function PawnUIFrame_ResetUpgradesButton_OnClick()
 	PawnInvalidateBestItems()
 	PawnResetTooltips()
 	PawnClearBestItemLevelData()
-	if PawnBags then PawnBags:RefreshAll() end
+	PawnResetBags()
 end
 
 function PawnUIFrame_DebugCheck_OnClick()

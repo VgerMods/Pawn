@@ -10,7 +10,8 @@
 -- 	1. For each item, call PawnShouldItemLinkHaveUpgradeArrow(link, true).
 -- 	2. If it returns nil, Pawn can't answer the question yet (or doing so would slow down the game), so check back soon on a timer.
 -- 	3. Otherwise, it will return true or false, so use that to show or hide the arrow.
--- 	4. Call PawnRegisterThirdPartyBag("My addon name") to disable virtually all of the code in this file, for performance.
+-- 	4. Call PawnRegisterThirdPartyBag("My addon name", { RefreshAll = ... } ) to be notified whenever all of the green arrow state
+--		should be cleared due to a settings change. That also disables virtually all of the code in this file for best performance.
 ------------------------------------------------------------
 
 PawnBags = {}
