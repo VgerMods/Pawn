@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.1
 
+* More optimization of the bag upgrade advisor feature, mostly to prevent it from impacting performance for people who turn the feature off or use custom bag addons.
+
 ### Version 2.13.0
 
 * The War Within and Midnight: Upgrade arrows in your bags are back! I've rebuilt the feature to work as it did back in Legion and Shadowlands.

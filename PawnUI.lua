@@ -1959,7 +1959,7 @@ function PawnUIOptionsTabPage_OnShow()
 
 	-- Advisor options
 	if PawnBags then
-		PawnUIFrame_ShowBagUpgradeAdvisorCheck:SetChecked(PawnCommon.ShowBagUpgradeAdvisor)
+		PawnUIFrame_ShowBagUpgradeAdvisorCheck:SetChecked(PawnBags:IsEnabled())
 	else
 		PawnUIFrame_ShowBagUpgradeAdvisorCheck:Hide()
 	end
@@ -2034,8 +2034,7 @@ function PawnUIFrame_EnchantedValuesCheck_OnClick()
 end
 
 function PawnUIFrame_ShowBagUpgradeAdvisorCheck_OnClick()
-	PawnCommon.ShowBagUpgradeAdvisor = PawnUIFrame_ShowBagUpgradeAdvisorCheck:GetChecked()
-	if PawnBags then PawnBags:RefreshAll() end
+	if PawnBags then PawnBags:SetEnabled(PawnUIFrame_ShowBagUpgradeAdvisorCheck:GetChecked()) end
 end
 
 function PawnUIFrame_ShowLootUpgradeAdvisorCheck_OnClick()
