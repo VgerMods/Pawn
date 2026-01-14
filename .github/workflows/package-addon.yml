@@ -45,7 +45,7 @@ jobs:
 
     - name: Replace TOC version for Classic
       run: |
-        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.CLASSIC_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+        sed -i 's/Interface: *[0-9, ]\+/Interface: ${{env.CLASSIC_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
 
     - name: Create Classic zip
       run: |
@@ -55,7 +55,7 @@ jobs:
 
     - name: Replace TOC version for Burning Crusade
       run: |
-        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.BURNING_CRUSADE_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+        sed -i 's/Interface: *[0-9, ]\+/Interface: ${{env.BURNING_CRUSADE_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
 
     - name: Create Burning Crusade zip
       run: |
@@ -65,7 +65,7 @@ jobs:
 
     - name: Replace TOC version for Wrath
       run: |
-        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.WRATH_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+        sed -i 's/Interface: *[0-9, ]\+/Interface: ${{env.WRATH_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
 
     - name: Create Wrath zip
       run: |
@@ -75,7 +75,7 @@ jobs:
 
     - name: Replace TOC version for Cataclysm
       run: |
-        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.CATACLYSM_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+        sed -i 's/Interface: *[0-9, ]\+/Interface: ${{env.CATACLYSM_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
 
     - name: Create Cataclysm zip
       run: |
@@ -85,7 +85,7 @@ jobs:
 
     - name: Replace TOC version for Mists of Pandaria
       run: |
-        sed -i 's/Interface: *[0-9]\+/Interface: ${{env.PANDARIA_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+        sed -i 's/Interface: *[0-9, ]\+/Interface: ${{env.PANDARIA_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
 
     - name: Create Mists of Pandaria zip
       run: |
