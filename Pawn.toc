@@ -1,6 +1,6 @@
-﻿## Interface: 110207, 120000, 120001
+﻿## Interface: 11508, 20505, 50503, 110207, 120001
 ## Title: Pawn
-## Version: 2.13.1
+## Version: @project-version@
 ## Notes: Pawn helps you compare items and find upgrades.
 ## OptionalDependencies: Ace3, ArkInventoryRules, AtlasLoot, EQCompare, EquipCompare, LinkWrangler, MobInfo2, MultiTips, Outfitter
 ## SavedVariables: PawnCommon
@@ -21,6 +21,7 @@
 ## Category-zhTW: 裝備
 
 ## X-Wago-ID: R4N2k46L
+## X-Curse-Project-ID: 1128926
 
 VgerCore\VgerCore.lua
 
