@@ -92,7 +92,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 * The War Within and Midnight: Upgrade arrows in your bags are back! I've rebuilt the feature to work as it did back in Legion and Shadowlands.
 * Mists of Pandaria Classic: Pawn's bag upgrade advisor now works on Mists Classic! You'll now see green arrows over upgrades in your bags.
-* Classic Era: Pawn's bag upgrade advisor now works on Classic realms, but it's off by default. You can enable it on Pawn's Options tab.
+* Classic Era and Burning Crusade Classic: Pawn's bag upgrade advisor now works on Classic realms, but it's off by default. You can enable it on Pawn's Options tab.
 	* Since Classic Era doesn't have specs or Pawn's Automatic mode and instead has each scale for your class enabled by default, I was worried that the number of green arrows might be overwhelming when playing hybrid classes.
 	* Due to a bug in how World of Warcraft Classic handles item stats, there is a chance that this feature on Classic Era might occasionally miss new items. I haven't observed this happening, but let me know if you spot an upgrade that should have a green arrow but doesn't get one until you move it to a new slot.
 * Pawn's UI is now a little more Midnighty.
