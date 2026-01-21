@@ -3960,26 +3960,27 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 				if Location and Location > 1 then
 					-- Getting the item link for an equipment set item is a pain in the ass...
 					local ItemLink
-					local IsOnPlayer, IsInBank, IsInBags, IsInVoidStorage, SetSlot, Bag, Tab, VoidSlot
-					if VgerCore.IsCataclysm or VgerCore.IsMists then
-						-- EquipmentManager_UnpackLocation in Cataclysm Classic removes IsInVoidStorage from the return values, shifting everything over.
-						IsOnPlayer, IsInBank, IsInBags, SetSlot, Bag, Tab, VoidSlot = EquipmentManager_UnpackLocation(Location)
+					local LocationData
+					if EquipmentManager_GetLocationData then
+						-- WoW 12.0 removed UnpackLocation
+						LocationData = EquipmentManager_GetLocationData(Location)
 					else
-						IsOnPlayer, IsInBank, IsInBags, IsInVoidStorage, SetSlot, Bag, Tab, VoidSlot = EquipmentManager_UnpackLocation(Location)
-					end
-					if IsInVoidStorage then
-						-- The item link for this item should be GetVoidItemHyperlinkString(VoidSlot), but we'll never get here; location will
-						-- be -1 (item unavailable) for items in void storage.
-						ItemLink = nil --GetVoidItemHyperlinkString(VoidSlot) -- API no longer exists in 8.0
-						VgerCore.Fail("Didn't expect to find an equipment set item in void storage!")
-					elseif not IsInBags then
-						VgerCore.Assert(IsOnPlayer or IsInBank, "Equipment set contains new location data that Pawn doesn't understand; EquipmentManager_UnpackLocation may have been updated.")
-						ItemLink = GetInventoryItemLink("player", SetSlot)
-					else
-						if C_Container and C_Container.GetContainerItemLink then
-							ItemLink = C_Container.GetContainerItemLink(Bag, SetSlot)
+						-- But older versions don't have GetLocationData yet
+						LocationData = {}
+						if VgerCore.IsWrath then
+							-- EquipmentManager_UnpackLocation in Wrath Classic has an extra IsInVoidStorage return value not present in other versions.
+							LocationData.isPlayer, LocationData.isBank, LocationData.isBags, _, LocationData.slot, LocationData.bag = EquipmentManager_UnpackLocation(Location)
 						else
-							ItemLink = GetContainerItemLink(Bag, SetSlot)
+							LocationData.isPlayer, LocationData.isBank, LocationData.isBags, LocationData.slot, LocationData.bag = EquipmentManager_UnpackLocation(Location)
+						end
+					end
+					if LocationData.isPlayer then
+						ItemLink = GetInventoryItemLink("player", LocationData.slot)
+					else -- isBags or isBank
+						if C_Container and C_Container.GetContainerItemLink then
+							ItemLink = C_Container.GetContainerItemLink(LocationData.bag, LocationData.slot)
+						else
+							ItemLink = GetContainerItemLink(LocationData.bag, LocationData.slot)
 						end
 					end
 
