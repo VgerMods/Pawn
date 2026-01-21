@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.2
 
+* Items that bind to your warband until equipped will no longer show up on Pawn's Compare tab as having a "special effect."
+
 ### Version 2.13.1
 
 * The War Within and Midnight: Updated all gem recommendations and values of sockets to account for the 12.0 stat and item level squishes.

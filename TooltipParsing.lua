@@ -108,10 +108,11 @@ PawnRegexes =
 	{PawnGameConstant(ITEM_BIND_ON_EQUIP)}, -- Binds when equipped
 	{PawnGameConstant(ITEM_BIND_ON_PICKUP)}, -- Binds when picked up
 	{PawnGameConstant(ITEM_BIND_ON_USE)}, -- Binds when used
-	{PawnGameConstant(ITEM_BIND_TO_ACCOUNT)}, -- Binds to account
+	{PawnGameConstant(ITEM_BIND_TO_ACCOUNT)}, -- Binds to account / Binds to Warband
 	{PawnGameConstant(ITEM_ACCOUNTBOUND)}, -- Account Bound
-	{PawnGameConstant(ITEM_BIND_TO_BNETACCOUNT)}, -- Binds to Battle.net account (Polished Spaulders of Valor)
+	{PawnGameConstant(ITEM_BIND_TO_BNETACCOUNT)}, -- Binds to Battle.net account / Binds to Warband (Polished Spaulders of Valor)
 	{PawnGameConstant(ITEM_BNETACCOUNTBOUND)}, -- Battle.net Account Bound (Polished Spaulders of Valor)
+	{PawnGameConstant(ITEM_BIND_TO_ACCOUNT_UNTIL_EQUIP)}, -- Binds to Warband until equipped
 	{"^" .. PawnGameConstantUnwrapped(ITEM_UNIQUE)}, -- Unique; leave off the $ for Unique (20)
 	{"^" .. PawnGameConstantUnwrapped(ITEM_UNIQUE_EQUIPPABLE)}, -- Unique-Equipped; leave off the $ for Unique-Equipped: Curios of the Shado-Pan Assault (1)
 	{"^" .. PawnGameConstantUnwrapped(ITEM_BIND_QUEST)}, -- Leave off the $ for MonkeyQuest mod compatibility
