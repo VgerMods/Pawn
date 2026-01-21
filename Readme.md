@@ -84,8 +84,10 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.1
 
+* The War Within and Midnight: Updated all gem recommendations and values of sockets to account for the 12.0 stat and item level squishes.
+* Midnight: Added initial support for Midnight gems.
 * More optimization of the bag upgrade advisor feature, mostly to prevent it from impacting performance for people who turn the feature off or use custom bag addons.
-* Changing the "show item level upgrades" option can now cause items in your bags to gain or lose green arrows immediately. (This already worked properly for other options.)
+* Changing the "show item level upgrades" option will now cause items in your bags to gain or lose green arrows immediately when appropriate. (This already worked properly for other options.)
 * Pawn can now notify third-party bag addons that something has changed about Pawn's settings and that they should update their green arrows immediately.
 
 ### Version 2.13.0
