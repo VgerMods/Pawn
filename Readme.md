@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.3
 
+* The default stat weights for devourer demon hunters will now properly focus on intellect, not agility.
+
 ### Version 2.13.2
 
 * The War Within and Midnight: Pawn's item level upgrade features have been disabled due to some major bugs in WoW 12.0 introduced by the item level squish. I'll monitor the situation and update Pawn again once the bugs in the game are fixed.
