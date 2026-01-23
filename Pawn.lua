@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1302
+PawnVersion = 2.1303
 
 -- Remove this when 12.0's item level APIs are working or a workaround is found.
 PawnTempBlockItemLevelUpgradeFeatures = VgerCore.IsMidnight
