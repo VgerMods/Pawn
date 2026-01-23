@@ -1805,17 +1805,16 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Show the updated tooltip.
-	if TooltipWasUpdated then
-		if TooltipName == "ShoppingTooltip1" or TooltipName == "ShoppingTooltip2" then
-			-- This is a targeted hack for a problem introduced in 12.0 that I've only observed on ShoppingTooltip1 and 2:
-			-- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
-			-- 2. We call GameTooltip:Show here
-			-- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
-			-- 4. If we're on combat, we introduce taint into MoneyFrame.staticMoney
-			-- 5. Later calls to MoneyFrame_Update fail due to taint
-		else
-			Tooltip:Show()
-		end
+	if TooltipWasUpdated and not VgerCore.IsMidnight then
+		-- We skip this starting in 12.0 because GameTooltip:Show can cause taint issues due to secret values.
+		-- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
+		-- 2. We call GameTooltip:Show here
+		-- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
+		-- 4. If we're on combat, we introduce taint into MoneyFrame.staticMoney
+		-- 5. Later calls to MoneyFrame_Update fail due to taint
+	else
+		-- Keep the original codepath for Classic versions to limit the impact of any tooltip formatting errors.
+		Tooltip:Show()
 	end
 
 	if Item and PawnCommon.DebugDoubleTooltips and TooltipName == "GameTooltip" then
