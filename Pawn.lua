@@ -9,6 +9,9 @@
 
 PawnVersion = 2.1302
 
+-- Remove this when 12.0's item level APIs are working or a workaround is found.
+PawnTempBlockItemLevelUpgradeFeatures = VgerCore.IsMidnight
+
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.20
 
@@ -892,7 +895,7 @@ function PawnIsItemDefinitivelyAnUpgrade(ItemLink, CheckLevel)
 		if Item == nil or Item.Link == nil then return nil end
 		local UpgradeInfo, ItemLevelIncrease = PawnIsItemAnUpgrade(Item)
 		-- If upgrade info was returned, it's an upgrade OR if there is an item level increase, it's an upgrade
-		return UpgradeInfo ~= nil or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease ~= nil)
+		return UpgradeInfo ~= nil or (PawnCommon.ShowItemLevelUpgrades and (not PawnTempBlockItemLevelUpgradeFeatures) and ItemLevelIncrease ~= nil)
 	elseif PawnCommon.ShowRelicUpgrades and PawnCanItemBeArtifactUpgrade(ItemLink) then
 		-- If there is artifact relic upgrade information, it's an upgrade.
 		return PawnGetRelicUpgradeInfo(ItemLink) ~= nil
@@ -1755,7 +1758,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 		end
 
 		-- Add the item level info to the tooltip.
-		if ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades then
+		if ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades and not PawnTempBlockItemLevelUpgradeFeatures then
 			-- Find which line of the tooltip (2-4) contains the text "Item Level" and annotate that.
 			local AnnotatedItemLevel
 			for i = 2, 5 do
@@ -1785,7 +1788,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 
 	-- Color or reset the tooltip border as necessary.
 	if PawnCommon.ColorTooltipBorder then
-		if UpgradeInfo or (ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades) then PawnSetTooltipBorderColor(Tooltip, 0, 1, 0) else PawnSetTooltipBorderColor(Tooltip, 1, 1, 1) end
+		if UpgradeInfo or ((not PawnTempBlockItemLevelUpgradeFeatures) and ItemLevelIncrease and PawnCommon.ShowItemLevelUpgrades) then PawnSetTooltipBorderColor(Tooltip, 0, 1, 0) else PawnSetTooltipBorderColor(Tooltip, 1, 1, 1) end
 	end
 
 	-- Add the item ID to the tooltip if known.
@@ -3776,7 +3779,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 	if UpgradeTable then sort(UpgradeTable, PawnLocalizedScaleNameComparer) end
 
 	local ItemLevelIncrease
-	if PawnCommon.ShowItemLevelUpgrades then
+	if PawnCommon.ShowItemLevelUpgrades and not PawnTempBlockItemLevelUpgradeFeatures then
 		ItemLevelIncrease = PawnIsItemAnItemLevelUpgrade(Item)
 	end
 
@@ -4235,7 +4238,7 @@ function PawnFindInterestingItems(List)
 			Info.Result = "trinket"
 		end
 		local UpgradeInfo, ItemLevelIncrease = PawnIsItemAnUpgrade(Info.Item)
-		if Info.Usable and (UpgradeInfo or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease)) then
+		if Info.Usable and (UpgradeInfo or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease and not PawnTempBlockItemLevelUpgradeFeatures)) then
 			-- If it's usable and an upgrade, mark it as such.
 			Info.Result = "upgrade"
 			-- If it's a choice item, then we shouldn't pick a choice item to vendor.
@@ -5992,7 +5995,7 @@ function PawnShouldItemLinkHaveUpgradeArrowUnbudgeted(ItemLink, CheckLevel)
 			return UpgradeInfo ~= nil
 		else
 			local UpgradeInfo, ItemLevelIncrease = PawnIsItemAnUpgrade(Item)
-			return UpgradeInfo ~= nil or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease ~= nil)
+			return UpgradeInfo ~= nil or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease ~= nil and not PawnTempBlockItemLevelUpgradeFeatures)
 		end
 	elseif PawnCommon.ShowRelicUpgrades and PawnCanItemBeArtifactUpgrade(ItemLink) then
 		return PawnGetRelicUpgradeInfo(ItemLink) ~= nil
