@@ -85,6 +85,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ### Version 2.13.2
 
 * The War Within and Midnight: Fixed an error that could occur when the "Track for each scale (advanced)" option was enabled in Manual mode.
+* The War Within and Midnight: Fixed an error that could occur when hovering over an item in your bags with comparison tooltips enabled (or when holding Shift) while in combat.
 * Items that bind to your warband until equipped will no longer show up on Pawn's Compare tab as having a "special effect."
 
 ### Version 2.13.1

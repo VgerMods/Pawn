@@ -402,9 +402,8 @@ function PawnInitialize()
 			end)
 	end
 
-	-- Dragonflight replaces SetCompareItem with ProcessInfo. (ProcessInfo is now used internally by lots of
-	-- methods, but only in Dragonflight.)
-
+	-- 11.0 replaces SetCompareItem with ProcessInfo. (ProcessInfo is now used internally by lots of
+	-- methods, but only in 11.0+.)
 	if ShoppingTooltip1.ProcessInfo then
 		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function()
 			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
@@ -1803,7 +1802,18 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Show the updated tooltip.
-	if TooltipWasUpdated then Tooltip:Show() end
+	if TooltipWasUpdated then
+		if TooltipName == "ShoppingTooltip1" or TooltipName == "ShoppingTooltip2" then
+			-- This is a targeted hack for a problem introduced in 12.0 that I've only observed on ShoppingTooltip1 and 2:
+			-- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
+			-- 2. We call GameTooltip:Show here
+			-- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
+			-- 4. If we're on combat, we introduce taint into MoneyFrame.staticMoney
+			-- 5. Later calls to MoneyFrame_Update fail due to taint
+		else
+			Tooltip:Show()
+		end
+	end
 
 	if Item and PawnCommon.DebugDoubleTooltips and TooltipName == "GameTooltip" then
 		VgerCore.Message("===== Annotating " .. TooltipName .. " for " .. tostring(Item.Name) .. ": =====")
