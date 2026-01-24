@@ -12,6 +12,14 @@ PawnVersion = 2.1303
 -- Remove this when 12.0's item level APIs are working or a workaround is found.
 PawnTempBlockItemLevelUpgradeFeatures = VgerCore.IsMidnight
 
+-- Remove this when 12.0's tooltip secret taint bugs are fixed.
+-- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
+-- 2. We call GameTooltip:Show at the end of PawnUpdateTooltip
+-- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
+-- 4. If we're in combat, we introduce taint into MoneyFrame.staticMoney
+-- 5. Later calls to MoneyFrame_Update fail due to taint
+PawnTempBlockShoppingTooltipUpdates = VgerCore.IsMidnight
+
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.20
 
@@ -379,7 +387,7 @@ function PawnInitialize()
 	-- The loot won window
 	hooksecurefunc("LootWonAlertFrame_SetUp", PawnUI_LootWonAlertFrame_SetUp)
 
-	-- The "currently equipped" tooltips (two, in case of rings, trinkets, and dual wielding)
+	-- The "currently equipped" tooltips on Classic
 	if ShoppingTooltip1.SetCompareItem then
 		hooksecurefunc(ShoppingTooltip1, "SetCompareItem",
 			function()
@@ -405,17 +413,18 @@ function PawnInitialize()
 			end)
 	end
 
-	-- 11.0 replaces SetCompareItem with ProcessInfo. (ProcessInfo is now used internally by lots of
-	-- methods, but only in 11.0+.)
-	if ShoppingTooltip1.ProcessInfo then
-		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function()
-			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
-			if ItemLink then PawnUpdateTooltip("ShoppingTooltip1", "SetHyperlink", ItemLink) end
-		end)
-		hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function()
-			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip2)
-			if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
-		end)
+	-- The "currently equipped" tooltips on 11.0+
+	if not PawnTempBlockShoppingTooltipUpdates then
+		if ShoppingTooltip1.ProcessInfo then
+			hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function()
+				local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
+				if ItemLink then PawnUpdateTooltip("ShoppingTooltip1", "SetHyperlink", ItemLink) end
+			end)
+			hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function()
+				local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip2)
+				if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
+			end)
+		end
 	end
 
 	-- MultiTips compatibility
@@ -1805,16 +1814,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Show the updated tooltip.
-	if TooltipWasUpdated and not VgerCore.IsMidnight then
-		-- Keep the original codepath for Classic versions to limit the impact of any tooltip formatting errors.
-		-- We skip this starting in 12.0 because GameTooltip:Show can cause taint issues due to secret values.
-		-- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
-		-- 2. We call GameTooltip:Show here
-		-- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
-		-- 4. If we're on combat, we introduce taint into MoneyFrame.staticMoney
-		-- 5. Later calls to MoneyFrame_Update fail due to taint
-		Tooltip:Show()
-	end
+	if TooltipWasUpdated then Tooltip:Show() end
 
 	if Item and PawnCommon.DebugDoubleTooltips and TooltipName == "GameTooltip" then
 		VgerCore.Message("===== Annotating " .. TooltipName .. " for " .. tostring(Item.Name) .. ": =====")

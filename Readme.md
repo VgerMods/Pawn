@@ -84,7 +84,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.3
 
-* The War Within and Midnight: Extended a fix from Pawn 2.13.2 to work on all item tooltips, not just comparison tooltips.
+* The War Within and Midnight: Pawn is temporarily ignoring "currently equipped" tooltips, as they appear to be major contributors to triggering bugs in item tooltips caused by WoW 12.0's combat addon restrictions. Those bugs are reportedly getting fixed ASAP, and I'll un-ignore those tooltips once they are.
 * The default stat weights for devourer demon hunters will now properly focus on intellect, not agility.
 
 ### Version 2.13.2
