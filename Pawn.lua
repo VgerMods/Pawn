@@ -1806,14 +1806,13 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 
 	-- Show the updated tooltip.
 	if TooltipWasUpdated and not VgerCore.IsMidnight then
+		-- Keep the original codepath for Classic versions to limit the impact of any tooltip formatting errors.
 		-- We skip this starting in 12.0 because GameTooltip:Show can cause taint issues due to secret values.
 		-- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
 		-- 2. We call GameTooltip:Show here
 		-- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
 		-- 4. If we're on combat, we introduce taint into MoneyFrame.staticMoney
 		-- 5. Later calls to MoneyFrame_Update fail due to taint
-	else
-		-- Keep the original codepath for Classic versions to limit the impact of any tooltip formatting errors.
 		Tooltip:Show()
 	end
 
