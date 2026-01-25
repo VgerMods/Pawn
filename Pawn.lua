@@ -2607,7 +2607,7 @@ function PawnGetItemNameFromTooltip(TooltipName)
 	local TooltipTopLine = _G[TooltipName .. "TextLeft1"]
 	if not TooltipTopLine then return end
 	local ItemName = TooltipTopLine:GetText()
-	if not ItemName or ItemName == "" or ItemName == RETRIEVING_ITEM_INFO then return end
+	if not ItemName or (issecretvalue and issecretvalue(ItemName)) or ItemName == "" or ItemName == RETRIEVING_ITEM_INFO then return end
 
 	-- If this is a Currently Equipped tooltip, skip the first line.
 	if ItemName == CURRENTLY_EQUIPPED then
