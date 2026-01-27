@@ -82,6 +82,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.4
+
 ### Version 2.13.3
 
 * The War Within and Midnight: Pawn is temporarily ignoring "currently equipped" tooltips, as they appear to be major contributors to triggering bugs in item tooltips caused by WoW 12.0's combat addon restrictions. Those bugs are reportedly getting fixed ASAP, and I'll un-ignore those tooltips once they are.
