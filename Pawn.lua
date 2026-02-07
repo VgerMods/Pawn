@@ -4138,6 +4138,7 @@ PawnOnInventoryChanged = VgerCore.Throttle(.250, function()
 	if InCombatLockdown() then return end
 
 	PawnCheckInventoryForUpgrades()
+	PawnResetBags()
 end)
 
 -- Called whenever the player vendors or destroys an item.  We need to check their best-item sets for that item and remove it
@@ -4162,6 +4163,7 @@ function PawnOnItemLost(ItemLink)
 		InvType2 = "INVTYPE_WEAPONOFFHAND"
 	end
 
+	local RemovedFromAnyScale = false
 	for _, Scale in pairs(PawnCommon.Scales) do
 		local CharacterOptions = Scale.PerCharacterOptions[PawnPlayerFullName]
 		if CharacterOptions then
@@ -4182,9 +4184,13 @@ function PawnOnItemLost(ItemLink)
 				if RemovedItem then
 					--VgerCore.Message(VgerCore.Color.Blue .. "Pawn: Warning! You just lost your best " .. _G[InvType] .. " from " .. PawnGetScaleLocalizedName(ScaleName) .. ". :(")
 					CharacterOptions.BestItems = nil
+					RemovedFromAnyScale = true
 				end
 			end
 		end
+	end
+	if RemovedFromAnyScale then
+		PawnResetBags()
 	end
 
 	for Slot = 1, 18 do
