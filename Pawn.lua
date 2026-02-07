@@ -6061,7 +6061,7 @@ end
 function PawnUnregisterThirdPartyTooltip(AddonName)
 	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
 	PawnThirdPartyTooltips[AddonName] = nil
-	PawnIsAThirdPartyTooltipRegistered = #PawnThirdPartyBags > 0
+	PawnIsAThirdPartyTooltipRegistered = #PawnThirdPartyTooltips > 0
 end
 
 -- Shows or hides the Pawn UI.
