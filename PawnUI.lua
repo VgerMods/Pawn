@@ -2194,6 +2194,9 @@ function PawnUI_OnSocketUpdate()
 					if GemListString then GemListString = GemListString .. ", " .. ThisColorGemList else GemListString = ThisColorGemList end
 				end
 			else
+				-- This case is for when there's no socket bonus or the value is maximized by ignoring gem color. But this case is also hit
+				-- for items that are too low-level when the "ignore sockets on low-level items" feature is enabled. Right now we don't have
+				-- a way to tell those two cases apart from this code, and it's a minor edge case, so we can live with it.
 				GemListString, IsVague = PawnGetGemListString(ScaleName, PawnOptions.AutoSelectScales, Item.Level, "Prismatic")
 				if IsVague then GemListString = PawnLocal.GemListMany end
 			end
