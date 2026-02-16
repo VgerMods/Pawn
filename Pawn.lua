@@ -334,7 +334,15 @@ function PawnInitialize()
 				local ItemName, ItemTexture = GetQuestLogRewardInfo(QuestLogIndex, QuestID)
 				if ItemName and ItemTexture then
 					PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
-					self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
+					-- Midnight / 12.0:
+					-- Forcing :Show() here can trigger EmbeddedItemTooltip_UpdateSize()
+					-- in a tainted execution path, which causes:
+					-- "attempt to perform arithmetic on a secret number value (tainted by 'Pawn')"
+					--
+					-- Blizzard already handles tooltip layout after SetItemByQuestReward.
+					-- Do NOT force a Show() call here to avoid secret-value taint crashes.
+					--
+					-- self.Tooltip:Show()
 				end
 			end
 		end)
@@ -4375,9 +4383,9 @@ function PawnFindOptimalReforgingCore(ScaleName, Scale, Values, Stats, NoInstruc
 			return 0
 		end
 	end
-	
+
 	-- Now, find the stat to reforge FROM.
-	local ReforgeFrom = { }	
+	local ReforgeFrom = { }
 	local BestReforgeDelta = 0
 	local SuggestedCappedStat = false
 	for _, Stat in pairs(PawnReforgeableStats) do
