@@ -1968,9 +1968,6 @@ function PawnUIOptionsTabPage_OnShow()
 	PawnUIFrame_ShowSocketingAdvisorCheck:SetChecked(PawnCommon.ShowSocketingAdvisor)
 	PawnUIFrame_ShowReforgingAdvisorCheck:SetChecked(PawnCommon.ShowReforgingAdvisor)
 	PawnUIFrame_ShowItemLevelUpgradesCheck:SetChecked(PawnCommon.ShowItemLevelUpgrades)
-	if PawnTempBlockItemLevelUpgradeFeatures then
-		PawnUIFrame_ShowItemLevelUpgradesCheck:Hide()
-	end
 
 	-- Other options
 	PawnUIFrame_DebugCheck:SetChecked(PawnCommon.Debug)

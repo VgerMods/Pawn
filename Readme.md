@@ -84,6 +84,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.4
 
+* The War Within and Midnight: Pawn's item level upgrade features have been restored.
 * Upgrade arrows in your bags will now properly update after equipping or unequipping an item.
 
 ### Version 2.13.3
