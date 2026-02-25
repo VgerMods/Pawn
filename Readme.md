@@ -82,6 +82,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.5
+
 ### Version 2.13.4
 
 * The War Within and Midnight: Pawn's item level upgrade features have been restored.
