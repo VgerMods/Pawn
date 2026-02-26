@@ -82,6 +82,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.6
+
 ### Version 2.13.5
 
 * Fixed a typo in Pawn 2.13.4 that caused it to, uh, not work at all.
