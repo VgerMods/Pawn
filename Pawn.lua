@@ -4239,7 +4239,7 @@ function PawnFindInterestingItems(List)
 			Info.Result = "trinket"
 		end
 		local UpgradeInfo, ItemLevelIncrease = PawnIsItemAnUpgrade(Info.Item)
-		if Info.Usable and (UpgradeInfo or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease) then
+		if Info.Usable and (UpgradeInfo or (PawnCommon.ShowItemLevelUpgrades and ItemLevelIncrease)) then
 			-- If it's usable and an upgrade, mark it as such.
 			Info.Result = "upgrade"
 			-- If it's a choice item, then we shouldn't pick a choice item to vendor.
