@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.6
 
+* Midnight: Removed a harmless warning message that could occur when viewing a quest that rewards a housing decor profession recipe.
+
 ### Version 2.13.5
 
 * Fixed a typo in Pawn 2.13.4 that caused it to, uh, not work at all.

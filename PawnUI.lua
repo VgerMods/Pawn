@@ -2525,7 +2525,8 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		Tooltip[SetQuestRewardFunctionName](Tooltip, "reward", i)
 		local _, ItemLink = Tooltip:GetItem()
 		-- Workaround for bug in Mists of Pandaria Classic
-		if ItemName and ItemLink and ItemName ~= strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
+		-- Skip this for non-MoP clients because it can get falsely triggered by quests that reward a recipe, because Tooltip:GetItem() returns what the recipe produces, not the recipe itself.
+		if VgerCore.IsMists and ItemName and ItemLink and ItemName ~= strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
 			VgerCore.Message("Pawn thinks static reward #" .. i .. " is:\n" .. tostring(ItemName) .. " " .. tostring(ItemID or "") .. "\n" .. tostring(ItemLink) .. " " .. PawnGetItemIDsForDisplay(ItemLink))
 			Tooltip:ClearLines()
 			Tooltip[SetQuestRewardFunctionName](Tooltip, "reward", i)
@@ -2552,7 +2553,8 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		Tooltip[SetQuestRewardFunctionName](Tooltip, "choice", i)
 		local _, ItemLink = Tooltip:GetItem()
 		-- Workaround for bug in Mists of Pandaria Classic
-		if ItemName and ItemLink and ItemName ~= strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
+		-- Skip this for non-MoP clients because it can get falsely triggered by quests that reward a recipe, because Tooltip:GetItem() returns what the recipe produces, not the recipe itself.
+		if VgerCore.IsMists and ItemName and ItemLink and ItemName ~= strsub(ItemLink, (strfind(ItemLink, "%[") or 0) + 1, (strfind(ItemLink, "%[") or 0) + strlen(ItemName)) then
 			VgerCore.Message("Pawn thinks choice reward #" .. i .. " is:\n" .. tostring(ItemName) .. " " .. tostring(ItemID or "") .. "\n" .. tostring(ItemLink) .. " " .. PawnGetItemIDsForDisplay(ItemLink))
 			Tooltip:ClearLines()
 			Tooltip[SetQuestRewardFunctionName](Tooltip, "choice", i)
