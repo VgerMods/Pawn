@@ -8,7 +8,7 @@
 
 local ScaleProviderName = "MrRobot"
 
-PawnMrRobotLastUpdatedVersion = 2.1301
+PawnMrRobotLastUpdatedVersion = 2.1306
 
 
 function PawnMrRobotScaleProvider_AddScales()
@@ -53,7 +53,7 @@ PawnAddPluginScaleFromTemplate(
 	ScaleProviderName,
 	12, -- Demon Hunter
 	3, -- Devourer
-	{ }
+	{ Intellect=29.27, HasteRating=29.16, MasteryRating=26.37, CritRating=21.09, Versatility=16.64, Avoidance=0.03, MovementSpeed=0.02, Indestructible=0.01, Leech=0.01 }
 )
 
 PawnAddPluginScaleFromTemplate(
