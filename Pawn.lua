@@ -143,6 +143,9 @@ local PawnStatFriendlyNames = -- Currently only contains stat names used for ref
 	["Spirit"] = ITEM_MOD_SPIRIT_SHORT,
 }
 
+-- Used to skip GameTooltip:Show() on certain problematic tooltips in 12.0. Hopefully all code using this can be removed in a later version.
+local PawnTempSkipResizingBecauseMidnightIsGarbage
+
 -- Don't taint the global variable "_".
 local _
 
@@ -330,8 +333,13 @@ function PawnInitialize()
 			if PawnCommon.ShowQuestUpgradeAdvisor then
 				local ItemName, ItemTexture = GetQuestLogRewardInfo(QuestLogIndex, QuestID)
 				if ItemName and ItemTexture then
+					-- WoW 12.0.x has widespread taint bugs in GameTooltip, and this code path is particularly hot. Multiple users have reported
+					-- that skipping GameTooltip:Show() for this specific embedded tooltip is helpful. This workaround can be removed once the
+					-- game's GameTooltip taint bugs are fixed.
+					PawnTempSkipResizingBecauseMidnightIsGarbage = true
 					PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
-					self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
+					-- self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
+					PawnTempSkipResizingBecauseMidnightIsGarbage = nil
 				end
 			end
 		end)
@@ -1811,7 +1819,9 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Show the updated tooltip.
-	if TooltipWasUpdated then Tooltip:Show() end
+	if not PawnTempSkipResizingBecauseMidnightIsGarbage then
+		if TooltipWasUpdated then Tooltip:Show() end
+	end
 
 	if Item and PawnCommon.DebugDoubleTooltips and TooltipName == "GameTooltip" then
 		VgerCore.Message("===== Annotating " .. TooltipName .. " for " .. tostring(Item.Name) .. ": =====")

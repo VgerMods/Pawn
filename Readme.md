@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.7
 
+* Midnight: Added another workaround for tooltip bugs in WoW 12.0 that were resulting in taint errors for some people. With this workaround, the contents of world quest tooltips will sometimes spill outside of the tooltip border.
+
 ### Version 2.13.6
 
 * Midnight: Added new default stat weights for Devourer demon hunters from Ask Mr. Robot.
