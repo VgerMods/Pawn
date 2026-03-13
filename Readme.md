@@ -82,6 +82,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.8
+
 ### Version 2.13.7
 
 * Midnight: Includes a new workaround for WoW 12.0 tooltip bugs that were causing "secret taint" (lol) errors. Special thanks to Caerdon for finding this!

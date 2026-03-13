@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1307
+PawnVersion = 2.1308
 
 -- Remove this when 12.0's tooltip secret taint bugs are fixed.
 -- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
