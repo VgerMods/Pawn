@@ -17,6 +17,9 @@ PawnVersion = 2.1307
 -- 5. Later calls to MoneyFrame_Update fail due to taint
 PawnTempBlockShoppingTooltipUpdates = VgerCore.IsMidnight
 
+-- Remove this when 12.0's tooltip secret taint bugs are fixed.
+PawnTempWrapWorldQuestTooltipResize = VgerCore.IsMidnight
+
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.20
 
@@ -325,6 +328,17 @@ function PawnInitialize()
 		end)
 
 	-- World quest embedded tooltips
+
+	if PawnTempWrapWorldQuestTooltipResize and EmbeddedItemTooltip_UpdateSize then
+		-- This arcane incantation seems to prevent the embedded item tooltip inside of the world quest tooltip from exploding due to
+		-- the secret taint bugs in the 12.0 tooltip code. We replace the normal EmbeddedItemTooltip_UpdateSize with one that's
+		-- pre-tainted by addon code. I have no idea why this works and I don't want to. May the Light have mercy on our souls.
+		local OriginalEmbeddedItemTooltipUpdateSize = EmbeddedItemTooltip_UpdateSize
+		EmbeddedItemTooltip_UpdateSize = function(...)
+			return OriginalEmbeddedItemTooltipUpdateSize(...)
+		end
+	end
+
 	hooksecurefunc("EmbeddedItemTooltip_SetItemByQuestReward",
 		function(self, QuestLogIndex, QuestID, ...)
 			if PawnCommon.ShowQuestUpgradeAdvisor then
