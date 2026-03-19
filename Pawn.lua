@@ -1711,7 +1711,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 
 	local Tooltip = _G[TooltipName]
 	if not Tooltip then
-		VgerCore.Fail("Where'd the tooltip go?  I seem to have misplaced it.")
+		VgerCore.Fail("Pawn was trying to update the tooltip named " .. tostring(TooltipName) .. " but it doesn't exist, probably due to either an error when logging in, or a conflict with another addon.")
 		return
 	end
 
