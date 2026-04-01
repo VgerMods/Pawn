@@ -82,6 +82,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.9
+
 ### Version 2.13.8
 
 * Midnight: The changes from 2.13.7 are reverted.
