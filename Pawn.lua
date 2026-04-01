@@ -18,7 +18,8 @@ PawnVersion = 2.1308
 PawnTempBlockShoppingTooltipUpdates = VgerCore.IsMidnight
 
 -- Remove this when 12.0's tooltip secret taint bugs are fixed.
-PawnTempWrapWorldQuestTooltipResize = VgerCore.IsMidnight
+-- Reverted in Pawn 2.13.8 after a game patch.
+PawnTempWrapWorldQuestTooltipResize = nil
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.20
