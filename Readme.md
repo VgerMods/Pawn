@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.9
 
+* Midnight: Pawn will now once again add scores and upgrade info to the "currently equipped" tooltips as before.
+
 ### Version 2.13.8
 
 * Midnight: The changes from 2.13.7 are reverted.

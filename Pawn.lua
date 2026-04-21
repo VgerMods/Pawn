@@ -15,7 +15,8 @@ PawnVersion = 2.1309
 -- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
 -- 4. If we're in combat, we introduce taint into MoneyFrame.staticMoney
 -- 5. Later calls to MoneyFrame_Update fail due to taint
-PawnTempBlockShoppingTooltipUpdates = VgerCore.IsMidnight
+-- Reverted in Pawn 2.13.9 after WoW 12.0.5.
+PawnTempBlockShoppingTooltipUpdates = nil
 
 -- Remove this when 12.0's tooltip secret taint bugs are fixed.
 -- Reverted in Pawn 2.13.8 after a game patch.
