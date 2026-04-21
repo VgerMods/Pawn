@@ -23,7 +23,7 @@ PawnTempBlockShoppingTooltipUpdates = nil
 PawnTempWrapWorldQuestTooltipResize = nil
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.20
+local PawnVgerCoreVersionRequired = 1.21
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
