@@ -85,6 +85,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.10
 
+* Midnight: In an attempt to reduce the number of tooltip "secret taint" errors that many players are seeing thanks to bugs in the garbage fire of Midnight addon restrictions, I've disabled Pawn's interactions with world quests entirely, as that seems to be the biggest remaining source of problems. I'll reenable that feature when Blizzard fixes the tooltip bugs.
+	* **This will make it easier to miss upgrades rewarded from world quests!** You can still check to see if a world quest rewards an upgrade by hovering over its icon on the world map and using a Pawn key binding: on most systems you can use the `]` key to open Pawn's Compare tab and show that item. If that doesn't work or you just prefer a different key, open Interface Options, go to Keybindings, then AddOns, and then look for "Compare item (right)".
 * Midnight: Adjusted gem recommendations to account for stat changes that happened since the 12.0 launch. (Sockets on Midnight items will be valued slightly higher after this change.)
 
 ### Version 2.13.9

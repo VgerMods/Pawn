@@ -9,18 +9,8 @@
 
 PawnVersion = 2.1310
 
--- Remove this when 12.0's tooltip secret taint bugs are fixed.
--- 1. Pawn hooks ShoppingTooltip1.ProcessInfo with PawnUpdateTooltip
--- 2. We call GameTooltip:Show at the end of PawnUpdateTooltip
--- 3. That calls calls Blizzard_MoneyFrame's UpdateFunc
--- 4. If we're in combat, we introduce taint into MoneyFrame.staticMoney
--- 5. Later calls to MoneyFrame_Update fail due to taint
--- Reverted in Pawn 2.13.9 after WoW 12.0.5.
-PawnTempBlockShoppingTooltipUpdates = nil
-
--- Remove this when 12.0's tooltip secret taint bugs are fixed.
--- Reverted in Pawn 2.13.8 after a game patch.
-PawnTempWrapWorldQuestTooltipResize = nil
+-- Remove the two hyphens from the next line to re-enable upgrade information and Pawn scores on world quest rewards. (You'll have to /reload after you save the file.)
+-- local ShowWorldQuestUpgrades = true
 
 -- Pawn requires this version of VgerCore:
 local PawnVgerCoreVersionRequired = 1.21
@@ -331,23 +321,19 @@ function PawnInitialize()
 
 	-- World quest embedded tooltips
 
-	if PawnTempWrapWorldQuestTooltipResize and EmbeddedItemTooltip_UpdateSize then
-		-- This arcane incantation seems to prevent the embedded item tooltip inside of the world quest tooltip from exploding due to
-		-- the secret taint bugs in the 12.0 tooltip code. We replace the normal EmbeddedItemTooltip_UpdateSize with one that's
-		-- pre-tainted by addon code. I have no idea why this works and I don't want to. May the Light have mercy on our souls.
-		local OriginalEmbeddedItemTooltipUpdateSize = EmbeddedItemTooltip_UpdateSize
-		EmbeddedItemTooltip_UpdateSize = function(...)
-			return OriginalEmbeddedItemTooltipUpdateSize(...)
-		end
-	end
-
 	hooksecurefunc("EmbeddedItemTooltip_SetItemByQuestReward",
 		function(self, QuestLogIndex, QuestID, ...)
 			if PawnCommon.ShowQuestUpgradeAdvisor then
 				local ItemName, ItemTexture = GetQuestLogRewardInfo(QuestLogIndex, QuestID)
 				if ItemName and ItemTexture then
-					PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
-					self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
+					if ShowWorldQuestUpgrades then
+						PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
+						self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
+					else
+						-- World quest rewards are disabled due to the tooltip secret taint bugs in 12.0+. Let's try to at least make the Compare tab keybind work.
+						local _, ItemLink = self.Tooltip:GetItem()
+						PawnLastHoveredItem = ItemLink
+					end
 				end
 			end
 		end)
@@ -427,17 +413,15 @@ function PawnInitialize()
 	end
 
 	-- The "currently equipped" tooltips on 11.0+
-	if not PawnTempBlockShoppingTooltipUpdates then
-		if ShoppingTooltip1.ProcessInfo then
-			hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function()
-				local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
-				if ItemLink then PawnUpdateTooltip("ShoppingTooltip1", "SetHyperlink", ItemLink) end
-			end)
-			hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function()
-				local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip2)
-				if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
-			end)
-		end
+	if ShoppingTooltip1.ProcessInfo then
+		hooksecurefunc(ShoppingTooltip1, "ProcessInfo", function()
+			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip1)
+			if ItemLink then PawnUpdateTooltip("ShoppingTooltip1", "SetHyperlink", ItemLink) end
+		end)
+		hooksecurefunc(ShoppingTooltip2, "ProcessInfo", function()
+			local _, ItemLink = TooltipUtil.GetDisplayedItem(ShoppingTooltip2)
+			if ItemLink then PawnUpdateTooltip("ShoppingTooltip2", "SetHyperlink", ItemLink) end
+		end)
 	end
 
 	-- MultiTips compatibility
