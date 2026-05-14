@@ -74,6 +74,7 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 Pawn plays along with most other addons, but there are a few that break Pawn that there's no workaround for. Typically this is addons that change the way that stats appear on item tooltips, such as changing "+25 Critical Strike" to "Crit +25".
 
+* Class Codex
 * Combat Numbers Separator + Titan Panel Artifact Power
 * FreeUI
 * TipTac
@@ -83,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ## Updates
 
 ### Version 2.13.10
+
+* Midnight: Adjusted gem recommendations to account for stat changes that happened since the 12.0 launch. (Sockets on Midnight items will be valued slightly higher after this change.)
 
 ### Version 2.13.9
 

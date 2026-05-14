@@ -311,23 +311,23 @@ local WarWithinGems =
 local MidnightGems =
 {
 
--- Midnight tier-2 (non-flawless) quality
-{ ID = 240856, R = true, Y = true, B = true, Stats = { HasteRating = 9 } }, -- Quick Peridot
-{ ID = 240858, R = true, Y = true, B = true, Stats = { HasteRating = 7, CritRating = 3 } }, -- Deadly Peridot
-{ ID = 240860, R = true, Y = true, B = true, Stats = { HasteRating = 7, MasteryRating = 3 } }, -- Masterful Peridot
-{ ID = 240862, R = true, Y = true, B = true, Stats = { HasteRating = 7, Versatility = 3 } }, -- Versatile Peridot
-{ ID = 240864, R = true, Y = true, B = true, Stats = { MasteryRating = 9 } }, -- Masterful Amethyst
-{ ID = 240866, R = true, Y = true, B = true, Stats = { MasteryRating = 7, CritRating = 3 } }, -- Deadly Amethyst
-{ ID = 240868, R = true, Y = true, B = true, Stats = { MasteryRating = 7, HasteRating = 3 } }, -- Quick Amethyst
-{ ID = 240870, R = true, Y = true, B = true, Stats = { MasteryRating = 7, Versatility = 3 } }, -- Versatile Amethyst
-{ ID = 240872, R = true, Y = true, B = true, Stats = { CritRating = 9 } }, -- Deadly Garnet
-{ ID = 240874, R = true, Y = true, B = true, Stats = { CritRating = 7, HasteRating = 3 } }, -- Quick Garnet
-{ ID = 240876, R = true, Y = true, B = true, Stats = { CritRating = 7, MasteryRating = 3 } }, -- Masterful Garnet
-{ ID = 240878, R = true, Y = true, B = true, Stats = { CritRating = 7, Versatility = 3 } }, -- Versatile Garnet
-{ ID = 240880, R = true, Y = true, B = true, Stats = { Versatility = 9 } }, -- Versatile Lapis
-{ ID = 240882, R = true, Y = true, B = true, Stats = { Versatility = 7, CritRating = 3 } }, -- Deadly Lapis
-{ ID = 240884, R = true, Y = true, B = true, Stats = { Versatility = 7, HasteRating = 3 } }, -- Quick Lapis
-{ ID = 240886, R = true, Y = true, B = true, Stats = { Versatility = 7, MasteryRating = 3 } }, -- Masterful Lapis
+-- Midnight tier-2 (non-flawless ilvl 295) quality
+{ ID = 240856, R = true, Y = true, B = true, Stats = { HasteRating = 13 } }, -- Quick Peridot
+{ ID = 240858, R = true, Y = true, B = true, Stats = { HasteRating = 12, CritRating = 5 } }, -- Deadly Peridot
+{ ID = 240860, R = true, Y = true, B = true, Stats = { HasteRating = 12, MasteryRating = 5 } }, -- Masterful Peridot
+{ ID = 240862, R = true, Y = true, B = true, Stats = { HasteRating = 12, Versatility = 5 } }, -- Versatile Peridot
+{ ID = 240864, R = true, Y = true, B = true, Stats = { MasteryRating = 13 } }, -- Masterful Amethyst
+{ ID = 240866, R = true, Y = true, B = true, Stats = { MasteryRating = 12, CritRating = 5 } }, -- Deadly Amethyst
+{ ID = 240868, R = true, Y = true, B = true, Stats = { MasteryRating = 12, HasteRating = 5 } }, -- Quick Amethyst
+{ ID = 240870, R = true, Y = true, B = true, Stats = { MasteryRating = 12, Versatility = 5 } }, -- Versatile Amethyst
+{ ID = 240872, R = true, Y = true, B = true, Stats = { CritRating = 13 } }, -- Deadly Garnet
+{ ID = 240874, R = true, Y = true, B = true, Stats = { CritRating = 12, HasteRating = 5 } }, -- Quick Garnet
+{ ID = 240876, R = true, Y = true, B = true, Stats = { CritRating = 12, MasteryRating = 5 } }, -- Masterful Garnet
+{ ID = 240878, R = true, Y = true, B = true, Stats = { CritRating = 12, Versatility = 5 } }, -- Versatile Garnet
+{ ID = 240880, R = true, Y = true, B = true, Stats = { Versatility = 13 } }, -- Versatile Lapis
+{ ID = 240882, R = true, Y = true, B = true, Stats = { Versatility = 12, CritRating = 5 } }, -- Deadly Lapis
+{ ID = 240884, R = true, Y = true, B = true, Stats = { Versatility = 12, HasteRating = 5 } }, -- Quick Lapis
+{ ID = 240886, R = true, Y = true, B = true, Stats = { Versatility = 12, MasteryRating = 5 } }, -- Masterful Lapis
 
 }
 
@@ -346,7 +346,7 @@ local MidnightGems =
 
 PawnGemQualityLevels =
 {
-	{ 233, MidnightGems }, -- Voidspire raid finder
+	{ 224, MidnightGems }, -- Low-level heroic dungeons (Voidspire raid finder is 233)
 	{ 83, WarWithinGems }, -- Nerub-ar Palace raid finder
 	{ 80, DragonIslesRareGems },
 	{ 70, DragonIslesUncommonGems }, -- Vault of the Incarnates raid finder and Dragon Isles dungeons
@@ -361,4 +361,4 @@ PawnMetaGemQualityLevels = nil
 PawnCogwheelQualityLevels = nil
 PawnCrystalOfFearQualityLevels = nil
 
-PawnMinimumItemLevelToConsiderGems = 83 -- Sockets on items below this ilvl are ignored by default
+PawnMinimumItemLevelToConsiderGems = 224 -- Sockets on items below this ilvl are ignored by default
