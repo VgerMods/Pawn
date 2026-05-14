@@ -323,18 +323,16 @@ function PawnInitialize()
 
 	hooksecurefunc("EmbeddedItemTooltip_SetItemByQuestReward",
 		function(self, QuestLogIndex, QuestID, ...)
-			if PawnCommon.ShowQuestUpgradeAdvisor then
+			if PawnCommon.ShowQuestUpgradeAdvisor and ShowWorldQuestUpgrades then
 				local ItemName, ItemTexture = GetQuestLogRewardInfo(QuestLogIndex, QuestID)
 				if ItemName and ItemTexture then
-					if ShowWorldQuestUpgrades then
-						PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
-						self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
-					else
-						-- World quest rewards are disabled due to the tooltip secret taint bugs in 12.0+. Let's try to at least make the Compare tab keybind work.
-						local _, ItemLink = self.Tooltip:GetItem()
-						PawnLastHoveredItem = ItemLink
-					end
+					PawnUpdateTooltip(self.Tooltip:GetName(), "SetQuestLogItem", "reward", QuestLogIndex, QuestID, ...)
+					self.Tooltip:Show() -- resizes the tooltip's boundaries in case our annotation made it wider
 				end
+			else
+				-- If we're not showing Pawn info on world quest reward tooltips, let's at least make the Compare tab keybind work.
+				local _, ItemLink = self.Tooltip:GetItem()
+				PawnLastHoveredItem = ItemLink
 			end
 		end)
 

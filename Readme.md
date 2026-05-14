@@ -85,6 +85,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.11
 
+* Pawn keybindings will now work on the map even when Pawn's quest upgrade advisor feature is turned off.
+
 ### Version 2.13.10
 
 * Midnight: In an attempt to reduce the number of tooltip "secret taint" errors that many players are seeing thanks to bugs in the garbage fire of Midnight addon restrictions, I've disabled Pawn's interactions with world quests entirely, as that seems to be the biggest remaining source of problems. I'll reenable that feature when Blizzard fixes the tooltip bugs.
