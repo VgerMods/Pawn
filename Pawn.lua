@@ -5970,8 +5970,10 @@ local function BudgetThrottle(Func, Budget, Period)
 	return Throttled
 end
 
+-- Internal only. Don't use this; use PawnShouldItemLinkHaveUpgradeArrow instead. It has the same preconditions, parameters, and return value.
 function PawnShouldItemLinkHaveUpgradeArrowUnbudgeted(ItemLink, CheckLevel)
 	if not PawnIsInitialized then VgerCore.Fail("Can't check to see if items are upgrades until Pawn is initialized") return end
+	if not ItemLink then return end
 
 	--if PawnOptions.DebugBagArrows then VgerCore.Message("Checking upgrade information for " .. tostring(ItemLink)) end
 
