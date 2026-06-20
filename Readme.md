@@ -83,6 +83,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.13
+
 ### Version 2.13.12
 
 * Midnight: Added a workaround for a bug in the game that was causing green arrows to appear next to some items' level even when it wasn't a higher item level than what you've previously equipped in that slot. (The game reports pre-squish item levels 500+ to addons for some items.)

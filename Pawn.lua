@@ -7,7 +7,7 @@
 -- Main non-UI code
 ------------------------------------------------------------
 
-PawnVersion = 2.1312
+PawnVersion = 2.1313
 
 -- Remove the two hyphens from the next line to re-enable upgrade information and Pawn scores on world quest rewards. (You'll have to /reload after you save the file.)
 -- local ShowWorldQuestUpgrades = true
