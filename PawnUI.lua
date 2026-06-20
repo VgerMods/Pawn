@@ -153,9 +153,12 @@ end
 
 function PawnUI_SocketingPawnButton_OnClick(this)
 	-- Set the suggested gem quality level to the level of the current item so relevant gems will be displayed.
-	local ItemLevel
 	local _, ItemLink = ItemSocketingDescription:GetItem()
-	_, _, _, ItemLevel = C_Item.GetItemInfo(ItemLink)
+	local Item = PawnGetItemData(ItemLink)
+	local ItemLevel = Item and Item.Level
+	if ItemLevel then
+		_, _, _, ItemLevel = C_Item.GetItemInfo(ItemLink)
+	end
 	PawnUI_SetGemQualityLevel(ItemLevel)
 	-- Show the Gems tab.
 	PawnUIShowTab(PawnUIGemsTabPage, true)
@@ -1386,8 +1389,6 @@ function PawnUI_CompareItems(IsAutomatedRefresh)
 	LastFoundHeader = PawnLocal.UI.CompareOtherHeader
 
 	-- Add item level information if the user normally has item levels visible.
-	-- Note that for upgradeable items, this won't be the upgradeable level of the item—the GetItemInfo API doesn't return the
-	-- correct item level for upgraded items.  We don't use the item level for anything important, so that'll just be a known limitation for now.
 	local Level1, Level2 = Item1.Level, Item2.Level
 	if not Level1 or Level1 <= 1 then Level1 = nil end
 	if not Level2 or Level2 <= 1 then Level2 = nil end

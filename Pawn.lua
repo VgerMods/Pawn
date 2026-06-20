@@ -1402,6 +1402,15 @@ function PawnGetItemData(ItemLink)
 			end
 		end
 
+		if Item.Stats.ItemLevel then
+			-- Tons of versions of the game 6.x+ have various bugs in the item info APIs relating to item levels, but tooltips are always right. So if we read the item level from the tooltip, always prefer that.
+			if Item.Level ~= Item.Stats.ItemLevel then
+				PawnDebugMessage(format(ITEM_LEVEL, Item.Level) .. " -> " .. Item.Stats.ItemLevel)
+			end
+			Item.Level = Item.Stats.ItemLevel
+			Item.Stats.ItemLevel = nil
+		end
+
 		if (not VgerCore.RangedSlotExists) and (InvType == "INVTYPE_RANGED" or InvType == "INVTYPE_RANGEDRIGHT") then
 			-- We convert ranged weapons into the correct "handedness" of weapons since there's no ranged slot anymore.
 			if Item.Stats and Item.Stats.IsWand then
@@ -1419,8 +1428,6 @@ function PawnGetItemData(ItemLink)
 		-- Then, the unenchanted stats.  But, we only need to do this if the item is enchanted or socketed.  PawnUnenchantItemLink
 		-- will return nil if the item isn't enchanted, so we can skip that process.
 		local UnenchantedItemLink = PawnUnenchantItemLink(ItemLink)
-		-- As of WoW 6.2.3, Item.Level is incorrect for upgraded items because GetItemInfo returns the wrong value.  PawnUnenchantItemLink could
-		-- be enhanced here to get a number to add (+10) for upgradeable items if we decide we need that info.
 		if UnenchantedItemLink then
 			PawnDebugMessage(" ")
 			PawnDebugMessage(PawnLocal.UnenchantedStatsHeader)
@@ -1684,8 +1691,8 @@ function PawnGetSingleValueFromItem(Item, ScaleName)
 	return Value, UnenchantedValue
 end
 
-local ItemLevelSearchPattern1 = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
-local ItemLevelSearchPattern2 = gsub(ITEM_LEVEL_PLUS, "%%d%+", "(%%d+)%%+")
+local ItemLevelSearchPattern1 = "^" .. gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local ItemLevelSearchPattern2 = "^" .. gsub(ITEM_LEVEL_PLUS, "%%d%+", "(%%d+)%%+")
 
 local TooltipUpdateCounter = 0
 

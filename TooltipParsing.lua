@@ -82,6 +82,7 @@ PawnRegexes =
 	-- Common strings that are ignored (rare ones are at the bottom of the file)
 	-- ========================================
 	{L.HaventCollectedAppearance}, -- You haven't collected this appearance.
+	{"^" .. PawnGameConstantUnwrapped(SELL_PRICE) .. ":"}, -- "Sell Price: <long format string>" from GameTooltip_OnTooltipAddMoney in 12.1+
 	{PawnGameConstant(ITEM_QUALITY0_DESC)}, -- Poor
 	{PawnGameConstant(ITEM_QUALITY1_DESC)}, -- Common
 	{PawnGameConstant(ITEM_QUALITY2_DESC)}, -- Uncommon
@@ -100,7 +101,6 @@ PawnRegexes =
 	{L.Titanforged}, -- Legion items upgraded 15 item levels or more
 	{L.Warforged}, -- level 559 Black Blood of Y'Shaarj (http://www.wowhead.com/item=105399)
 	{L.HeroicWarforged}, -- level 572 Black Blood of Y'Shaarj (http://www.wowhead.com/item=105648)
-	{"^" .. ITEM_LEVEL}, -- Item Level 200
 	{L.UpgradeLevel}, -- Upgrade Level 0/2 (ITEM_UPGRADE_TOOLTIP_FORMAT)
 	{PawnGameConstantIgnoredPlaceholder(EQUIPMENT_SETS)}, -- String is from the Blizzard UI, but only used by Outfitter
 	{PawnGameConstant(ITEM_UNSELLABLE)}, -- No sell price
@@ -167,6 +167,7 @@ PawnRegexes =
 	-- ========================================
 	-- Strings that represent statistics that Pawn cares about
 	-- ========================================
+	{"^" .. (gsub(ITEM_LEVEL, "%%d", "(%%d+)")), "ItemLevel"},
 	{L.HeirloomLevelRange, "MaxScalingLevel"}, -- Scaling heirloom items
 	{L.HeirloomXpBoost, "XpBoost", 1, PawnMultipleStatsFixed}, -- Experience-granting heirloom items
 	{L.HeirloomXpBoost2, "XpBoost", 1, PawnMultipleStatsFixed}, -- unused in English
@@ -394,7 +395,7 @@ PawnRightHandRegexes =
 	{L.Gun, "IsGun", 1, PawnMultipleStatsFixed},
 	{L.Mace, "IsMace", 1, PawnMultipleStatsFixed},
 	{L.Polearm, "IsPolearm", 1, PawnMultipleStatsFixed},
-	{INVTYPE_RELIC, "IsRelic", 1, PawnMultipleStatsFixed},
+	{PawnGameConstant(INVTYPE_RELIC), "IsRelic", 1, PawnMultipleStatsFixed},
 	{L.Staff, "IsStaff", 1, PawnMultipleStatsFixed},
 	{L.Sword, "IsSword", 1, PawnMultipleStatsFixed},
 	{L.Warglaives, "IsWarglaive", 1, PawnMultipleStatsFixed},
