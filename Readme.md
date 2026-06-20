@@ -83,6 +83,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.12
+
 ### Version 2.13.11
 
 * Pawn keybindings will now work on the map even when Pawn's quest upgrade advisor feature is turned off.
