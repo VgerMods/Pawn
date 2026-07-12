@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.14
+
 ### Version 2.13.13
 
 * Midnight: Additional changes to hide "secret taint" errors.
