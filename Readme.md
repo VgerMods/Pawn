@@ -87,6 +87,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ### Version 2.13.15
 
 * Midnight: Daggers can show up as upgrades for demon hunters now that they're usable again.
+* Burning Crusade: Fixed a problem where Pawn was missing school-specific (nature, etc.) spell power on some items when playing in Traditional Chinese. (Thanks Jonathan Cheung!)
 
 ### Version 2.13.14
 
