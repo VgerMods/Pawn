@@ -688,7 +688,7 @@ PawnNeverUsableStats =
 	-- Note: feral and guardian artifacts are actually off-hand items, even though druids can't normally equip them.
 
 	[12] = -- Demon Hunter
-	{ "IsDagger", "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield", "IsThrown", "IsRelic" },
+	{ "IsMace", "IsWand", "IsBow", "IsCrossbow", "IsGun", "Is2HAxe", "Is2HMace", "Is2HSword", "IsPolearm", "IsStaff", "IsMail", "IsPlate", "IsShield", "IsThrown", "IsRelic" },
 
 	[13] = -- Evoker
 	{  "IsWand", "IsBow", "IsCrossbow", "IsGun", "IsPolearm", "IsWarglaive", "IsOffHand", "IsPlate", "IsShield", "IsThrown", "IsRelic" },
@@ -702,4 +702,9 @@ end
 if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
 	-- Rogues didn't learn to use axes until Wrath of the Lich King.
 	tinsert(PawnNeverUsableStats[4], "IsAxe")
+end
+
+if VgerCore.IsShadowlands or VgerCore.IsDragonflight or VgerCore.IsWarWithin then
+	-- Demon Hunters could use daggers at Legion launch, but lost the ability in Shadowlands, and got it back again in Midnight patch 12.1.
+	tinsert(PawnNeverUsableStats[12], "IsDagger")
 end

@@ -86,6 +86,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.15
 
+* Midnight: Daggers can show up as upgrades for demon hunters now that they're usable again.
+
 ### Version 2.13.14
 
 * Fixed a rare bug in 2.13.12 that might have caused an error to occur when hovering over an item with no stats. (Possibly only when using Bagnon?)

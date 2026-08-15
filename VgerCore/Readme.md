@@ -17,6 +17,11 @@ VgerCore contains functionality that is shared by mods written by Vger of Azjol-
 
 ## Updates
 
+### Version 1.0.22
+
+* IsShadowlands, IsDragonflight, IsWarWithin, and IsMidnight now work like the properties for previous expansions, in that IsShadowlands is now only true when the current version of the game is Shadowlands, and not later versions of the game.
+* Added IsDraenorOrLater, IsLegionOrLater, IsBattleOrLater, IsShadowlandsOrLater, IsDragonflightOrLater, IsWarWithinOrLater, and IsMidnightOrLater.
+
 ### Version 1.0.21
 
 * Added IsMidnight.

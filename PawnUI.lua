@@ -2643,7 +2643,7 @@ end
 function PawnUICreateTabs()
 	local TabCount = #PawnUITabList
 	local TabTemplate
-	if VgerCore.IsDragonflight then
+	if VgerCore.IsDragonflightOrLater then
 		TabTemplate = "PanelTabButtonTemplate"
 	else
 		TabTemplate = "CharacterFrameTabButtonTemplate"

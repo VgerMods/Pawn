@@ -13,7 +13,7 @@ PawnVersion = 2.1315
 -- local ShowWorldQuestUpgrades = true
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.21
+local PawnVgerCoreVersionRequired = 1.22
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
@@ -34,7 +34,6 @@ local PawnItemCache
 local PawnItemCacheMaxSize = 200 -- thanks to bag arrows, this should be greater than the number of possible inventory slots
 
 local PawnScaleTotals = { }
-
 
 -- Best gem data
 --	Best gem data is broken down first by scale name, then by socket, then by minimum item level.  "Gem info" is yet another table.

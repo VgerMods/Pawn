@@ -2,8 +2,8 @@
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.21 -- IsMidnight
-local VgerCoreThisVersion = 1.21
+-- Version 1.0.22 -- ___OrLater expansion checks
+local VgerCoreThisVersion = 1.22
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -20,28 +20,35 @@ VgerCore.Version = VgerCoreThisVersion
 
 -- What version is this?
 local BuildNumber = select(4, GetBuildInfo())
+VgerCore.IsMainline = BuildNumber >= 90000
 VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC)
 VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_LEVEL_CURRENT == LE_EXPANSION_BURNING_CRUSADE) -- includes pre-patch
 VgerCore.IsWrath = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_WRATH_OF_THE_LICH_KING and LE_EXPANSION_LEVEL_CURRENT >= LE_EXPANSION_WRATH_OF_THE_LICH_KING) or (WOW_PROJECT_WRATH_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC) -- includes pre-patch
 VgerCore.IsCataclysm = (WOW_PROJECT_CATACLYSM_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC) -- includes pre-patch
 VgerCore.IsMists = (WOW_PROJECT_MISTS_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_MISTS_CLASSIC) -- includes pre-patch
-VgerCore.IsDraenor = false
-VgerCore.IsLegion = false
-VgerCore.IsBattle = false
-VgerCore.IsMainline = BuildNumber >= 90000
-VgerCore.IsShadowlands = VgerCore.IsMainline and BuildNumber >= 90000
-VgerCore.IsDragonflight = VgerCore.IsMainline and BuildNumber >= 100000
-VgerCore.IsWarWithin = VgerCore.IsMainline and BuildNumber >= 110000
-VgerCore.IsMidnight = VgerCore.IsMainline and BuildNumber >= 120000
+VgerCore.IsDraenor = BuildNumber >= 60000 and BuildNumber < 70000
+VgerCore.IsDraenorOrLater = BuildNumber >= 60000
+VgerCore.IsLegion = BuildNumber >= 70000 and BuildNumber < 80000
+VgerCore.IsLegionOrLater = BuildNumber >= 70000
+VgerCore.IsBattle = BuildNumber >= 80000 and BuildNumber < 90000
+VgerCore.IsBattleOrLater = BuildNumber >= 80000
+VgerCore.IsShadowlands = BuildNumber >= 90000 and BuildNumber < 100000
+VgerCore.IsShadowlandsOrLater = BuildNumber >= 90000
+VgerCore.IsDragonflight = BuildNumber >= 100000 and BuildNumber < 110000
+VgerCore.IsDragonflightOrLater = BuildNumber >= 100000
+VgerCore.IsWarWithin = BuildNumber >= 110000 and BuildNumber < 120000
+VgerCore.IsWarWithinOrLater = BuildNumber >= 110000
+VgerCore.IsMidnight = BuildNumber >= 120000 and BuildNumber < 130000
+VgerCore.IsMidnightOrLater = BuildNumber >= 120000
 
-VgerCore.DeathKnightsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsMainline
-VgerCore.MonksExist = VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsBattle or VgerCore.IsMainline
-VgerCore.DemonHuntersExist = VgerCore.IsLegion or VgerCore.IsBattle or VgerCore.IsMainline
-VgerCore.EvokersExist = VgerCore.IsDragonflight
-VgerCore.SpecsExist = VgerCore.IsMists or VgerCore.IsLegion or VgerCore.IsBattle or VgerCore.IsMainline
+VgerCore.DeathKnightsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater
+VgerCore.MonksExist = VgerCore.IsMists or VgerCore.IsDraenorOrLater
+VgerCore.DemonHuntersExist = VgerCore.IsLegionOrLater
+VgerCore.EvokersExist = VgerCore.IsDragonflightOrLater
+VgerCore.SpecsExist = VgerCore.IsMists or VgerCore.IsDraenorOrLater
 VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm
-VgerCore.ArtifactsExist = VgerCore.IsLegion or VgerCore.IsBattle or VgerCore.IsMainline
-VgerCore.EquipmentSetsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsBattle or VgerCore.IsMainline
+VgerCore.ArtifactsExist = VgerCore.IsLegionOrLater
+VgerCore.EquipmentSetsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater
 VgerCore.ReforgingExists = VgerCore.IsCataclysm or VgerCore.IsMists
 
 -- Common colors
