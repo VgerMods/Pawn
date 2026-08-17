@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.16
+
 ### Version 2.13.15
 
 * Includes a performance fix from an anonymous Pawn user that should noticeably improve framerates in certain situations, especially on Classic versions. (Thanks!)
