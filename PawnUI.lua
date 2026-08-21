@@ -336,7 +336,7 @@ function PawnUI_SelectScale(ScaleName)
 	-- Close popup UI as necessary.
 	PawnUIStringDialogSingleLine:Hide()
 	PawnUIStringDialogMultiLine:Hide()
-	ColorPickerFrame:Hide()
+	HideUIPanel(ColorPickerFrame)
 	-- Select the scale.
 	PawnUICurrentScale = ScaleName
 	PawnUI_HighlightCurrentScale()
