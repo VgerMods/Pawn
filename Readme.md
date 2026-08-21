@@ -86,6 +86,9 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.16
 
+* Fixed translation problems in Traditional Chinese that were causing Pawn to miss DPS on rare ranged weapons that do an exact amount of damage instead of a range.
+* Fixed translation problems in Traditional Chinese that were causing Pawn to show items you haven't collected the appearance for, and some weapons that you have, as having unknown "special effects" on the Compare tab.
+
 ### Version 2.13.15
 
 * Includes a performance fix from an anonymous Pawn user that should noticeably improve framerates in certain situations, especially on Classic versions. (Thanks!)
