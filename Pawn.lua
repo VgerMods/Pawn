@@ -31,7 +31,7 @@ PawnPrivateTooltipName = "PawnPrivateTooltip1"
 --	An entry in the Values table is an ordered array in the following format:
 --	{ ScaleName, Value, UnenchantedValue }
 local PawnItemCache
-local PawnItemCacheMaxSize = 200 -- thanks to bag arrows, this should be greater than the number of possible inventory slots
+local PawnItemCacheMaxSize = 300 -- thanks to bag arrows, this should be greater than the number of possible inventory slots
 
 local PawnScaleTotals = { }
 
@@ -3881,7 +3881,7 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 	if not PawnOptions.UpgradeTracking then return end
 
 	local OldCacheSize = PawnItemCacheMaxSize
-	PawnItemCacheMaxSize = 500 -- temporarily increase maximum cache size for performance reasons
+	PawnItemCacheMaxSize = 1000 -- temporarily increase maximum cache size to minimize changes of needing to immediately re-parse things
 
 	-- Start with the best items that we already know of.  Obviously in most cases, your existing best items
 	-- are already your best ones.  This is a persistent per-scale per-character option, not just per-scale.
