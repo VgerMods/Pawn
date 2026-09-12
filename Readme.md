@@ -89,6 +89,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 * Pawn will use a bit more memory remembering more items that you've looked at or owned recently, which will improve performance in some situations.
 * Fixed translation problems in Traditional Chinese that were causing Pawn to miss DPS on rare ranged weapons that do an exact amount of damage instead of a range.
 * Fixed translation problems in Traditional Chinese that were causing Pawn to show items you haven't collected the appearance for, and some weapons that you have, as having unknown "special effects" on the Compare tab.
+* Burning Crusade: Fixed the item score displayed on Potent Ornate Topaz when the "show scale values and upgrade %" option is used, except in Simplified Chinese and Traditional Chinese.
 
 ### Version 2.13.15
 

@@ -659,6 +659,7 @@ PawnLocal.TooltipParsing = {
 	["SpellCritRating2"] = "^Equip: Improves spell critical strike rating by #%.$",
 	["SpellCritRatingShort"] = "^%+?# Spell Critical Rating$",
 	["SpellCritRatingShort2"] = "^%+?# Spell Critical Strike Rating$",
+	["SpellCritRatingShort3"] = "^%+?# Spell Crit Rating$",
 	["SpellDamage"] = "^%+# Damage and Healing Spells$",
 	["SpellDamage2"] = "^Equip: Increases damage and healing done by magical spells and effects by up to #%.$",
 	["SpellDamage3"] = "^%+# Healing and Spell Damage$",
