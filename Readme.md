@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.17
+
 ### Version 2.13.16
 
 * Pawn will use a bit more memory remembering more items that you've looked at or owned recently, which will improve performance in some situations.
