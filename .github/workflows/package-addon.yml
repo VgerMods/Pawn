@@ -10,6 +10,7 @@ on:
 
 env:
   CLASSIC_VERSION: 11509
+  FOREVER_VERSION: 16001
   BURNING_CRUSADE_VERSION: 20506
   WRATH_VERSION: 30405
   CATACLYSM_VERSION: 40402
@@ -51,6 +52,16 @@ jobs:
       run: |
         cd .releases
         zip -9 -r ${{steps.init.outputs.tag_name}}-Classic.zip ${{steps.init.outputs.addon_name}}
+        cd ..
+
+    - name: Replace TOC version for Forever
+      run: |
+        sed -i 's/Interface: *[0-9, ]\+/Interface: ${{env.FOREVER_VERSION}}/g' .releases/${{steps.init.outputs.addon_name}}/${{steps.init.outputs.addon_name}}.toc
+
+    - name: Create Forever zip
+      run: |
+        cd .releases
+        zip -9 -r ${{steps.init.outputs.tag_name}}-Forever.zip ${{steps.init.outputs.addon_name}}
         cd ..
 
     - name: Replace TOC version for Burning Crusade
@@ -123,6 +134,16 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: .releases/${{steps.init.outputs.tag_name}}-Classic.zip
         asset_name: ${{steps.init.outputs.tag_name}}-Classic.zip
+        asset_content_type: application/zip
+
+    - name: Add Forever zip to release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .releases/${{steps.init.outputs.tag_name}}-Forever.zip
+        asset_name: ${{steps.init.outputs.tag_name}}-Forever.zip
         asset_content_type: application/zip
 
     - name: Add Burning Crusade zip to release

@@ -1112,6 +1112,211 @@ function PawnClassicScaleProvider_AddScales()
 			{ ParryRating=100, DodgeRating=100, Strength=98, Stamina=70, MasteryRating=50, ExpertiseRating=30, HitRating=30, Armor=25, HasteRating=20, CritRating=10, Agility=0, Dps=0, ResilienceRating=0, MetaSocketEffect=16000, }
 		)
 
+	elseif VgerCore.IsForever then ------------------------------------------------------------
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			11, -- Druid
+			1, -- Balance
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			11, -- Druid
+			2, -- Feral (Damage)
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			11, -- Druid
+			3, -- Feral (Tank)
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			11, -- Druid
+			4, -- Restoration
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			3, -- Hunter
+			1, -- Beast Mastery
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			3, -- Hunter
+			2, -- Marksmanship
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			3, -- Hunter
+			3, -- Survival
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			8, -- Mage
+			1, -- Arcane
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			8, -- Mage
+			2, -- Fire
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			8, -- Mage
+			3, -- Frost
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			2, -- Paladin
+			1, -- Holy
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			2, -- Paladin
+			2, -- Protection
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			2, -- Paladin
+			3, -- Retribution
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			5, -- Priest
+			1, -- Discipline
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			5, -- Priest
+			2, -- Holy
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			5, -- Priest
+			3, -- Shadow
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			4, -- Rogue
+			1, -- Assassination
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			4, -- Rogue
+			2, -- Combat
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			4, -- Rogue
+			3, -- Subtlety
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			4, -- Rogue
+			nil,
+			{ }
+		).LocalizedName = select(1, PawnGetClassInfo(4)) .. ": " .. SECONDARYHANDSLOT
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			7, -- Shaman
+			1, -- Elemental
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			7, -- Shaman
+			2, -- Enhancement
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			7, -- Shaman
+			3, -- Restoration
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			9, -- Warlock
+			1, -- Affliction
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			9, -- Warlock
+			2, -- Demonology
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			9, -- Warlock
+			3, -- Destruction
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			1, -- Warrior
+			1, -- Arms
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			1, -- Warrior
+			2, -- Fury
+			{ }
+		)
+
+		PawnAddPluginScaleFromTemplate(
+			ScaleProviderName,
+			1, -- Warrior
+			3, -- Protection
+			{ }
+		)
+
 	else
 		VgerCore.Fail("Failed to set up default Pawn scales because we weren't sure which version of WoW this is.")
 		return
@@ -1131,7 +1336,7 @@ function PawnClassicScaleProvider_AddScales()
 	end
 	PawnClassicScaleProviderOptions.LastClass = Class
 
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
+	if VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm then
 		-- Since Pawn doesn't have an Automatic mode until Mists of Pandaria, enable the template scales when logging in for the first time
 		-- IF the player hasn't already added a non-provider scale.
 		-- For death knights only, do a one-time re-show on 2.6.5 since for some reason it wasn't working for some people.

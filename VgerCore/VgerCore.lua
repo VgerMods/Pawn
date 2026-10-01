@@ -2,8 +2,8 @@
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.22 -- ___OrLater expansion checks
-local VgerCoreThisVersion = 1.22
+-- Version 1.0.23 -- IsForever
+local VgerCoreThisVersion = 1.23
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -20,8 +20,9 @@ VgerCore.Version = VgerCoreThisVersion
 
 -- What version is this?
 local BuildNumber = select(4, GetBuildInfo())
-VgerCore.IsMainline = BuildNumber >= 90000
-VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC)
+VgerCore.IsMainline = BuildNumber >= 90000 -- deprecated; use IsShadowlandsOrLater or similar
+VgerCore.IsClassic = (WOW_PROJECT_ID == WOW_PROJECT_CLASSIC) -- Classic Era; does not include Forever or later Classic versions
+VgerCore.IsForever = BuildNumber > 16000 and BuildNumber < 20000
 VgerCore.IsBurningCrusade = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_LEVEL_CURRENT == LE_EXPANSION_BURNING_CRUSADE) -- includes pre-patch
 VgerCore.IsWrath = (WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC and LE_EXPANSION_WRATH_OF_THE_LICH_KING and LE_EXPANSION_LEVEL_CURRENT >= LE_EXPANSION_WRATH_OF_THE_LICH_KING) or (WOW_PROJECT_WRATH_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_WRATH_CLASSIC) -- includes pre-patch
 VgerCore.IsCataclysm = (WOW_PROJECT_CATACLYSM_CLASSIC and WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC) -- includes pre-patch
@@ -46,7 +47,7 @@ VgerCore.MonksExist = VgerCore.IsMists or VgerCore.IsDraenorOrLater
 VgerCore.DemonHuntersExist = VgerCore.IsLegionOrLater
 VgerCore.EvokersExist = VgerCore.IsDragonflightOrLater
 VgerCore.SpecsExist = VgerCore.IsMists or VgerCore.IsDraenorOrLater
-VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm
+VgerCore.RangedSlotExists = VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm
 VgerCore.ArtifactsExist = VgerCore.IsLegionOrLater
 VgerCore.EquipmentSetsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater
 VgerCore.ReforgingExists = VgerCore.IsCataclysm or VgerCore.IsMists
@@ -121,8 +122,8 @@ VgerCore.MoneyColor.Copper = "|cffe2ad8e"
 function VgerCore.Message(Text)
 	if DEFAULT_CHAT_FRAME then
 		DEFAULT_CHAT_FRAME:AddMessage(VgerCore.Color.Orange .. tostring(Text))
-	else
-		message(VgerCore.Color.Orange .. tostring(Text))
+	elseif SetBasicMessageDialogText then
+		SetBasicMessageDialogText(VgerCore.Color.Orange .. tostring(Text))
 	end
 end
 

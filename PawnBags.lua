@@ -18,6 +18,7 @@ PawnBags = {}
 local _
 
 local IsInitialized
+local IsModernBags = ContainerFrameMixin ~= nil
 
 local NumberOfContainerFrames = NUM_TOTAL_BAG_FRAMES or NUM_CONTAINER_FRAMES
 local PawnBagsRefreshCounter = 1
@@ -88,7 +89,7 @@ end
 local function UpdateContainerFrameUpgradeIcons(self)
 	if PawnIsAThirdPartyBagRegistered then return end
 
-	if VgerCore.IsMainline then
+	if IsModernBags then
 		for _, ItemButton in self:EnumerateValidItems() do
 			UpdateItemButtonUpgradeIcon(ItemButton)
 		end
@@ -108,7 +109,7 @@ function PawnBags:Initialize()
 	if PawnIsAThirdPartyBagRegistered then return false end
 	if IsInitialized then return true end
 
-	if VgerCore.IsMainline then
+	if IsModernBags then
 		hooksecurefunc(ContainerFrameMixin, "UpdateItems", UpdateContainerFrameUpgradeIcons)
 		-- Hooking the mixin is not retroactive to bags that have already been created. So update all of those too.
 		hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", UpdateContainerFrameUpgradeIcons)
@@ -128,7 +129,7 @@ function PawnBags:RefreshAll()
 	PawnBags:Initialize()
 
 	PawnBagsRefreshCounter = PawnBagsRefreshCounter + 1
-	if VgerCore.IsMainline then
+	if IsModernBags then
 		if ContainerFrameCombinedBags:IsShown() then UpdateContainerFrameUpgradeIcons(ContainerFrameCombinedBags) end
 	end
 	for i = 1, NumberOfContainerFrames do

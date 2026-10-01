@@ -13,7 +13,7 @@ PawnVersion = 2.1317
 -- local ShowWorldQuestUpgrades = true
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.22
+local PawnVgerCoreVersionRequired = 1.23
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
@@ -32,6 +32,7 @@ PawnPrivateTooltipName = "PawnPrivateTooltip1"
 --	{ ScaleName, Value, UnenchantedValue }
 local PawnItemCache
 local PawnItemCacheMaxSize = 300 -- thanks to bag arrows, this should be greater than the number of possible inventory slots
+local PawnItemCacheCanAssumeComplete = VgerCore.IsDraenorOrLater
 
 local PawnScaleTotals = { }
 
@@ -196,7 +197,7 @@ function PawnInitialize()
 	-- Check the current version of VgerCore.
 	if (not VgerCore) or (not VgerCore.Version) or (VgerCore.Version < PawnVgerCoreVersionRequired) then
 		if DEFAULT_CHAT_FRAME then DEFAULT_CHAT_FRAME:AddMessage("|cfffe8460" .. PawnLocal.NeedNewerVgerCoreMessage) end
-		message(PawnLocal.NeedNewerVgerCoreMessage)
+		SetBasicMessageDialogText(PawnLocal.NeedNewerVgerCoreMessage)
 		return
 	end
 
@@ -214,7 +215,14 @@ function PawnInitialize()
 		-- No need to translate this string...
 		local WrongLocaleMessage = "Sorry, this version of Pawn is for English, French, German, Italian, Korean, Portuguese, Russian, Spanish, Simplified Chinese, and Traditional Chinese only."
 		VgerCore.Message(VgerCore.Color.Salmon .. WrongLocaleMessage)
-		message(WrongLocaleMessage)
+		SetBasicMessageDialogText(WrongLocaleMessage)
+	end
+
+	-- Warn about Forever.
+	if VgerCore.IsForever then
+		local ForeverNotSupportedMessage = "Pawn will be available for Forever after I get access to the beta. Remove or disable Pawn for now, and check again soon."
+		VgerCore.Message(VgerCore.Color.Salmon .. ForeverNotSupportedMessage)
+		SetBasicMessageDialogText(ForeverNotSupportedMessage)
 	end
 
 	-- Set up slash commands
@@ -245,13 +253,13 @@ function PawnInitialize()
 
 	-- Main game tooltip
 	-- Note that in Dragonflight, most or all of this could be replaced by hooking GameTooltip.ProcessInfo, but that won't work in older versions.
-	if not VgerCore.IsMainline then
+	if not (VgerCore.IsBattleOrLater or VgerCore.IsForever) then
 		-- SetAuctionItem was removed in 8.3.0 but is still there on Classic.  The (incorrect) way that BankItems hooks this function
 		-- causes the detection to fail, so just directly check the version.
 		hooksecurefunc(GameTooltip, "SetAuctionItem", function(_, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionItem", ...) end)
 		hooksecurefunc(GameTooltip, "SetAuctionSellItem", function(_, ...) PawnUpdateTooltip("GameTooltip", "SetAuctionSellItem", ...) end)
 	end
-	if VgerCore.IsMainline then
+	if GameTooltip.SetItemKey then
 		hooksecurefunc(GameTooltip, "SetItemKey", function(_, ItemID, ItemLevel, Suffix, ...) PawnUpdateTooltip("GameTooltip", "SetItemKey", ItemID, ItemLevel, Suffix, ...) end)
 	end
 	hooksecurefunc(GameTooltip, "SetBagItem", function() PawnUpdateTooltip("GameTooltip", "SetBagItem") end)
@@ -499,7 +507,7 @@ function PawnInitialize()
 	end
 
 	-- Warn them if Pawn might be broken due to changing the thousands or decimal separator.
-	if not (GetLocale() == "frFR" and not VgerCore.IsMainline) then
+	if not (GetLocale() == "frFR" and not VgerCore.IsDraenorOrLater) then
 		-- The separator strings are completely wrong on French WoW Classic.  :(
 		if (LARGE_NUMBER_SEPERATOR and PawnLocal.ThousandsSeparator ~= LARGE_NUMBER_SEPERATOR) or
 		(DECIMAL_SEPERATOR and PawnLocal.DecimalSeparator ~= DECIMAL_SEPERATOR) then
@@ -577,7 +585,14 @@ function PawnInitializeOptions()
 	if not PawnOptions then PawnOptions = {} end
 
 	-- We need to know the player's full name for some server-specific settings.
-	PawnPlayerFullName = UnitName("player") .. "-" .. GetRealmName()
+	local FirstName, LastNameOrRealm = UnitName("player")
+	if LastNameOrRealm then
+		-- Forever: use the character's last name, unique across all rulesets/realms
+		PawnPlayerFullName = FirstName .. " " .. LastNameOrRealm
+	else
+		-- Non-Forever versions: use the realm name as last name
+		PawnPlayerFullName = FirstName .. "-" .. GetRealmName()
+	end
 	-- Save the last known player name to PawnOptions so that we can detect character renames and server
 	-- transfers in the future.
 	PawnOptions.LastPlayerFullName = PawnPlayerFullName
@@ -688,7 +703,7 @@ function PawnInitializeOptions()
 	end
 	if PawnCommon.LastVersion < 2.0244 then
 		-- The "show item level upgrades" option is new for 2.2.44 and on by default, but NOT in Classic.
-		if VgerCore.IsMainline then
+		if VgerCore.IsLegionOrLater then
 			PawnCommon.ShowItemLevelUpgrades = true
 		else
 			PawnCommon.ShowItemLevelUpgrades = false
@@ -720,8 +735,8 @@ function PawnInitializeOptions()
 			PawnCommon.ShowBagUpgradeAdvisor = true
 		end
 	end
-	if ((VgerCore.IsMainline) and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
-		((VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
+	if (VgerCore.IsDraenorOrLater and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
+		((VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
 		-- If the Ask Mr. Robot scales have been updated since the last time they used Pawn, re-scan gear.
 		PawnInvalidateBestItems()
 	end
@@ -763,7 +778,7 @@ end
 -- Once per new version of Pawn that adds keybindings, bind the new actions to default keys.
 function PawnSetDefaultKeybindings()
 	-- SaveBindings doesn't work on WoW Classic.
-	if not VgerCore.IsMainline then return end
+	if not VgerCore.IsDraenorOrLater then return end
 
 	-- It's possible that this will happen before the main initialization code, so we need to ensure that the
 	-- default Pawn options have been set already.  Doing this multiple times is harmless.
@@ -1196,8 +1211,8 @@ function PawnRecalculateScaleTotal(ScaleName)
 			BestPrismatic, ThisScaleBestGems.PrismaticSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData)
 			ThisScaleBestGems.PrismaticSocketValue[ItemLevel] = BestPrismatic
 
-			-- Classic Era and the retail realms don't have colored sockets, so don't bother trying to calculate for those.
-			if not VgerCore.IsClassic and not VgerCore.IsMainline then
+			-- Burning Crusade through Mists of Pandaria had different colors of gems; we can skip those per-color calculations on other versions of the game.
+			if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 				local BestRed
 				BestRed, ThisScaleBestGems.RedSocket[ItemLevel] = PawnFindBestGems(ScaleName, GemData, true, false, false)
 				ThisScaleBestGems.RedSocketValue[ItemLevel] = BestRed
@@ -1214,7 +1229,7 @@ function PawnRecalculateScaleTotal(ScaleName)
 	end
 
 	-- Now the meta gems.
-	if not VgerCore.IsClassic and not VgerCore.IsMainline then
+	if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 		for _, QualityLevelData in pairs(PawnMetaGemQualityLevels) do
 			local ItemLevel = QualityLevelData[1]
 			local GemData = QualityLevelData[2]
@@ -1344,13 +1359,13 @@ function PawnGetItemData(ItemLink)
 		return
 	end
 	if CachedItem and CachedItem.Values then
-		if VgerCore.IsMainline then
+		if PawnItemCacheCanAssumeComplete then
 			return CachedItem
 		end
 	end
 	-- If Item is non-null but Item.Values is null, we're not done yet!
 	local Item
-	if VgerCore.IsMainline then
+	if PawnItemCacheCanAssumeComplete then
 		Item = CachedItem
 	end
 	-- On Classic versions, we don't know for sure yet if our cached item is workable: it might have had incomplete data. We'll continue as if we didn't find anything in the
@@ -2739,11 +2754,8 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 	local ThisValue
 	for Stat, Quantity in pairs(Item) do
 		ThisValue = ScaleValues[Stat]
-		if VgerCore.IsMainline then
-			-- When not in Classic:
-			-- Attack Power gets converted into Strength or Agility, whichever is most valuable.
-			-- BUG: Since Attack Power doesn't appear in the Values tab, it also won't show on the Compare tab.  The Compare tab
-			-- would need extra handling for Attack Power.
+		if not VgerCore.IsBattleOrLater then
+			-- In Modern WoW, Attack Power gets converted into Strength or Agility, whichever is most valuable.
 			if Stat == "Ap" then
 				local StrengthValue = ScaleValues["Strength"] or 0
 				local AgilityValue = ScaleValues["Agility"] or 0
@@ -3251,11 +3263,11 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.Multistrike = nil
 
 	-- These were introduced in Classic versions.
-	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
+	if not (VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm) then
 		ThisScale.SpellPenetration = nil
 		ThisScale.IsRelic = nil
 	end
-	if not (VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) then
+	if not (VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) then
 		ThisScale.ExpertiseRating = nil
 		ThisScale.HitRating = nil
 		ThisScale.SpellHitRating = nil
@@ -3284,7 +3296,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.DominationSocket = nil
 
 	-- Wrath Classic merges SpellDamage and Healing into SpellPower, and melee and spell ratings.
-	if VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsMainline then
+	if VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater then
 		PawnCombineStats(ThisScale, "SpellPower", "SpellDamage")
 		PawnCombineStats(ThisScale, "SpellPower", "Healing")
 		PawnCombineStats(ThisScale, "HitRating", "SpellHitRating")
@@ -3293,7 +3305,7 @@ function PawnCorrectScaleErrors(ScaleName)
 	end
 
 	-- Cataclysm effectively eliminates ranged attack power and we consider them merged.
-	if VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenor or VgerCore.IsLegion or VgerCore.IsMainline then
+	if VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater then
 		PawnCombineStats(ThisScale, "Ap", "Rap")
 	end
 end
@@ -4900,7 +4912,7 @@ function PawnIsPlayingWith(TargetName, TargetRealm)
 	if Test then
 		UnitID = "player"
 	else
-		if not VgerCore.IsMainline then return end
+		if not VgerCore.IsMidnightOrLater then return end
 		if PawnCommon.HasPlayedWithVger then return end
 		local Show
 		Show, UnitID = PawnIsPlayingWith("Vger", "Azjol-Nerub")
@@ -4909,18 +4921,16 @@ function PawnIsPlayingWith(TargetName, TargetRealm)
 
 	-- Okay, we're gonna do it!
 
-	C_AddOns.LoadAddOn("Blizzard_TalkingHeadUI")
-
-	TalkingHeadFrame_Reset(TalkingHeadFrame, "Hello!  I created your favorite addon Pawn.  Looks like we're playing together, so feel free to say hi, and have a great day!", "Vger")
-	TalkingHeadFrame.MainFrame.Model:SetUnit("player")
-	TalkingHeadFrame_FadeinFrames()
+	TalkingHeadFrame:Reset("Hello! I created your favorite addon Pawn. Looks like we're playing together, so feel free to say hi, and have a great day!", "Vger")
+	TalkingHeadFrame.MainFrame.Model:SetUnit(UnitID)
+	TalkingHeadFrame:FadeinFrames()
 	TalkingHeadFrame:Show()
 	TalkingHeadFrame.MainFrame.Model:RefreshCamera()
 	Model_ApplyUICamera(TalkingHeadFrame.MainFrame.Model, 105) -- Head and torso
 	TalkingHeadFrame.MainFrame.Model:SetAnimation(60) -- Talking animation
-	PlaySound(101228, "DIALOG") -- "Do you know who I am?"
+	PlaySoundFile(1884981, "DIALOG") -- "Do you know who I am?"
 
-	C_Timer.After(15, function() TalkingHeadFrame_FadeoutFrames() end)
+	C_Timer.After(15, function() TalkingHeadFrame:FadeoutFrames() end)
 
 	-- Once this has happened, don't ever do it again.
 	PawnCommon.HasPlayedWithVger = true
@@ -5796,7 +5806,7 @@ function PawnAddPluginScaleFromTemplate(ProviderInternalName, ClassID, SpecID, S
 
 	local Color
 	if RAID_CLASS_COLORS[UnlocalizedClassName].colorStr then
-		-- Sometime other addons try to change RAID_CLASS_COLORS and don't include colorStr. If that happens, just skip this scale color.
+		-- Sometimes other addons try to change RAID_CLASS_COLORS and don't include colorStr. If that happens, just skip this scale color.
 		Color = strsub(RAID_CLASS_COLORS[UnlocalizedClassName].colorStr, 3)
 	else
 		VgerCore.Fail("An addon changed the class color for " .. UnlocalizedClassName .. " but didn't finish the job. That class will show up in the wrong color in Pawn.")
@@ -5863,7 +5873,7 @@ end
 
 if not VgerCore.SpecsExist then
 	-- Classic doesn't have a Guardian spec for druids before Cataclysm, so rename.
-	if VgerCore.IsClassic or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
+	if VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath then
 		PawnLocal.Specs[11][3].Name = PawnLocal.Specs[11][2].Name .. " (" .. TANK .. ")"
 		PawnLocal.Specs[11][2].Name = PawnLocal.Specs[11][2].Name .. " (" .. DAMAGER .. ")"
 	end

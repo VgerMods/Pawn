@@ -52,7 +52,7 @@ local PawnStatsUnfiltered =
 	{STAT_MASTERY, "MasteryRating", L.MasteryInfo, PawnStatNormal, nil, { PawnStatCataclysm = true, PawnStatMists = true, PawnStatDraenor = true, PawnStatLegion = true, PawnStatBattle = true, PawnStatMainline = true }},
 	{ITEM_MOD_CR_MULTISTRIKE_SHORT, "Multistrike", L.MultistrikeInfo, PawnStatNormal, nil, { PawnStatDraenor = true }},
 	{STAT_VERSATILITY, "Versatility", L.VersatilityInfo, PawnStatNormal, nil, { PawnStatDraenor = true, PawnStatLegion = true, PawnStatBattle = true, PawnStatMainline = true }},
-	{ITEM_MOD_ATTACK_POWER_SHORT, "Ap", L.ApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true, PawnStatMists = true, PawnStatLegion = true }},
+	{ITEM_MOD_ATTACK_POWER_SHORT, "Ap", L.ApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true, PawnStatCataclysm = true, PawnStatMists = true, PawnStatDraenor = true, PawnStatLegion = true }},
 	{ITEM_MOD_RANGED_ATTACK_POWER_SHORT, "Rap", L.RapInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{ITEM_MOD_FERAL_ATTACK_POWER_SHORT, "FeralAp", L.FeralApInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true, PawnStatWrath = true }},
 	{L.SpellDamage, "SpellDamage", L.SpellDamageInfo, PawnStatNormal, nil, { PawnStatClassic = true, PawnStatBurningCrusade = true }},
@@ -156,7 +156,7 @@ PawnStats = {}
 
 for i, Stat in pairs(PawnStatsUnfiltered) do
 	if	(Stat[6] == nil) or
-		(Stat[6].PawnStatClassic and VgerCore.IsClassic) or
+		(Stat[6].PawnStatClassic and (VgerCore.IsClassic or VgerCore.IsForever)) or
 		(Stat[6].PawnStatBurningCrusade and VgerCore.IsBurningCrusade) or
 		(Stat[6].PawnStatWrath and VgerCore.IsWrath) or
 		(Stat[6].PawnStatCataclysm and VgerCore.IsCataclysm) or
@@ -164,7 +164,7 @@ for i, Stat in pairs(PawnStatsUnfiltered) do
 		(Stat[6].PawnStatDraenor and VgerCore.IsDraenor) or
 		(Stat[6].PawnStatLegion and VgerCore.IsLegion) or
 		(Stat[6].PawnStatBattle and VgerCore.IsBattle) or
-		(Stat[6].PawnStatMainline and VgerCore.IsMainline) then
+		(Stat[6].PawnStatMainline and VgerCore.IsShadowlandsOrLater) then
 		Stat[6] = nil
 		tinsert(PawnStats, Stat)
 	end

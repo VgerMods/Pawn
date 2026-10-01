@@ -37,8 +37,8 @@ Localization.zhCN.lua [AllowLoadTextLocale zhCN]
 Localization.zhTW.lua [AllowLoadTextLocale zhTW]
 UIStrings.lua
 TooltipParsing.lua
-Gems.lua [AllowLoadGameType mainline]
-GemsClassic.lua [AllowLoadGameType vanilla]
+Gems.lua [AllowLoadGameType mainline][ExcludeLoadGameType camelot]
+GemsClassic.lua [AllowLoadGameType vanilla, camelot]
 GemsBurningCrusade.lua [AllowLoadGameType tbc]
 GemsWrath.lua [AllowLoadGameType wrath]
 GemsCataclysm.lua [AllowLoadGameType cata]
@@ -49,5 +49,5 @@ Pawn.lua
 PawnBags.lua
 PawnUI.lua
 PawnUI.xml
-AskMrRobot.lua [AllowLoadGameType mainline]
-ClassicHawsJon.lua [AllowLoadGameType classic]
+AskMrRobot.lua [AllowLoadGameType mainline][ExcludeLoadGameType camelot]
+ClassicHawsJon.lua [AllowLoadGameType classic, camelot]

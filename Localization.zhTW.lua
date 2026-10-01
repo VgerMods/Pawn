@@ -740,7 +740,7 @@ PawnLocal.TooltipParsing = {
 
 -- Special case: weapons actually use different text on live versus classic.
 -- So, patch things up here.
-if VgerCore.IsClassic then
+if VgerCore.IsClassic or VgerCore.IsForever then
 
 	local TooltipParsing_Classic =
 	{
