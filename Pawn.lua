@@ -2754,7 +2754,7 @@ function PawnGetItemValue(Item, ItemLevel, SocketBonus, ScaleName, DebugMessages
 	local ThisValue
 	for Stat, Quantity in pairs(Item) do
 		ThisValue = ScaleValues[Stat]
-		if not VgerCore.IsBattleOrLater then
+		if VgerCore.IsBattleOrLater then
 			-- In Modern WoW, Attack Power gets converted into Strength or Agility, whichever is most valuable.
 			if Stat == "Ap" then
 				local StrengthValue = ScaleValues["Strength"] or 0
