@@ -70,6 +70,11 @@ function PawnUI_InventoryPawnButton_Move()
 
 	-- TODO: Needs a significant update when IsForever
 
+	if VgerCore.IsForever and PaperDollItemsFrame then
+		-- Forever's character model scene (frame level 50) covers PaperDollFrame's own children, so ride along with the item slots (level 100).
+		PawnUI_InventoryPawnButton:SetParent(PaperDollItemsFrame)
+	end
+
 	if PawnCommon.ButtonPosition == PawnButtonPositionRight then
 		PawnUI_InventoryPawnButton:ClearAllPoints()
 		if VgerCore.IsCataclysm or VgerCore.IsMists or PaperDollFrame.ExpandButton then
