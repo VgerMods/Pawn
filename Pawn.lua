@@ -2584,7 +2584,10 @@ function PawnLookForSingleStat(RegexTable, Stats, ThisString, DebugMessages)
 					VgerCore.Fail("Didn't extract a value for " .. Stat .. ".  Is the translation missing a # (" .. GetLocale() .. " " .. GetBuildInfo() .. ")?")
 					ExtractedValue = 0
 				end
-				if Stat ~= "Speed" and (PawnLocal.ThousandsSeparator ~= "" or (PawnLocal.ThousandsSeparator == PawnLocal.DecimalSeparator)) then
+				-- Percentages are never large enough to need a thousands separator, but Forever shows them with a period
+				-- as the decimal separator even in German ("2.0%"), so don't strip periods from them.
+				local IsPercentage = strfind(Props[1], ")%%", 1, true)
+				if Stat ~= "Speed" and not IsPercentage and (PawnLocal.ThousandsSeparator ~= "" or (PawnLocal.ThousandsSeparator == PawnLocal.DecimalSeparator)) then
 					-- Skip this for Speed because Spanish uses the wrong character for speed, and speed would never be >=1,000
 					-- In 7.0, Russian also used the comma for both thousands and decimal separators, so use the same logic then.
 					-- Remove commas in numbers.  We need to use % in case it's a dot, and we need to
