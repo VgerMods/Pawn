@@ -87,7 +87,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ### Version 2.13.17
 
 * Forever: Pawn will now warn you if you try to use it on the WoW Forever beta as it's not ready yet. I'll get a Forever version released as soon as I can after I get access to the beta!
-* Lots of changes throughout Pawn to prepare for Forever. (Thanks Eniral for helping me get started on Forever changes early!)
+* Lots of changes throughout Pawn to prepare for Forever. (Thanks Eniral, Serghei, and Pharenir for helping me get started on Forever changes early!)
 
 ### Version 2.13.16
 
