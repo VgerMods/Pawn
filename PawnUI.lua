@@ -2490,10 +2490,8 @@ end
 -- When quest info is shown, annotate item rewards with upgrade and vendor icons.
 function PawnUI_OnQuestInfo_ShowRewards()
 	-- Before doing anything else, clear out our state from last time.
-	local i
-	for i = 1, MAX_NUM_ITEMS do
-		local Overlay = PawnQuestAdvisorOverlays[i]
-		if Overlay then Overlay:Hide() end
+	for _, Overlay in pairs(PawnQuestAdvisorOverlays) do
+		Overlay:Hide()
 	end
 
 	if not PawnCommon.ShowQuestUpgradeAdvisor then return end
@@ -2593,7 +2591,7 @@ function PawnUI_OnQuestInfo_ShowRewards()
 		local ItemButton = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, Reward.Index)
 		local TextureName
 		if ItemButton then
-			local Overlay = PawnQuestAdvisorOverlays[Reward.Index]
+			local Overlay = PawnQuestAdvisorOverlays[ItemButton]
 			if not Overlay then
 				if IsInMap then
 					Overlay = ItemButton:CreateTexture(nil, "OVERLAY", "PawnUI_QuestAdvisorTexture_Map")
@@ -2603,7 +2601,7 @@ function PawnUI_OnQuestInfo_ShowRewards()
 				-- Mod compatibility: ElvUI
 				Overlay:SetDrawLayer("OVERLAY", 7)
 
-				PawnQuestAdvisorOverlays[Reward.Index] = Overlay
+				PawnQuestAdvisorOverlays[ItemButton] = Overlay
 			end
 			if Reward.Result == "upgrade" then
 				Overlay:SetTexture("Interface\\AddOns\\Pawn\\Textures\\UpgradeArrowBig")
