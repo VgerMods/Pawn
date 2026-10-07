@@ -679,6 +679,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^%+# Cura e %+# Dano Mágico$",
 	["SpellDamageAndHealingShort"] = "^%+# Feitiços de Cura e %+# Feitiços de Dano$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
+	["SpellDamageForever"] = "^UNUSED$",
 	["SpellHasteClassic"] = "^Equipado: Aumenta em #%% sua velocidade de lançamento%.$",
 	["SpellHasteRating"] = "^Equipado: Aumenta em # a taxa de aceleração de feitiço%.$",
 	["SpellHasteRatingShort"] = "^%+?# Taxa de Aceleração de Feitiço$",
