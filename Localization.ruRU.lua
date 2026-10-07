@@ -668,6 +668,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^BUG IN GAME$",
 	["SpellDamageAndHealingShort"] = "^%+# к лечению и %+# к урону от заклинаний$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
+	["SpellDamageForever"] = "^UNUSED$",
 	["SpellHasteClassic"] = "^Если на персонаже: Скорость применения заклинаний повышается на #%%%.$",
 	["SpellHasteRating"] = "^Если на персонаже: Повышает рейтинг скорости заклинаний на #%.$",
 	["SpellHasteRatingShort"] = "^%+?# к рейтингу скорости заклинаний$",

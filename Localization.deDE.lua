@@ -653,6 +653,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^%+# Heilung %+# Zauberschaden$",
 	["SpellDamageAndHealingShort"] = "^%+# Heilzauber und %+# Schadenszauber$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
+	["SpellDamageForever"] = "^UNUSED$",
 	["SpellHasteClassic"] = "^Anlegen: Erhöht Euer Zaubertempo um #%%%.$",
 	["SpellHasteRating"] = "^Anlegen: Erhöht d?i?e?E?u?r?e? Zaubertempowertung um #%.$",
 	["SpellHasteRatingShort"] = "^%+?# Zaubertempowertung$",
