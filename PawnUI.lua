@@ -606,13 +606,13 @@ function PawnUIFrame_DeleteScaleButton_OnClick()
 		-- If the user held down the shift key when clicking the Delete button, just do it immediately.
 		PawnUIFrame_DeleteScaleButton_OnOK(DELETE_ITEM_CONFIRM_STRING)
 	else
-		PawnUIGetString(format(PawnLocal.DeleteScaleConfirmation, PawnUICurrentScale, DELETE_ITEM_CONFIRM_STRING), "", PawnUIFrame_DeleteScaleButton_OnOK)
+		PawnUIGetString(format(PawnLocal.DeleteScaleConfirmation, PawnUICurrentScale, DELETE_ITEM_CONFIRM_STRING), "", PawnUIFrame_DeleteScaleButton_OnOK, nil, false, DELETE_ITEM_CONFIRM_STRING)
 	end
 end
 
 function PawnUIFrame_DeleteScaleButton_OnOK(ConfirmationText)
-	-- If they didn't type "DELETE" (ignoring case), just exit.
-	if strlower(ConfirmationText) ~= strlower(DELETE_ITEM_CONFIRM_STRING) then return end
+	-- If they didn't type "DELETE", just exit.
+	if ConfirmationText ~= DELETE_ITEM_CONFIRM_STRING then return end
 
 	PawnDeleteScale(PawnUICurrentScale)
 	PawnUICurrentScale = nil
@@ -2834,8 +2834,9 @@ end
 -- Shows a dialog containing given prompt text, asking the user for a string.
 -- Calls OKCallbackFunction with the typed string as the only input if the user clicked OK.
 -- Calls CancelCallbackFunction if the user clicked Cancel.
-function PawnUIGetString(Prompt, DefaultValue, OKCallbackFunction, CancelCallbackFunction, IsMultiLine)
-	PawnUIGetStringCore(Prompt, DefaultValue, true, OKCallbackFunction, CancelCallbackFunction, IsMultiLine)
+-- If RequiredText is given, OK stays disabled until the user types exactly that.
+function PawnUIGetString(Prompt, DefaultValue, OKCallbackFunction, CancelCallbackFunction, IsMultiLine, RequiredText)
+	PawnUIGetStringCore(Prompt, DefaultValue, true, OKCallbackFunction, CancelCallbackFunction, IsMultiLine, RequiredText)
 end
 
 -- Shows a dialog with a copyable string.
@@ -2847,7 +2848,7 @@ function PawnUIShowCopyableString(Prompt, Value, CallbackFunction, IsMultiLine)
 end
 
 -- Core function called by PawnUIGetString.
-function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunction, CancelCallbackFunction, IsMultiLine)
+function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunction, CancelCallbackFunction, IsMultiLine, RequiredText)
 	if PawnUIStringDialog and PawnUIStringDialog:IsVisible() then
 		PawnUIStringDialog_CancelButton_OnClick()
 	end
@@ -2857,6 +2858,7 @@ function PawnUIGetStringCore(Prompt, DefaultValue, Cancelable, OKCallbackFunctio
 		PawnUIStringDialog = PawnUIStringDialogSingleLine
 	end
 
+	PawnUIStringDialog.RequiredText = RequiredText
 	PawnUIStringDialog.PromptText:SetText(Prompt)
 	PawnUIStringDialog.TextBox:SetText("") -- Causes the insertion point to move to the end on the next SetText
 	PawnUIStringDialog.TextBox:SetText(DefaultValue)
@@ -2894,7 +2896,9 @@ function PawnUIStringDialog_CancelButton_OnClick()
 end
 
 function PawnUIStringDialog_TextBox_OnTextChanged()
-	if PawnUIStringDialog.TextBox:GetText() ~= "" then
+	local Text = PawnUIStringDialog.TextBox:GetText()
+	local RequiredText = PawnUIStringDialog.RequiredText
+	if Text ~= "" and (not RequiredText or Text == RequiredText) then
 		PawnUIStringDialog.OKButton:Enable()
 	else
 		PawnUIStringDialog.OKButton:Disable()
