@@ -611,9 +611,6 @@ function PawnUIFrame_DeleteScaleButton_OnClick()
 end
 
 function PawnUIFrame_DeleteScaleButton_OnOK(ConfirmationText)
-	-- If they didn't type "DELETE", just exit.
-	if ConfirmationText ~= DELETE_ITEM_CONFIRM_STRING then return end
-
 	PawnDeleteScale(PawnUICurrentScale)
 	PawnUICurrentScale = nil
 	PawnUIFrame_ScaleSelector_Refresh()
@@ -2834,7 +2831,7 @@ end
 -- Shows a dialog containing given prompt text, asking the user for a string.
 -- Calls OKCallbackFunction with the typed string as the only input if the user clicked OK.
 -- Calls CancelCallbackFunction if the user clicked Cancel.
--- If RequiredText is given, OK stays disabled until the user types exactly that.
+-- If RequiredText is given, OK stays disabled until the user types exactly that (case-insensitive).
 function PawnUIGetString(Prompt, DefaultValue, OKCallbackFunction, CancelCallbackFunction, IsMultiLine, RequiredText)
 	PawnUIGetStringCore(Prompt, DefaultValue, true, OKCallbackFunction, CancelCallbackFunction, IsMultiLine, RequiredText)
 end
@@ -2898,7 +2895,7 @@ end
 function PawnUIStringDialog_TextBox_OnTextChanged()
 	local Text = PawnUIStringDialog.TextBox:GetText()
 	local RequiredText = PawnUIStringDialog.RequiredText
-	if Text ~= "" and (not RequiredText or Text == RequiredText) then
+	if Text ~= "" and (not RequiredText or strlower(Text) == strlower(RequiredText)) then
 		PawnUIStringDialog.OKButton:Enable()
 	else
 		PawnUIStringDialog.OKButton:Disable()
