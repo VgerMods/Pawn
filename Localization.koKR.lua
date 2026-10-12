@@ -677,6 +677,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^UNUSED$",
 	["SpellDamageAndHealingShort"] = "^주문 치유량 %+# / 주문 공격력 %+#$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
+	["SpellDamageForever"] = "^UNUSED$",
 	["SpellHasteClassic"] = "^착용 효과: 시전 속도가 #%%만큼 증가합니다%.$",
 	["SpellHasteRating"] = "^착용 효과: 주문 시전 가속도가 #만큼 증가합니다%.$",
 	["SpellHasteRatingShort"] = "^주문 시전 가속도 %+#$",

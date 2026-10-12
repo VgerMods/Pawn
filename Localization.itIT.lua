@@ -670,6 +670,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^UNUSED$",
 	["SpellDamageAndHealingShort"] = "^UNUSED$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
+	["SpellDamageForever"] = "^UNUSED$",
 	["SpellHasteClassic"] = "^UNUSED$",
 	["SpellHasteRating"] = "^UNUSED$",
 	["SpellHasteRatingShort"] = "^UNUSED$",

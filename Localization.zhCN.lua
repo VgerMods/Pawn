@@ -666,6 +666,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^UNUSED$",
 	["SpellDamageAndHealingShort"] = "^%+# 法术治疗，%+# 法术伤害$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
+	["SpellDamageForever"] = "^UNUSED$",
 	["SpellHasteClassic"] = "^装备： 你的施法速度提高#%%。$",
 	["SpellHasteRating"] = "^装备： 法术急速等级提高#点。$",
 	["SpellHasteRatingShort"] = "^%+?# 法术急速等级$",

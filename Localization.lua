@@ -671,6 +671,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^%+# Healing and %+# Spell Damage$",
 	["SpellDamageAndHealingShort"] = "^%+# Healing Spells and %+# Damage Spells$",
 	["SpellDamageAndHealingShort2"] = "^%+# Healing %+# Spell Damage$",
+	["SpellDamageForever"] = "^Equip: Increases damage done by magical spells and effects by up to #%.$",
 	["SpellHasteClassic"] = "^Equip: Increases your casting speed by #%%%.$",
 	["SpellHasteRating"] = "^Equip: Improves spell haste rating by #%.$",
 	["SpellHasteRatingShort"] = "^%+?# Spell Haste Rating$",
