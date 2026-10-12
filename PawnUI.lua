@@ -32,7 +32,7 @@ local PawnUIIsShowingNoneWarning = false
 local PawnUITotalComparisonLines = 0
 local PawnUITotalGemLines = 0
 
--- Index n is the quest advisor overlay image for the reward with index n
+-- Pawn's quest advisor arrow annotations. The key is the frame being annotated, and the value is the overlay.
 local PawnQuestAdvisorOverlays = {}
 
 -- PlayerGetTimerunningSeasonID() returns nil when first executing this on a full load (not a /reload), so it gets set in PawnUI_EnsureLoaded instead.

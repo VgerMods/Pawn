@@ -86,8 +86,9 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.17
 
-* Forever: Pawn will now warn you if you try to use it on the WoW Forever beta as it's not ready yet. I'll get a Forever version released as soon as I can after I get access to the beta!
-* Lots of changes throughout Pawn to prepare for Forever. (Thanks Eniral, Serghei, and Pharenir for helping me get started on Forever changes early!)
+* Forever: This version of Pawn includes early support for Forever, but I don't have access to the beta yet so expect that things will be rough.
+	* There are no default stat weights available yet for Forever. You'll need to bring your own for now for Pawn's advice to make any sense.
+	* Thanks Serghei, Eniral, and Pharenir for helping me get started on Forever changes early!
 
 ### Version 2.13.16
 

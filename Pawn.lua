@@ -220,9 +220,8 @@ function PawnInitialize()
 
 	-- Warn about Forever.
 	if VgerCore.IsForever then
-		local ForeverNotSupportedMessage = "Pawn will be available for Forever after I get access to the beta. Remove or disable Pawn for now, and check again soon."
+		local ForeverNotSupportedMessage = "Pawn for WoW Forever is a work in progress. Expect some broken features."
 		VgerCore.Message(VgerCore.Color.Salmon .. ForeverNotSupportedMessage)
-		SetBasicMessageDialogText(ForeverNotSupportedMessage)
 	end
 
 	-- Set up slash commands
