@@ -21,6 +21,10 @@ for Key, Value in pairs(L) do
 	L[Key] = gsub(Value, "#", NumberExpandedPattern)
 end
 
+-- On Forever, hit and crit from gear also apply to spells.  Elsewhere these are nil, which ends the stat list.
+local ForeverSpellHit = VgerCore.IsForever and "SpellHitRating" or nil
+local ForeverSpellCrit = VgerCore.IsForever and "SpellCritRating" or nil
+
 ------------------------------------------------------------
 -- Tooltip parsing expressions
 ------------------------------------------------------------
@@ -231,7 +235,7 @@ PawnRegexes =
 	{L.EnchantmentFieryWeapon, "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment
 	{L.Crit, "CritRating"},
 	{L.Crit2, "CritRating"},
-	{L.CritPercent, "CritRating"}, -- Classic, /pawn compare 15062
+	{L.CritPercent, "CritRating", 1, PawnMultipleStatsExtract, ForeverSpellCrit, 1, PawnMultipleStatsExtract}, -- Classic, /pawn compare 15062
 	{L.CritPercentCombined, "CritRating", 1, PawnMultipleStatsExtract, "SpellCritRating", 1, PawnMultipleStatsExtract}, -- Classic Season of Discovery, /pawn compare 216621
 	{L.CritRating, "CritRating"}, -- Burning Crusade, /pawn compare 15062
 	{L.CritRating2, "CritRating"}, -- Burning Crusade, /pawn compare 30710
@@ -245,7 +249,7 @@ PawnRegexes =
 	{L.SpellCritRatingShort, "SpellCritRating"}, -- Burning Crusade, https://tbc.wowhead.com/item=24050/gleaming-dawnstone
 	{L.SpellCritRatingShort2, "SpellCritRating"}, -- Burning Crusade, /pawn compare 29317 (socket bonus)
 	{L.SpellCritRatingShort3, "SpellCritRating"}, -- Burning Crusade, /pawn tooltip 28123
-	{L.Hit, "HitRating"}, -- Classic, /pawn compare 16947
+	{L.Hit, "HitRating", 1, PawnMultipleStatsExtract, ForeverSpellHit, 1, PawnMultipleStatsExtract}, -- Classic, /pawn compare 16947
 	{L.Hit2, "HitRating"}, -- unused in English
 	{L.HitPercentCombined, "HitRating", 1, PawnMultipleStatsExtract, "SpellHitRating", 1, PawnMultipleStatsExtract}, -- Classic Season of Discovery, /pawn compare 213312
 	{L.HitRating, "HitRating"}, -- Burning Crusade, /pawn compare 28182
