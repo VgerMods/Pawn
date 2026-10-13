@@ -3298,9 +3298,12 @@ function PawnCorrectScaleErrors(ScaleName)
 	ThisScale.DominationSocket = nil
 
 	-- Wrath Classic merges SpellDamage and Healing into SpellPower, and melee and spell ratings.
+	-- Forever uses merged melee and spell ratings too, but not merged spell power.
 	if VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater then
 		PawnCombineStats(ThisScale, "SpellPower", "SpellDamage")
 		PawnCombineStats(ThisScale, "SpellPower", "Healing")
+	end
+	if VgerCore.IsForever or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater then
 		PawnCombineStats(ThisScale, "HitRating", "SpellHitRating")
 		PawnCombineStats(ThisScale, "CritRating", "SpellCritRating")
 		PawnCombineStats(ThisScale, "HasteRating", "SpellHasteRating")
