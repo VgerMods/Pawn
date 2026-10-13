@@ -88,6 +88,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 * Forever: This version of Pawn includes early support for Forever, but I don't have access to the beta yet so expect that things will be rough.
 	* There are no default stat weights available yet for Forever. You'll need to bring your own for now for Pawn's advice to make any sense.
+	* Some new/updated item stats in Forever will only work on English in this version; all other WoW languages will be supported as soon as possible.
 	* Thanks Serghei, Eniral, and Pharenir for helping me get started on Forever changes early!
 
 ### Version 2.13.16
