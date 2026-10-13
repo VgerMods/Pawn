@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.13.18
+
 ### Version 2.13.17
 
 * Forever: This version of Pawn includes early support for Forever, but I don't have access to the beta yet so expect that things will be rough.
