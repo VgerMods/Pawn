@@ -68,16 +68,16 @@ local PawnUIFrameNeedsScaleSelector = { true, true, true, true, false, false, fa
 -- Moves the Pawn inventory sheet button and inspect button to the location specified by the user's current preferences.
 function PawnUI_InventoryPawnButton_Move()
 
-	-- TODO: Needs a significant update when IsForever
-
 	if VgerCore.IsForever and PaperDollItemsFrame then
-		-- Forever's character model scene (frame level 50) covers PaperDollFrame's own children, so ride along with the item slots (level 100).
+		-- Forever's character model covers PaperDollFrame's own children, so reparent it.
 		PawnUI_InventoryPawnButton:SetParent(PaperDollItemsFrame)
 	end
 
 	if PawnCommon.ButtonPosition == PawnButtonPositionRight then
 		PawnUI_InventoryPawnButton:ClearAllPoints()
-		if VgerCore.IsCataclysm or VgerCore.IsMists or PaperDollFrame.ExpandButton then
+		if VgerCore.IsForever then
+			PawnUI_InventoryPawnButton:SetPoint("TOPRIGHT", "CharacterTrinket1Slot", "BOTTOMRIGHT", 4, -18)
+		elseif VgerCore.IsCataclysm or VgerCore.IsMists or PaperDollFrame.ExpandButton then
 			-- DejaCharacterStats compatibility
 			PawnUI_InventoryPawnButton:SetPoint("TOPRIGHT", "CharacterTrinket1Slot", "BOTTOMRIGHT", -25, -8)
 		else
@@ -101,7 +101,11 @@ function PawnUI_InventoryPawnButton_Move()
 		end
 	elseif PawnCommon.ButtonPosition == PawnButtonPositionLeft then
 		PawnUI_InventoryPawnButton:ClearAllPoints()
-		PawnUI_InventoryPawnButton:SetPoint("TOPLEFT", "CharacterWristSlot", "BOTTOMLEFT", 1, -8)
+		if VgerCore.IsForever then
+			PawnUI_InventoryPawnButton:SetPoint("TOPLEFT", "CharacterWristSlot", "BOTTOMLEFT", -6, -18)
+		else
+			PawnUI_InventoryPawnButton:SetPoint("TOPLEFT", "CharacterWristSlot", "BOTTOMLEFT", 1, -8)
+		end
 		PawnUI_InventoryPawnButton:Show()
 		if PawnUI_InspectPawnButton then
 			PawnUI_InspectPawnButton:ClearAllPoints()
