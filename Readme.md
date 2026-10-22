@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.14.1
+
 ### Version 2.14.0
 
 * Forever: Pawn now fully supports World of Warcraft Forever.
