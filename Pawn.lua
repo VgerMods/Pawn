@@ -223,12 +223,6 @@ function PawnInitialize()
 		SetBasicMessageDialogText(WrongLocaleMessage)
 	end
 
-	-- Warn about Forever.
-	if VgerCore.IsForever then
-		local ForeverNotSupportedMessage = "Pawn for WoW Forever is a work in progress. Expect some broken features."
-		VgerCore.Message(VgerCore.Color.Salmon .. ForeverNotSupportedMessage)
-	end
-
 	-- Set up slash commands
 	SLASH_PAWN1 = "/pawn"
 	SlashCmdList["PAWN"] = PawnCommand
