@@ -2,6 +2,108 @@
 
 For recent version history, see the [Pawn readme](Readme.md).
 
+### Version 2.13.17
+
+* Forever: This version of Pawn includes early support for Forever, but I don't have access to the beta yet so expect that things will be rough.
+	* There are no default stat weights available yet for Forever. You'll need to bring your own for now for Pawn's advice to make any sense.
+	* Some new/updated item stats in Forever will only work on English in this version; all other WoW languages will be supported as soon as possible.
+	* Thanks Serghei, Eniral, and Pharenir for helping me get started on Forever changes early!
+
+### Version 2.13.16
+
+* Pawn will use a bit more memory remembering more items that you've looked at or owned recently, which will improve performance in some situations.
+* Fixed translation problems in Traditional Chinese that were causing Pawn to miss DPS on rare ranged weapons that do an exact amount of damage instead of a range.
+* Fixed translation problems in Traditional Chinese that were causing Pawn to show items you haven't collected the appearance for, and some weapons that you have, as having unknown "special effects" on the Compare tab.
+* Burning Crusade: Fixed the item score displayed on Potent Ornate Topaz when the "show scale values and upgrade %" option is used, except in Simplified Chinese and Traditional Chinese.
+
+### Version 2.13.15
+
+* Includes a performance fix from an anonymous Pawn user that should noticeably improve framerates in certain situations, especially on Classic versions. (Thanks!)
+* Midnight: Daggers can show up as upgrades for demon hunters now that they're usable again.
+* Burning Crusade: Fixed a problem where Pawn was missing school-specific (nature, etc.) spell power on some items when playing in Traditional Chinese. (Thanks Jonathan Cheung!)
+
+### Version 2.13.14
+
+* Fixed a rare bug in 2.13.12 that might have caused an error to occur when hovering over an item with no stats. (Possibly only when using Bagnon?)
+
+### Version 2.13.13
+
+* Midnight: Additional changes to hide "secret taint" errors.
+
+### Version 2.13.12
+
+* Midnight: Added a workaround for a bug in the game that was causing green arrows to appear next to some items' level even when it wasn't a higher item level than what you've previously equipped in that slot. (The game reports pre-squish item levels 500+ to addons for some items.)
+* 12.1 PTR: Fixed a problem where nearly all items showed up as having special effects on Pawn's Compare tab.
+
+### Version 2.13.11
+
+* Pawn keybindings will now work on the map even when Pawn's quest upgrade advisor feature is turned off.
+* A small change under the hood to make it harder for bag addons to cause problems with Pawn.
+
+### Version 2.13.10
+
+* Midnight: In an attempt to reduce the number of tooltip "secret taint" errors that many players are seeing thanks to bugs in the garbage fire of Midnight addon restrictions, I've disabled Pawn's interactions with world quests entirely, as that seems to be the biggest remaining source of problems. I'll reenable that feature when Blizzard fixes the tooltip bugs.
+	* **This will make it easier to miss upgrades rewarded from world quests!** You can still check to see if a world quest rewards an upgrade by hovering over its icon on the world map and using a Pawn key binding: on most systems you can use the `]` key to open Pawn's Compare tab and show that item. If that doesn't work or you just prefer a different key, open Interface Options, go to Keybindings, then AddOns, and then look for "Compare item (right)".
+* Midnight: Adjusted gem recommendations to account for stat changes that happened since the 12.0 launch. (Sockets on Midnight items will be valued slightly higher after this change.)
+
+### Version 2.13.9
+
+* Midnight: Pawn will now once again add scores and upgrade info to the "currently equipped" tooltips as before.
+
+### Version 2.13.8
+
+* Midnight: The changes from 2.13.7 are reverted.
+
+### Version 2.13.7
+
+* Midnight: Includes a new workaround for WoW 12.0 tooltip bugs that were causing "secret taint" (lol) errors. Special thanks to Caerdon for finding this!
+
+### Version 2.13.6
+
+* Midnight: Added new default stat weights for Devourer demon hunters from Ask Mr. Robot.
+* Midnight: Removed a harmless warning message that could occur when viewing a quest that rewards a housing decor profession recipe.
+
+### Version 2.13.5
+
+* Fixed a typo in Pawn 2.13.4 that caused it to, uh, not work at all.
+
+### Version 2.13.4
+
+* The War Within and Midnight: Pawn's item level upgrade features have been restored.
+* Upgrade arrows in your bags will now properly update after equipping or unequipping an item.
+
+### Version 2.13.3
+
+* The War Within and Midnight: Pawn is temporarily ignoring "currently equipped" tooltips, as they appear to be major contributors to triggering bugs in item tooltips caused by WoW 12.0's combat addon restrictions. Those bugs are reportedly getting fixed ASAP, and I'll un-ignore those tooltips once they are.
+* The default stat weights for devourer demon hunters will now properly focus on intellect, not agility.
+
+### Version 2.13.2
+
+* The War Within and Midnight: Pawn's item level upgrade features have been disabled due to some major bugs in WoW 12.0 introduced by the item level squish. I'll monitor the situation and update Pawn again once the bugs in the game are fixed.
+* The War Within and Midnight: Fixed an error that could occur when the "Track for each scale (advanced)" option was enabled in Manual mode.
+* The War Within and Midnight: Fixed an error that could occur when hovering over an item in your bags with comparison tooltips enabled (or when holding Shift) while in combat.
+* Items that bind to your warband until equipped will no longer show up on Pawn's Compare tab as having a "special effect."
+
+### Version 2.13.1
+
+* The War Within and Midnight: Updated all gem recommendations and values of sockets to account for the 12.0 stat and item level squishes.
+* Midnight: Added initial support for Midnight gems.
+* More optimization of the bag upgrade advisor feature, mostly to prevent it from impacting performance for people who turn the feature off or use custom bag addons.
+* Changing the "show item level upgrades" option will now cause items in your bags to gain or lose green arrows immediately when appropriate. (This already worked properly for other options.)
+* Pawn can now notify third-party bag addons that something has changed about Pawn's settings and that they should update their green arrows immediately.
+
+### Version 2.13.0
+
+* The War Within and Midnight: Upgrade arrows in your bags are back! I've rebuilt the feature to work as it did back in Legion and Shadowlands.
+* Mists of Pandaria Classic: Pawn's bag upgrade advisor now works on Mists Classic! You'll now see green arrows over upgrades in your bags.
+* Classic Era and Burning Crusade Classic: Pawn's bag upgrade advisor now works on Classic realms, but it's off by default. You can enable it on Pawn's Options tab.
+	* Since Classic Era doesn't have specs or Pawn's Automatic mode and instead has each scale for your class enabled by default, I was worried that the number of green arrows might be overwhelming when playing hybrid classes.
+	* Due to a bug in how World of Warcraft Classic handles item stats, there is a chance that this feature on Classic Era might occasionally miss new items. I haven't observed this happening, but let me know if you spot an upgrade that should have a green arrow but doesn't get one until you move it to a new slot.
+* Pawn's UI is now a little more Midnighty.
+* Improved loading times and memory usage.
+* Fixed a problem where other addons using Pawn at unusual times could cause an error.
+* Improved how Pawn looks in your addons list.
+
 ### Version 2.12.1
 
 * Mists of Pandaria Classic: Fixed a problem where only cloth and leather classes playing in German would see mail armor as potential upgrades.
