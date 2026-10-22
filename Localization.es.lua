@@ -600,6 +600,7 @@ PawnLocal.TooltipParsing = {
 	["Equip"] = "Equipar:",
 	["Expertise"] = "^%+?# [pP]ericia$",
 	["ExpertiseClassic"] = "^Equipar: Reduce un #%% la probabilidad de que esquiven o paren tus ataques%.$",
+	["ExpertiseForever"] = "^Equipar: Reduce un #%% la probabilidad de que esquiven o paren tus ataques%.$",
 	["ExpertiseRating"] = "^Equipar: Aumenta tu índice de pericia [ue]n # ?p?%.$",
 	["ExpertiseRatingShort"] = "^%+?# índice de pericia$",
 	["FeralAp"] = "^Equipar: %+# p%. de poder de ataque solo en las formas felina, de oso y de oso temible%.$",
@@ -619,7 +620,8 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^%+?# [cC]eleridad$",
 	["Haste2"] = "^UNUSED$",
 	["HasteClassic"] = "^Equipar: Aumenta un #%% tu velocidad de ataque%.$",
-	["HaventCollectedAppearance"] = "^No has conseguido esta apariencia%.$",
+	["HasteCombined"] = "^UNUSED$",
+	["HaventCollectedAppearance"] = "^No has conseguido esta apariencia%.?$",
 	["HasteRating"] = "^Equipar: Aumenta # p%. la celeridad%.$",
 	["HasteRating2"] = "^Equipar: Mejora el índice de celeridad en # p%.$",
 	["HasteRatingShort"] = "^UNUSED$",
@@ -647,7 +649,7 @@ PawnLocal.TooltipParsing = {
 	["Hp5"] = "^# [sS]alud cada 5 s%.?$",
 	["Hp52"] = "^Equipar: Restaura # de vida cada 5 segundos%.$",
 	["Hp53"] = "^Restaura %+?# [vV]ida [cC]ada 5 [sS]egundos%.?$",
-	["Hp54"] = "^UNUSED$",
+	["Hp54"] = "^Equipar: Restaura # p%. de salud cada 5 s%.$",
 	["Hp55"] = "^UNUSED$",
 	["Intellect"] = "^%+?# d?e? ?[Ii]ntelecto$",
 	["Leather"] = "^Cuero$",
@@ -716,7 +718,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^BUG IN GAME$",
 	["SpellDamageAndHealingShort"] = "^BUG IN GAME$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
-	["SpellDamageForever"] = "^UNUSED$",
+	["SpellDamageNoHealing"] = "^Equipar: Aumenta hasta # p%. el daño infligido con hechizos y efectos mágicos%.$",
 	["SpellHasteClassic"] = "^Equipar: Aumenta un #%% la velocidad de lanzamiento%.$",
 	["SpellHasteRating"] = "^Equipar: Aumenta el índice de celeridad con hechizos e?n? ?# p%.$",
 	["SpellHasteRatingShort"] = "^%+?# índice de celeridad con hechizos$",
@@ -908,7 +910,7 @@ if GetLocale() == "esES" then
 			["BlockPercent"] = "^Equipar: Aumenta la probabilidad de bloquear ataques con un escudo en un #%%%.$",
 			["BlockValue"] = "^Equipar: Aumenta el valor de bloqueo de tu escudo en # p%.$",
 			["CritPercent"] = "^Equipar: Mejora tu probabilidad de conseguir un golpe crítico en #%%%.$",
-			["DefenseSkill"] = "^Equipar: Defensa aumentada %+#%.$",
+			["DefenseSkill"] = "^Equipar: Defensa aumentada %+?# ? p?%.$",
 			["DodgePercent"] = "^Equipar: Aumenta la probabilidad de esquivar un ataque en un #%%%.$",
 			["Dps"] = "^%(# daño por segundo%)$",
 			["FeralAp"] = "^Equipar: %+# p%. de poder de ataque solo bajo formas felinas, de oso y de oso nefasto%.$",
@@ -916,7 +918,7 @@ if GetLocale() == "esES" then
 			["Healing2"] = "^Equipar: Aumenta la curación de los hechizos y los efectos hasta en # p%.$",
 			["Hit"] = "^Equipar: Mejora tu probabilidad de alcanzar el objetivo en un #%%%.$",
 			["Mp52"] = "^%+?# de maná cada 5 seg%.$",
-			["SpellCrit"] = "^Equipar: Mejora tu probabilidad de conseguir un golpe crítico en #%%% con los hechizos%.$",
+			["SpellCrit"] = "^Equipar: Mejora tu probabilidad de conseguir un golpe crítico en #%% con los hechizos%.$",
 			["SpellHit"] = "^Equipar: Mejora tu probabilidad de alcanzar el objetivo con hechizos en un #%%%.$",
 			["WeaponDamage"] = "^# %- # Daño$",
 			["WeaponDamageArcane"] = "^# %- # Arcano Daño$",
@@ -966,7 +968,24 @@ if GetLocale() == "esES" then
 		end
 	end
 
-	if VgerCore.IsDraenorOrLater or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
+	if VgerCore.IsForever then
+
+		local TooltipParsing_Forever =
+		{
+			["BlockPercent"] = "^Equipar: Aumenta un #%% la probabilidad de bloquear ataques con un escudo%.$",
+			["CritPercentCombined"] = "^Equipar: Mejora un #%% tu probabilidad de conseguir un golpe crítico%.$",
+			["DodgePercent"] = "^Equipar: Aumenta un #%% la probabilidad de esquivar un ataque%.$",
+			["HitPercentCombined"] = "^Equipar: Mejora un #%% tu probabilidad de golpear%.$",
+			["ParryPercent"] = "^Equipar: Aumenta un #%% la probabilidad de parar un ataque%.$"
+		}
+
+		local Key, NewString
+		for Key, NewString in pairs(TooltipParsing_Forever) do
+			PawnLocal.TooltipParsing[Key] = NewString
+		end
+	end
+
+	if VgerCore.IsForever or VgerCore.IsDraenorOrLater or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
 	end
 
@@ -977,6 +996,10 @@ elseif GetLocale() == "esMX" then
 
 	if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 		PawnLocal.TooltipParsing.Block = "^%+?# bloqueo$"
+	end
+
+	if VgerCore.IsForever then
+		PawnLocal.TooltipParsing.CritPercentCombined = "^Equipar: Mejora un #%% tu probabilidad de asestar un golpe crítico%.$"
 	end
 end
 

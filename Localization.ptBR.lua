@@ -563,6 +563,7 @@ PawnLocal.TooltipParsing = {
 	["Equip"] = "Equipado:",
 	["Expertise"] = "^%+?# Aptidão$",
 	["ExpertiseClassic"] = "^Equipado: Reduz em #%% a chance de os seus ataques serem esquivados ou aparados%.$",
+	["ExpertiseForever"] = "^Equipar: reduz em #%% a chance de seus ataques serem esquivados ou aparados%.$",
 	["ExpertiseRating"] = "^Equipado: Aumenta em # a taxa de aptidão%.$",
 	["ExpertiseRatingShort"] = "^%+?# Taxa de Aptidão$",
 	["FeralAp"] = "^Equipado: %+# de Poder de Ataque sob forma de Felino, Urso e Urso Hediondo%.$",
@@ -582,10 +583,11 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^%+?# Aceleração$",
 	["Haste2"] = "^%+?# de Aceleração$",
 	["HasteClassic"] = "^Equipado: Aumenta em #%% a sua velocidade de ataque%.$",
+	["HasteCombined"] = "^UNUSED$",
 	["HasteRating"] = "^Equipado: Aumenta em # a taxa de aceleração%.$",
 	["HasteRating2"] = "^UNUSED$",
 	["HasteRatingShort"] = "^%+?# Taxa de Aceleração$",
-	["HaventCollectedAppearance"] = "^Você não coletou essa aparência$",
+	["HaventCollectedAppearance"] = "^Você não coletou es[st]a aparência$",
 	["Healing"] = "^%+# Feitiços de Cura$",
 	["Healing2"] = "^Equipado: Aumenta em até # a cura realizada por feitiços e efeitos mágicos%.$",
 	["Healing3"] = "^%+# Cura$",
@@ -679,7 +681,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^%+# Cura e %+# Dano Mágico$",
 	["SpellDamageAndHealingShort"] = "^%+# Feitiços de Cura e %+# Feitiços de Dano$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
-	["SpellDamageForever"] = "^UNUSED$",
+	["SpellDamageNoHealing"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos mágicos%.$",
 	["SpellHasteClassic"] = "^Equipado: Aumenta em #%% sua velocidade de lançamento%.$",
 	["SpellHasteRating"] = "^Equipado: Aumenta em # a taxa de aceleração de feitiço%.$",
 	["SpellHasteRatingShort"] = "^%+?# Taxa de Aceleração de Feitiço$",
@@ -727,6 +729,28 @@ PawnLocal.TooltipParsing = {
 	["WeaponDamageShadow"] = "?# %- # [sS]ombra [dD]e [dD]ano$",
 	["WeaponDamageShadowExact"] = "?# [sS]ombra [dD]e [dD]ano$",
 }
+
+if VgerCore.IsForever then
+
+	local TooltipParsing_Forever =
+	{
+		["Ap2"] = "^Equipar: %+# de poder de ataque%.$",
+		["BlockPercent"] = "^Equipar: Aumenta sua chance de bloquear ataques com um escudo em #%%%.$",
+		["CritPercentCombined"] = "^Equipar: aumenta em #%% a chance de acerto crítico%.$",
+		["DefenseSkill"] = "^Equipar: Defesa aumentada em %+#%.$",
+		["DodgePercent"] = "^Equipar: Aumenta sua chance de se esquivar de um ataque em #%%%.$",
+		["HitPercentCombined"] = "^Equipar: aumenta em #%% a chance de acerto%.$",
+		["Hp5"] = "^Equipar: Restaura # de vida a cada 5 s%.$",
+		["Mp5"] = "^Equipar: Restaura # de mana a cada 5 s%.$",
+		["ParryPercent"] = "^Equipar: Aumenta sua chance de aparar um ataque em #%%%.$",
+		["Rap"] = "^Equipar: %+# de poder de ataque de longo alcance%.",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Forever) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
 
 PawnLocal.Specs =
 {

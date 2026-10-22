@@ -560,6 +560,7 @@ PawnLocal.TooltipParsing = {
 	["Equip"] = "착용 효과:",
 	["Expertise"] = "^UNUSED$",
 	["ExpertiseClassic"] = "^착용 효과: 공격이 회피당하거나 무기 막기에 막힐 확률이 #%%만큼 감소합니다%.$",
+	["ExpertiseForever"] = "^착용 효과: 공격이 회피되거나 무기 막기에 막힐 확률이 #%%만큼 감소합니다%.$",
 	["ExpertiseRating"] = "^착용 효과: 숙련도가 #만큼 증가합니다%.$",
 	["ExpertiseRatingShort"] = "^숙련 %+#$",
 	["FeralAp"] = "^착용 효과: 표범, 광포한 곰, 곰 변신 상태일 때 전투력이 #만큼 증가합니다%.$",
@@ -579,6 +580,7 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^가속 %+?#$",
 	["Haste2"] = "^UNUSED$",
 	["HasteClassic"] = "^착용 효과: 공격 속도가 #%%만큼 증가합니다%.$",
+	["HasteCombined"] = "^UNUSED$",
 	["HasteRating"] = "^착용 효과: 가속도가 #만큼 증가합니다%.$",
 	["HasteRating2"] = "^UNUSED$",
 	--[[Translation missing --]]
@@ -677,7 +679,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^UNUSED$",
 	["SpellDamageAndHealingShort"] = "^주문 치유량 %+# / 주문 공격력 %+#$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
-	["SpellDamageForever"] = "^UNUSED$",
+	["SpellDamageNoHealing"] = "^착용 효과: 마법 주문과 효과에 의한 공격력이 최대 #만큼 증가합니다%.$",
 	["SpellHasteClassic"] = "^착용 효과: 시전 속도가 #%%만큼 증가합니다%.$",
 	["SpellHasteRating"] = "^착용 효과: 주문 시전 가속도가 #만큼 증가합니다%.$",
 	["SpellHasteRatingShort"] = "^주문 시전 가속도 %+#$",
@@ -748,6 +750,24 @@ if VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or Vger
 
 	local Key, NewString
 	for Key, NewString in pairs(TooltipParsing_Classic) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
+if VgerCore.IsForever then
+
+	local TooltipParsing_Forever =
+	{
+		["Block"] = "^방패 막기 #$",
+		["BlockRating2"] = "^착용 효과: 방패 막기 확률이 #%%만큼 증가합니다%.$",
+		["CritPercentCombined"] = "^착용 효과: 치명타 및 극대화율이 #%%만큼 증가합니다%.$",
+		["HitPercentCombined"] = "^착용 효과: 적중률이 #%%만큼 증가합니다%.$",
+		["Hp5"] = "^착용 효과: 5초마다 #의 생명력을 회복합니다%.",
+		["Mp5"] = "^착용 효과: 5초마다 #의 마나를 회복합니다%.$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Forever) do
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
 end

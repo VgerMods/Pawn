@@ -86,6 +86,10 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.13.18
 
+* Forever: Added support for a wide variety of new and changed items in all languages.
+	* Haste is only working in English currently.
+	* MP5 and HP5 are not working in French due to a translation bug in the game.
+	* If you notice Pawn missing any stats on items on Forever besides those, and they work in other versions of the game, please let me know! I'll need to know the language you're playing in and which item it is: item ID is most helpful, but I can look a name up on Wowhead.
 * Forever: Spell hit, spell crit, and spell haste are no longer included on the Weights tab as those stats were removed from items in Forever.
 
 ### Version 2.13.17

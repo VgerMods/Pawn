@@ -573,6 +573,7 @@ PawnLocal.TooltipParsing = {
 	["Equip"] = "裝備: ",
 	["Expertise"] = "^%+?#熟練$",
 	["ExpertiseClassic"] = "^裝備： 使你的攻擊被閃躲或招架的機率降低#%%。$",
+	["ExpertiseForever"] = "^裝備：被閃躲或招架的機率降低#%%。$",
 	["ExpertiseRating"] = "^裝備: 提高#點熟練。$",
 	["ExpertiseRatingShort"] = "^%+?#熟練等級$",
 	["FeralAp"] = "^裝備： 在獵豹、熊或巨熊形態下的攻擊強度提高#點。$",
@@ -592,6 +593,7 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^%+?#加速$",
 	["Haste2"] = "^裝備: 提高#點加速。$",
 	["HasteClassic"] = "^裝備： 你的攻擊速度提高#%%。$",
+	["HasteCombined"] = "^UNUSED$",
 	["HasteRating"] = "^裝備: 提高#點加速。$",
 	["HasteRating2"] = "^UNUSED$",
 	--[[Translation missing --]]
@@ -690,7 +692,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^%+#治療和%+#法術傷害",
 	["SpellDamageAndHealingShort"] = "^%+#治療法術和%+#傷害法術",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
-	["SpellDamageForever"] = "^UNUSED$",
+	["SpellDamageNoHealing"] = "^裝備：使法術和魔法效果所造成的傷害最多提高#點。$",
 	["SpellHasteClassic"] = "^裝備： 你的施法速度提高#%%。$",
 	["SpellHasteRating"] = "^裝備: 提高#點法術加速。$",
 	["SpellHasteRatingShort"] = "^%+?#法術加速等級$",
@@ -825,6 +827,28 @@ if VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 
 	local Key, NewString
 	for Key, NewString in pairs(TooltipParsing_Wrath) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
+if VgerCore.IsForever then
+
+	local TooltipParsing_Forever =
+	{
+		["Ap2"] = "^裝備：%+#點攻擊強度。$",
+		["BlockPercent"] = "^裝備：使你用盾牌格擋攻擊的機率提高#%%。$",
+		["CritPercentCombined"] = "^裝備：使你造成致命一擊的機率提高#%%。$",
+		["DefenseSkill"] = "^裝備：防禦提高#點。$",
+		["DodgePercent"] = "^裝備：使你閃躲攻擊的機率提高#%%。$",
+		["HitPercentCombined"] = "^裝備：使你的命中率提高#%%。$",
+		["Hp5"] = "^裝備：每5秒恢復#點生命力。$",
+		["Mp5"] = "^裝備：每5秒恢復#點法力。$",
+		["ParryPercent"] = "^裝備：使你招架攻擊的機率提高#%%。$",
+		["Rap"] = "^裝備：%+#點遠程攻擊強度。$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Forever) do
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
 end

@@ -546,6 +546,7 @@ PawnLocal.TooltipParsing = {
 	["Equip"] = "Équipé :",
 	["Expertise"] = "^%+?# Expertise$",
 	["ExpertiseClassic"] = "^Equipé : Réduit les chances que vos attaques soient esquivées ou parées de # %%%.$",
+	["ExpertiseForever"] = "^Équipé : réduit les chances que vos attaques soient esquivées ou parées de #%%%.$",
 	["ExpertiseRating"] = "^Équipé : Augmente de # le score d’expertise%.$",
 	["ExpertiseRatingShort"] = "^%+?# au score d'expertise$",
 	["FeralAp"] = "^E?\195?\137?quipé : %+# à la puissance d'attaque pour les formes de félin, d'ours et d'ours redoutable uniquement%.$",
@@ -565,6 +566,7 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^%+?# Hâte$",
 	["Haste2"] = "^%+?# à la Hâte",
 	["HasteClassic"] = "^Equipé : Augmente votre vitesse d’attaque de # %%%.$",
+	["HasteCombined"] = "^UNUSED$",
 	["HasteRating"] = "^Équipé : Augmente de # le score de hâte%.$",
 	["HasteRating2"] = "^UNUSED$",
 	["HasteRatingShort"] = "^%+?# au score de hâte$",
@@ -579,7 +581,7 @@ PawnLocal.TooltipParsing = {
 	["HeroicElite"] = "^Héroïque élite$",
 	["HeroicThunderforged"] = "^Foudroyant héroïque$",
 	["HeroicWarforged"] = "^De guerre héroïque$",
-	["Hit"] = "^E?\195?\137?quipé : Augmente vos chances de toucher de #%%%.$",
+	["Hit"] = "^E?\195?\137?quipé : [Aa]ugmente vos chances de toucher de #%%%.$",
 	["Hit2"] = "^UNUSED$",
 	["HitPercentCombined"] = "^Equipé : Augmente de # %% les chances de toucher avec tous les sorts et attaques%.$",
 	["HitRating"] = "^Équipé : Augmente de # le score de toucher%.$",
@@ -594,7 +596,7 @@ PawnLocal.TooltipParsing = {
 	["Hp52"] = "^E?\195?\137?quipé : Reconstitue # de vie par 5 sec%.$",
 	["Hp53"] = "^%+?# [pP]oints de [vV]ie [tT]outes les 5 [sS]ec%.?$",
 	["Hp54"] = "^%+?# [vV]ie [pP]ar 5 [sS]ec%.?$",
-	["Hp55"] = "^UNUSED$",
+	["Hp55"] = "^Équiper : rend # points? de vie toutes les 5 s%.$",
 	["Intellect"] = "^%+?# Intelligence$",
 	["Leather"] = "^Cuir$",
 	["Leech"] = "^%+# Ponction$",
@@ -607,7 +609,7 @@ PawnLocal.TooltipParsing = {
 	["Mp5"] = "^E?\195?\137?quipé : Rend # points de mana toutes les 5 secondes%.$",
 	["Mp52"] = "^%+?# points de mana toutes les 5 sec%.$",
 	["Mp53"] = "^%+?# points de mana toutes les 5 secondes$",
-	["Mp54"] = "^Équipé : Rend # points de mana toutes les 5 sec%.$",
+	["Mp54"] = "^Équipé : [rR]end # points? de mana toutes les 5 sec%.$",
 	["Mp55"] = "^UNUSED$",
 	["MultiStatHeading"] = "^Stats Multiple$",
 	["MultiStatSeparator1"] = "et",
@@ -662,7 +664,7 @@ PawnLocal.TooltipParsing = {
 	["SpellDamageAndHealingEnchant"] = "^%+# aux soins et %+# aux dégâts des sorts$",
 	["SpellDamageAndHealingShort"] = "^%+# aux sorts de soins et %+# aux dégâts des sorts$",
 	["SpellDamageAndHealingShort2"] = "^UNUSED$",
-	["SpellDamageForever"] = "^UNUSED$",
+	["SpellDamageNoHealing"] = "^Équipé : augmente les dégâts des sorts et effets magiques d’un maximum de #%.$",
 	["SpellHasteClassic"] = "^Equipé : Augmente votre vitesse d’incantation de # %%%.$",
 	["SpellHasteRating"] = "^Équipé : Augmente de # le score de hâte des sorts%.$",
 	["SpellHasteRatingShort"] = "^%+?# au score de hâte des sorts$",
@@ -758,6 +760,26 @@ if VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or Vger
 
 	local Key, NewString
 	for Key, NewString in pairs(TooltipParsing_BurningCrusade) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
+if VgerCore.IsForever then
+
+	local TooltipParsing_Forever =
+	{
+		["Ap2"] = "^Équiper : %+# de puissance d’attaque%.$",
+		["BlockPercent"] = "^Équiper : augmente vos chances de bloquer les attaques avec un bouclier de #%%%.$",
+		["CritPercent"] = "^Équipé : augmente vos chances de coup critique de #%%%.$",
+		["DefenseRating"] = "^Équiper : Défense augmentée de %+#%.$",
+		["DodgePercent"] = "^Équiper : augmente vos chances d’esquiver une attaque de #%%%.$",
+		["HaventCollectedAppearance"] = "^Vous n’avez pas reçu cette apparence%.$",
+		["ParryPercent"] = "^Équiper : augmente vos chances de parer une attaque de #%%%.$",
+		["Rap"] = "^Équiper : %+# de puissance d’attaque à distance%.$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Forever) do
 		PawnLocal.TooltipParsing[Key] = NewString
 	end
 end

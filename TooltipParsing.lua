@@ -261,6 +261,7 @@ PawnRegexes =
 	{L.ExpertiseRating, "ExpertiseRating"}, -- Burning Crusade, /pawn compare 19351
 	{L.ExpertiseRatingShort, "ExpertiseRating"}, -- Wrath, Precise Bloodstone
 	{L.ExpertiseClassic, "ExpertiseRating"}, -- Classic SoD, /pawn compare 236019
+	{L.ExpertiseForever, "ExpertiseRating"}, -- Forever, /pawn compare 275971
 	{L.ArmorPenetration, "ArmorPenetration"},
 	{L.ArmorPenetrationRating, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 34703
 	{L.ArmorPenetrationRating2, "ArmorPenetration"}, -- Burning Crusade, /pawn compare 41592 or 42642 or 44303 depending on locale
@@ -277,6 +278,7 @@ PawnRegexes =
 	{L.HasteRating2, "HasteRating"}, -- Burning Crusade esES, /pawn compare 32570
 	{L.HasteRatingShort, "HasteRating"}, -- Wrath, Quick Sun Crystal / Burning Crusade, random-stat items only
 	{L.HasteClassic, "HasteRating"}, -- Classic SoD, /pawn compare 236019
+	{L.HasteCombined, "HasteRating"}, -- Forever, /pawn compare 240128
 	{L.SpellHasteRating, "SpellHasteRating"}, -- /pawn compare 34360
 	{L.SpellHasteRatingShort, "SpellHasteRating"}, -- https://tbc.wowhead.com/item=35315/quick-dawnstone
 	{L.SpellHasteClassic, "SpellHasteRating"}, -- Classic SoD, /pawn compare 236062
@@ -325,7 +327,7 @@ PawnRegexes =
 	{L.SpellDamage4, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- Simplified Chinese on Classic uses many different wordings:  /pawn compare 16923 vs. /pawn compare 18608
 	{L.SpellDamage5, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- Burning Crusade, /pawn compare item:789::::::-36
 	{L.SpellDamage6, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- Burning Crusade, /pawn compare 33467
-	{L.SpellDamageForever, "SpellDamage"}, -- Forever, /pawn compare 273807
+	{L.SpellDamageNoHealing, "SpellDamage"}, -- Forever, /pawn compare 286427
 	{L.SpellDamageAndHealing, "Healing", 1, PawnMultipleStatsExtract, "SpellDamage", 2, PawnMultipleStatsExtract}, -- Burning Crusade, /pawn compare 34360
 	{L.SpellDamageAndHealing2, "Healing", 1, PawnMultipleStatsExtract, "SpellDamage", 2, PawnMultipleStatsExtract}, -- Burning Crusade, /pawn compare 28304
 	{L.SpellDamageAndHealingEnchant, "Healing", 1, PawnMultipleStatsExtract, "SpellDamage", 2, PawnMultipleStatsExtract}, -- Burning Crusade, /script PawnUIGetAllTextForItem("item:16943:2566") (matches Short in some locales; don't double-dip)
