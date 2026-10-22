@@ -138,7 +138,7 @@ local PawnStatFriendlyNames = -- Currently only contains stat names used for ref
 	["Spirit"] = ITEM_MOD_SPIRIT_SHORT,
 }
 
--- Some translations of WoW Forever needs a special hack when parsing numbers that could be percentages.
+-- Some translations of WoW Forever need a special hack when parsing numbers that could be percentages.
 -- It has a runtime cost, so only activate it when it's necessary.
 local PercentageHackLocale = GetLocale()
 local NeedsPercentageHack = VgerCore.IsForever and (PercentageHackLocale == "deDE" or PercentageHackLocale == "esES" or PercentageHackLocale == "ptBR")
