@@ -26,7 +26,7 @@ function PawnClassicScaleProvider_AddScales()
 		-- We use the same stat weights for Classic and Burning Crusade Classic, but on Classic Era, these stats all appear as percentages,
 		-- so we pre-multiply each stat weight by the rating multiplier. These weights were originally designed for Burning Crusade, so
 		-- they don't require any further modification on Burning Crusade Classic (including prepatch) servers.
-		if VgerCore.IsClassic then
+		if VgerCore.IsClassic or VgerCore.IsForever then
 			HitRatingPer = 9.37931
 			SpellHitRatingPer = 8
 			CritRatingPer = 8.5
