@@ -86,6 +86,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.14.1
 
+* Forever: Fixed a problem with the default stat weights for percentage-based stats (hit, crit, etc.), which were being severely undervalued.
+
 ### Version 2.14.0
 
 * Forever: Pawn now fully supports World of Warcraft Forever.
