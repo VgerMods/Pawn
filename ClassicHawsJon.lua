@@ -1380,7 +1380,7 @@ function PawnClassicScaleProvider_AddScales()
 		)
 
 	else
-		VgerCore.Fail("Failed to set up default Pawn scales because we weren't sure which version of WoW this is.")
+		VgerCore.Fail("Failed to set up default Pawn scales because this isn't a supported version of the game.")
 		return
 	end
 
