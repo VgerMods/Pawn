@@ -84,7 +84,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
-### Version 2.14.1
+### Version 2.14.2
 
 * Forever: Includes new default stat weights for all classes and specs, curated by HawsJon.
 
