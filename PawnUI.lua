@@ -2363,6 +2363,7 @@ function PawnUI_GroupLootFrame_OnShow(self)
 						local ScaleName = ThisUpgradeData.ScaleName
 						if ScaleName then
 							local SetAnnotation = ""
+							local InvType = Item.InvType
 							if InvType == "INVTYPE_2HWEAPON" then
 								SetAnnotation = PawnLocal.TooltipUpgradeFor2H
 							elseif InvType == "INVTYPE_WEAPONMAINHAND" or InvType == "INVTYPE_WEAPON" or InvType == "INVTYPE_WEAPONOFFHAND" then
