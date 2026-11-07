@@ -3378,8 +3378,15 @@ function PawnAttachIconToTooltip(Tooltip, AttachAbove, ItemLink)
 	if PawnCommon.ShowTooltipIcons then
 		-- Don't retrieve an item link if one was passed in.
 		if not ItemLink then
+			-- On some clients (such as Forever), GetItem raises an error on tooltips like ShoppingTooltip1,
+			-- so call it protected and fall back to TooltipUtil, like the ProcessInfo hooks do.
 			local _
-			_, ItemLink = Tooltip:GetItem()
+			if Tooltip.GetItem then
+				_, _, ItemLink = pcall(Tooltip.GetItem, Tooltip)
+			end
+			if not ItemLink and TooltipUtil and TooltipUtil.GetDisplayedItem then
+				_, _, ItemLink = pcall(TooltipUtil.GetDisplayedItem, Tooltip)
+			end
 		end
 		if ItemLink then
 			TextureName = C_Item.GetItemIconByID(ItemLink)
