@@ -4227,7 +4227,7 @@ function PawnOnItemLost(ItemLink)
 	for Slot = 1, 18 do
 		if PawnOptions.ItemLevels[Slot] and PawnOptions.ItemLevels[Slot].Link == ItemLink then
 			if PawnCommon.ShowSlotDebugInfo then
-				VgerCore.Message(Item.Link .. " was destroyed but it was your best in slot " .. Slot .. ", so clearing.")
+				VgerCore.Message(ItemLink .. " was destroyed but it was your best in slot " .. Slot .. ", so clearing.")
 			end
 			PawnOptions.ItemLevels[Slot] = nil
 		end
