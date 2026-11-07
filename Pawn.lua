@@ -2261,7 +2261,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			else
 				local RightLine = _G[TooltipName .. "TextRight" .. i]
 				CurrentParseText = RightLine:GetText()
-				if (issecretvalue and issecretvalue(ItemName)) or (not CurrentParseText) or (CurrentParseText == "") then break end
+				if (issecretvalue and issecretvalue(CurrentParseText)) or (not CurrentParseText) or (CurrentParseText == "") then break end
 				RegexTable = PawnRightHandRegexes
 				CurrentDebugMessages = false
 				IgnoreErrors = true
