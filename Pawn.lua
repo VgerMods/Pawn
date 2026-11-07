@@ -5052,8 +5052,8 @@ function PawnRenameScale(OldScaleName, NewScaleName)
 	elseif PawnCommon.Scales[NewScaleName] then
 		VgerCore.Fail("NewScaleName cannot be the name of an existing scale, and is case-sensitive.")
 		return false
-	elseif PawnScaleIsReadOnly(ScaleName) then
-		VgerCore.Fail("ScaleName cannot be the name of a read-only scale.")
+	elseif PawnScaleIsReadOnly(OldScaleName) then
+		VgerCore.Fail("OldScaleName cannot be the name of a read-only scale.")
 		return false
 	end
 
