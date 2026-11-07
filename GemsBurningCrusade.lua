@@ -264,7 +264,7 @@ local PawnGemData70Epic =
 { ID = 32223, Y = true, B = true, Stats = { DefenseRating = 5, Stamina = 7 } }, -- Enduring Seaspray Emerald
 { ID = 32224, Y = true, B = true, Stats = { SpellCritRating = 5, SpellPenetration = 6 } }, -- Radiant Seaspray Emerald
 { ID = 32225, Y = true, B = true, Stats = { Intellect = 5, Mp5 = 2 } }, -- Dazzling Seaspray Emerald
-{ ID = 32226, Y = true, B = true, Stats = { CritRating, Stamina = 7 } }, -- Jagged Seaspray Emerald
+{ ID = 32226, Y = true, B = true, Stats = { CritRating = 5, Stamina = 7 } }, -- Jagged Seaspray Emerald
 { ID = 35759, Y = true, B = true, Stats = { SpellHasteRating = 5, Stamina = 7 } }, -- Forceful Seaspray Emerald
 { ID = 35758, Y = true, B = true, Stats = { ResilienceRating = 5, Stamina = 7 } }, -- Steady Seaspray Emerald
 
