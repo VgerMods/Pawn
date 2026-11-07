@@ -4030,9 +4030,9 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 					if ItemLink then
 						local Item = PawnGetItemData(PawnUnenchantItemLink(ItemLink, true))
 						CheckItem(ScaleName, BestItems, Item, PreviousItemLink)
+						if Item then PreviousItemLink = PawnUnenchantItemLink(Item.Link, true) end
 					end
 				end
-				PreviousItemLink = ItemLink
 			end end
 			wipe(ItemLocations)
 		end
