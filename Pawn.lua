@@ -3689,7 +3689,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 						if Item1 then ItemLink1 = PawnUnenchantItemLink(Item1.Link, true) end
 						if not TwoSlotsForThisItemType and ItemLink1 and UnenchantedItemLink == ItemLink1 then return end -- If this item is already equipped, it can't be an upgrade for any scale.
 						if TwoSlotsForThisItemType then Slot2 = PawnItemEquipLocToSlot2[InvType] end -- Don't check the off-hand slot for weapon upgrades if they can't dual-wield
-						if Slot2 then Item2 = PawnGetItemDataForInventorySlot(Slot2, true) end
+						if Slot2 then Item2, SlotHadItem2 = PawnGetItemDataForInventorySlot(Slot2, true) end
 						if SlotHadItem2 and not Item2 then return end -- If there is an item in the slot but we don't have data yet, we can't evaluate upgrades yet.
 						if Item2 then ItemLink2 = PawnUnenchantItemLink(Item2.Link, true) end
 						if not TwoSlotsForThisItemType and ItemLink2 and UnenchantedItemLink == PawnUnenchantItemLink(Item2.Link, true) then return end
