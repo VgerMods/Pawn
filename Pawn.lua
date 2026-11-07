@@ -4966,7 +4966,7 @@ function PawnResetScalesCore(ResetCustomScales, ResetProviderScales)
 
 	local ScalesToRemove = {}
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
-		if (ResetProviderScales and Scale.Provider) or (ResetCustomScales and ScaleProvider == nil) then tinsert(ScalesToRemove, ScaleName) end
+		if (ResetProviderScales and Scale.Provider) or (ResetCustomScales and Scale.Provider == nil) then tinsert(ScalesToRemove, ScaleName) end
 	end
 	for _, ScaleName in pairs(ScalesToRemove) do
 		PawnCommon.Scales[ScaleName] = nil
