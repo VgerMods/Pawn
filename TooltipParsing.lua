@@ -225,7 +225,7 @@ PawnRegexes =
 	{L.BlockRating, "BlockRating"}, -- Burning Crusade, /pawn compare 18499
 	{L.BlockRating2, "BlockRating"}, -- Burning Crusade, /pawn compare 29323
 	{L.Block, "BlockValue"}, -- Classic, /pawn compare 18499
-	{L.BlockValue, "BlockValue"}, -- Classic, /pawn compare 18499
+	{L.BlockValue, "BlockValue"}, -- Classic, /pawn compare 18499; Forever, /pawn compare 16732
 	{L.Dps}, -- Ignore this; DPS is calculated manually
 	{L.DpsAdd, "Dps"},
 	{L.EnchantmentFieryWeapon, "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment
@@ -285,6 +285,7 @@ PawnRegexes =
 	{L.SpellPenetration, "SpellPenetration"}, -- Burning Crusade, /pawn compare 21563
 	{L.SpellPenetrationClassic, "SpellPenetration"}, -- Classic (pre-TBC), /pawn compare 21338
 	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, https://tbc.wowhead.com/item=24039/stormy-star-of-elune
+	{L.SpellPenetrationForever, "SpellPenetration"}, -- Forever, /pawn compare 16666
 	{L.Mastery, "MasteryRating"}, -- Zen Dream Emerald
 	{L.Mastery2, "MasteryRating"}, -- unused in English
 	{L.Multistrike, "Multistrike"},
@@ -355,6 +356,7 @@ PawnRegexes =
 	{L.Healing, "Healing"}, -- /pawn compare item:789::::::2028
 	{L.Healing2, "Healing"}, -- /pawn compare 16947
 	{L.Healing3, "Healing"}, -- Burning Crusade, /pawn compare item:789::::::-38
+	{L.HealingForever, "Healing"}, -- Forever, /pawn compare 22428
 	{L.SpellPower, "SpellPower"}, -- /pawn tooltip 39998
 	{L.SpellPower2, "SpellPower"}, -- /pawn compare 40585
 	{L.SpellPower3, "SpellPower"}, -- /pawn compare item:20686::::::2159
