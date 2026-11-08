@@ -21,6 +21,15 @@ for Key, Value in pairs(L) do
 	L[Key] = gsub(Value, "#", NumberExpandedPattern)
 end
 
+-- Forever shows "+10 to All Resistances" on items like Thorium Helm.  This pattern is built from the game's own string
+-- (ITEM_RESIST_ALL = "%c%d to All Resistances") so that it works in every language.
+local AllResistRegex = "^UNUSED$"
+if VgerCore.IsForever and ITEM_RESIST_ALL then
+	-- %c is the sign and %d the amount.  Positional placeholders like German's "%1$c%2$d" work too.
+	local Pattern = gsub(gsub(PawnGameConstantUnwrapped(ITEM_RESIST_ALL), "%%%%%d?%$?c", "%%+?"), "%%%%%d?%$?d", "(-?%%d+)")
+	if strfind(Pattern, "(-?%d+)", 1, true) then AllResistRegex = "^" .. Pattern .. "$" end
+end
+
 ------------------------------------------------------------
 -- Tooltip parsing expressions
 ------------------------------------------------------------
@@ -321,6 +330,7 @@ PawnRegexes =
 	{L.FrostResist, "FrostResist"}, -- /pawn compare 12609
 	{L.ShadowResist, "ShadowResist"}, -- /pawn compare 12609
 	{L.ArcaneResist, "ArcaneResist"}, -- /pawn compare 12609
+	{AllResistRegex, "FireResist", 1, PawnMultipleStatsExtract, "NatureResist", 1, PawnMultipleStatsExtract, "FrostResist", 1, PawnMultipleStatsExtract, "ShadowResist", 1, PawnMultipleStatsExtract, "ArcaneResist", 1, PawnMultipleStatsExtract}, -- Forever, /pawn compare 12410
 	{L.SpellDamage, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- /pawn compare item:20686::::::2159 ("of Sorcery" on Classic)
 	{L.SpellDamage2, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- /pawn compare 16947
 	{L.SpellDamage3, "SpellDamage", 1, PawnMultipleStatsExtract, "Healing", 1, PawnMultipleStatsExtract}, -- French on Classic uses two different wordings:  /pawn compare 20641 vs. /pawn compare 10041
