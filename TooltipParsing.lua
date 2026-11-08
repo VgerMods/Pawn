@@ -233,6 +233,9 @@ PawnRegexes =
 	{L.Crit2, "CritRating"},
 	{L.CritPercent, "CritRating"}, -- Classic, /pawn compare 15062
 	{L.CritPercentCombined, "CritRating", 1, PawnMultipleStatsExtract, "SpellCritRating", 1, PawnMultipleStatsExtract}, -- Classic Season of Discovery, /pawn compare 216621
+	-- Forever has one crit stat for attacks and spells, so crit that only applies to one of them still counts as crit.
+	{L.CritMeleeRangedForever, "CritRating"}, -- Forever, /pawn compare 13965
+	{L.SpellCritForever, "CritRating"}, -- Forever, /pawn compare 13968
 	{L.CritRating, "CritRating"}, -- Burning Crusade, /pawn compare 15062
 	{L.CritRating2, "CritRating"}, -- Burning Crusade, /pawn compare 30710
 	{L.CritRating3, "CritRating"}, -- Burning Crusade, /pawn compare 28796
