@@ -400,7 +400,7 @@ function PawnClassicScaleProvider_AddScales()
 			8, -- Mage
 			2, -- Fire
 			{ Strength=0, Agility=0.05, Dps=0, MeleeDps=0, RangedDps=0, Ap=0, Rap=0, FeralAp=0, HitRating=HitRatingPer*0, ExpertiseRating=ExpertiseRatingPer*0, CritRating=CritRatingPer*0, HasteRating=HasteRatingPer*0, ArmorPenetration=ArmorPenetrationPer*0,
-			Intellect=0.45, Mana=0.035, Spirit=0.5, Mp5=0.75, Healing=0, SpellDamage=1, FireSpellDamage=95, FrostSpellDamage=0.32, ArcaneSpellDamage=0.168, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellHitRating=SpellHitRatingPer*0.93, SpellCritRating=SpellCritRatingPer*0.9, SpellHasteRating=SpellHasteRatingPer*0.82, SpellPenetration=SpellPenetrationPer*0.09,
+			Intellect=0.45, Mana=0.035, Spirit=0.5, Mp5=0.75, Healing=0, SpellDamage=1, FireSpellDamage=0.95, FrostSpellDamage=0.32, ArcaneSpellDamage=0.168, ShadowSpellDamage=0, NatureSpellDamage=0, HolySpellDamage=0, SpellPower=0, SpellHitRating=SpellHitRatingPer*0.93, SpellCritRating=SpellCritRatingPer*0.9, SpellHasteRating=SpellHasteRatingPer*0.82, SpellPenetration=SpellPenetrationPer*0.09,
 			Stamina=0.1, Health=0.01, Hp5=1, Armor=0.005, DefenseRating=DefenseRatingPer*0.05, DodgeRating=DodgeRatingPer*0.05, ParryRating=ParryRatingPer*0.05, BlockRating=BlockRatingPer*0, BlockValue=0, ResilienceRating=0.2, AllResist=0.2, FireResist=0.04, FrostResist=0.04, ArcaneResist=0.04, ShadowResist=0.04, NatureResist=0.04, MetaSocketEffect=36, }
 		)
 
