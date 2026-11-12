@@ -2267,7 +2267,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 			else
 				local RightLine = _G[TooltipName .. "TextRight" .. i]
 				CurrentParseText = RightLine:GetText()
-				if (issecretvalue and issecretvalue(ItemName)) or (not CurrentParseText) or (CurrentParseText == "") then break end
+				if (issecretvalue and issecretvalue(CurrentParseText)) or (not CurrentParseText) or (CurrentParseText == "") then break end
 				RegexTable = PawnRightHandRegexes
 				CurrentDebugMessages = false
 				IgnoreErrors = true
@@ -3689,7 +3689,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 						if Item1 then ItemLink1 = PawnUnenchantItemLink(Item1.Link, true) end
 						if not TwoSlotsForThisItemType and ItemLink1 and UnenchantedItemLink == ItemLink1 then return end -- If this item is already equipped, it can't be an upgrade for any scale.
 						if TwoSlotsForThisItemType then Slot2 = PawnItemEquipLocToSlot2[InvType] end -- Don't check the off-hand slot for weapon upgrades if they can't dual-wield
-						if Slot2 then Item2 = PawnGetItemDataForInventorySlot(Slot2, true) end
+						if Slot2 then Item2, SlotHadItem2 = PawnGetItemDataForInventorySlot(Slot2, true) end
 						if SlotHadItem2 and not Item2 then return end -- If there is an item in the slot but we don't have data yet, we can't evaluate upgrades yet.
 						if Item2 then ItemLink2 = PawnUnenchantItemLink(Item2.Link, true) end
 						if not TwoSlotsForThisItemType and ItemLink2 and UnenchantedItemLink == PawnUnenchantItemLink(Item2.Link, true) then return end
@@ -4030,9 +4030,9 @@ function PawnFindBestItems(ScaleName, InventoryOnly)
 					if ItemLink then
 						local Item = PawnGetItemData(PawnUnenchantItemLink(ItemLink, true))
 						CheckItem(ScaleName, BestItems, Item, PreviousItemLink)
+						if Item then PreviousItemLink = PawnUnenchantItemLink(Item.Link, true) end
 					end
 				end
-				PreviousItemLink = ItemLink
 			end end
 			wipe(ItemLocations)
 		end
@@ -4227,7 +4227,7 @@ function PawnOnItemLost(ItemLink)
 	for Slot = 1, 18 do
 		if PawnOptions.ItemLevels[Slot] and PawnOptions.ItemLevels[Slot].Link == ItemLink then
 			if PawnCommon.ShowSlotDebugInfo then
-				VgerCore.Message(Item.Link .. " was destroyed but it was your best in slot " .. Slot .. ", so clearing.")
+				VgerCore.Message(ItemLink .. " was destroyed but it was your best in slot " .. Slot .. ", so clearing.")
 			end
 			PawnOptions.ItemLevels[Slot] = nil
 		end
@@ -4966,7 +4966,7 @@ function PawnResetScalesCore(ResetCustomScales, ResetProviderScales)
 
 	local ScalesToRemove = {}
 	for ScaleName, Scale in pairs(PawnCommon.Scales) do
-		if (ResetProviderScales and Scale.Provider) or (ResetCustomScales and ScaleProvider == nil) then tinsert(ScalesToRemove, ScaleName) end
+		if (ResetProviderScales and Scale.Provider) or (ResetCustomScales and Scale.Provider == nil) then tinsert(ScalesToRemove, ScaleName) end
 	end
 	for _, ScaleName in pairs(ScalesToRemove) do
 		PawnCommon.Scales[ScaleName] = nil
@@ -5052,8 +5052,8 @@ function PawnRenameScale(OldScaleName, NewScaleName)
 	elseif PawnCommon.Scales[NewScaleName] then
 		VgerCore.Fail("NewScaleName cannot be the name of an existing scale, and is case-sensitive.")
 		return false
-	elseif PawnScaleIsReadOnly(ScaleName) then
-		VgerCore.Fail("ScaleName cannot be the name of a read-only scale.")
+	elseif PawnScaleIsReadOnly(OldScaleName) then
+		VgerCore.Fail("OldScaleName cannot be the name of a read-only scale.")
 		return false
 	end
 
