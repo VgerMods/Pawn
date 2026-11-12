@@ -32,7 +32,7 @@ PawnPrivateTooltipName = "PawnPrivateTooltip1"
 --	{ ScaleName, Value, UnenchantedValue }
 local PawnItemCache
 local PawnItemCacheMaxSize = 300 -- thanks to bag arrows, this should be greater than the number of possible inventory slots
-local PawnItemCacheCanAssumeComplete = VgerCore.IsDraenorOrLater
+local PawnItemCacheCanAssumeComplete = VgerCore.IsForever or VgerCore.IsDraenorOrLater
 
 local PawnScaleTotals = { }
 
