@@ -95,6 +95,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 * Midnight and Forever: Fixed a harmless error that could occur when creating a new character.
 * Burning Crusade: Fixed a typo that was causing Jagged Seaspray Emerald to not be recommended in cases where it would have been useful. (Thanks Krytical!)
 * Items with set bonuses will no longer appear on the Compare tab as having "special effects" in Traditional Chinese.
+* Adjusted the names of several stats on the Values and Compare tabs to match how they appear in game, so players who don't play in English should see more words in their native languages instead of English.
 
 ### Version 2.14.1
 
