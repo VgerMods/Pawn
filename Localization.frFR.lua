@@ -480,6 +480,7 @@ Cette commande ne peut etre défaite!]=],
 
 PawnLocal.TooltipParsing = {
 	["Agility"] = "^%+?# Agilité$",
+	["AllResist"] = "^%+?# à toutes les résistances$",
 	["AllStats"] = "^%+?# à toutes les caractéristiques$",
 	["Ap"] = "^%+?# à la puissance d'attaque$",
 	["Ap2"] = "^E?\195?\137?quipé : %+# à la puissance d'attaque%.$",
@@ -502,6 +503,7 @@ PawnLocal.TooltipParsing = {
 	["BlockRating"] = "^Équipé : Augmente votre score de blocage de #%.$",
 	["BlockRating2"] = "^Équipé : Augmente de # le score de blocage%.$",
 	["BlockValue"] = "^E?\195?\137?quipé : Augmente le score de blocage de votre bouclier de #%.$",
+	["BlockValueForever"] = "^Équiper : augmente la valeur de blocage de votre bouclier de #%.$",
 	["Bow"] = "^Arc$",
 	["ChanceOnHit"] = "Chances de toucher :",
 	["Charges"] = "^.+ Charges?$",
@@ -574,6 +576,7 @@ PawnLocal.TooltipParsing = {
 	["Healing"] = "^%+# aux sorts de soins$",
 	["Healing2"] = "^E?\195?\137?quipé : Augmente les soins prodigués par les sorts et effets de # au maximum%.$",
 	["Healing3"] = "^%+# aux soins$",
+	["Healing4"] = "^Équipé : augmente les soins des sorts et effets magiques d’un maximum de #%.$",
 	["HeirloomLevelRange"] = "^Requier un niveau de %d+ à (%d+)",
 	["HeirloomXpBoost"] = "^E?\195?\137?quipé : L?'?[Ee]xpérience gagnée",
 	["HeirloomXpBoost2"] = "^UNUSED$",
@@ -674,6 +677,7 @@ PawnLocal.TooltipParsing = {
 	["SpellHitRatingShort"] = "^%+?# au score de toucher des sorts$",
 	["SpellPenetration"] = "^Équipé : Augmente la pénétration de vos sorts de #%.$",
 	["SpellPenetrationClassic"] = "^E?\195?\137?quipé : Diminue les résistances magiques des cibles de vos sorts de #%.$",
+	["SpellPenetrationForever"] = "^Équipé : vos sorts pénètrent # de la résistance magique%.$",
 	["SpellPenetrationShort"] = "^%+?# à la pénétration des sorts$",
 	["SpellPower"] = "^%+?# \195?\160? ?l?a? ?[Pp]uissance des sorts$",
 	["SpellPower2"] = "^Équipé : Augmente la puissance des sorts de #%.$",
@@ -776,6 +780,14 @@ if VgerCore.IsForever then
 		["HaventCollectedAppearance"] = "^Vous n’avez pas reçu cette apparence%.$",
 		["ParryPercent"] = "^Équiper : augmente vos chances de parer une attaque de #%%%.$",
 		["Rap"] = "^Équiper : %+# de puissance d’attaque à distance%.$",
+		["ArcaneSpellDamage2"] = "^Équipé : augmente les dégâts des sorts et effets magiques des arcanes d’un maximum de #%.$",
+		["FireSpellDamage2"] = "^Équipé : augmente les dégâts des sorts et effets magiques de feu d’un maximum de #%.$",
+		["FrostSpellDamage2"] = "^Équipé : augmente les dégâts des sorts et effets magiques de givre d’un maximum de #%.$",
+		["HolySpellDamage2"] = "^Équipé : augmente les dégâts des sorts et effets magiques du sacré d’un maximum de #%.$",
+		["NatureSpellDamage2"] = "^Équipé : augmente les dégâts des sorts et effets magiques de nature d’un maximum de #%.$",
+		["ShadowSpellDamage2"] = "^Équipé : augmente les dégâts des sorts et effets magiques d’ombre d’un maximum de #%.$",
+		["SpellDamage3"] = "^Équipé : augmente les dégâts et les soins des sorts et effets magiques de # au maximum%.$",
+		["SpellDamageAndHealing"] = "^Équipé : augmente les soins d’un maximum de # et les dégâts d’un maximum de # pour tous les sorts et effets magiques%.$",
 	}
 
 	local Key, NewString

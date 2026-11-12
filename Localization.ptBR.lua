@@ -497,6 +497,7 @@ Para mais informação nessa opção, veja o arquivo readme.]=],
 
 PawnLocal.TooltipParsing = {
 	["Agility"] = "^%+?# d?e? ?Agilidade$",
+	["AllResist"] = "^%+?# a todas as resistências$",
 	["AllStats"] = "^%+?# em Todos os [aA]tributos$",
 	["Ap"] = "^%+?# d?e? ?Poder de [aA]taque$",
 	["Ap2"] = "^Equipado: %+# de Poder de Ataque%.$",
@@ -519,6 +520,7 @@ PawnLocal.TooltipParsing = {
 	["BlockRating"] = "^Equipado: Aumenta em # a sua taxa de bloqueio%.$",
 	["BlockRating2"] = "^Equipado: Aumenta em # a taxa de bloqueio de escudo%.$",
 	["BlockValue"] = "^Equipado: Aumenta em # o valor de bloqueio do seu escudo%.$",
+	["BlockValueForever"] = "^Equipar: Aumenta o valor de bloqueio do seu escudo em #%.$",
 	["Bow"] = "^Arco$",
 	["ChanceOnHit"] = "Chance ao acertar:",
 	["Charges"] = "^.+ Cargas?$",
@@ -591,6 +593,7 @@ PawnLocal.TooltipParsing = {
 	["Healing"] = "^%+# Feitiços de Cura$",
 	["Healing2"] = "^Equipado: Aumenta em até # a cura realizada por feitiços e efeitos mágicos%.$",
 	["Healing3"] = "^%+# Cura$",
+	["Healing4"] = "^Equipar: aumenta em até # a cura realizada por feitiços e efeitos mágicos%.$",
 	["HeirloomLevelRange"] = "^Requer nível entre %d+ e (%d+)",
 	["HeirloomXpBoost"] = "^Equipado: Experiência obtida",
 	["HeirloomXpBoost2"] = "^UNUSED$",
@@ -691,6 +694,7 @@ PawnLocal.TooltipParsing = {
 	["SpellHitRatingShort"] = "^%+?# Taxa de Acerto de Feitiço$",
 	["SpellPenetration"] = "^Equipado: Aumenta em # sua penetração de feitiços%.$",
 	["SpellPenetrationClassic"] = "^Equipado: Reduz em # as resistências mágicas dos alvos dos seus feitiços%.$",
+	["SpellPenetrationForever"] = "^Equipar: seus feitiços ignoram # de Resistência Mágica%.$",
 	["SpellPenetrationShort"] = "^%+?# Penetração de Feitiço$",
 	["SpellPower"] = "^%+?# d?e? ?Poder [mM]ágico$",
 	["SpellPower2"] = "^Equipado: Aumenta em # o poder mágico.$",
@@ -735,15 +739,23 @@ if VgerCore.IsForever then
 	local TooltipParsing_Forever =
 	{
 		["Ap2"] = "^Equipar: %+# de poder de ataque%.$",
+		["ArcaneSpellDamage2"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos Arcanos%.$",
 		["BlockPercent"] = "^Equipar: Aumenta sua chance de bloquear ataques com um escudo em #%%%.$",
 		["CritPercentCombined"] = "^Equipar: aumenta em #%% a chance de acerto crítico%.$",
 		["DefenseSkill"] = "^Equipar: Defesa aumentada em %+#%.$",
 		["DodgePercent"] = "^Equipar: Aumenta sua chance de se esquivar de um ataque em #%%%.$",
+		["FireSpellDamage2"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos de Fogo%.$",
+		["FrostSpellDamage2"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos de Gelo%.$",
 		["HitPercentCombined"] = "^Equipar: aumenta em #%% a chance de acerto%.$",
+		["HolySpellDamage2"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos Sagrados%.$",
 		["Hp5"] = "^Equipar: Restaura # de vida a cada 5 s%.$",
 		["Mp5"] = "^Equipar: Restaura # de mana a cada 5 s%.$",
+		["NatureSpellDamage2"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos de Natureza%.$",
 		["ParryPercent"] = "^Equipar: Aumenta sua chance de aparar um ataque em #%%%.$",
 		["Rap"] = "^Equipar: %+# de poder de ataque de longo alcance%.",
+		["SpellDamageAndHealing"] = "^Equipar: aumenta em até # a cura realizada e em até # o dano causado para todos os feitiços e efeitos mágicos%.$",
+		["ShadowSpellDamage2"] = "^Equipar: aumenta em até # o dano causado por feitiços e efeitos de Sombra%.$",
+		["SpellDamage3"] = "^Equipar: aumenta em até # o dano causado e a cura realizada por feitiços e efeitos mágicos%.$",
 	}
 
 	local Key, NewString

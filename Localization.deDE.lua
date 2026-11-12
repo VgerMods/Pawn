@@ -471,6 +471,7 @@ Weitere Informationen zu dieser Einstellung findest du in der Readme-Datei.]=],
 
 PawnLocal.TooltipParsing = {
 	["Agility"] = "^%+?# Beweglichkeit$",
+	["AllResist"] = "^%+?# zu allen Widerstandsarten$",
 	["AllStats"] = "^%+?# [Aa]lle [Ww]erte$",
 	["Ap"] = "^%+?# Angriffskraft$",
 	["Ap2"] = "^Anlegen: %+# Angriffskraft%.$",
@@ -493,6 +494,7 @@ PawnLocal.TooltipParsing = {
 	["BlockRating"] = "^Anlegen: Erhöht Eure Blockwertung um #%.$",
 	["BlockRating2"] = "^UNUSED$",
 	["BlockValue"] = "^Anlegen: Erhöht den Blockwert Eures Schildes um #%.$",
+	["BlockValueForever"] = "^UNUSED$",
 	["Bow"] = "^Bogen$",
 	["ChanceOnHit"] = "Trefferchance:",
 	["Charges"] = "^.+ Ladungen?$",
@@ -565,6 +567,7 @@ PawnLocal.TooltipParsing = {
 	["Healing"] = "^%+# Heilzauber$",
 	["Healing2"] = "^Anlegen: Erhöht durch Zauber und Effekte verursachte Heilung um bis zu #%.$",
 	["Healing3"] = "^%+# Heilung$",
+	["Healing4"] = "^Anlegen: Erhöht die durch magische Zauber und Effekte verursachte Heilung um bis zu #%.$",
 	["HeirloomLevelRange"] = "^Benötigt Stufe %d+ bis #",
 	["HeirloomXpBoost"] = "^Anlegen: Erhaltene Erfahrung",
 	["HeirloomXpBoost2"] = "^UNUSED$",
@@ -665,6 +668,7 @@ PawnLocal.TooltipParsing = {
 	["SpellHitRatingShort"] = "^%+?# Zaubertrefferwertung$",
 	["SpellPenetration"] = "^Anlegen: Erhöht d?i?e?E?u?r?e? Zauberdurchschlagskraft um #%.$",
 	["SpellPenetrationClassic"] = "^Anlegen: Reduziert die Magiewiderstände der Ziele Eurer Zauber um #%.$",
+	["SpellPenetrationForever"] = "^Anlegen: Eure Zauber durchdringen # Zauberwiderstände%.$",
 	["SpellPenetrationShort"] = "^%+?# Zauberdurchschlagskraft$",
 	["SpellPower"] = "^%+?# Zaubermacht$",
 	["SpellPower2"] = "^Anlegen: Erhöht die Zaubermacht um #%.$",
@@ -714,6 +718,25 @@ end
 if VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists then
 	PawnLocal.TooltipParsing.Speed = "^Tempo #$"
 end
+
+if VgerCore.IsForever then
+	local TooltipParsing_Forever =
+	{
+		["ArcaneSpellDamage2"] = "^Anlegen: Erhöht den von Arkanzaubern und -effekten verursachten Schaden um bis zu #%.$",
+		["FireSpellDamage2"] = "^Anlegen: Erhöht den durch Feuerzauber und %-effekte verursachten Schaden um bis zu #%.$",
+		["FrostSpellDamage2"] = "^Anlegen: Erhöht den durch Frostzauber und %-effekte verursachten Schaden um bis zu #%.$",
+		["HolySpellDamage2"] = "^Anlegen: Erhöht den von Heiligzaubern und %-effekten verursachten Schaden um bis zu #%.$",
+		["NatureSpellDamage2"] = "^Anlegen: Erhöht den durch Naturzauber und %-effekte verursachten Schaden um bis zu #%.$",
+		["ShadowSpellDamage2"] = "^Anlegen: Erhöht den von Schattenzaubern und %-effekten verursachten Schaden um bis zu #%.$",
+		["SpellDamage3"] = "^Anlegen: Erhöht durch magische Zauber und Effekte verursachten Schaden und Heilung um bis zu #%.$",
+	}
+
+	local Key, NewString
+	for Key, NewString in pairs(TooltipParsing_Forever) do
+		PawnLocal.TooltipParsing[Key] = NewString
+	end
+end
+
 PawnLocal.Specs =
 {
     [1] = {

@@ -483,6 +483,7 @@ Pawn插件默认已经参考AskMrRobot给所有职业的专精建立了标准评
 
 PawnLocal.TooltipParsing = {
 	["Agility"] = "^%+?# 敏捷$",
+	["AllResist"] = "^%+?# 所有抗性$",
 	["AllStats"] = "^%+?# 所有属性$",
 	["Ap"] = "^%+?# 攻击强度$",
 	["Ap2"] = "^装备： ?%+# 攻击强度。$",
@@ -505,6 +506,7 @@ PawnLocal.TooltipParsing = {
 	["BlockRating"] = "^装备： 使你的格挡等级提高#。$",
 	["BlockRating2"] = "^装备： 使你的盾牌格挡等级提高#点。$",
 	["BlockValue"] = "^装备： ?使你的盾牌的格挡值提高#点。$",
+	["BlockValueForever"] = "^装备：使你的盾牌格挡值提高#。$",
 	["Bow"] = "^弓$",
 	["ChanceOnHit"] = "击中时可能：",
 	["Charges"] = "^.+ Charges?$",
@@ -577,6 +579,7 @@ PawnLocal.TooltipParsing = {
 	["Healing"] = "^%+# 治疗量$",
 	["Healing2"] = "^装备： ?提高法术所造成的治疗效果，最多#点。$",
 	["Healing3"] = "^%+# 治疗$",
+	["Healing4"] = "^装备：使法术和魔法效果的治疗效果提高最多#点。$",
 	["HeirloomLevelRange"] = "^需要等级 %d+ 到 (%d+)",
 	["HeirloomXpBoost"] = "^装备： ?获得的经验值提高",
 	["HeirloomXpBoost2"] = "^UNUSED$",
@@ -678,6 +681,7 @@ PawnLocal.TooltipParsing = {
 	["SpellHitRatingShort"] = "^%+?# 法术命中等级$",
 	["SpellPenetration"] = "^装备： 使你的法术穿透提高#。$",
 	["SpellPenetrationClassic"] = "^装备： 使你的法术目标的魔法抗性降低#点。$",
+	["SpellPenetrationForever"] = "^装备：你的法术可穿透目标的#点魔法抗性。$",
 	["SpellPenetrationShort"] = "^%+?# 法术穿透$",
 	["SpellPower"] = "^%+?# 法术强度$",
 	["SpellPower2"] = "^装备： 法术强度提高#点。$",
@@ -764,11 +768,19 @@ if VgerCore.IsForever then
 
 	local TooltipParsing_Forever =
 	{
+		["ArcaneSpellDamage2"] = "^装备：使奥术法术和效果所造成的伤害提高最多#点。$",
 		["CritPercentCombined"] = "^装备：使你造成爆击的几率提高#%%。$",
 		["DefenseSkill"] = "^装备：防御提高#。$",
+		["FireSpellDamage2"] = "^装备：使火焰法术和效果所造成的伤害提高最多#点。$",
+		["FrostSpellDamage2"] = "^装备：使冰霜法术和效果所造成的伤害提高最多#点。$",
+		["HolySpellDamage2"] = "^装备：使神圣法术和效果所造成的伤害提高最多#点。$",
 		["Hp5"] = "^装备：每5秒恢复#生命值。$",
 		["Mp5"] = "^装备：每5秒恢复#法力值。$",
+		["NatureSpellDamage2"] = "^装备：使自然法术和效果所造成的伤害提高最多#点。$",
 		["ParryPercent"] = "^装备：使你招架攻击的几率提高#%%。$",
+		["ShadowSpellDamage2"] = "^装备：使暗影法术和效果所造成的伤害提高最多#点。$",
+		["SpellDamageAndHealing"] = "^装备：使所有法术和魔法效果造成的治疗效果提高最多#点，伤害提高最多#点。$",
+		["SpellDamage3"] = "^装备：提高法术和魔法效果所造成的伤害和治疗效果，最多#点。$",
 	}
 
 	local Key, NewString

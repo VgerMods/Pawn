@@ -494,6 +494,7 @@ Pawn이 상점에 판매했거나, 파괴했거나, 다른 방법으로 더이�
 
 PawnLocal.TooltipParsing = {
 	["Agility"] = "^민첩성 %+?#$",
+	["AllResist"] = "^모든 저항 %+?#$",
 	["AllStats"] = "^모든 능력치 %+?#$",
 	["Ap"] = "^전투력 %+?#$",
 	["Ap2"] = "^착용 효과: 전투력 %+#$",
@@ -516,6 +517,7 @@ PawnLocal.TooltipParsing = {
 	["BlockRating"] = "^착용 효과: 방패 막기 숙련도가 #만큼 증가합니다%.$",
 	["BlockRating2"] = "^UNUSED$",
 	["BlockValue"] = "^착용 효과: 방패의 피해 방어량이 #만큼 증가합니다%.$",
+	["BlockValueForever"] = "^UNUSED$",
 	["Bow"] = "^활$",
 	["ChanceOnHit"] = "발동 효과:",
 	["Charges"] = "^.+회 사용 가능$",
@@ -589,6 +591,7 @@ PawnLocal.TooltipParsing = {
 	["Healing"] = "^치유 효과 증가 %+#$",
 	["Healing2"] = "^착용 효과: 모든 주문 및 효과에 의한 치유량이 최대 #만큼 증가합니다%.$",
 	["Healing3"] = "^주문 치유량 %+#$",
+	["Healing4"] = "^착용 효과: 마법 주문과 효과에 의한 치유량이 최대 #만큼 증가합니다%.$",
 	["HeirloomLevelRange"] = "^요구 레벨: %d+ %~ (%d+)",
 	["HeirloomXpBoost"] = "^착용 효과: 경험치 획득량이",
 	["HeirloomXpBoost2"] = "^착용 효과: 몬스터 처치와 퀘스트 완료로 얻는 경험치가",
@@ -689,6 +692,7 @@ PawnLocal.TooltipParsing = {
 	["SpellHitRatingShort"] = "^주문 적중도 %+#$",
 	["SpellPenetration"] = "^착용 효과: 주문 관통력이 #만큼 증가합니다%.$",
 	["SpellPenetrationClassic"] = "^착용 효과: 자신의 주문에 대한 대상의 마법 저항력을 #만큼 감소시킵니다%.$",
+	["SpellPenetrationForever"] = "^착용 효과: 주문이 마법 저항력을 #만큼 관통합니다%.$",
 	["SpellPenetrationShort"] = "^주문 관통력 %+#$",
 	["SpellPower"] = "^주문력 %+?#$",
 	["SpellPower2"] = "^착용 효과: 주문력이 #만큼 증가합니다%.$",
@@ -758,12 +762,20 @@ if VgerCore.IsForever then
 
 	local TooltipParsing_Forever =
 	{
+		["ArcaneSpellDamage2"] = "^착용 효과: 비전 주문과 효과에 의한 공격력이 최대 #만큼 증가합니다%.$",
 		["Block"] = "^방패 막기 #$",
 		["BlockRating2"] = "^착용 효과: 방패 막기 확률이 #%%만큼 증가합니다%.$",
 		["CritPercentCombined"] = "^착용 효과: 치명타 및 극대화율이 #%%만큼 증가합니다%.$",
+		["FireSpellDamage2"] = "^착용 효과: 화염 주문과 효과에 의한 공격력이 최대 #만큼 증가합니다%.$",
+		["FrostSpellDamage2"] = "^착용 효과: 냉기 주문과 효과에 의한 공격력이 최대 #만큼 증가합니다%.$",
 		["HitPercentCombined"] = "^착용 효과: 적중률이 #%%만큼 증가합니다%.$",
+		["HolySpellDamage2"] = "^착용 효과: 신성 주문과 효과에 의한 공격력이 최대 #만큼 증가합니다%.$",
 		["Hp5"] = "^착용 효과: 5초마다 #의 생명력을 회복합니다%.",
 		["Mp5"] = "^착용 효과: 5초마다 #의 마나를 회복합니다%.$",
+		["NatureSpellDamage2"] = "^착용 효과: 자연 주문 및 효과의 공격력이 최대 #만큼 증가합니다%.$",
+		["ShadowSpellDamage2"] = "^착용 효과: 암흑 주문과 효과에 의한 공격력이 최대 #만큼 증가합니다%.$",
+		["SpellDamageAndHealing"] = "^착용 효과: 모든 마법 주문 및 효과에 의한 치유량이 최대 #만큼, 주문 공격력이 최대 #만큼 증가합니다%.$",
+		["SpellDamage3"] = "^착용 효과: 마법 주문 및 효과로 입히는 피해와 치유량이 최대 #만큼 증가합니다%.$",
 	}
 
 	local Key, NewString

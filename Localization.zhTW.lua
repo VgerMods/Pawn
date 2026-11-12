@@ -507,6 +507,7 @@ WoW中所有的物件都有個ID，通常只有寫插件的人才需要這些資
 
 PawnLocal.TooltipParsing = {
 	["Agility"] = "^%+?#敏捷$",
+	["AllResist"] = "^%+?# 所有抗性$",
 	["AllStats"] = "^%+?#所有屬性$",
 	["Ap"] = "^%+?#攻擊強度$",
 	["Ap2"] = "^裝備： %+#攻擊強度。$",
@@ -529,6 +530,7 @@ PawnLocal.TooltipParsing = {
 	["BlockRating"] = "^裝備: 使你的格擋等級提高#點。$",
 	["BlockRating2"] = "^裝備: 提高#點盾牌格擋。$",
 	["BlockValue"] = "^裝備： 使你的盾牌格擋值提高#點。$",
+	["BlockValueForever"] = "^裝備：提高#點盾牌格擋值。$",
 	["Bow"] = "^弓$",
 	["ChanceOnHit"] = "擊中時可能: ",
 	["Charges"] = "^.+次?$",
@@ -602,6 +604,7 @@ PawnLocal.TooltipParsing = {
 	["Healing"] = "^%+# 治療法術$",
 	["Healing2"] = "^裝備： 提高法術和魔法效果所造成的治療效果，最多#點。$",
 	["Healing3"] = "^%+#治療$",
+	["Healing4"] = "^裝備：使所有法術和魔法效果所造成的治療效果最多提高#點。$",
 	["HeirloomLevelRange"] = "^需要等級(%d+)至(%d+)%((%d+)%)",
 	["HeirloomXpBoost"] = "^裝備: .*獲得的經驗值提高%d+%%。",
 	["HeirloomXpBoost2"] = "^UNUSED$",
@@ -702,6 +705,7 @@ PawnLocal.TooltipParsing = {
 	["SpellHitRatingShort"] = "^%+?#法術命中等級$",
 	["SpellPenetration"] = "^裝備: 使你的法術穿透力提高#點。$",
 	["SpellPenetrationClassic"] = "^裝備： 使你法術目標的魔法抗性降低#點。$",
+	["SpellPenetrationForever"] = "^裝備：你的法術會穿透#點魔法抗性。$",
 	["SpellPenetrationShort"] = "^%+?#法術穿透力$",
 	["SpellPower"] = "^%+?#法術能量$",
 	["SpellPower2"] = "^裝備： 提高#點法術能量。$",
@@ -836,15 +840,23 @@ if VgerCore.IsForever then
 	local TooltipParsing_Forever =
 	{
 		["Ap2"] = "^裝備：%+#點攻擊強度。$",
+		["ArcaneSpellDamage2"] = "^裝備：使秘法法術和效果所造成的傷害最多提高#點。$",
 		["BlockPercent"] = "^裝備：使你用盾牌格擋攻擊的機率提高#%%。$",
 		["CritPercentCombined"] = "^裝備：使你造成致命一擊的機率提高#%%。$",
 		["DefenseSkill"] = "^裝備：防禦提高#點。$",
 		["DodgePercent"] = "^裝備：使你閃躲攻擊的機率提高#%%。$",
+		["FireSpellDamage2"] = "^裝備：使火焰法術和效果造成的傷害最多提高#點。$",
+		["FrostSpellDamage2"] = "^裝備：使冰霜法術和效果所造成的傷害最多提高#點。$",
 		["HitPercentCombined"] = "^裝備：使你的命中率提高#%%。$",
+		["HolySpellDamage2"] = "^裝備：使神聖法術和效果所造成的傷害最多提高#點。$",
 		["Hp5"] = "^裝備：每5秒恢復#點生命力。$",
 		["Mp5"] = "^裝備：每5秒恢復#點法力。$",
+		["NatureSpellDamage2"] = "^裝備：使自然法術和效果造成的傷害最多提高#點。$",
 		["ParryPercent"] = "^裝備：使你招架攻擊的機率提高#%%。$",
 		["Rap"] = "^裝備：%+#點遠程攻擊強度。$",
+		["ShadowSpellDamage2"] = "^裝備：使暗影法術和效果所造成的傷害最多提高#點。$",
+		["SpellDamageAndHealing"] = "^裝備：使法術和魔法效果所造成的治療效果提高最多#點，法術傷害提高最多#點。$",
+		["SpellDamage3"] = "^裝備：使魔法法術和效果造成的傷害和治療效果最多提高#點。$",
 	}
 
 	local Key, NewString
