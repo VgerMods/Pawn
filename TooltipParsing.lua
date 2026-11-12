@@ -317,7 +317,7 @@ PawnRegexes =
 	{L.EnchantmentHealth, "Stamina", 1/12.5, PawnSingleStatMultiplier}, -- +100 health head/leg enchantment (counting 1 HP = 1/12.5 Stamina)
 	{L.EnchantmentHealth2, "Stamina", 1/12.5, PawnSingleStatMultiplier}, -- +150 health enchantment (counting 1 HP = 1/12.5 Stamina)
 	{L.Armor, "Armor"}, -- normal armor and cloak armor enchantments
-	{L.Armor2, "Armor"}, -- unused in English
+	{L.Armor2, "Armor"}, -- Forever "+60 Bonus Armor", /pawn compare 1717; also some non-English clients
 	{L.EnchantmentArmorKit, "Armor"}, -- armor kits
 	{L.FireResist, "FireResist"}, -- /pawn compare 12609
 	{L.NatureResist, "NatureResist"}, -- /pawn compare 12609
