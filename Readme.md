@@ -87,6 +87,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ### Version 2.14.2
 
 * Forever: Fixed a typo that was causing fire spell damage to get valued 100× the intended amount for fire mages. Oops.
+* Burning Crusade: Fixed a typo that was causing Jagged Seaspray Emerald to be recommended in cases where it would have been useful. (Thanks Krytical!)
 
 ### Version 2.14.1
 
