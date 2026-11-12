@@ -783,28 +783,28 @@ function PawnSetDefaultKeybindings()
 	if not PawnCommon then VgerCore.Fail("Can't set keybindings until Pawn starts to initialize.") return end
 
 	if PawnOptions.LastKeybindingsSet == nil then PawnOptions.LastKeybindingsSet = 0 end
-	local BindingSet = false
+	local BindingsWereSet = false
 
 	-- Keybindings for opening the Pawn UI and setting comparison items.
 	if PawnOptions.LastKeybindingsSet < 1 then
-		BindingSet = PawnSetKeybindingIfAvailable(PAWN_TOGGLE_UI_DEFAULT_KEY, "PAWN_TOGGLE_UI") or BindingSet
-		BindingSet = PawnSetKeybindingIfAvailable(PAWN_COMPARE_LEFT_DEFAULT_KEY, "PAWN_COMPARE_LEFT") or BindingSet
-		BindingSet = PawnSetKeybindingIfAvailable(PAWN_COMPARE_RIGHT_DEFAULT_KEY, "PAWN_COMPARE_RIGHT") or BindingSet
+		BindingsWereSet = PawnSetKeybindingIfAvailable(PAWN_TOGGLE_UI_DEFAULT_KEY, "PAWN_TOGGLE_UI") or BindingsWereSet
+		BindingsWereSet = PawnSetKeybindingIfAvailable(PAWN_COMPARE_LEFT_DEFAULT_KEY, "PAWN_COMPARE_LEFT") or BindingsWereSet
+		BindingsWereSet = PawnSetKeybindingIfAvailable(PAWN_COMPARE_RIGHT_DEFAULT_KEY, "PAWN_COMPARE_RIGHT") or BindingsWereSet
 	end
 
 	-- If any keybindings were changed, save the user's bindings.
-	if BindingSet then
+	if BindingsWereSet then
 		local CurrentBindingSet = GetCurrentBindingSet()
 		if CurrentBindingSet == 1 or CurrentBindingSet == 2 then
 			SaveBindings(CurrentBindingSet)
-		else
+			-- Record that we've set those keybindings, so we don't try to set them again in the future, even if
+			-- the user clears them.
+			PawnOptions.LastKeybindingsSet = 1
+		elseif CurrentBindingSet ~= 0 then
+			-- GetCurrentBindingSet can return 0 on a newly-created character. Sad, but expected.
 			VgerCore.Fail("GetCurrentBindingSet() returned unexpected value: " .. tostring(CurrentBindingSet))
 		end
 	end
-
-	-- Record that we've set those keybindings, so we don't try to set them again in the future, even if
-	-- the user clears them.
-	PawnOptions.LastKeybindingsSet = 1
 end
 
 -- Sets a keybinding to its default value if it's not already assigned to something else.  Returns true if anything was changed.
