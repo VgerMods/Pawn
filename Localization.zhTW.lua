@@ -650,6 +650,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^裝備： 提高自然法術和效果所造成的傷害，最多#點。$",
 	["NatureSpellDamage3"] = "^%+#自然傷害$",
 	["NormalizationEnchant"] = "^附魔:(.*)$",
+	["NormalizationZoneBonus"] = "^UNUSED$",
 	["Parry"] = "^%+?#招架$",
 	["Parry2"] = "^裝備: 提高#點招架等級。$",
 	["ParryPercent"] = "^裝備： 使你招架攻擊的機率提高#%%。$",

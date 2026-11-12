@@ -631,6 +631,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage3"] = "^%+# Nature Damage$",
 	["NormalizationEnchant"] = "^Enchanted: (.*)$",
 	["NormalizationReforge"] = "",
+	["NormalizationZoneBonus"] = "^(.+%.) This effect is %a+ in .+ areas%.$",
 	["Parry"] = "^%+?# Parry$",
 	["Parry2"] = "^UNUSED$",
 	["ParryPercent"] = "^Equip: Increases your chance to [Pp]arry an attack by #%%%.$",

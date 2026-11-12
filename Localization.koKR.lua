@@ -637,6 +637,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^착용 효과: 자연 계열의 주문과 효과의 공격력이 최대 #만큼 증가합니다%.$",
 	["NatureSpellDamage3"] = "^UNUSED$",
 	["NormalizationEnchant"] = "^마법부여: (.*)$",
+	["NormalizationZoneBonus"] = "^UNUSED$",
 	["Parry"] = "^무기 막기 %+?#$",
 	["Parry2"] = "^UNUSED$",
 	["ParryPercent"] = "^착용 효과: 무기 막기 확률이 #%%만큼 증가합니다%.$",

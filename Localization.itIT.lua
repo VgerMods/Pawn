@@ -630,6 +630,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^UNUSED$",
 	["NatureSpellDamage3"] = "^UNUSED$",
 	["NormalizationEnchant"] = "^Incantato: (.*)$",
+	["NormalizationZoneBonus"] = "^UNUSED$",
 	["Parry"] = "^%+?# [Ii]ndice di [Pp]arata$",
 	["Parry2"] = "^UNUSED$",
 	["ParryPercent"] = "^UNUSED$",

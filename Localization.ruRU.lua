@@ -628,6 +628,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^Если на персонаже: Увеличение урона, наносимого заклинаниями и эффектами сил природы, на # ед%.$",
 	["NatureSpellDamage3"] = "^UNUSED$",
 	["NormalizationEnchant"] = "^Чары: (.*)$",
+	["NormalizationZoneBonus"] = "^UNUSED$",
 	["Parry"] = "^%+?# к парированию$",
 	["Parry2"] = "^%+?# к показателю парирования$",
 	["ParryPercent"] = "^Если на персонаже: Увеличение рейтинга парирования атак на #%%%.$",

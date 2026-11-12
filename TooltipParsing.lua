@@ -63,6 +63,7 @@ PawnNormalizationRegexes =
 {
 	{"^|c........(.+)$", "%1"}, -- "|cFF 0FF 0Heroic" --> "Heroic"
 	{L.NormalizationEnchant, "%1"}, -- "Enchanted: +50 Strength" --> "+50 Strength" (ENCHANTED_TOOLTIP_LINE)
+	{L.NormalizationZoneBonus, "%1"}, -- Forever: "Equip: +14 Attack Power. This effect is tripled in ..." (270275)
 	{"^([%w%s%.]+) %+(%d+)%%?$", "+%2 %1"}, -- "Stamina +5" --> "+5 Stamina"
 }
 

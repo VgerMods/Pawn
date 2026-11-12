@@ -676,6 +676,7 @@ PawnLocal.TooltipParsing = {
 	["NatureSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño que infligen los hechizos y efectos de Naturaleza%.$",
 	["NatureSpellDamage3"] = "^%+# daño de Naturaleza$",
 	["NormalizationEnchant"] = "^Encantado: (.*)$",
+	["NormalizationZoneBonus"] = "^UNUSED$",
 	["Parry"] = "^%+?# parada$",
 	["Parry2"] = "^UNUSED$",
 	["ParryPercent"] = "^Equipar: Aumenta un #%% tu probabilidad de parar un ataque%.$",
