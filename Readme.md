@@ -86,7 +86,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.14.2
 
-* Forever: Disabled some hacks that were needed for Classic versions of WoW that don't appear to be necessary for Forever, which should make Pawn work notably faster.
+* Forever: Disabled some hacks that were needed for Classic versions of WoW that don't appear to be necessary for Forever, which should make Pawn work notably faster on Forever.
 * Midnight and Forever: Fixed a minor error that occurred when turning the "Show icons next to tooltips" option on or off. (Thanks Angelo!)
 * Forever: Fixed a typo that was causing fire spell damage to get valued 100× the intended amount for fire mages. Oops.
 * Burning Crusade: Fixed a typo that was causing Jagged Seaspray Emerald to be recommended in cases where it would have been useful. (Thanks Krytical!)
