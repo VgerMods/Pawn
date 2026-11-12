@@ -87,6 +87,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ### Version 2.14.2
 
 * Forever: Disabled some hacks that were needed for Classic versions of WoW that don't appear to be necessary for Forever, which should make Pawn work notably faster on Forever.
+* Forever: Includes updated default stat weights for most classes and specs, including increases to the weights of weapon DPS and enhancement shaman stats to account for hotfixes.
 * Forever: Fixed a typo that was causing fire spell damage to get valued 100× the intended amount for fire mages. (For fire mages, even typos crit.)
 * Forever: Added support for many new types of items with various types of spell damage, healing, spell penetration, block value, and all resistances, in all languages.
 * Midnight and Forever: Fixed a minor error that occurred when turning the "Show icons next to tooltips" option on or off. (Thanks Angelo!)
