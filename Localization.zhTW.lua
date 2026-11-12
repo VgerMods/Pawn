@@ -586,7 +586,7 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^%+?#加速$",
 	["Haste2"] = "^裝備: 提高#點加速。$",
 	["HasteClassic"] = "^裝備： 你的攻擊速度提高#%%。$",
-	["HasteCombined"] = "^UNUSED$",
+	["HasteCombined"] = "^	裝備：使你的攻擊速度和施法速度提高#%%。$",
 	["HasteRating"] = "^裝備: 提高#點加速。$",
 	["HasteRating2"] = "^UNUSED$",
 	--[[Translation missing --]]

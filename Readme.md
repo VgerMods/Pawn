@@ -86,6 +86,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ### Version 2.14.3
 
+* Forever: Added support for new items with haste in all languages.
+
 ### Version 2.14.2
 
 * Forever: Disabled some hacks that were needed for Classic versions of WoW that don't appear to be necessary for Forever, which should make Pawn work notably faster on Forever.
@@ -107,7 +109,6 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 * Forever: Pawn now fully supports World of Warcraft Forever.
 * Forever: Added support for a wide variety of new and changed items in all languages.
-	* Haste is only working in English currently.
 	* MP5 and HP5 are not working in French due to a translation bug in the game.
 	* If you notice Pawn missing any stats on items on Forever besides those, and they work in other versions of the game, please let me know! I'll need to know the language you're playing in and which item it is: item ID is most helpful, but I can look a name up on Wowhead.
 * Forever: Spell hit, spell crit, and spell haste are no longer included on the Weights tab as those stats were removed from items in Forever.

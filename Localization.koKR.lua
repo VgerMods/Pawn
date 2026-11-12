@@ -573,7 +573,7 @@ PawnLocal.TooltipParsing = {
 	["Haste"] = "^가속 %+?#$",
 	["Haste2"] = "^UNUSED$",
 	["HasteClassic"] = "^착용 효과: 공격 속도가 #%%만큼 증가합니다%.$",
-	["HasteCombined"] = "^UNUSED$",
+	["HasteCombined"] = "^착용 효과: 공격 속도와 시전 속도가 #%%만큼 증가합니다%.$",
 	["HasteRating"] = "^착용 효과: 가속도가 #만큼 증가합니다%.$",
 	["HasteRating2"] = "^UNUSED$",
 	--[[Translation missing --]]
