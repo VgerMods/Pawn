@@ -1124,7 +1124,7 @@ function PawnResetTooltip(TooltipName)
 	local Tooltip = _G[TooltipName]
 	if not Tooltip or not Tooltip.IsShown or not Tooltip:IsShown() or not Tooltip.GetItem then return end
 
-	local _, ItemLink = Tooltip:GetItem()
+	local ItemLink = PawnGetItemLinkFromTooltip(Tooltip)
 	if not ItemLink then return end
 
 	Tooltip:SetOwner(UIParent, "ANCHOR_PRESERVE")
@@ -1584,26 +1584,32 @@ function PawnGetGemData(GemData)
 	return Item
 end
 
-function PawnGetItemLinkFromTooltip(TooltipName, MethodName, Param1, ...)
+function PawnGetItemLinkFromTooltipNameAndMethod(TooltipName, MethodName, Param1, ...)
 	VgerCore.Assert(TooltipName, "TooltipName must be non-null!")
 	VgerCore.Assert(MethodName, "MethodName must be non-null!")
 	if (not TooltipName) or (not MethodName) then return end
 
-	-- First, find the tooltip.
-	local Tooltip = _G[TooltipName]
-	if not Tooltip then return end
-
-	-- If we have a tooltip, try to get an item link from it.
-	local ItemLink, _
 	if (MethodName == "SetHyperlink") and Param1 then
 		-- Special case: if the method is SetHyperlink, then we already have an item link.
 		-- (Normally, GetItem will work, but SetHyperlink is used by some mod compatibility code.)
-		ItemLink = Param1
-	elseif Tooltip.GetItem then
-		_, ItemLink = Tooltip:GetItem()
+		return Param1
 	end
 
-	return ItemLink
+	return PawnGetItemLinkFromTooltip(_G[TooltipName])
+end
+
+function PawnGetItemLinkFromTooltip(Tooltip)
+	if Tooltip == nil then
+		return nil
+	elseif Tooltip.GetItem then
+		local _, ItemLink = Tooltip:GetItem()
+		return ItemLink
+	elseif TooltipUtil then
+		local _, ItemLink = TooltipUtil.GetDisplayedItem(Tooltip)
+		return ItemLink
+	else
+		VgerCore.Fail("Pawn doesn't know how to get the item from " .. tostring(Tooltip:GetName()) .. ".")
+	end
 end
 
 -- Gets the item data for a specific item.  Retrieves the information from the cache when possible; otherwise, gets it from the tooltip specified.  Only use this if you don't have an item link; otherwise use PawnGetItemData(ItemLink).
@@ -1613,7 +1619,7 @@ function PawnGetItemDataFromTooltip(TooltipName, MethodName, Param1, ...)
 	if (not ItemName) or (not ItemNameLineNumber) then return end
 	local Tooltip = _G[TooltipName]
 	local ItemNumLines = Tooltip:NumLines()
-	local ItemLink = PawnGetItemLinkFromTooltip(TooltipName, MethodName, Param1, ...)
+	local ItemLink = PawnGetItemLinkFromTooltipNameAndMethod(TooltipName, MethodName, Param1, ...)
 	local Item = PawnGetCachedItem(ItemLink, ItemName, ItemNumLines)
 	if Item and Item.Values then
 		return Item
@@ -1729,7 +1735,7 @@ function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	end
 
 	-- Start by getting the item link.
-	local ItemLink = PawnGetItemLinkFromTooltip(TooltipName, MethodName, Param1, ...)
+	local ItemLink = PawnGetItemLinkFromTooltipNameAndMethod(TooltipName, MethodName, Param1, ...)
 
 	if PawnCommon.DebugCache then
 		TooltipUpdateCounter = TooltipUpdateCounter + 1
@@ -2524,12 +2530,7 @@ function PawnGetStatsFromTooltip(TooltipName, DebugMessages)
 	end
 
 	-- Done!
-	local _, PrettyLink
-	if Tooltip.GetItem then
-		_, PrettyLink = Tooltip:GetItem()
-	elseif TooltipUtil then
-		_, PrettyLink = TooltipUtil.GetDisplayedItem(Tooltip)
-	end
+	local PrettyLink = PawnGetItemLinkFromTooltip(Tooltip)
 	if not HadUnknown then UnknownLines = nil end
 	return Stats, SocketBonusStats, UnknownLines, PrettyLink
 end
@@ -3378,8 +3379,7 @@ function PawnAttachIconToTooltip(Tooltip, AttachAbove, ItemLink)
 	if PawnCommon.ShowTooltipIcons then
 		-- Don't retrieve an item link if one was passed in.
 		if not ItemLink then
-			local _
-			_, ItemLink = Tooltip:GetItem()
+			ItemLink = PawnGetItemLinkFromTooltip(Tooltip)
 		end
 		if ItemLink then
 			TextureName = C_Item.GetItemIconByID(ItemLink)
