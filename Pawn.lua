@@ -3692,7 +3692,7 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 						if Slot2 then Item2, SlotHadItem2 = PawnGetItemDataForInventorySlot(Slot2, true) end
 						if SlotHadItem2 and not Item2 then return end -- If there is an item in the slot but we don't have data yet, we can't evaluate upgrades yet.
 						if Item2 then ItemLink2 = PawnUnenchantItemLink(Item2.Link, true) end
-						if not TwoSlotsForThisItemType and ItemLink2 and UnenchantedItemLink == PawnUnenchantItemLink(Item2.Link, true) then return end
+						if not TwoSlotsForThisItemType and Item2 and ItemLink2 and UnenchantedItemLink == PawnUnenchantItemLink(Item2.Link, true) then return end
 						VgerCore.Assert(Value1 == nil and Value2 == nil, "Where's the value coming from?")
 						if CompareUsingItemLevelOnly then
 							if Item1 then Value1 = Item1.Level end
