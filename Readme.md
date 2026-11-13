@@ -90,6 +90,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 * Forever: Added support for new items with bonus armor in French, Portuguese, Russian, European Spanish, Simplified Chinese, and Traditional Chinese.
 * Includes fixes for seven obscure bugs that, hopefully, no one ever actually hit. (Thanks Krytical!)
 * Items that can only be used by certain classes will no longer appear on the Compare tab as having "special effects" in French.
+* Added `/pawn compare both item:12345` as a shortcut for putting the same item into both slots on the Compare tab.
 
 ### Version 2.14.2
 

@@ -968,6 +968,10 @@ function PawnCommand(Command)
 		elseif strsub(Command, 9, 14) == "right " then
 			-- Right Item2
 			ItemLink2 = strsub(Command, 15)
+		elseif strsub(Command, 9, 13) == "both " then
+			-- Both Item1And2
+			ItemLink1 = strsub(Command, 14)
+			ItemLink2 = ItemLink1
 		else
 			-- Item2
 			ItemLink2 = strsub(Command, 9)
