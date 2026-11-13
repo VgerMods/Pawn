@@ -61,7 +61,7 @@ end
 function PawnGameConstantUnwrapped(Text)
 	-- Some of these constants don't exist on Classic versions, so skip them: but not on live, where we would want this to error out.
 	if Text == nil and not IsMainline then return "^UNUSED$" end
-	return (gsub((gsub(Text, "%%", "%%%%")), "%-", "%%-"))
+	return (gsub((gsub((gsub(Text, "%%", "%%%%")), "%-", "%%-")), "\194\160", " "))
 end
 
 -- Turns a game constant with one "%s" placeholder into a pattern that can be used to match that string.

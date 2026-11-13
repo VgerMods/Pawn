@@ -88,6 +88,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 * Forever: Added support for new items with haste in all languages.
 * Includes fixes for seven obscure bugs that, hopefully, no one ever actually hit. (Thanks Krytical!)
+* Items that can only be used by certain classes will no longer appear on the Compare tab as having "special effects" in French.
 
 ### Version 2.14.2
 
