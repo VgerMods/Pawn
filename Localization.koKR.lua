@@ -496,6 +496,7 @@ PawnLocal.TooltipParsing = {
 	["ArcaneSpellDamage3"] = "^UNUSED$",
 	["Armor"] = "^방어도 %+?#$",
 	["Armor2"] = "^UNUSED$",
+	["Armor3"] = "^UNUSED$",
 	["ArmorPenetration"] = "^착용 효과: 공격 시 적의 방어도를 #만큼 무시합니다%.$",
 	["ArmorPenetrationRating"] = "^착용 효과: 방어구 관통력이 #만큼 증가합니다%.$",
 	["ArmorPenetrationRating2"] = "^착용 효과: 방어구 관통이 #만큼 증가합니다%.$",

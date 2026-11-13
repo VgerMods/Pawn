@@ -490,6 +490,7 @@ PawnLocal.TooltipParsing = {
 	["ArcaneSpellDamage3"] = "^%+# Arcane Damage$",
 	["Armor"] = "^%+?# Armor$",
 	["Armor2"] = "^UNUSED$",
+	["Armor3"] = "^UNUSED$",
 	["ArmorPenetration"] = "^Equip: Your attacks ignore # of your opponent's armor%.$",
 	["ArmorPenetrationRating"] = "^Equip: Increases armor penetration rating by #%.$",
 	["ArmorPenetrationRating2"] = "^Equip: Increases your armor penetration by #%.$",

@@ -535,6 +535,7 @@ PawnLocal.TooltipParsing = {
 	["ArcaneSpellDamage3"] = "^%+# daño Arcano$",
 	["Armor"] = "^%+?# p%. de armadura$",
 	["Armor2"] = "^UNUSED$",
+	["Armor3"] = "^UNUSED$",
 	["ArmorPenetration"] = "^Equipar: Tus ataques ignoran # p%. de la armadura de tu oponente%.$",
 	["ArmorPenetrationRating"] = "^Equipar: Aumenta el índice de penetración de armadura # p%.$",
 	["ArmorPenetrationRating2"] = "^Equipar: Aumenta # p%. la penetración de armadura%.$",
@@ -978,6 +979,7 @@ if GetLocale() == "esES" then
 
 		local TooltipParsing_Forever =
 		{
+			["Armor3"] = "^%+?# p%. de armadura$",
 			["ArcaneSpellDamage2"] = "^Equipar: Aumenta hasta # p%. el daño infligido con hechizos y efectos Arcanos%.$",
 			["BlockPercent"] = "^Equipar: Aumenta un #%% la probabilidad de bloquear ataques con un escudo%.$",
 			["CritPercentCombined"] = "^Equipar: Mejora un #%% tu probabilidad de conseguir un golpe crítico%.$",

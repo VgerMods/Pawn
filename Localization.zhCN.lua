@@ -485,6 +485,7 @@ PawnLocal.TooltipParsing = {
 	["ArcaneSpellDamage3"] = "^%+# ?奥术伤害$",
 	["Armor"] = "^#点护甲$",
 	["Armor2"] = "^UNUSED$",
+	["Armor3"] = "^%+?#护甲$",
 	["ArmorPenetration"] = "^装备： 你的攻击无视目标的#点护甲值。$",
 	["ArmorPenetrationRating"] = "^装备： 护甲穿透等级提高#。$",
 	["ArmorPenetrationRating2"] = "^装备： 使你的护甲穿透提高#点。$",

@@ -87,6 +87,7 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 ### Version 2.14.3
 
 * Forever: Added support for new items with haste in all languages.
+* Forever: Added support for new items with bonus armor in French, Portuguese, Russian, European Spanish, Simplified Chinese, and Traditional Chinese.
 * Includes fixes for seven obscure bugs that, hopefully, no one ever actually hit. (Thanks Krytical!)
 * Items that can only be used by certain classes will no longer appear on the Compare tab as having "special effects" in French.
 
