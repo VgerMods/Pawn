@@ -286,7 +286,7 @@ PawnRegexes =
 	{L.SpellHasteClassic, "SpellHasteRating"}, -- Classic SoD, /pawn compare 236062
 	{L.SpellPenetration, "SpellPenetration"}, -- Burning Crusade, /pawn compare 21563
 	{L.SpellPenetrationClassic, "SpellPenetration"}, -- Classic (pre-TBC), /pawn compare 21338
-	{L.SpellPenetrationForever, "SpellPenetration"}, -- Forever, /pawn compare left 944 right 944
+	{L.SpellPenetrationForever, "SpellPenetration"}, -- Forever, /pawn compare both 944
 	{L.SpellPenetrationShort, "SpellPenetration"}, -- Burning Crusade, https://tbc.wowhead.com/item=24039/stormy-star-of-elune
 	{L.Mastery, "MasteryRating"}, -- Zen Dream Emerald
 	{L.Mastery2, "MasteryRating"}, -- unused in English
@@ -318,7 +318,7 @@ PawnRegexes =
 	{L.EnchantmentHealth2, "Stamina", 1/12.5, PawnSingleStatMultiplier}, -- +150 health enchantment (counting 1 HP = 1/12.5 Stamina)
 	{L.Armor, "Armor"}, -- normal armor and cloak armor enchantments
 	{L.Armor2, "Armor"}, -- unused in English
-	{L.Armor3, "Armor"}, -- Forever in French and some other languages but not English, /pawn compare left 16455 right 16455
+	{L.Armor3, "Armor"}, -- Forever in French and some other languages but not English, /pawn compare both 16455
 	{L.EnchantmentArmorKit, "Armor"}, -- armor kits
 	{L.FireResist, "FireResist"}, -- /pawn compare 12609
 	{L.NatureResist, "NatureResist"}, -- /pawn compare 12609
