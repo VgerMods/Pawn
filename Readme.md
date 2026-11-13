@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.14.4
+
 ### Version 2.14.3
 
 * Forever: Added support for new items with haste in all languages.
