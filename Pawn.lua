@@ -728,7 +728,7 @@ function PawnInitializeOptions()
 		PawnCommon.ShowReforgingAdvisor = true
 	end
 	if PawnCommon.LastVersion < 2.1300 then
-		-- The Bag Upgrade Advisor on by default now wherever Automatic mode is supported.
+		-- The Bag Upgrade Advisor is on by default now wherever Automatic mode is supported.
 		if VgerCore.SpecsExist then
 			PawnCommon.ShowBagUpgradeAdvisor = true
 		end
