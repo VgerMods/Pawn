@@ -699,8 +699,8 @@ if VgerCore.IsClassic or VgerCore.IsForever then
 	tinsert(PawnNeverUsableStats[7], "IsOffHand")
 end
 
-if VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade then
-	-- Rogues didn't learn to use axes until Wrath of the Lich King.
+if VgerCore.IsClassic or VgerCore.IsBurningCrusade then
+	-- Rogues didn't learn to use axes until Wrath of the Lich King, but they can use them in Forever.
 	tinsert(PawnNeverUsableStats[4], "IsAxe")
 end
 
