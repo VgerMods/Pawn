@@ -84,6 +84,8 @@ Pawn plays along with most other addons, but there are a few that break Pawn tha
 
 ## Updates
 
+### Version 2.14.5
+
 ### Version 2.14.4
 
 * Forever: Pawn will now properly recommend one-handed axes to rogues by default instead of marking them as unusable.
