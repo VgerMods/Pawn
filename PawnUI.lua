@@ -256,7 +256,6 @@ function PawnUIFrame_ScaleSelector_Refresh()
 	PawnUITotalScaleLines = 0
 
 	-- Get a sorted list of scale data and display it all.
-	local ScaleData
 	local ScaleList = PawnGetAllScalesEx()
 	PawnUIIsShowingNoneWarning = true
 	for _, ScaleData in pairs(ScaleList) do
@@ -1778,7 +1777,6 @@ function PawnUI_ShowBestGems()
 	end
 
 	local ShownGems = false
-	local _
 
 	local GemQualityLevel = PawnGetGemQualityForItem(PawnGemQualityLevels, PawnUIGemQualityLevel)
 	if GemQualityLevel then
@@ -2258,7 +2256,6 @@ function PawnUI_OnReforgingUpdate()
 	local UpgradeInfo, BestItemFor, SecondBestItemFor = PawnIsItemAnUpgrade(Item)
 
 	-- Now, find out what to do for each scale.
-	local ScaleName
 	local InstructionsList = { }
 	local SuggestedAnyCappedStats
 	for ScaleName, _ in pairs(PawnCommon.Scales) do
@@ -2279,7 +2276,6 @@ function PawnUI_OnReforgingUpdate()
 			elseif UpgradeInfo then
 				-- Is this an upgrade for this scale?
 				local WasUpgrade = nil
-				local UpgradeData
 				for _, UpgradeData in pairs(UpgradeInfo) do
 					if UpgradeData[1] == ScaleName then
 						WasUpgrade = true
@@ -2303,7 +2299,6 @@ function PawnUI_OnReforgingUpdate()
 	PawnReforgingTooltip:SetPoint("TOPLEFT", ReforgingFrame, "BOTTOMLEFT", 12, -12)
 	PawnReforgingTooltip:SetText(PawnLocal.UI.ReforgeTitle, 1, 1, 1)
 
-	local Instructions
 	for _, Instructions in pairs(InstructionsList) do
 		PawnReforgingTooltip:AddLine(Instructions, 1, 1, 1)
 	end
@@ -2361,7 +2356,6 @@ function PawnUI_GroupLootFrame_OnShow(self)
 				local UpgradeText
 				if ShowScaleNames then
 					UpgradeText = PawnLocal.LootUpgradeAdvisorHeader
-					local ThisUpgradeData, _
 					for _, ThisUpgradeData in pairs(UpgradeInfo) do
 						local ScaleName = ThisUpgradeData.ScaleName
 						if ScaleName then
@@ -2593,7 +2587,6 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	-- Find the ones that are interesting (and should get an icon).
 	PawnFindInterestingItems(QuestRewards)
 
-	local Reward
 	for _, Reward in pairs(QuestRewards) do
 		local ItemButton = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, Reward.Index)
 		local TextureName

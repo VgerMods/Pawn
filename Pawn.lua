@@ -1066,7 +1066,6 @@ function PawnGetCachedItem(ItemLink, ItemName, NumLines)
 	if PawnCommon.Debug then return end
 
 	-- Otherwise, search the item cache for this item.
-	local _
 	for _, CachedItem in pairs(PawnItemCache) do
 		if (not NumLines) or (NumLines == CachedItem.NumLines) then
 			if ItemLink and CachedItem.Link then
@@ -3859,7 +3858,6 @@ function PawnIsItemAnUpgrade(Item, DoNotRescan)
 	-- -- Print out the contents of the upgrade table for debugging purposes.
 	-- if UpgradeTable then
 	-- 	VgerCore.Message(tostring(Item.Link) .. " is an upgrade for:")
-	-- 	local Upgrade
 	-- 	for _, Upgrade in pairs(UpgradeTable) do
 	-- 		VgerCore.Message("    " .. Upgrade.LocalizedScaleName .. ": " .. tostring(100 * Upgrade.PercentUpgrade) .. "% upgrade from " .. tostring(Upgrade.ExistingItemLink))
 	-- 	end
