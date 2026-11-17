@@ -17,6 +17,10 @@ VgerCore contains functionality that is shared by mods written by Vger of Azjol-
 
 ## Updates
 
+### Version 1.0.24
+
+* Added ShallowCopy and DeepCopy.
+
 ### Version 1.0.23
 
 * Added IsForever.

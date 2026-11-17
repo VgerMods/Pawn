@@ -58,7 +58,7 @@ Pawn has other options for players who want more math in their Warcraft: check o
 If something doesn't seem to be working right, please send me a description of the problem, in addition to:
 
 1. The language that you play WoW in
-2. Which version of WoW it is (Midnight, Mists of Pandaria Classic, Classic Era, etc.)
+2. Which version of WoW it is (Midnight, Forever, Mists of Pandaria Classic, Classic Era, etc.)
 3. The specific items that don't work as expected
 4. Your class and spec if you're using the built-in (not custom) stat weights
 
@@ -70,21 +70,11 @@ If you Alt+LeftClick on an item popup (whisper the item to yourself), you'll get
 
 If you copy and paste that for me, I can see the same item on my computer, and that's the most helpful thing you can do to help me track down the problem you're seeing. Screenshots are always great too!
 
-### Incompatible addons
-
-Pawn plays along with most other addons, but there are a few that break Pawn that there's no workaround for. Typically this is addons that change the way that stats appear on item tooltips, such as changing "+25 Critical Strike" to "Crit +25".
-
-* Class Codex
-	* ...but you can work around this by going into Class Codex's options, scrolling to Tooltips, unchecking Stat Priority Ranks, and reloading.
-* Combat Numbers Separator + Titan Panel Artifact Power
-* FreeUI
-* TipTac
-* TradeSkillMaster
-* Undermine Journal
-
 ## Updates
 
 ### Version 2.14.5
+
+* Pawn will now try to detect when it's being used with another addon that it's not compatible with, and will warn you if it does.
 
 ### Version 2.14.4
 

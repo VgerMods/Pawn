@@ -2134,6 +2134,7 @@ function PawnUI_OnSocketUpdate()
 	PawnUI_EnsureLoaded()
 	if StandardGemsUnavailable then return end
 	if not PawnCommon.ShowSocketingAdvisor then return end
+	if PawnIsIncompatible() then return end
 
 	-- Find out what item it is.
 	local _, ItemLink = ItemSocketingDescription:GetItem()
@@ -2237,6 +2238,7 @@ function PawnUI_OnReforgingUpdate()
 	if PawnReforgingTooltip then PawnReforgingTooltip:Hide() end
 
 	if not PawnCommon.ShowReforgingAdvisor then return end
+	if PawnIsIncompatible() then return end
 
 	-- Find out what item it is.
 	local Tooltip = _G[PawnPrivateTooltipName]
@@ -2336,6 +2338,7 @@ function PawnUI_GroupLootFrame_OnShow(self)
 	local Index = self:GetID()
 	local LootAdvisor = _G["PawnUI_LootUpgradeAdvisor" .. Index]
 	if not PawnCommon.ShowLootUpgradeAdvisor then LootAdvisor:Hide() return end
+	if PawnIsIncompatible() then return end
 	LootAdvisor.ItemLink = nil
 
 	-- What item are they rolling for?
@@ -2477,6 +2480,7 @@ end
 -- When quest info is displayed, call other quest info hook functions as appropriate.
 function PawnUI_OnQuestInfo_Display(template)
 	if not PawnCommon or not PawnPlayerFullName then return end
+	if PawnIsIncompatible() then return end
 	VgerCore.Assert(QuestInfoFrame, "QuestInfoFrame should exist by the time that PawnUI_OnQuestInfo_Display is called.")
 
 	-- There are a variety of QUEST_TEMPLATE_* tables in QuestInfo.lua.  Instead of hooking QuestInfo_ShowRewards directly,
@@ -2497,6 +2501,7 @@ function PawnUI_OnQuestInfo_ShowRewards()
 	end
 
 	if not PawnCommon.ShowQuestUpgradeAdvisor then return end
+	if PawnIsIncompatible() then return end
 
 	-- Now, get information about this quest.
 	local QuestID
@@ -2688,6 +2693,9 @@ function PawnUISwitchToTab(Tab)
 	end
 	PawnUI_EnsureLoaded()
 
+	local IncompatibilityDetails = PawnGetIncompatibilityInfo()
+	if IncompatibilityDetails then Tab = nil end
+
 	-- Loop through all tab frames, showing all but the current one.
 	local TabNumber
 	for i = 1, TabCount do
@@ -2699,7 +2707,7 @@ function PawnUISwitchToTab(Tab)
 			ThisTab:Hide()
 		end
 	end
-	VgerCore.Assert(TabNumber, "Oh noes, we couldn't find that tab.")
+	VgerCore.Assert(TabNumber or IncompatibilityDetails, "Oh noes, we couldn't find that tab.")
 	local ReloadingSameTab = (TabNumber == PawnUICurrentTabNumber)
 	PawnUICurrentTabNumber = TabNumber
 
@@ -2722,6 +2730,34 @@ function PawnUISwitchToTab(Tab)
 	-- Then, update the header text.
 	PawnUIUpdateHeader()
 
+	-- Now, if Pawn can't function due to addon incompatibility, show details and then bail.
+	if IncompatibilityDetails then
+		PawnUIScaleSelectorIncompatible:Show()
+		PawnUIIncompatibleTabPage:Show()
+
+		local ErrorText = "The following addons are preventing Pawn from working:\n\n"
+
+		for _, AddOn in pairs(IncompatibilityDetails.AddOns) do
+			ErrorText = ErrorText .. VgerCore.Color.Salmon .. AddOn.Name .. VgerCore.Color.Reset .. "\n"
+			if AddOn.Fix then
+				ErrorText = ErrorText .. AddOn.Fix
+			else
+				ErrorText = ErrorText .. "To fix it, disable " .. AddOn.Name .. " and /reload."
+			end
+			ErrorText = ErrorText .. "\n\n"
+		end
+
+		ErrorText = ErrorText .. VgerCore.Color.Silver .. "You're using Pawn " .. C_AddOns.GetAddOnMetadata("Pawn", "Version") .. " on WoW " .. GetBuildInfo() .. " " .. GetLocale() .. "." .. VgerCore.Color.Reset
+
+		PawnUIFrame_IncompatibiltyLabel:SetText(ErrorText)
+
+		for i = 1, TabCount do
+			_G["PawnUIFrameTab" .. i]:Hide()
+		end
+
+		return
+	end
+
 	-- If we're already on that tab, we don't need to do anything else.
 	if ReloadingSameTab then return end
 
@@ -2735,6 +2771,9 @@ function PawnUISwitchToTab(Tab)
 end
 
 function PawnUIUpdateHeader()
+	if PawnIsIncompatible() then
+		PawnUIHeader:SetText("Pawn needs your attention")
+	end
 	if not PawnUIHeaders[PawnUICurrentTabNumber] then return end
 	local ColoredName
 	if PawnUICurrentScale and PawnUICurrentScale ~= PawnLocal.NoScale then

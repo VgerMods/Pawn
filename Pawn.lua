@@ -22,6 +22,25 @@ local PawnInfinity = 1.79769313E308
 -- Set to true once initialization completes
 local PawnIsInitialized
 
+-- Information about incompatibilities detected with other addons
+-- Use PawnIsIncompatible() to check this.
+local PawnIncompatibilitiesDetected =
+{
+	Count = 0,
+	ShownWarning = false,
+	AddOns = { }, -- { Name = "Bad AddOn", Fix = "Uninstall it" or nil }
+}
+
+local PawnIncompatibleAddons =
+{
+	["ClassCodex"] = "Class Codex",
+	["CombatNumbersSeparator"] = "Combat Numbers Separator",
+	["FreeUI"] = "FreeUI",
+	["RatingBuster"] = "RatingBuster",
+	["TipTac"] = "TipTac",
+	["TradeSkillMaster"] = "TradeSkillMaster",
+}
+
 -- Name of our private tooltip defined in PawnUI.xml
 PawnPrivateTooltipName = "PawnPrivateTooltip1"
 
@@ -495,6 +514,10 @@ function PawnInitialize()
 	if C_AddOns.IsAddOnLoaded("Blizzard_InspectUI") then PawnOnAddonLoaded("Blizzard_InspectUI") end
 	if C_AddOns.IsAddOnLoaded("Blizzard_ItemSocketingUI") then PawnOnAddonLoaded("Blizzard_ItemSocketingUI") end
 	if C_AddOns.IsAddOnLoaded("Blizzard_ReforgingUI") then PawnOnAddonLoaded("Blizzard_ReforgingUI") end
+	-- Also, check for incompatible addons.
+	for IncompatibleAddonName, _ in pairs(PawnIncompatibleAddons) do
+		if C_AddOns.IsAddOnLoaded(IncompatibleAddonName) then PawnOnAddonLoaded(IncompatibleAddonName) end
+	end
 
 	-- Now, load any plugins that are ready to be loaded.
 	PawnInitializePlugins()
@@ -563,6 +586,22 @@ function PawnOnAddonLoaded(AddonName)
 	elseif AddonName == "Blizzard_EncounterJournal" then
 		-- After the encounter journal is loaded, watch the loot buttons.
 		PawnUI_HookEncounterJournal()
+	elseif PawnIncompatibleAddons[AddonName] then
+		-- An addon that we're not compatible with has loaded.
+		if AddonName == "ClassCodex" then
+			if ClassCodexDB and ClassCodexDB.showTooltipBadges == false then
+				-- Acceptable workaround, so don't warn.
+				return
+			end
+			tinsert(PawnIncompatibilitiesDetected.AddOns, { Name = PawnIncompatibleAddons[AddonName], Fix = "To fix it, go to Class Codex's options, in the Tooltips section, and uncheck Stat Priority Ranks. Then /reload." } )
+		else
+			tinsert(PawnIncompatibilitiesDetected.AddOns, { Name = PawnIncompatibleAddons[AddonName] } )
+		end
+		PawnIncompatibilitiesDetected.Count = PawnIncompatibilitiesDetected.Count + 1
+		if not PawnIncompatibilitiesDetected.ShownWarning then
+			C_Timer.After(2, function() PawnUIFrame:Show() end)
+			PawnIncompatibilitiesDetected.ShownWarning = true
+		end
 	end
 end
 
@@ -1731,6 +1770,7 @@ local TooltipUpdateCounter = 0
 -- Updates a specific tooltip.
 function PawnUpdateTooltip(TooltipName, MethodName, Param1, ...)
 	if not PawnCommon.Scales then return end
+	if PawnIsIncompatible() then return end
 
 	local Tooltip = _G[TooltipName]
 	if not Tooltip then
@@ -6104,6 +6144,20 @@ function PawnUnregisterThirdPartyTooltip(AddonName)
 	if not AddonName then VgerCore.Fail("AddonName can't be empty.") return end
 	PawnThirdPartyTooltips[AddonName] = nil
 	PawnIsAThirdPartyTooltipRegistered = #PawnThirdPartyTooltips > 0
+end
+
+-- Returns more information if Pawn detects that it is incompatible with the current game version or other addons in a way that prevents it from working at all.
+function PawnGetIncompatibilityInfo()
+	if PawnIncompatibilitiesDetected.Count > 0 then
+		return VgerCore.DeepCopy(PawnIncompatibilitiesDetected)
+	else
+		return nil
+	end
+end
+
+-- Returns true if Pawn detects that it is incompatible with the current game version or other addons in a way that prevents it from working at all. (Use PawnGetIncompatibilityInfo if you need more information.)
+function PawnIsIncompatible()
+	return (PawnIncompatibilitiesDetected.Count > 0) or nil
 end
 
 -- Shows or hides the Pawn UI.

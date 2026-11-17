@@ -541,6 +541,28 @@
 					
 				</Layers>
 			</Frame>
+
+			<!-- The scale selector replacement in incompatible mode -->
+			<Frame name="PawnUIScaleSelectorIncompatible" hidden="true">
+				<Size><AbsDimension x="200" y="500" /></Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" x="0" y="-45" />
+				</Anchors>
+
+				<Layers>
+					
+					<!-- Scale selector: art layer -->
+					<Layer level="ARTWORK">
+						
+						<Texture file="Interface\DialogFrame\UI-Dialog-Icon-AlertNew">
+							<Anchors><Anchor point="TOPLEFT" x="70" y="-170" /></Anchors>
+							<Size><AbsDimension x="60" y="60" /></Size>
+						</Texture>
+
+					</Layer>
+					
+				</Layers>
+			</Frame>
 			
 			<!-- The Scale tab -->
 			<Frame name="PawnUIScalesTabPage" hidden="true" inherits="PawnUITabPageTemplate">
@@ -1610,6 +1632,23 @@
 					<Layer level="ARTWORK">
 
 						<FontString name="PawnUIFrame_GettingStartedLabel" inherits="GameFontHighlight" justifyH="LEFT" justifyV="TOP" text="PawnUIFrame_GettingStartedLabel_Text">
+							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-30" /></Offset></Anchor></Anchors>
+							<Size><AbsDimension x="550" y="400" /></Size>
+						</FontString>
+
+					</Layer>
+					
+				</Layers>
+			</Frame>
+
+			<!-- Incompatibility warning -->
+			<Frame name="PawnUIIncompatibleTabPage" hidden="true" inherits="PawnUITabPageTemplate">
+				<Layers>
+
+					<!-- Incompatibility warning: art layer -->
+					<Layer level="ARTWORK">
+
+						<FontString name="PawnUIFrame_IncompatibiltyLabel" inherits="GameFontHighlight" justifyH="LEFT" justifyV="TOP">
 							<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="25" y="-30" /></Offset></Anchor></Anchors>
 							<Size><AbsDimension x="550" y="400" /></Size>
 						</FontString>
