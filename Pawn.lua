@@ -13,7 +13,7 @@ PawnVersion = 2.1405
 -- local ShowWorldQuestUpgrades = true
 
 -- Pawn requires this version of VgerCore:
-local PawnVgerCoreVersionRequired = 1.23
+local PawnVgerCoreVersionRequired = 1.24
 
 -- Floating point math
 local PawnEpsilon = 0.0000000001
