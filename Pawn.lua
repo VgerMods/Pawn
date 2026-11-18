@@ -2053,7 +2053,7 @@ function PawnAddTooltipLine(Tooltip, Text, r, g, b)
 	if PawnCommon.AlignNumbersRight then
 		local Pos = VgerCore.StringFindReverse(Text, ": ") -- search for a colon followed by a space so we don't get texture escape sequences
 		local Left = strsub(Text, 0, Pos - 1) -- ignore the colon
-		local Right = strsub(Text, 0, 10) .. strsub(Text, Pos + 3) -- add the color string and ignore the spaces following the colon
+		local Right = (strbyte(Text) == 124 and strsub(Text, 0, 10) or "") .. strsub(Text, Pos + 3) -- add the color string if present ("|" = 124), and ignore the spaces following the colon
 		Tooltip:AddDoubleLine(Left, Right, r, g, b)
 	else
 		Tooltip:AddLine(Text, r, g, b)
