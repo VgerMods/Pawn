@@ -598,7 +598,7 @@ function PawnOnAddonLoaded(AddonName)
 			tinsert(PawnIncompatibilitiesDetected.AddOns, { Name = PawnIncompatibleAddons[AddonName] } )
 		end
 		PawnIncompatibilitiesDetected.Count = PawnIncompatibilitiesDetected.Count + 1
-		if not PawnIncompatibilitiesDetected.ShownWarning then
+		if not PawnIncompatibilitiesDetected.ShownWarning and PawnCommon.ShowCompatErrors then
 			C_Timer.After(2, function() PawnUIFrame:Show() end)
 			PawnIncompatibilitiesDetected.ShownWarning = true
 		end
@@ -771,6 +771,10 @@ function PawnInitializeOptions()
 		if VgerCore.SpecsExist then
 			PawnCommon.ShowBagUpgradeAdvisor = true
 		end
+	end
+	if PawnCommon.LastVersion < 2.1405 then
+		-- Show addon incompatibility errors by default. There's no setting for this; it's just there as an escape hatch.
+		PawnCommon.ShowCompatErrors = true
 	end
 	if (VgerCore.IsDraenorOrLater and PawnCommon.LastVersion < PawnMrRobotLastUpdatedVersion) or
 		((VgerCore.IsClassic or VgerCore.IsForever or VgerCore.IsBurningCrusade or VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists) and PawnCommon.LastVersion < PawnClassicLastUpdatedVersion) then
