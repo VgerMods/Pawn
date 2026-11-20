@@ -78,6 +78,7 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 * Pawn will now try to detect other addons that it's not compatible with, and will warn you if it finds one.
 	* If you upgrade to Pawn 2.14.5 and see this error for the first time, going back to a previous version of Pawn will not fix the problem. Pawn will still not function properly, but you won't get a warning telling you what's wrong.
+	* These warnings will only appear in English for this version of Pawn.
 * Fixed a bug where "Item ID" would appear twice on tooltips if both the "Show item IDs" and "Align values to right edge of tooltip" options were enabled.
 
 ### Version 2.14.4
