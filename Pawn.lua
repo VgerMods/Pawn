@@ -6150,7 +6150,7 @@ end
 
 -- Returns more information if Pawn detects that it is incompatible with the current game version or other addons in a way that prevents it from working at all.
 function PawnGetIncompatibilityInfo()
-	if PawnIncompatibilitiesDetected.Count > 0 then
+	if PawnCommon.ShowCompatErrors and PawnIncompatibilitiesDetected.Count > 0 then
 		return VgerCore.DeepCopy(PawnIncompatibilitiesDetected)
 	else
 		return nil
@@ -6159,7 +6159,7 @@ end
 
 -- Returns true if Pawn detects that it is incompatible with the current game version or other addons in a way that prevents it from working at all. (Use PawnGetIncompatibilityInfo if you need more information.)
 function PawnIsIncompatible()
-	return (PawnIncompatibilitiesDetected.Count > 0) or nil
+	return (PawnCommon.ShowCompatErrors and PawnIncompatibilitiesDetected.Count > 0) or nil
 end
 
 -- Shows or hides the Pawn UI.
