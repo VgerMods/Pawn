@@ -72,6 +72,8 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 ## Updates
 
+### Version 2.14.8
+
 ### Version 2.14.7
 
 * Forever: Pawn will no longer show a compatibility warning for Class Codex when playing Forever, as the feature that breaks Pawn isn't actually present in the Forever version of Class Codex. (The warning is still present on Midnight.)
