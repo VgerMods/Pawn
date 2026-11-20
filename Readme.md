@@ -72,6 +72,8 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 ## Updates
 
+### Version 2.14.7
+
 ### Version 2.14.6
 
 * Removed the compatibility warnings about TradeSkillMaster and TipTac—currently available versions of those addons seem to work fine with Pawn.
