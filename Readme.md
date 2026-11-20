@@ -74,6 +74,8 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 ### Version 2.14.7
 
+* Forever: Pawn will no longer show a compatibility warning for Class Codex when playing Forever, as the feature that breaks Pawn isn't actually present in the Forever version of Class Codex. (The warning is still present on Midnight.)
+
 ### Version 2.14.6
 
 * Removed the compatibility warnings about TradeSkillMaster and TipTac—currently available versions of those addons seem to work fine with Pawn.

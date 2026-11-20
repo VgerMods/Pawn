@@ -587,7 +587,10 @@ function PawnOnAddonLoaded(AddonName)
 	elseif PawnIncompatibleAddons[AddonName] then
 		-- An addon that we're not compatible with has loaded.
 		if AddonName == "ClassCodex" then
-			if ClassCodexDB and ClassCodexDB.showTooltipBadges == false then
+			if VgerCore.IsForever then
+				-- The Forever version of Class Codex doesn't (as of November 2026) have the Stat Priority Ranks feature that breaks Pawn, so there's no need to warn about it.
+				return
+			elseif ClassCodexDB and ClassCodexDB.showTooltipBadges == false then
 				-- Acceptable workaround, so don't warn.
 				return
 			end
