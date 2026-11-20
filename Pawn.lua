@@ -37,8 +37,6 @@ local PawnIncompatibleAddons =
 	["CombatNumbersSeparator"] = "Combat Numbers Separator",
 	["FreeUI"] = "FreeUI",
 	["RatingBuster"] = "RatingBuster",
-	["TipTac"] = "TipTac",
-	["TradeSkillMaster"] = "TradeSkillMaster",
 }
 
 -- Name of our private tooltip defined in PawnUI.xml
