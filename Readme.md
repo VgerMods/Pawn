@@ -72,6 +72,8 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 ## Updates
 
+### Version 2.14.6
+
 ### Version 2.14.5
 
 * Pawn will now try to detect other addons that it's not compatible with, and will warn you if it finds one.
