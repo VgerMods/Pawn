@@ -72,6 +72,8 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 ## Updates
 
+## Version 2.14.9
+
 ### Version 2.14.8
 
 * Removed the compatibility warning about RatingBuster—it appears that RatingBuster isn't causing problems for all players, so I'll explore other ways to get RatingBuster and Pawn working together reliably.
