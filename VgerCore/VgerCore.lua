@@ -2,8 +2,8 @@
 -- www.vgermods.com
 -- © 2006-2026 Travis Spomer.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- 
--- Version 1.0.24 -- ShallowCopy and DeepCopy
-local VgerCoreThisVersion = 1.24
+-- Version 1.0.25 -- SecretsExist
+local VgerCoreThisVersion = 1.25
 -- 
 -- VgerCore contains functionality that is shared by Vger's mods.
 -- It can be used as a standalone add-on, or embedded within other mods.
@@ -42,6 +42,7 @@ VgerCore.IsWarWithinOrLater = BuildNumber >= 110000
 VgerCore.IsMidnight = BuildNumber >= 120000 and BuildNumber < 130000
 VgerCore.IsMidnightOrLater = BuildNumber >= 120000
 
+VgerCore.SecretRestrictions = VgerCore.IsMidnightOrLater or VgerCore.IsForever
 VgerCore.DeathKnightsExist = VgerCore.IsWrath or VgerCore.IsCataclysm or VgerCore.IsMists or VgerCore.IsDraenorOrLater
 VgerCore.MonksExist = VgerCore.IsMists or VgerCore.IsDraenorOrLater
 VgerCore.DemonHuntersExist = VgerCore.IsLegionOrLater
