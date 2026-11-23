@@ -268,7 +268,9 @@ For more information on customizing Pawn, please see the help file (Readme.md) t
 		["CompareVersus"] = "—vs.—",
 		["CompareWelcomeRight"] = [=[Drop an item in this box.
 
-You can compare it versus what you already have using the icons in the lower-left corner, or you can drop a different item in the box on the left.]=],
+Compare it to what you already have using the icons in the lower-left, or drop a different item in the other box.
+
+You can also use a key binding to put items here.]=],
 		["CompareYourBest"] = "Your best",
 		["GemsColorHeader"] = "%s gems",
 		["GemsHeader"] = "Gems for %s",
