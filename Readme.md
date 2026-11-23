@@ -72,7 +72,9 @@ If you copy and paste that for me, I can see the same item on my computer, and t
 
 ## Updates
 
-## Version 2.14.9
+### Version 2.14.9
+
+* Added a note to the Compare tab to mention that you can also bind keys.
 
 ### Version 2.14.8
 
